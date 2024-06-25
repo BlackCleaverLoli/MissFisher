@@ -7,9 +7,9 @@ Sorry, it currently only supports Chinese servers or English/Japanese servers wi
 - 自定义预设：可以保存数条自动钓鱼命令作为预设
 ### 工具功能
 - 悬浮窗：竿时&幻海&采集力
-- 默语播报：当次钓鱼的统计信息、普海钓饵、幻海时长
-- 计数：输入命令记录钓到的指定鱼名数量
-- 航线预报：输入命令查询包括近海与远洋各最多 2 条的使用鱼糕标识信息的航线预报
+- 默语播报：当次统计信息、触幻钓法、幻海时长
+- 计数：输入命令记录钓到的指定鱼数量
+- 航线预报：输入命令查询航线预报
 ## 安装&依赖
 - [@MnFeN](https://github.com/MnFeN/)分支的最新版[Triggernometry](https://github.com/MnFeN/Triggernometry)
 - 将空天姬 MissFisher 导入到 Triggernometry 中
