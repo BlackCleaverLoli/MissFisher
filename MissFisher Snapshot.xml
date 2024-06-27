@@ -5555,7 +5555,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+                  <Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
@@ -5576,7 +5576,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:(?&lt;玩家&gt;[^:]+):[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                  <Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:(?&lt;玩家&gt;[^:]+):[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
                       <Action OrderNumber="1" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerId="7ed6989f-9e3a-420b-855a-35ddff6fd404" TriggerForce="regexp" ActionType="Trigger">
                         <Condition Enabled="false" Grouping="Or" />
@@ -5665,49 +5665,46 @@
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[消息框]}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="3" TriggerId="fb8d4caa-1aa8-47bc-891e-fcb8e0b2f8e4" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="3" DictVariableOp="Build" DictVariableTarget="空天姬普海钓饵" DictVariableValue="=,空天姬普海钓饵=2,11=触发幻海：刺螠 21+！！！强力 幻光巨齿鲨,12=触发幻海：磷虾 21.5+！！！精准 幻光盘丽鱼,13=触发幻海：石沙蚕 21+！！！精准 幻光海马,14=触发幻海：刺螠 21.5+！！！强力 幻光鲈,15=触发幻海：石沙蚕 12.5+！！！精准 幻光蝴蝶鱼,16=触发幻海：磷虾 14+！！！强力 幻光鳗,17=触发幻海：刺螠 15.5+！！！强力 幻光鱼龙,21=触发幻海：刺螠 14+！！！强力 幻光腔棘鱼,22=触发幻海：石沙蚕 17+！！！精准 幻光求仙,23=触发幻海：磷虾 16+！！！强力 幻光海蛇,24=触发幻海：刺螠 17+！！！强力 幻光骨舌鱼" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="4" DictVariableOp="Build" DictVariableTarget="空天姬普海钓饵" DictVariableValue="=,空天姬普海钓饵=2,11=触发幻海：刺螠 21+！！！强力 幻光巨齿鲨,12=触发幻海：磷虾 21.5+！！！精准 幻光盘丽鱼,13=触发幻海：石沙蚕 21+！！！精准 幻光海马,14=触发幻海：刺螠 21.5+！！！强力 幻光鲈,15=触发幻海：石沙蚕 12.5+！！！精准 幻光蝴蝶鱼,16=触发幻海：磷虾 14+！！！强力 幻光鳗,17=触发幻海：刺螠 15.5+！！！强力 幻光鱼龙,21=触发幻海：刺螠 14+！！！强力 幻光腔棘鱼,22=触发幻海：石沙蚕 17+！！！精准 幻光求仙,23=触发幻海：磷虾 16+！！！强力 幻光海蛇,24=触发幻海：刺螠 17+！！！强力 幻光骨舌鱼" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
+                      <Action OrderNumber="4" DictVariableOp="Build" DictVariableTarget="空天姬幻海参数" DictVariableValue="=,空天姬幻海参数=13,0111=平钓（石沙蚕）11.5-！三重=专一灵敏舞者=三重,0112=平钓（石沙蚕）6.5-！三重=专一海荨麻=三重,0114=平钓（磷虾）7-！三重=专一浮游碟鱼=三重,0215=平钓（刺螠）7.5-！！三重=专一浮游翻车鱼=三重,0213=平钓（磷虾）5-！！三重=专一披风=三重,0216=平钓（石沙蚕）5.5-！三重=专一歼灭=三重,0315=平钓（刺螠）7.5-！！三重=专一浮游翻车鱼=三重,0314=平钓（磷虾）7-！三重=专一浮游碟鱼=三重,0317=平钓（磷虾）5-！！三重=专一珍珠=三重,0412=平钓（石沙蚕）6.5-！三重=专一海荨麻=三重,0411=平钓（磷虾）-2.9！！三重=专一人鱼=三重,0413=耐心（刺螠）all=专一守领鳍龙》鱼识耐心（重铁板钩）！！！,0511=平钓（刺螠）！！！三重=专一漏斗=三重,0512=耐心（石沙蚕）拍太阳all》all》鱼识耐心（小虾肉笼）拍！太阳！！！,0514=平钓（刺螠）！！！三重=专一处刑=三重,0615=平钓（磷虾）all=专一泰坦=三重,0613=耐心（刺螠）all=专一守领鳍龙》鱼识耐心（重铁板钩）！！！,0616=平钓（刺螠）7.5-！！！三重=专一石英=三重,0715=平钓（磷虾）all=专一泰坦=三重,0714=平钓（刺螠）！！！三重=专一处刑=三重,0717=耐心（磷虾）all》all=专一刀,0812=耐心（石沙蚕）拍太阳all》all》鱼识耐心（小虾肉笼）拍！！帆！！！,0811=平钓（石沙蚕）11.5-！三重=专一灵敏舞者=三重,0813=平钓（石沙蚕）8-！三重=专一珊瑚=三重,0911=平钓（磷虾）-2.9！！三重=专一人鱼=三重,0912=耐心（磷虾）拍太阳all》all,0914=平钓（石沙蚕）all=专一沉寂=三重,1015=平钓（磷虾）all=专一[泰刺]=三重,1013=平钓（石沙蚕）8-！三重=专一珊瑚=三重,1016=平钓（刺螠）7.5-！！！三重=专一石英=三重,1115=平钓（磷虾）all=专一[泰刺]=三重,1114=平钓（石沙蚕）all=专一沉寂=三重,1117=平钓（磷虾）5-！！三重=专一珍珠=三重,1212=耐心（石沙蚕）拍太阳all》all,1211=平钓（刺螠）！！！三重=专一漏斗=三重,1213=平钓（磷虾）5-！！三重=专一披风=三重,0121=平钓（磷虾）！！三重=专一纺车=三重,0122=耐心（刺螠）all》！！+！！！=专一鬼,0123=平钓（石沙蚕）all=专一[菖黑]=三重,0221=平钓（磷虾）6.1-！三重=专一粉红=三重,0222=平钓（磷虾）6-！！三重=专一毒=三重,0224=平钓（磷虾）5.4-！！三重=专一五色=三重,0321=平钓（磷虾）6.1-！三重=专一粉红=三重,0322=平钓（磷虾）6-！！三重=专一毒=三重,0323=平钓（刺螠）5-！！三重=专一巨型=三重,0421=平钓（刺螠）5-！三重=专一[伪宽]=三重,0422=平钓（石沙蚕）7.5-！三重=专一装甲=三重,0424=平钓（磷虾）5-！！三重=专一鲶鱼=三重,0521=平钓（刺螠）5-！三重=专一[伪宽]=三重,0522=平钓（石沙蚕）7.5-！三重=专一装甲=三重,0523=平钓（刺螠）5-！！三重=专一巨型=三重,0621=平钓（磷虾）！！三重=专一纺车=三重,0622=耐心（刺螠）拍！！飞天！！！》鱼识耐心（磷虾）拍！！飞天！！》！！+！！！,0624=耐心（刺螠）拍乌！》鱼识耐心（石蝇幼虫）拍虎！！！" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="5" DictVariableOp="Build" DictVariableTarget="空天姬幻海参数" DictVariableValue="=,空天姬幻海参数=13,0111=平钓（石沙蚕）11.5-！三重=专一灵敏舞者=三重,0112=平钓（石沙蚕）6.5-！三重=专一海荨麻=三重,0114=平钓（磷虾）7-！三重=专一浮游碟鱼=三重,0215=平钓（刺螠）7.5-！！三重=专一浮游翻车鱼=三重,0213=平钓（磷虾）5-！！三重=专一披风=三重,0216=平钓（石沙蚕）5.5-！三重=专一歼灭=三重,0315=平钓（刺螠）7.5-！！三重=专一浮游翻车鱼=三重,0314=平钓（磷虾）7-！三重=专一浮游碟鱼=三重,0317=平钓（磷虾）5-！！三重=专一珍珠=三重,0412=平钓（石沙蚕）6.5-！三重=专一海荨麻=三重,0411=平钓（磷虾）-2.9！！三重=专一人鱼=三重,0413=耐心（刺螠）all=专一守领鳍龙》鱼识耐心（重铁板钩）！！！,0511=平钓（刺螠）！！！三重=专一漏斗=三重,0512=耐心（石沙蚕）拍太阳all》all》鱼识耐心（小虾肉笼）拍！太阳！！！,0514=平钓（刺螠）！！！三重=专一处刑=三重,0615=平钓（磷虾）all=专一泰坦=三重,0613=耐心（刺螠）all=专一守领鳍龙》鱼识耐心（重铁板钩）！！！,0616=平钓（刺螠）7.5-！！！三重=专一石英=三重,0715=平钓（磷虾）all=专一泰坦=三重,0714=平钓（刺螠）！！！三重=专一处刑=三重,0717=耐心（磷虾）all》all=专一刀,0812=耐心（石沙蚕）拍太阳all》all》鱼识耐心（小虾肉笼）拍！！帆！！！,0811=平钓（石沙蚕）11.5-！三重=专一灵敏舞者=三重,0813=平钓（石沙蚕）8-！三重=专一珊瑚=三重,0911=平钓（磷虾）-2.9！！三重=专一人鱼=三重,0912=耐心（磷虾）拍太阳all》all,0914=平钓（石沙蚕）all=专一沉寂=三重,1015=平钓（磷虾）all=专一[泰刺]=三重,1013=平钓（石沙蚕）8-！三重=专一珊瑚=三重,1016=平钓（刺螠）7.5-！！！三重=专一石英=三重,1115=平钓（磷虾）all=专一[泰刺]=三重,1114=平钓（石沙蚕）all=专一沉寂=三重,1117=平钓（磷虾）5-！！三重=专一珍珠=三重,1212=耐心（石沙蚕）拍太阳all》all,1211=平钓（刺螠）！！！三重=专一漏斗=三重,1213=平钓（磷虾）5-！！三重=专一披风=三重,0121=平钓（磷虾）！！三重=专一纺车=三重,0122=耐心（刺螠）all》！！+！！！=专一鬼,0123=平钓（石沙蚕）all=专一[菖黑]=三重,0221=平钓（磷虾）6.1-！三重=专一粉红=三重,0222=平钓（磷虾）6-！！三重=专一毒=三重,0224=平钓（磷虾）5.4-！！三重=专一五色=三重,0321=平钓（磷虾）6.1-！三重=专一粉红=三重,0322=平钓（磷虾）6-！！三重=专一毒=三重,0323=平钓（刺螠）5-！！三重=专一巨型=三重,0421=平钓（刺螠）5-！三重=专一[伪宽]=三重,0422=平钓（石沙蚕）7.5-！三重=专一装甲=三重,0424=平钓（磷虾）5-！！三重=专一鲶鱼=三重,0521=平钓（刺螠）5-！三重=专一[伪宽]=三重,0522=平钓（石沙蚕）7.5-！三重=专一装甲=三重,0523=平钓（刺螠）5-！！三重=专一巨型=三重,0621=平钓（磷虾）！！三重=专一纺车=三重,0622=耐心（刺螠）拍！！飞天！！！》鱼识耐心（磷虾）拍！！飞天！！》！！+！！！,0624=耐心（刺螠）拍乌！》鱼识耐心（石蝇幼虫）拍虎！！！" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
+                      <Action OrderNumber="5" DictVariableOp="Build" DictVariableTarget="空天姬钓饵表" DictVariableValue="=,空天姬钓饵表=1,沙蚕=2585,蛾蛹=2586,潮虫=2587,蝲蛄丸子=2588,虾虎丸子=2589,血蚯蚓=2590,沟鼠尾巴=2591,摇蚊=2592,螃蟹丸子=2593,黄油虫=2594,鲈鱼丸子=2595,单环刺螠=2596,花蝇=2597,鲱鱼丸子=2598,蜜虫=2599,沙蛭=2600,蛀虫=2601,沙壁虎=2602,火萤=2603,滚石=2604,浮游虫=2605,极地磷虾=2606,石蚕=2607,沙毛虫=2608,气球虫=2609,陆行鸟拟饵=2610,漂浮诱饵鱼=2611,黄铜勺形鱼饵=2612,小虾肉笼=2613,乌鸦拟饵=2614,白银勺形鱼饵=2615,铁板钩=2616,下沉诱饵鱼=2617,毛球拟饵=2618,重铁板钩=2619,旋转亮片=2620,磷虾肉笼=2621,秘银勺形鱼饵=2622,雉鸡拟饵=2623,漂浮诱饵蛙=2624,彩虹勺形鱼饵=2625,复合亮片=2626,羽毛拟饵=2627,弓角=2628,石蝇幼虫=12704,土蜘蛛=12705,哥布林钓钩=12706,叶片钓钩=12707,红气球虫=12708,熔岩蠕虫=12709,恶魔蠕虫=12710,残暴水蛭=12711,巨型大蚊=12712,鲑鱼籽=20613,肥蚯蚓=20614,赤虫=20615,蚕蛹=20616,活虾=20617,蔓菁拟饵=20618,悬浮诱饵鱼=20619,嗡嗡石蝇=20675,蓝矶沙蚕=20676,水果蠕虫=27582,藻虾=27583,沙漠蛙=27584,大理石幼虫=27585,力山羊肉干=27586,盗蟹丸=27587,短嘴诱饵鱼=27588,虫箱=27589,乌贼丝=27590,淡水万能饵=27591,海水万能饵=27592,金属亮片=28634,石沙蚕=29714,磷虾=29715,刺螠=29716,万能拟饵=29717,天钢之球=30136,云冠气球虫=30278,云冠红气球虫=30279,云冠大蚊=30280,云冠浮游虫=30281,黄金鱼子=36588,医蛭=36589,天空勺形鱼饵=36590,蜉蝣=36591,虾肉丸子=36592,青花鱼块=36593,灰蚯蚓=36594,奇美拉蠕虫=36595,震撼板钩=36596,星尘=36597,卓越丸子=38808" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="6" DictVariableOp="Build" DictVariableTarget="空天姬钓饵表" DictVariableValue="=,空天姬钓饵表=1,沙蚕=2585,蛾蛹=2586,潮虫=2587,蝲蛄丸子=2588,虾虎丸子=2589,血蚯蚓=2590,沟鼠尾巴=2591,摇蚊=2592,螃蟹丸子=2593,黄油虫=2594,鲈鱼丸子=2595,单环刺螠=2596,花蝇=2597,鲱鱼丸子=2598,蜜虫=2599,沙蛭=2600,蛀虫=2601,沙壁虎=2602,火萤=2603,滚石=2604,浮游虫=2605,极地磷虾=2606,石蚕=2607,沙毛虫=2608,气球虫=2609,陆行鸟拟饵=2610,漂浮诱饵鱼=2611,黄铜勺形鱼饵=2612,小虾肉笼=2613,乌鸦拟饵=2614,白银勺形鱼饵=2615,铁板钩=2616,下沉诱饵鱼=2617,毛球拟饵=2618,重铁板钩=2619,旋转亮片=2620,磷虾肉笼=2621,秘银勺形鱼饵=2622,雉鸡拟饵=2623,漂浮诱饵蛙=2624,彩虹勺形鱼饵=2625,复合亮片=2626,羽毛拟饵=2627,弓角=2628,石蝇幼虫=12704,土蜘蛛=12705,哥布林钓钩=12706,叶片钓钩=12707,红气球虫=12708,熔岩蠕虫=12709,恶魔蠕虫=12710,残暴水蛭=12711,巨型大蚊=12712,鲑鱼籽=20613,肥蚯蚓=20614,赤虫=20615,蚕蛹=20616,活虾=20617,蔓菁拟饵=20618,悬浮诱饵鱼=20619,嗡嗡石蝇=20675,蓝矶沙蚕=20676,水果蠕虫=27582,藻虾=27583,沙漠蛙=27584,大理石幼虫=27585,力山羊肉干=27586,盗蟹丸=27587,短嘴诱饵鱼=27588,虫箱=27589,乌贼丝=27590,淡水万能饵=27591,海水万能饵=27592,金属亮片=28634,石沙蚕=29714,磷虾=29715,刺螠=29716,万能拟饵=29717,天钢之球=30136,云冠气球虫=30278,云冠红气球虫=30279,云冠大蚊=30280,云冠浮游虫=30281,黄金鱼子=36588,医蛭=36589,天空勺形鱼饵=36590,蜉蝣=36591,虾肉丸子=36592,青花鱼块=36593,灰蚯蚓=36594,奇美拉蠕虫=36595,震撼板钩=36596,星尘=36597,卓越丸子=38808" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
+                      <Action OrderNumber="6" DictVariableOp="Build" DictVariableTarget="空天姬航线表" DictVariableValue="=,空天姬航线表=5,101=水母狂魔/冲分,102=横路不通/海洋蟾蜍/冲分*（潮虫）,103=气鲀四海/只有我最鳐摆/冲分*,104=索蒂斯/依拉丝莫龙（火萤、重铁板钩）,105=捕鲨人/冲分/珊瑚蝠鲼（小虾肉笼）,106=哈弗古法/依拉丝莫龙（乌贼丝、重铁板钩）,107=哈弗古法/盾齿龙（乌贼丝）,108=龙马惊神/珊瑚蝠鲼（小虾肉笼）,109=索蒂斯/石骨鱼（火萤、沟鼠尾巴）,110=只有我最鳐摆,111=气鲀四海/石骨鱼（沟鼠尾巴）,112=八爪旅人,201=鱿型中队精英/琉璃龙,202=四海大宝贝/大虾可重新来过/保分*,203=大虾可重新来过/狱之蟹/保分*（乌贼丝）,204=四海大宝贝/塔尼瓦（青花鱼块）,205=鱿型中队精英/塔尼瓦（青花鱼块）,206=琉璃龙/梅泉宝龟（石蝇幼虫）,207=鱿型中队精英/琉璃龙,208=四海大宝贝/大虾可重新来过/保分*,209=大虾可重新来过/狱之蟹/保分*（乌贼丝）,210=四海大宝贝/塔尼瓦（青花鱼块）,211=鱿型中队精英/塔尼瓦（青花鱼块）,212=琉璃龙/梅泉宝龟（石蝇幼虫）" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="7" DictVariableOp="Build" DictVariableTarget="空天姬航线表" DictVariableValue="=,空天姬航线表=5,101=水母狂魔/冲分,102=横路不通/海洋蟾蜍/冲分*（潮虫）,103=气鲀四海/只有我最鳐摆/冲分*,104=索蒂斯/依拉丝莫龙（火萤、重铁板钩）,105=捕鲨人/冲分/珊瑚蝠鲼（小虾肉笼）,106=哈弗古法/依拉丝莫龙（乌贼丝、重铁板钩）,107=哈弗古法/盾齿龙（乌贼丝）,108=龙马惊神/珊瑚蝠鲼（小虾肉笼）,109=索蒂斯/石骨鱼（火萤、沟鼠尾巴）,110=只有我最鳐摆,111=气鲀四海/石骨鱼（沟鼠尾巴）,112=八爪旅人,201=鱿型中队精英/琉璃龙,202=四海大宝贝/大虾可重新来过/保分*,203=大虾可重新来过/狱之蟹/保分*（乌贼丝）,204=四海大宝贝/塔尼瓦（青花鱼块）,205=鱿型中队精英/塔尼瓦（青花鱼块）,206=琉璃龙/梅泉宝龟（石蝇幼虫）,207=鱿型中队精英/琉璃龙,208=四海大宝贝/大虾可重新来过/保分*,209=大虾可重新来过/狱之蟹/保分*（乌贼丝）,210=四海大宝贝/塔尼瓦（青花鱼块）,211=鱿型中队精英/塔尼瓦（青花鱼块）,212=琉璃龙/梅泉宝龟（石蝇幼虫）" DictTargetPersist="True" ActionType="DictVariable" Asynchronous="False">
+                      <Action OrderNumber="7" TriggerOp="EnableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="8" TriggerOp="EnableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="8" TriggerOp="EnableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="9" TriggerOp="EnableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="9" TriggerOp="EnableTrigger" TriggerId="643a1c95-3146-4e69-a65f-ad842851d15f" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="10" TriggerOp="EnableTrigger" TriggerId="643a1c95-3146-4e69-a65f-ad842851d15f" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="10" ActOpType="LogAllNetwork" ActOpBoolParam="True" ActionType="ActInteraction" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="11" ActOpType="LogAllNetwork" ActOpBoolParam="True" ActionType="ActInteraction" Asynchronous="False">
+                      <Action OrderNumber="11" VariableOp="SetNumeric" VariableName="空天姬控制幻海流强心剂修正" VariableExpression="0" VariablePersist="True" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="12" VariableOp="SetNumeric" VariableName="空天姬控制幻海流强心剂修正" VariableExpression="0" VariablePersist="True" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="12" VariableOp="SetNumeric" VariableName="空天姬控制耐心最后杆" VariableExpression="0" VariablePersist="True" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="13" VariableOp="SetNumeric" VariableName="空天姬控制耐心最后杆" VariableExpression="0" VariablePersist="True" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="13" TriggerOp="DisableTrigger" TriggerId="c3e54c94-0d02-4420-9df1-cce1fc60ebcc" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="14" TriggerOp="DisableTrigger" TriggerId="c3e54c94-0d02-4420-9df1-cce1fc60ebcc" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="14" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="消息框" DictVariableValue="3" DictSourcePersist="True" VariableOp="SetNumeric" VariableName="空天姬控制语言" VariableExpression="1" VariablePersist="True" ActionType="DictVariable" ExecutionDelayExpression="1000" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="15" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="消息框" DictVariableValue="3" DictSourcePersist="True" VariableOp="SetNumeric" VariableName="空天姬控制语言" VariableExpression="1" VariablePersist="True" ActionType="DictVariable" ExecutionDelayExpression="1000" Asynchronous="False">
+                      <Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="按某个初始表算起是第几个航线 双击看初始航线表 采用鱼糕的推荐目标作为标识&#xD;&#xA;&#xD;&#xA;240509 0 点起：&#xD;&#xA;&#xD;&#xA;1 = 水母狂魔/冲分          加拉迪翁湾(日)》梅尔托尔海峡南(昏)》罗塔诺海(夜)&#xD;&#xA;&#xD;&#xA;2 = 横路不通/海洋蟾蜍      谢尔达莱群岛(昏)》梅尔托尔海峡北(夜)》绯汐海(日)&#xD;&#xA;&#xD;&#xA;3 = 气鲀四海/只有我最鳐摆  谢尔达莱群岛(昏)》罗塔诺海(夜)》罗斯利特湾(日)&#xD;&#xA;&#xD;&#xA;4 = 索蒂斯/依拉丝莫龙      梅尔托尔海峡南(昏)》加拉迪翁湾(夜)》梅尔托尔海峡北(日)&#xD;&#xA;&#xD;&#xA;5 = 捕鲨人/冲分/珊瑚蝠鲼   加拉迪翁湾(昏)》梅尔托尔海峡南(夜)》罗塔诺海(日)&#xD;&#xA;&#xD;&#xA;6 = 哈弗古法/依拉丝莫龙    谢尔达莱群岛(夜)》梅尔托尔海峡北(日)》绯汐海(昏)&#xD;&#xA;&#xD;&#xA;7 = 哈弗古法/盾齿龙        谢尔达莱群岛(夜)》罗塔诺海(日)》罗斯利特湾(昏)&#xD;&#xA;&#xD;&#xA;8 = 龙马惊神/珊瑚蝠鲼      梅尔托尔海峡南(夜)》加拉迪翁湾(日)》梅尔托尔海峡北(昏)&#xD;&#xA;&#xD;&#xA;9 = 索蒂斯/石骨鱼          加拉迪翁湾(夜)》梅尔托尔海峡南(日)》罗塔诺海(昏)&#xD;&#xA;&#xD;&#xA;10 = 只有我最鳐摆          谢尔达莱群岛(日)》梅尔托尔海峡北(昏)》绯汐海(夜)&#xD;&#xA;&#xD;&#xA;11 = 气鲀四海/石骨鱼       谢尔达莱群岛(日)》罗塔诺海(昏)》罗斯利特湾(夜)&#xD;&#xA;&#xD;&#xA;12 = 八爪旅人              梅尔托尔海峡南(日)》加拉迪翁湾(昏)》梅尔托尔海峡北(夜)" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="按某个初始表算起是第几个航线 双击看初始航线表 采用鱼糕的推荐目标作为标识&#xD;&#xA;&#xD;&#xA;240509 0 点起：&#xD;&#xA;&#xD;&#xA;1 = 水母狂魔/冲分          加拉迪翁湾(日)》梅尔托尔海峡南(昏)》罗塔诺海(夜)&#xD;&#xA;&#xD;&#xA;2 = 横路不通/海洋蟾蜍      谢尔达莱群岛(昏)》梅尔托尔海峡北(夜)》绯汐海(日)&#xD;&#xA;&#xD;&#xA;3 = 气鲀四海/只有我最鳐摆  谢尔达莱群岛(昏)》罗塔诺海(夜)》罗斯利特湾(日)&#xD;&#xA;&#xD;&#xA;4 = 索蒂斯/依拉丝莫龙      梅尔托尔海峡南(昏)》加拉迪翁湾(夜)》梅尔托尔海峡北(日)&#xD;&#xA;&#xD;&#xA;5 = 捕鲨人/冲分/珊瑚蝠鲼   加拉迪翁湾(昏)》梅尔托尔海峡南(夜)》罗塔诺海(日)&#xD;&#xA;&#xD;&#xA;6 = 哈弗古法/依拉丝莫龙    谢尔达莱群岛(夜)》梅尔托尔海峡北(日)》绯汐海(昏)&#xD;&#xA;&#xD;&#xA;7 = 哈弗古法/盾齿龙        谢尔达莱群岛(夜)》罗塔诺海(日)》罗斯利特湾(昏)&#xD;&#xA;&#xD;&#xA;8 = 龙马惊神/珊瑚蝠鲼      梅尔托尔海峡南(夜)》加拉迪翁湾(日)》梅尔托尔海峡北(昏)&#xD;&#xA;&#xD;&#xA;9 = 索蒂斯/石骨鱼          加拉迪翁湾(夜)》梅尔托尔海峡南(日)》罗塔诺海(昏)&#xD;&#xA;&#xD;&#xA;10 = 只有我最鳐摆          谢尔达莱群岛(日)》梅尔托尔海峡北(昏)》绯汐海(夜)&#xD;&#xA;&#xD;&#xA;11 = 气鲀四海/石骨鱼       谢尔达莱群岛(日)》罗塔诺海(昏)》罗斯利特湾(夜)&#xD;&#xA;&#xD;&#xA;12 = 八爪旅人              梅尔托尔海峡南(日)》加拉迪翁湾(昏)》梅尔托尔海峡北(夜)" DescriptionOverride="True">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="这里是新海的初始航线表 采用鱼糕的推荐目标作为标识&#xD;&#xA;&#xD;&#xA;240509 0 点起：鱿型中队精英/塔尼瓦&#xD;&#xA;&#xD;&#xA;1 = 鱿型中队精英/琉璃龙        妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&#xD;&#xA;&#xD;&#xA;2 = 四海大宝贝/大虾可重新来过  妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&#xD;&#xA;&#xD;&#xA;3 = 大虾可重新来过/狱之蟹      妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&#xD;&#xA;&#xD;&#xA;4 = 四海大宝贝/塔尼瓦          妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&#xD;&#xA;&#xD;&#xA;5 = 鱿型中队精英/塔尼瓦        妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&#xD;&#xA;&#xD;&#xA;6 = 琉璃龙/梅泉宝龟            妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)&#xD;&#xA;&#xD;&#xA;7 = 鱿型中队精英/琉璃龙        妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&#xD;&#xA;&#xD;&#xA;8 = 四海大宝贝/大虾可重新来过  妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&#xD;&#xA;&#xD;&#xA;9 = 大虾可重新来过/狱之蟹      妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&#xD;&#xA;&#xD;&#xA;10 = 四海大宝贝/塔尼瓦         妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&#xD;&#xA;&#xD;&#xA;11 = 鱿型中队精英/塔尼瓦       妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&#xD;&#xA;&#xD;&#xA;12 = 琉璃龙/梅泉宝龟           妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)" DescriptionOverride="True">
+                      <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="这里是新海的初始航线表 采用鱼糕的推荐目标作为标识&#xD;&#xA;&#xD;&#xA;240509 0 点起：鱿型中队精英/塔尼瓦&#xD;&#xA;&#xD;&#xA;1 = 鱿型中队精英/琉璃龙        妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&#xD;&#xA;&#xD;&#xA;2 = 四海大宝贝/大虾可重新来过  妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&#xD;&#xA;&#xD;&#xA;3 = 大虾可重新来过/狱之蟹      妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&#xD;&#xA;&#xD;&#xA;4 = 四海大宝贝/塔尼瓦          妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&#xD;&#xA;&#xD;&#xA;5 = 鱿型中队精英/塔尼瓦        妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&#xD;&#xA;&#xD;&#xA;6 = 琉璃龙/梅泉宝龟            妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)&#xD;&#xA;&#xD;&#xA;7 = 鱿型中队精英/琉璃龙        妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&#xD;&#xA;&#xD;&#xA;8 = 四海大宝贝/大虾可重新来过  妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&#xD;&#xA;&#xD;&#xA;9 = 大虾可重新来过/狱之蟹      妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&#xD;&#xA;&#xD;&#xA;10 = 四海大宝贝/塔尼瓦         妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&#xD;&#xA;&#xD;&#xA;11 = 鱿型中队精英/塔尼瓦       妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&#xD;&#xA;&#xD;&#xA;12 = 琉璃龙/梅泉宝龟           妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -6088,6 +6085,9 @@
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${_const[TriggernometryVersionMajor]} * 1000^3 + ${_const[TriggernometryVersionMinor]} * 1000^2 + ${_const[TriggernometryVersionBuild]} * 1000 + ${_const[TriggernometryVersionRevision]}" ExpressionTypeL="Numeric" ExpressionR="1 * 1000^3 + 2 * 1000^2 + 0 * 1000 + 115" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                     </Condition>
+                  </Action>
+                  <Action OrderNumber="6" TriggerId="c3e54c94-0d02-4420-9df1-cce1fc60ebcc" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+                    <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />
@@ -7846,703 +7846,706 @@
           <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="【空天姬】新能源钓竿丨by 黑色公主切萝莉肥 本触发器系免费的丨特别鸣谢：MnFeN  FraGilE  欧尼棒棒" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="    ⚠ 需要完成所有 捕鱼人 职业任务，否则功能可能出现错误。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="    ⚠ 未在导入或执行打开配置窗口时出现“初始化成功”的提示窗口时功能会错误⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="3" Enabled="False" ActionType="Placeholder" Description="    ⚠ 触发器与卫月 Chat2 、STP 的修改时间戳样式冲突，因其会改变日志并导致触发器无法工作。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="3" Enabled="False" ActionType="Placeholder" Description="    ⚠ 需要完成所有 捕鱼人 职业任务，否则功能可能出现错误。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="4" Enabled="False" ActionType="Placeholder" Description="    ⚠ 某些卫月插件会改变游戏消息窗口，可能会导致触发器无法匹配到预期日志而无法工作。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="4" Enabled="False" ActionType="Placeholder" Description="    ⚠ 触发器与卫月 Chat2 、STP 的修改时间戳样式冲突，因其会改变日志并导致触发器无法工作。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="5" Enabled="False" ActionType="Placeholder" Description="    ⚠ 国际服 需要安装本地化汉化，否则无法使用。（需要等待未来 Cactbot 日志行适配）⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="5" Enabled="False" ActionType="Placeholder" Description="    ⚠ 某些卫月插件会改变游戏消息窗口，可能会导致触发器无法匹配到预期日志而无法工作。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="6" Enabled="False" ActionType="Placeholder" Description="    🔲 必备：高级触发器 1.2.0.115+、鲶鱼精 1.3.3.0+、CactbotOverlay、Cafe.Matcha（抹茶）" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="6" Enabled="False" ActionType="Placeholder" Description="    ⚠ 国际服 需要安装本地化汉化，否则无法使用。（需要等待未来 Cactbot 日志行适配）⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="7" Enabled="False" ActionType="Placeholder" Description="       换饵：卫月 SimpleTweaksPlugin 的 Bait Command 功能；或 ACT 插件 WocGua.dll（两者选其一）" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="7" Enabled="False" ActionType="Placeholder" Description="    🔲 必备：高级触发器 1.2.0.115+、鲶鱼精 1.3.3.0+、CactbotOverlay、Cafe.Matcha（抹茶）" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Description="    🔲 勾选 Cafe.Matcha（抹茶）的兼容模式；启动卫月 STP 的 Bait 功能，主命令使用默认的“bait”；" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Description="       换饵：卫月 SimpleTweaksPlugin 的 Bait Command 功能；或 ACT 插件 WocGua.dll（两者选其一）" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="9" Enabled="False" ActionType="Placeholder" Description="    🔲 插件排序：（1）FFXIV_ACT_Plugin（2）OverlayPlugin（3）Triggernometry（4）CactbotOverlay" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="9" Enabled="False" ActionType="Placeholder" Description="    🔲 勾选 Cafe.Matcha（抹茶）的兼容模式；启动卫月 STP 的 Bait 功能，主命令使用默认的“bait”；" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="10" Enabled="False" ActionType="Placeholder" Description="                 （5）PostNamazu（6）WocGua.dll（如有）（7）Cafe.Matcha（其他无关紧要的插件）" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="10" Enabled="False" ActionType="Placeholder" Description="    🔲 插件排序：（1）FFXIV_ACT_Plugin（2）OverlayPlugin（3）Triggernometry（4）CactbotOverlay" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="11" Enabled="False" ActionType="Placeholder" Description="    🔲 使用“/e 空天姬配置”打开界面填写配置；勾选聊天栏的默语（灰字）及采集系统信息（即粉字频道）。" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="11" Enabled="False" ActionType="Placeholder" Description="                 （5）PostNamazu（6）WocGua.dll（如有）（7）Cafe.Matcha（其他无关紧要的插件）" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="    使用中如有预料外情况或有功能建议，敬请联系作者以帮助本触发器完善功能；空天姬群：959153665" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="    🔲 使用“/e 空天姬配置”打开界面填写配置；勾选聊天栏的默语（灰字）及采集系统信息（即粉字频道）。" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="    ·请确保要报告给作者的预料外情况是最新版本下出现的。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="    使用中如有预料外情况或有功能建议，敬请联系作者以帮助本触发器完善功能；空天姬群：959153665" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="     WocGua.dll 的换饵功能无须激活。" DescBgColor="ffd" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="    ·请确保要报告给作者的预料外情况是最新版本下出现的。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="  ·目录：功能简介·命令结构·参数解释·命令实例" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="     WocGua.dll 的换饵功能无须激活。" DescBgColor="ffd" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="    功能简介：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="  ·目录：功能简介·命令结构·参数解释·命令实例" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="    自动功能：" DescriptionOverride="True">
+          <Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="    功能简介：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="    ·自动钓鱼：自定义参数命令，内置手法、支持多种模式，包括 ET 等待、收藏品、计数等。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="    自动功能：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="    ·自动海钓：输入命令启动自动冲分（暂不支持只钓蓝鱼与成就）" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="    ·自动钓鱼：自定义参数命令，内置手法、支持多种模式，包括 ET 等待、收藏品、计数等。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="    ·自定义预设：输入包含自动钓鱼参数的命令保存为自定义预设。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="    ·自动海钓：输入命令启动自动冲分（暂不支持只钓蓝鱼与成就）" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="      完全收杆停止钓鱼将终止除自动海钓外的所有自动操作。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="    ·自定义预设：输入包含自动钓鱼参数的命令保存为自定义预设。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="    工具功能：" DescriptionOverride="True">
+          <Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="      完全收杆停止钓鱼将终止除自动海钓外的所有自动操作。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="    ·悬浮窗：显示竿时、咬饵竿型、幻海时间、采集力回复时间。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="    工具功能：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="    ·播报信息：本轮钓鱼信息，海钓时的普海钓饵、幻海流时长。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="    ·悬浮窗：显示竿时、咬饵竿型、幻海时间、采集力回复时间。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="    ·计数：输入命令来记录钓到了多少条指定鱼。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="    ·播报信息：本轮钓鱼信息，海钓时的普海钓饵、幻海流时长。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="    ·查询航线：输入命令查询当次及下次出海垂钓的航线。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="    ·计数：输入命令来记录钓到了多少条指定鱼。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="      相关播报内容会在游戏中聊天栏的『默语』频道出现。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="    ·查询航线：输入命令查询当次及下次出海垂钓的航线。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="      主分组下的勾选项配置在以下情况时应用：打开【用户配置】、自动命令、收杆动作。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="      相关播报内容会在游戏中聊天栏的『默语』频道出现。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="      敬请触发器开发者留意：如勾选抹茶【兼容模式】，当次运行的首次咬饵时会关闭【记录网络数据】。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="      主分组下的勾选项配置在以下情况时应用：打开【用户配置】、自动命令、收杆动作。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="30" Enabled="False" ActionType="Placeholder" Description="    已知问题（这些问题作者难以修复）：" DescriptionOverride="True">
+          <Action OrderNumber="30" Enabled="False" ActionType="Placeholder" Description="      敬请触发器开发者留意：如勾选抹茶【兼容模式】，当次运行的首次咬饵时会关闭【记录网络数据】。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Description="    ⚠ 游戏在启动或关闭时，可能由 WocGua.dll 导致其崩溃 ⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Description="    已知问题（这些问题作者难以修复）：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="32" Enabled="False" ActionType="Placeholder" Description="    ⚠ 钓饵不足时系统将强制收杆，此时空天姬不会发出任何提示，因此请保证携带了足够的钓饵！⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="32" Enabled="False" ActionType="Placeholder" Description="    ⚠ 游戏在启动或关闭时，可能由 WocGua.dll 导致其崩溃 ⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description="    ·在更换区域时消息窗口可能会报出无法调整系统音的提示。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description="    ⚠ 钓饵不足时系统将强制收杆，此时空天姬不会发出任何提示，因此请保证携带了足够的钓饵！⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="34" Enabled="False" ActionType="Placeholder" Description="    ·在海钓区域可能会出现意料之外的错误（例如掉线重连时下次幻海计时可能会错误）。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="34" Enabled="False" ActionType="Placeholder" Description="    ·在更换区域时消息窗口可能会报出无法调整系统音的提示。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="35" Enabled="False" ActionType="Placeholder" Description="    ·将含有钓饵参数的命令保存为自定义参数时，将错误播报自定义参数序号为 0，但保存不会失败。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="35" Enabled="False" ActionType="Placeholder" Description="    ·在海钓区域可能会出现意料之外的错误（例如掉线重连时下次幻海计时可能会错误）。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="    ·已抛竿时立刻输入自动的新参数，可能不会根据输入的新参数自动对下一杆进行预想的提钩动作。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="    ·将含有钓饵参数的命令保存为自定义参数时，将错误播报自定义参数序号为 0，但保存不会失败。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="    命令结构：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="    ·已抛竿时立刻输入自动的新参数，可能不会根据输入的新参数自动对下一杆进行预想的提钩动作。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="    ·工具命令" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="    命令结构：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="    ·工具命令" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="        部分命令只在角色职业为捕鱼人时生效" DescBgColor="ffd" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="41" Enabled="False" ActionType="Placeholder" Description="    ·打开用户配置界面：" DescriptionOverride="True">
+          <Action OrderNumber="41" Enabled="False" ActionType="Placeholder" Description="        部分命令只在角色职业为捕鱼人时生效" DescBgColor="ffd" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="42" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬配置" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="42" Enabled="False" ActionType="Placeholder" Description="    ·打开用户配置界面：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="43" Enabled="False" ActionType="Placeholder" Description="          /e ktj cfg" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="43" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬配置" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="44" Enabled="False" ActionType="Placeholder" Description="    ·航线预报：" DescriptionOverride="True">
+          <Action OrderNumber="44" Enabled="False" ActionType="Placeholder" Description="          /e ktj cfg" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="45" Enabled="False" ActionType="Placeholder" Description="          /e 航线" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="45" Enabled="False" ActionType="Placeholder" Description="    ·航线预报：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="46" Enabled="False" ActionType="Placeholder" Description="          /e ktjhx" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="46" Enabled="False" ActionType="Placeholder" Description="          /e 航线" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="47" Enabled="False" ActionType="Placeholder" Description="      ·以鱼糕推荐标签作为标识，同时会播报需要携带的钓饵。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="47" Enabled="False" ActionType="Placeholder" Description="          /e ktjhx" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="48" Enabled="False" ActionType="Placeholder" Description="        带星号的“冲分”标识是作者额外添加的。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="48" Enabled="False" ActionType="Placeholder" Description="      ·以鱼糕推荐标签作为标识，同时会播报需要携带的钓饵。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="49" Enabled="False" ActionType="Placeholder" Description="    ·计数：" DescriptionOverride="True">
+          <Action OrderNumber="49" Enabled="False" ActionType="Placeholder" Description="        带星号的“冲分”标识是作者额外添加的。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="50" Enabled="False" ActionType="Placeholder" Description="          /e 计数[关键词]；" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="50" Enabled="False" ActionType="Placeholder" Description="    ·计数：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description="      ·可在关键词前加上数量，此时将在触发鱼识时清空已钓上的数量；" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description="          /e 计数[关键词]；" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="52" Enabled="False" ActionType="Placeholder" Description="        如“/e 计数3以太；”或“/e 计数3额；2未；1法；”" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="52" Enabled="False" ActionType="Placeholder" Description="      ·可在关键词前加上数量，此时将在触发鱼识时清空已钓上的数量；" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="53" Enabled="False" ActionType="Placeholder" Description="        ·支持最多 3 组计数，在更换区域或输入“/e 计数”时完全清空。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="53" Enabled="False" ActionType="Placeholder" Description="        如“/e 计数3以太；”或“/e 计数3额；2未；1法；”" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="    ·自动钓鱼命令" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="        ·支持最多 3 组计数，在更换区域或输入“/e 计数”时完全清空。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="55" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="55" Enabled="False" ActionType="Placeholder" Description="    ·自动钓鱼命令" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="56" Enabled="False" ActionType="Placeholder" Description="    ⚠ 输入自动钓鱼命令前请使角色面对可钓鱼的水域。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="56" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="57" Enabled="False" ActionType="Placeholder" Description="    ·打开命令生成器及功能界面：" DescriptionOverride="True">
+          <Action OrderNumber="57" Enabled="False" ActionType="Placeholder" Description="    ⚠ 输入自动钓鱼命令前请使角色面对可钓鱼的水域。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description="    ·打开命令生成器及功能界面：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="59" Enabled="False" ActionType="Placeholder" Description="          /e ktj" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="59" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="60" Enabled="False" ActionType="Placeholder" Description="    ·测试基本自动功能：" DescriptionOverride="True">
+          <Action OrderNumber="60" Enabled="False" ActionType="Placeholder" Description="          /e ktj" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="61" Enabled="False" ActionType="Placeholder" Description="          /e 平钓（万能拟饵）all" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="61" Enabled="False" ActionType="Placeholder" Description="    ·测试基本自动功能：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="62" Enabled="False" ActionType="Placeholder" Description="      ·也可以使用命令生成器中的“启动调试”按钮。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="62" Enabled="False" ActionType="Placeholder" Description="          /e 平钓（万能拟饵）all" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="63" Enabled="False" ActionType="Placeholder" Description="          如手动更换万能拟饵后再勾选空天姬分组，将无法正常获得刚才的钓饵信息，因此请再切换一次。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="63" Enabled="False" ActionType="Placeholder" Description="      ·也可以使用命令生成器中的“启动调试”按钮。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="64" Enabled="False" ActionType="Placeholder" Description="          如执行后数秒未成功换饵，可能是存在卫月插件冲突。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="64" Enabled="False" ActionType="Placeholder" Description="          如手动更换万能拟饵后再勾选空天姬分组，将无法正常获得刚才的钓饵信息，因此请再切换一次。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="65" Enabled="False" ActionType="Placeholder" Description="    ·停止自动功能：" DescriptionOverride="True">
+          <Action OrderNumber="65" Enabled="False" ActionType="Placeholder" Description="          如执行后数秒未成功换饵，可能是存在卫月插件冲突。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="66" Enabled="False" ActionType="Placeholder" Description="          /e 停止" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="66" Enabled="False" ActionType="Placeholder" Description="    ·停止自动功能：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="67" Enabled="False" ActionType="Placeholder" Description="          /e kend" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="67" Enabled="False" ActionType="Placeholder" Description="          /e 停止" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="68" Enabled="False" ActionType="Placeholder" Description="      ·停止自动动作并销毁自动参数（并停止自动海钓），终止 ET 计时。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="68" Enabled="False" ActionType="Placeholder" Description="          /e kend" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="69" Enabled="False" ActionType="Placeholder" Description="    ·启动海钓冲分：" DescriptionOverride="True">
+          <Action OrderNumber="69" Enabled="False" ActionType="Placeholder" Description="      ·停止自动动作并销毁自动参数（并停止自动海钓），终止 ET 计时。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="70" Enabled="False" ActionType="Placeholder" Description="          /e 冲分确定" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="70" Enabled="False" ActionType="Placeholder" Description="    ·启动海钓冲分：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="71" Enabled="False" ActionType="Placeholder" Description="      ·启动后全程自动，海域更换后也将自动抛竿。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="71" Enabled="False" ActionType="Placeholder" Description="          /e 冲分确定" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="72" Enabled="False" ActionType="Placeholder" Description="        必须带齐本次航线所需的所有鱼饵 + 万能拟饵，并留出 40 格左右背包空间。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="72" Enabled="False" ActionType="Placeholder" Description="      ·启动后全程自动，海域更换后也将自动抛竿。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="73" Enabled="False" ActionType="Placeholder" Description="        ·普通钓饵至少 50 个，拟饵至少 3 个。（不知道带什么请百度“FF14鱼糕”）" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="73" Enabled="False" ActionType="Placeholder" Description="        必须带齐本次航线所需的所有鱼饵 + 万能拟饵，并留出 40 格左右背包空间。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="74" Enabled="False" ActionType="Placeholder" Description="        ·手法为基本的普海攒资源、幻海对目标竿三提等等，会摸部分蓝鱼。（关于分数：运气很重要）" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="74" Enabled="False" ActionType="Placeholder" Description="        ·普通钓饵至少 50 个，拟饵至少 3 个。（不知道带什么请百度“FF14鱼糕”）" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="75" Enabled="False" ActionType="Placeholder" Description="        ·最终分数通常 1 万左右，冲分航线极限分数高于 4 万（作者挂机测试时曾出过三万八）。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="75" Enabled="False" ActionType="Placeholder" Description="        ·手法为基本的普海攒资源、幻海对目标竿三提等等，会摸部分蓝鱼。（关于分数：运气很重要）" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="76" Enabled="False" ActionType="Placeholder" Description="    ·自定义参数自动钓鱼：" DescriptionOverride="True">
+          <Action OrderNumber="76" Enabled="False" ActionType="Placeholder" Description="        ·最终分数通常 1 万左右，冲分航线极限分数高于 4 万（作者挂机测试时曾出过三万八）。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="77" Enabled="False" ActionType="Placeholder" Description="          /e [模式]（[钓饵]）拍[拍水目标最短竿时]+[拍水目标最短非撒饵竿时]~[拍水目标最长竿时]+" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="77" Enabled="False" ActionType="Placeholder" Description="    ·自定义参数自动钓鱼：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="78" Enabled="False" ActionType="Placeholder" Description="          [拍水目标最长非撒饵竿时][拍水目标竿型][拍水目标技巧提钩类型][拍水目标关键词]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="78" Enabled="False" ActionType="Placeholder" Description="          /e [模式]（[钓饵]）拍[拍水目标最短竿时]+[拍水目标最短非撒饵竿时]~[拍水目标最长竿时]+" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="79" Enabled="False" ActionType="Placeholder" Description="          [目标1最短竿时]+[目标1最短非撒饵竿时]~[目标1最长竿时]+[目标1最长非撒饵竿时][目标1竿型]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="79" Enabled="False" ActionType="Placeholder" Description="          [拍水目标最长非撒饵竿时][拍水目标竿型][拍水目标技巧提钩类型][拍水目标关键词]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="80" Enabled="False" ActionType="Placeholder" Description="          [目标1技巧提钩类型][目标1]》[目标2最短竿时]~[目标2最长竿时][目标2竿型][目标2技巧提钩类型]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="80" Enabled="False" ActionType="Placeholder" Description="          [目标1最短竿时]+[目标1最短非撒饵竿时]~[目标1最长竿时]+[目标1最长非撒饵竿时][目标1竿型]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="81" Enabled="False" ActionType="Placeholder" Description="          [目标2]》[目标3最短竿时]~[目标3最长竿时][目标3竿型][目标3技巧提钩类型][目标3]》" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="81" Enabled="False" ActionType="Placeholder" Description="          [目标1技巧提钩类型][目标1]》[目标2最短竿时]~[目标2最长竿时][目标2竿型][目标2技巧提钩类型]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="82" Enabled="False" ActionType="Placeholder" Description="          [目标4最短竿时]~[目标4最长竿时][目标4竿型][目标4技巧提钩类型][最小窗口期]~[最小窗口期]=" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="82" Enabled="False" ActionType="Placeholder" Description="          [目标2]》[目标3最短竿时]~[目标3最长竿时][目标3竿型][目标3技巧提钩类型][目标3]》" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="83" Enabled="False" ActionType="Placeholder" Description="          [最终目标]=专一[专一目标]=[专一后多提]》鱼识[鱼识参数]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="83" Enabled="False" ActionType="Placeholder" Description="          [目标4最短竿时]~[目标4最长竿时][目标4竿型][目标4技巧提钩类型][最小窗口期]~[最小窗口期]=" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="84" Enabled="False" ActionType="Placeholder" Description="      ·自定义接受的参数请参考下方的【自定义命令参数解释】。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="84" Enabled="False" ActionType="Placeholder" Description="          [最终目标]=专一[专一目标]=[专一后多提]》鱼识[鱼识参数]" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="85" Enabled="False" ActionType="Placeholder" Description="    ·查看自定义参数列表及指引：" DescriptionOverride="True">
+          <Action OrderNumber="85" Enabled="False" ActionType="Placeholder" Description="      ·自定义接受的参数请参考下方的【自定义命令参数解释】。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="86" Enabled="False" ActionType="Placeholder" Description="          /e 自定义" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="86" Enabled="False" ActionType="Placeholder" Description="    ·查看自定义参数列表及指引：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="87" Enabled="False" ActionType="Placeholder" Description="      ·可以录入以模式或“计数”开头的功能命令。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="87" Enabled="False" ActionType="Placeholder" Description="          /e 自定义" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="88" Enabled="False" ActionType="Placeholder" Description="      ·录入的命令大于 10 个时，呼出的列表可能会被截断。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="88" Enabled="False" ActionType="Placeholder" Description="      ·可以录入以模式或“计数”开头的功能命令。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="89" Enabled="False" ActionType="Placeholder" Description="    ·查看作者留置的预设：" DescriptionOverride="True">
+          <Action OrderNumber="89" Enabled="False" ActionType="Placeholder" Description="      ·录入的命令大于 10 个时，呼出的列表可能会被截断。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="90" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="90" Enabled="False" ActionType="Placeholder" Description="    ·查看作者留置的预设：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="91" Enabled="False" ActionType="Placeholder" Description="      ·此功能缺少维护，仅有两条预设。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="91" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="92" Enabled="False" ActionType="Placeholder" Description="    自定义命令参数解释：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="92" Enabled="False" ActionType="Placeholder" Description="      ·此功能缺少维护，仅有两条预设。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="93" Enabled="False" ActionType="Placeholder" Description="      再下一章：自定义参数自动命令实例" DescBgColor="ffd" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="93" Enabled="False" ActionType="Placeholder" Description="    自定义命令参数解释：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="94" Enabled="False" ActionType="Placeholder" Description="    ·通用参数" DescriptionOverride="True">
+          <Action OrderNumber="94" Enabled="False" ActionType="Placeholder" Description="      再下一章：自定义参数自动命令实例" DescBgColor="ffd" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="95" Enabled="False" ActionType="Placeholder" Description="      ·模式参数：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="95" Enabled="False" ActionType="Placeholder" Description="    ·通用参数" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="96" Enabled="False" ActionType="Placeholder" Description="        ·平钓 = 如非特殊，不使用大尺寸相关的技能" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="96" Enabled="False" ActionType="Placeholder" Description="      ·模式参数：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="97" Enabled="False" ActionType="Placeholder" Description="        ·大鱼 = 使用“大鱼猎手”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="97" Enabled="False" ActionType="Placeholder" Description="        ·平钓 = 如非特殊，不使用大尺寸相关的技能" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="98" Enabled="False" ActionType="Placeholder" Description="        ·耐心 = 使用“耐心II”，不指定其他特殊参数时也会使用“熟练渔技”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="98" Enabled="False" ActionType="Placeholder" Description="        ·大鱼 = 使用“大鱼猎手”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="99" Enabled="False" ActionType="Placeholder" Description="      ·钓饵：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="99" Enabled="False" ActionType="Placeholder" Description="        ·耐心 = 使用“耐心II”，不指定其他特殊参数时也会使用“熟练渔技”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="100" Enabled="False" ActionType="Placeholder" Description="        ·（） = 一对全角括号，钓饵参数前后缀，也可使用半角括号“()”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="100" Enabled="False" ActionType="Placeholder" Description="      ·钓饵：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="101" Enabled="False" ActionType="Placeholder" Description="        ·（沙蚕） = 钓饵参数，需要紧跟在模式参数的后方，只能填写钓饵的中文全称" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="101" Enabled="False" ActionType="Placeholder" Description="        ·（） = 一对全角括号，钓饵参数前后缀，也可使用半角括号“()”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="102" Enabled="False" ActionType="Placeholder" Description="          必须确认背包里有参数中所有所需钓饵 + 万能拟饵。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="102" Enabled="False" ActionType="Placeholder" Description="        ·（沙蚕） = 钓饵参数，需要紧跟在模式参数的后方，只能填写钓饵的中文全称" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="103" Enabled="False" ActionType="Placeholder" Description="      ·竿时：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="103" Enabled="False" ActionType="Placeholder" Description="          必须确认背包里有参数中所有所需钓饵 + 万能拟饵。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="104" Enabled="False" ActionType="Placeholder" Description="        ·59.9 = 竿时数字格式，支持至多 1 位小数" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="104" Enabled="False" ActionType="Placeholder" Description="      ·竿时：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="105" Enabled="False" ActionType="Placeholder" Description="          输入的竿时不应超过或等于 60 秒。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="105" Enabled="False" ActionType="Placeholder" Description="        ·59.9 = 竿时数字格式，支持至多 1 位小数" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="106" Enabled="False" ActionType="Placeholder" Description="        ·+ = 加号，撒饵竿时连接符，连接使用与不使用“撒饵”技能时不同竿时的符号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="106" Enabled="False" ActionType="Placeholder" Description="          输入的竿时不应超过或等于 60 秒。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="107" Enabled="False" ActionType="Placeholder" Description="        ·~ = 波浪号，连接最短与最长竿时的符号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="107" Enabled="False" ActionType="Placeholder" Description="        ·+ = 加号，撒饵竿时连接符，连接使用与不使用“撒饵”技能时不同竿时的符号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="108" Enabled="False" ActionType="Placeholder" Description="        ·- = 减号，作用同上" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="108" Enabled="False" ActionType="Placeholder" Description="        ·~ = 波浪号，连接最短与最长竿时的符号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="109" Enabled="False" ActionType="Placeholder" Description="        ·~23 = 波浪号与数字 23，表示钓 23 秒以下的鱼" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="109" Enabled="False" ActionType="Placeholder" Description="        ·- = 减号，作用同上" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="110" Enabled="False" ActionType="Placeholder" Description="        ·5.3+15~ = 被撒饵竿时连接的数字 5.3 与 15，表示钓撒饵时 5.3 秒、非撒饵时 15 秒以上的鱼" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="110" Enabled="False" ActionType="Placeholder" Description="        ·~23 = 波浪号与数字 23，表示钓 23 秒以下的鱼" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="111" Enabled="False" ActionType="Placeholder" Description="      ·竿型：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="111" Enabled="False" ActionType="Placeholder" Description="        ·5.3+15~ = 被撒饵竿时连接的数字 5.3 与 15，表示钓撒饵时 5.3 秒、非撒饵时 15 秒以上的鱼" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="112" Enabled="False" ActionType="Placeholder" Description="        ·！ = 叹号，不分中英文，单独出现时表示轻杆（游戏中鱼咬钩时的杆震特效图形）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="112" Enabled="False" ActionType="Placeholder" Description="      ·竿型：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="113" Enabled="False" ActionType="Placeholder" Description="        ·！！ = 2 个叹号，表示中杆（游戏中鱼咬钩时的杆震特效图形）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="113" Enabled="False" ActionType="Placeholder" Description="        ·！ = 叹号，不分中英文，单独出现时表示轻杆（游戏中鱼咬钩时的杆震特效图形）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="114" Enabled="False" ActionType="Placeholder" Description="        ·！！！ = 3 个叹号，表示鱼王杆/重杆（游戏中鱼咬钩时的杆震特效图形）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="114" Enabled="False" ActionType="Placeholder" Description="        ·！！ = 2 个叹号，表示中杆（游戏中鱼咬钩时的杆震特效图形）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="115" Enabled="False" ActionType="Placeholder" Description="        ·+ = 加号，连接某个以小钓大阶段中的多个竿型的符号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="115" Enabled="False" ActionType="Placeholder" Description="        ·！！！ = 3 个叹号，表示鱼王杆/重杆（游戏中鱼咬钩时的杆震特效图形）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="116" Enabled="False" ActionType="Placeholder" Description="        ·！+！！ = 用加号连接的两组叹号，表示该阶段的目标是轻杆与中杆" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="116" Enabled="False" ActionType="Placeholder" Description="        ·+ = 加号，连接某个以小钓大阶段中的多个竿型的符号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="117" Enabled="False" ActionType="Placeholder" Description="        ·全部 = 表示所有竿型" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="117" Enabled="False" ActionType="Placeholder" Description="        ·！+！！ = 用加号连接的两组叹号，表示该阶段的目标是轻杆与中杆" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="118" Enabled="False" ActionType="Placeholder" Description="        ·ALL = 不分大小写，表示所有竿型" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="118" Enabled="False" ActionType="Placeholder" Description="        ·全部 = 表示所有竿型" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="119" Enabled="False" ActionType="Placeholder" Description="      ·技巧提钩：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="119" Enabled="False" ActionType="Placeholder" Description="        ·ALL = 不分大小写，表示所有竿型" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="120" Enabled="False" ActionType="Placeholder" Description="        ·精准 = 使用精准提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="120" Enabled="False" ActionType="Placeholder" Description="      ·技巧提钩：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="121" Enabled="False" ActionType="Placeholder" Description="        ·强力 = 使用强力提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="121" Enabled="False" ActionType="Placeholder" Description="        ·精准 = 使用精准提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="122" Enabled="False" ActionType="Placeholder" Description="          可省略，默认对！！！使用强力提钩。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="122" Enabled="False" ActionType="Placeholder" Description="        ·强力 = 使用强力提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="123" Enabled="False" ActionType="Placeholder" Description="        ·双重 = 使用双重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="123" Enabled="False" ActionType="Placeholder" Description="          可省略，默认对！！！使用强力提钩。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="124" Enabled="False" ActionType="Placeholder" Description="        ·三重 = 使用三重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="124" Enabled="False" ActionType="Placeholder" Description="        ·双重 = 使用双重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="125" Enabled="False" ActionType="Placeholder" Description="          多重提钩参数仅限垂钓的 1、2 阶段。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="125" Enabled="False" ActionType="Placeholder" Description="        ·三重 = 使用三重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="126" Enabled="False" ActionType="Placeholder" Description="      ·窗口期：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="126" Enabled="False" ActionType="Placeholder" Description="          多重提钩参数仅限垂钓的 1、2 阶段。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="127" Enabled="False" ActionType="Placeholder" Description="        ·0000-0800 = 窗口期格式，艾欧尼亚时间，连接符同竿时，可使用波浪号与减号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="127" Enabled="False" ActionType="Placeholder" Description="      ·窗口期：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="128" Enabled="False" ActionType="Placeholder" Description="          当游戏内 ET 时间处在设定的最小 ET 时间后将立即抛竿。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="128" Enabled="False" ActionType="Placeholder" Description="        ·0000-0800 = 窗口期格式，艾欧尼亚时间，连接符同竿时，可使用波浪号与减号" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="129" Enabled="False" ActionType="Placeholder" Description="          ·游戏显示的 ET 系根据本地电脑时间计算，而非实际的服务器 ET，而空天姬更接近于实际 ET。" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="129" Enabled="False" ActionType="Placeholder" Description="          当游戏内 ET 时间处在设定的最小 ET 时间后将立即抛竿。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="130" Enabled="False" ActionType="Placeholder" Description="    ·特殊参数" DescriptionOverride="True">
+          <Action OrderNumber="130" Enabled="False" ActionType="Placeholder" Description="          ·游戏显示的 ET 系根据本地电脑时间计算，而非实际的服务器 ET，而空天姬更接近于实际 ET。" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="131" Enabled="False" ActionType="Placeholder" Description="      ·拍击水面：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="131" Enabled="False" ActionType="Placeholder" Description="    ·特殊参数" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="132" Enabled="False" ActionType="Placeholder" Description="        ·拍 = 固有前缀，表示对符合接下来部分参数的目标使用技能“拍击水面”，需紧跟在模式参数后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="132" Enabled="False" ActionType="Placeholder" Description="      ·拍击水面：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="133" Enabled="False" ActionType="Placeholder" Description="        拍水目标的关键词不能写入英文或数字以及除“[]”之外的符号。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="133" Enabled="False" ActionType="Placeholder" Description="        ·拍 = 固有前缀，表示对符合接下来部分参数的目标使用技能“拍击水面”，需紧跟在模式参数后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="134" Enabled="False" ActionType="Placeholder" Description="        在拍水目标参数后应填写首条目标鱼的参数。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="134" Enabled="False" ActionType="Placeholder" Description="        拍水目标的关键词不能写入英文或数字以及除“[]”之外的符号。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="135" Enabled="False" ActionType="Placeholder" Description="        省略拍水竿时与竿型时，将采用以小钓大第一阶段的竿时与竿型。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="135" Enabled="False" ActionType="Placeholder" Description="        在拍水目标参数后应填写首条目标鱼的参数。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="136" Enabled="False" ActionType="Placeholder" Description="      ·拍水目标及钓鱼阶段目标：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="136" Enabled="False" ActionType="Placeholder" Description="        省略拍水竿时与竿型时，将采用以小钓大第一阶段的竿时与竿型。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="137" Enabled="False" ActionType="Placeholder" Description="        支持部分正则表达式。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="137" Enabled="False" ActionType="Placeholder" Description="      ·拍水目标及钓鱼阶段目标：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="138" Enabled="False" ActionType="Placeholder" Description="        ·. = 点，或叫英文句点、小数点，表示任何字符" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="138" Enabled="False" ActionType="Placeholder" Description="        支持部分正则表达式。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="139" Enabled="False" ActionType="Placeholder" Description="        ·[关键字] = 中括号，其中包括关键字" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="139" Enabled="False" ActionType="Placeholder" Description="        ·. = 点，或叫英文句点、小数点，表示任何字符" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="140" Enabled="False" ActionType="Placeholder" Description="          如“[鲱虾]”表示目标名称含有“鲱”或者“虾”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="140" Enabled="False" ActionType="Placeholder" Description="        ·[关键字] = 中括号，其中包括关键字" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="141" Enabled="False" ActionType="Placeholder" Description="      ·以小钓大：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="141" Enabled="False" ActionType="Placeholder" Description="          如“[鲱虾]”表示目标名称含有“鲱”或者“虾”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="142" Enabled="False" ActionType="Placeholder" Description="        以小钓大阶段参数的竿时不应带有非“撒饵”技能状态时的竿时（除第 1 阶段）。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="142" Enabled="False" ActionType="Placeholder" Description="      ·以小钓大：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="143" Enabled="False" ActionType="Placeholder" Description="        省略以小钓大目标参数将使机会出现时使用技能“以小钓大”，否则只对符合关键词的目标使用。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="143" Enabled="False" ActionType="Placeholder" Description="        以小钓大阶段参数的竿时不应带有非“撒饵”技能状态时的竿时（除第 1 阶段）。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="144" Enabled="False" ActionType="Placeholder" Description="        ·》 = 中文反书名号，紧跟在某以小钓大阶段参数后，连接下一阶段参数" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="144" Enabled="False" ActionType="Placeholder" Description="        省略以小钓大目标参数将使机会出现时使用技能“以小钓大”，否则只对符合关键词的目标使用。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="145" Enabled="False" ActionType="Placeholder" Description="        ·&gt; = 大于符号，作用同上" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="145" Enabled="False" ActionType="Placeholder" Description="        ·》 = 中文反书名号，紧跟在某以小钓大阶段参数后，连接下一阶段参数" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="146" Enabled="False" ActionType="Placeholder" Description="      ·最终目标参数：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="146" Enabled="False" ActionType="Placeholder" Description="        ·&gt; = 大于符号，作用同上" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="147" Enabled="False" ActionType="Placeholder" Description="        最终目标可使用大部分常见字符作为关键词。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="147" Enabled="False" ActionType="Placeholder" Description="      ·最终目标参数：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="148" Enabled="False" ActionType="Placeholder" Description="        支持部分正则表达式。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="148" Enabled="False" ActionType="Placeholder" Description="        最终目标可使用大部分常见字符作为关键词。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="149" Enabled="False" ActionType="Placeholder" Description="        ·= = 等号，最终目标参数前缀" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="149" Enabled="False" ActionType="Placeholder" Description="        支持部分正则表达式。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="150" Enabled="False" ActionType="Placeholder" Description="        ·. = 点，或叫英文句点、小数点，表示任何字符" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="150" Enabled="False" ActionType="Placeholder" Description="        ·= = 等号，最终目标参数前缀" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="151" Enabled="False" ActionType="Placeholder" Description="        ·[关键字] = 中括号，其中包括关键字" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="151" Enabled="False" ActionType="Placeholder" Description="        ·. = 点，或叫英文句点、小数点，表示任何字符" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="152" Enabled="False" ActionType="Placeholder" Description="          如“[鲱虾]”表示目标名称含有“鲱”或者“虾”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="152" Enabled="False" ActionType="Placeholder" Description="        ·[关键字] = 中括号，其中包括关键字" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="153" Enabled="False" ActionType="Placeholder" Description="        ·攒鱼计 = 使用攒鱼计模式，同时最终目标关键词会失效" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="153" Enabled="False" ActionType="Placeholder" Description="          如“[鲱虾]”表示目标名称含有“鲱”或者“虾”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="154" Enabled="False" ActionType="Placeholder" Description="          仍需指定竿型与阶段，在鱼计 10 层时停止。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="154" Enabled="False" ActionType="Placeholder" Description="        ·攒鱼计 = 使用攒鱼计模式，同时最终目标关键词会失效" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="155" Enabled="False" ActionType="Placeholder" Description="        ·不撒饵 = 不使用“撒饵”，同时最终目标关键词会失效（或写为“无撒饵”“非撒饵”）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="155" Enabled="False" ActionType="Placeholder" Description="          仍需指定竿型与阶段，在鱼计 10 层时停止。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="156" Enabled="False" ActionType="Placeholder" Description="        ·收藏 = 使功能进入收藏品模式（或写为“收藏品”）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="156" Enabled="False" ActionType="Placeholder" Description="        ·不撒饵 = 不使用“撒饵”，同时最终目标关键词会失效（或写为“无撒饵”“非撒饵”）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="157" Enabled="False" ActionType="Placeholder" Description="          在收藏品模式中，最终目标关键词将失效，但可用计数参数来实现停止目的；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="157" Enabled="False" ActionType="Placeholder" Description="        ·收藏 = 使功能进入收藏品模式（或写为“收藏品”）" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="158" Enabled="False" ActionType="Placeholder" Description="          收藏品模式时请点击几次场景以使操作焦点处在非界面处；" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="158" Enabled="False" ActionType="Placeholder" Description="          在收藏品模式中，最终目标关键词将失效，但可用计数参数来实现停止目的；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="159" Enabled="False" ActionType="Placeholder" Description="          将优先确保钓上的所有目标都为大尺寸；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="159" Enabled="False" ActionType="Placeholder" Description="          收藏品模式时请点击几次场景以使操作焦点处在非界面处；" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="160" Enabled="False" ActionType="Placeholder" Description="          将在提钩后发送键码尝试确认收藏；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="160" Enabled="False" ActionType="Placeholder" Description="          将优先确保钓上的所有目标都为大尺寸；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="161" Enabled="False" ActionType="Placeholder" Description="          将不使用技能“恩宠”与“熟练渔技”；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="161" Enabled="False" ActionType="Placeholder" Description="          将在提钩后发送键码尝试确认收藏；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="162" Enabled="False" ActionType="Placeholder" Description="          模式为“平钓”时将会使用技能“大鱼”。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="162" Enabled="False" ActionType="Placeholder" Description="          将不使用技能“恩宠”与“熟练渔技”；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="163" Enabled="False" ActionType="Placeholder" Description="        目标计数 / 预触发模式：" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="163" Enabled="False" ActionType="Placeholder" Description="          模式为“平钓”时将会使用技能“大鱼”。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="164" Enabled="False" ActionType="Placeholder" Description="        ·； = 分号，不分中英文符号，用来分割计数目标参数，同时作为计数目标参数的结束符" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="164" Enabled="False" ActionType="Placeholder" Description="        目标计数 / 预触发模式：" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="165" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼； = 数字 15 紧接着关键词与结束符，计数目标格式" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="165" Enabled="False" ActionType="Placeholder" Description="        ·； = 分号，不分中英文符号，用来分割计数目标参数，同时作为计数目标参数的结束符" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="166" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼；2 水母； = 被分号分割的计数目标" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="166" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼； = 数字 15 紧接着关键词与结束符，计数目标格式" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="167" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼；不撒饵 = 计数参数的分号后紧跟着最终目标参数“不撒饵”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="167" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼；2 水母； = 被分号分割的计数目标" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="168" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼；猛犸 = 计数参数的分号后紧跟着目标参数“猛犸”，目标停止功能会正常生效" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="168" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼；不撒饵 = 计数参数的分号后紧跟着最终目标参数“不撒饵”" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="169" Enabled="False" ActionType="Placeholder" Description="        ·1 猛犸；收藏 = 计数参数的分号后紧跟着目标参数“收藏”，使用收藏模式，在钓到猛犸后将停止" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="169" Enabled="False" ActionType="Placeholder" Description="        ·15 鲱鱼；猛犸 = 计数参数的分号后紧跟着目标参数“猛犸”，目标停止功能会正常生效" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="170" Enabled="False" ActionType="Placeholder" Description="          启动计数模式，最多支持 3 组参数；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="170" Enabled="False" ActionType="Placeholder" Description="        ·1 猛犸；收藏 = 计数参数的分号后紧跟着目标参数“收藏”，使用收藏模式，在钓到猛犸后将停止" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="171" Enabled="False" ActionType="Placeholder" Description="          存在鱼识参数且最小 ET 参数大于当前 ET 时启动预触，直到目标最大数减 1 时停止并等待 ET ；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="171" Enabled="False" ActionType="Placeholder" Description="          启动计数模式，最多支持 3 组参数；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="172" Enabled="False" ActionType="Placeholder" Description="          不包含鱼识参数时将等待 ET，然后在钓到符合数量的目标时停止；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="172" Enabled="False" ActionType="Placeholder" Description="          存在鱼识参数且最小 ET 参数大于当前 ET 时启动预触，直到目标最大数减 1 时停止并等待 ET ；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="173" Enabled="False" ActionType="Placeholder" Description="          不能提前记录已经钓到的鱼，因而在已钓到鱼识计数鱼后才输入计数参数可能会导致误触，敬请留意；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="173" Enabled="False" ActionType="Placeholder" Description="          不包含鱼识参数时将等待 ET，然后在钓到符合数量的目标时停止；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="174" Enabled="False" ActionType="Placeholder" Description="          由于涉及鱼识机制的鱼通常钓法复杂且包含换饵手法，请酌情使用本参数；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="174" Enabled="False" ActionType="Placeholder" Description="          不能提前记录已经钓到的鱼，因而在已钓到鱼识计数鱼后才输入计数参数可能会导致误触，敬请留意；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="175" Enabled="False" ActionType="Placeholder" Description="          想同时使用其他目标模式参数时，可写在计数模式的分号后，此时目标停止功能也会照常生效。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="175" Enabled="False" ActionType="Placeholder" Description="          由于涉及鱼识机制的鱼通常钓法复杂且包含换饵手法，请酌情使用本参数；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="176" Enabled="False" ActionType="Placeholder" Description="      ·专一垂钓：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="176" Enabled="False" ActionType="Placeholder" Description="          想同时使用其他目标模式参数时，可写在计数模式的分号后，此时目标停止功能也会照常生效。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="177" Enabled="False" ActionType="Placeholder" Description="        专一目标可使用大部分常见字符作为关键词。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="177" Enabled="False" ActionType="Placeholder" Description="      ·专一垂钓：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="178" Enabled="False" ActionType="Placeholder" Description="        ·= = 等号，专一目标参数前缀，必须在最终目标关键词后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="178" Enabled="False" ActionType="Placeholder" Description="        专一目标可使用大部分常见字符作为关键词。" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="179" Enabled="False" ActionType="Placeholder" Description="        专一后多重提钩：" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="179" Enabled="False" ActionType="Placeholder" Description="        ·= = 等号，专一目标参数前缀，必须在最终目标关键词后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="180" Enabled="False" ActionType="Placeholder" Description="        ·= = 等号，专一后多重提钩参数前缀，必须在专一目标关键词后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="180" Enabled="False" ActionType="Placeholder" Description="        专一后多重提钩：" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="181" Enabled="False" ActionType="Placeholder" Description="        ·双重 = 使用双重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="181" Enabled="False" ActionType="Placeholder" Description="        ·= = 等号，专一后多重提钩参数前缀，必须在专一目标关键词后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="182" Enabled="False" ActionType="Placeholder" Description="        ·三重 = 使用三重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="182" Enabled="False" ActionType="Placeholder" Description="        ·双重 = 使用双重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="183" Enabled="False" ActionType="Placeholder" Description="      ·鱼识：" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="183" Enabled="False" ActionType="Placeholder" Description="        ·三重 = 使用三重提钩" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="184" Enabled="False" ActionType="Placeholder" Description="        ·》鱼识 = 中文反书名号与“鱼识”，指示鱼识参数的前缀，必须在写在触发鱼识所需的所有参数后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="184" Enabled="False" ActionType="Placeholder" Description="      ·鱼识：" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="185" Enabled="False" ActionType="Placeholder" Description="        ·&gt; 鱼识 = 大于符号，作用同上" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="185" Enabled="False" ActionType="Placeholder" Description="        ·》鱼识 = 中文反书名号与“鱼识”，指示鱼识参数的前缀，必须在写在触发鱼识所需的所有参数后" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="186" Enabled="False" ActionType="Placeholder" Description="          获得“捕鱼人之识”时，将会立刻应用鱼识参数，并在捕鱼人之识消失时应用原参数；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="186" Enabled="False" ActionType="Placeholder" Description="        ·&gt; 鱼识 = 大于符号，作用同上" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="187" Enabled="False" ActionType="Placeholder" Description="    命令示例：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="187" Enabled="False" ActionType="Placeholder" Description="          获得“捕鱼人之识”时，将会立刻应用鱼识参数，并在捕鱼人之识消失时应用原参数；" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="188" Enabled="False" ActionType="Placeholder" Description="  ·平钓命令实例：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="188" Enabled="False" ActionType="Placeholder" Description="    命令示例：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="189" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="189" Enabled="False" ActionType="Placeholder" Description="  ·平钓命令实例：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="190" Enabled="False" ActionType="Placeholder" Description="    ⚠ 其中可能包含错误、过时或不适配当前功能的钓法参数，请注意判别。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="190" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="191" Enabled="False" ActionType="Placeholder" Description="    ·钓任意轻杆与中杆：" DescriptionOverride="True">
+          <Action OrderNumber="191" Enabled="False" ActionType="Placeholder" Description="    ⚠ 其中可能包含错误、过时或不适配当前功能的钓法参数，请注意判别。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="192" Enabled="False" ActionType="Placeholder" Description="          /e 平钓！+！！=." DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="192" Enabled="False" ActionType="Placeholder" Description="    ·钓任意轻杆与中杆：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="193" Enabled="False" ActionType="Placeholder" Description="      ·并且钓到任何鱼时停止。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="193" Enabled="False" ActionType="Placeholder" Description="          /e 平钓！+！！=." DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="194" Enabled="False" ActionType="Placeholder" Description="    ·莫雯 1 阶段：白金海马：" DescriptionOverride="True">
+          <Action OrderNumber="194" Enabled="False" ActionType="Placeholder" Description="      ·并且钓到任何鱼时停止。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="195" Enabled="False" ActionType="Placeholder" Description="          /e 平钓~7.5！=收藏不撒饵" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="195" Enabled="False" ActionType="Placeholder" Description="    ·莫雯 1 阶段：白金海马：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="196" Enabled="False" ActionType="Placeholder" Description="      ·在7.5秒时断杆、收藏模式并且不撒饵。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="196" Enabled="False" ActionType="Placeholder" Description="          /e 平钓~7.5！=收藏不撒饵" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="197" Enabled="False" ActionType="Placeholder" Description="    ·哲罗鲑：" DescriptionOverride="True">
+          <Action OrderNumber="197" Enabled="False" ActionType="Placeholder" Description="      ·在7.5秒时断杆、收藏模式并且不撒饵。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="198" Enabled="False" ActionType="Placeholder" Description="          /e 平钓拍！食！！！=哲罗鲑" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="198" Enabled="False" ActionType="Placeholder" Description="    ·哲罗鲑：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="199" Enabled="False" ActionType="Placeholder" Description="      ·拍轻杆含有“食”字的鱼、然后提鱼王杆，在钓到“哲罗鲑”时停止。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="199" Enabled="False" ActionType="Placeholder" Description="          /e 平钓拍！食！！！=哲罗鲑" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="200" Enabled="False" ActionType="Placeholder" Description="    ·近东虾：" DescriptionOverride="True">
+          <Action OrderNumber="200" Enabled="False" ActionType="Placeholder" Description="      ·拍轻杆含有“食”字的鱼、然后提鱼王杆，在钓到“哲罗鲑”时停止。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="201" Enabled="False" ActionType="Placeholder" Description="          /e 平钓！=不撒饵=专一近东=三重" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="201" Enabled="False" ActionType="Placeholder" Description="    ·近东虾：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="202" Enabled="False" ActionType="Placeholder" Description="      ·提轻杆、不撒饵，钓上“近东”时使用专一然后三重提钩。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="202" Enabled="False" ActionType="Placeholder" Description="          /e 平钓！=不撒饵=专一近东=三重" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="203" Enabled="False" ActionType="Placeholder" Description="    ·镜中蝶：" DescriptionOverride="True">
+          <Action OrderNumber="203" Enabled="False" ActionType="Placeholder" Description="      ·提轻杆、不撒饵，钓上“近东”时使用专一然后三重提钩。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="204" Enabled="False" ActionType="Placeholder" Description="          /e 平钓拍！青~7.5+14！！！2330-0000=蝶" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="204" Enabled="False" ActionType="Placeholder" Description="    ·镜中蝶：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="205" Enabled="False" ActionType="Placeholder" Description="      ·拍轻杆“青”在撒饵 7.5 秒、不撒饵 14 秒时断杆，窗口 ET2330-2400，钓上“碟”时停止。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="205" Enabled="False" ActionType="Placeholder" Description="          /e 平钓拍！青~7.5+14！！！2330-0000=蝶" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="206" Enabled="False" ActionType="Placeholder" Description="    ·浓烟鲀：" DescriptionOverride="True">
+          <Action OrderNumber="206" Enabled="False" ActionType="Placeholder" Description="      ·拍轻杆“青”在撒饵 7.5 秒、不撒饵 14 秒时断杆，窗口 ET2330-2400，钓上“碟”时停止。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="207" Enabled="False" ActionType="Placeholder" Description="          /e 平钓拍6+13~！斑点12.6+23.3~！1700-2000=盐" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="207" Enabled="False" ActionType="Placeholder" Description="    ·浓烟鲀：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="208" Enabled="False" ActionType="Placeholder" Description="      ·提轻杆并拍含有“斑点”字的鱼 然后提撒饵 12.6 秒、非撒饵 23.3 秒的轻杆 在钓到“盐”时停止。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="208" Enabled="False" ActionType="Placeholder" Description="          /e 平钓拍6+13~！斑点12.6+23.3~！1700-2000=盐" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="209" Enabled="False" ActionType="Placeholder" Description="  ·大鱼猎手&amp;耐心II命令实例：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="209" Enabled="False" ActionType="Placeholder" Description="      ·提轻杆并拍含有“斑点”字的鱼 然后提撒饵 12.6 秒、非撒饵 23.3 秒的轻杆 在钓到“盐”时停止。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="210" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="210" Enabled="False" ActionType="Placeholder" Description="  ·大鱼猎手&amp;耐心II命令实例：" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="211" Enabled="False" ActionType="Placeholder" Description="    ⚠ 其中可能包含错误、过时或不适配当前功能的钓法参数，请注意判别。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
+          <Action OrderNumber="211" Enabled="False" ActionType="Placeholder" Description="    ⛔ “/”斜杠前不得包含任何字符，否则会被发送到当前聊天频道！⛔" DescBgColor="000" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="212" Enabled="False" ActionType="Placeholder" Description="    ·大鱼猎手实例：" DescriptionOverride="True">
+          <Action OrderNumber="212" Enabled="False" ActionType="Placeholder" Description="    ⚠ 其中可能包含错误、过时或不适配当前功能的钓法参数，请注意判别。⚠ " DescBgColor="ff0" DescTextColor="F00" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="213" Enabled="False" ActionType="Placeholder" Description="          /e 大鱼！！》！！！" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="213" Enabled="False" ActionType="Placeholder" Description="    ·大鱼猎手实例：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="214" Enabled="False" ActionType="Placeholder" Description="      ·大鱼模式，在第 1 阶段提中杆，然后以小钓大第 2 阶段时提鱼王杆。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="214" Enabled="False" ActionType="Placeholder" Description="          /e 大鱼！！》！！！" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="215" Enabled="False" ActionType="Placeholder" Description="    ·套娃实例：" DescriptionOverride="True">
+          <Action OrderNumber="215" Enabled="False" ActionType="Placeholder" Description="      ·大鱼模式，在第 1 阶段提中杆，然后以小钓大第 2 阶段时提鱼王杆。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="216" Enabled="False" ActionType="Placeholder" Description="          /e 耐心！！》！！+！！！" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="216" Enabled="False" ActionType="Placeholder" Description="    ·套娃实例：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="217" Enabled="False" ActionType="Placeholder" Description="      ·耐心模式，在第 1 阶段提中杆，然后以小钓大第 2 阶段时提中杆和鱼王杆。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="217" Enabled="False" ActionType="Placeholder" Description="          /e 耐心！！》！！+！！！" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="218" Enabled="False" ActionType="Placeholder" Description="    ·桶眼鱼：" DescriptionOverride="True">
+          <Action OrderNumber="218" Enabled="False" ActionType="Placeholder" Description="      ·耐心模式，在第 1 阶段提中杆，然后以小钓大第 2 阶段时提中杆和鱼王杆。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="219" Enabled="False" ActionType="Placeholder" Description="          /e 耐心！》16.6~！！+！！！精准=收藏" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="219" Enabled="False" ActionType="Placeholder" Description="    ·桶眼鱼：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="220" Enabled="False" ActionType="Placeholder" Description="      ·耐心模式，在第 1 阶段提轻杆，以小钓大提 16.6 秒以上中杆，对鱼王杆精准提钩，使用收藏品模式。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="220" Enabled="False" ActionType="Placeholder" Description="          /e 耐心！》16.6~！！+！！！精准=收藏" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="221" Enabled="False" ActionType="Placeholder" Description="        使用天钢之球，顺便摸海蝎，你也可以在等号前加上 ET。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="221" Enabled="False" ActionType="Placeholder" Description="      ·耐心模式，在第 1 阶段提轻杆，以小钓大提 16.6 秒以上中杆，对鱼王杆精准提钩，使用收藏品模式。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="222" Enabled="False" ActionType="Placeholder" Description="    ·莫雯 3 阶段：黄遁鱼：" DescriptionOverride="True">
+          <Action OrderNumber="222" Enabled="False" ActionType="Placeholder" Description="        使用天钢之球，顺便摸海蝎，你也可以在等号前加上 ET。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="223" Enabled="False" ActionType="Placeholder" Description="          /e 耐心拍沙~7.7！=收藏不撒饵=专一黄遁" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="223" Enabled="False" ActionType="Placeholder" Description="    ·莫雯 3 阶段：黄遁鱼：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="224" Enabled="False" ActionType="Placeholder" Description="      ·耐心模式，拍“沙”然后提轻杆，在 7.7 秒时断杆，使用收藏品模式不撒饵，对“黄遁”专一垂钓。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="224" Enabled="False" ActionType="Placeholder" Description="          /e 耐心拍沙~7.7！=收藏不撒饵=专一黄遁" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="225" Enabled="False" ActionType="Placeholder" Description="        附带专一参数。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="225" Enabled="False" ActionType="Placeholder" Description="      ·耐心模式，拍“沙”然后提轻杆，在 7.7 秒时断杆，使用收藏品模式不撒饵，对“黄遁”专一垂钓。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="226" Enabled="False" ActionType="Placeholder" Description="    ·灵岩之剑：" DescriptionOverride="True">
+          <Action OrderNumber="226" Enabled="False" ActionType="Placeholder" Description="        附带专一参数。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="227" Enabled="False" ActionType="Placeholder" Description="          /e 耐心拍魇6.5+11.6~！+！！》8.6~！！=收藏" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="227" Enabled="False" ActionType="Placeholder" Description="    ·灵岩之剑：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="228" Enabled="False" ActionType="Placeholder" Description="      ·使用万能拟饵时。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="228" Enabled="False" ActionType="Placeholder" Description="          /e 耐心拍魇6.5+11.6~！+！！》8.6~！！=收藏" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="229" Enabled="False" ActionType="Placeholder" Description="    ·首领矛齿鲸：" DescriptionOverride="True">
+          <Action OrderNumber="229" Enabled="False" ActionType="Placeholder" Description="      ·使用万能拟饵时。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="230" Enabled="False" ActionType="Placeholder" Description="          /e 耐心拍！！章鱼6+10.2~！》！！！》！！！1600-0000=首领" DescBgColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="230" Enabled="False" ActionType="Placeholder" Description="    ·首领矛齿鲸：" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="231" Enabled="False" ActionType="Placeholder" Description="      ·ET 仅供参考。" DescBgColor="ffd" DescriptionOverride="True">
+          <Action OrderNumber="231" Enabled="False" ActionType="Placeholder" Description="          /e 耐心拍！！章鱼6+10.2~！》！！！》！！！1600-0000=首领" DescBgColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="232" Enabled="False" ActionType="Placeholder" Description="    关于：by 黑色公主切萝莉肥丨反馈 BUG 提供建议：959153665丨ACT 触发器技术交流：556836295" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="232" Enabled="False" ActionType="Placeholder" Description="      ·ET 仅供参考。" DescBgColor="ffd" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="233" Enabled="False" ActionType="Placeholder" Description="    爱发电 / 赞助感谢" DescriptionOverride="True">
+          <Action OrderNumber="233" Enabled="False" ActionType="Placeholder" Description="    关于：by 黑色公主切萝莉肥丨反馈 BUG 提供建议：959153665丨ACT 触发器技术交流：556836295" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
-          <Action OrderNumber="234" Enabled="False" ActionType="Placeholder" Description="    ·江畔晚风拂柳" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
+          <Action OrderNumber="234" Enabled="False" ActionType="Placeholder" Description="    爱发电 / 赞助感谢" DescriptionOverride="True">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+          <Action OrderNumber="235" Enabled="False" ActionType="Placeholder" Description="    ·江畔晚风拂柳" DescBgColor="fff" DescTextColor="000" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
         </Actions>
