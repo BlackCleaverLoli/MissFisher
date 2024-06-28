@@ -1,12 +1,12 @@
 # 空天姬 MissFisher
-Sorry, it currently only supports Chinese servers or English/Japanese servers with Chinese patches installed. 
+Only supports Chinese servers
 ## 仓库链接
 - 供 Triggernometry 远程触发器使用
 ### 正式版
 ```
 https://github.com/BlackCleaverLoli/MissFisher/raw/main/MissFisher.xml
 ```
-- 可稳定使用的版本
+- 可相对稳定地使用的版本
 ### 快照版
 ```
 https://github.com/BlackCleaverLoli/MissFisher/raw/main/MissFisher%20Snapshot.xml
