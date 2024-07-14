@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.119">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w28e" Enabled="true">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w28f" Enabled="true">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -175,7 +175,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
@@ -486,7 +486,7 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
+                  <Trigger Enabled="false" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
                     <Actions>
                       <Action OrderNumber="1" ExecScriptExpression="using System.Linq;&#xD;&#xA;using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Advanced_Combat_Tracker;&#xD;&#xA;&#xD;&#xA;var plugin = ActGlobals.oFormActMain.ActPlugins&#xD;&#xA;            .FirstOrDefault(x =&gt; x.pluginObj?.GetType().ToString() == &quot;Cafe.Matcha.MatchaInit&quot;)&#xD;&#xA;            ?.pluginObj;&#xD;&#xA;&#xD;&#xA;if (plugin == null)&#xD;&#xA;{&#xD;&#xA;    MessageBox.Show(&quot;没有在 ACT 中找到抹茶（Matcha）插件\n建议安装它并勾选抹茶中的“日志及数据共享”模块的“兼容模式”\n可减少提钩延迟和性能消耗&quot;,&#xD;&#xA;        &quot;空天姬&quot;,&#xD;&#xA;            MessageBoxButtons.OK,&#xD;&#xA;            MessageBoxIcon.Information);&#xD;&#xA;}" ActionType="ExecuteScript">
                         <Condition Enabled="false" Grouping="Or" />
@@ -1762,7 +1762,7 @@
                   </Folder>
                 </Folders>
                 <Triggers>
-                  <Trigger Enabled="true" Name="记录参数 启动" Id="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?&lt;空天姬原参数&gt;(?&lt;param&gt;大鱼|耐心|平钓)[ ]*([(（](?&lt;空天姬钓饵&gt;[^)）]+)[)）])?[ ]*(拍(((?&lt;空天姬拍最小区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬拍最小区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?[~-]?((?&lt;空天姬拍最大区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬拍最大区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?)?[ ]*(?&lt;空天姬拍竿型&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))?[ ]*(?&lt;空天姬大鱼技巧提钩1&gt;强力|精准|双重|三重)?[ ]*(?&lt;空天姬拍目标&gt;[[]?[.\u4e00-\u9fa5]+[]]?))?[ ]*(((?&lt;空天姬最小区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬最小区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?[~-]?((?&lt;空天姬最大区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬最大区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?)?[ ]*((?&lt;空天姬大鱼竿型1&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩2&gt;强力|精准|双重|三重)?)[ ]*((((?&lt;空天姬大鱼目标1&gt;[^ ;；专&gt;》=/]+)?[》&gt;][ ]*((?&lt;空天姬大鱼最小区间1&gt;[0-9]{1,2}([.][0-9])?)?[~-]?(?&lt;空天姬大鱼最大区间1&gt;[0-9]{1,2}([.][0-9])?)?)?[ ]*((?&lt;空天姬大鱼竿型2&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩3&gt;强力|精准|双重|三重)?)))[ ]*((?&lt;空天姬大鱼目标2&gt;[^ ;；专&gt;》=/]+)?[》&gt;][ ]*((?&lt;空天姬大鱼最小区间2&gt;[0-9]{1,2}([.][0-9])?)?[~-]?(?&lt;空天姬大鱼最大区间2&gt;[0-9]{1,2}([.][0-9])?)?)?[ ]*((?&lt;空天姬大鱼竿型3&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩4&gt;强力|精准)?))?[ ]*((?&lt;空天姬大鱼目标3&gt;[^ ;；专&gt;》=/]+)?[》&gt;][ ]*((?&lt;空天姬大鱼最小区间3&gt;[0-9]{1,2}([.][0-9])?)?[~-]?(?&lt;空天姬大鱼最大区间3&gt;[0-9]{1,2}([.][0-9])?)?)?[ ]*((?&lt;空天姬大鱼竿型4&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩5&gt;强力|精准)?))?)?[ ]*(([eE][tT])?[ ]*(?&lt;空天姬最小ET&gt;[0-9]{4})[~-](?&lt;空天姬最大ET&gt;[0-9]{4}))?[ ]*(=[ ]*(((?&lt;空天姬目标计数1&gt;[1-9][0-9]?)[ ]*(?&lt;空天姬计数目标1&gt;[^ ;；专&gt;》=/]+)[；;])((?&lt;空天姬目标计数2&gt;[1-9][0-9]?)[ ]*(?&lt;空天姬计数目标2&gt;[^ ;；专&gt;》=/]+)[；;])?((?&lt;空天姬目标计数3&gt;[1-9][0-9]?)[ ]*(?&lt;空天姬计数目标3&gt;[^ ;；专&gt;》=/]+)[；;])?)?(?&lt;空天姬目标&gt;[^ ；;专&gt;》=/]+(?!.+[;；]))?)?[ ]*([=][ ]*专一[ ]*(?&lt;空天姬专一目标&gt;[^ ;；专&gt;》=/]+)[ ]*([=][ ]*(?&lt;空天姬专一多提&gt;双重|三重))?)?[ ]*([》&gt;]鱼识[ ]*(?&lt;空天姬鱼识参数&gt;(大鱼|耐心|平钓)[^/]+[ ]*))?)(//.+)?[ ]?$" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="3000">
+                  <Trigger Enabled="true" Name="记录参数 启动" Id="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?&lt;空天姬原参数&gt;(?&lt;param&gt;大鱼|耐心|平钓)[ ]*([(（](?&lt;空天姬钓饵&gt;[^)）]+)[)）])?[ ]*(拍(((?&lt;空天姬拍最小区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬拍最小区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?[~-]?((?&lt;空天姬拍最大区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬拍最大区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?)?[ ]*(?&lt;空天姬拍竿型&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))?[ ]*(?&lt;空天姬大鱼技巧提钩1&gt;强力|精准|双重|三重)?[ ]*(?&lt;空天姬拍目标&gt;[[]?[.\u4e00-\u9fa5]+[]]?))?[ ]*(((?&lt;空天姬最小区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬最小区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?[~-]?((?&lt;空天姬最大区间&gt;[0-9]{1,2}([.][0-9])?)?([+](?&lt;空天姬最大区间非撒饵&gt;[0-9]{1,2}([.][0-9])?))?)?)?[ ]*((?&lt;空天姬大鱼竿型1&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩2&gt;强力|精准|双重|三重)?)[ ]*((((?&lt;空天姬大鱼目标1&gt;[^ ;；专&gt;》=/]+)?[》&gt;][ ]*((?&lt;空天姬大鱼最小区间1&gt;[0-9]{1,2}([.][0-9])?)?[~-]?(?&lt;空天姬大鱼最大区间1&gt;[0-9]{1,2}([.][0-9])?)?)?[ ]*((?&lt;空天姬大鱼竿型2&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩3&gt;强力|精准|双重|三重)?)))[ ]*((?&lt;空天姬大鱼目标2&gt;[^ ;；专&gt;》=/]+)?[》&gt;][ ]*((?&lt;空天姬大鱼最小区间2&gt;[0-9]{1,2}([.][0-9])?)?[~-]?(?&lt;空天姬大鱼最大区间2&gt;[0-9]{1,2}([.][0-9])?)?)?[ ]*((?&lt;空天姬大鱼竿型3&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩4&gt;强力|精准)?))?[ ]*((?&lt;空天姬大鱼目标3&gt;[^ ;；专&gt;》=/]+)?[》&gt;][ ]*((?&lt;空天姬大鱼最小区间3&gt;[0-9]{1,2}([.][0-9])?)?[~-]?(?&lt;空天姬大鱼最大区间3&gt;[0-9]{1,2}([.][0-9])?)?)?[ ]*((?&lt;空天姬大鱼竿型4&gt;(全部|[Aa][Ll][Ll]|[!！+]{1,8}))[ ]*(?&lt;空天姬大鱼技巧提钩5&gt;强力|精准)?))?)?[ ]*(([eE][tT])?[ ]*(?&lt;空天姬最小ET&gt;[0-9]{4})[~-](?&lt;空天姬最大ET&gt;[0-9]{4}))?[ ]*(=[ ]*(((?&lt;空天姬目标计数1&gt;[1-9][0-9]?)[ ]*(?&lt;空天姬计数目标1&gt;[^ ;；专&gt;》=/]+)[；;])((?&lt;空天姬目标计数2&gt;[1-9][0-9]?)[ ]*(?&lt;空天姬计数目标2&gt;[^ ;；专&gt;》=/]+)[；;])?((?&lt;空天姬目标计数3&gt;[1-9][0-9]?)[ ]*(?&lt;空天姬计数目标3&gt;[^ ;；专&gt;》=/]+)[；;])?)?(?&lt;空天姬目标&gt;[^ ；;专&gt;》=/]+(?!.+[;；]))?)?[ ]*([=][ ]*专一[ ]*(?&lt;空天姬专一目标&gt;[^ ;；专&gt;》=/]+)[ ]*([=][ ]*(?&lt;空天姬专一多提&gt;双重|三重))?)?[ ]*([》&gt;]鱼识[ ]*(?&lt;空天姬鱼识参数&gt;(大鱼|耐心|平钓).+[ ]*))?)(//.+)?[ ]?$" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="3000">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="测试耐心 拍4.4+7.1~8+14.3 精准！ 黄色皮皮拉鱼 3.6+5.5-6+11 ！精准 王冠脂鲤》19.3-52.4 ！！强力 引螈》16.4-31.4 ！！！ 强力 洛克瓦卫兵》8.8-16.4 ！！！强力 ET1000-1200=隆卡的大水蛇=专一王冠脂鲤" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
@@ -3623,7 +3623,7 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="And" />
                   </Trigger>
-                  <Trigger Enabled="false" Name="0. 提钩" Id="4868a45b-10b5-4f54-8b4a-38186ad0036f" RegularExpression="^.{15}ChatLog 00:0:(?&lt;param&gt;Matcha)#.*#chs-FishBite#{&quot;type&quot;:(?&lt;type&gt;[123])}" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Name="0. 提钩" Id="4868a45b-10b5-4f54-8b4a-38186ad0036f" RegularExpression="^.{15}ChatLog 00:0:(?&lt;param&gt;Matcha)#.*#chs-FishBite#{&quot;type&quot;:(?&lt;type&gt;[123])}" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac 提钩" ActionType="NamedCallback">
                         <Condition Enabled="true" Grouping="And">
@@ -7383,7 +7383,7 @@
     <Triggers>
       <Trigger Enabled="false" Name="【更新日志】" Id="f6241011-1735-4cac-b337-842694b011e0" RegularExpression="">
         <Actions>
-          <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="    自上个正式版的 07 累积更新 - 240714" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="    自上个正式版的 09 累积更新 - 240714" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
           <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="    概要：" DescBgColor="f80" DescriptionOverride="True">
