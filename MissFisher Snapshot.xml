@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.119">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w28c" Enabled="true">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w28d" Enabled="true">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -660,7 +660,7 @@
               </Trigger>
               <Trigger Enabled="true" Name="空天姬主界面 Main" Id="f696e166-4375-4da4-8584-fbaa9f5e5176" RegularExpression="^空天姬窗口|^.{15}ChatLog 00:0038::[ ]*(空天姬|[Kk][Tt][Jj])[ ]*$|^.{15}ChatLog 00:003C::“/(空天姬|[Kk][Tt][Jj])”出现问题：该命令不存在。$" EditAutofire="True" EditAutofireAllowCondition="True">
                 <Actions>
-                  <Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Drawing;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using System.Text.RegularExpressions;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Threading.Tasks;&#xD;&#xA;using System.Diagnostics;&#xD;&#xA;&#xD;&#xA;#region 初始化&#xD;&#xA;var 字体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F);&#xD;&#xA;var 小号 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F);&#xD;&#xA;var 楷体 = new Font(&quot;楷体&quot;, 15.75F);// 14.25 | 15 | 15.75&#xD;&#xA;var 小号加粗 = new System.Drawing.Font(&quot;Microsoft YaHei UI&quot;, 10.5F, System.Drawing.FontStyle.Bold);&#xD;&#xA;var 加粗 = new System.Drawing.Font(&quot;Microsoft YaHei UI&quot;, 14.25F, System.Drawing.FontStyle.Bold);&#xD;&#xA;var 红色 = Color.FromArgb(139, 41, 41);&#xD;&#xA;var 黄色 = Color.FromArgb(249, 192, 106);&#xD;&#xA;var 灰色 = Color.FromArgb(175, 175, 175);&#xD;&#xA;var 深灰 = Color.FromArgb(68, 68, 68);&#xD;&#xA;string 默语 = &quot;/e &quot;;&#xD;&#xA;var 正则验证ET = new Regex(@&quot;^[0-9]{4}[-~][0-9]{4}$&quot;);&#xD;&#xA;&#xD;&#xA;var 窗口 = new Form&#xD;&#xA;{&#xD;&#xA;    Text = &quot;空天姬&quot;,&#xD;&#xA;    StartPosition = FormStartPosition.CenterScreen, // 窗口启动位置&#xD;&#xA;    FormBorderStyle = FormBorderStyle.FixedSingle, // 窗口边框样式&#xD;&#xA;    MaximizeBox = false, // 禁止最大化按钮&#xD;&#xA;    AutoSize = true, // 自动调整窗体大小&#xD;&#xA;    AutoScaleMode = AutoScaleMode.Font, // 缩放模式&#xD;&#xA;    Padding = new Padding(5, 5, 0, 5), // 内边距&#xD;&#xA;    BackColor = Color.FromArgb(32, 55, 110), // 背景颜色&#xD;&#xA;    //Opacity = 0.9, // 窗口透明度&#xD;&#xA;    TopMost = true, // 窗口置顶&#xD;&#xA;    SizeGripStyle = SizeGripStyle.Hide // 隐藏并禁用右下角的大小调整手柄&#xD;&#xA;};&#xD;&#xA;&#xD;&#xA;var 表格 = new TableLayoutPanel&#xD;&#xA;{&#xD;&#xA;    AutoSize = true,&#xD;&#xA;    Dock = DockStyle.Fill,&#xD;&#xA;};&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// 中控部分&#xD;&#xA;Button 按钮生成器 = new Button { Text = &quot;生成&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮生成器, &quot;打开命令生成器&quot;);&#xD;&#xA;Button 按钮配置 = new Button { Text = &quot;配置&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮配置, &quot;打开用户配置&quot;);&#xD;&#xA;&#xD;&#xA;Button 按钮航线 = new Button { Text = &quot;航线&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮航线, &quot;在默语频道获得预报&quot;);&#xD;&#xA;Button 按钮海钓 = new Button { Text = &quot;启动自动冲分&quot; };&#xD;&#xA;ComboBox 下拉海钓 = new ComboBox() { Items = { &quot;冲分&quot;, &quot;蓝鱼&quot;, &quot;成就1&quot;, &quot;成就2&quot; } };&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;TextBox 输入鸣谢 = new TextBox&#xD;&#xA;{&#xD;&#xA;    ReadOnly = true,&#xD;&#xA;    WordWrap = true,  // 启用自动换行&#xD;&#xA;    Multiline = true, // 允许多行&#xD;&#xA;    ScrollBars = ScrollBars.Vertical, // 垂直滚动条 Vertical 或 None&#xD;&#xA;    Text = &quot;- 特别鸣谢 -\r\n&quot; +&#xD;&#xA;           &quot;MnFeN  FraGilE  欧尼棒棒\r\n&quot; +&#xD;&#xA;           &quot;- 赞助 -\r\n&quot; +&#xD;&#xA;           &quot;Kanaye  江畔晚风拂柳\r\n&quot; +&#xD;&#xA;           &quot;以及 贾XXX 的糯香柠檬茶XD&quot;&#xD;&#xA;};&#xD;&#xA;new ToolTip().SetToolTip(输入鸣谢, &quot;双击前往爱发电&quot;);&#xD;&#xA;&#xD;&#xA;Label 文本签名 = new Label { Text = &quot;by BlackCleaverLoli&quot; };&#xD;&#xA;new ToolTip().SetToolTip(文本签名, &quot;双击前往仓库&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;string[] 诗句 = new string[] { &quot;聊把钓竿消永日\r\n溪翁沙鹭共悠悠&quot;,&#xD;&#xA;                               &quot;垂钓绿湾春\r\n春深杏花乱&quot;,&#xD;&#xA;                               &quot;独钓春江上\r\n春江引趣长&quot;,&#xD;&#xA;                               &quot;钓船归去斜阳尽\r\n惟有青山对白鸥&quot;,&#xD;&#xA;                               &quot;一竿风月  一蓑烟雨\r\n家在钓台西住&quot;,&#xD;&#xA;                               &quot;江上晚来堪画处\r\n钓鱼人一蓑归去&quot;,&#xD;&#xA;                               &quot;白发一老翁  垂钓溪边中\r\n大树做其伴  鸟莺呼其朋&quot;,&#xD;&#xA;                               &quot;渭水如镜色  中有鲤与鲂\r\n偶持一竿竹  悬钓至其傍&quot;,&#xD;&#xA;                               &quot;闲钓江鱼不钓名\r\n瓦瓯斟酒暮山青&quot;,&#xD;&#xA;                               &quot;尽日池边钓锦鳞\r\n芰荷香里暗消魂&quot;,&#xD;&#xA;                               &quot;竹竿袅袅波无际\r\n不知何者吞吾钩&quot;,&#xD;&#xA;                               &quot;蓬头稚子学垂纶\r\n侧坐莓苔草映身&quot;,&#xD;&#xA;                               &quot;白头波上白头翁\r\n家逐船移浦浦风&quot;,&#xD;&#xA;                               &quot;一蓑一笠一扁舟\r\n一丈丝纶一寸钩&quot;,&#xD;&#xA;                               &quot;垂钓坐磐石  水清心亦闲\r\n鱼行潭树下  猿挂岛藤间&quot;,&#xD;&#xA;                               &quot;江上雪  独立钓渔翁\r\n一曲高歌一樽酒\r\n一人独钓一江秋&quot;,&#xD;&#xA;                               &quot;夜静水寒鱼不食\r\n满船空载月明归&quot;,&#xD;&#xA;                               &quot;结庐黄河曲\r\n垂钓长河里&quot;,&#xD;&#xA;                               &quot;你知道吗？\r\n这个诗句框是为了弥补 BUG&quot;,&#xD;&#xA;                               &quot;你知道吗？\r\n母肥是世界的珍宝&quot; };&#xD;&#xA;List&lt;string&gt; 所有诗句 = new List&lt;string&gt;(诗句);&#xD;&#xA;List&lt;string&gt; 已显示诗句 = new List&lt;string&gt;();&#xD;&#xA;&#xD;&#xA;Label 文本诗句 = new Label();&#xD;&#xA;&#xD;&#xA;Random 随机数 = new Random();&#xD;&#xA;&#xD;&#xA;#endregion&#xD;&#xA;&#xD;&#xA;#region 控件事件&#xD;&#xA;窗口.Shown += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;    ((Form)sender).TopMost = true; // 在显示时设置为最前端&#xD;&#xA;    System.Threading.Thread.Sleep(10); // 等待一小段时间以确保窗口已置于顶层&#xD;&#xA;    ((Form)sender).TopMost = false; // 然后取消置顶状态&#xD;&#xA;};&#xD;&#xA;&#xD;&#xA;// 海钓&#xD;&#xA;按钮海钓.Click += 输入海钓;&#xD;&#xA;下拉海钓.SelectedIndexChanged += 更新按钮文本;&#xD;&#xA;&#xD;&#xA;按钮配置.Click += 输入配置;&#xD;&#xA;按钮生成器.Click += 输入生成器;&#xD;&#xA;按钮航线.Click += 输入航线;&#xD;&#xA;&#xD;&#xA;输入鸣谢.DoubleClick += 打开爱发电;&#xD;&#xA;文本签名.DoubleClick += 打开仓库;&#xD;&#xA;&#xD;&#xA;文本诗句.Click += (sender, e) =&gt; 更新诗句();&#xD;&#xA;&#xD;&#xA;//按钮停止.Click += 输入停止;&#xD;&#xA;&#xD;&#xA;#endregion&#xD;&#xA;&#xD;&#xA;设置控件关系();&#xD;&#xA;设置控件样式();&#xD;&#xA;更新诗句();&#xD;&#xA;窗口.ShowDialog();&#xD;&#xA;&#xD;&#xA;void 设置控件关系()&#xD;&#xA;{&#xD;&#xA;    // 添加控件关系：主表单&#xD;&#xA;    窗口.Controls.Add(表格);&#xD;&#xA;&#xD;&#xA;    表格.ColumnCount = 4;// 列&#xD;&#xA;    表格.RowCount = 7;// 行&#xD;&#xA;    // DPI 适配&#xD;&#xA;    // 获取主屏幕的 DPI&#xD;&#xA;    Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);&#xD;&#xA;    float dpiX = graphics.DpiX;&#xD;&#xA;    float dpiY = graphics.DpiY;&#xD;&#xA;    graphics.Dispose();&#xD;&#xA;&#xD;&#xA;    // 计算缩放比例，这里以垂直DPI为例&#xD;&#xA;    float scaleFactor = dpiY / 96f; // 基准DPI为96（100%缩放时的标准DPI）&#xD;&#xA;&#xD;&#xA;    // 根据缩放比例调整像素值&#xD;&#xA;    int 行高像素 = (int)(38 * scaleFactor); // 原始38像素，根据DPI调整&#xD;&#xA;    int 列宽像素 = (int)(76 * scaleFactor); // 原始76像素，根据DPI调整&#xD;&#xA;&#xD;&#xA;    for (int i = 0; i &lt; 表格.RowCount; i++)&#xD;&#xA;    {&#xD;&#xA;        表格.RowStyles.Add(new RowStyle(SizeType.Absolute, 行高像素));&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    for (int j = 0; j &lt; 表格.ColumnCount; j++)&#xD;&#xA;    {&#xD;&#xA;        表格.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 列宽像素));&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    //表格.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;// 显示框线&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(文本诗句, 0, 5);&#xD;&#xA;    表格.SetColumnSpan(文本诗句, 4);&#xD;&#xA;    表格.SetRowSpan(文本诗句, 2);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(文本签名, 2, 4);&#xD;&#xA;    表格.SetColumnSpan(文本签名, 2);&#xD;&#xA;    表格.SetRowSpan(文本签名, 1);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(按钮海钓, 0, 3);&#xD;&#xA;    表格.SetRowSpan(按钮海钓, 2);&#xD;&#xA;    表格.SetColumnSpan(按钮海钓, 2);&#xD;&#xA;    表格.Controls.Add(下拉海钓, 2, 3);&#xD;&#xA;    表格.SetColumnSpan(下拉海钓, 2);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(按钮生成器, 3, 0);&#xD;&#xA;    表格.Controls.Add(按钮配置, 3, 1);&#xD;&#xA;    表格.Controls.Add(按钮航线, 3, 2);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(输入鸣谢, 0, 0);&#xD;&#xA;    表格.SetColumnSpan(输入鸣谢, 3);&#xD;&#xA;    表格.SetRowSpan(输入鸣谢, 3);&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 设置控件样式()&#xD;&#xA;{&#xD;&#xA;    // 主表单&#xD;&#xA;    foreach (Control 控件 in 表格.Controls)&#xD;&#xA;    {&#xD;&#xA;        // 整体设置&#xD;&#xA;        控件.Font = 字体;&#xD;&#xA;        控件.ForeColor = Color.White;&#xD;&#xA;        控件.AutoSize = true;&#xD;&#xA;        控件.Dock = DockStyle.Fill;&#xD;&#xA;&#xD;&#xA;        if (控件 is Label 标签)&#xD;&#xA;        {&#xD;&#xA;            标签.Font = 加粗;&#xD;&#xA;            标签.ForeColor = Color.FromArgb(196, 172, 123);// 230, 218, 193&#xD;&#xA;            标签.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;        }&#xD;&#xA;        文本签名.Font = 小号加粗;&#xD;&#xA;        文本签名.ForeColor = Color.FromArgb(196, 197, 201); // 196, 197, 201&#xD;&#xA;        文本签名.TextAlign = ContentAlignment.TopRight;&#xD;&#xA;        //文本诗句.Padding = new Padding(0, 5, 0, 0);&#xD;&#xA;        文本诗句.Font = 楷体;&#xD;&#xA;        文本诗句.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;        //文本诗句.BackColor = Color.FromArgb(50, 81, 155);// 诗句框背景&#xD;&#xA;        //文本诗句.ForeColor = Color.FromArgb(255, 255, 255);&#xD;&#xA;&#xD;&#xA;        if (控件 is Button 按钮)&#xD;&#xA;        {&#xD;&#xA;            按钮.Font = 加粗;&#xD;&#xA;            按钮.FlatStyle = FlatStyle.Flat;&#xD;&#xA;            按钮.BackColor = Color.FromArgb(50, 81, 155); // 设置背景色&#xD;&#xA;            按钮.FlatAppearance.BorderColor = Color.FromArgb(19, 33, 68); // 设置边框颜色&#xD;&#xA;        }&#xD;&#xA;        按钮配置.BackColor = 红色;&#xD;&#xA;        按钮配置.ForeColor = 黄色;// 灰色字体色 68, 68, 68&#xD;&#xA;        按钮生成器.BackColor = 红色;&#xD;&#xA;        按钮生成器.ForeColor = 黄色;&#xD;&#xA;        按钮航线.BackColor = 灰色;&#xD;&#xA;        按钮航线.ForeColor = 深灰;&#xD;&#xA;&#xD;&#xA;        if (控件 is TextBox 输入框)&#xD;&#xA;        {&#xD;&#xA;            输入框.Font = 加粗;&#xD;&#xA;            输入框.BorderStyle = BorderStyle.FixedSingle; // 设置边框样式&#xD;&#xA;            输入框.BackColor = Color.FromArgb(49, 67, 103); // 背景&#xD;&#xA;        }&#xD;&#xA;        输入鸣谢.Font = 小号加粗;&#xD;&#xA;        输入鸣谢.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;        输入鸣谢.BackColor = Color.FromArgb(21, 35, 71);// 设置背景色&#xD;&#xA;&#xD;&#xA;        if (控件 is CheckBox 勾选框)&#xD;&#xA;        {&#xD;&#xA;            勾选框.ForeColor = Color.FromArgb(234, 222, 195);&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        if (控件 is ComboBox 下拉框)&#xD;&#xA;        {&#xD;&#xA;            下拉框.DropDownStyle = ComboBoxStyle.DropDownList;&#xD;&#xA;            下拉框.DrawMode = DrawMode.OwnerDrawFixed;&#xD;&#xA;            下拉框.SelectedIndex = 0;&#xD;&#xA;            下拉框.BackColor = Color.FromArgb(41, 60, 107);// 设置背景色 41, 60, 107 或 71, 96, 150&#xD;&#xA;            下拉框.ForeColor = Color.FromArgb(234, 222, 195); // 设置前景色&#xD;&#xA;            添加下拉前缀(下拉框, &quot;▶&quot;);// ▶ &#xD;&#xA;            下拉框.DrawItem += new DrawItemEventHandler(绘制下拉框);&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    TriggernometryHelpers.SetScalarVariable(false, &quot;空天姬控制窗口I&quot;, &quot;1&quot;);&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, &quot;/e 窗口加载成功！&lt;se.9&gt;&quot;);&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 绘制下拉框(object sender, DrawItemEventArgs e)&#xD;&#xA;{&#xD;&#xA;    e.Graphics.FillRectangle(new SolidBrush(e.BackColor), e.Bounds);&#xD;&#xA;    StringFormat stringFormat = new StringFormat&#xD;&#xA;    {&#xD;&#xA;        Alignment = StringAlignment.Near,&#xD;&#xA;        LineAlignment = StringAlignment.Center&#xD;&#xA;    };&#xD;&#xA;&#xD;&#xA;    e.Graphics.DrawString(((ComboBox)sender).Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X, e.Bounds.Y);&#xD;&#xA;&#xD;&#xA;    using (Pen borderPen = new Pen(Color.FromArgb(41, 60, 107))) // 边框颜色 或 41, 60, 107 &#xD;&#xA;    {&#xD;&#xA;        e.Graphics.DrawRectangle(borderPen, e.Bounds.X, e.Bounds.Y, e.Bounds.Width - 1, e.Bounds.Height - 1);&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 添加下拉前缀(ComboBox comboBox, string prefix)&#xD;&#xA;{&#xD;&#xA;    int selectedIndex = comboBox.SelectedIndex; // 记录当前选中的索引&#xD;&#xA;&#xD;&#xA;    List&lt;string&gt; newItems = new List&lt;string&gt;(); // 创建一个新的列表以存储带有前缀的项&#xD;&#xA;&#xD;&#xA;    foreach (var item in comboBox.Items)&#xD;&#xA;    {&#xD;&#xA;        if (item is string strItem)&#xD;&#xA;        {&#xD;&#xA;            newItems.Add($&quot;{prefix}{strItem}&quot;); // 遍历当前的项，添加前缀，并添加到新的列表中&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    comboBox.Items.Clear(); // 清空ComboBox的Items集合&#xD;&#xA;&#xD;&#xA;    comboBox.Items.AddRange(newItems.ToArray()); // 将带有前缀的新项添加回ComboBox&#xD;&#xA;&#xD;&#xA;    if (selectedIndex &gt;= 0 &amp;&amp; selectedIndex &lt; comboBox.Items.Count)&#xD;&#xA;    {&#xD;&#xA;        comboBox.SelectedIndex = selectedIndex; // 恢复ComboBox的SelectedIndex&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        comboBox.SelectedIndex = 0; // 如果原来的selectedIndex超出范围，则选择第一个项&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 更新按钮文本(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    if (下拉海钓.SelectedItem.ToString() != &quot;▶占位&quot;)&#xD;&#xA;    {&#xD;&#xA;        string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;        if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;        {&#xD;&#xA;            海钓选项 = 海钓选项.Substring(1); // 去除第一个字符&#xD;&#xA;        }&#xD;&#xA;        按钮海钓.Text = &quot;启动&quot; + 海钓选项;&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        按钮海钓.Text = &quot;没做完&quot;;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入海钓(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    if (下拉海钓.SelectedItem.ToString() != &quot;▶占位&quot;)&#xD;&#xA;    {&#xD;&#xA;        string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;        if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;        {&#xD;&#xA;            海钓选项 = 海钓选项.Substring(1); // 移除第一个字符&#xD;&#xA;        }&#xD;&#xA;        RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + 海钓选项 + &quot;确定&quot;);&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        输入报错(sender, e);&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入航线(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    延时更新().ConfigureAwait(false);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;async Task 延时更新()&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;航线&quot;);&#xD;&#xA;    文本诗句.Text = &quot;已发送至默语频道&quot;;&#xD;&#xA;    await Task.Delay(3000); &#xD;&#xA;    更新诗句();&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入报错(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;空天姬：功能未完成。&lt;se.11&gt;&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入生成器(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;空天姬生成器&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入配置(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;空天姬配置&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 更新诗句()&#xD;&#xA;{&#xD;&#xA;    List&lt;string&gt; 可选诗句 = new List&lt;string&gt;(所有诗句);&#xD;&#xA;    foreach (var 诗 in 已显示诗句)&#xD;&#xA;    {&#xD;&#xA;        可选诗句.Remove(诗);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    if (可选诗句.Count &gt; 0)&#xD;&#xA;    {&#xD;&#xA;        int 随机索引 = 随机数.Next(可选诗句.Count);&#xD;&#xA;        string 新诗句 = 可选诗句[随机索引];&#xD;&#xA;        已显示诗句.Add(新诗句);&#xD;&#xA;        文本诗句.Text = 新诗句;&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        已显示诗句.Clear(); // 清除已显示列表，准备重新开始&#xD;&#xA;        更新诗句(); // 重新显示随机诗句&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 打开爱发电(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    string url = &quot;https://afdian.net/a/bcloli&quot;;&#xD;&#xA;&#xD;&#xA;    try&#xD;&#xA;    {&#xD;&#xA;        Process.Start(url);&#xD;&#xA;    }&#xD;&#xA;    catch (Exception ex)&#xD;&#xA;    {&#xD;&#xA;        MessageBox.Show($&quot;无法打开链接: {ex.Message}&quot;, &quot;错误&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;void 打开仓库(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    string url = &quot;https://github.com/BlackCleaverLoli/MissFisher&quot;;&#xD;&#xA;&#xD;&#xA;    try&#xD;&#xA;    {&#xD;&#xA;        Process.Start(url);&#xD;&#xA;    }&#xD;&#xA;    catch (Exception ex)&#xD;&#xA;    {&#xD;&#xA;        MessageBox.Show($&quot;无法打开链接: {ex.Message}&quot;, &quot;错误&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 全选(object sender, MouseEventArgs e)&#xD;&#xA;{&#xD;&#xA;    if (e.Button == MouseButtons.Left)&#xD;&#xA;    {&#xD;&#xA;        if (sender is TextBox textBox &amp;&amp; e.Button == MouseButtons.Left)&#xD;&#xA;        {&#xD;&#xA;            textBox.SelectAll();&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}" ActionType="ExecuteScript" DescBgColor="0df">
+                  <Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Drawing;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using System.Text.RegularExpressions;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Threading.Tasks;&#xD;&#xA;using System.Diagnostics;&#xD;&#xA;using System.Security.Policy;&#xD;&#xA;&#xD;&#xA;#region 初始化&#xD;&#xA;var 字体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F);&#xD;&#xA;var 小号 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F);&#xD;&#xA;var 楷体 = new Font(&quot;楷体&quot;, 15.75F);// 14.25 | 15 | 15.75&#xD;&#xA;var 小号加粗 = new System.Drawing.Font(&quot;Microsoft YaHei UI&quot;, 10.5F, System.Drawing.FontStyle.Bold);&#xD;&#xA;var 加粗 = new System.Drawing.Font(&quot;Microsoft YaHei UI&quot;, 14.25F, System.Drawing.FontStyle.Bold);&#xD;&#xA;var 红色 = Color.FromArgb(139, 41, 41);&#xD;&#xA;var 黄色 = Color.FromArgb(249, 192, 106);&#xD;&#xA;var 灰色 = Color.FromArgb(175, 175, 175);&#xD;&#xA;var 深灰 = Color.FromArgb(68, 68, 68);&#xD;&#xA;string 默语 = &quot;/e &quot;;&#xD;&#xA;var 正则验证ET = new Regex(@&quot;^[0-9]{4}[-~][0-9]{4}$&quot;);&#xD;&#xA;&#xD;&#xA;var 窗口 = new Form&#xD;&#xA;{&#xD;&#xA;    Text = &quot;空天姬&quot;,&#xD;&#xA;    StartPosition = FormStartPosition.CenterScreen, // 窗口启动位置&#xD;&#xA;    FormBorderStyle = FormBorderStyle.FixedSingle, // 窗口边框样式&#xD;&#xA;    MaximizeBox = false, // 禁止最大化按钮&#xD;&#xA;    AutoSize = true, // 自动调整窗体大小&#xD;&#xA;    AutoScaleMode = AutoScaleMode.Font, // 缩放模式&#xD;&#xA;    Padding = new Padding(5, 5, 0, 5), // 内边距&#xD;&#xA;    BackColor = Color.FromArgb(32, 55, 110), // 背景颜色&#xD;&#xA;    //Opacity = 0.9, // 窗口透明度&#xD;&#xA;    TopMost = true, // 窗口置顶&#xD;&#xA;    SizeGripStyle = SizeGripStyle.Hide // 隐藏并禁用右下角的大小调整手柄&#xD;&#xA;};&#xD;&#xA;&#xD;&#xA;var 表格 = new TableLayoutPanel&#xD;&#xA;{&#xD;&#xA;    AutoSize = true,&#xD;&#xA;    Dock = DockStyle.Fill,&#xD;&#xA;};&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// 中控部分&#xD;&#xA;Button 按钮生成器 = new Button { Text = &quot;生成&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮生成器, &quot;打开命令生成器&quot;);&#xD;&#xA;Button 按钮配置 = new Button { Text = &quot;配置&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮配置, &quot;打开用户配置&quot;);&#xD;&#xA;&#xD;&#xA;Button 按钮航线 = new Button { Text = &quot;航线&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮航线, &quot;在默语频道获得预报&quot;);&#xD;&#xA;Button 按钮海钓 = new Button { Text = &quot;启动自动冲分&quot; };&#xD;&#xA;ComboBox 下拉海钓 = new ComboBox() { Items = { &quot;冲分&quot;, &quot;蓝鱼&quot;, &quot;成就1&quot;, &quot;成就2&quot; } };&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;TextBox 输入鸣谢 = new TextBox&#xD;&#xA;{&#xD;&#xA;    ReadOnly = true,&#xD;&#xA;    WordWrap = true,  // 启用自动换行&#xD;&#xA;    Multiline = true, // 允许多行&#xD;&#xA;    ScrollBars = ScrollBars.Vertical, // 垂直滚动条 Vertical 或 None&#xD;&#xA;    Text = &quot;- 特别鸣谢 -\r\n&quot; +&#xD;&#xA;           &quot;MnFeN  FraGilE  欧尼棒棒\r\n&quot; +&#xD;&#xA;           &quot;- 赞助 -\r\n&quot; +&#xD;&#xA;           &quot;Kanaye  江畔晚风拂柳\r\n&quot; +&#xD;&#xA;           &quot;以及 贾XXX 的糯香柠檬茶XD&quot;&#xD;&#xA;};&#xD;&#xA;new ToolTip().SetToolTip(输入鸣谢, &quot;双击复制爱发电链接&quot;);&#xD;&#xA;&#xD;&#xA;Label 文本签名 = new Label { Text = &quot;by BlackCleaverLoli&quot; };&#xD;&#xA;new ToolTip().SetToolTip(文本签名, &quot;双击复制仓库链接&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;string[] 诗句 = new string[] { &quot;聊把钓竿消永日\r\n溪翁沙鹭共悠悠&quot;,&#xD;&#xA;                               &quot;垂钓绿湾春\r\n春深杏花乱&quot;,&#xD;&#xA;                               &quot;独钓春江上\r\n春江引趣长&quot;,&#xD;&#xA;                               &quot;钓船归去斜阳尽\r\n惟有青山对白鸥&quot;,&#xD;&#xA;                               &quot;一竿风月  一蓑烟雨\r\n家在钓台西住&quot;,&#xD;&#xA;                               &quot;江上晚来堪画处\r\n钓鱼人一蓑归去&quot;,&#xD;&#xA;                               &quot;白发一老翁  垂钓溪边中\r\n大树做其伴  鸟莺呼其朋&quot;,&#xD;&#xA;                               &quot;渭水如镜色  中有鲤与鲂\r\n偶持一竿竹  悬钓至其傍&quot;,&#xD;&#xA;                               &quot;闲钓江鱼不钓名\r\n瓦瓯斟酒暮山青&quot;,&#xD;&#xA;                               &quot;尽日池边钓锦鳞\r\n芰荷香里暗消魂&quot;,&#xD;&#xA;                               &quot;竹竿袅袅波无际\r\n不知何者吞吾钩&quot;,&#xD;&#xA;                               &quot;蓬头稚子学垂纶\r\n侧坐莓苔草映身&quot;,&#xD;&#xA;                               &quot;白头波上白头翁\r\n家逐船移浦浦风&quot;,&#xD;&#xA;                               &quot;一蓑一笠一扁舟\r\n一丈丝纶一寸钩&quot;,&#xD;&#xA;                               &quot;垂钓坐磐石  水清心亦闲\r\n鱼行潭树下  猿挂岛藤间&quot;,&#xD;&#xA;                               &quot;江上雪  独立钓渔翁\r\n一曲高歌一樽酒\r\n一人独钓一江秋&quot;,&#xD;&#xA;                               &quot;夜静水寒鱼不食\r\n满船空载月明归&quot;,&#xD;&#xA;                               &quot;结庐黄河曲\r\n垂钓长河里&quot;,&#xD;&#xA;                               &quot;你知道吗？\r\n这个诗句框是为了弥补 BUG&quot;,&#xD;&#xA;                               &quot;你知道吗？\r\n母肥是世界的珍宝&quot; };&#xD;&#xA;List&lt;string&gt; 所有诗句 = new List&lt;string&gt;(诗句);&#xD;&#xA;List&lt;string&gt; 已显示诗句 = new List&lt;string&gt;();&#xD;&#xA;&#xD;&#xA;Label 文本诗句 = new Label();&#xD;&#xA;&#xD;&#xA;Random 随机数 = new Random();&#xD;&#xA;&#xD;&#xA;#endregion&#xD;&#xA;&#xD;&#xA;#region 控件事件&#xD;&#xA;窗口.Shown += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;    ((Form)sender).TopMost = true; // 在显示时设置为最前端&#xD;&#xA;    System.Threading.Thread.Sleep(10); // 等待一小段时间以确保窗口已置于顶层&#xD;&#xA;    ((Form)sender).TopMost = false; // 然后取消置顶状态&#xD;&#xA;};&#xD;&#xA;&#xD;&#xA;// 海钓&#xD;&#xA;按钮海钓.Click += 输入海钓;&#xD;&#xA;下拉海钓.SelectedIndexChanged += 更新按钮文本;&#xD;&#xA;&#xD;&#xA;按钮配置.Click += 输入配置;&#xD;&#xA;按钮生成器.Click += 输入生成器;&#xD;&#xA;按钮航线.Click += 输入航线;&#xD;&#xA;&#xD;&#xA;输入鸣谢.DoubleClick += 复制爱发电;&#xD;&#xA;文本签名.DoubleClick += 复制仓库;&#xD;&#xA;&#xD;&#xA;文本诗句.Click += (sender, e) =&gt; 更新诗句();&#xD;&#xA;&#xD;&#xA;//按钮停止.Click += 输入停止;&#xD;&#xA;&#xD;&#xA;#endregion&#xD;&#xA;&#xD;&#xA;设置控件关系();&#xD;&#xA;设置控件样式();&#xD;&#xA;更新诗句();&#xD;&#xA;窗口.ShowDialog();&#xD;&#xA;&#xD;&#xA;void 设置控件关系()&#xD;&#xA;{&#xD;&#xA;    // 添加控件关系：主表单&#xD;&#xA;    窗口.Controls.Add(表格);&#xD;&#xA;&#xD;&#xA;    表格.ColumnCount = 4;// 列&#xD;&#xA;    表格.RowCount = 7;// 行&#xD;&#xA;    // DPI 适配&#xD;&#xA;    // 获取主屏幕的 DPI&#xD;&#xA;    Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);&#xD;&#xA;    float dpiX = graphics.DpiX;&#xD;&#xA;    float dpiY = graphics.DpiY;&#xD;&#xA;    graphics.Dispose();&#xD;&#xA;&#xD;&#xA;    // 计算缩放比例，这里以垂直DPI为例&#xD;&#xA;    float scaleFactor = dpiY / 96f; // 基准DPI为96（100%缩放时的标准DPI）&#xD;&#xA;&#xD;&#xA;    // 根据缩放比例调整像素值&#xD;&#xA;    int 行高像素 = (int)(38 * scaleFactor); // 原始38像素，根据DPI调整&#xD;&#xA;    int 列宽像素 = (int)(76 * scaleFactor); // 原始76像素，根据DPI调整&#xD;&#xA;&#xD;&#xA;    for (int i = 0; i &lt; 表格.RowCount; i++)&#xD;&#xA;    {&#xD;&#xA;        表格.RowStyles.Add(new RowStyle(SizeType.Absolute, 行高像素));&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    for (int j = 0; j &lt; 表格.ColumnCount; j++)&#xD;&#xA;    {&#xD;&#xA;        表格.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 列宽像素));&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    //表格.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;// 显示框线&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(文本诗句, 0, 5);&#xD;&#xA;    表格.SetColumnSpan(文本诗句, 4);&#xD;&#xA;    表格.SetRowSpan(文本诗句, 2);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(文本签名, 2, 4);&#xD;&#xA;    表格.SetColumnSpan(文本签名, 2);&#xD;&#xA;    表格.SetRowSpan(文本签名, 1);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(按钮海钓, 0, 3);&#xD;&#xA;    表格.SetRowSpan(按钮海钓, 2);&#xD;&#xA;    表格.SetColumnSpan(按钮海钓, 2);&#xD;&#xA;    表格.Controls.Add(下拉海钓, 2, 3);&#xD;&#xA;    表格.SetColumnSpan(下拉海钓, 2);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(按钮生成器, 3, 0);&#xD;&#xA;    表格.Controls.Add(按钮配置, 3, 1);&#xD;&#xA;    表格.Controls.Add(按钮航线, 3, 2);&#xD;&#xA;&#xD;&#xA;    表格.Controls.Add(输入鸣谢, 0, 0);&#xD;&#xA;    表格.SetColumnSpan(输入鸣谢, 3);&#xD;&#xA;    表格.SetRowSpan(输入鸣谢, 3);&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 设置控件样式()&#xD;&#xA;{&#xD;&#xA;    // 主表单&#xD;&#xA;    foreach (Control 控件 in 表格.Controls)&#xD;&#xA;    {&#xD;&#xA;        // 整体设置&#xD;&#xA;        控件.Font = 字体;&#xD;&#xA;        控件.ForeColor = Color.White;&#xD;&#xA;        控件.AutoSize = true;&#xD;&#xA;        控件.Dock = DockStyle.Fill;&#xD;&#xA;&#xD;&#xA;        if (控件 is Label 标签)&#xD;&#xA;        {&#xD;&#xA;            标签.Font = 加粗;&#xD;&#xA;            标签.ForeColor = Color.FromArgb(196, 172, 123);// 230, 218, 193&#xD;&#xA;            标签.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;        }&#xD;&#xA;        文本签名.Font = 小号加粗;&#xD;&#xA;        文本签名.ForeColor = Color.FromArgb(196, 197, 201); // 196, 197, 201&#xD;&#xA;        文本签名.TextAlign = ContentAlignment.TopRight;&#xD;&#xA;        //文本诗句.Padding = new Padding(0, 5, 0, 0);&#xD;&#xA;        文本诗句.Font = 楷体;&#xD;&#xA;        文本诗句.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;        //文本诗句.BackColor = Color.FromArgb(50, 81, 155);// 诗句框背景&#xD;&#xA;        //文本诗句.ForeColor = Color.FromArgb(255, 255, 255);&#xD;&#xA;&#xD;&#xA;        if (控件 is Button 按钮)&#xD;&#xA;        {&#xD;&#xA;            按钮.Font = 加粗;&#xD;&#xA;            按钮.FlatStyle = FlatStyle.Flat;&#xD;&#xA;            按钮.BackColor = Color.FromArgb(50, 81, 155); // 设置背景色&#xD;&#xA;            按钮.FlatAppearance.BorderColor = Color.FromArgb(19, 33, 68); // 设置边框颜色&#xD;&#xA;        }&#xD;&#xA;        按钮配置.BackColor = 红色;&#xD;&#xA;        按钮配置.ForeColor = 黄色;// 灰色字体色 68, 68, 68&#xD;&#xA;        按钮生成器.BackColor = 红色;&#xD;&#xA;        按钮生成器.ForeColor = 黄色;&#xD;&#xA;        按钮航线.BackColor = 灰色;&#xD;&#xA;        按钮航线.ForeColor = 深灰;&#xD;&#xA;&#xD;&#xA;        if (控件 is TextBox 输入框)&#xD;&#xA;        {&#xD;&#xA;            输入框.Font = 加粗;&#xD;&#xA;            输入框.BorderStyle = BorderStyle.FixedSingle; // 设置边框样式&#xD;&#xA;            输入框.BackColor = Color.FromArgb(49, 67, 103); // 背景&#xD;&#xA;        }&#xD;&#xA;        输入鸣谢.Font = 小号加粗;&#xD;&#xA;        输入鸣谢.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;        输入鸣谢.BackColor = Color.FromArgb(21, 35, 71);// 设置背景色&#xD;&#xA;&#xD;&#xA;        if (控件 is CheckBox 勾选框)&#xD;&#xA;        {&#xD;&#xA;            勾选框.ForeColor = Color.FromArgb(234, 222, 195);&#xD;&#xA;        }&#xD;&#xA;&#xD;&#xA;        if (控件 is ComboBox 下拉框)&#xD;&#xA;        {&#xD;&#xA;            下拉框.DropDownStyle = ComboBoxStyle.DropDownList;&#xD;&#xA;            下拉框.DrawMode = DrawMode.OwnerDrawFixed;&#xD;&#xA;            下拉框.SelectedIndex = 0;&#xD;&#xA;            下拉框.BackColor = Color.FromArgb(41, 60, 107);// 设置背景色 41, 60, 107 或 71, 96, 150&#xD;&#xA;            下拉框.ForeColor = Color.FromArgb(234, 222, 195); // 设置前景色&#xD;&#xA;            添加下拉前缀(下拉框, &quot;▶&quot;);// ▶ &#xD;&#xA;            下拉框.DrawItem += new DrawItemEventHandler(绘制下拉框);&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    TriggernometryHelpers.SetScalarVariable(false, &quot;空天姬控制窗口I&quot;, &quot;1&quot;);&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, &quot;/e 窗口加载成功！&lt;se.9&gt;&quot;);&#xD;&#xA;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 绘制下拉框(object sender, DrawItemEventArgs e)&#xD;&#xA;{&#xD;&#xA;    e.Graphics.FillRectangle(new SolidBrush(e.BackColor), e.Bounds);&#xD;&#xA;    StringFormat stringFormat = new StringFormat&#xD;&#xA;    {&#xD;&#xA;        Alignment = StringAlignment.Near,&#xD;&#xA;        LineAlignment = StringAlignment.Center&#xD;&#xA;    };&#xD;&#xA;&#xD;&#xA;    e.Graphics.DrawString(((ComboBox)sender).Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds.X, e.Bounds.Y);&#xD;&#xA;&#xD;&#xA;    using (Pen borderPen = new Pen(Color.FromArgb(41, 60, 107))) // 边框颜色 或 41, 60, 107 &#xD;&#xA;    {&#xD;&#xA;        e.Graphics.DrawRectangle(borderPen, e.Bounds.X, e.Bounds.Y, e.Bounds.Width - 1, e.Bounds.Height - 1);&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 添加下拉前缀(ComboBox comboBox, string prefix)&#xD;&#xA;{&#xD;&#xA;    int selectedIndex = comboBox.SelectedIndex; // 记录当前选中的索引&#xD;&#xA;&#xD;&#xA;    List&lt;string&gt; newItems = new List&lt;string&gt;(); // 创建一个新的列表以存储带有前缀的项&#xD;&#xA;&#xD;&#xA;    foreach (var item in comboBox.Items)&#xD;&#xA;    {&#xD;&#xA;        if (item is string strItem)&#xD;&#xA;        {&#xD;&#xA;            newItems.Add($&quot;{prefix}{strItem}&quot;); // 遍历当前的项，添加前缀，并添加到新的列表中&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    comboBox.Items.Clear(); // 清空ComboBox的Items集合&#xD;&#xA;&#xD;&#xA;    comboBox.Items.AddRange(newItems.ToArray()); // 将带有前缀的新项添加回ComboBox&#xD;&#xA;&#xD;&#xA;    if (selectedIndex &gt;= 0 &amp;&amp; selectedIndex &lt; comboBox.Items.Count)&#xD;&#xA;    {&#xD;&#xA;        comboBox.SelectedIndex = selectedIndex; // 恢复ComboBox的SelectedIndex&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        comboBox.SelectedIndex = 0; // 如果原来的selectedIndex超出范围，则选择第一个项&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 更新按钮文本(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    if (下拉海钓.SelectedItem.ToString() != &quot;▶占位&quot;)&#xD;&#xA;    {&#xD;&#xA;        string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;        if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;        {&#xD;&#xA;            海钓选项 = 海钓选项.Substring(1); // 去除第一个字符&#xD;&#xA;        }&#xD;&#xA;        按钮海钓.Text = &quot;启动&quot; + 海钓选项;&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        按钮海钓.Text = &quot;没做完&quot;;&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入海钓(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    if (下拉海钓.SelectedItem.ToString() != &quot;▶占位&quot;)&#xD;&#xA;    {&#xD;&#xA;        string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;        if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;        {&#xD;&#xA;            海钓选项 = 海钓选项.Substring(1); // 移除第一个字符&#xD;&#xA;        }&#xD;&#xA;        RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + 海钓选项 + &quot;确定&quot;);&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        输入报错(sender, e);&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入航线(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    延时更新().ConfigureAwait(false);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;async Task 延时更新()&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;航线&quot;);&#xD;&#xA;    文本诗句.Text = &quot;已发送至默语频道&quot;;&#xD;&#xA;    await Task.Delay(3000); &#xD;&#xA;    更新诗句();&#xD;&#xA;}&#xD;&#xA;async void 复制爱发电(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    await 延时更新复制(&quot;https://afdian.net/a/bcloli&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;async void 复制仓库(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    await 延时更新复制(&quot;https://github.com/BlackCleaverLoli/MissFisher&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;async Task 延时更新复制(string url)&#xD;&#xA;{&#xD;&#xA;    await Task.Run(() =&gt;&#xD;&#xA;    {&#xD;&#xA;        Triggernometry.Action.ClipboardSetText(url);&#xD;&#xA;    });&#xD;&#xA;&#xD;&#xA;    文本诗句.Text = &quot;已复制&quot;;&#xD;&#xA;    await Task.Delay(1500);&#xD;&#xA;&#xD;&#xA;    // 确保在UI线程上更新UI&#xD;&#xA;    更新诗句();&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入报错(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;空天姬：功能未完成。&lt;se.11&gt;&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入生成器(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;空天姬生成器&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 输入配置(object sender, EventArgs e)&#xD;&#xA;{&#xD;&#xA;    RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, 默语 + &quot;空天姬配置&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 更新诗句()&#xD;&#xA;{&#xD;&#xA;    List&lt;string&gt; 可选诗句 = new List&lt;string&gt;(所有诗句);&#xD;&#xA;    foreach (var 诗 in 已显示诗句)&#xD;&#xA;    {&#xD;&#xA;        可选诗句.Remove(诗);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    if (可选诗句.Count &gt; 0)&#xD;&#xA;    {&#xD;&#xA;        int 随机索引 = 随机数.Next(可选诗句.Count);&#xD;&#xA;        string 新诗句 = 可选诗句[随机索引];&#xD;&#xA;        已显示诗句.Add(新诗句);&#xD;&#xA;        文本诗句.Text = 新诗句;&#xD;&#xA;    }&#xD;&#xA;    else&#xD;&#xA;    {&#xD;&#xA;        已显示诗句.Clear(); // 清除已显示列表，准备重新开始&#xD;&#xA;        更新诗句(); // 重新显示随机诗句&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;void 全选(object sender, MouseEventArgs e)&#xD;&#xA;{&#xD;&#xA;    if (e.Button == MouseButtons.Left)&#xD;&#xA;    {&#xD;&#xA;        if (sender is TextBox textBox &amp;&amp; e.Button == MouseButtons.Left)&#xD;&#xA;        {&#xD;&#xA;            textBox.SelectAll();&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}" ActionType="ExecuteScript" DescBgColor="0df">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                   <Action OrderNumber="2" LogMessageText="空天姬配置" LogProcess="True" ActionType="LogMessage">
@@ -7004,330 +7004,345 @@
           </Trigger>
         </Triggers>
       </Folder>
-      <Folder Id="4714438d-88e7-4e1e-b4c0-85443e44b751" ZoneFilterRegularExpression=".|黑色公主切萝莉肥" Name="主界面窗口丨双击打开 右键执行里面的触发器" Enabled="true">
+      <Folder Id="4714438d-88e7-4e1e-b4c0-85443e44b751" ZoneFilterRegularExpression=".|黑色公主切萝莉肥" Name="主界面窗口丨双击打开" Enabled="true">
         <Folders />
         <Triggers>
           <Trigger Enabled="false" Name="窗口更新日志" Id="b3ed39c5-c225-4531-af17-fe095270c61d" RegularExpression="">
             <Actions>
-              <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="    24w28c - 240714" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="    24w28d - 240714" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="    概要：" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="    概要：修复了 1 个 BUG。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="3" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="3" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="4" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="4" Enabled="False" ActionType="Placeholder" Description="    BUG 修复" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="5" Enabled="False" ActionType="Placeholder" Description="    ·【主界面】现在可以双击赞助框或签名打开相应网页。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="5" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【主窗口】的前往网页调用了非默认可使用的 API 导致无法运行。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="6" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="6" Enabled="False" ActionType="Placeholder" Description="    24w28c - 240714" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="7" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="7" Enabled="False" ActionType="Placeholder" Description="    概要：可双击前往相应网页；优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Description="    ·【主界面】的诗句框在提示预报发送后将再次显示诗句。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="9" Enabled="False" ActionType="Placeholder" Description="    ·为某些项添加一些悬浮提示。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="9" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="10" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="10" Enabled="False" ActionType="Placeholder" Description="    ·【主界面】现在可以双击赞助框或签名打开相应网页。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="11" Enabled="False" ActionType="Placeholder" Description="    24w28b - 240713" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="11" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="    概要：" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="    ·【主界面】的诗句框在提示预报发送后将再次显示诗句。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="    ·为某些项添加一些悬浮提示。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="    ·【主界面】微调了界面高度。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="    24w28a - 240713" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="    24w28b - 240713" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="    概要：新增了主界面窗口；现在此日志将记录所有 3 个空天姬窗口的更新内容。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="    概要：优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="    版本号" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="    ·【用户配置】更新至 1.4。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="    ·【主界面】微调了界面高度。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="    ·【命令生成器】更新至 0.8。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="    24w28a - 240713" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="    概要：新增了主界面窗口；现在此日志将记录所有 3 个空天姬窗口的更新内容。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="    ·【主界面窗口】包含常用功能。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="    ·【命令生成器】新增【启动全提鱼计】按钮。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="    版本号" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="    ·【用户配置】更新至 1.4。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="    ·【命令生成器】删除了与【主界面】重复的功能。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="    ·【命令生成器】更新至 0.8。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="    ·【主界面窗口】包含常用功能。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="    ·【用户配置】为每个下拉框的项都添加了“▶”前缀。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="    ·【命令生成器】新增【启动全提鱼计】按钮。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="30" Enabled="False" ActionType="Placeholder" Description="    ·加载窗口时会出现加载阶段的提示语。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="30" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Description="    ·现在不再能最大化界面。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Description="    ·【命令生成器】删除了与【主界面】重复的功能。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="32" Enabled="False" ActionType="Placeholder" Description="    ·现在不再能手动调整界面大小。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="32" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description="    ·为某些项添加一些悬浮提示。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="34" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="34" Enabled="False" ActionType="Placeholder" Description="    ·【用户配置】为每个下拉框的项都添加了“▶”前缀。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="35" Enabled="False" ActionType="Placeholder" Description="    BUG 修复" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="35" Enabled="False" ActionType="Placeholder" Description="    ·加载窗口时会出现加载阶段的提示语。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【用户配置】中的【自定义报杆】开关在读取与保存时相反了。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="    ·现在不再能最大化界面。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【用户配置】中的【成就频道】保存的是幻海时长的频道。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="    ·现在不再能手动调整界面大小。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="    v0.6 beta 2 - 240625" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="    ·为某些项添加一些悬浮提示。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="    概要：优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="    BUG 修复" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="41" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="41" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【用户配置】中的【自定义报杆】开关在读取与保存时相反了。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="42" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="42" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【用户配置】中的【成就频道】保存的是幻海时长的频道。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="43" Enabled="False" ActionType="Placeholder" Description="    v0.6 beta 1 - 240624" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="43" Enabled="False" ActionType="Placeholder" Description="    v0.6 beta 2 - 240625" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="44" Enabled="False" ActionType="Placeholder" Description="    概要：适配本体改动。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="44" Enabled="False" ActionType="Placeholder" Description="    概要：优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="45" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="45" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="46" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="46" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="47" Enabled="False" ActionType="Placeholder" Description="    ·【启动自动海钓】系列按钮修改相关输出的命令适配本体改动。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="47" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="48" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="48" Enabled="False" ActionType="Placeholder" Description="    v0.6 beta 1 - 240624" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="49" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="49" Enabled="False" ActionType="Placeholder" Description="    概要：适配本体改动。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="50" Enabled="False" ActionType="Placeholder" Description="    ·增加了一些界面操作的报错。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="50" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description="    BUG 修复" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="52" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【启动空天姬】按钮在初始状态被点击时可能会将提示语发送到游戏。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="52" Enabled="False" ActionType="Placeholder" Description="    ·【启动自动海钓】系列按钮修改相关输出的命令适配本体改动。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="53" Enabled="False" ActionType="Placeholder" Description="    v0.5 - 240624" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="53" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="    概要：支持高级触发器 1.2.0.115+；增加按钮可设置灵岩之剑参数；优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="55" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="55" Enabled="False" ActionType="Placeholder" Description="    ·增加了一些界面操作的报错。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="56" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="56" Enabled="False" ActionType="Placeholder" Description="    BUG 修复" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="57" Enabled="False" ActionType="Placeholder" Description="    ·【设置灵岩之剑】按钮可设置钓灵岩之剑的自定义参数到窗口上。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="57" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【启动空天姬】按钮在初始状态被点击时可能会将提示语发送到游戏。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description="    v0.5 - 240624" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="59" Enabled="False" ActionType="Placeholder" Description="    ·【环境】因相关方法名变更，不再支持低于 1.2.0.115 的高级触发器。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="59" Enabled="False" ActionType="Placeholder" Description="    概要：支持高级触发器 1.2.0.115+；增加按钮可设置灵岩之剑参数；优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="60" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="60" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="61" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="61" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="62" Enabled="False" ActionType="Placeholder" Description="    ·打开窗口时将检查版本并按需报错。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="62" Enabled="False" ActionType="Placeholder" Description="    ·【设置灵岩之剑】按钮可设置钓灵岩之剑的自定义参数到窗口上。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="63" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="63" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="64" Enabled="False" ActionType="Placeholder" Description="    BUG 修复" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="64" Enabled="False" ActionType="Placeholder" Description="    ·【环境】因相关方法名变更，不再支持低于 1.2.0.115 的高级触发器。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="65" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【复制命令】因新版高级触发器相关方法名变更导致窗口无法打开。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="65" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="66" Enabled="False" ActionType="Placeholder" Description="    v0.4b1 - 240622" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="66" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="67" Enabled="False" ActionType="Placeholder" Description="    概要：支持生成专一参数和计数命令；增加按钮可直接使用空天姬的部分功能；优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="67" Enabled="False" ActionType="Placeholder" Description="    ·打开窗口时将检查版本并按需报错。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="68" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="68" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分布局与文本。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="69" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="69" Enabled="False" ActionType="Placeholder" Description="    BUG 修复" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="70" Enabled="False" ActionType="Placeholder" Description="    ·【启动自动冲分】按钮可启动自动冲分。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="70" Enabled="False" ActionType="Placeholder" Description="    ·修复了一个 BUG，该 BUG 曾导致：【复制命令】因新版高级触发器相关方法名变更导致窗口无法打开。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="71" Enabled="False" ActionType="Placeholder" Description="    ·【启动调试】按钮可测试自动功能。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="71" Enabled="False" ActionType="Placeholder" Description="    v0.4b1 - 240622" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="72" Enabled="False" ActionType="Placeholder" Description="    ·【查询航线预报】按钮可在游戏消息窗口打印航线预报。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="72" Enabled="False" ActionType="Placeholder" Description="    概要：支持生成专一参数和计数命令；增加按钮可直接使用空天姬的部分功能；优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="73" Enabled="False" ActionType="Placeholder" Description="    ·现在可编写专一参数。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="73" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="74" Enabled="False" ActionType="Placeholder" Description="    ·不勾选竿型时可生成计数命令。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="74" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="75" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="75" Enabled="False" ActionType="Placeholder" Description="    ·【启动自动冲分】按钮可启动自动冲分。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="76" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="76" Enabled="False" ActionType="Placeholder" Description="    ·【启动调试】按钮可测试自动功能。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="77" Enabled="False" ActionType="Placeholder" Description="    ·在命令显示框增加了命令为空或参数不满足基本前置要求时的提示文本。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="77" Enabled="False" ActionType="Placeholder" Description="    ·【查询航线预报】按钮可在游戏消息窗口打印航线预报。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="78" Enabled="False" ActionType="Placeholder" Description="    v0.3 - 240621" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="78" Enabled="False" ActionType="Placeholder" Description="    ·现在可编写专一参数。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="79" Enabled="False" ActionType="Placeholder" Description="    概要：支持鱼识参数生成，更改了界面样式；优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="79" Enabled="False" ActionType="Placeholder" Description="    ·不勾选竿型时可生成计数命令。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="80" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="80" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="81" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="81" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="82" Enabled="False" ActionType="Placeholder" Description="    ·现在可编写鱼识参数。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="82" Enabled="False" ActionType="Placeholder" Description="    ·在命令显示框增加了命令为空或参数不满足基本前置要求时的提示文本。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="83" Enabled="False" ActionType="Placeholder" Description="    ·现在可在通常阶段勾选攒鱼计以使用最终参数模式攒鱼计。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="83" Enabled="False" ActionType="Placeholder" Description="    v0.3 - 240621" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="84" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="84" Enabled="False" ActionType="Placeholder" Description="    概要：支持鱼识参数生成，更改了界面样式；优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="85" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="85" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="86" Enabled="False" ActionType="Placeholder" Description="    ·为元素使用类似游戏内“浅蓝”主题的配色。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="86" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="87" Enabled="False" ActionType="Placeholder" Description="    ·改动了布局。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="87" Enabled="False" ActionType="Placeholder" Description="    ·现在可编写鱼识参数。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="88" Enabled="False" ActionType="Placeholder" Description="    ·修改了提示的文本与位置。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="88" Enabled="False" ActionType="Placeholder" Description="    ·现在可在通常阶段勾选攒鱼计以使用最终参数模式攒鱼计。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="89" Enabled="False" ActionType="Placeholder" Description="    ·生成时在指令中的部分参数间添加空格符提升可读性。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="89" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="90" Enabled="False" ActionType="Placeholder" Description="    v0.2b1 - 240620" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="90" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="91" Enabled="False" ActionType="Placeholder" Description="    概要：增加功能按钮，优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="91" Enabled="False" ActionType="Placeholder" Description="    ·为元素使用类似游戏内“浅蓝”主题的配色。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="92" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="92" Enabled="False" ActionType="Placeholder" Description="    ·改动了布局。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="93" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="93" Enabled="False" ActionType="Placeholder" Description="    ·修改了提示的文本与位置。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="94" Enabled="False" ActionType="Placeholder" Description="    ·复制命令按钮可以复制命令框显示的命令。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="94" Enabled="False" ActionType="Placeholder" Description="    ·生成时在指令中的部分参数间添加空格符提升可读性。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="95" Enabled="False" ActionType="Placeholder" Description="    ·停止按钮可以向游戏发送空天姬停止默语。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="95" Enabled="False" ActionType="Placeholder" Description="    v0.2b1 - 240620" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="96" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="96" Enabled="False" ActionType="Placeholder" Description="    概要：增加功能按钮，优化用户体验。" DescBgColor="f80" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="97" Enabled="False" ActionType="Placeholder" Description="    ·特殊提钩可以直接选择默认项来恢复默认状态了。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="97" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="98" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
+              <Action OrderNumber="98" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="99" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="99" Enabled="False" ActionType="Placeholder" Description="    ·复制命令按钮可以复制命令框显示的命令。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="100" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分文本。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="100" Enabled="False" ActionType="Placeholder" Description="    ·停止按钮可以向游戏发送空天姬停止默语。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="101" Enabled="False" ActionType="Placeholder" Description="    ·将面板镜像了。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="101" Enabled="False" ActionType="Placeholder" Description="    修改" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="102" Enabled="False" ActionType="Placeholder" Description="    ·命令框将展示多行且能自动换行，并能适应更长的命令。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="102" Enabled="False" ActionType="Placeholder" Description="    ·特殊提钩可以直接选择默认项来恢复默认状态了。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="103" Enabled="False" ActionType="Placeholder" Description="    v0.1b - 240619" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="103" Enabled="False" ActionType="Placeholder" Description="    BUG 修复及品质级改动" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="104" Enabled="False" ActionType="Placeholder" Description="    概要：实现基本功能。" DescBgColor="f80" DescriptionOverride="True">
+              <Action OrderNumber="104" Enabled="False" ActionType="Placeholder" Description="    品质级改动" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="105" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+              <Action OrderNumber="105" Enabled="False" ActionType="Placeholder" Description="    ·更改了部分文本。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="106" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="106" Enabled="False" ActionType="Placeholder" Description="    ·将面板镜像了。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="107" Enabled="False" ActionType="Placeholder" Description="    ·实现了基本功能。" DescBgColor="fff" DescriptionOverride="True">
+              <Action OrderNumber="107" Enabled="False" ActionType="Placeholder" Description="    ·命令框将展示多行且能自动换行，并能适应更长的命令。" DescBgColor="fff" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="108" Enabled="False" ActionType="Placeholder" Description="    v0.1b - 240619" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="109" Enabled="False" ActionType="Placeholder" Description="    概要：实现基本功能。" DescBgColor="f80" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="110" Enabled="False" ActionType="Placeholder" Description="    功能更新" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="111" Enabled="False" ActionType="Placeholder" Description="    新增" DescBgColor="fff" DescriptionOverride="True">
+                <Condition Enabled="false" Grouping="Or" />
+              </Action>
+              <Action OrderNumber="112" Enabled="False" ActionType="Placeholder" Description="    ·实现了基本功能。" DescBgColor="fff" DescriptionOverride="True">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
             </Actions>
@@ -7353,7 +7368,7 @@
     <Triggers>
       <Trigger Enabled="false" Name="【更新日志】" Id="f6241011-1735-4cac-b337-842694b011e0" RegularExpression="">
         <Actions>
-          <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="    自上个正式版的 06 累积更新 - 240714" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="    自上个正式版的 07 累积更新 - 240714" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
           <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="    概要：" DescBgColor="f80" DescriptionOverride="True">
