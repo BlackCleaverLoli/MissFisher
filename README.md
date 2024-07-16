@@ -6,16 +6,16 @@ Only supports Chinese servers
 ```
 https://github.com/BlackCleaverLoli/MissFisher/raw/main/MissFisher.xml
 ```
-- 可相对稳定地使用的版本
+- 可稳定使用的版本
 ### 快照版
 ```
 https://github.com/BlackCleaverLoli/MissFisher/raw/main/MissFisher%20Snapshot.xml
 ```
-- 包含开发中的最新功能
+- 快速迭代的测试用版本
 ## 简介
 ### 自动功能
 - 自动钓鱼：输入命令自定义钓法、模式、ET等
-- 全自动海钓：暂只支持以高分为目标的冲分模式
+- 全自动海钓：支持以高分、蓝鱼或数量成就为目标的自动模式
 - 自定义预设：可以保存数条自动钓鱼命令作为预设
 ### 工具功能
 - 悬浮窗：竿时&幻海&采集力
