@@ -24,5 +24,6 @@ https://github.com/BlackCleaverLoli/MissFisher/raw/main/MissFisher%20Snapshot.xm
 - 航线预报：输入命令查询航线预报
 ## 安装&依赖
 - [@MnFeN](https://github.com/MnFeN/)分支的最新版[Triggernometry](https://github.com/MnFeN/Triggernometry)
-- 将空天姬 MissFisher 导入到 Triggernometry 中
+- 远程触发器：使用仓库链接、勾选仓库选项中的“允许执行代码”然后添加到 Triggernometry 中
+- 本地触发器：导入空天姬 MissFisher 的本地文件到 Triggernometry 中
 ### 其他事项请见触发器内的【说明文档】
