@@ -1,5 +1,5 @@
 # 空天姬 MissFisher
-Servers support CN, EN, JP. Chinese community feedback only.
+Support CN, EN, JP Servers. Chinese community feedback only.
 ## 仓库链接
 - 供 Triggernometry 远程触发器使用
 ### 正式版
