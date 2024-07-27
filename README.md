@@ -3,7 +3,7 @@
 - 支持：国服、英文端、日文端。
 * **Support CN, EN, JP Servers. Chinese community feedback only.**
 ## 使用说明
-**详见 [Wiki](https://github.com/BlackCleaverLoli/MissFisher/wiki)** （待补充）
+**详见 [Wiki](https://github.com/BlackCleaverLoli/MissFisher/wiki)**
 ## 注意事项
 **请勿利用本触发器进行对他人不利的行为。**
 **本触发器系免费的，请勿倒卖本触发器，请勿修改作者署名。**
