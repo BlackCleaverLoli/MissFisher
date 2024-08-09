@@ -16,7 +16,7 @@
 * 悬浮窗：图形化的辅助信息悬浮窗，如抛竿计时、杆震类型、幻海时长、采集力自然回复的所需时间等。
 * 信息播报：TTS 播报咬饵竿型、文字形式的单周期的垂钓信息统计、海钓触幻钓法、海钓数量成就统计等。
 ## 安装
-见 [安装指南](https://github.com/BlackCleaverLoli/MissFisher/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)。
+见 [安装指南](https://github.com/BlackCleaverLoli/MissFisher/wiki/Installation-Guide)。
 ## 注意
 **请勿利用本触发器进行对他人不利的行为。**
 **本触发器系免费的，请勿倒卖本触发器，请勿修改作者署名。**
