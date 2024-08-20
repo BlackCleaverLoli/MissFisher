@@ -22,3 +22,5 @@
 **本触发器系免费的，请勿倒卖本触发器，请勿修改作者署名。**
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 在空天姬开发时给予的大力支持与帮助！**
+## 反馈
+**请至 QQ 群：959153665**
