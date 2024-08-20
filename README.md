@@ -23,4 +23,4 @@
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 在空天姬开发时给予的大力支持与帮助！**
 ## 反馈
-**请至 QQ 群：959153665**
+**请至 QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
