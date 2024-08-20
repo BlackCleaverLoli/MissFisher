@@ -1,15 +1,16 @@
 # 空天姬 MissFisher
-空天姬是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
-- 支持：国服、英文端、日文端。
-* **Support CN, EN, JP Servers. Chinese community feedback only.**
-# 说明文档目录
+## 文档目录
 - [空天姬 MissFisher](#空天姬-MissFisher)
-   
+    
 - [安装指南](#安装指南)
    
 - [默语命令](#默语命令)
    
 - [学习编写空天姬预设](#学习编写空天姬预设)
+## 简介
+空天姬是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
+- 支持：国服、英文端、日文端。
+* **Support CN, EN, JP Servers. Chinese community feedback only.**
 ## 主要特性
 * 高可读性的自定义参数预设，面向目标钓法设计的参数结构，易于直接编写，无需通过其他工具导出。
 * 使用消息窗口输入默语命令，无需在 ACT 界面操作触发器，更可方便地保存在用户宏中。
@@ -30,9 +31,11 @@
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 在空天姬开发时给予的大力支持与帮助！**
 ## 反馈
 **请至 QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
+
+***
 # 安装指南
-- [返回说明文档目录](#说明文档目录)
-写于游戏版本：国服 `6.58` 国际服 `7.05`
+> 写于游戏版本：国服 `6.58` 国际服 `7.05`
+- [返回文档目录](#文档目录)
 ## 依赖
 ### 游戏内：
 * 拥有已经完成 `Lv90` 职业任务的 `捕鱼人` 职业。
@@ -159,9 +162,11 @@ MnFeN‘s fork of Triggernometry 中的高级触发器更新器提供的鲶鱼�
    
 * **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
 可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
+
+***
 # 默语命令
-- [返回说明文档目录](#说明文档目录)
-> 可通过在游戏中消息窗口的 `输入栏` 输入默语命令，或通过空天姬的用户界面窗口来使用空天姬功能。  
+> 可通过在游戏中消息窗口的 `输入栏` 输入默语命令，或通过空天姬的用户界面窗口来使用空天姬功能。 
+- [返回文档目录](#文档目录) 
   
 * 写于 MissFisher `v1.5.8`  
 ## 打开窗口：
@@ -214,9 +219,10 @@ MnFeN‘s fork of Triggernometry 中的高级触发器更新器提供的鲶鱼�
 6.0|未支持|未支持  
   
 您也可一同来协助建设内置预设：[预设文档](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2)
+***
 # 学习编写空天姬预设
-- [返回说明文档目录](#说明文档目录)
 > 写于 MissFisher `v1.5.10`
+- [返回文档目录](#文档目录)
 ## 什么是空天姬预设？
 > 空天姬预设是一组由数字、符号与鱼类名称关键词组成的特殊文本，它告诉空天姬应该如何执行自动钓鱼功能。  
   
