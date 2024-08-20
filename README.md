@@ -1,7 +1,5 @@
 # 空天姬 MissFisher
 ## 文档目录
-- [空天姬 MissFisher](#空天姬-MissFisher)
-    
 - [安装指南](#安装指南)
    
 - [默语命令](#默语命令)
