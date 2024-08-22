@@ -1,4 +1,5 @@
 # 空天姬 MissFisher
+> 请勿利用本触发器进行对他人不利的行为。本触发器系免费的，请勿倒卖本触发器，请勿修改作者署名。
 ## 文档目录
 - [安装指南](#安装指南)
    
@@ -20,13 +21,11 @@
 ### 辅助功能
 * 悬浮窗：图形化的辅助信息悬浮窗，如抛竿计时、杆震类型、幻海时长、采集力自然回复的所需时间等。
 * 信息播报：TTS 播报咬饵竿型、文字形式的单周期的垂钓信息统计、海钓触幻钓法、海钓数量成就统计等。
-## 注意
-**请勿利用本触发器进行对他人不利的行为。**
-**本触发器系免费的，请勿倒卖本触发器，请勿修改作者署名。**
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 在空天姬开发时给予的大力支持与帮助！**
 ## 反馈
-**请至 QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
+* **QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
+* **[Issues](https://github.com/BlackCleaverLoli/MissFisher/issues)**
 
 ***
 # 安装指南
