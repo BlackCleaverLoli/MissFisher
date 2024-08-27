@@ -91,7 +91,14 @@ https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher%20Snapshot.x
 ### ACT 相关配置：
 1. 在 ACT 界面中切换到 `插件列表` 分页（CafeACT 则是 `插件商店` - `高级管理`）- 按下方给出的顺序调整 ACT 插件顺位：
 ```
-（0）CafeStore（如有）（1）FFXIV_ACT_Plugin（2）OverlayPlugin（3）Triggernometry（4）CactbotOverlay（5）PostNamazu（6）Matcha（如有）（其他无关紧要的插件）
+（0）CafeStore（如有）
+（1）FFXIV_ACT_Plugin
+（2）OverlayPlugin
+（3）Triggernometry
+（4）CactbotOverlay
+（5）PostNamazu
+（6）Matcha（如有）
+（其他无关紧要的插件）
 ```
 2. 重启 ACT 并等待 ACT 完成启动。
 3. 在游戏中消息窗口的 `聊天输入栏` 输入命令 `/e ktj` - 按下 `回车键` 来打开空天姬主界面（或右键触发器 `空天姬主界面` - 点击 `执行（强制/条件）`）。
