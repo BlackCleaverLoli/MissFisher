@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.704">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w35d" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w35d">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w35e" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w35e">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -2584,7 +2584,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="66" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力" VariableExpression="${if: ${v:空天姬参数} == 平钓 ? ${f:ifmatch(${v:空天姬目标},200,0):收藏} : ${if: ${v:空天姬参数} == 大鱼 ? 200 : 560 } } + ( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬专一目标} ? 350 : 0 ) + ${f:ifmatch(${v:空天姬原参数},384,${f:ifmatch(${v:空天姬原参数},684,0):三重}):双重}" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="66" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力" VariableExpression="${if: ${v:空天姬参数} == 平钓 ? ${f:ifmatch(${v:空天姬目标},200,0):收藏} : ${if: ${v:空天姬参数} == 大鱼 ? 200 : 560 } } + ( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬专一目标} ? 350 : 0 )" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                       <Action OrderNumber="67" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
@@ -3302,7 +3302,6 @@
                       <Action OrderNumber="12" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="鱼篓" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼篓判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力} + 100" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬额外所需采集力}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
                       <Action OrderNumber="13" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
@@ -9419,7 +9418,7 @@
       </Trigger>
       <Trigger Enabled="false" Name="【更新日志】" Id="f6241011-1735-4cac-b337-842694b011e0" RegularExpression="">
         <Actions>
-          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="    v1.6.0.24w35d - 240830" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
+          <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="    v1.6.0.24w35e - 240830" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True">
             <Condition Enabled="false" Grouping="Or" />
           </Action>
           <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="    概要：新增阶段参数；追加断杆日志适配；优化海钓。" DescBgColor="f80" DescriptionOverride="True">
