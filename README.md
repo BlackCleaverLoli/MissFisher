@@ -36,7 +36,7 @@
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
 * 高级触发器 Triggernometry `v1.2.0.115+`（[MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry)）  
-（MnFeN‘s fork of Triggernometry 中更新器提供的鲶鱼精邮差 PostNamazu 版本可能不适用于空天姬）
+（MnFeN‘s fork of Triggernometry 中更新器提供的鲶鱼精邮差 PostNamazu 版本可能不适用于空天姬，因此在使用更新器自动更新后请查看鲶鱼精邮差 PostNamazu 的版本是否在 `v1.3.3.0+`）
 * 鲶鱼精邮差 PostNamazu `v1.3.3.0+`（[PostNamazu](https://github.com/Natsukage/PostNamazu/releases)）（国服请使用 [Cmd 分离的中间版本](https://github.com/Natsukage/PostNamazu/actions/runs/9699117182/artifacts/1645188741)、或从 [123 云盘](https://www.123pan.com/s/YJHhTd-gph13) 获取）
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
@@ -59,10 +59,11 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xm
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
 ```
 * 频繁更新以测试新功能的版本。
-3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（用作运行空天姬用户界面窗口）。
+3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用作运行空天姬用户界面窗口）。
 4. 勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（可选，启动进程仅会被用作手动执行触发器时打开相关网页）。
-5. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
-6. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
+5. 勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，仅用作更新空天姬内置预设）。
+6. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
+7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 ### 方法 2：导入为本地触发器
 **通过文件导入**
 1. 从下方任一链接中下载原始文件，正确的文件格式应为 `xml`：  
