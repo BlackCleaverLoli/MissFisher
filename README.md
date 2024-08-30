@@ -36,7 +36,7 @@
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
 * 高级触发器 Triggernometry `v1.2.0.115+`（[MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry)）  
-（MnFeN‘s fork of Triggernometry 中更新器提供的鲶鱼精邮差 PostNamazu 版本可能不适用于空天姬）
+（MnFeN‘s fork of Triggernometry 中更新器提供的鲶鱼精邮差 PostNamazu 版本可能不适用于空天姬，因此在使用更新器自动更新后请查看鲶鱼精邮差 PostNamazu 的版本是否在 `v1.3.3.0+`）
 * 鲶鱼精邮差 PostNamazu `v1.3.3.0+`（[PostNamazu](https://github.com/Natsukage/PostNamazu/releases)）（国服请使用 [Cmd 分离的中间版本](https://github.com/Natsukage/PostNamazu/actions/runs/9699117182/artifacts/1645188741)、或从 [123 云盘](https://www.123pan.com/s/YJHhTd-gph13) 获取）
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
