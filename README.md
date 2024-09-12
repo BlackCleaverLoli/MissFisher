@@ -180,7 +180,8 @@ MnFeN‘s fork of Triggernometry 中的高级触发器更新器提供的鲶鱼�
 ## 主界面
 > 你可以在游戏中消息窗口的 `聊天输入栏` 输入命令 `/e ktj` - 按下 `回车键` 来打开空天姬主界面；也可以右键触发器分组中的 `空天姬主界面` - 点击 `执行（强制/条件）` 来打开主界面。
 
-![主界面](https://github.com/user-attachments/assets/b6b6df71-151b-4156-83c8-f0c8618a6b8b)
+![主界面](https://github.com/user-attachments/assets/ce49c874-52f4-4326-be17-8ef6ca23a2b0)
+
 
 ① **公告栏**：位于界面顶部左侧，包含鸣谢以及赞助名单。
 ② **同步按钮**：从 GitHub 在线同步空天姬内置预设。
