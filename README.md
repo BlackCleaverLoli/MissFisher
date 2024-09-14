@@ -3,15 +3,15 @@
 ## 文档目录
 - [简介](#简介)
 
-- [安装指南](#安装指南)
+- [如何安装空天姬 MissFisher](#安装指南)
 
-- [快速上手](#快速上手)
+- [2 分钟快速上手](#快速上手)
    
-- [命令](#命令)
+- [所有命令](#命令)
 ## 简介
 空天姬是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - 支持：国服、英文端、日文端。
-* **Support CN, EN, JP Servers. Chinese community feedback only.**
+* **Support CN, EN, JP Servers.**
 ## 主要特性
 - **优秀手法**：内置优秀的资源管理与钓鱼手法，无需调教，即开即用。
 - **用户界面**：基于 Winform 的用户界面窗口，简洁美观，简单易用。
@@ -19,11 +19,11 @@
 - **自定义预设**：独有的单行预设文本，入门后无需工具即可快速编写，浓缩钓法，清晰易懂。
 ## 主要功能
 ### 自动功能
-* 自动钓鱼：发送空天姬预设到默语频道后，自动按提供的参数钓鱼。
-* 自动海钓：进入出海垂钓并启动海钓模式后，自动按选择的模式手法进行海钓，支持三种模式：冲分、蓝鱼、成就。
+* **自动钓鱼**：发送空天姬预设到默语频道后，自动按提供的参数钓鱼。
+* **自动海钓**：进入出海垂钓并启动海钓模式后，自动按选择的模式手法进行海钓，支持三种模式：冲分、蓝鱼、成就。
 ### 辅助功能
-* 悬浮窗：在钓鱼时显示图形化的辅助信息悬浮窗，如抛竿计时、杆震类型、幻海时长、采集力自然回复的所需时间等。
-* 信息播报：在鱼咬饵时 TTS 播报咬饵竿型；在默语频道发送信息，如结束钓鱼时单周期的垂钓信息统计、海钓触幻钓法、海钓数量成就统计等。
+* **悬浮窗**：在钓鱼时显示图形化的辅助信息悬浮窗，如抛竿计时、杆震类型、幻海时长、采集力自然回复的所需时间等。
+* **信息播报**：在鱼咬饵时 TTS 播报咬饵竿型；在默语频道发送信息，如结束钓鱼时单周期的垂钓信息统计、海钓触幻钓法、海钓数量成就统计等。
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 在空天姬开发时给予的大力支持与帮助！**
 ## 反馈
@@ -38,9 +38,8 @@
 * 拥有已经完成 `Lv90` 职业任务的 `捕鱼人` 职业。
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
-* 高级触发器 Triggernometry `v1.2.0.115+`（[MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry)）  
-（MnFeN‘s fork of Triggernometry 中更新器提供的鲶鱼精邮差 PostNamazu 版本可能不适用于空天姬，因此在使用更新器自动更新后请查看鲶鱼精邮差 PostNamazu 的版本是否在 `v1.3.3.0+`）
-* 鲶鱼精邮差 PostNamazu `v1.3.3.0+`（[PostNamazu](https://github.com/Natsukage/PostNamazu/releases)）（国服请使用 [Cmd 分离的中间版本](https://github.com/Natsukage/PostNamazu/actions/runs/9699117182/artifacts/1645188741)、或从 [123 云盘](https://www.123pan.com/s/YJHhTd-gph13) 获取）
+* 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`（MnFeN‘s fork of Triggernometry 中更新器提供的鲶鱼精邮差 PostNamazu 版本可能不适用于空天姬，因此在使用更新器更新后请查看 ACT 内鲶鱼精邮差 PostNamazu 插件的版本是否在 `v1.3.3.0+`）
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.3.0+`（国服请使用 [Cmd 分离的中间版本](https://github.com/Natsukage/PostNamazu/actions/runs/9699117182/artifacts/1645188741)、或 [从 123 云盘获取](https://www.123pan.com/s/YJHhTd-gph13) ）
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
@@ -69,26 +68,21 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 ### 方法 2：导入为本地触发器
 **通过文件导入**
-1. 从下方任一链接中下载原始文件，正确的文件格式应为 `xml`：  
-  
-**正式版：**  
-```
-https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml
-```
-* 可相对稳定地使用的版本。  
-  
-**快照版：**  
-```
-https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher%20Snapshot.xml
-```
-* 频繁更新以测试新功能的版本。
+1. 从下方任一页面中下载原始文件，正确的文件格式应为 `xml`：
+
+- **正式版：**[ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ] [ [123 网盘](https://www.123pan.com/s/YJHhTd-0ah13) ]
+  - 可相对稳定地使用的版本。
+
+- **快照版：**[ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher%20Snapshot.xml) ] ~~[ 不提供网盘 ]~~
+  - 频繁更新以测试新功能的版本。
+
 2. 在 Triggernometry 中选中触发器分组 `本地触发器` - 点击 `导入` - `从文件或 URI 加载` - 在选择文件窗口找到刚刚下载的 `xml` 文件 - 选中并打开它。
 3. 点击 `下一个` - 确认要导入的触发器无误 - `导入`。  
 4. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 
 **或通过剪贴板导入**  
-1. 打开上文的任一链接 - 复制代码文本框中原始文件的所有内容。
-2. 在 Triggernometry 中选中触发器分组 `本地触发器` - 点击 `导入` - 将复制到的 `xml` 代码完整粘贴到 `文本框` 中。
+1. 打开上文中的 GitHub 页面 - 复制代码文本框中原始文件的所有内容。
+2. 在 Triggernometry 中选中触发器分组 `本地触发器` - 点击 `导入` - 将复制到的 `xml` 代码完整粘贴到 `输入框` 中。
 3. 点击 `下一个` - 确认要导入的触发器无误 - `导入`。
 4. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 ## 进行配置
