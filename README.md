@@ -140,14 +140,14 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 **本地触发器**  
 1. 在 Triggernometry 内找到 空天姬 MissFisher 触发器的 `主分组` ，通常名为 `新能源钓竿 空天姬` 或 `MissFisher Snapshot`。
 2. 右键该 `主分组` - 点击 `移除` - 在弹出的对话框中点击 `确认` 。
-3. 参照条目 [方法 2：导入为本地触发器](#方法-2：导入为本地触发器) 中的方法步骤进行安装。
+3. 参照条目 [方法 2：导入为本地触发器](#方法-2导入为本地触发器) 中的方法步骤进行安装。
 
 ### 如何卸载：
 **远程触发器**  
 - 在 Triggernometry 内 `右键` 空天姬 MissFisher 的远程仓库 - 点击 `移除` - 在弹出的对话框中点击 `确认` 。
 
 **本地触发器**  
-- 参照条目 [如何更新](#如何更新：) 中 `本地触发器` 部分的步骤 1-2 来卸载 空天姬 MissFisher。
+- 参照条目 [如何更新](#如何更新) 中 `本地触发器` 部分的步骤 1-2 来卸载 空天姬 MissFisher。
 
 ## 常见问题
 ### 提示主界面窗口打开失败：
@@ -221,7 +221,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 对于非出海垂钓的自动钓鱼，有 2 种方法获取空天姬预设并启动自动钓鱼：
 
-### 方法 1：使用内置预设：
+### 方法 1：使用内置预设
 
 1. 使用 [FF14 鱼糕](https://fish.ffmomola.com/#/) 等工具查看想钓的鱼 - 可选：复制目标鱼类的全称。
 2. 准备好一些背包空间与所需的钓饵 - 前往目标鱼类所处的钓场并使角色面向钓场。
@@ -301,7 +301,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 `/ktjhx`|查询航线预报|
   
 ## 现在支持的内置预设
-空天姬 MissFisher 内置了一些自动钓鱼预设，使用方法见 [使用内置预设](#方法-1：使用内置预设：) 。
+空天姬 MissFisher 内置了一些自动钓鱼预设，使用方法见 [使用内置预设](#方法-1使用内置预设) 。
 
 预设的已审核情况：  
 版本|鱼王|三语支持|备注
