@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.705">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w38a" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w38a">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w38b" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w38b">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -132,7 +132,7 @@
                       <Action OrderNumber="20" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬控制耐心最后杆" VariableExpression="0" VariablePersist="True" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="21" LogMessageText="空天姬更新预设" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
+                      <Action OrderNumber="21" LogMessageText="空天姬更新预设自动" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                       <Action OrderNumber="22" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="版本" DictVariableValue="${f:capture(${env:版本},1):(^\d+)\.(\d+)\.(\d+)} * 10000 + ${f:capture(${env:版本},2):(^\d+)\.(\d+)\.(\d+)} * 100 + ${f:capture(${env:版本},3):(^\d+)\.(\d+)\.(\d+)}" DictSourcePersist="True" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬控制语言" VariableExpression="1" VariablePersist="True" ActionType="DictVariable" ExecutionDelayExpression="1000" Asynchronous="False">
@@ -709,7 +709,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                  <Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
                       <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
@@ -3479,7 +3479,7 @@
                       <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级时" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="18" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ${_this} == 耐心II ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" ListVariableIndex="${_idx}" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="18" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ${_this} == 耐心II ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="60" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
@@ -6263,7 +6263,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬禁用BAIT}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="1" NamedCallbackName="ChangeBait" NamedCallbackParam="$1" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="NamedCallback">
+                      <Action OrderNumber="1" NamedCallbackName="ChangeBait" NamedCallbackParam="$1" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
