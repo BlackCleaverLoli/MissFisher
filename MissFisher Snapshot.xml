@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.705">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w38c" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w38c">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w38d" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w38d">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -4666,17 +4666,29 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制断杆I}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="10" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级时" DescriptionOverride="True">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="11" ListVariableOp="SetAll" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${_me.level} &lt; 65 ? : 双重 }提钩" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionGroup Enabled="true" Grouping="Or">
+                            <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="65" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                            <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="90" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+                          </ConditionGroup>
+                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩}" ExpressionTypeL="String" ExpressionR="双重|三重" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="12" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="11" LogMessageText="空天姬执行" LogProcess="True" SoundRouting="None" TTSRouting="None" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="13" LogMessageText="空天姬执行" LogProcess="True" SoundRouting="None" TTSRouting="None" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="12" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" SoundRouting="None" TTSRouting="None" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
+                      <Action OrderNumber="14" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" SoundRouting="None" TTSRouting="None" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5118,7 +5130,7 @@
                       <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级时" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="16" ListVariableOp="SetAll" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${_me.level} ＜ 65 ? : 双重 }提钩" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="16" ListVariableOp="SetAll" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${_me.level} &lt; 65 ? : 双重 }提钩" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="Or">
                             <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="65" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
