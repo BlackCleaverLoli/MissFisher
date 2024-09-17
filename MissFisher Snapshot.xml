@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.705">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w38b" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w38b">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name="MissFisher Snapshot 24w38c" Enabled="true" RawEnvironmentVariables="版本 = 1.6.0&#xD;&#xA;快照 = 24w38c">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -3384,7 +3384,6 @@
                             <ConditionSingle Enabled="true" ExpressionL="${v:空天姬目标}" ExpressionTypeL="String" ExpressionR="攒鱼计" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="544" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="60" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
                       <Action OrderNumber="11" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼猎手" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
@@ -3851,7 +3850,6 @@
                               <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬成就幻海.ekey(${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </ConditionGroup>
                           </ConditionGroup>
-                          <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
                       <Action OrderNumber="9" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
@@ -3900,7 +3898,6 @@
                             </ConditionGroup>
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="60" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
                       <Action OrderNumber="10" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
