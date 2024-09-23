@@ -38,7 +38,8 @@
 ## 反馈
 * **QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
 * **[Issues](https://github.com/BlackCleaverLoli/MissFisher/issues)**
-
+## 无偿赞助
+- **[爱发电](https://afdian.com/a/bcloli)**
 ***
 # 安装指南
 > 写于游戏版本：国服 `6.58` 国际服 `7.05`
