@@ -12,10 +12,11 @@
 - **[所有命令](#命令)**
 ## 简介
 空天姬 MissFisher 是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
-- **支持：** 国服、英文端、日文端。
+- **支持：** 国服、英文端、日文端
 
+- **支持等级：** `1-100`
 - **Support CN, EN, JP Servers.**
-- [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)
+- **[金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**
 ## 主要特性
 - **优秀手法：** 内置优秀的资源管理与钓鱼手法，无需调教，即开即用。
 
@@ -45,7 +46,7 @@
 > 写于游戏版本：国服 `6.58` 国际服 `7.05`
 ## 依赖
 ### 游戏内：
-* 拥有已经完成 `Lv90` 职业任务的 `捕鱼人` 职业。
+* 职业 `捕鱼人` 。
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
