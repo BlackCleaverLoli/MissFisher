@@ -44,7 +44,7 @@
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
-* SimpleTweaksPlugin（国服）或 DailyRoutines（国际服）。
+* DailyRoutines 或 SimpleTweaksPlugin。
   * 如使用了修改版的 鲶鱼精邮差 PostNamazu `v2.0.0.10+` 则此项非必须。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
