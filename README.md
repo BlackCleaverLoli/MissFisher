@@ -5,6 +5,7 @@
 - **支持：** 国服、英文端、日文端
 
 - **Support CN, EN, JP Servers.**
+- **Support Lv.0 - 100**
 - **[金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**
 > 请勿利用 空天姬 MissFisher 进行对他人不利的行为。 空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。  
 ## 主要特性
