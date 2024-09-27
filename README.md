@@ -39,7 +39,7 @@
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
-* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.3.1+`
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
