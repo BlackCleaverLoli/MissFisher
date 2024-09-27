@@ -5,7 +5,7 @@
 - **支持：** 国服、英文端、日文端
 
 - **Support CN, EN, JP Servers.**
-- **Support Lv.0 - 100**
+- **Support Lv.1 - 100**
 - **[金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**
 > 请勿利用 空天姬 MissFisher 进行对他人不利的行为。 空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。  
 ## 主要特性
@@ -40,11 +40,12 @@
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
-* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`（也可使用修改版的 鲶鱼精邮差 PostNamazu `v2.0.0.10+` [~~等待适配~~] ）
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
 * SimpleTweaksPlugin（国服）或 DailyRoutines（国际服）。
+  * 如使用了修改版的 鲶鱼精邮差 PostNamazu `v2.0.0.10+` 则此项非必须。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
 ### 方法 1：添加为远程触发器
@@ -112,7 +113,8 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
 ### Dalamud 相关配置：
 **启用更换钓饵命令功能：**  
-
+> 如使用了修改版的 鲶鱼精邮差 PostNamazu `v2.0.0.10+` 则此项非必须。  
+  
 * 国服：启用 SimpleTweaksPlugin 的 `鱼饵指令`（Bait Command）功能，不要改动其主命令。
 * 国际服：启用 DailyRoutines 的 `钓饵切换指令` 功能。
   
