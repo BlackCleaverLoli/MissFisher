@@ -104,13 +104,13 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ### ACT 相关配置：
 1. 在 ACT 界面中切换到 `插件列表` 分页（CafeACT 则是 `插件商店` - `高级管理`）- 按下方给出的顺序调整 ACT 插件顺位：
 ```
-（0）CafeStore（如有）
+（0）CafeStore（如有，注意区分 Matcha）
 （1）FFXIV_ACT_Plugin
 （2）OverlayPlugin
 （3）Triggernometry
 （4）CactbotOverlay
 （5）PostNamazu
-（6）Matcha（如有）
+（6）CafeMatcha（如有）
 （其他无关紧要的插件）
 ```
 2. 重启 ACT 并等待 ACT 完成启动。
