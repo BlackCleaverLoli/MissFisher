@@ -44,7 +44,7 @@
 * **QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
 * **[Issues](https://github.com/BlackCleaverLoli/MissFisher/issues)**
 ## 无偿赞助
-[<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">]([https://afdian.net/a/noisyfox](https://afdian.com/a/bcloli))
+[<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
 ***
 # 安装指南
 ## 依赖
@@ -104,13 +104,13 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ### ACT 相关配置：
 1. 在 ACT 界面中切换到 `插件列表` 分页（CafeACT 则是 `插件商店` - `高级管理`）- 按下方给出的顺序调整 ACT 插件顺位：
 ```
-（0）CafeStore（如有）
+（0）CafeStore（如有，注意区分 Matcha）
 （1）FFXIV_ACT_Plugin
 （2）OverlayPlugin
 （3）Triggernometry
 （4）CactbotOverlay
 （5）PostNamazu
-（6）Matcha（如有）
+（6）CafeMatcha（如有）
 （其他无关紧要的插件）
 ```
 2. 重启 ACT 并等待 ACT 完成启动。
