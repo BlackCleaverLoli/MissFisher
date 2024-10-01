@@ -50,7 +50,7 @@
 ## 依赖
 ### 游戏内：
 * 职业 `捕鱼人` 。
-* 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
+* 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
 * 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`（也可使用修改版的 鲶鱼精邮差 PostNamazu `v2.0.0.10+` [~~等待适配~~] ）
