@@ -127,9 +127,13 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ### Dalamud 相关配置：
 **启用更换钓饵命令功能：**  
 > 如使用了 鲑鱼精（修改版的鲶鱼精）`v2.0.0.10+` 则此项非必须。  
-  
-* 国服：启用 SimpleTweaksPlugin 的 `鱼饵指令`（Bait Command）功能，不要改动其主命令。
-* 国际服：启用 DailyRoutines 的 `钓饵切换指令` 功能。
+
+以下插件功能二选一即可：
+- **SimpleTweaksPlugin**  
+启用 `鱼饵指令`（Bait Command）功能，不要改动其主命令。
+
+- **DailyRoutines**  
+启用 `钓饵切换指令` 功能。
   
 **可选的：启用用户宏队列功能：**  
 * 启用某些 Dalamud 插件（如：DailyRoutines）的用户宏队列及道具队列功能，以提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
