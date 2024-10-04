@@ -1,5 +1,5 @@
 # 空天姬 MissFisher
-**[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**  
+**[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)[（前往 Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets) | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)[（前往 Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Home#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**  
 
 ## 简介
 空天姬 MissFisher 是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
@@ -33,6 +33,8 @@
 * **信息播报：**  
 咬饵时播报咬饵竿型；  
 在默语频道发送信息，如结束钓鱼时单周期的垂钓信息统计、海钓触幻钓法、海钓数量成就统计等。
+## 功能预览
+![alt text](幻海.gif)
 ## 注意事项
 
 - 钓饵不足时角色将停止收杆，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
@@ -41,10 +43,10 @@
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 等大佬在 空天姬 MissFisher 开发时给予的大力支持与帮助！**
 ## 反馈
-* **QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
-* **[Issues](https://github.com/BlackCleaverLoli/MissFisher/issues)**
-* **[Gitee Issues](https://gitee.com/bcloli/MissFisher/issues/new)**
+* **[QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [Gitee Issues](https://gitee.com/bcloli/MissFisher/issues/new)**
 ## 无偿赞助
+> 如果您觉得好用的话，欢迎支持我！  
+
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
 ***
 # 安装指南
@@ -54,12 +56,12 @@
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息`（钓鱼信息）。
 ### ACT 插件：
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
-* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`（也可使用 鲑鱼精（修改版的鲶鱼精）`v2.0.0.10+` [~~等待适配~~] ）
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`（也可使用 修改版的鲶鱼精 `v2.0.0.10+` [~~等待适配~~] ）
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
 * DailyRoutines 或 SimpleTweaksPlugin。
-  * 如使用了 鲑鱼精（修改版的鲶鱼精）`v2.0.0.10+` 则此项非必须。
+  * 如使用了 修改版的鲶鱼精 `v2.0.0.10+` 则此项非必须。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
 ### 方法 1：添加为远程触发器
@@ -68,23 +70,25 @@
   
 **正式版：**  
 ```
-// Gitee 国内网络首选
+// Gitee 镜像
 https://gitee.com/bcloli/MissFisher/raw/main/MissFisher.xml
 
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
-```
-* 可相对稳定地使用的版本。  
+
+// 可相对稳定地使用的版本
+``` 
   
 **快照版：**  
 ```
-// Gitee 国内网络首选
+// Gitee 镜像
 https://gitee.com/bcloli/MissFisher/raw/main/MissFisher%20Snapshot.xml
 
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
+
+// 频繁更新以测试新功能的版本
 ```
-* 频繁更新以测试新功能的版本。
 3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用作运行 空天姬 MissFisher 的用户界面窗口）。
 5. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（启动进程仅会被用作手动执行触发器时打开相关网页）。
 5. 勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，仅用作更新 空天姬 MissFisher 的内置预设）。
@@ -95,10 +99,8 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 1. 从下方任一页面中下载原始文件，正确的文件格式应为 `xml`：
 
 - **正式版：**  
-> 可相对稳定地使用的版本。  
-[ [123 云盘](https://www.123pan.com/s/YJHhTd-0ah13) ]  
-[ [Gitee](https://gitee.com/bcloli/MissFisher/blob/main/MissFisher.xml) ]  
-[ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ]  
+可相对稳定地使用的版本。  
+  [ [123 云盘](https://www.123pan.com/s/YJHhTd-0ah13) ] [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/blob/main/MissFisher.xml) ] [ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ]  
 
 - **快照版：**  
 ~~[ 不提供本地触发器 ]~~  
@@ -139,7 +141,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
 ### Dalamud 相关配置：
 **启用更换钓饵命令功能：**  
-> 如使用了 鲑鱼精（修改版的鲶鱼精）`v2.0.0.10+` 则此项非必须。  
+> 如使用了 修改版的鲶鱼精 `v2.0.0.10+` 则此项非必须。  
 
 以下插件功能二选一即可：
 - **SimpleTweaksPlugin**  
@@ -230,7 +232,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 * **检查游戏中消息窗口的相关频道是否已开启：**  
 启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息` - 点击 `应用`。
 
-> 如果全都确认无误并且你是 Cafe ACT，请尝试使用 呆萌 ACT。
+- **如果全都确认无误并且你是 Cafe ACT，请尝试使用 呆萌 ACT。**
 ### 同步内置预设功能无反应：
 * **授予仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器操作文件` - 点击 `是` - `保存更改` - 再次右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
@@ -241,27 +243,29 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > **在开始前，你必须已安装并正确配置了 空天姬 MissFisher 及必须的环境内容，否则，请参考 [安装指南](#安装指南) 进行安装及配置。**
 
 ## 主界面
-- 空天姬 MissFisher 拥有一个包含主要功能的用户界面。
-> 你可以使用命令 `/e ktj` 或 右键触发器分组中的 `空天姬主界面` - 点击 `执行（强制/条件）` 来打开 空天姬 MissFisher 的主界面。
+空天姬 MissFisher 拥有一个包含主要功能的用户界面。 
 
 ### 界面概览
+> 打开主界面：使用命令 `/e ktj` ；或右键触发器分组中的 `空天姬主界面` - 点击 `执行（强制/条件）` 来打开 空天姬 MissFisher 的主界面。  
+
 ![主界面](https://github.com/user-attachments/assets/ce49c874-52f4-4326-be17-8ef6ca23a2b0)
 
-① **公告栏**：位于界面顶部左侧，展示鸣谢以及赞助名单。
+① **公告栏：** 位于界面顶部左侧，展示鸣谢以及赞助名单。
 
-② **同步按钮**：在线同步 空天姬 MissFisher 的内置预设。
+② **同步按钮：** 在线同步 空天姬 MissFisher 的内置预设。
 
-③ **配置按钮**：打开 空天姬 MissFisher 的配置界面。
+③ **配置按钮：** 打开 空天姬 MissFisher 的配置界面。
 
-④ **航线按钮**：向游戏发送一条包含航线预报的默语消息。
+④ **航线按钮：** 向游戏发送一条包含航线预报的默语消息。
 
-⑤ **模式下拉菜单**：选择 `冲分` 、`蓝鱼` 或 `成就` 作为自动海钓模式。
+⑤ **模式下拉菜单：** 选择 `冲分` 、`蓝鱼` 或 `成就` 作为自动海钓模式。
 
-⑥ **启动按钮**：启动已选择的自动海钓模式。
+⑥ **启动按钮：** 启动已选择的自动海钓模式。
 
-⑦ **输入框**：位于下拉菜单下方，输入鱼王或其他鱼类全称，按提示启动自动钓鱼。
+⑦ **输入框：** 位于下拉菜单下方，输入鱼王或其他鱼类全称，按提示启动自动钓鱼。
 
-⑧ **提示栏**：位于界面底部，显示提示和诗句。
+⑧ **提示栏：** 位于界面底部，显示提示和诗句。 
+
 ## 使用 空天姬 MissFisher 自动钓鱼
 要启动自动钓鱼，需要将空天姬预设发送到游戏内的默语频道。
 
@@ -269,7 +273,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 ### 方法 1：使用内置预设
 
-1. 使用 [FF14 鱼糕](https://fish.ffmomola.com/#/) 等工具查看想钓的鱼 - 可选：复制目标鱼类的全称。
+1. 使用 [FF14 鱼糕](https://fish.ffmomola.com/#/) 等工具查看想钓的鱼 - 复制目标鱼类的全称。
 2. 准备好一些背包空间与所需的钓饵 - 前往目标鱼类所处的钓场并使角色面向钓场。
 3. 在主界面的 `输入框` 输入鱼类中文全称 - `输入框` 颜色变深即存在对应的预设。
 4. `鼠标左键双击` `输入框` 或按下 `回车键` 以启动自动钓鱼。
@@ -280,7 +284,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > 有捕鱼人之识条件的鱼类：请在没有钓起任何钓场内鱼类的情况下启动，否则可能导致提前触发鱼识。
   
 ### 方法 2：自行编写预设
-1. 学习如何编写 [空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)。
+1. 参考 [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)[（Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets)来写一条空天姬预设。
 2. 将编写好的空天姬预设发送到默语频道。
 
 ## 使用 空天姬 MissFisher 自动海钓
@@ -299,7 +303,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 ***
 # 命令
-> 可通过向默语频道发送命令来使用 空天姬 MissFisher 的功能。
+- 可通过向默语频道发送命令来使用 空天姬 MissFisher 的功能。
 
 ## 打开窗口：
 命令|描述
@@ -310,7 +314,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ## 自动钓鱼：
 命令|描述|备注
 -|-|-
-`/e <空天姬预设>`|使用预设中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)
+`/e <空天姬预设>`|使用预设中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)<br>[（Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets)
 `/e 冲分确定`<br>`/e 蓝鱼确定`<br>`/e 成就确定`<br>`/e 成就1确定`<br>`/e 成就2确定`|以指定模式自动海钓|携带 3 种海钓钓饵各至少 50 个<br>另携带至少 1 个万能拟饵<br>同时留出至少 40 格背包空间
 `/e 空天姬预设 <鱼类全称>`<br>`/e ktjys <鱼类全称>`|使用对应的内置预设自动钓鱼|见条目 [支持的预设](#现在支持的内置预设)
 `/e 空天姬预设 查看 <鱼类全称>`<br>`/e ktjys show <鱼类全称>`|查看对应的内置预设|以方便修改或作钓鱼准备
@@ -354,4 +358,4 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 > 同时还有作者与部分用户参与建设的 [预设文档](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) ，现在已填有大部分鱼王、鱼皇的预设。
 > 
-> 这些预设会被时不时被作者推送至 空天姬 MissFisher 的代码仓库 [preset.csv](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Preset.csv)，你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把它们同步到触发器中以供 空天姬 MissFisher 调用。
+> 这些预设会被时不时被作者推送至代码仓库中的 [内置预设表](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Preset.csv)[（Gitee 镜像）](https://gitee.com/bcloli/MissFisher/raw/main/Preset.csv)，你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把它们同步到触发器中以供 空天姬 MissFisher 调用。
