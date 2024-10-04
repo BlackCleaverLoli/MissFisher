@@ -37,12 +37,13 @@
 
 - 钓饵不足时角色将停止收杆，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
 - 当使用其他插件修改游戏内的本地天气时，将影响 空天姬 MissFisher 的天气相关功能。
-- 敬请触发器开发者留意：如勾选抹茶【兼容模式】，当次运行的首次咬饵时会关闭解析插件的【记录网络数据】。
+- **敬请触发器开发者留意：如勾选抹茶【兼容模式】，当次运行的首次咬饵时会关闭解析插件的【记录网络数据】。**
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 等大佬在 空天姬 MissFisher 开发时给予的大力支持与帮助！**
 ## 反馈
 * **QQ 群：[959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665)**
 * **[Issues](https://github.com/BlackCleaverLoli/MissFisher/issues)**
+* **[Gitee Issues](https://gitee.com/bcloli/MissFisher/issues/new)**
 ## 无偿赞助
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
 ***
@@ -67,17 +68,25 @@
   
 **正式版：**  
 ```
+// Gitee 国内网络首选
+https://gitee.com/bcloli/MissFisher/raw/main/MissFisher.xml
+
+// GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
 ```
 * 可相对稳定地使用的版本。  
   
 **快照版：**  
 ```
+// Gitee 国内网络首选
+https://gitee.com/bcloli/MissFisher/raw/main/MissFisher%20Snapshot.xml
+
+// GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
 ```
 * 频繁更新以测试新功能的版本。
 3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用作运行 空天姬 MissFisher 的用户界面窗口）。
-4. 勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（可选，启动进程仅会被用作手动执行触发器时打开相关网页）。
+5. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（启动进程仅会被用作手动执行触发器时打开相关网页）。
 5. 勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，仅用作更新 空天姬 MissFisher 的内置预设）。
 6. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
 7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
@@ -85,24 +94,27 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 **通过文件导入**
 1. 从下方任一页面中下载原始文件，正确的文件格式应为 `xml`：
 
-- **正式版：**[ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ] [ [123 网盘](https://www.123pan.com/s/YJHhTd-0ah13) ]
-  - 可相对稳定地使用的版本。
+- **正式版：**  
+> 可相对稳定地使用的版本。  
+[ [123 云盘](https://www.123pan.com/s/YJHhTd-0ah13) ]  
+[ [Gitee](https://gitee.com/bcloli/MissFisher/blob/main/MissFisher.xml) ]  
+[ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ]  
 
-- **快照版：**[ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher%20Snapshot.xml) ] ~~[ 不提供网盘 ]~~
-  - 频繁更新以测试新功能的版本。
+- **快照版：**  
+~~[ 不提供本地触发器 ]~~  
 
 2. 在 Triggernometry 中选中触发器分组 `本地触发器` - 点击 `导入` - `从文件或 URI 加载` - 在选择文件窗口找到刚刚下载的 `xml` 文件 - 选中并打开它。
 3. 点击 `下一个` - 确认要导入的触发器无误 - `导入`。  
 4. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 
-**或通过剪贴板导入**  
-1. 打开上文中的 GitHub 页面 - 复制代码文本框中原始文件的所有内容。
+**或通过剪贴板导入：**  
+1. 打开上文提供的网页 - 复制代码文本框中原始文件的所有内容。
 2. 在 Triggernometry 中选中触发器分组 `本地触发器` - 点击 `导入` - 将复制到的 `xml` 代码完整粘贴到 `输入框` 中。
 3. 点击 `下一个` - 确认要导入的触发器无误 - `导入`。
 4. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 ## 进行配置
 ### ACT 相关配置：
-1. 在 ACT 界面中切换到 `插件列表` 分页（CafeACT 则是 `插件商店` - `高级管理`）- 按下方给出的顺序调整 ACT 插件顺位：
+1. 在 ACT 界面中切换到 `插件列表` 分页（CafeACT 则是 `插件商店` - `高级管理`）- 按下方给出的顺序调整 ACT 插件优先级：
 ```
 （0）CafeStore（如有，注意区分 Matcha）
 （1）FFXIV_ACT_Plugin
@@ -120,7 +132,8 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 > 敬请触发器开发者留意：如勾选抹茶【兼容模式】，当次运行的首次咬饵时会关闭解析插件的【记录网络数据】。
 
-#### 授予脚本代码 API 权限（此 API 仅供 空天姬 MissFisher 读取游戏内存以获取天气信息）：
+#### 授予脚本代码 API 权限：
+> 此 API 仅供 空天姬 MissFisher 读取游戏内存以获取天气信息。
 1. 在 Triggernometry 中点击 `选项` - `编辑配置` 来打开 Triggernometry 配置。
 2. 切换到 `安全` 分页 - 点击 `编辑需解锁此安全设置` - `是 `来解锁安全设置。
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
@@ -135,7 +148,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 - **DailyRoutines**  
 启用 `钓饵切换指令` 功能。
   
-**可选的：启用用户宏队列功能：**  
+**可选的：启用某些 Dalamud 插件的用户宏队列功能：**  
 * 启用某些 Dalamud 插件（如：DailyRoutines）的用户宏队列及道具队列功能，以提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
 ## 验证自动功能
 #### 验证步骤如下：
@@ -147,14 +160,14 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 2. 消息窗口出现一系列由文字与符号组成的当前预设参数信息，且出现“正在更换钓饵”的提示。
 3. 成功更换钓饵后，角色自动使用技能 `撒饵`，然后 `抛竿`，同时游戏画面中央出现包含抛竿时长的动态计时悬浮窗（如启用了 `竿时悬浮窗`）。
 4. 有鱼咬饵时，悬浮窗的计时停止，并显示当前咬饵鱼类的杆震类型，同时角色自动使用技能 `提钩`。
-5. 在鱼成功上钩后，TTS 会播报：“Completed.”，同时消息窗口出现刚刚上钩的鱼类的杆震类型、咬饵竿时等信息。
+5. 在鱼成功上钩后，TTS 会播报：“Completed. ”，同时消息窗口出现刚刚上钩的鱼类的杆震类型、咬饵竿时等信息。
 6. 最后，通过按下 `移动键` 或手动使用技能 `中断` 使角色收起钓竿时，悬浮窗消失，消息窗口出现本次垂钓的统计信息。
 ## 更新与卸载
 ### 如何更新：
 **远程触发器**  
 > 在默认的仓库设置下，每次启动 ACT 时 Triggernometry 都会自动更新远程仓库下的触发器，但你也可以手动更新它。
 
-- **手动更新远程仓库：** 确保网络能够连接 GitHub - 在 Triggernometry 内 `右键` 空天姬 MissFisher 的远程仓库 - 点击 `更新` - 等待更新完成。
+- **手动更新远程仓库：** 在 Triggernometry 内 `右键` 空天姬 MissFisher 的远程仓库 - 点击 `更新` - 等待更新完成。
 
 **本地触发器**  
 1. 在 Triggernometry 内找到 空天姬 MissFisher 触发器的 `主分组` ，通常名为 `新能源钓竿 空天姬` 或 `MissFisher Snapshot`。
@@ -171,14 +184,14 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ## 常见问题
 ### 提示主界面窗口打开失败：
 * **授予仓库允许触发器执行代码权限：**  
-右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` 。  
+右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` - 右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
   
-* **正确对 ACT 插件进行排序：**  
-按条目 [ACT 相关配置](#act-相关配置) 中提供的方法对 ACT 插件进行排序。  
+* **检查 ACT 插件优先级：**  
+按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。  
    
 ### 提示动作超时： 
-* **正确对 ACT 插件进行排序：**  
-按条目 [ACT 相关配置](#act-相关配置) 中提供的方法对 ACT 插件进行排序。  
+* **检查 ACT 插件优先级：**  
+按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。  
    
 * **检查 空天姬 MissFisher 的用户配置：**  
 打开 空天姬 MissFisher 的 `用户配置` 窗口 - 检查其中的 `宏语言` 设置项：  
@@ -189,16 +202,16 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 然后 `保存` - 使用 `/e ktjdbg` 进行调试。  
 如果尝试了一个选项仍失败，请尝试另外两个选项，并进行调试。  
 ### 提示换饵失败：
-* **更新鲶鱼精邮差 PostNamazu 到合适的版本：**  
+* **检查 鲶鱼精邮差 PostNamazu 版本：**  
 按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的鲶鱼精邮差 PostNamazu。  
 
-* **正确对 ACT 插件进行排序：**  
-按条目 [ACT 相关配置](#act-相关配置) 中提供的方法对 ACT 插件进行排序。  
+* **检查 ACT 插件优先级：**  
+按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
    
-* **启用游戏中消息窗口的相关频道：**  
-启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 以及 `自己的采集信息` - 点击 `应用`。  
+* **检查游戏中消息窗口的相关频道是否已开启：**  
+启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息` - 点击 `应用`。  
    
-* **启用提供更换钓饵的命令的 Dalamud 插件：**  
+* **检查是否已启用相关 Dalamud 插件的更换钓饵指令功能：**  
 找到条目 [启用更换命令换饵功能](#dalamud-相关配置) 中提到的任一 Dalamud 插件 - 启用其提供的更换钓饵命令功能。 
    
 * **配置 Dalamud 插件 Chat2 的相关功能：**  
@@ -207,13 +220,28 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 * **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
 可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
 
+### 海钓启动后无反应或提示海域获取失败：
+* **检查 鲶鱼精邮差 PostNamazu 版本：**  
+按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的鲶鱼精邮差 PostNamazu。  
+
+* **检查 ACT 插件优先级：**  
+按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
+   
+* **检查游戏中消息窗口的相关频道是否已开启：**  
+启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息` - 点击 `应用`。
+
+> 如果全都确认无误并且你是 Cafe ACT，请尝试使用 呆萌 ACT。
+### 同步内置预设功能无反应：
+* **授予仓库允许触发器执行代码权限：**  
+右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器操作文件` - 点击 `是` - `保存更改` - 再次右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
+
 ---
 # 快速上手
 
 > **在开始前，你必须已安装并正确配置了 空天姬 MissFisher 及必须的环境内容，否则，请参考 [安装指南](#安装指南) 进行安装及配置。**
 
 ## 主界面
-空天姬 MissFisher 拥有一个包含主要功能的用户界面。
+- 空天姬 MissFisher 拥有一个包含主要功能的用户界面。
 > 你可以使用命令 `/e ktj` 或 右键触发器分组中的 `空天姬主界面` - 点击 `执行（强制/条件）` 来打开 空天姬 MissFisher 的主界面。
 
 ### 界面概览
@@ -221,7 +249,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 ① **公告栏**：位于界面顶部左侧，展示鸣谢以及赞助名单。
 
-② **同步按钮**：从 GitHub 在线同步 空天姬 MissFisher 的内置预设。
+② **同步按钮**：在线同步 空天姬 MissFisher 的内置预设。
 
 ③ **配置按钮**：打开 空天姬 MissFisher 的配置界面。
 
@@ -246,7 +274,6 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 3. 在主界面的 `输入框` 输入鱼类中文全称 - `输入框` 颜色变深即存在对应的预设。
 4. `鼠标左键双击` `输入框` 或按下 `回车键` 以启动自动钓鱼。
 
-> 建议每周或使用前都手动使用 `同步按钮` 更新一次 空天姬 MissFisher 的内置预设。  
 > 要查看指定鱼类的内置预设，可在游戏内输入 `/e 空天姬预设 查看 <鱼名>` 。  
 > 有窗口期限制的鱼类：可在窗口期到来前启动， 空天姬 MissFisher 将根据预设中包含的手法进行预备动作。  
 > 建议的提前启动时间：50 分钟减去窗口期的持续时长，以避免钓点警惕。  
@@ -293,7 +320,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ## 工具功能：
 命令|描述|备注
 -|-|-
-`/e ktjsync`<br>`/e 空天姬同步`|在线从 GitHub 同步内置预设|
+`/e ktjsync`<br>`/e 空天姬同步`|在线同步内置预设|
 `/e 计数 <参考数量><鱼名关键词>；`|显示计数悬浮窗|最多以如 `2鱼；3虾；` 的格式写入最多 3 组<br>鱼名关键词支持部分正则表达式
 `/e ktjhx`<br>`/e 航线`|向默语频道发送航线预报|
 ## 命令别名：
@@ -327,4 +354,4 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 > 同时还有作者与部分用户参与建设的 [预设文档](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) ，现在已填有大部分鱼王、鱼皇的预设。
 > 
-> 这些预设会被时不时被作者推送至 空天姬 MissFisher 的 GitHub 仓库 [preset.csv](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Preset.csv)，你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把它们同步到触发器中以供 空天姬 MissFisher 调用。
+> 这些预设会被时不时被作者推送至 空天姬 MissFisher 的代码仓库 [preset.csv](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Preset.csv)，你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把它们同步到触发器中以供 空天姬 MissFisher 调用。
