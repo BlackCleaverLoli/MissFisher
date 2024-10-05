@@ -5,9 +5,10 @@
 空天姬 MissFisher 是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - **支持：** 国服、英文端、日文端  
 **Support CN, EN, JP Servers.**
-- **适配等级：Lv.1 - Lv.100**
+- **适配等级：Lv.1 - Lv.100**  
 > **请勿利用 空天姬 MissFisher 进行对他人不利的行为。**  
 > **空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。**
+
 ## 主要特性
 - **优秀手法**  
 内置优秀的资源管理与钓鱼手法，无需调教，即开即用。
@@ -30,11 +31,20 @@
 在钓鱼时显示图形化的辅助信息悬浮窗，
 如抛竿计时、杆震类型、幻海时长、采集力自然回复的所需时间等。
 
-* **信息播报：**  
+* **信息播报：**    
 咬饵时播报咬饵竿型；  
 在默语频道发送信息，如结束钓鱼时单周期的垂钓信息统计、海钓触幻钓法、海钓数量成就统计等。
+ 
 ## 功能预览
-![alt text](幻海.gif)
+**功能**|**主界面**|
+-|-
+![幻海](https://github.com/user-attachments/assets/87a3db26-4a0c-45d6-8863-eb54523b5fdb)<br>![QQ20241005-085342123123123](https://github.com/user-attachments/assets/832d7078-ae3a-429e-8f98-c03941b50183)|![主界面224](https://github.com/user-attachments/assets/99e9766f-0340-48a6-8c62-5fec5b2f8558)|
+
+
+
+
+
+
 ## 注意事项
 
 - 钓饵不足时角色将停止收杆，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
@@ -45,7 +55,6 @@
 ## 反馈
 * **[QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [Gitee Issues](https://gitee.com/bcloli/MissFisher/issues/new)**
 ## 无偿赞助
-> 如果您觉得好用的话，欢迎支持我！  
 
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
 ***
@@ -205,7 +214,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 如果尝试了一个选项仍失败，请尝试另外两个选项，并进行调试。  
 ### 提示换饵失败：
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
-按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的鲶鱼精邮差 PostNamazu。  
+按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的 鲶鱼精邮差 PostNamazu。  
 
 * **检查 ACT 插件优先级：**  
 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
@@ -224,7 +233,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 ### 海钓启动后无反应或提示海域获取失败：
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
-按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的鲶鱼精邮差 PostNamazu。  
+按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的 鲶鱼精邮差 PostNamazu。  
 
 * **检查 ACT 插件优先级：**  
 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
