@@ -1,5 +1,5 @@
 # 空天姬 MissFisher
-**[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)[（前往 Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets) | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)[（前往 Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Home#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**  
+**[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) [\[ Gitee 镜像 \]](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets) | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5) [\[ Gitee 镜像 \]](https://gitee.com/bcloli/MissFisher/wikis/Home#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**  
 
 ## 简介
 空天姬 MissFisher 是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
@@ -252,10 +252,11 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > **在开始前，你必须已安装并正确配置了 空天姬 MissFisher 及必须的环境内容，否则，请参考 [安装指南](#安装指南) 进行安装及配置。**
 
 ## 主界面
-空天姬 MissFisher 拥有一个包含主要功能的用户界面。 
+空天姬 MissFisher 拥有一个包含主要功能的用户界面。   
 
-### 界面概览
-> 打开主界面：使用命令 `/e ktj` ；或右键触发器分组中的 `空天姬主界面` - 点击 `执行（强制/条件）` 来打开 空天姬 MissFisher 的主界面。  
+> 打开主界面：使用命令 `/e ktj` ；或右键触发器分组中的 `空天姬主界面` - 点击 `执行（强制/条件）` 来打开 空天姬 MissFisher 的主界面。 
+
+### 界面概览 
 
 ![主界面](https://github.com/user-attachments/assets/ce49c874-52f4-4326-be17-8ef6ca23a2b0)
 
@@ -293,7 +294,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > 有捕鱼人之识条件的鱼类：请在没有钓起任何钓场内鱼类的情况下启动，否则可能导致提前触发鱼识。
   
 ### 方法 2：自行编写预设
-1. 参考 [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)[（Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets)来写一条空天姬预设。
+1. 参考 [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets) ] 来写一条空天姬预设。
 2. 将编写好的空天姬预设发送到默语频道。
 
 ## 使用 空天姬 MissFisher 自动海钓
@@ -323,7 +324,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ## 自动钓鱼：
 命令|描述|备注
 -|-|-
-`/e <空天姬预设>`|使用预设中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)<br>[（Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets)
+`/e <空天姬预设>`|使用预设中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)<br>[（点击前往 Gitee 镜像）](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets)
 `/e 冲分确定`<br>`/e 蓝鱼确定`<br>`/e 成就确定`<br>`/e 成就1确定`<br>`/e 成就2确定`|以指定模式自动海钓|携带 3 种海钓钓饵各至少 50 个<br>另携带至少 1 个万能拟饵<br>同时留出至少 40 格背包空间
 `/e 空天姬预设 <鱼类全称>`<br>`/e ktjys <鱼类全称>`|使用对应的内置预设自动钓鱼|见条目 [支持的预设](#现在支持的内置预设)
 `/e 空天姬预设 查看 <鱼类全称>`<br>`/e ktjys show <鱼类全称>`|查看对应的内置预设|以方便修改或作钓鱼准备
@@ -367,4 +368,4 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 > 同时还有作者与部分用户参与建设的 [预设文档](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) ，现在已填有大部分鱼王、鱼皇的预设。
 > 
-> 这些预设会被时不时被作者推送至代码仓库中的 [内置预设表](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Preset.csv)[（Gitee 镜像）](https://gitee.com/bcloli/MissFisher/raw/main/Preset.csv)，你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把它们同步到触发器中以供 空天姬 MissFisher 调用。
+> 这些预设会被时不时被作者推送至代码仓库中的 [内置预设表](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Preset.csv) [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/raw/main/Preset.csv) ] ，你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把它们同步到触发器中以供 空天姬 MissFisher 调用。
