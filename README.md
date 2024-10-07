@@ -63,14 +63,15 @@
 ### 游戏内：
 * 职业 `捕鱼人` 。
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息`（钓鱼信息）。
+* 国际服：你需要修改角色设置中的 Name Display Settings（人名显示设置）将自己名字的显示设置改为 Full Name（全名）。
 ### ACT 插件：
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
-* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`（也可使用 修改版的鲶鱼精 `v2.0.0.10+` [~~等待适配~~] ）
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`（也可使用 鲶鱼精 修改版 `v2.0.0.10+` [~~等待适配~~] ）
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
 * DailyRoutines 或 SimpleTweaksPlugin。
-  * 如使用了 修改版的鲶鱼精 `v2.0.0.10+` 则此项非必须。
+  * 如使用了 鲶鱼精 修改版 `v2.0.0.10+` 则此项非必须。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
 ### 方法 1：添加为远程触发器
@@ -150,7 +151,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
 ### Dalamud 相关配置：
 **启用更换钓饵命令功能：**  
-> 如使用了 修改版的鲶鱼精 `v2.0.0.10+` 则此项非必须。  
+> 如使用了 鲶鱼精 修改版 `v2.0.0.10+` 则此项非必须。  
 
 以下插件功能二选一即可：
 - **SimpleTweaksPlugin**  
@@ -227,6 +228,16 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
    
 * **配置 Dalamud 插件 Chat2 的相关功能：**  
 可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。如果仍提示更换钓饵失败，请重启游戏。
+   
+* **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
+可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
+
+### 钓到鱼后不继续抛竿或在测试时没有报告「Completed」：  
+* **检查游戏设置：**  
+角色设置 - Name Display Settings（人名显示设置）- 将自己名字的显示设置改为 Full Name（全名）。
+
+* **配置 Dalamud 插件 Chat2 的相关功能：**  
+可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。
    
 * **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
 可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
