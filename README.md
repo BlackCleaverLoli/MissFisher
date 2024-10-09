@@ -4,7 +4,6 @@
 ## 简介
 空天姬 MissFisher 是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - **支持：** 国服、英文端、日文端  
-**Support CN, EN, JP Servers.**
 - **适配等级：Lv.1 - Lv.100**  
 > **请勿利用 空天姬 MissFisher 进行对他人不利的行为。**  
 > **空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。**
