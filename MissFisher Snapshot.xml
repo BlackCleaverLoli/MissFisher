@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.710">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w41c" Enabled="true" RawEnvironmentVariables="版本 = 1.6.8&#xD;&#xA;快照 = 24w41c">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w41d" Enabled="true" RawEnvironmentVariables="版本 = 1.6.8&#xD;&#xA;快照 = 24w41d">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -548,7 +548,7 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+                  <Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
                     <Actions>
                       <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger">
                         <Condition Enabled="false" Grouping="Or" />
@@ -2628,17 +2628,17 @@
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="58" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${空天姬大鱼鱼篓2}" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="58" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${f:replace(&quot;，&quot;,&quot;|&quot;):${f:replace(&quot;,&quot;,&quot;|&quot;):${空天姬大鱼鱼篓2}}}}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="59" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${空天姬大鱼鱼篓3}" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="59" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${f:replace(&quot;，&quot;,&quot;|&quot;):${f:replace(&quot;,&quot;,&quot;|&quot;):${空天姬大鱼鱼篓3}}}}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="60" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${空天姬大鱼鱼篓4}" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="60" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${f:replace(&quot;，&quot;,&quot;|&quot;):${f:replace(&quot;,&quot;,&quot;|&quot;):${空天姬大鱼鱼篓4}}}}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓4}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
@@ -2769,7 +2769,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="85" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬模式所需采集力" VariableExpression="( ${v:空天姬参数} == 1 ? ( ${ev:空天姬手法收藏品} ? 200 : 0 ) : ( ${v:空天姬参数} == 2 ? 200 : 560 ) )" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="85" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬模式所需采集力" VariableExpression="( ${v:空天姬参数} = 1 ? ( ${ev:空天姬手法收藏品} ? 200 : 0 ) : ( ${v:空天姬参数} == 2 ? 200 : 560 ) )" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                       <Action OrderNumber="86" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力" VariableExpression="${v:空天姬模式所需采集力} + ( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬专一目标} ? 350 : 0 ) + ( ( ${f:match(${v:空天姬原参数}):引诱} ?? 0 ) ? 60 : ${ev:空天姬手法重随} ? 10 : 0 )" ActionType="Variable" Asynchronous="False">
@@ -3180,105 +3180,111 @@
                   </Trigger>
                   <Trigger Enabled="true" Name="收竿终止 播报" Id="632b5360-5c17-404d-bb7a-8730991be677" RegularExpression="^.{32}29:150001:(?&lt;log&gt;457|DB[7C])|^.{15}267 10B:[^:]*:[^:]*:248D:614[57]" PeriodRefire="Deny" RefirePeriodExpression="500">
                     <Actions>
-                      <Action OrderNumber="1" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="3" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="3" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="4" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="4" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="6" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="6" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="7" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="7" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="8" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="8" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="9" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="9" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="10" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="10" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="11" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="77cd4dc1-b86f-491c-9913-f8392a19a0ae" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="11" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="12" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="86f654a8-feea-4a64-9e6c-fa12da346481" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="12" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="77cd4dc1-b86f-491c-9913-f8392a19a0ae" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="13" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="13" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="86f654a8-feea-4a64-9e6c-fa12da346481" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="9" TextAuraName="^空天姬[^幻采]" TextAuraFontName="宋体" ActionType="TextAura" Asynchronous="False">
+                      <Action OrderNumber="14" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬历时时刻" VariableExpression="${n:round((${_timestampms}-${v:空天姬历时时刻})/60000)} 分钟&#xD;&#xA;" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="9" TextAuraName="^空天姬[^幻采]" TextAuraFontName="宋体" ActionType="TextAura" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬历时时刻" VariableExpression="${n:round((${_timestampms}-${v:空天姬历时时刻})/60000)} 分钟&#xD;&#xA;" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${_timestampms}-${v:空天姬历时时刻}" ExpressionTypeL="Numeric" ExpressionR="60*1000" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬历时时刻" VariableExpression="${n:round((${_timestampms}-${v:空天姬历时时刻})/1000)} 秒&#xD;&#xA;" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬历时时刻" VariableExpression="${n:round((${_timestampms}-${v:空天姬历时时刻})/1000)} 秒&#xD;&#xA;" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${_timestampms}-${v:空天姬历时时刻}" ExpressionTypeL="Numeric" ExpressionR="60*1000" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬竿数播报" VariableExpression="总 ${v:空天姬竿数} 竿 ${if: ${ev:空天姬鱼数} ? ${v:空天姬鱼数} : 0 } 条" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="18" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬竿数播报" VariableExpression="总 ${v:空天姬竿数} 竿 ${if: ${ev:空天姬鱼数} ? ${v:空天姬鱼数} : 0 } 条" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="18" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]${if:${ev:空天姬控制海钓模式}?:&lt;se.12&gt;}&#xD;&#xA;『本轮信息』${if:${ev:空天姬参数}?:} ${if:${ev:空天姬控制海钓模式}?:}&#xD;&#xA;${v:空天姬钓场}  历时 ${v:空天姬历时时刻}${v:空天姬咬钩信息} ${v:空天姬最后上钩播报}${if:${ev:空天姬最后上钩播报}?&quot;&#xD;&#xA;&quot;:}${v:空天姬竿数播报} ${if:${ev:空天姬脱钩}?${v:空天姬脱钩} 脱钩:} ${if:${ev:空天姬收藏品数}? ${v:空天姬收藏品数}:}${if:${ev:空天姬以小钓大竿数}?&quot;&#xD;&#xA;以小钓大 ${v:空天姬以小钓大竿数} 次 ${v:空天姬以小钓大套娃信息}&quot;:}${if:${ev:空天姬鱼识竿数}?&quot;&#xD;&#xA;鱼识 ${v:空天姬鱼识次数} 次 ${v:空天姬鱼识竿数} 竿${if:${ev:空天姬鱼识以小钓大竿数}?&quot; 饵鱼 ${v:空天姬鱼识以小钓大竿数} 竿&quot;:}&quot;:}${if:${f:length:${t:空天姬目标[2][1]}}?&quot;&#xD;&#xA;${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}} ${n:(${t:空天姬目标[3][1]})}${if: ${t:空天姬目标[1][1]} ?? 0 ? &quot;/${t:空天姬目标[1][1]}&quot; :} ${if:${f:length:${t:空天姬目标[2][2]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}} ${n:(${t:空天姬目标[3][2]})}${if: ${t:空天姬目标[1][2]} ?? 0 ? &quot;/${t:空天姬目标[1][2]}&quot; :}:} ${if:${f:length:${t:空天姬目标[2][3]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}} ${n:(${t:空天姬目标[3][3]})}${if: ${t:空天姬目标[1][3]} ?? 0 ? &quot;/${t:空天姬目标[1][3]}&quot; :}:}&quot;:}${v:空天姬脱钩信息}${if:(${ev:空天姬强心剂数量}${ev:空天姬高效提钩}${ev:空天姬引诱次数})?&quot;&#xD;&#xA;&quot;:}${if:${ev:空天姬强心剂数量}?&quot;强心剂 ${v:空天姬强心剂数量} 瓶 &quot;:}${if:${ev:空天姬高效提钩}?&quot;高效提钩 ${v:空天姬高效提钩} 次 &quot;:}${if:${ev:空天姬引诱次数}?&quot;引诱 ${v:空天姬引诱次数} 次 ${if:${ev:空天姬引诱成功次数}?${v:空天姬引诱成功次数} 成功:}&quot;:}" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬咬钩时刻" VariableExpression="${_timestampms}" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                      <Action OrderNumber="19" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]${if:${ev:空天姬控制海钓模式}?:&lt;se.12&gt;}&#xD;&#xA;『本轮信息』${if:${ev:空天姬参数}?:} ${if:${ev:空天姬控制海钓模式}?:}&#xD;&#xA;${v:空天姬钓场}  历时 ${v:空天姬历时时刻}${v:空天姬咬钩信息} ${v:空天姬最后上钩播报}${if:${ev:空天姬最后上钩播报}?&quot;&#xD;&#xA;&quot;:}${v:空天姬竿数播报} ${if:${ev:空天姬脱钩}?${v:空天姬脱钩} 脱钩:} ${if:${ev:空天姬收藏品数}? ${v:空天姬收藏品数}:}${if:${ev:空天姬以小钓大竿数}?&quot;&#xD;&#xA;以小钓大 ${v:空天姬以小钓大竿数} 次 ${v:空天姬以小钓大套娃信息}&quot;:}${if:${ev:空天姬鱼识竿数}?&quot;&#xD;&#xA;鱼识 ${v:空天姬鱼识次数} 次 ${v:空天姬鱼识竿数} 竿${if:${ev:空天姬鱼识以小钓大竿数}?&quot; 饵鱼 ${v:空天姬鱼识以小钓大竿数} 竿&quot;:}&quot;:}${if:${f:length:${t:空天姬目标[2][1]}}?&quot;&#xD;&#xA;${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}} ${n:(${t:空天姬目标[3][1]})}${if: ${t:空天姬目标[1][1]} ?? 0 ? &quot;/${t:空天姬目标[1][1]}&quot; :} ${if:${f:length:${t:空天姬目标[2][2]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}} ${n:(${t:空天姬目标[3][2]})}${if: ${t:空天姬目标[1][2]} ?? 0 ? &quot;/${t:空天姬目标[1][2]}&quot; :}:} ${if:${f:length:${t:空天姬目标[2][3]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}} ${n:(${t:空天姬目标[3][3]})}${if: ${t:空天姬目标[1][3]} ?? 0 ? &quot;/${t:空天姬目标[1][3]}&quot; :}:}&quot;:}${v:空天姬脱钩信息}${if:(${ev:空天姬强心剂数量}${ev:空天姬高效提钩}${ev:空天姬引诱次数})?&quot;&#xD;&#xA;&quot;:}${if:${ev:空天姬强心剂数量}?&quot;强心剂 ${v:空天姬强心剂数量} 瓶 &quot;:}${if:${ev:空天姬高效提钩}?&quot;高效提钩 ${v:空天姬高效提钩} 次 &quot;:}${if:${ev:空天姬引诱次数}?&quot;引诱 ${v:空天姬引诱次数} 次 ${if:${ev:空天姬引诱成功次数}?${v:空天姬引诱成功次数} 成功:}&quot;:}" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬咬钩时刻" VariableExpression="${_timestampms}" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="19" NamedCallbackName="command" NamedCallbackParam="/systemsounds ${pd:空天姬配置[系统音]}" SoundRouting="None" TTSRouting="None" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="20" NamedCallbackName="command" NamedCallbackParam="/systemsounds ${pd:空天姬配置[系统音]}" SoundRouting="None" TTSRouting="None" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[关闭系统音]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制系统音I}" ExpressionTypeL="String" ExpressionR="${pd:空天姬配置[系统音]}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="20" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬控制咬钩显示$" VariableExpression="${_timestampms}" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False">
+                      <Action OrderNumber="21" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬控制咬钩显示$" VariableExpression="${_timestampms}" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="21" ListVariableOp="UnsetRegex" ListVariableName="^空天姬" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬" VariableExpression="${_timestampms}" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="22" ListVariableOp="UnsetRegex" ListVariableName="^空天姬" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬" VariableExpression="${_timestampms}" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="And" />
                       </Action>
-                      <Action OrderNumber="22" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬[^控]" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="23" ListVariableOp="UnsetRegex" ListVariableName="空天姬" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬" VariableExpression="${_timestampms}" TableVariableName="空天姬鱼篓" ActionType="TableVariable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="And" />
+                      </Action>
+                      <Action OrderNumber="24" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬[^控]" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="23" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬控制以小钓大机会" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="25" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " SoundRouting="None" TTSRouting="None" VariableOp="UnsetRegex" VariableName="^空天姬控制以小钓大机会" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="24" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="26" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="25" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="27" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="26" FolderId="fe23526f-b43d-44bd-bb97-921eb52adae2" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="28" FolderId="fe23526f-b43d-44bd-bb97-921eb52adae2" SoundRouting="None" TTSRouting="None" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="27" LogMessageText="空天姬触发" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
+                      <Action OrderNumber="29" LogMessageText="空天姬触发" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="28" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="457=收竿 DB7=停止钓鱼 DBC=警惕性很高 换个" DescriptionOverride="True">
+                      <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="457=收竿 DB7=停止钓鱼 DBC=警惕性很高 换个" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -3309,18 +3315,21 @@
                       <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableName="空天姬鱼篓判断" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableName="空天姬以小钓大机会判断" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableName="空天姬恩宠判断" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="120 + 1000 * ( ${v:空天姬耐心最后竿} )" Asynchronous="False">
+                      <Action OrderNumber="6" SoundRouting="None" TTSRouting="None" VariableName="空天姬以小钓大机会判断" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬鱼名判断" VariableExpression="${f:capture(${空天姬目标},1):([\w-'・· ]+)}" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="120 + 1000 * ( ${v:空天姬耐心最后竿} )" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬鱼名判断" VariableExpression="${f:capture(${空天姬目标},1):([\w-'・· ]+)}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="Or">
                             <ConditionGroup Enabled="true" Grouping="And">
@@ -3331,7 +3340,7 @@
                                   <ConditionGroup Enabled="true" Grouping="Or">
                                     <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标${v:空天姬以小钓大阶段}}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                                     <ConditionGroup Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${f:capture(${v:空天姬最后上钩},4):(.*?竿)? *(引诱)? *(.提)? *([\w-·・' ]+)}" ExpressionTypeL="String" ExpressionR="${v:空天姬专一目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${f:capture(${v:空天姬最后上钩},4):(.*?竿)? *(引诱)? *(.提)? *([\w-·・' ]+)}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标${v:空天姬以小钓大阶段}}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                                       <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最后上钩}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -3346,29 +3355,53 @@
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制以小钓大机会}${ev:空天姬控制以小钓大II机会}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬鱼篓判断" VariableExpression="1" Enabled="False" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬鱼篓判断" VariableExpression="1" Enabled="False" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="Or">
                             <ConditionGroup Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionGroup Enabled="true" Grouping="Or">
                                 <ConditionGroup Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标1}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼目标1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标1}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionGroup Enabled="true" Grouping="Or">
+                                    <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标1}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                    <ConditionGroup Enabled="true" Grouping="And">
+                                      <ConditionSingle Enabled="true" ExpressionL="${f:capture(${v:空天姬最后上钩},4):(.*?竿)? *(引诱)? *(.提)? *([\w-·・' ]+)}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标1}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最后上钩}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
                                 </ConditionGroup>
                                 <ConditionGroup Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼鱼篓1}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼鱼篓1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓1}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionGroup Enabled="true" Grouping="Or">
+                                    <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬拍目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                    <ConditionGroup Enabled="true" Grouping="And">
+                                      <ConditionSingle Enabled="true" ExpressionL="${f:capture(${v:空天姬最后上钩},4):(.*?竿)? *(引诱)? *(.提)? *([\w-·・' ]+)}" ExpressionTypeL="String" ExpressionR="${v:空天姬拍目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最后上钩}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
                                 </ConditionGroup>
                                 <ConditionGroup Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼鱼篓2}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼鱼篓2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓2}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionGroup Enabled="true" Grouping="Or">
+                                    <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标2}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                    <ConditionGroup Enabled="true" Grouping="And">
+                                      <ConditionSingle Enabled="true" ExpressionL="${f:capture(${v:空天姬最后上钩},4):(.*?竿)? *(引诱)? *(.提)? *([\w-·・' ]+)}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标2}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最后上钩}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                                    </ConditionGroup>
+                                  </ConditionGroup>
                                 </ConditionGroup>
                               </ConditionGroup>
                             </ConditionGroup>
                             <ConditionGroup Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼目标${n: ${v:空天姬以小钓大阶段} + 1 }}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼鱼篓${n: ${v:空天姬以小钓大阶段} + 2 }}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标${n: ${v:空天姬以小钓大阶段} + 1 }}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓${n: ${v:空天姬以小钓大阶段} + 2 }}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                               <ConditionGroup Enabled="true" Grouping="Or">
                                 <ConditionGroup Enabled="true" Grouping="Or">
@@ -3382,21 +3415,37 @@
                               </ConditionGroup>
                             </ConditionGroup>
                           </ConditionGroup>
-                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬十五机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="91" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制以小钓大机会}${ev:空天姬控制以小钓大II机会}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                          <ConditionGroup Enabled="true" Grouping="Or">
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬十五机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼名判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          </ConditionGroup>
+                          <ConditionSingle Enabled="true" ExpressionL="${t:空天姬鱼篓.h}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬可用鱼计" VariableExpression="${v:空天姬控制鱼计} - ( ${ev:空天姬手法知识} ? ${ev:空天姬知识大鱼} ? 0 : 2 : 0 )" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬可用鱼计" VariableExpression="${v:空天姬控制鱼计} - ( ${ev:空天姬手法知识} ? ${ev:空天姬知识大鱼} ? 0 : 2 : 0 )" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( ${v:空天姬控制强心剂} ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( ${v:空天姬控制强心剂} ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${_me.currentgp} + ${v:空天姬强心剂判断} * ${pv:空天姬控制强心剂GP} + ( ${ev:空天姬手法收藏品} || ( ${v:空天姬参数} == 1 ) ? ( ${v:空天姬可用鱼计} ≥ 3 ? 150 : 0 ) : 0 ) - 100 * ( ${v:空天姬鱼篓判断} )" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="13" ListVariableOp="Push" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬恩宠判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionGroup Enabled="true" Grouping="Or">
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          </ConditionGroup>
+                          <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp} + ${v:空天姬强心剂判断} * ${pv:空天姬控制强心剂GP}" ExpressionTypeL="Numeric" ExpressionR="${_me.maxgp} - 198" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法攒鱼计}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="14" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${_me.currentgp} + ${v:空天姬强心剂判断} * ${pv:空天姬控制强心剂GP} + ${ev:空天姬恩宠判断} * 150 - 100 * ( ${v:空天姬鱼篓判断} )" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="13" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练渔技" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="15" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练渔技" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -3414,26 +3463,19 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="48" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="14" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionGroup Enabled="true" Grouping="Or">
-                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          </ConditionGroup>
-                          <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp} + ${v:空天姬强心剂判断} * ${pv:空天姬控制强心剂GP}" ExpressionTypeL="Numeric" ExpressionR="${_me.maxgp} - 198" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法攒鱼计}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                      <Action OrderNumber="16" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬恩宠判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="15" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="17" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="16" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="18" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II机会}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3441,18 +3483,18 @@
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="17" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="19" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大)}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大II)}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大II)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="18" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练妙招" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="20" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练妙招" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼篓判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼篓判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="19" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="21" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="Or">
                             <ConditionGroup Enabled="true" Grouping="And">
@@ -3517,7 +3559,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="20" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼猎手" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="22" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼猎手" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制渔技状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3542,7 +3584,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="21" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼的知识" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="23" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼的知识" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬知识大鱼}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="95" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
@@ -3551,7 +3593,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法知识}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="22" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="24" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="Or">
                             <ConditionSingle Enabled="true" ExpressionL="${v:空天姬撒饵强制}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -3564,7 +3606,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="23" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="25" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3578,7 +3620,7 @@
                             </ConditionGroup>
                             <ConditionGroup Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬拍目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                              <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼名判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                             </ConditionGroup>
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -3591,7 +3633,7 @@
                           </ConditionGroup>
                         </Condition>
                       </Action>
-                      <Action OrderNumber="24" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="26" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3604,7 +3646,7 @@
                             </ConditionGroup>
                             <ConditionGroup Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬专一目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                              <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼名判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                             </ConditionGroup>
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -3616,13 +3658,13 @@
                           </ConditionGroup>
                         </Condition>
                       </Action>
-                      <Action OrderNumber="25" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="抛竿" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="27" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="抛竿" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="26" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True">
+                      <Action OrderNumber="28" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="27" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ${_this} == 耐心II ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="29" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ${_this} == 耐心II ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="60" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
@@ -3630,29 +3672,29 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="560" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="28" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬动作" ListVariableExpression="${f:length:${_this}}" ListVariableTarget="空天姬动作" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="30" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬动作" ListVariableExpression="${f:length:${_this}}" ListVariableTarget="空天姬动作" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="29" SoundRouting="None" TTSRouting="None" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False">
+                      <Action OrderNumber="31" SoundRouting="None" TTSRouting="None" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7.5*1000" Asynchronous="False">
+                      <Action OrderNumber="32" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7.5*1000" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="31" LogMessageText="空天姬超时" LogProcess="True" SoundRouting="None" TTSRouting="None" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
+                      <Action OrderNumber="33" LogMessageText="空天姬超时" LogProcess="True" SoundRouting="None" TTSRouting="None" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="32" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469|62F=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 " DescriptionOverride="True">
+                      <Action OrderNumber="34" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469|62F=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 " DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="33" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="457=收竿 45C=咬钩提 456=抛竿 461=以小钓大 15D0=歇竿" DescriptionOverride="True">
+                      <Action OrderNumber="35" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="457=收竿 45C=咬钩提 456=抛竿 461=以小钓大 15D0=歇竿" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="34" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True">
+                      <Action OrderNumber="36" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -3721,12 +3763,12 @@
                       <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬超出窗口}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                      <ConditionSingle Enabled="true" ExpressionL="${v:空天姬饵鱼模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                      <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="2.2 动作检测" Id="153a0185-a08e-4767-be1a-6982c015acab" RegularExpression="^.{25}1A:(?&lt;log&gt;70C|2FB|70B|ADC|ADB|2FD|352|F43):[^:]+:[^:]+:(?&lt;玩家&gt;[^:]+):[^:]*:(?&lt;player&gt;[^:]*):[^:]*:|^.{28}15:(?&lt;玩家&gt;[^:]+):[^:]+:(?&lt;log&gt;68B4)" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Name="2.2 动作检测" Id="153a0185-a08e-4767-be1a-6982c015acab" RegularExpression="^.{25}1A:(?&lt;log&gt;70C|2FB|70B|ADC|ADB|2FD|352|F43):[^:]+:[^:]+:(?&lt;玩家&gt;[^:]+):[^:]*:(?&lt;player&gt;[^:]*):[^:]*:|^.{28}15:(?&lt;玩家&gt;[^:]+):[^:]+:(?&lt;log&gt;68B4)|^.{32}29:150001:(?&lt;log&gt;15B[45]):[^:]*:(?&lt;idold&gt;[^:]+):" PrevActions="Interrupt">
                     <Actions>
-                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="空天姬动作记录" ListVariableExpression="${?d:F43=大鱼的知识,70C=专一垂钓,2FB=撒饵,70B=拍击水面,ADC=大鱼猎手,68B4=沙利亚克的恩宠,ADB=熟练渔技,2FD=耐心II,352=耐心[${log}]}" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="空天姬动作记录" ListVariableExpression="${?d:15B4=熟练妙招,15B5=熟练妙招,325=收藏品采集,F43=大鱼的知识,70C=专一垂钓,2FB=撒饵,70B=拍击水面,ADC=大鱼猎手,68B4=沙利亚克的恩宠,ADB=熟练渔技,2FD=耐心II,352=耐心[${log}]}" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                       <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable">
@@ -3754,8 +3796,9 @@
                       <ConditionGroup Enabled="true" Grouping="Or">
                         <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_me.id}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         <ConditionSingle Enabled="true" ExpressionL="${玩家}" ExpressionTypeL="String" ExpressionR="${_me.id}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                        <ConditionSingle Enabled="true" ExpressionL="${idold}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                       </ConditionGroup>
-                      <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(${?d:F43=大鱼的知识,70C=专一垂钓,2FB=撒饵,70B=拍击水面,ADC=大鱼猎手,68B4=沙利亚克的恩宠,ADB=熟练渔技,2FD=耐心II,352=耐心[${log}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                      <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(${?d:15B4=熟练妙招,15B5=熟练妙招,325=收藏品采集,F43=大鱼的知识,70C=专一垂钓,2FB=撒饵,70B=拍击水面,ADC=大鱼猎手,68B4=沙利亚克的恩宠,ADB=熟练渔技,2FD=耐心II,352=耐心[${log}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
                   <Trigger Enabled="false" Name="1.2 推送预拍水动作" Id="77cd4dc1-b86f-491c-9913-f8392a19a0ae" RegularExpression="^空天姬拍水执行|^.{32}29:150001:(?&lt;log&gt;62F|469|45[DEF]|15D0)|^.{26}0843::(.+成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+ (?&lt;空天姬目标&gt;.+) measuring.+|.+は(?&lt;空天姬目标&gt;[^ ]+)を釣り上げた。)$">
@@ -3936,10 +3979,7 @@
                       <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${v:空天姬当前采集力强心剂} + floor( ${v:空天姬控制鱼计} / 3 ) * 150 - 100 * ( ${v:空天姬鱼篓判断} )" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬海钓等待采集力" VariableExpression="( ${ev:空天姬控制幻海流状态} ? ( ( ${ev:空天姬控制急速海豚} ? ( ( ${_timestamp} - ( ${v:空天姬控制急速海豚时刻} ) ) &lt; 88 ? ( ${_timestamp} - ( ${v:空天姬控制急速海豚时刻} ) ) : 88 ) &gt;  : 0 ) ) : 235 )" Enabled="False" ActionType="Variable" Asynchronous="False">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="13" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练渔技" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="12" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练渔技" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制渔技状态}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -3950,14 +3990,14 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="48" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="14" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="13" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="25" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="15" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="14" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II机会}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3965,13 +4005,13 @@
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大)}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大II)}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大II)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="17" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="16" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -3998,7 +4038,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬当前采集力强心剂}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="18" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="17" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -4046,7 +4086,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="19" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="18" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4083,7 +4123,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="${v:空天姬专一目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="20" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="19" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -4166,7 +4206,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="21" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼猎手" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="20" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼猎手" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼猎手}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -4295,7 +4335,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="22" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="21" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -4351,7 +4391,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="23" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="22" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="9" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -4412,7 +4452,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="24" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="23" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4432,7 +4472,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="${v:空天姬拍目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="25" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="24" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬撒饵}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -4463,10 +4503,10 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="26" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True">
+                      <Action OrderNumber="25" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="27" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ( ${_this} == 耐心II ) || ( ${_this} == 耐心 ) ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="26" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ( ${_this} == 耐心II ) || ( ${_this} == 耐心 ) ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="60" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
@@ -4474,29 +4514,29 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="560" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="28" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬动作" ListVariableExpression="${f:length:${_this}}" ListVariableTarget="空天姬动作" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="27" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬动作" ListVariableExpression="${f:length:${_this}}" ListVariableTarget="空天姬动作" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="29" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="抛竿" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="28" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="抛竿" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False">
+                      <Action OrderNumber="29" SoundRouting="None" TTSRouting="None" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="31" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7.5*1000" Asynchronous="False">
+                      <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7.5*1000" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="32" LogMessageText="空天姬超时" LogProcess="True" SoundRouting="None" TTSRouting="None" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
+                      <Action OrderNumber="31" LogMessageText="空天姬超时" LogProcess="True" SoundRouting="None" TTSRouting="None" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="33" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True">
+                      <Action OrderNumber="32" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="34" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True">
+                      <Action OrderNumber="33" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -4544,7 +4584,7 @@
                                   <ConditionGroup Enabled="true" Grouping="Or">
                                     <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标${v:空天姬以小钓大阶段}}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                                     <ConditionGroup Enabled="true" Grouping="And">
-                                      <ConditionSingle Enabled="true" ExpressionL="${f:capture(${v:空天姬最后上钩},4):(.*?竿)? *(引诱)? *(.提)? *([\w-·・' ]+)}" ExpressionTypeL="String" ExpressionR="${v:空天姬专一目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                                      <ConditionSingle Enabled="true" ExpressionL="${f:capture(${v:空天姬最后上钩},4):(.*?竿)? *(引诱)? *(.提)? *([\w-·・' ]+)}" ExpressionTypeL="String" ExpressionR="${v:空天姬大鱼目标${v:空天姬以小钓大阶段}}" ExpressionTypeR="String" ConditionType="RegexMatch" />
                                       <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                       <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最后上钩}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                                       <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -4606,18 +4646,28 @@
                       <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬当前采集力强心剂" VariableExpression="${_me.currentgp} + ( ${v:空天姬控制强心剂} ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="12" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${v:空天姬当前采集力强心剂} + floor( ${v:空天姬控制鱼计} / 3 ) * 150 - 100 * ( ${v:空天姬鱼篓判断} )" ActionType="Variable" Asynchronous="False">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="13" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="12" ListVariableOp="Push" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬恩宠判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬当前采集力强心剂}" ExpressionTypeL="Numeric" ExpressionR="${_me.maxgp} - 198" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制强心剂}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionGroup Enabled="true" Grouping="Or">
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          </ConditionGroup>
+                          <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp} + ${v:空天姬强心剂判断} * ${pv:空天姬控制强心剂GP}" ExpressionTypeL="Numeric" ExpressionR="${_me.maxgp} - 198" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制强心剂}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法攒鱼计}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="14" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${v:空天姬当前采集力强心剂} + ${ev:空天姬恩宠判断} * 150 - 100 * ( ${v:空天姬鱼篓判断} )" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="false" Grouping="Or" />
+                      </Action>
+                      <Action OrderNumber="14" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="沙利亚克的恩宠" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬恩宠判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="15" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="以小钓大" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -4625,18 +4675,18 @@
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼篓判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="15" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="16" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大机会判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大)}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大II)}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                          <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作.indexof(以小钓大II)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="16" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练妙招" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="17" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练妙招" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼篓判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="17" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="18" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4645,7 +4695,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="560 - 8" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="18" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼猎手" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="19" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="大鱼猎手" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制渔技状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4655,7 +4705,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="200 - 8" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="19" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="20" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬撒饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -4667,7 +4717,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="20" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="21" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4681,7 +4731,7 @@
                             </ConditionGroup>
                             <ConditionGroup Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="${v:空天姬拍目标}" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                              <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼名判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </ConditionGroup>
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|469|15D0" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -4694,10 +4744,10 @@
                           </ConditionGroup>
                         </Condition>
                       </Action>
-                      <Action OrderNumber="21" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True">
+                      <Action OrderNumber="22" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="22" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ${_this} == 耐心II ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="23" ListVariableOp="SetAll" ListVariableName="空天姬动作" ListVariableExpression="${if: ${_this} == 耐心II ? ${if: ${_me.level} &lt; 15 ? : 耐心 } : ${_this} }" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="60" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
@@ -4705,29 +4755,29 @@
                           <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="560" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="23" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬动作" ListVariableExpression="${f:length:${_this}}" ListVariableTarget="空天姬动作" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="24" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬动作" ListVariableExpression="${f:length:${_this}}" ListVariableTarget="空天姬动作" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="15" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="24" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="抛竿" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="25" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="抛竿" SoundRouting="None" TTSRouting="None" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="25" SoundRouting="None" TTSRouting="None" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False">
+                      <Action OrderNumber="26" SoundRouting="None" TTSRouting="None" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="26" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7.5*1000" Asynchronous="False">
+                      <Action OrderNumber="27" SoundRouting="None" TTSRouting="None" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="7.5*1000" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="27" LogMessageText="空天姬超时" LogProcess="True" SoundRouting="None" TTSRouting="None" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
+                      <Action OrderNumber="28" LogMessageText="空天姬超时" LogProcess="True" SoundRouting="None" TTSRouting="None" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="28" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True">
+                      <Action OrderNumber="29" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="29" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True">
+                      <Action OrderNumber="30" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -4828,12 +4878,36 @@
                             </ConditionGroup>
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp}" ExpressionTypeL="Numeric" ExpressionR="36 + ${v:空天姬模式所需采集力}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableName="空天姬断竿判断" ActionType="Variable" ExecutionDelayExpression="${v:空天姬最大竿时} * 1000" Asynchronous="False">
+                      <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionGroup Enabled="true" Grouping="Or">
+                            <ConditionGroup Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </ConditionGroup>
+                            <ConditionGroup Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制收藏品}" ExpressionTypeL="String" ExpressionR="${v:空天姬初始收藏品状态}" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </ConditionGroup>
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬初始收藏品状态}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          </ConditionGroup>
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="10" SoundRouting="None" TTSRouting="None" VariableName="空天姬断竿判断" ActionType="Variable" ExecutionDelayExpression="${v:空天姬最大竿时} * 1000" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬断竿判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬断竿判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="And">
                             <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
@@ -4850,18 +4924,22 @@
                             </ConditionGroup>
                             <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                             <ConditionSingle Enabled="true" ExpressionL="${v:空天姬引诱}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预饵鱼}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼优先竿型${v:空天姬以小钓大阶段}}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="false" ExpressionL="优先竿最高优先级" ExpressionTypeL="Numeric" ExpressionR="屏蔽幻海绝命" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬真空期}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" SoundRouting="None" TTSRouting="None" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" SoundRouting="None" TTSRouting="None" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬断竿判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="11" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱重随" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="13" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱重随" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="And">
                             <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
@@ -5041,7 +5119,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${v:空天姬收藏品初始状态}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="false" Name="3.3 调整收藏状态" Id="f0790f9d-79b9-404e-a625-1e19951c9438" RegularExpression="">
+                  <Trigger Enabled="true" Name="3.3 调整收藏状态" Id="f0790f9d-79b9-404e-a625-1e19951c9438" RegularExpression="">
                     <Actions>
                       <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/ac ${pd:空天姬技能[${pd:空天姬配置[语言]}收藏品采集]}" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
                         <Condition Enabled="true" Grouping="Or">
@@ -5477,7 +5555,7 @@
                       </ConditionGroup>
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+                  <Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
                     <Actions>
                       <Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
@@ -5611,6 +5689,9 @@
                                 <Condition Enabled="false" Grouping="Or" />
                               </Action>
                               <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 在使用“双重提钩”时失败，将使用“提钩”代替它。" SoundRouting="None" TTSRouting="None" ActionType="NamedCallback">
+                                <Condition Enabled="false" Grouping="Or" />
+                              </Action>
+                              <Action OrderNumber="3" ListVariableOp="SetAll" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="提钩" ActionType="Variable">
                                 <Condition Enabled="false" Grouping="Or" />
                               </Action>
                             </Actions>
@@ -5897,7 +5978,7 @@
                               </Action>
                               <Action OrderNumber="22" SoundRouting="None" TTSRouting="None" TextAuraAlignment="MiddleRight" TextAuraFontSize="14.25" TextAuraForeground="fff" TextAuraOutline="#607D8B" TextAuraName="空天姬目标" TextAuraExpression="${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][3]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][3]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][3]}}}${t:空天姬目标[1][3]} &quot;):${f:length:${t:空天姬目标[2][3]}}}${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][2]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][2]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][2]}}}${t:空天姬目标[1][2]} &quot;):${f:length:${t:空天姬目标[2][2]}}}${f:capture(${t:空天姬目标[2][1]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][1]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][1]}}}${t:空天姬目标[1][1]}" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="87*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
-                                  <ConditionSingle Enabled="true" ExpressionL="${f:length:${t:空天姬目标[2][1]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                   <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
                                 </Condition>
                               </Action>
@@ -6017,7 +6098,7 @@
                               <Action OrderNumber="22" SoundRouting="None" TTSRouting="None" TextAuraAlignment="MiddleRight" TextAuraFontSize="21.75" TextAuraForeground="fff" TextAuraOutline="#607D8B" TextAuraName="空天姬目标" TextAuraExpression="${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][3]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][3]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][3]}}}${t:空天姬目标[1][3]} &quot;):${f:length:${t:空天姬目标[2][3]}}}${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][2]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][2]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][2]}}}${t:空天姬目标[1][2]} &quot;):${f:length:${t:空天姬目标[2][2]}}}${f:capture(${t:空天姬目标[2][1]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][1]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][1]}}}${t:空天姬目标[1][1]}" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="87*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${f:length:${t:空天姬目标[2][1]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                 </Condition>
                               </Action>
                               <Action OrderNumber="23" SoundRouting="None" TTSRouting="None" TextAuraFontSize="21.75" TextAuraForeground="fff" TextAuraOutline="#607D8B" TextAuraName="空天姬成就目标" TextAuraExpression="${pd:空天姬成就计数[t${f:slice(0:3):${v:空天姬控制海域}}${n:${v:空天姬控制海钓标识} - 2 }]} ${v:空天姬控制成就计数}${f:ifequal(0,&quot;  &quot;,/):${f:length:${v:空天姬控制成就计数}}}${pd:空天姬成就计数[c${f:slice(0:3):${v:空天姬控制海域}}${n:${v:空天姬控制海钓标识} - 2 }]}" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="87*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura">
@@ -6163,7 +6244,7 @@
                               <Action OrderNumber="22" SoundRouting="None" TTSRouting="None" TextAuraAlignment="MiddleRight" TextAuraFontSize="27.75" TextAuraForeground="fff" TextAuraOutline="#607D8B" TextAuraName="空天姬目标" TextAuraExpression="${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][3]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][3]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][3]}}}${t:空天姬目标[1][3]} &quot;):${f:length:${t:空天姬目标[2][3]}}}${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][2]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][2]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][2]}}}${t:空天姬目标[1][2]} &quot;):${f:length:${t:空天姬目标[2][2]}}}${f:capture(${t:空天姬目标[2][1]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][1]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][1]}}}${t:空天姬目标[1][1]}" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="87*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${f:length:${t:空天姬目标[2][1]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                 </Condition>
                               </Action>
                               <Action OrderNumber="23" SoundRouting="None" TTSRouting="None" TextAuraFontSize="27.75" TextAuraForeground="fff" TextAuraOutline="#607D8B" TextAuraName="空天姬成就目标" TextAuraExpression="${pd:空天姬成就计数[t${f:slice(0:3):${v:空天姬控制海域}}${n:${v:空天姬控制海钓标识} - 2 }]} ${v:空天姬控制成就计数}${f:ifequal(0,&quot;  &quot;,/):${f:length:${v:空天姬控制成就计数}}}${pd:空天姬成就计数[c${f:slice(0:3):${v:空天姬控制海域}}${n:${v:空天姬控制海钓标识} - 2 }]}" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="87*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura">
@@ -6309,7 +6390,7 @@
                               <Action OrderNumber="22" SoundRouting="None" TTSRouting="None" TextAuraAlignment="MiddleRight" TextAuraFontSize="48" TextAuraForeground="fff" TextAuraOutline="#607D8B" TextAuraName="空天姬目标" TextAuraExpression="${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][3]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][3]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][3]}}}${t:空天姬目标[1][3]} &quot;):${f:length:${t:空天姬目标[2][3]}}}${f:ifequal(0,,&quot;${f:capture(${t:空天姬目标[2][2]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][2]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][2]}}}${t:空天姬目标[1][2]} &quot;):${f:length:${t:空天姬目标[2][2]}}}${f:capture(${t:空天姬目标[2][1]},1):(?&lt;1&gt;[^[^])} ${t:空天姬目标[3][1]}${f:ifequal(0,&quot;  &quot;,/):${f:length:${t:空天姬目标[1][1]}}}${t:空天姬目标[1][1]}" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="87*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura">
                                 <Condition Enabled="true" Grouping="And">
                                   <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                                  <ConditionSingle Enabled="true" ExpressionL="${f:length:${t:空天姬目标[2][1]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                                  <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                                 </Condition>
                               </Action>
                               <Action OrderNumber="23" SoundRouting="None" TTSRouting="None" TextAuraFontSize="48" TextAuraForeground="fff" TextAuraOutline="#607D8B" TextAuraName="空天姬成就目标" TextAuraExpression="${pd:空天姬成就计数[t${f:slice(0:3):${v:空天姬控制海域}}${n:${v:空天姬控制海钓标识} - 2 }]} ${v:空天姬控制成就计数}${f:ifequal(0,&quot;  &quot;,/):${f:length:${v:空天姬控制成就计数}}}${pd:空天姬成就计数[c${f:slice(0:3):${v:空天姬控制海域}}${n:${v:空天姬控制海钓标识} - 2 }]}" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="87*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura">
@@ -6472,10 +6553,15 @@
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬钓饵.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
+                      <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" VariableName="空天姬游动饵" ActionType="Variable">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="03" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                        </Condition>
+                      </Action>
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+                  <Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
                     <Actions>
                       <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage">
                         <Condition Enabled="false" Grouping="Or" />
@@ -6765,74 +6851,80 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="36" NamedCallbackName="command" NamedCallbackParam="/e 提钩耗时：${n:${_systemtimems} - ${v:提钩temp}}ms" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="NamedCallback" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="45C" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="37" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="36" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(69|5C)|15D0" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最大竿时}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="38" SoundRouting="None" TTSRouting="None" VariableName="空天姬专一" VariableExpression="-1" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="37" SoundRouting="None" TTSRouting="None" VariableName="空天姬专一" VariableExpression="-1" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="39" SoundRouting="None" TTSRouting="None" VariableName="空天姬专一判断" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="38" SoundRouting="None" TTSRouting="None" VariableName="空天姬专一判断" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="40" SoundRouting="None" TTSRouting="None" VariableName="空天姬引诱" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="39" SoundRouting="None" TTSRouting="None" VariableName="空天姬引诱" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(61|56)" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="41" SoundRouting="None" TTSRouting="None" VariableName="空天姬引诱成功" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="40" SoundRouting="None" TTSRouting="None" VariableName="空天姬引诱成功" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(61|56)" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬引诱成功}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="42" SoundRouting="None" TTSRouting="None" VariableName="空天姬撒饵强制" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="41" SoundRouting="None" TTSRouting="None" VariableName="空天姬撒饵强制" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬撒饵强制}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="43" SoundRouting="None" TTSRouting="None" VariableName="空天姬非自由态" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="42" SoundRouting="None" TTSRouting="None" VariableName="空天姬非自由态" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(61|56)" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬非自由态}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="44" SoundRouting="None" TTSRouting="None" VariableName="空天姬普海残竿" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="43" SoundRouting="None" TTSRouting="None" VariableName="空天姬普海残竿" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬普海残竿}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="45" NamedCallbackName="command" NamedCallbackParam="/e 怎会如此……${v:空天姬脱钩信息}" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬脱钩信息" VariableExpression="&#xD;&#xA;脱钩${v:空天姬脱钩信息}" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="44" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬鱼篓" ListVariableExpression="${f:equal():${id}} ^^ 1" ListVariableTarget="空天姬鱼篓" SoundRouting="None" TTSRouting="None" TableVariableOp="RemoveLine" TableVariableName="空天姬鱼篓" TableVariableTarget="空天姬鱼篓" TableVariableY="${t:空天姬鱼篓.vl(${v:空天姬游动饵},1,::-1)}" ActionType="TableVariable" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${et:空天姬鱼篓}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬游动饵}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="45" SoundRouting="None" TTSRouting="None" VariableName="空天姬游动饵" ActionType="Variable" Asynchronous="False">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬游动饵}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="46" NamedCallbackName="command" NamedCallbackParam="/e 怎会如此……${v:空天姬脱钩信息}" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬脱钩信息" VariableExpression="&#xD;&#xA;脱钩${v:空天姬脱钩信息}" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="45F|460" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬脱钩判定}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="46" NamedCallbackName="command" NamedCallbackParam="/e ${v:空天姬前置} ${func:format(System.Double,&quot;0.0&quot;):${if: ${log} == 15D0 ? ${v:空天姬控制咬钩显示} : ${n: ${v:空天姬控制咬钩显示} - 1 } }}${if:${ev:空天姬引诱判断}?*:} 秒${if:${ev:空天姬引诱判断}?&quot; 引诱&quot;:}${if:${ev:空天姬专一}||${ev:空天姬专一判断}?&quot; 专一&quot;:} 断竿" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬脱钩信息" VariableExpression="&#xD;&#xA;脱钩${v:空天姬脱钩信息}" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="47" NamedCallbackName="command" NamedCallbackParam="/e ${v:空天姬前置} ${func:format(System.Double,&quot;0.0&quot;):${if: ${log} == 15D0 ? ${v:空天姬控制咬钩显示} : ${n: ${v:空天姬控制咬钩显示} - 1 } }}${if:${ev:空天姬引诱判断}?*:} 秒${if:${ev:空天姬引诱判断}?&quot; 引诱&quot;:}${if:${ev:空天姬专一}||${ev:空天姬专一判断}?&quot; 专一&quot;:} 断竿" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬脱钩信息" VariableExpression="&#xD;&#xA;脱钩${v:空天姬脱钩信息}" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="469|15D0|62F" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬咬饵}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="47" NamedCallbackName="command" NamedCallbackParam="/e ${v:空天姬前置} ${func:format(System.Double,&quot;0.0&quot;):${v:空天姬控制咬钩显示}}${if:${ev:空天姬引诱判断}?*:} 秒${if:${ev:空天姬引诱判断}?&quot; 引诱&quot;:}${if:${ev:空天姬专一}||${ev:空天姬专一判断}?&quot; 专一&quot;:} ${v:空天姬咬钩竿型} ${if:${ev:空天姬歇竿}?歇竿:未提钩}" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬脱钩信息" VariableExpression="&#xD;&#xA;脱钩${v:空天姬脱钩信息}" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="48" NamedCallbackName="command" NamedCallbackParam="/e ${v:空天姬前置} ${func:format(System.Double,&quot;0.0&quot;):${v:空天姬控制咬钩显示}}${if:${ev:空天姬引诱判断}?*:} 秒${if:${ev:空天姬引诱判断}?&quot; 引诱&quot;:}${if:${ev:空天姬专一}||${ev:空天姬专一判断}?&quot; 专一&quot;:} ${v:空天姬咬钩竿型} ${if:${ev:空天姬歇竿}?歇竿:未提钩}" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬脱钩信息" VariableExpression="&#xD;&#xA;脱钩${v:空天姬脱钩信息}" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="45[FD]" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
@@ -6840,10 +6932,10 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制咬钩显示}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="48" LogMessageText="空天姬更新采集力" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
+                      <Action OrderNumber="49" LogMessageText="空天姬更新采集力" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="49" SoundRouting="None" TTSRouting="None" VariableName="空天姬前置" ActionType="Variable" ExecutionDelayExpression="300" Asynchronous="False">
+                      <Action OrderNumber="50" SoundRouting="None" TTSRouting="None" VariableName="空天姬前置" ActionType="Variable" ExecutionDelayExpression="300" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="62F|45F|469|1583" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionGroup Enabled="true" Grouping="And">
@@ -6853,87 +6945,61 @@
                           </ConditionGroup>
                         </Condition>
                       </Action>
-                      <Action OrderNumber="50" SoundRouting="None" TTSRouting="None" VariableName="空天姬以小钓大阶段判断" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="51" SoundRouting="None" TTSRouting="None" VariableName="空天姬以小钓大阶段判断" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|45D|45E|45F" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="51" SoundRouting="None" TTSRouting="None" VariableName="空天姬以小钓大套娃判断" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="52" SoundRouting="None" TTSRouting="None" VariableName="空天姬以小钓大套娃判断" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|45D|45E|45F" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="52" SoundRouting="None" TTSRouting="None" VariableName="空天姬脱钩判定" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="53" SoundRouting="None" TTSRouting="None" VariableName="空天姬脱钩判定" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="45F|460" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="53" SoundRouting="None" TTSRouting="None" VariableName="空天姬引诱判断" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="54" SoundRouting="None" TTSRouting="None" VariableName="空天姬引诱判断" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461|456" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬引诱判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="54" SoundRouting="None" TTSRouting="None" VariableName="空天姬歇竿" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="55" SoundRouting="None" TTSRouting="None" VariableName="空天姬歇竿" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456|461" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬歇竿}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="55" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="56" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461|456" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="56" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬多提信息" VariableExpression="${if:${v:空天姬多提检测} - ( ${v:空天姬引诱} ) * 10 - ${_me.currentgp} &gt; 400 ? &quot; 三提&quot; : &quot;${if: ${v:空天姬多提检测} - ( ${v:空天姬引诱} ) * 10 - ${_me.currentgp} &gt; 100 ? &quot; 双提&quot; : }&quot; }" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="57" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬多提信息" VariableExpression="${if:${v:空天姬多提检测} - ( ${v:空天姬引诱} ) * 10 - ${_me.currentgp} &gt; 400 ? &quot; 三提&quot; : &quot;${if: ${v:空天姬多提检测} - ( ${v:空天姬引诱} ) * 10 - ${_me.currentgp} &gt; 100 ? &quot; 双提&quot; : }&quot; }" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="45C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="57" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(61|56)" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="58" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(61|56)" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                          <ConditionGroup Enabled="true" Grouping="Or">
-                            <ConditionGroup Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            </ConditionGroup>
-                            <ConditionGroup Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制收藏品}" ExpressionTypeL="String" ExpressionR="${v:空天姬初始收藏品状态}" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            </ConditionGroup>
-                            <ConditionSingle Enabled="true" ExpressionL="${v:空天姬初始收藏品状态}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                          </ConditionGroup>
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="59" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬多提检测" VariableExpression="${_me.currentgp}" ActionType="Variable" ExecutionDelayExpression="1000" Asynchronous="False">
+                      <Action OrderNumber="58" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬多提检测" VariableExpression="${_me.currentgp}" ActionType="Variable" ExecutionDelayExpression="1000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461|456" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="60" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False">
+                      <Action OrderNumber="59" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" SoundRouting="None" TTSRouting="None" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(61|56)" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="61" LogMessageText="空天姬更新采集力" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
+                      <Action OrderNumber="60" LogMessageText="空天姬更新采集力" LogProcess="True" SoundRouting="None" TTSRouting="None" ActionType="LogMessage" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="62" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="1000 * ${?d:=9,轻竿=6,中竿=9,鱼王竿=12[${v:空天姬咬钩竿型}]} - 1000" Asynchronous="False">
+                      <Action OrderNumber="61" SoundRouting="None" TTSRouting="None" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="1000 * ${?d:=9,轻竿=6,中竿=9,鱼王竿=12[${v:空天姬咬钩竿型}]} - 1000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="45C" ExpressionTypeR="String" ConditionType="RegexMatch" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -6941,10 +7007,10 @@
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="63" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 " DescriptionOverride="True">
+                      <Action OrderNumber="62" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 " DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="64" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="457=收竿 45C=咬钩提 456=抛竿 461=以小钓大 15D0=歇竿" DescriptionOverride="True">
+                      <Action OrderNumber="63" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="457=收竿 45C=咬钩提 456=抛竿 461=以小钓大 15D0=歇竿" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -7202,18 +7268,50 @@
                     </Actions>
                     <Condition Enabled="false" Grouping="Or" />
                   </Trigger>
-                  <Trigger Enabled="false" Name="4.2 鱼篓监控" Id="c4f90da5-5427-4ff1-bce8-af7250aa7465" RegularExpression="^.{32}29:150001:(?&lt;log&gt;15B4):[^:]*:(?&lt;id&gt;\w+):">
+                  <Trigger Enabled="true" Name="4.2 鱼篓监控" Id="c4f90da5-5427-4ff1-bce8-af7250aa7465" RegularExpression="^.{32}29:150001:(?&lt;log&gt;15B[456]|DC2):[^:]*:(?&lt;idold&gt;[^:]+):(?&lt;idnew&gt;[^:]+)">
                     <Actions>
-                      <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="15BE=大型引诱 15BF=大型引诱x2 15C0=大型引诱x3" DescriptionOverride="True">
+                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="空天姬鱼篓" SoundRouting="None" TTSRouting="None" TableVariableOp="InsertLine" TableVariableName="空天姬鱼篓" TableVariableExpression=",${idold},${v:空天姬以小钓大套娃判断}" TableVariableY="1" ActionType="TableVariable">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B4" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="2" ListVariableOp="Push" ListVariableName="空天姬鱼篓" SoundRouting="None" TTSRouting="None" TableVariableOp="Set" TableVariableName="空天姬鱼篓" TableVariableExpression=",${idnew},${v:空天姬以小钓大套娃判断}" TableVariableY="${t:空天姬鱼篓.vl(${idold},1)}" Enabled="False" ActionType="TableVariable">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          <ConditionSingle Enabled="true" ExpressionL="${t:空天姬鱼篓.vl(${idold},1)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="3" ListVariableOp="Push" ListVariableName="空天姬鱼篓" SoundRouting="None" TTSRouting="None" TableVariableOp="InsertLine" TableVariableName="空天姬鱼篓" TableVariableExpression=",${idnew},${v:空天姬以小钓大套娃判断}" TableVariableY="1" ActionType="TableVariable">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          <ConditionSingle Enabled="false" ExpressionL="${t:空天姬鱼篓.vl(${idold},1)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬游动饵" VariableExpression="${idold}" ActionType="Variable">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="DC2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="5" SoundRouting="None" TTSRouting="None" VariableOp="SetString" VariableName="空天姬控制钓饵" VariableExpression="${pd:空天姬钓饵表.keyof(${n:0x${idold}})}" ActionType="Variable">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B6" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="6" ListVariableOp="Push" ListVariableName="空天姬鱼篓" SoundRouting="None" TTSRouting="None" TableVariableOp="FilterLine" TableVariableExpressionType="Numeric" TableVariableName="空天姬鱼篓" TableVariableTarget="空天姬鱼篓" TableVariableY="${_row} &lt; 4 &amp;&amp; ${f:length:${_row[1]}}" ActionType="TableVariable" ExecutionDelayExpression="100">
+                        <Condition Enabled="true" Grouping="And">
+                          <ConditionGroup Enabled="true" Grouping="Or">
+                            <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B4" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                            <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                          </ConditionGroup>
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="7" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="15BE=大型引诱 15BF=大型引诱x2 15C0=大型引诱x3" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="2" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="15B4=存某饵鱼入鱼篓 15B5=存某饵鱼入鱼篓并替换了某饵鱼 15B6=将鱼篓中的某饵鱼挂上了钓钩 15B7=放生了鱼篓中的饵鱼" DescriptionOverride="True">
+                      <Action OrderNumber="8" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="15B4=存某饵鱼入鱼篓 15B5=存某饵鱼入鱼篓并替换了某饵鱼 15B6=将鱼篓中的某饵鱼挂上了钓钩 15B7=放生了鱼篓中的饵鱼" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
-                      <Action OrderNumber="3" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="15BD=预感大型鱼上钩 15C1=预感小型鱼上钩" DescriptionOverride="True">
-                        <Condition Enabled="false" Grouping="Or" />
-                      </Action>
-                      <Action OrderNumber="4" ListVariableOp="Push" ListVariableName="空天姬鱼篓" ListVariableExpression="${id},${v:空天姬最后上钩}" SoundRouting="None" TTSRouting="None" ActionType="ListVariable">
+                      <Action OrderNumber="9" SoundRouting="None" TTSRouting="None" Enabled="False" ActionType="Placeholder" Description="15BD=预感大型鱼上钩 15C1=预感小型鱼上钩" DescriptionOverride="True">
                         <Condition Enabled="false" Grouping="Or" />
                       </Action>
                     </Actions>
@@ -8970,7 +9068,7 @@
           </Folder>
         </Folders>
         <Triggers>
-          <Trigger Enabled="true" Name="  预设生成器 表格（未完成 右键执行 需要打开允许启动进程）" Id="e4b112e3-5862-4d27-8ce4-b3c2f5dcef1d" RegularExpression="">
+          <Trigger Enabled="false" Name="  预设生成器 表格（未完成 右键执行 需要打开允许启动进程）" Id="e4b112e3-5862-4d27-8ce4-b3c2f5dcef1d" RegularExpression="">
             <Actions>
               <Action OrderNumber="1" SoundRouting="None" TTSRouting="None" TriggerOp="EnableTrigger" TriggerId="2453366e-7c47-4c08-b276-ab8824fd1b98" TriggerForce="regexp" ActionType="Trigger">
                 <Condition Enabled="false" Grouping="Or" />
@@ -8990,15 +9088,7 @@
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
           </Trigger>
-          <Trigger Enabled="true" Name=" 网页 加入 QQ 群聊（右键执行）" Id="ecf66d72-9d4d-43b1-9f73-adeb687aab6d" RegularExpression="">
-            <Actions>
-              <Action OrderNumber="1" LaunchProcessPathExpression="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&amp;authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&amp;noverify=0&amp;group_code=959153665" SoundRouting="None" TTSRouting="None" ActionType="LaunchProcess">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-            </Actions>
-            <Condition Enabled="false" Grouping="Or" />
-          </Trigger>
-          <Trigger Enabled="false" Name="前往爱发电 给肥肥塞一口巨人新薯！（右键执行）" Id="c75c8753-7b60-4d40-87a1-07a8e6ec585a" RegularExpression="">
+          <Trigger Enabled="true" Name="前往爱发电 给肥肥塞一口巨人新薯！（右键执行）" Id="c75c8753-7b60-4d40-87a1-07a8e6ec585a" RegularExpression="">
             <Actions>
               <Action OrderNumber="1" LaunchProcessPathExpression="https://afdian.com/a/bcloli" SoundRouting="None" TTSRouting="None" ActionType="LaunchProcess">
                 <Condition Enabled="false" Grouping="Or" />
@@ -9347,7 +9437,14 @@
           </Action>
         </Actions>
         <Condition Enabled="false" Grouping="Or" />
-        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Name=" 网页 加入 QQ 群聊（右键执行）" Id="ecf66d72-9d4d-43b1-9f73-adeb687aab6d" RegularExpression="">
+        <Actions>
+          <Action OrderNumber="1" LaunchProcessPathExpression="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&amp;authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&amp;noverify=0&amp;group_code=959153665" SoundRouting="None" TTSRouting="None" ActionType="LaunchProcess">
+            <Condition Enabled="false" Grouping="Or" />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
       </Trigger>
     </Triggers>
   </ExportedFolder>
