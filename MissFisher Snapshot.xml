@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.711">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w42a" Enabled="true" RawEnvironmentVariables="版本 = 1.6.8&#xD;&#xA;快照 = 24w42a">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w42b" Enabled="true" RawEnvironmentVariables="版本 = 1.6.8&#xD;&#xA;快照 = 24w42b">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -574,7 +574,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+                  <Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
                       <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -585,7 +585,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                  <Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
                       <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
                       <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
@@ -1965,7 +1965,7 @@
                       <Trigger Enabled="false" Name="模式：目标" Id="09e3c59a-caaf-4388-929b-8af661e09a9c" RegularExpression="^.{26}0843::(.+成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+ (?&lt;空天姬目标&gt;.+) measuring.+|.+は(?&lt;空天姬目标&gt;[^ ]+)を釣り上げた。)$">
                         <Actions>
                           <Action OrderNumber="1" UseTTSTextExpression="目标达成" UseTTSVolumeExpression="25" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False" />
-                          <Action OrderNumber="2" NamedCallbackName="hint" NamedCallbackParam="5&#xD;&#xA;目标达成。" ActionType="NamedCallback" Asynchronous="False" />
+                          <Action OrderNumber="2" NamedCallbackName="hint" NamedCallbackParam="5&#xD;&#xA;目标达成：${f:capture(${空天姬目标},1):([\w-'・· ]+)}" ActionType="NamedCallback" Asynchronous="False" />
                           <Action OrderNumber="3" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
                           <Action OrderNumber="4" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
                           <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False" />
@@ -7201,7 +7201,7 @@
                         </Condition>
                       </Action>
                       <Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description=" 冲分普海通常" DescriptionOverride="True" />
-                      <Action OrderNumber="25" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all拍！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}引诱" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="25" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all拍！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}=引诱" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -7241,7 +7241,7 @@
                         </Condition>
                       </Action>
                       <Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description=" 成就普海全力触幻" DescriptionOverride="True" />
-                      <Action OrderNumber="34" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all（^(?!幻、spectral、スペクトラル)[^幻]）${n: round( ( ${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} ) / 2 , 1 ) - 0.5 }+${n:${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} - 0.5}~！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}引诱" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="34" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all（^(?!幻、spectral、スペクトラル)[^幻]）${n: round( ( ${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} ) / 2 , 1 ) - 0.5 }+${n:${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} - 0.5}~！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}=引诱" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬成就幻海.ekey(${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -7267,7 +7267,7 @@
                       </Action>
                       <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description=" 蓝鱼参数" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True" />
                       <Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description=" 蓝鱼普海通常" DescriptionOverride="True" />
-                      <Action OrderNumber="41" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all拍！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}引诱" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="41" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all拍！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}=引诱" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -7275,7 +7275,7 @@
                         </Condition>
                       </Action>
                       <Action OrderNumber="42" Enabled="False" ActionType="Placeholder" Description=" 蓝鱼普海全力触幻" DescriptionOverride="True" />
-                      <Action OrderNumber="43" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all（^(?!幻、spectral、スペクトラル)[^幻]）${n: round( ( ${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} ) / 2 , 1 ) - 0.5 }+${n:${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} - 0.5}~！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}引诱" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="43" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）拍all（^(?!幻、spectral、スペクトラル)[^幻]）${n: round( ( ${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} ) / 2 , 1 ) - 0.5 }+${n:${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):([0-9\.]+)} - 0.5}~！！！${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}=引诱" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬蓝鱼参数.ekey(${v:空天姬控制海域})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
