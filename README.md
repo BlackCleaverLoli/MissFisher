@@ -65,12 +65,12 @@
 * 国际服：你需要修改角色设置中的 Name Display Settings（人名显示设置）将自己名字的显示设置改为 Full Name（全名）。
 ### ACT 插件：
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
-* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`（也可使用 鲶鱼精 修改版 `v2.0.0.10+` [~~等待适配~~] ）
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
-* DailyRoutines 或 SimpleTweaksPlugin。
-  * 如使用了 鲶鱼精 修改版 `v2.0.0.10+` 则此项非必须。
+* Daily Routines。
+ - 
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
 ### 方法 1：添加为远程触发器
@@ -150,28 +150,36 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
 ### Dalamud 相关配置：
 **启用更换钓饵命令功能：**  
-> 如使用了 鲶鱼精 修改版 `v2.0.0.10+` 则此项非必须。  
+启用 Daily Routines 的 `钓饵切换指令` 功能。
+- **获取 Daily Routines ：**
+> 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。
 
-以下插件功能二选一即可：
-- **SimpleTweaksPlugin**  
-启用 `鱼饵指令`（Bait Command）功能，不要改动其主命令。
+1. 在游戏的消息窗口输入 `/xlsettings` 并按下 `回车键` 以打开 Dalamud 设置 - 点击界面上方的 `测试版` 。  
+2. 在界面下方找到 `自定义插件仓库` 部分。  
+3. 在空文本框填入链接 `https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json`   
+ （国内可使用：`https://gh.atmoomen.top/DalamudPlugins/main/pluginmaster-cn.json`）。  
+4. 点击加号以添加仓库 Url - 点击 `软盘` 图标以保存 Dalamud 设置。  
+5. 在游戏的消息窗口输入 `/xlplugins` 并按下 `回车键` 以打开插件安装器 - 点击界面左侧的 `所有插件` 。  
+6. 在插件安装器搜索框输入 `DailyRoutines` - 在结果中找到 DailyRoutines 并点击它以展开插件介绍（如果没有找到，请返回第 3 步尝试更换链接）。  
+7. 点击 `安装` 按钮并等待安装完成。  
+8. 在游戏的消息窗口输入 `/pdr` 以打开 Daily Routines 的主界面。  
+9. 在 Daily Routines 主界面上方的搜索框输入 `bait` 。  
+10. 在搜索结果中找到 `钓饵切换指令` 功能，勾选以启用它。
 
-- **DailyRoutines**  
-启用 `钓饵切换指令` 功能。
-  
 **可选的：启用某些 Dalamud 插件的用户宏队列功能：**  
-* 启用某些 Dalamud 插件（如：DailyRoutines）的用户宏队列及道具队列功能，以提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
+* 启用某些 Dalamud 插件（如：Daily Routines）的用户宏队列及道具队列功能，以提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
+* Daily Routines 模块名：宏进入技能队列
 ## 验证自动功能
 #### 验证步骤如下：
 1. 确认角色拥有钓饵 `万能拟饵`（如没有，请购买 1 个）。
 2. 找到任意钓场，操控角色靠近并面朝钓场直到 `抛竿` 技能亮起。
 3. 在游戏中消息窗口的 `聊天输入栏` 输入 `/e ktjdbg`，然后按下 `回车键` 。
 #### 自动功能正常的表现：
-1. 输入命令后，TTS 播报：“程序启动。”
+1. 输入命令后，TTS 播报：「程序启动。」
 2. 消息窗口出现一系列由文字与符号组成的当前预设参数信息，且出现“正在更换钓饵”的提示。
 3. 成功更换钓饵后，角色自动使用技能 `撒饵`，然后 `抛竿`，同时游戏画面中央出现包含抛竿时长的动态计时悬浮窗（如启用了 `竿时悬浮窗`）。
 4. 有鱼咬饵时，悬浮窗的计时停止，并显示当前咬饵鱼类的竿震类型，同时角色自动使用技能 `提钩`。
-5. 在鱼成功上钩后，TTS 会播报：“Completed. ”，同时消息窗口出现刚刚上钩的鱼类的竿震类型、咬饵竿时等信息。
+5. 在鱼成功上钩后，TTS 会播报：「目标达成。」，同时消息窗口出现刚刚上钩的鱼类的竿震类型、咬饵竿时等信息。
 6. 最后，通过按下 `移动键` 或手动使用技能 `中断` 使角色收起钓竿时，悬浮窗消失，消息窗口出现本次垂钓的统计信息。
 ## 更新与卸载
 ### 如何更新：
@@ -224,7 +232,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息` - 点击 `应用`。  
    
 * **检查是否已启用相关 Dalamud 插件的更换钓饵指令功能：**  
-找到条目 [启用更换命令换饵功能](#dalamud-相关配置) 中提到的任一 Dalamud 插件 - 启用其提供的更换钓饵命令功能。 
+找到条目 [启用更换命令换饵功能](#dalamud-相关配置) 中提到的 Dalamud 插件 - 启用其提供的更换钓饵命令功能。 
    
 * **配置 Dalamud 插件 Chat2 的相关功能：**  
 可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。如果仍提示更换钓饵失败，请重启游戏。
@@ -232,7 +240,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 * **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
 可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
 
-### 钓到鱼后不继续抛竿或在测试时没有报告「Completed」：  
+### 钓到鱼后不继续抛竿或在测试时没有报告「目标达成。」：  
 * **检查游戏设置：**  
 角色设置 - Name Display Settings（人名显示设置）- 将自己名字的显示设置改为 Full Name（全名）。
 
