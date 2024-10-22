@@ -79,28 +79,26 @@
 2. 填写任意名称作为 `仓库名称` - 从下面的文件链接中选其一填入 `仓库地址` 一项：  
   
 **正式版：**  
+> 相对稳定，适合一般用户。
 ```
 // Gitee 镜像 推荐国内网络
 https://gitee.com/bcloli/MissFisher/raw/main/MissFisher.xml
 
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
-
-// 相对稳定 适合普通用户
 ``` 
   
 **快照版：**  
+> 频繁更新的测试用版本，适合想要体验新功能或自己写预设的用户。
 ```
 // Gitee 镜像 推荐国内网络
 https://gitee.com/bcloli/MissFisher/raw/main/MissFisher%20Snapshot.xml
 
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
-
-// 频繁更新 适合想要体验新功能或自己写预设的用户
 ```
 3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用作运行 空天姬 MissFisher 的用户界面窗口）。
-5. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（启动进程仅会被用作手动执行触发器时打开相关网页）。
+4. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（启动进程仅会被用作手动执行触发器时打开相关网页）。
 5. 勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，仅用作更新 空天姬 MissFisher 的内置预设）。
 6. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
 7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
@@ -109,7 +107,6 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 1. 从下方任一页面中下载原始文件，正确的文件格式应为 `xml`：
 
 - **正式版：**  
-相对稳定，适合普通用户。  
   [ [123 云盘](https://www.123pan.com/s/YJHhTd-0ah13) ] [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/blob/main/MissFisher.xml) ] [ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ]  
 
 - **快照版：**  
