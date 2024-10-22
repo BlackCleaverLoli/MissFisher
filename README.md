@@ -80,24 +80,24 @@
   
 **正式版：**  
 ```
-// Gitee 镜像
+// Gitee 镜像 推荐国内网络
 https://gitee.com/bcloli/MissFisher/raw/main/MissFisher.xml
 
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
 
-// 可相对稳定地使用的版本
+// 相对稳定 适合普通用户
 ``` 
   
 **快照版：**  
 ```
-// Gitee 镜像
+// Gitee 镜像 推荐国内网络
 https://gitee.com/bcloli/MissFisher/raw/main/MissFisher%20Snapshot.xml
 
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
 
-// 频繁更新以测试新功能的版本
+// 频繁更新 适合想要体验新功能或自己写预设的用户
 ```
 3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用作运行 空天姬 MissFisher 的用户界面窗口）。
 5. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（启动进程仅会被用作手动执行触发器时打开相关网页）。
@@ -109,7 +109,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 1. 从下方任一页面中下载原始文件，正确的文件格式应为 `xml`：
 
 - **正式版：**  
-可相对稳定地使用的版本。  
+相对稳定，适合普通用户。  
   [ [123 云盘](https://www.123pan.com/s/YJHhTd-0ah13) ] [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/blob/main/MissFisher.xml) ] [ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ]  
 
 - **快照版：**  
