@@ -357,6 +357,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 `/e ktjsync`<br>`/e 空天姬同步`|在线同步内置预设|
 `/e 计数 <参考数量><鱼名关键词>；`|显示计数悬浮窗|最多以如 `2鱼；3虾；` 的格式写入最多 3 组<br>鱼名关键词支持部分正则表达式
 `/e ktjhx`<br>`/e 航线`|向默语频道发送航线预报|
+`/e ktjovl <悬浮窗类型> <水平偏移> <垂直偏移>`<br>`/e 空天姬悬浮窗 <悬浮窗类型> <水平偏移> <垂直偏移>`|修改悬浮窗坐标偏移 |类型：`竿时` / `time` ; `采集力` / `gp`<br>偏移量支持负数；值越大，位置相对初始位置越靠近画面右下角
 ## 命令别名：
 > 需要游戏中消息窗口可见系统错误信息（红色字体），你需要勾选相应消息频道才能输入别名来使用功能  
   
@@ -373,6 +374,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 `/kend`|停止自动功能|
 `/ktjsync`|在线同步内置预设|
 `/ktjhx`|查询航线预报|
+`/ktjovl`|调整悬浮窗坐标偏移|
   
 ## 现在支持的内置预设
 空天姬 MissFisher 内置了一些自动钓鱼预设，使用方法见 [使用内置预设](#方法-1使用内置预设) 。
