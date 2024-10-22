@@ -1,10 +1,11 @@
 # 空天姬 MissFisher
 **[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets) ] | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5) [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/wikis/Home#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5) ]**  
-
 ## 简介
 空天姬 MissFisher 是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - **支持：** 国服、英文端、日文端  
-- **适配等级：Lv.1 - Lv.100**  
+- **适配：Lv.1 - Lv.100**  
+- 仅保留计时的版本： `风筝猫 Gaelicat`  
+  [ [123 云盘](https://www.123684.com/s/YJHhTd-M4H13) ] | [ [Gitee](https://gitee.com/bcloli/MissFisher/blob/main/Gaelicat.xml) ] | [ [Github](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Gaelicat.xml) ]
 > **请勿利用 空天姬 MissFisher 进行对他人不利的行为。**  
 > **空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。**
 
@@ -64,13 +65,13 @@
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息`（钓鱼信息）。
 * 国际服：你需要修改角色设置中的 Name Display Settings（人名显示设置）将自己名字的显示设置改为 Full Name（全名）。
 ### ACT 插件：
-* 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+`
+* 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+` [ [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) ]
 * 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 ### Dalamud 插件：
 * Daily Routines。
- - 
+  - [如何获取 Daily Routines](#dalamud-相关配置) 。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
 ### 方法 1：添加为远程触发器
@@ -232,7 +233,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息` - 点击 `应用`。  
    
 * **检查是否已启用相关 Dalamud 插件的更换钓饵指令功能：**  
-找到条目 [启用更换命令换饵功能](#dalamud-相关配置) 中提到的 Dalamud 插件 - 启用其提供的更换钓饵命令功能。 
+找到条目 [Dalamud 相关配置](#dalamud-相关配置) 中提到的 Dalamud 插件 - 启用其提供的更换钓饵命令功能。 
    
 * **配置 Dalamud 插件 Chat2 的相关功能：**  
 可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。如果仍提示更换钓饵失败，请重启游戏。
