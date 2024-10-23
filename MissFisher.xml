@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.712">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.7.0" Enabled="true" RawEnvironmentVariables="版本 = 1.7.0&#xD;&#xA;快照 = 24w43c&#xD;&#xA;摘要 = 预设支持鱼影、熟练妙招；新增三语集合符；新增悬浮窗偏移与测试日志行功能。">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.7.1" Enabled="true" RawEnvironmentVariables="版本 = 1.7.1&#xD;&#xA;快照 = 24w43d&#xD;&#xA;摘要 = 移除强心剂超时报错。">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -112,7 +112,7 @@
                       <Action OrderNumber="28" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="版本" DictVariableValue="${f:capture(${env:版本},1):(^\d+)\.(\d+)\.(\d+)} * 10000 + ${f:capture(${env:版本},2):(^\d+)\.(\d+)\.(\d+)} * 100 + ${f:capture(${env:版本},3):(^\d+)\.(\d+)\.(\d+)}" DictSourcePersist="True" VariableOp="SetNumeric" VariableName="空天姬控制语言" VariableExpression="1" VariablePersist="True" ActionType="DictVariable" ExecutionDelayExpression="1000" Asynchronous="False" />
                       <Action OrderNumber="29" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="配置" DictVariableValue="${f:slice(:2):${env:快照}} * 10000 + ${f:slice(3:5):${env:快照}} * 100 + ${f:ord:${f:slice(-1:):${env:快照}}} - 96" DictSourcePersist="True" VariableOp="SetNumeric" VariableName="空天姬控制语言" VariableExpression="1" VariablePersist="True" ActionType="DictVariable" Asynchronous="False" />
                       <Action OrderNumber="30" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 初始化成功！&#xD;&#xA;成功更新内置字典到 v${f:slice(:1):${pd:空天姬配置[版本]}}.${f:format(System.Double,&quot;0&quot;):${f:slice(1:3):${pd:空天姬配置[版本]}}}.${f:format(System.Double,&quot;0&quot;):${f:slice(3:5):${pd:空天姬配置[版本]}}}.${pd:空天姬配置[配置]}&#xD;&#xA;最近版本更新摘要：${env:摘要}" ActionType="NamedCallback" Asynchronous="False" />
-                      <Action OrderNumber="31" MessageBoxIconType="Information" MessageBoxText="空天姬 MissFisher v${f:slice(:1):${pd:空天姬配置[版本]}}.${f:format(System.Double,&quot;0&quot;):${f:slice(1:3):${pd:空天姬配置[版本]}}}.${f:format(System.Double,&quot;0&quot;):${f:slice(3:5):${pd:空天姬配置[版本]}}}.${pd:空天姬配置[配置]}&#xD;&#xA;初始化成功，欢迎使用！&#xD;&#xA;&#xD;&#xA;- 首次使用：&#xD;&#xA;请详细阅读 GitHub【使用说明】以配置环境和学习如何使用；&#xD;&#xA;可通过触发器内的【命令列表】查看空天姬命令；&#xD;&#xA;在编写预设时碰到困难请查看 GitHub Wiki 。&#xD;&#xA;&#xD;&#xA;- 如果您有功能建议或问题反馈，请加群：959153665&#xD;&#xA;&#xD;&#xA;- 本触发器系免费的，谨防小店倒卖。祝您使用愉快！&#xD;&#xA;by 黑色公主切萝莉肥 BlackCleaverLoli" ActionType="MessageBox" />
+                      <Action OrderNumber="31" MessageBoxIconType="Information" MessageBoxText="空天姬 MissFisher v${f:slice(:1):${pd:空天姬配置[版本]}}.${f:format(System.Double,&quot;0&quot;):${f:slice(1:3):${pd:空天姬配置[版本]}}}.${f:format(System.Double,&quot;0&quot;):${f:slice(3:5):${pd:空天姬配置[版本]}}}.${pd:空天姬配置[配置]}&#xD;&#xA;初始化成功，欢迎使用！&#xD;&#xA;&#xD;&#xA;- 最近版本更新摘要：&#xD;&#xA;${env:摘要}&#xD;&#xA;&#xD;&#xA;- 本触发器系免费的，谨防小店倒卖。祝您使用愉快！&#xD;&#xA;by 黑色公主切萝莉肥 BlackCleaverLoli" ActionType="MessageBox" />
                     </Actions>
                   </Trigger>
                   <Trigger Enabled="true" Name="跨区换职 销毁变量" Id="c123841c-d6ba-44f8-b292-6455ebcbb61b" RegularExpression="^.{15}\S+ 01:[^:]+:(?&lt;log&gt;[^:]+)|^.{15}ChatLog 00:0839::(.+的职业转换成了“(?&lt;job&gt;.+)”|You change to (?&lt;job&gt;.+).|は「(?&lt;job&gt;.+)」にチェンジした)">
@@ -402,7 +402,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="false" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
+                  <Trigger Enabled="true" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
                     <Actions>
                       <Action OrderNumber="1" ExecScriptExpression="using System.Linq;&#xD;&#xA;using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Advanced_Combat_Tracker;&#xD;&#xA;&#xD;&#xA;var plugin = ActGlobals.oFormActMain.ActPlugins&#xD;&#xA;            .FirstOrDefault(x =&gt; x.pluginObj?.GetType().ToString() == &quot;Cafe.Matcha.MatchaInit&quot;)&#xD;&#xA;            ?.pluginObj;&#xD;&#xA;&#xD;&#xA;if (plugin == null)&#xD;&#xA;{&#xD;&#xA;    MessageBox.Show(&quot;没有在 ACT 中找到抹茶（Matcha）插件\n建议安装它并勾选抹茶中的“日志及数据共享”模块的“兼容模式”\n可减少提钩延迟和性能消耗&quot;,&#xD;&#xA;        &quot;空天姬&quot;,&#xD;&#xA;            MessageBoxButtons.OK,&#xD;&#xA;            MessageBoxIcon.Information);&#xD;&#xA;}" Enabled="False" ActionType="ExecuteScript">
                         <Condition Enabled="true" Grouping="Or">
@@ -453,7 +453,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+                  <Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
                     <Actions>
                       <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
                       <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
@@ -3548,32 +3548,26 @@
                         </Condition>
                       </Action>
                       <Action OrderNumber="33" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False" />
-                      <Action OrderNumber="34" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="3000" Asynchronous="False">
+                      <Action OrderNumber="34" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 强心剂使用超时。" ActionType="NamedCallback" ExecutionDelayExpression="3000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="35" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 强心剂使用超时。" ActionType="NamedCallback" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="36" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="3500" Asynchronous="False">
+                      <Action OrderNumber="35" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="3500" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="37" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
+                      <Action OrderNumber="36" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="469|62F=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 " DescriptionOverride="True" />
-                      <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="457=收竿 45C=咬钩提 456=抛竿 461=以小钓大 15D0=歇竿" DescriptionOverride="True" />
-                      <Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True" />
+                      <Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="469|62F=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 " DescriptionOverride="True" />
+                      <Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="457=收竿 45C=咬钩提 456=抛竿 461=以小钓大 15D0=歇竿" DescriptionOverride="True" />
+                      <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True" />
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionGroup Enabled="true" Grouping="Or">
@@ -3655,25 +3649,19 @@
                           <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="352|2FD" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="4" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="7500" Asynchronous="False">
+                      <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 强心剂使用超时。" ActionType="NamedCallback" ExecutionDelayExpression="7500" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 强心剂使用超时。" ActionType="NamedCallback" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="6" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                      <Action OrderNumber="5" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="7" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="7500" Asynchronous="False">
+                      <Action OrderNumber="6" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="7500" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
@@ -4349,31 +4337,25 @@
                       </Action>
                       <Action OrderNumber="48" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="抛竿" ActionType="ListVariable" Asynchronous="False" />
                       <Action OrderNumber="49" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False" />
-                      <Action OrderNumber="50" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="3000" Asynchronous="False">
+                      <Action OrderNumber="50" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 强心剂使用超时。" ActionType="NamedCallback" ExecutionDelayExpression="3000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="51" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 强心剂使用超时。" ActionType="NamedCallback" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="52" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="3500" Asynchronous="False">
+                      <Action OrderNumber="51" VariableOp="Increment" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="3500" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="53" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
+                      <Action OrderNumber="52" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10.5*1000" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True" />
-                      <Action OrderNumber="55" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True" />
+                      <Action OrderNumber="53" Enabled="False" ActionType="Placeholder" Description="469=空提 460=断了 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True" />
+                      <Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="DB6=以小钓大机会 E09=以小钓大II的机会 解析插件并不解析它们 2 个" DescriptionOverride="True" />
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
@@ -6084,7 +6066,7 @@
                       <Action OrderNumber="3" LogMessageText="空天姬钓饵当前：${v:空天姬控制钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
                     <Actions>
                       <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" ActionType="LogMessage" />
                       <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="抹茶格式。" DescriptionOverride="True" />
