@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.712">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.7.3" Enabled="true" RawEnvironmentVariables="版本 = 1.7.3&#xD;&#xA;快照 = 24w43f&#xD;&#xA;摘要 = 主界面文本框支持中键查看指定鱼名的预设。">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.7.4" Enabled="true" RawEnvironmentVariables="版本 = 1.7.4&#xD;&#xA;快照 = 24w43g&#xD;&#xA;摘要 = 支持使用命令定时启动内置预设。">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -402,7 +402,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="true" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
+                  <Trigger Enabled="false" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
                     <Actions>
                       <Action OrderNumber="1" ExecScriptExpression="using System.Linq;&#xD;&#xA;using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Advanced_Combat_Tracker;&#xD;&#xA;&#xD;&#xA;var plugin = ActGlobals.oFormActMain.ActPlugins&#xD;&#xA;            .FirstOrDefault(x =&gt; x.pluginObj?.GetType().ToString() == &quot;Cafe.Matcha.MatchaInit&quot;)&#xD;&#xA;            ?.pluginObj;&#xD;&#xA;&#xD;&#xA;if (plugin == null)&#xD;&#xA;{&#xD;&#xA;    MessageBox.Show(&quot;没有在 ACT 中找到抹茶（Matcha）插件\n建议安装它并勾选抹茶中的“日志及数据共享”模块的“兼容模式”\n可减少提钩延迟和性能消耗&quot;,&#xD;&#xA;        &quot;空天姬&quot;,&#xD;&#xA;            MessageBoxButtons.OK,&#xD;&#xA;            MessageBoxIcon.Information);&#xD;&#xA;}" Enabled="False" ActionType="ExecuteScript">
                         <Condition Enabled="true" Grouping="Or">
@@ -635,7 +635,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+                  <Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
                       <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
                       <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
@@ -1341,7 +1341,7 @@
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制系统音I}" ExpressionTypeL="String" ExpressionR="${pd:空天姬配置[系统音]}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                             </Condition>
                           </Action>
-                          <Action OrderNumber="9" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法)" ActionType="Variable" Asynchronous="False" />
+                          <Action OrderNumber="9" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法|定时)" ActionType="Variable" Asynchronous="False" />
                           <Action OrderNumber="10" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" ActionType="Trigger" Asynchronous="False" />
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
@@ -1440,7 +1440,7 @@
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             </Condition>
                           </Action>
-                          <Action OrderNumber="13" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法)" ActionType="Variable" Asynchronous="False">
+                          <Action OrderNumber="13" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法|定时)" ActionType="Variable" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -2204,6 +2204,75 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Trigger>
+                      <Trigger Enabled="true" Name="模式：定时" Id="198ddb78-f2ff-413a-9188-719456f7479e" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?:(?&lt;cmd&gt;空天姬 *预设 *|[Kk][Tt][Jj] *[Yy][Ss] *?)[ ]*(?&lt;log&gt;[^ ]+) (?&lt;mm&gt;\d+))[ ]*$|^.{26}003C::(?:“/(?:(?&lt;cmd&gt;空天姬 *预设 *|[Kk][Tt][Jj] *[Yy][Ss] *?)[ ]*(?&lt;log&gt;[^ ]+) (?&lt;mm&gt;\d+))”出现问题：该命令不存在。|The command /(?:(?&lt;cmd&gt;空天姬 *预设 *|[Kk][Tt][Jj] *[Yy][Ss] *?)[ ]*(?&lt;log&gt;[^ ]+) (?&lt;mm&gt;\d+)) does not exist.|そのコマンドはありません。： /(?:(?&lt;cmd&gt;空天姬 *预设 *|[Kk][Tt][Jj] *[Yy][Ss] *?)[ ]*(?&lt;log&gt;[^ ]+) (?&lt;mm&gt;\d+)))$" PrevActions="Interrupt">
+                        <Actions>
+                          <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬定时" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="2" SystemBeepFreqExpression="" SystemBeepLengthExpression="" NamedCallbackName="command" NamedCallbackParam="/e &lt;se.11&gt;&#xD;&#xA;说明：${f:replace(&quot;\r\n&quot;,&quot;⏎&quot;):${pd:空天姬预设[说明]}}&#xD;&#xA;&#xD;&#xA;内置预设【${log}】不存在。&#xD;&#xA;&#xD;&#xA;请尝试同步内置预设到最新版&#xD;&#xA;或前往 QQ 群 959153665 / GitHub Issues 反馈。" ActionType="NamedCallback" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="3" SystemBeepFreqExpression="" SystemBeepLengthExpression="" NamedCallbackName="command" NamedCallbackParam="/e ${_me}陷入了“低效预设”效果。&#xD;&#xA;编者提示：此内置预设效率较低！&#xD;&#xA;使用 1 条预设可能难以钓到【${log}】，建议使用 2 条或更多预设，或手动干预。&#xD;&#xA;使用【/e 空天姬预设 查看 鱼名】来预览内置预设。" ActionType="NamedCallback" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="低效预设" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="4" SystemBeepFreqExpression="" SystemBeepLengthExpression="" NamedCallbackName="command" NamedCallbackParam="/e 此内置预设未经审核，可能包含钓法或语法错误，空天姬可能不会正常运行或应用错误的钓法。&#xD;&#xA;使用【/e 空天姬预设 查看 鱼名】来预览内置预设。" ActionType="NamedCallback" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${?l:${pd:空天姬预设.joinkeys}.indicesof(${log})}" ExpressionTypeL="Numeric" ExpressionR="${f:capture(${pd:空天姬预设[空天姬预设]},3):(^\d+)\.(\d+)\.(\d+)\.(\d+)}" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="5" SystemBeepFreqExpression="" SystemBeepLengthExpression="" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &lt;se.7&gt;&#xD;&#xA;定时启动  ${mm} &#xD;&#xA;将在 ${f:localtime(HH):${n:${_systemtime}+${mm}*60}} 时 ${f:localtime(mm):${n:${_systemtime}+${mm}*60}} 分 启动 ${log}&#xD;&#xA;输入「/e kend」来停止" ActionType="NamedCallback" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="6" NamedCallbackName="hint" NamedCallbackParam="10&#xD;&#xA;定时启动&#xD;&#xA; ${log}  ${mm} &#xD;&#xA;将在 ${f:localtime(HH):${n:${_systemtime}+${mm}*60}} 时 ${f:localtime(mm):${n:${_systemtime}+${mm}*60}} 分 启动" ActionType="NamedCallback" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="7" LogMessageText="空天姬定时：${log}:${mm}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="8" SystemBeepFreqExpression="" SystemBeepLengthExpression="" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[${log}]}" ActionType="NamedCallback" ExecutionDelayExpression="${mm} * 60 * 1000" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬定时}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="9" VariableName="空天姬定时" ActionType="Variable" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="And">
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(${log})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                              <ConditionSingle Enabled="true" ExpressionL="${cmd}" ExpressionTypeL="String" ExpressionR="查看|([Ss][Hh][Oo][Ww])" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+                              <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设[${log}]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                            </Condition>
+                          </Action>
+                        </Actions>
+                      </Trigger>
                     </Triggers>
                   </Folder>
                 </Folders>
@@ -2221,7 +2290,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制强心剂}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="4" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|目标|参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段参数|手法)" ActionType="Variable" Asynchronous="False" />
+                      <Action OrderNumber="4" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|目标|参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段参数|手法|定时)" ActionType="Variable" Asynchronous="False" />
                       <Action OrderNumber="5" VariableOp="UnsetRegex" VariableName="^空天姬鱼识参数" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
@@ -2836,7 +2905,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="鱼计" ExpressionTypeR="String" ConditionType="RegexMatch" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="122" NamedCallbackName="command" NamedCallbackParam="/e ${if: ${v:空天姬计数模式 = 1 ? 开始计数 : 开始尝试预触 }……" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="122" NamedCallbackName="command" NamedCallbackParam="/e ${if: ${v:空天姬计数模式} = 1 ? 开始计数 : 开始尝试预触 }……" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
@@ -3176,7 +3245,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="17" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]${if:${ev:空天姬控制海钓模式}?:&lt;se.12&gt;}&#xD;&#xA;『本轮信息』${if:${ev:空天姬参数}?&quot; &quot;:}${if:${ev:空天姬控制海钓模式}?&quot; &quot;:}&#xD;&#xA;${v:空天姬钓场}  历时 ${v:空天姬历时时刻}${v:空天姬咬钩信息} ${v:空天姬最后上钩播报}${if:${ev:空天姬最后上钩播报}?&quot;&#xD;&#xA;&quot;:}${v:空天姬竿数播报} ${if:${ev:空天姬脱钩}?${v:空天姬脱钩} 脱钩:} ${if:${ev:空天姬收藏品数}? ${v:空天姬收藏品数}:}${if:${ev:空天姬以小钓大竿数}?&quot;&#xD;&#xA;以小钓大 ${v:空天姬以小钓大竿数} 次 ${v:空天姬以小钓大套娃信息}&quot;:}${if:${ev:空天姬鱼识竿数}?&quot;&#xD;&#xA;鱼识 ${v:空天姬鱼识次数} 次 ${v:空天姬鱼识竿数} 竿${if:${ev:空天姬鱼识以小钓大竿数}?&quot; 饵鱼 ${v:空天姬鱼识以小钓大竿数} 竿&quot;:}&quot;:}${if:${f:length:${t:空天姬目标[2][1]}}?&quot;&#xD;&#xA;${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}} ${n:(${t:空天姬目标[3][1]})}${if: ${t:空天姬目标[1][1]} ?? 0 ? &quot;/${t:空天姬目标[1][1]}&quot; :} ${if:${f:length:${t:空天姬目标[2][2]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}} ${n:(${t:空天姬目标[3][2]})}${if: ${t:空天姬目标[1][2]} ?? 0 ? &quot;/${t:空天姬目标[1][2]}&quot; :}:} ${if:${f:length:${t:空天姬目标[2][3]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}} ${n:(${t:空天姬目标[3][3]})}${if: ${t:空天姬目标[1][3]} ?? 0 ? &quot;/${t:空天姬目标[1][3]}&quot; :}:}&quot;:}${v:空天姬脱钩信息}${if:(${ev:空天姬强心剂数量}${ev:空天姬高效提钩}${ev:空天姬引诱次数})?&quot;&#xD;&#xA;&quot;:}${if:${ev:空天姬强心剂数量}?&quot;强心剂 ${v:空天姬强心剂数量} 瓶 &quot;:}${if:${ev:空天姬高效提钩}?&quot;高效提钩 ${v:空天姬高效提钩} 次 &quot;:}${if:${ev:空天姬引诱次数}?&quot;引诱 ${v:空天姬引诱次数} 次 ${if:${ev:空天姬引诱成功次数}?&quot;${v:空天姬引诱成功次数} 成功 &quot;:}${if:${ev:空天姬鱼影成功次数}?${v:空天姬鱼影成功次数} 鱼影:}&quot;:}&#xD;&#xA; ${f:ifcontain(Snapshot,Snapshot ${env:快照},v${env:版本}):${_triggerpath}}" VariableOp="SetNumeric" VariableName="空天姬咬钩时刻" VariableExpression="${_timestampms}" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+                      <Action OrderNumber="17" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]${if:${ev:空天姬控制海钓模式}?:&lt;se.12&gt;}&#xD;&#xA;『本轮信息』${if:${ev:空天姬参数}?&quot; &quot;:}${if:${ev:空天姬控制海钓模式}?&quot; &quot;:}&#xD;&#xA;${v:空天姬钓场}  历时 ${v:空天姬历时时刻}${v:空天姬咬钩信息} ${v:空天姬最后上钩播报}${if:${ev:空天姬最后上钩播报}?&quot;&#xD;&#xA;&quot;:}${v:空天姬竿数播报} ${if:${ev:空天姬脱钩}?${v:空天姬脱钩} 脱钩:} ${if:${ev:空天姬收藏品数}? ${v:空天姬收藏品数}:}${if:${ev:空天姬以小钓大竿数}?&quot;&#xD;&#xA;以小钓大 ${v:空天姬以小钓大竿数} 次 ${v:空天姬以小钓大套娃信息}&quot;:}${if:${ev:空天姬鱼识竿数}?&quot;&#xD;&#xA;鱼识 ${v:空天姬鱼识次数} 次 ${v:空天姬鱼识竿数} 竿${if:${ev:空天姬鱼识以小钓大竿数}?&quot; 饵鱼 ${v:空天姬鱼识以小钓大竿数} 竿&quot;:}&quot;:}${if:${f:length:${t:空天姬目标[2][1]}}?&quot;&#xD;&#xA;${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}} ${n:(${t:空天姬目标[3][1]})}${if: ${t:空天姬目标[1][1]} ?? 0 ? &quot;/${t:空天姬目标[1][1]}&quot; :} ${if:${f:length:${t:空天姬目标[2][2]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}} ${n:(${t:空天姬目标[3][2]})}${if: ${t:空天姬目标[1][2]} ?? 0 ? &quot;/${t:空天姬目标[1][2]}&quot; :}:} ${if:${f:length:${t:空天姬目标[2][3]}}?${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}} ${n:(${t:空天姬目标[3][3]})}${if: ${t:空天姬目标[1][3]} ?? 0 ? &quot;/${t:空天姬目标[1][3]}&quot; :}:}&quot;:}${v:空天姬脱钩信息}${if:(${ev:空天姬强心剂数量}${ev:空天姬高效提钩}${ev:空天姬引诱次数})?&quot;&#xD;&#xA;&quot;:}${if:${ev:空天姬强心剂数量}?&quot;强心剂 ${v:空天姬强心剂数量} 瓶 &quot;:}${if:${ev:空天姬高效提钩}?&quot;高效提钩 ${v:空天姬高效提钩} 次 &quot;:}${if:${ev:空天姬引诱次数}?&quot;引诱 ${v:空天姬引诱次数} 次 ${if:${ev:空天姬引诱成功次数}?&quot;${v:空天姬引诱成功次数} 成功 &quot;:}${if:${ev:空天姬鱼影成功次数}?${v:空天姬鱼影成功次数} 鱼影:}&quot;:}&#xD;&#xA; ${f:ifcontain(Snapshot,Snapshot ${env:快照},v${env:版本}):${_triggerpath}}${if:${ev:空天姬定时}?&quot;&#xD;&#xA; &#xD;&#xA;  定时启动已中止&quot;:}" VariableOp="SetNumeric" VariableName="空天姬咬钩时刻" VariableExpression="${_timestampms}" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
@@ -5404,19 +5473,20 @@
                           <Action OrderNumber="9" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
                           <Action OrderNumber="10" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
                           <Action OrderNumber="11" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-                          <Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/systemsounds ${pd:空天姬配置[系统音]}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
+                          <Action OrderNumber="12" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="12" TextAuraName="^空天姬定时" TextAuraFontName="微软雅黑" ActionType="TextAura" />
+                          <Action OrderNumber="13" NamedCallbackName="command" NamedCallbackParam="/systemsounds ${pd:空天姬配置[系统音]}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
                             <Condition Enabled="true" Grouping="And">
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                               <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[关闭系统音]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制系统音I}" ExpressionTypeL="String" ExpressionR="${pd:空天姬配置[系统音]}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                             </Condition>
                           </Action>
-                          <Action OrderNumber="13" FolderOp="CancelFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" ActionType="Folder" ExecutionDelayExpression="100" Asynchronous="False">
+                          <Action OrderNumber="14" FolderOp="CancelFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" ActionType="Folder" ExecutionDelayExpression="100" Asynchronous="False">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                             </Condition>
                           </Action>
-                          <Action OrderNumber="14" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法)" ActionType="Variable" Asynchronous="False" />
+                          <Action OrderNumber="15" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法|定时)" ActionType="Variable" Asynchronous="False" />
                         </Actions>
                         <Condition Enabled="true" Grouping="And">
                           <ConditionGroup Enabled="true" Grouping="Or">
@@ -5593,6 +5663,12 @@
                               </Action>
                             </Actions>
                           </Trigger>
+                          <Trigger Enabled="true" Name="时间倒时 1080p" Id="86d8495a-ba0e-4f5a-9b58-c7e6b33cdcdb" RegularExpression="^空天姬定时：(?&lt;log&gt;[^:]+):(?&lt;mm&gt;\d+)">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraFontSize="14.25" TextAuraForeground="White" TextAuraOutline="56,102,155" TextAuraName="空天姬定时文本" TextAuraExpression="${n:floor( ( ${mm} * 60 - ${_since} ) / 60 )} 分 ${n:( ${mm} * 60 - ${_since} ) % 60 } 秒&#xD;&#xA;将在 ${f:localtime(HH):${n:${_systemtime}+${mm}*60}} 时 ${f:localtime(mm):${n:${_systemtime}+${mm}*60}} 分 启动 ${log}&#xD;&#xA;使用 /e kend 来停止" TextAuraXIniExpression="(-150)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} ) " TextAuraYIniExpression="120*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} ) " TextAuraWIniExpression="300*${_screenheight}/1080" TextAuraHIniExpression="75*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑 Light" ActionType="TextAura" />
+                              <Action OrderNumber="2" TextAuraFontSize="12" TextAuraForeground="White" TextAuraBackground="#40c0ff" TextAuraName="空天姬定时" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraYIniExpression="144*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} )" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="5*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraXTickExpression="(-204*0.5+204/( ${mm} * 60 * 1000)*(${_sincems})/2)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraWTickExpression="(204-(204/( ${mm} * 60 * 1000)*(${_sincems})))*${_screenheight}/1080" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑" ActionType="TextAura" />
+                            </Actions>
+                          </Trigger>
                         </Triggers>
                       </Folder>
                       <Folder Id="6eb56caf-24ee-4e3c-a0d5-26f62cdda650" Name="1440p" Enabled="false">
@@ -5712,6 +5788,12 @@
                                   <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时间}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                                 </Condition>
                               </Action>
+                            </Actions>
+                          </Trigger>
+                          <Trigger Enabled="true" Name="时间倒时 1440p" Id="763d5a80-577d-43be-9ca7-d90c86c819bf" RegularExpression="^空天姬定时：(?&lt;log&gt;[^:]+):(?&lt;mm&gt;\d+)">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraFontSize="21.75" TextAuraForeground="White" TextAuraOutline="56,102,155" TextAuraName="空天姬定时文本" TextAuraExpression="${n:floor( ( ${mm} * 60 - ${_since} ) / 60 )} 分 ${n:( ${mm} * 60 - ${_since} ) % 60 } 秒&#xD;&#xA;将在 ${f:localtime(HH):${n:${_systemtime}+${mm}*60}} 时 ${f:localtime(mm):${n:${_systemtime}+${mm}*60}} 分 启动 ${log}&#xD;&#xA;使用 /e kend 来停止" TextAuraXIniExpression="(-150)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} ) " TextAuraYIniExpression="120*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} ) " TextAuraWIniExpression="300*${_screenheight}/1080" TextAuraHIniExpression="75*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑 Light" ActionType="TextAura" />
+                              <Action OrderNumber="2" TextAuraFontSize="12" TextAuraForeground="White" TextAuraBackground="#40c0ff" TextAuraName="空天姬定时" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraYIniExpression="144*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} )" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="5*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraXTickExpression="(-204*0.5+204/( ${mm} * 60 * 1000)*(${_sincems})/2)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraWTickExpression="(204-(204/( ${mm} * 60 * 1000)*(${_sincems})))*${_screenheight}/1080" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑" ActionType="TextAura" />
                             </Actions>
                           </Trigger>
                         </Triggers>
@@ -5835,6 +5917,12 @@
                               </Action>
                             </Actions>
                           </Trigger>
+                          <Trigger Enabled="true" Name="时间倒时 2160p" Id="161f7374-3212-4b8d-b731-0d007d14d251" RegularExpression="^空天姬定时：(?&lt;log&gt;[^:]+):(?&lt;mm&gt;\d+)">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraFontSize="27.75" TextAuraForeground="White" TextAuraOutline="56,102,155" TextAuraName="空天姬定时文本" TextAuraExpression="${n:floor( ( ${mm} * 60 - ${_since} ) / 60 )} 分 ${n:( ${mm} * 60 - ${_since} ) % 60 } 秒&#xD;&#xA;将在 ${f:localtime(HH):${n:${_systemtime}+${mm}*60}} 时 ${f:localtime(mm):${n:${_systemtime}+${mm}*60}} 分 启动 ${log}&#xD;&#xA;使用 /e kend 来停止" TextAuraXIniExpression="(-150)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} ) " TextAuraYIniExpression="120*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} ) " TextAuraWIniExpression="300*${_screenheight}/1080" TextAuraHIniExpression="75*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑 Light" ActionType="TextAura" />
+                              <Action OrderNumber="2" TextAuraFontSize="12" TextAuraForeground="White" TextAuraBackground="#40c0ff" TextAuraName="空天姬定时" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraYIniExpression="144*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} )" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="5*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraXTickExpression="(-204*0.5+204/( ${mm} * 60 * 1000)*(${_sincems})/2)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraWTickExpression="(204-(204/( ${mm} * 60 * 1000)*(${_sincems})))*${_screenheight}/1080" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑" ActionType="TextAura" />
+                            </Actions>
+                          </Trigger>
                         </Triggers>
                       </Folder>
                       <Folder Id="d2ea4d0d-9a70-47ca-a8c4-9607ff8f7bd5" Name="More than 2160p" Enabled="false">
@@ -5954,6 +6042,12 @@
                                   <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时间}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                                 </Condition>
                               </Action>
+                            </Actions>
+                          </Trigger>
+                          <Trigger Enabled="true" Name="时间倒时 More then 2160p" Id="7c364f91-0397-4b76-99f3-fde5d6bf8a5c" RegularExpression="^空天姬定时：(?&lt;log&gt;[^:]+):(?&lt;mm&gt;\d+)">
+                            <Actions>
+                              <Action OrderNumber="1" TextAuraFontSize="48" TextAuraForeground="White" TextAuraOutline="56,102,155" TextAuraName="空天姬定时文本" TextAuraExpression="${n:floor( ( ${mm} * 60 - ${_since} ) / 60 )} 分 ${n:( ${mm} * 60 - ${_since} ) % 60 } 秒&#xD;&#xA;将在 ${f:localtime(HH):${n:${_systemtime}+${mm}*60}} 时 ${f:localtime(mm):${n:${_systemtime}+${mm}*60}} 分 启动 ${log}&#xD;&#xA;使用 /e kend 来停止" TextAuraXIniExpression="(-150)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} ) " TextAuraYIniExpression="120*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} ) " TextAuraWIniExpression="300*${_screenheight}/1080" TextAuraHIniExpression="75*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑 Light" ActionType="TextAura" />
+                              <Action OrderNumber="2" TextAuraFontSize="12" TextAuraForeground="White" TextAuraBackground="#40c0ff" TextAuraName="空天姬定时" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraYIniExpression="144*${_screenheight}/1080+${_screenheight}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时Y]} )" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="5*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraXTickExpression="(-204*0.5+204/( ${mm} * 60 * 1000)*(${_sincems})/2)*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移竿时X]} )" TextAuraWTickExpression="(204-(204/( ${mm} * 60 * 1000)*(${_sincems})))*${_screenheight}/1080" TextAuraTTLTickExpression="${ev:空天姬定时}" TextAuraFontName="微软雅黑" ActionType="TextAura" />
                             </Actions>
                           </Trigger>
                         </Triggers>
@@ -8379,7 +8473,7 @@
           <Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="          /e ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬配置" DescBgColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="          /ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
-          <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="    ·打开预设生成器界面：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+          <Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="    ·打开预设生成器（建设中）：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="          /e ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬生成器" DescBgColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="          /ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
@@ -8399,8 +8493,8 @@
           <Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description="        ·成就指需要特定数量和种类的鱼才能获得的成就。" DescBgColor="ffd" DescriptionOverride="True" />
           <Action OrderNumber="34" Enabled="False" ActionType="Placeholder" Description="          ·成就 1 指鱼糕或航线预报中靠左的成就，成就 2 则是靠右的。" DescBgColor="ffd" DescriptionOverride="True" />
           <Action OrderNumber="35" Enabled="False" ActionType="Placeholder" Description="    ·使用对应的内置预设自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-          <Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="          /e ktjys &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
-          <Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设 &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
+          <Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="          /e ktjys &lt;鱼类全称&gt; &lt;定时分钟（可选）&gt;" DescBgColor="fff" DescriptionOverride="True" />
+          <Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设 &lt;鱼类全称&gt; &lt;定时分钟（可选）&gt;" DescBgColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="    ·查看对应的内置预设：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="          /e ktjys show &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
           <Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设 查看 &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
