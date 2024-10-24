@@ -1,10 +1,10 @@
 # 空天姬 MissFisher
 **[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets) ] | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5) [ [Gitee 镜像](https://gitee.com/bcloli/MissFisher/wikis/Home#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5) ]**  
 ## 简介
-空天姬 MissFisher 是一个可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
+空天姬 MissFisher 是一组可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - **支持：** 国服、英文端、日文端  
 - **适配：Lv.1 - Lv.100**  
-- 仅保留计时的版本： `风筝猫 Gaelicat`  
+- 仅有计时功能的版本： `风筝猫 Gaelicat`  
   [ [123 云盘](https://www.123684.com/s/YJHhTd-M4H13) ] | [ [Gitee](https://gitee.com/bcloli/MissFisher/blob/main/Gaelicat.xml) ] | [ [Github](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Gaelicat.xml) ]
 > **请勿利用 空天姬 MissFisher 进行对他人不利的行为。**  
 > **空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。**
@@ -263,6 +263,9 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
    
 * **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
 可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
+
+- **关闭风筝猫 Gaelicat：**  
+空天姬 MissFisher 包含所有风筝猫 Gaelicat 的功能，两者不应都处于启用状态，请取消勾选风筝猫 Gaelicat 的触发器分组。
 
 ### 海钓启动后无反应或提示海域获取失败：
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
