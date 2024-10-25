@@ -49,7 +49,8 @@
 
 - 钓饵不足时角色将停止收竿，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
 - 当使用其他插件修改游戏内的本地天气时，将影响 空天姬 MissFisher 的天气相关功能。
-- **敬请触发器开发者留意：如勾选抹茶【兼容模式】，当次运行的首次咬饵时会关闭解析插件的【记录网络数据】。**
+- **敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭解析插件的 `记录网络数据`。**
+  - ![Static Badge](https://img.shields.io/badge/MissFisher-1.7.6+-32519b?labelColor=20376e) 不再关闭【记录网络数据】。
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 等大佬在 空天姬 MissFisher 开发时给予的大力支持与帮助！**
 ## 反馈
@@ -139,7 +140,8 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 4. 在主界面中点击 `配置` 按钮 - 在打开的用户配置界面中点击 `录制` 来录制 `强心剂键码` - 根据自己的情况与喜好设置剩余的配置 - 点击 `保存` 以保存配置。
 5. 可选的：在 ACT 界面中切换到 `抹茶 Matcha` 分页（如有）- 找到 `日志及数据共享` 部分 - 勾选 `兼容模式` 以略微提高咬饵时 空天姬 MissFisher 的响应速度。
 
-> 敬请触发器开发者留意：如勾选抹茶【兼容模式】，当次运行的首次咬饵时会关闭解析插件的【记录网络数据】。
+> 敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭解析插件的 `记录网络数据`。  
+> ![Static Badge](https://img.shields.io/badge/MissFisher-1.7.6+-32519b?labelColor=20376e) 不再关闭记录网络数据。
 
 #### 授予脚本代码 API 权限：
 > 此 API 仅供 空天姬 MissFisher 读取游戏内存以获取天气信息。
