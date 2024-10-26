@@ -195,7 +195,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 **可接收到关键日志行的表现：**  
 在 NPC 爱梅特赛尔克的喊话台词横幅出现时，含有 `成功监听到日志行` 文本的消息提示也同时出现。
 
-> 如果迟迟未有消息提醒且游戏版本刚刚更新，则请耐心等待 ACT 整合更新。
+> 如果迟迟未有消息提醒且游戏版本刚刚更新，则请耐心等待 ACT 整合更新。如果使用的是 CafeACT，请尝试使用 呆萌 ACT。
 ## 更新与卸载
 ### 如何更新：
 **远程触发器**  
