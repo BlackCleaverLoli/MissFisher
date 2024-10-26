@@ -148,16 +148,22 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 2. 切换到 `安全` 分页 - 点击 `编辑需解锁此安全设置` - `是 `来解锁安全设置。
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
 ### Dalamud 相关配置：
-**启用更换钓饵命令功能：**  
-启用 Daily Routines 的 `钓饵切换指令` 功能。
-- **获取 Daily Routines ：**
+- 启用 Daily Routines 的 `钓饵切换指令` 功能。
+#### 获取 Daily Routines ：
 > 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。
 
 1. 在游戏的消息窗口输入 `/xlsettings` 并按下 `回车键` 以打开 Dalamud 设置 - 点击界面上方的 `测试版` 。  
 2. 在界面下方找到 `自定义插件仓库` 部分。  
-3. 在空文本框填入链接 `https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json`   
- （国内可使用：`https://gh.atmoomen.top/DalamudPlugins/main/pluginmaster-cn.json`）。  
-4. 点击加号以添加仓库 Url - 点击 `软盘` 图标以保存 Dalamud 设置。  
+3. 选择一个链接填入空文本框：  
+- 国内加速：
+```
+https://gh.atmoomen.top/DalamudPlugins/main/pluginmaster-cn.json
+```
+- 主库：
+```
+https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json 
+```
+4. 点击加号以添加仓库链接 - 点击 `软盘` 图标以保存 Dalamud 设置。  
 5. 在游戏的消息窗口输入 `/xlplugins` 并按下 `回车键` 以打开插件安装器 - 点击界面左侧的 `所有插件` 。  
 6. 在插件安装器搜索框输入 `DailyRoutines` - 在结果中找到 DailyRoutines 并点击它以展开插件介绍（如果没有找到，请返回第 3 步尝试更换链接）。  
 7. 点击 `安装` 按钮并等待安装完成。  
