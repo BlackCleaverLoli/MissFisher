@@ -97,9 +97,9 @@ https://gitee.com/bcloli/MissFisher/raw/main/MissFisher%20Snapshot.xml
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
 ```
-3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用作运行 空天姬 MissFisher 的用户界面窗口）。
-4. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（启动进程仅会被用作手动执行触发器时打开相关网页）。
-5. 勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，仅用作更新 空天姬 MissFisher 的内置预设）。
+3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用于运行 空天姬 MissFisher 的界面窗口和读取游戏内存以获取必要的天气、钓饵等信息）。
+4. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（用于在用户手动执行触发器时打开相关网页，可选）。
+5. 勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，用于 空天姬 MissFisher 的内置预设在线同步）。
 6. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
 7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 ### 方法 2：导入为本地触发器
@@ -143,7 +143,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > ![Static Badge](https://img.shields.io/badge/MissFisher-1.7.6+-32519b?labelColor=20376e) 不再关闭记录网络数据。
 
 #### 授予脚本代码 API 权限：
-> 此 API 仅供 空天姬 MissFisher 读取游戏内存以获取天气信息。
+> 此 API 供 空天姬 MissFisher 读取游戏内存以获取天气、钓饵等信息。
 1. 在 Triggernometry 中点击 `选项` - `编辑配置` 来打开 Triggernometry 配置。
 2. 切换到 `安全` 分页 - 点击 `编辑需解锁此安全设置` - `是 `来解锁安全设置。
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
