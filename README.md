@@ -202,6 +202,16 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 在 NPC 爱梅特赛尔克的喊话台词横幅出现时，含有 `成功监听到日志行` 文本的消息提示也同时出现。
 
 > 如果迟迟未有消息提醒且游戏版本刚刚更新，则请耐心等待 ACT 整合更新。如果使用的是 CafeACT，请尝试使用 呆萌 ACT。
+### 咖啡转呆萌指北
+1. 找到咖啡配置文件夹： `...act\AppData\Advanced Combat Tracker\Config` 。
+2. 找到以下 2 个配置文件：  
+**悬浮窗配置文件**  
+`RainbowMage.OverlayPlugin.config.json`  
+**高级触发器配置文件**  
+`Triggernometry.config.xml`  
+3. 复制上面提到的配置文件，粘贴到呆萌配置文件夹： `...ACT.DieMoe\Config` ，然后替换文件（建议先备份）。
+4. 其他配置例如 ACT 本体，需要你自行对照进行配置。
+
 ## 更新与卸载
 ### 如何更新：
 **远程触发器**  
@@ -288,6 +298,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 按条目 [测试关键日志行](#测试关键日志行) 中提供的方法进行测试。
   
 - **如果全都确认无误并且你是 CafeACT，请尝试使用 呆萌 ACT。**
+可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。
 ### 同步内置预设功能无反应：
 * **授予仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器操作文件` - 点击 `是` - `保存更改` - 再次右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
