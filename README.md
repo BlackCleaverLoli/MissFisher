@@ -297,7 +297,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 * **检查触发器是否能接受到关键日志行：**  
 按条目 [测试关键日志行](#测试关键日志行) 中提供的方法进行测试。
   
-- **如果全都确认无误并且你是 CafeACT，请尝试使用 呆萌 ACT。**
+- **如果全都确认无误并且你是 CafeACT，请尝试使用 呆萌 ACT：**  
 可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。
 ### 同步内置预设功能无反应：
 * **授予仓库允许触发器执行代码权限：**  
