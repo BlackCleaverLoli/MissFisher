@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.712">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w44a" Enabled="true" RawEnvironmentVariables="版本 = 1.7.7&#xD;&#xA;快照 = 24w44a&#xD;&#xA;摘要 = 修复一些问题。">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w44b" Enabled="true" RawEnvironmentVariables="版本 = 1.7.8&#xD;&#xA;快照 = 24w44b&#xD;&#xA;摘要 = 修复预备启动失效问题。">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -640,7 +640,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+                  <Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
                       <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -3295,9 +3295,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="false" Name=" to do；重随;幻引诱；大物；鱼篓；json转预设" Id="7f1400e3-b398-415b-b0e3-95c2f4535233" RegularExpression="">
-                    <Actions />
-                  </Trigger>
                 </Triggers>
               </Folder>
               <Folder Id="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ZoneFilterRegularExpression="黑色公主切萝莉肥" Name="B.1 动作" Enabled="false">
@@ -5268,7 +5265,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+                  <Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
                     <Actions>
                       <Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
                       <Action OrderNumber="2" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
@@ -5481,7 +5478,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Trigger>
-                      <Trigger Enabled="true" Name="海钓区域不存在" Id="4a75a034-0560-4b8f-82df-bc4fbacf21f6" RegularExpression="^空天姬海钓参数|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$">
+                      <Trigger Enabled="true" Name="海钓区域不存在" Id="4a75a034-0560-4b8f-82df-bc4fbacf21f6" RegularExpression="^空天姬海钓参数|^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$">
                         <Actions>
                           <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 海域获取失败！区域转移未完成，或未处在出海垂钓中。" ActionType="NamedCallback" />
                         </Actions>
@@ -7246,9 +7243,20 @@
                 </Triggers>
               </Folder>
               <Folder ZoneFilterEnabled="True" Id="b479917c-f309-4d1d-a21d-0fdf86ab5894" ZoneFilterRegularExpression="^(出海垂钓|Ocean Fishing|オーシャンフィッシング)$|黑切萝莉肥" Name="A.1 海钓数据 控制" Enabled="true">
-                <Folders />
+                <Folders>
+                  <Folder Id="2abf45d9-cc1f-49d9-88b2-3cc2ad68f0dd" Name="读取海域信息" Enabled="false">
+                    <Folders />
+                    <Triggers>
+                      <Trigger Enabled="true" Name="获取信息" Id="1ce78e05-712d-45de-8e43-1ea7766e26de" RegularExpression="">
+                        <Actions>
+                          <Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;using static Triggernometry.Utilities.Memory;&#xD;&#xA;&#xD;&#xA;static void GetOceanFishingInstanceContent()&#xD;&#xA;{&#xD;&#xA;    byte[] moduleData = ReadModuleData(XivProc);&#xD;&#xA;&#xD;&#xA;    var eventFrameworkPattern = new ScanPattern(&quot;48 8B 35 ?? ?? ?? ?? 0F B6 EA 4C 8B F1&quot;);&#xD;&#xA;    eventFrameworkPattern.Offset = 3;&#xD;&#xA;    eventFrameworkPattern.Jump = true;&#xD;&#xA;    IntPtr eventFrameworkPtr = ScanAddress(moduleData, eventFrameworkPattern) ?? throw new Exception(&quot;Failed to find signature for Event Framework.&quot;);&#xD;&#xA;&#xD;&#xA;    var oceanFishingDirectoryPattern = new ScanPattern(&quot;48 83 B9 ?? ?? ?? ?? ?? 75 ?? 48 8B 81&quot;);&#xD;&#xA;    int oceanFishingDirectoryPoint = ScanPoint(moduleData, oceanFishingDirectoryPattern) ?? throw new Exception(&quot;Failed to find signature for OceanFishing Directory.&quot;);&#xD;&#xA;    IntPtr oceanFishingDirectoryAddress = XivBaseAddress + oceanFishingDirectoryPoint + 3;&#xD;&#xA;    short oceanFishingDirectoryOffset = Read&lt;short&gt;(XivProcHandle, oceanFishingDirectoryAddress);&#xD;&#xA;    IntPtr oceanFishingDirectorPtr = Read&lt;IntPtr&gt;(XivProcHandle, eventFrameworkPtr + oceanFishingDirectoryOffset);&#xD;&#xA;&#xD;&#xA;    if (oceanFishingDirectorPtr == IntPtr.Zero)&#xD;&#xA;    {&#xD;&#xA;        throw new Exception(&quot;Invalid OceanFishingDirectorPtr&quot;);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    var directorType = Read&lt;ushort&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x22);&#xD;&#xA;    if (directorType != 0x8003)&#xD;&#xA;    {&#xD;&#xA;        throw new Exception(&quot;Invalid DirectorType&quot;);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    var contentDirectorType = Read&lt;short&gt;(XivProcHandle, oceanFishingDirectorPtr + 0xDCE);&#xD;&#xA;    if (contentDirectorType != 0x10)&#xD;&#xA;    {&#xD;&#xA;        throw new Exception(&quot;not on OceanFishing&quot;);&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    var status = Read&lt;uint&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x1DBC);&#xD;&#xA;&#xD;&#xA;    var currentRoute = Read&lt;uint&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x1DB8);&#xD;&#xA;    var currentZone = Read&lt;uint&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x1DC0);&#xD;&#xA;    var spectralCurrentActive = Read&lt;bool&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x1DD0);&#xD;&#xA;    var weatherId = Read&lt;uint&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x1DCC);&#xD;&#xA;&#xD;&#xA;    var contentTimeLeft = Read&lt;float&gt;(XivProcHandle, oceanFishingDirectorPtr + 0xCF0);&#xD;&#xA;    var timeOffset = Read&lt;uint&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x1DC8);&#xD;&#xA;    var timeLeft = contentTimeLeft - timeOffset;&#xD;&#xA;    if (timeLeft &lt; 0)&#xD;&#xA;    {&#xD;&#xA;        timeLeft = -1;&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    var playerAllPoint = Read&lt;ushort&gt;(XivProcHandle, oceanFishingDirectorPtr + 0x220C + 0x4);&#xD;&#xA;&#xD;&#xA;    StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海域状态&quot;, status); // WaitingForPlayers = 0,SwitchingZone = 1, Fishing = 2, NewZone = 3, Finished = 4,&#xD;&#xA;    StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制航线路线&quot;, currentRoute); // IKDRoute sheet&#xD;&#xA;    StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海域当前&quot;, currentZone); // 0,1,2&#xD;&#xA;    StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制幻海流活跃状态&quot;, spectralCurrentActive); // 0,1,2&#xD;&#xA;    //StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制天气当前&quot;, weatherId); // 0,1,2&#xD;&#xA;    StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海域倒计时&quot;, timeLeft); // in seconds&#xD;&#xA;    StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓总分数&quot;, playerAllPoint); // status 为 4 时才有效&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;    StaticHelpers.Log(3, $&quot;海钓状态: {status}&quot;);&#xD;&#xA;    StaticHelpers.Log(3, $&quot;当前路线: {currentRoute}&quot;);&#xD;&#xA;    StaticHelpers.Log(3, $&quot;当前x海: {currentZone}&quot;);&#xD;&#xA;    StaticHelpers.Log(3, $&quot;是否幻海中: {spectralCurrentActive}&quot;);&#xD;&#xA;    StaticHelpers.Log(3, $&quot;天气ID: {weatherId}&quot;);&#xD;&#xA;    StaticHelpers.Log(3, $&quot;剩余时间: {timeLeft}&quot;);&#xD;&#xA;    return;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;GetOceanFishingInstanceContent();" ActionType="ExecuteScript" />
+                        </Actions>
+                      </Trigger>
+                    </Triggers>
+                  </Folder>
+                </Folders>
                 <Triggers>
-                  <Trigger Enabled="false" Name="2.3 幻海流绝命竿" Id="e9b00ac0-4d73-4ad3-b754-72917ba7fce1" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[CD])|^.{26}0843::(.+成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+ (?&lt;空天姬目标&gt;.+) measuring.+|.+は(?&lt;空天姬目标&gt;[^ ]+)を釣り上げた。)$">
+                  <Trigger Enabled="false" Name="3.1 幻海流绝命竿" Id="e9b00ac0-4d73-4ad3-b754-72917ba7fce1" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[CD])|^.{26}0843::(.+成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+ (?&lt;空天姬目标&gt;.+) measuring.+|.+は(?&lt;空天姬目标&gt;[^ ]+)を釣り上げた。)$">
                     <Actions>
                       <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="e9b00ac0-4d73-4ad3-b754-72917ba7fce1" ActionType="Trigger" Asynchronous="False" />
                       <Action OrderNumber="2" VariableName="空天姬控制幻海流即将结束" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
@@ -7630,7 +7638,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="true" Name="2.1 海域时段" Id="c13c9556-fa36-4e36-a3c1-c0c759c9d121" RegularExpression="^空天姬(普海钓饵)" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Name="1.2 海域时段" Id="c13c9556-fa36-4e36-a3c1-c0c759c9d121" RegularExpression="^空天姬(普海钓饵)" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="nxx 1=近海 2=远海" DescriptionOverride="True" />
                       <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="xnx 1=加拉迪翁湾 2(3)=梅尔托尔海峡南(北) 4=罗塔诺海 5=谢尔达莱群岛 6=绯汐海 7=罗斯利特湾" DescriptionOverride="True" />
@@ -7671,7 +7679,7 @@
                       <Action OrderNumber="21" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="true" Name="1.2 幻海流数据" Id="21ffbf18-294d-4b04-a5d4-10103d9e60cb" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:(?&lt;text&gt;614[45])|^.{15}\S+ 01:[^:]*:(?&lt;log&gt;出海垂钓|Ocean Fishing|オーシャンフィッシング)|^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C)">
+                  <Trigger Enabled="true" Name="1.3 幻海流数据" Id="21ffbf18-294d-4b04-a5d4-10103d9e60cb" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:(?&lt;text&gt;614[45])|^.{15}\S+ 01:[^:]*:(?&lt;log&gt;出海垂钓|Ocean Fishing|オーシャンフィッシング)|^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C)">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="6145=转海域 6144=最后30秒" DescriptionOverride="True" />
                       <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="幻海触发 计算幻海时间" DescriptionOverride="True" />
@@ -7819,7 +7827,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="true" Name="2.2 幻海流状态 时段" Id="7eae2db5-8e6b-483a-a56c-f8961afc9b8c" RegularExpression="^空天姬幻海时间" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Name="1.4 幻海流状态 时段" Id="7eae2db5-8e6b-483a-a56c-f8961afc9b8c" RegularExpression="^空天姬幻海时间" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制幻海流状态" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
                       <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬普海残竿" VariableExpression="1" ActionType="Variable" Asynchronous="False">
@@ -7997,7 +8005,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="true" Name="5.1 预备 无海域映射" Id="23b8a0d2-ff50-4517-ae96-bb332a97e0d2" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$|^.{15}ChatLog 00:003C::“/(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定”出现问题：该命令不存在。$">
+                  <Trigger Enabled="true" Name="5.1 预备 无海域映射" Id="23b8a0d2-ff50-4517-ae96-bb332a97e0d2" RegularExpression="^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$|^.{15}ChatLog 00:003C::“/(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定”出现问题：该命令不存在。$">
                     <Actions>
                       <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬幻海参数[${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4[${log}]}" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
@@ -8045,7 +8053,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬蓝鱼.ekey(${f:capture(${空天姬目标},1):([\w-'・· ]+)})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="1.3 成就计数器" Id="b3cb905f-45d8-43c9-9e41-0bb091e975ef" RegularExpression="^.{26}0843::(.+成功钓上了(?&lt;空天姬目标&gt;.+)。|You land (?&lt;空天姬目标数量&gt;[^ ]+) (?&lt;空天姬目标&gt;.+) measuring.+|.+は(?&lt;空天姬目标&gt;[^ ]+)（.+を釣り上げた。)$">
+                  <Trigger Enabled="true" Name="2.1 成就计数器" Id="b3cb905f-45d8-43c9-9e41-0bb091e975ef" RegularExpression="^.{26}0843::(.+成功钓上了(?&lt;空天姬目标&gt;.+)。|You land (?&lt;空天姬目标数量&gt;[^ ]+) (?&lt;空天姬目标&gt;.+) measuring.+|.+は(?&lt;空天姬目标&gt;[^ ]+)（.+を釣り上げた。)$">
                     <Actions>
                       <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="0111=航线01 近/远海1 标识顺位1  c0111=所需均数  t0111=简称" DescriptionOverride="True" />
                       <Action OrderNumber="2" VariableOp="Increment" VariableName="空天姬控制成就计数" VariableExpression="1" ActionType="Variable" Asynchronous="False">
@@ -8109,7 +8117,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="3|4" ExpressionTypeR="String" ConditionType="RegexMatch" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="3.1 强心剂补充" Id="a01bbaea-7c4d-4a74-95c0-9280f215d175" RegularExpression="^空天姬强心剂">
+                  <Trigger Enabled="true" Name="3.2 强心剂补充" Id="a01bbaea-7c4d-4a74-95c0-9280f215d175" RegularExpression="^空天姬强心剂">
                     <Actions>
                       <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False" />
                       <Action OrderNumber="2" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^." KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" Asynchronous="False">
@@ -8175,7 +8183,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="true" Name="1.4 海钓结束" Id="504b8d1d-9c96-43a7-8c7d-c111770e41fa" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:614(6|7)">
+                  <Trigger Enabled="true" Name="1.5 海钓结束" Id="504b8d1d-9c96-43a7-8c7d-c111770e41fa" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:614(6|7)">
                     <Actions>
                       <Action OrderNumber="1" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" ActionType="ListVariable" />
                       <Action OrderNumber="2" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" ActionType="Folder" />
