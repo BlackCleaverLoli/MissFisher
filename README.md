@@ -140,7 +140,6 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 5. 可选的：在 ACT 界面中切换到 `抹茶 Matcha` 分页（如有）- 找到 `日志及数据共享` 部分 - 勾选 `兼容模式` 以略微提高咬饵时 空天姬 MissFisher 的响应速度。
 
 > 敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。  
-> ![Static Badge](https://img.shields.io/badge/MissFisher-1.7.6+-32519b?labelColor=20376e) 不再关闭记录网络数据。
 
 #### 授予脚本代码 API 权限：
 > 此 API 供 空天姬 MissFisher 读取游戏内存以获取天气、钓饵等信息。
