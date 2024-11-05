@@ -141,11 +141,6 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 > 敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。  
 
-#### 授予脚本代码 API 权限：
-> 此 API 供 空天姬 MissFisher 读取游戏内存以获取天气、钓饵等信息。
-1. 在 Triggernometry 中点击 `选项` - `编辑配置` 来打开 Triggernometry 配置。
-2. 切换到 `安全` 分页 - 点击 `编辑需解锁此安全设置` - `是 `来解锁安全设置。
-3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
 ### Dalamud 相关配置：
 - 可选的：启用 Daily Routines 的 `宏进入技能队列` 功能。可提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
 #### 获取 Daily Routines ：
@@ -283,8 +278,8 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 * **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
 可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
 
-- **关闭风筝猫 Gaelicat：**  
-空天姬 MissFisher 包含所有风筝猫 Gaelicat 的功能，两者不应都处于启用状态，请取消勾选风筝猫 Gaelicat 的触发器分组。
+- **移除风筝猫 Gaelicat：**  
+空天姬 MissFisher 包含所有风筝猫 Gaelicat 的功能，两者不应都处于启用状态，请移除风筝猫 Gaelicat 触发器。
 
 ### 海钓启动后无反应或提示海域获取失败：
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
