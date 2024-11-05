@@ -54,6 +54,7 @@
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Nyy](#致谢) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 等大佬在 空天姬 MissFisher 开发时给予的大力支持与帮助！**
 ## 反馈
 * **[QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [Gitee Issues](https://gitee.com/bcloli/MissFisher/issues/new)**
+* [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP)
 ## 无偿赞助
 
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
@@ -69,9 +70,8 @@
 * 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
-### Dalamud 插件：
-* Daily Routines。
-  - [如何获取 Daily Routines](#dalamud-相关配置) 。
+
+> 自动换饵已不再依赖卫月，但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话，可以看看这里 → [如何获取 Daily Routines](#dalamud-相关配置) 。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
 ### 方法 1：添加为远程触发器
@@ -147,7 +147,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 2. 切换到 `安全` 分页 - 点击 `编辑需解锁此安全设置` - `是 `来解锁安全设置。
 3. 勾选 `Triggernometry.Utilities` 在 3 种情况下的 API 权限 - 点击 `确定` 以保存配置。
 ### Dalamud 相关配置：
-- 启用 Daily Routines 的 `钓饵切换指令` 功能。
+- 可选的：启用 Daily Routines 的 `宏进入技能队列` 功能。可提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
 #### 获取 Daily Routines ：
 > 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。
 
@@ -167,12 +167,9 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 6. 在插件安装器搜索框输入 `DailyRoutines` - 在结果中找到 DailyRoutines 并点击它以展开插件介绍（如果没有找到，请返回第 3 步尝试更换链接）。  
 7. 点击 `安装` 按钮并等待安装完成。  
 8. 在游戏的消息窗口输入 `/pdr` 以打开 Daily Routines 的主界面。  
-9. 在 Daily Routines 主界面上方的搜索框输入 `bait` 。  
-10. 在搜索结果中找到 `钓饵切换指令` 功能，勾选以启用它。
+9. 在 Daily Routines 主界面上方的搜索框输入 `宏` 。  
+10. 在搜索结果中找到 `宏进入技能队列` 功能，勾选以启用它。
 
-**可选的：启用某些 Dalamud 插件的用户宏队列功能：**  
-* 启用某些 Dalamud 插件（如：Daily Routines）的用户宏队列及道具队列功能，以提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
-* Daily Routines 模块名：宏进入技能队列
 ## 验证自动功能
 #### 验证步骤如下：
 1. 确认角色拥有钓饵 `万能拟饵`（如没有，请购买 1 个）。
@@ -233,7 +230,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 ---
 ## 常见问题
 ### 提示主界面窗口打开失败：
-* **授予仓库允许触发器执行代码权限：**  
+* **授予远程仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` - 右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
   
 * **检查 ACT 插件优先级：**  
@@ -264,8 +261,8 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 * **检查游戏中消息窗口的相关频道是否已开启：**  
 启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息` - 点击 `应用`。  
    
-* **检查是否已启用相关 Dalamud 插件的更换钓饵指令功能：**  
-找到条目 [Dalamud 相关配置](#dalamud-相关配置) 中提到的 Dalamud 插件 - 启用其提供的更换钓饵命令功能。 
+* **授予远程仓库允许触发器执行代码权限：**  
+右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` - 右键 `仓库` - 点击 `更新` - 等待仓库更新完成。
    
 * **配置 Dalamud 插件 Chat2 的相关功能：**  
 可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。如果仍提示更换钓饵失败，请重启游戏。
@@ -422,14 +419,8 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 ## 现在支持的内置预设
 空天姬 MissFisher 内置了一些自动钓鱼预设，使用方法见 [使用内置预设](#方法-1使用内置预设) 。
 
-预设的已审核情况：  
-版本|鱼王|三语支持|备注
-:-:|:-:|:-:|:-
-2.0|全部支持|未支持|所有的鱼王和鱼皇
-3.0|未支持|未支持
-4.0|未支持|未支持
-5.0|未支持|未支持
-6.0|未支持|未支持  
+预设的补完度及已审核情况：  
+3.0(100%) 4.0(98%) 5.0(100%) 6.0(100%) 审核率(47%)
 
 > 同时还有作者与部分用户参与建设的 [预设文档](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) ，现在已填有大部分鱼王、鱼皇的预设。
 > 
