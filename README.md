@@ -63,14 +63,22 @@
 ## 依赖
 ### 游戏内：
 * 职业 `捕鱼人` 。
+  * 建议已完成所有职业任务。
 * 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息`（钓鱼信息）。
 * 国际服：你需要修改角色设置中的 Name Display Settings（人名显示设置）将自己名字的显示设置改为 Full Name（全名）。
-### ACT 插件：
+### ACT 及 ACT 插件：
+* 高级战斗追踪器 Advanced Combat Tracker [ [下载呆萌整合](https://act.diemoe.net/ACT.Setup.exe) ]
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+` [ [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) ]
-* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.4.1+`
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.5.3+`
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 
+> 新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu，因此，你必须通过以下方法安装它们：  
+> 1）在 [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) 中获取可一键安装 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu 的安装器。  
+> 2）打开安装器并跟随提示来安装 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu 到 ACT 中。  
+> 3）仔细阅读云盘中的 PDF 文件「Triggernometry 宝宝指南」来配置舒适且正确的 ACT 插件环境。  
+> 你还可以 [手动安装或更新 ACT 插件](#手动安装或更新-act-插件) 。   
+> 关于卫月：  
 > 自动换饵已不再依赖卫月，但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话，可以看看这里 → [如何获取 Daily Routines](#dalamud-相关配置) 。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
@@ -142,10 +150,13 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > 敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。  
 
 ### Dalamud 相关配置：
+- **你不安装 Daily Routines 也可以使用 空天姬 MissFisher。**
 - 可选的：启用 Daily Routines 的 `宏进入技能队列` 功能。可提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
+> Daily Routines 是一个包含众多体验优化功能的免费卫月插件。
 #### 获取 Daily Routines ：
+- **你不安装 Daily Routines 也可以使用 空天姬 MissFisher。**
+> Daily Routines 是一个包含众多体验优化功能的免费卫月插件。  
 > 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。
-
 1. 在游戏的消息窗口输入 `/xlsettings` 并按下 `回车键` 以打开 Dalamud 设置 - 点击界面上方的 `测试版` 。  
 2. 在界面下方找到 `自定义插件仓库` 部分。  
 3. 选择一个链接填入空文本框：  
@@ -192,16 +203,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 **可接收到关键日志行的表现：**  
 在 NPC 爱梅特赛尔克的喊话台词横幅出现时，含有 `成功监听到日志行` 文本的消息提示也同时出现。
 
-> 如果迟迟未有消息提醒且游戏版本刚刚更新，则请耐心等待 ACT 整合更新。如果使用的是 CafeACT，请尝试使用 呆萌 ACT。
-### 咖啡转呆萌指北
-1. 找到咖啡配置文件夹： `...act\AppData\Advanced Combat Tracker\Config` 。
-2. 找到以下 2 个配置文件：  
-**悬浮窗配置文件**  
-`RainbowMage.OverlayPlugin.config.json`  
-**高级触发器配置文件**  
-`Triggernometry.config.xml`  
-3. 复制上面提到的配置文件，粘贴到呆萌配置文件夹： `...ACT.DieMoe\Config` ，然后替换文件（建议先备份）。
-4. 其他配置例如 ACT 本体，需要你自行对照进行配置。
+> 如果迟迟未有消息提醒且游戏版本刚刚更新，则请耐心等待 ACT 整合更新。如果使用的是 CafeACT，请尝试使用 呆萌 ACT（[咖啡转呆萌指北](#咖啡转呆萌指北)）。
 
 ## 更新与卸载
 ### 如何更新：
@@ -245,7 +247,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 如果尝试了一个选项仍失败，请尝试另外两个选项，并进行调试。  
 ### 提示换饵失败：
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
-按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的 鲶鱼精邮差 PostNamazu。  
+按条目 [ACT 及 ACT 插件](#act-及-act-插件) 的说明，安装合适版本的 鲶鱼精邮差 PostNamazu。  
 
 * **检查 ACT 插件优先级：**  
 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
@@ -283,7 +285,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 
 ### 海钓启动后无反应或提示海域获取失败：
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
-按条目 [ACT 插件](#act-插件) 的说明，安装合适版本的 鲶鱼精邮差 PostNamazu。  
+按条目 [ACT 及 ACT 插件](#act-及-act-插件) 的说明，安装合适版本的 鲶鱼精邮差 PostNamazu。  
 
 * **检查 ACT 插件优先级：**  
 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
@@ -299,6 +301,44 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 ### 同步内置预设功能无反应：
 * **授予仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器操作文件` - 点击 `是` - `保存更改` - 再次右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
+## 其他指南
+### 咖啡转呆萌指北：
+> 此条目的信息不一定正确。XD
+1. 找到咖啡配置文件夹： `...act\AppData\Advanced Combat Tracker\Config` 。
+2. 找到以下 2 个配置文件：  
+**悬浮窗配置文件**  
+`RainbowMage.OverlayPlugin.config.json`  
+**高级触发器配置文件**  
+`Triggernometry.config.xml`  
+3. 复制上面提到的配置文件，粘贴到呆萌配置文件夹： `...ACT.DieMoe\Config` ，然后替换文件（建议先备份）。
+4. 其他配置例如 ACT 本体，需要你自行对照进行配置。
+
+### 手动安装或更新 ACT 插件：  
+> 如果导入的插件文件处在非 ACT Plugins 文件夹下（比如你常用的下载用文件夹），会导致两个坏处：  
+> 1）你的 ACT 启动速度会变慢，因为 ACT 会在启动时扫描插件所处的文件夹下的所有文件；  
+> 2）当 ACT 扫描到有「从网络下载」标识的文件时，会询问你是否要解锁，只要你不关闭询问对话框，ACT 就会永远卡在启动窗口，这额外增加了启动时人工操作的步骤。  
+>   
+> 所以，在更新 ACT 插件前，你应该检查你将要更新的 ACT 插件文件是否在 ACT 主文件夹下的 `Plugins` 文件夹内。否则，你应该移动它。  
+> 你可以在 ACT 的插件列表页面中点击「插件块」，界面右侧的程序集信息中的 `文件名` 信息就是该插件文件所处的文件位置。  
+> 不合适的位置如：`D:\Download\插件名.dll`  
+> 合适的位置以呆萌整合举例：`D:\ACT.DieMoe\Plugins\插件名.dll`  
+
+- **当你要安装新插件：**
+1. 把要导入的插件文件复制一份到 ACT 的 Plugins 文件夹中（目录如呆萌：...\ACT.DieMoe\Plugins）。
+2. 打开 ACT，等待它启动完成。
+3. 切换到插件列表界面导入 Plugins 文件夹中的插件。
+
+- **当你要更新的旧插件正确处于合适的文件目录下：**
+1. 关闭 ACT 并等待关闭进度窗口消失。
+2. 把要更新的新版本插件文件复制一份，将其名称改为旧版本插件的名称。
+3. 将它移动到旧版本插件文件所在的文件夹中，覆盖旧版本插件文件。
+
+- **当你要更新的旧插件不在前文中建议的文件目录下：**
+1. 在 ACT 插件列表中取消相应插件旁的「√」来关闭插件，然后点「X」来卸载插件。
+2. 关闭 ACT 并等待关闭进度窗口消失。
+3. 把要导入的插件文件复制一份到 ACT 的 Plugins 文件夹中（目录如呆萌：...\ACT.DieMoe\Plugins）。
+4. 打开 ACT，等待启动完成。
+5. 切换到插件列表界面导入 Plugins 文件夹中的插件。
 
 ---
 # 快速上手
