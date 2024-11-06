@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.712">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.1" Enabled="true" RawEnvironmentVariables="版本 = 1.8.1&#xD;&#xA;快照 = 24w45c&#xD;&#xA;摘要 = 优化扩展使用体验；修复一些问题。">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.2" Enabled="true" RawEnvironmentVariables="版本 = 1.8.2&#xD;&#xA;快照 = 24w45d&#xD;&#xA;摘要 = 更改适用国内网络的相关链接；修复一个 BUG。">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -305,7 +305,7 @@
                       </Action>
                     </Actions>
                   </Trigger>
-                  <Trigger Enabled="true" Name="同步内置预设 PresetUpdate" Id="0fa0f29a-ae40-402c-945f-395cc6123260" RegularExpression="^空天姬检查预设(自动)?(?&lt;way&gt;GITHUB|GITEE)" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Name="同步内置预设 PresetUpdate" Id="0fa0f29a-ae40-402c-945f-395cc6123260" RegularExpression="^空天姬检查预设(自动)?(?&lt;way&gt;GITHUB|TENCENT)" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" VariableOp="Increment" VariableName="空天姬控制预设检查I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
                       <Action OrderNumber="2" DictVariableOp="Build" DictVariableTarget="空天姬预设" DictVariableValue=",&#xD;&#xA;${v:空天姬控制预设I}" DictTargetPersist="True" ActionType="DictVariable" ExecutionDelayExpression="500" Asynchronous="False">
@@ -334,7 +334,7 @@
                           </ConditionGroup>
                         </Condition>
                       </Action>
-                      <Action OrderNumber="5" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;在线同步内置预设时失败！&#xD;&#xA;${if: ${way} == GITHUB ? 请尝试在可行的网络条件下同步，或切换线路 : ${if: ${ev:空天姬控制预设I} ? 文件可能被和谐，请尝试切换同步线路或反馈 : 文件下载失败，请重试 } }。" ActionType="MessageBox">
+                      <Action OrderNumber="5" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;在线同步内置预设时失败！&#xD;&#xA;${if: ${way} == GITHUB ? 请尝试在可行的网络条件下同步，或切换线路 : 请稍后重试或切换同步线路 }。" ActionType="MessageBox">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制预设结果I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -358,7 +358,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制预设结果I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="9" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]&#xD;&#xA;在线同步内置预设时失败，${if: ${way} == GITHUB ? 请尝试在可行的网络条件下同步，或前往触发器界面切换线路 : ${if: ${ev:空天姬控制预设I} ? 文件可能被和谐，请尝试前往触发器界面切换同步线路或反馈 : 文件下载失败，请重试 } }" ActionType="NamedCallback" Asynchronous="False">
+                      <Action OrderNumber="9" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]&#xD;&#xA;在线同步内置预设时失败，${if: ${way} == GITHUB ? 请尝试在可行的网络条件下同步，或前往触发器界面切换线路 : 请稍后重试，或尝试前往触发器界面切换同步线路 }" ActionType="NamedCallback" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制预设结果I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
@@ -1140,7 +1140,7 @@
                               </Action>
                             </Actions>
                           </Trigger>
-                          <Trigger Enabled="true" Name="模式：天气" Id="e377a5a8-cb44-47bf-9f5b-3faf2844661e" RegularExpression="^空天姬等待天气" PrevActions="Interrupt">
+                          <Trigger Enabled="false" Name="模式：天气" Id="e377a5a8-cb44-47bf-9f5b-3faf2844661e" RegularExpression="^空天姬等待天气" PrevActions="Interrupt">
                             <Actions>
                               <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False">
                                 <Condition Enabled="true" Grouping="Or">
@@ -5072,16 +5072,12 @@
                           <ConditionGroup Enabled="true" Grouping="Or">
                             <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬引诱成功}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            <ConditionGroup Enabled="true" Grouping="And">
-                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法重随}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                              <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法引诱}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            </ConditionGroup>
                             <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-                            <ConditionSingle Enabled="true" ExpressionL="${v:空天姬引诱}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                             <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                             <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
                             <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法重随}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼优先竿型${v:空天姬以小钓大阶段}}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="false" ExpressionL="优先竿最高优先级" ExpressionTypeL="Numeric" ExpressionR="屏蔽幻海绝命" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -5104,18 +5100,12 @@
                           </ConditionGroup>
                           <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬断竿判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法引诱}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
                       <Action OrderNumber="16" VariableOp="SetNumeric" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱重随" ActionType="Trigger">
                         <Condition Enabled="true" Grouping="And">
-                          <ConditionGroup Enabled="true" Grouping="And">
-                            <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                            <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最大竿时}" ExpressionTypeL="Numeric" ExpressionR="0.1" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流绝命竿}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                            <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识绝命竿}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          </ConditionGroup>
-                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬断竿判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                          <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬重随判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
                       <Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="456=抛竿 461=以小钓大" DescriptionOverride="True" />
@@ -5735,7 +5725,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼绝命竿}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+                  <Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
                     <Actions>
                       <Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
                       <Action OrderNumber="2" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
@@ -6043,12 +6033,12 @@
                       <Trigger Enabled="true" Name="未注册回调 报错" Id="f3d9dc82-713c-4d21-bec3-3e36a2909178" RegularExpression="^空天姬触发" PrevActions="Interrupt">
                         <Actions>
                           <Action OrderNumber="1" ActionType="Placeholder" ExecutionDelayExpression="6000" Asynchronous="False" />
-                          <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 空天姬拓展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！&#xD;&#xA;请在 Triggernometry 界面授予仓库允许触发器执行代码权限：&#xD;&#xA;右键 仓库 - 点击 编辑 - 勾选 允许触发器操作文件 - 点击 是 - 保存更改 - 再次右键 仓库 - 点击 更新 - 等待仓库更新完成。 " ActionType="NamedCallback" Asynchronous="False">
+                          <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 空天姬拓展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！&#xD;&#xA;远程触发器：请尝试在 Triggernometry 界面授予仓库允许触发器执行代码权限：&#xD;&#xA;右键 仓库 - 点击 编辑 - 勾选 允许触发器操作文件 - 点击 是 - 保存更改 - 再次右键 仓库 - 点击 更新 - 等待仓库更新完成。 " ActionType="NamedCallback" Asynchronous="False">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             </Condition>
                           </Action>
-                          <Action OrderNumber="3" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher] 空天姬拓展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！&#xD;&#xA;请在 Triggernometry 界面授予仓库允许触发器执行代码权限：&#xD;&#xA;右键 仓库 - 点击 编辑 - 勾选 允许触发器操作文件 - 点击 是 - 保存更改 - 再次右键 仓库 - 点击 更新 - 等待仓库更新完成。 " ActionType="MessageBox">
+                          <Action OrderNumber="3" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher] 空天姬拓展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！&#xD;&#xA;远程触发器：请尝试在 Triggernometry 界面授予仓库允许触发器执行代码权限：&#xD;&#xA;右键 仓库 - 点击 编辑 - 勾选 允许触发器操作文件 - 点击 是 - 保存更改 - 再次右键 仓库 - 点击 更新 - 等待仓库更新完成。 " ActionType="MessageBox">
                             <Condition Enabled="true" Grouping="Or">
                               <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                             </Condition>
@@ -8703,11 +8693,6 @@
                   <Action OrderNumber="1" LaunchProcessPathExpression="https://www.123pan.com/s/YJHhTd-0ah13" ActionType="LaunchProcess" />
                 </Actions>
               </Trigger>
-              <Trigger Enabled="false" Name="网页 查看窗口更新日志（右键执行 已停更）" Id="a76be65d-6ca2-4271-9ee4-45714f0d6ef9" RegularExpression="">
-                <Actions>
-                  <Action OrderNumber="1" LaunchProcessPathExpression="https://gitee.com/bcloli/MissFisher/blob/main/UIChangelog.md" ActionType="LaunchProcess" />
-                </Actions>
-              </Trigger>
               <Trigger Enabled="true" Name="网页  鱼糕 FF14 新海（右键执行）" Id="c99d3b5f-39c2-4cb9-9ffa-9dc47154badc" RegularExpression="">
                 <Actions>
                   <Action OrderNumber="1" LaunchProcessPathExpression="https://next.ffmomola.com/oceanFishing" ActionType="LaunchProcess" />
@@ -8715,7 +8700,7 @@
               </Trigger>
               <Trigger Enabled="true" Name="  网页 如何编写空天姬预设（右键执行）" Id="873eef71-ce34-44c9-ab8d-c4db219ecabf" RegularExpression="">
                 <Actions>
-                  <Action OrderNumber="1" LaunchProcessPathExpression="https://gitee.com/bcloli/MissFisher/wikis/Learn-Presets" ActionType="LaunchProcess" />
+                  <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets" ActionType="LaunchProcess" />
                 </Actions>
               </Trigger>
               <Trigger Enabled="true" Name=" 网页  内置预设表格（建设中）（右键执行）" Id="0c87bff1-4020-41bc-b8ae-0ca1ba63e138" RegularExpression="">
@@ -8743,24 +8728,24 @@
               <Action OrderNumber="3" LogMessageText="空天姬打开配置" LogProcess="True" ActionType="LogMessage" />
             </Actions>
           </Trigger>
-          <Trigger Enabled="true" Name="   在线同步内置预设（右键执行 Gitee 镜像 推荐国内网络）" Id="f94ae6a2-2ccc-4139-bf45-022f9c4d4cf3" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])[ ]*$|^.{26}(?&lt;log2&gt;003C)::(“/(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])”出现问题：该命令不存在。|The command /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]) does not exist.|そのコマンドはありません。： /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]))$" PrevActions="Interrupt">
+          <Trigger Enabled="true" Name="   在线同步内置预设（右键执行 腾讯云 推荐国内网络）" Id="f94ae6a2-2ccc-4139-bf45-022f9c4d4cf3" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])[ ]*$|^.{26}(?&lt;log2&gt;003C)::(“/(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])”出现问题：该命令不存在。|The command /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]) does not exist.|そのコマンドはありません。： /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]))$" PrevActions="Interrupt">
             <Actions>
               <Action OrderNumber="1" DiskFileOpVar="空天姬预设" VariableName="空天姬控制预设I" ActionType="Variable" Asynchronous="False" />
-              <Action OrderNumber="2" UseTTSTextExpression="正在连接 Giti 镜像" ActionType="UseTTS" Asynchronous="False">
+              <Action OrderNumber="2" UseTTSTextExpression="正在连接 腾讯云" ActionType="UseTTS" Asynchronous="False">
                 <Condition Enabled="true" Grouping="Or">
                   <ConditionSingle Enabled="true" ExpressionL="${auto}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                 </Condition>
               </Action>
-              <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if:${f:length:${log0}${log1}${log2}}?:&quot;&#xD;&#xA;已将线路切换至：Gitee 镜像&quot;}&#xD;&#xA;正在${if:${f:length:${log0}${log1}${log2}}?从 Gitee 镜像:}同步内置预设……" ActionType="NamedCallback" Asynchronous="False" />
+              <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if:${f:length:${log0}${log1}${log2}}?:&quot;&#xD;&#xA;已将线路切换至：腾讯云&quot;}&#xD;&#xA;正在${if:${f:length:${log0}${log1}${log2}}?&quot;从 腾讯云 &quot;:}同步内置预设……" ActionType="NamedCallback" Asynchronous="False" />
               <Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬控制预设检查I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-              <Action OrderNumber="5" LogMessageText="空天姬检查预设${auto}GITEE" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
+              <Action OrderNumber="5" LogMessageText="空天姬检查预设${auto}TENCENT" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
               <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬控制更新I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
               <Action OrderNumber="7" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="同步线路" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
                 <Condition Enabled="true" Grouping="Or">
                   <ConditionSingle Enabled="true" ExpressionL="${log0}${log1}${log2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                 </Condition>
               </Action>
-              <Action OrderNumber="8" DiskFileOpName="https://gitee.com/bcloli/MissFisher/raw/main/Preset.csv" DiskFileOpVar="空天姬控制预设I" ActionType="DiskFile" />
+              <Action OrderNumber="8" DiskFileOpName="https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/Preset.csv" DiskFileOpVar="空天姬控制预设I" ActionType="DiskFile" />
             </Actions>
             <Condition Enabled="true" Grouping="Or">
               <ConditionSingle Enabled="true" ExpressionL="( ${pd:空天姬配置[同步线路]} ) - 1" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
@@ -8775,7 +8760,7 @@
                   <ConditionSingle Enabled="true" ExpressionL="${auto}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                 </Condition>
               </Action>
-              <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if:${f:length:${log0}${log1}${log2}}?:&quot;&#xD;&#xA;已将线路切换至：GitHub&quot;}&#xD;&#xA;正在${if:${f:length:${log0}${log1}${log2}}?从 GitHub:}同步内置预设……" ActionType="NamedCallback" Asynchronous="False" />
+              <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if:${f:length:${log0}${log1}${log2}}?:&quot;&#xD;&#xA;已将线路切换至：GitHub&quot;}&#xD;&#xA;正在${if:${f:length:${log0}${log1}${log2}}?&quot;从 GitHub &quot;:}同步内置预设……" ActionType="NamedCallback" Asynchronous="False" />
               <Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬控制预设检查I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
               <Action OrderNumber="5" LogMessageText="空天姬检查预设${auto}GITHUB" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
               <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬控制更新I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
@@ -8889,12 +8874,12 @@
       </Trigger>
       <Trigger Enabled="true" Name="  网页  使用说明（右键执行 碰到问题先看）" Id="9ae8db0b-e0b1-4ac9-b5f4-db5fc01d24e7" RegularExpression="">
         <Actions>
-          <Action OrderNumber="1" LaunchProcessPathExpression="https://gitee.com/bcloli/MissFisher/blob/main/README.md" ActionType="LaunchProcess" />
+          <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/blob/main/README.md" ActionType="LaunchProcess" />
         </Actions>
       </Trigger>
       <Trigger Enabled="true" Name="  网页 更新日志（右键执行）" Id="bb88f1de-3638-4d15-902a-ee2bc935e152" RegularExpression="">
         <Actions>
-          <Action OrderNumber="1" LaunchProcessPathExpression="https://gitee.com/bcloli/MissFisher/blob/main/Changelog.md" ActionType="LaunchProcess" />
+          <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/blob/main/Changelog.md" ActionType="LaunchProcess" />
         </Actions>
       </Trigger>
       <Trigger Enabled="true" Name=" 网页 7.0 钓鱼信息表格（右键执行）" Id="d79e0257-a1d2-4629-be00-ee97e181ddaf" RegularExpression="">
