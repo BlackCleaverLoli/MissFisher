@@ -73,12 +73,12 @@
 * OverlayPlugin
 * 可选的：抹茶 Matcha（仅国服）
 
-> 新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu，因此，你必须通过以下方法安装它们：  
+> **新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu**，因此，你必须通过以下方法安装它们：  
 > 1）在 [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) 中获取可一键安装 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu 的安装器。  
 > 2）打开安装器并跟随提示来安装 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu 到 ACT 中。  
 > 3）仔细阅读云盘中的 PDF 文件「Triggernometry 宝宝指南」来配置舒适且正确的 ACT 插件环境。  
 > 你还可以 [手动安装或更新 ACT 插件](#手动安装或更新-act-插件) 。   
-> 关于卫月：自动换饵已不再依赖卫月插件。  
+> **关于卫月：自动换饵已不再依赖卫月插件**。  
 > 但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话 → [如何获取 Daily Routines](#dalamud-相关配置) 。
 ## 安装
 可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
@@ -327,6 +327,8 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 1. 把要导入的插件文件复制一份到 ACT 的 Plugins 文件夹中（目录如呆萌：...\ACT.DieMoe\Plugins）。
 2. 打开 ACT，等待它启动完成。
 3. 切换到插件列表界面导入 Plugins 文件夹中的插件。
+4. 导入完成后确认插件已初始化。
+5. 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整插件优先级。   
 
 - **当你要更新的旧插件正确处于合适的文件目录下：**
 1. 关闭 ACT 并等待关闭进度窗口消失。
