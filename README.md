@@ -95,7 +95,7 @@
 > 但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话 → [如何获取 Daily Routines](#dalamud-相关配置) 。
 
 ## 安装
-空天姬 MissFisher 有 2 种分发版本：
+空天姬 MissFisher 有以下分发版本：
 
 - **正式版**  
 相对稳定，适合一般用户。  
@@ -106,13 +106,14 @@
 有时会频繁更新以迭代功能或修复小问题，但大部分时间下与正式版的内容保持一致。
 
 > [!TIP]
-> - 两个版本没有本质区别，请自由选择适合自己的版本。
+> - 正式版与快照版没有本质区别，请自由选择适合自己的版本。
 
-你可通过以下方法安装 空天姬 MissFisher ：「添加为远程触发器」或「导入到本地触发器」。建议添加为远程触发器，可使仓库在启用相应设置时自动更新。
+你可以将 空天姬 MissFisher「添加为远程触发器」或「导入到本地触发器」。建议使用前者，在启用相应仓库设置时可使 空天姬 MissFisher 自动更新。
 ### 方法 1：添加为远程触发器
 1. 在 Triggernometry 中选中触发器分组 `远程触发器` - 点击 `添加` - `仓库`。
 2. 填写任意名称作为 `仓库名称` - 从下面的文件链接中选其一填入 `仓库地址` 一项：  
 
+**正式版：**
 ```
 // 腾讯云 推荐国内网络
 https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher.xml
@@ -121,6 +122,7 @@ https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher.xml
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
 ``` 
 
+**快照版：**
 ```
 // 腾讯云 推荐国内网络
 https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher%20Snapshot.xml
