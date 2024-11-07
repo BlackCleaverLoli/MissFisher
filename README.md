@@ -1,12 +1,11 @@
 # 空天姬 MissFisher
 **[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**  
+
 ## 简介
-空天姬 MissFisher 是一组可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
+*空天姬 MissFisher* 是一组可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - **支持：** 国服、英文端、日文端  
 - **适配：Lv.1 - Lv.100**  
 - 仅有计时功能的版本： `风筝猫 Gaelicat` [ [123 云盘](https://www.123684.com/s/YJHhTd-M4H13) ] [ [Github](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Gaelicat.xml) ]
-> **请勿利用 空天姬 MissFisher 进行对他人不利的行为。**  
-> **空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。**
 
 ## 主要特性
 - **优秀手法**  
@@ -45,46 +44,75 @@
 
 
 ## 注意事项
+> [!WARNING]
+> - **请勿利用 空天姬 MissFisher 进行对他人不利的行为。**  
+> - **空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。**
 
-- 钓饵不足时角色将停止收竿，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
-- 当使用其他插件修改游戏内的本地天气时，将影响 空天姬 MissFisher 的天气相关功能。
-- **敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。**
+> [!CAUTION]
+> - 钓饵不足时角色将停止收竿，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
+> - 如使用未获得技能「三重提钩」或「耐心II」的捕鱼人，部分功能可能出现错误。  
+> - 当使用其他插件修改游戏内的本地天气时，将影响 空天姬 MissFisher 的天气相关功能。
+> - **敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。**
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Nyy](#致谢) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 等大佬在 空天姬 MissFisher 开发时给予的大力支持与帮助！**
 ## 反馈
-* **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP)**
+> * **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP)**
 ## 无偿赞助
 
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
 ***
 # 安装指南
-## 依赖
-### 游戏内：
-* 职业 `捕鱼人` 。
-  * 建议已完成所有职业任务。
-* 消息窗口可正常显示这些频道的消息：`系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息`（钓鱼信息）。
-* 国际服：你需要修改角色设置中的 Name Display Settings（人名显示设置）将自己名字的显示设置改为 Full Name（全名）。
-### ACT 及 ACT 插件：
+## 游戏内：
+- **职业：** `捕鱼人` 。
+- **消息窗口消息频道：** `系统消息`、`默语` 、`非玩家角色通告` 以及 `自己的采集信息`（钓鱼信息）。
+- **国际服：** 你需要修改角色设置中的 `Name Display Settings`（人名显示设置）将自己名字的显示设置改为 `Full Name`（全名）。
+> [!tip]
+>  如何启用相应的消息窗口消息频道？
+> 1. 在游戏中找到消息窗口，点击 `消息窗口设置`（齿轮样式的按钮）。
+> 2. 找到`消息过滤设置`部分，点击任一 `消息栏` ，切换到 `通知` 分页。
+> 3. 勾选频道 `系统消息`、`默语`、`非玩家角色通告` 以及 `自己的采集信息` 。
+> 4. 点击 `应用` 。
+
+## ACT 及 ACT 插件：
 * 高级战斗追踪器 Advanced Combat Tracker [ [下载呆萌整合](https://act.diemoe.net/ACT.Setup.exe) ]
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+` [ [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) ]
 * 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.5.3+`
-* OverlayPlugin
+* OverlayPlugin（应已存在于适合 FFXIV 的 ACT 整合版本中，你无须额外安装）
 * 可选的：抹茶 Matcha（仅国服）
-<details>
-<summary>展开提示</summary>  
-<pre>
-<blockquote> <strong>新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu</strong>，因此，你必须通过以下方法安装它们：<br> 1）在 <a href="https://www.123pan.com/s/1xRXjv-340BH.html">阿洛的 123 云盘</a> 中获取可一键安装 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu 的安装器。<br> 2）打开安装器并跟随提示将 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu 安装到 ACT 中。<br> 3）仔细阅读云盘中的 PDF 文件「Triggernometry 宝宝指南」来配置舒适且正确的 ACT 插件环境。<br> 你还可以 <a href="#手动安装或更新-act-插件">手动安装或更新 ACT 插件</a> 。<br><br> <strong>关于卫月：自动换饵已不再依赖卫月插件</strong>。<br> 但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话 → <a href="#dalamud-相关配置">如何获取 Daily Routines</a> 。</blockquote>
-</pre>
-</details>  
+> [!IMPORTANT]
+> **新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu。**  
+> 因此，你必须通过以下方法安装它们：
+> 
+> 1. 在 [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) 中获取安装器。  
+> 2. 打开安装器并跟随提示安装或更新插件。  
+> 3. 仔细阅读云盘中的 PDF 文件「Triggernometry 宝宝指南」来配置舒适且正确的 ACT 插件环境。  
+> 
+> - 你也可以不使用更新器，而是 [手动安装或更新 ACT 插件](#手动安装或更新-act-插件) 。
+
+
+>  **关于卫月：自动换饵已不再依赖卫月插件**。
+> 
+> 但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话 → [如何获取 Daily Routines](#dalamud-相关配置) 。
 
 ## 安装
-可通过以下方法安装：“添加为远程触发器” 或 “导入到本地触发器”。建议使用前者，可使在触发器启用相应的仓库设置时自动更新。
+空天姬 MissFisher 有 2 种分发版本：
+
+- **正式版**  
+相对稳定，适合一般用户。  
+仅在新增较完善的新功能或修复重要问题时更新。  
+
+- **快照版**（Snapshot）   
+不确保稳定，但总体可用的测试版本，适合想要体验新功能或反馈意愿强的用户。  
+有时会频繁更新以迭代功能或修复小问题，但大部分时间下与正式版的内容保持一致。
+
+> [!TIP]
+> - 两个版本没有本质区别，请自由选择适合自己的版本。
+
+你可通过以下方法安装 空天姬 MissFisher ：「添加为远程触发器」或「导入到本地触发器」。建议添加为远程触发器，可使仓库在启用相应设置时自动更新。
 ### 方法 1：添加为远程触发器
 1. 在 Triggernometry 中选中触发器分组 `远程触发器` - 点击 `添加` - `仓库`。
 2. 填写任意名称作为 `仓库名称` - 从下面的文件链接中选其一填入 `仓库地址` 一项：  
-  
-**正式版：**  
-> 相对稳定，适合一般用户。
+
 ```
 // 腾讯云 推荐国内网络
 https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher.xml
@@ -92,21 +120,24 @@ https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher.xml
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
 ``` 
-  
-**快照版：**  
-> 频繁更新的测试用版本，适合想要体验新功能或自己写预设的用户。
+
 ```
 // 腾讯云 推荐国内网络
 https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher%20Snapshot.xml
 
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
-```
-3. 勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（必选，用于运行 空天姬 MissFisher 的界面窗口和读取游戏内存以获取必要的天气、钓饵等信息）。
-4. 可选：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（用于在用户手动执行触发器时打开相关网页，可选）。
-5. 勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，用于 空天姬 MissFisher 的内置预设在线同步）。
+``` 
+
+3. 必选：勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选。
+4. 必选：勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（必选，用于 空天姬 MissFisher 的内置预设在线同步）。
+5. 可选的：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选。
 6. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
 7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
+> [!INFO]
+> `执行代码` 权限用于运行 空天姬 MissFisher 的界面窗口和读取游戏内存以获取必要的天气、钓饵等信息。  
+> `操作文件` 权限用于下载 `Preset.csv` 以更新 空天姬 MissFisher 内置预设。  
+> `启动进程` 权限用于在用户手动执行触发器时打开相关网页。
 ### 方法 2：导入为本地触发器
 **通过文件导入**
 1. 从下方任一页面中下载原始文件，正确的文件格式应为 `xml`：
