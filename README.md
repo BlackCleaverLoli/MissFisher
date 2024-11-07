@@ -42,21 +42,20 @@
 
 
 
-
 ## 注意事项
 > [!WARNING]
 > - **请勿利用 空天姬 MissFisher 进行对他人不利的行为。**  
 > - **空天姬 MissFisher 系免费的。请勿倒卖 空天姬 MissFisher。请勿修改作者署名。**
 
 > [!CAUTION]
-> - 钓饵不足时角色将停止收竿，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
+> - 钓饵不足时角色将自动收竿并导致自动功能停止，此时 空天姬 MissFisher 不会发出任何提示，因此请确保携带了足够的钓饵！
 > - 如使用未获得技能「三重提钩」或「耐心II」的捕鱼人，部分功能可能出现错误。  
 > - 当使用其他插件修改游戏内的本地天气时，将影响 空天姬 MissFisher 的天气相关功能。
 > - **敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。**
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Nyy](#致谢) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 等大佬在 空天姬 MissFisher 开发时给予的大力支持与帮助！**
 ## 反馈
-> * **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP)**
+* **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP)**
 ## 无偿赞助
 
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
@@ -94,7 +93,7 @@
 > 
 > 但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话 → [如何获取 Daily Routines](#dalamud-相关配置) 。
 
-## 安装
+## 版本
 空天姬 MissFisher 有以下分发版本：
 
 - **正式版**  
@@ -107,8 +106,10 @@
 
 > [!TIP]
 > - 正式版与快照版没有本质区别，请自由选择适合自己的版本。
-
-你可以将 空天姬 MissFisher「添加为远程触发器」或「导入到本地触发器」。建议使用前者，在启用相应仓库设置时可使 空天姬 MissFisher 自动更新。
+## 安装
+有两种方法将 空天姬 MissFisher 安装到 Triggernometry 中：「添加为远程触发器」或「导入到本地触发器」。
+> [!TIP]
+> - 添加为远程触发器，可在启用相应仓库设置时使 空天姬 MissFisher 自动更新。
 ### 方法 1：添加为远程触发器
 1. 在 Triggernometry 中选中触发器分组 `远程触发器` - 点击 `添加` - `仓库`。
 2. 填写任意名称作为 `仓库名称` - 从下面的文件链接中选其一填入 `仓库地址` 一项：  
