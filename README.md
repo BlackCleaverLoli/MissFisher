@@ -108,9 +108,9 @@
 > - 正式版与快照版没有本质区别，请自由选择适合自己的版本。
 ## 安装
 有两种方法将 空天姬 MissFisher 安装到 Triggernometry 中：「添加为远程触发器」或「导入到本地触发器」。
+### 方法 1：添加为远程触发器
 > [!TIP]
 > - 添加为远程触发器，可在启用相应仓库设置时使 空天姬 MissFisher 自动更新。
-### 方法 1：添加为远程触发器
 1. 在 Triggernometry 中选中触发器分组 `远程触发器` - 点击 `添加` - `仓库`。
 2. 填写任意名称作为 `仓库名称` - 从下面的文件链接中选其一填入 `仓库地址` 一项：  
 
@@ -143,10 +143,10 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > `启动进程` 权限用于在用户手动执行触发器时打开相关网页。
 ### 方法 2：导入为本地触发器
 **通过文件导入**
-1. 从下方任一页面中下载原始文件，正确的文件格式应为 `xml`：
+1. 打开下方页面下载原始文件，正确的文件格式应为 `xml`：
 
 - **正式版：**  
-  [ [123 云盘](https://www.123pan.com/s/YJHhTd-0ah13) ] [ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ]  
+  [ [GitHub](https://github.com/BlackCleaverLoli/MissFisher/blob/main/MissFisher.xml) ]  
 
 - **快照版：**  
   不建议通过本地触发器使用快照版。  
@@ -156,7 +156,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 4. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 
 **或通过剪贴板导入：**  
-1. 打开上文提供的网页 - 复制代码文本框中原始文件的所有内容。
+1. 打开上文提供的链接 - 复制代码文本框中原始文件的所有内容。
 2. 在 Triggernometry 中选中触发器分组 `本地触发器` - 点击 `导入` - 将复制到的 `xml` 代码完整粘贴到 `输入框` 中。
 3. 点击 `下一个` - 确认要导入的触发器无误 - `导入`。
 4. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
