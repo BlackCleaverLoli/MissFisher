@@ -486,11 +486,13 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 `/ktjovl`|调整悬浮窗坐标偏移|
   
 ## 现在支持的内置预设
-空天姬 MissFisher 内置了一些自动钓鱼预设，使用方法见 [使用内置预设](#方法-1使用内置预设) 。
+> ![tip]   
+> 你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把内置预设在线同步到 空天姬 MissFisher 中。
+> - [如何使用内置预设](#方法-1使用内置预设) 。
 
-预设的补完度及已审核情况：  
-3.0(100%) 4.0(98%) 5.0(100%) 6.0(100%) 审核率(47%)
+所有鱼王鱼皇（2.0 到 6.0）的预设均已补完。鱼皇或需要施工的鱼流程正在缓慢优化。
 
-> 同时还有作者与部分用户参与建设的 [预设文档](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) ，现在已填有大部分鱼王、鱼皇的预设。
-> 
-> 这些预设会被时不时被作者推送至代码仓库中的 [内置预设表](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Preset.csv) ，你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把它们同步到触发器中以供 空天姬 MissFisher 调用。
+另外，还支持部分宠物、莫雯，这些预设来自作者与部分用户参与建设的在线表格 [空天姬内置预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) 。
+
+如果有缺少的鱼，你还可以通过 [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP) 来反馈或向作者请愿添加鱼类预设
+
