@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.713">
-  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.3" Enabled="true" RawEnvironmentVariables="版本 = 1.8.3&#xD;&#xA;快照 = 24w45i&#xD;&#xA;摘要 = 优化用户体验；修复鱼眼问题；修复一些问题。&#xD;&#xA;namazu = 1.3.5.3">
+  <ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.4" Enabled="true" RawEnvironmentVariables="版本 = 1.8.4&#xD;&#xA;快照 = 24w45j&#xD;&#xA;摘要 = 优化用户体验，注册检查将只在捕鱼人时进行。&#xD;&#xA;namazu = 1.3.5.3">
     <Folders>
       <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
         <Folders>
@@ -400,24 +400,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="未注册回调 报错" Id="f3d9dc82-713c-4d21-bec3-3e36a2909178" RegularExpression="^.{15}\S+ 01:|^空天姬触发" PrevActions="Interrupt">
-                    <Actions>
-                      <Action OrderNumber="1" ActionType="Placeholder" ExecutionDelayExpression="6000" Asynchronous="False" />
-                      <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 空天姬扩展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！" ActionType="NamedCallback" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="3" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher] 空天姬扩展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！" ActionType="MessageBox">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                        </Condition>
-                      </Action>
-                    </Actions>
-                    <Condition Enabled="true" Grouping="Or">
-                      <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                    </Condition>
-                  </Trigger>
                 </Triggers>
               </Folder>
               <Folder Id="0fda23cc-c05a-4f04-9fe2-b74b977ee265" Name="检查环境" Enabled="true">
@@ -551,22 +533,27 @@
                   <Trigger Enabled="true" Name="首次运行 自动主窗口更新检查" Id="beb3d54d-69f7-46c5-b303-08b85b76bd8e" RegularExpression="^.{15}AddCombatant 03:(?&lt;id&gt;\w+):[^:]+:12:" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="500">
                     <Actions>
                       <Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="0fa0f29a-ae40-402c-945f-395cc6123260" TriggerForce="regexp" ActionType="Trigger" />
-                      <Action OrderNumber="2" LogMessageText="空天姬更新预设自动" LogProcess="True" ActionType="LogMessage">
+                      <Action OrderNumber="2" LogMessageText="空天姬触发" LogProcess="True" ActionType="LogMessage">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制更新I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="3" LogMessageText="空天姬窗口" LogProcess="True" ActionType="LogMessage">
+                      <Action OrderNumber="3" LogMessageText="空天姬更新预设自动" LogProcess="True" ActionType="LogMessage">
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制更新I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                        </Condition>
+                      </Action>
+                      <Action OrderNumber="4" LogMessageText="空天姬窗口" LogProcess="True" ActionType="LogMessage">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                           <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[主界面自启]}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="4" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="检查是否有多个空天姬" DescriptionOverride="True" />
-                      <Action OrderNumber="5" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;&#xD;&#xA;var p = RealPlugin.plug;&#xD;&#xA;&#xD;&#xA;var trv = p.ui.treeView1;&#xD;&#xA;int folderCount = 0; // 计数器&#xD;&#xA;Search(trv.Nodes[1]);&#xD;&#xA;&#xD;&#xA;if (folderCount &gt; 1)&#xD;&#xA;{&#xD;&#xA;MessageBox.Show($&quot;在远程触发器分组找到 {folderCount} 个空天姬 MissFisher\r\n请取消勾选多余的空天姬 MissFisher 触发器&quot;, &quot;错误&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);&#xD;&#xA;}&#xD;&#xA;//else&#xD;&#xA;//{&#xD;&#xA;//    MessageBox.Show(&quot;检查完毕，未发现多个空天姬 MissFisher\r\n&quot;, &quot;提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Information);&#xD;&#xA;//}&#xD;&#xA;&#xD;&#xA;trv.Refresh();&#xD;&#xA;&#xD;&#xA;void Search(TreeNode node)&#xD;&#xA;{&#xD;&#xA;    foreach (TreeNode child in node.Nodes)&#xD;&#xA;    {&#xD;&#xA;        if (child.Tag is Folder f)&#xD;&#xA;        {&#xD;&#xA;            if (f.Name.Contains(&quot;空天姬 &quot;) || f.Name.Contains(&quot;MissFisher&quot;))&#xD;&#xA;            {&#xD;&#xA;                folderCount++; // 增加计数&#xD;&#xA;            }&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;        else if (child.Tag is Repository r)&#xD;&#xA;        {&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}" ActionType="ExecuteScript" />
-                      <Action OrderNumber="6" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;&#xD;&#xA;var p = RealPlugin.plug;&#xD;&#xA;&#xD;&#xA;var trv = p.ui.treeView1;&#xD;&#xA;int folderCount = 0; // 计数器&#xD;&#xA;Search(trv.Nodes[0]);&#xD;&#xA;&#xD;&#xA;if (folderCount &gt; 1)&#xD;&#xA;{&#xD;&#xA;MessageBox.Show($&quot;在本地触发器找到 {folderCount} 个空天姬 MissFisher 或 风筝猫 Gaelicat\r\n请移除多余的触发器&quot;, &quot;错误&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);&#xD;&#xA;}&#xD;&#xA;//else&#xD;&#xA;//{&#xD;&#xA;//    MessageBox.Show(&quot;检查完毕，未发现多个空天姬 MissFisher\r\n&quot;, &quot;提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Information);&#xD;&#xA;//}&#xD;&#xA;&#xD;&#xA;trv.Refresh();&#xD;&#xA;&#xD;&#xA;void Search(TreeNode node)&#xD;&#xA;{&#xD;&#xA;    foreach (TreeNode child in node.Nodes)&#xD;&#xA;    {&#xD;&#xA;        if (child.Tag is Folder f)&#xD;&#xA;        {&#xD;&#xA;            if (f.Name.Contains(&quot;风筝猫 &quot;) || f.Name.Contains(&quot;空天姬 &quot;) || f.Name.Contains(&quot;MissFisher&quot;))&#xD;&#xA;            {&#xD;&#xA;                folderCount++; // 增加计数&#xD;&#xA;            }&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;        else if (child.Tag is Repository r)&#xD;&#xA;        {&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}" ActionType="ExecuteScript" />
-                      <Action OrderNumber="7" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="检查鲶鱼精" DescriptionOverride="True" />
-                      <Action OrderNumber="8" LogMessageText="空天姬检查鲶鱼精" LogProcess="True" ActionType="LogMessage">
+                      <Action OrderNumber="5" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="检查是否有多个空天姬" DescriptionOverride="True" />
+                      <Action OrderNumber="6" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;&#xD;&#xA;var p = RealPlugin.plug;&#xD;&#xA;&#xD;&#xA;var trv = p.ui.treeView1;&#xD;&#xA;int folderCount = 0; // 计数器&#xD;&#xA;Search(trv.Nodes[1]);&#xD;&#xA;&#xD;&#xA;if (folderCount &gt; 1)&#xD;&#xA;{&#xD;&#xA;MessageBox.Show($&quot;在远程触发器分组找到 {folderCount} 个空天姬 MissFisher\r\n请取消勾选多余的空天姬 MissFisher 触发器&quot;, &quot;错误&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);&#xD;&#xA;}&#xD;&#xA;//else&#xD;&#xA;//{&#xD;&#xA;//    MessageBox.Show(&quot;检查完毕，未发现多个空天姬 MissFisher\r\n&quot;, &quot;提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Information);&#xD;&#xA;//}&#xD;&#xA;&#xD;&#xA;trv.Refresh();&#xD;&#xA;&#xD;&#xA;void Search(TreeNode node)&#xD;&#xA;{&#xD;&#xA;    foreach (TreeNode child in node.Nodes)&#xD;&#xA;    {&#xD;&#xA;        if (child.Tag is Folder f)&#xD;&#xA;        {&#xD;&#xA;            if (f.Name.Contains(&quot;空天姬 &quot;) || f.Name.Contains(&quot;MissFisher&quot;))&#xD;&#xA;            {&#xD;&#xA;                folderCount++; // 增加计数&#xD;&#xA;            }&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;        else if (child.Tag is Repository r)&#xD;&#xA;        {&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}" ActionType="ExecuteScript" />
+                      <Action OrderNumber="7" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;&#xD;&#xA;var p = RealPlugin.plug;&#xD;&#xA;&#xD;&#xA;var trv = p.ui.treeView1;&#xD;&#xA;int folderCount = 0; // 计数器&#xD;&#xA;Search(trv.Nodes[0]);&#xD;&#xA;&#xD;&#xA;if (folderCount &gt; 1)&#xD;&#xA;{&#xD;&#xA;MessageBox.Show($&quot;在本地触发器找到 {folderCount} 个空天姬 MissFisher 或 风筝猫 Gaelicat\r\n请移除多余的触发器&quot;, &quot;错误&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);&#xD;&#xA;}&#xD;&#xA;//else&#xD;&#xA;//{&#xD;&#xA;//    MessageBox.Show(&quot;检查完毕，未发现多个空天姬 MissFisher\r\n&quot;, &quot;提示&quot;, MessageBoxButtons.OK, MessageBoxIcon.Information);&#xD;&#xA;//}&#xD;&#xA;&#xD;&#xA;trv.Refresh();&#xD;&#xA;&#xD;&#xA;void Search(TreeNode node)&#xD;&#xA;{&#xD;&#xA;    foreach (TreeNode child in node.Nodes)&#xD;&#xA;    {&#xD;&#xA;        if (child.Tag is Folder f)&#xD;&#xA;        {&#xD;&#xA;            if (f.Name.Contains(&quot;风筝猫 &quot;) || f.Name.Contains(&quot;空天姬 &quot;) || f.Name.Contains(&quot;MissFisher&quot;))&#xD;&#xA;            {&#xD;&#xA;                folderCount++; // 增加计数&#xD;&#xA;            }&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;        else if (child.Tag is Repository r)&#xD;&#xA;        {&#xD;&#xA;            Search(child);&#xD;&#xA;        }&#xD;&#xA;    }&#xD;&#xA;}" ActionType="ExecuteScript" />
+                      <Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="检查鲶鱼精" DescriptionOverride="True" />
+                      <Action OrderNumber="9" LogMessageText="空天姬检查鲶鱼精" LogProcess="True" ActionType="LogMessage">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
                         </Condition>
@@ -5752,7 +5739,7 @@
                       <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼绝命竿}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+                  <Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
                     <Actions>
                       <Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
                       <Action OrderNumber="2" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
@@ -6063,6 +6050,24 @@
                         </Actions>
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+                        </Condition>
+                      </Trigger>
+                      <Trigger Enabled="true" Name="未注册回调 报错" Id="f3d9dc82-713c-4d21-bec3-3e36a2909178" RegularExpression="^.{15}\S+ 01:|^空天姬触发" PrevActions="Interrupt">
+                        <Actions>
+                          <Action OrderNumber="1" ActionType="Placeholder" ExecutionDelayExpression="6000" Asynchronous="False" />
+                          <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 空天姬扩展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！" ActionType="NamedCallback" Asynchronous="False">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                            </Condition>
+                          </Action>
+                          <Action OrderNumber="3" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher] 空天姬扩展未注册！&#xD;&#xA;天气与自动更换钓饵功能将失效！" ActionType="MessageBox">
+                            <Condition Enabled="true" Grouping="Or">
+                              <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                            </Condition>
+                          </Action>
+                        </Actions>
+                        <Condition Enabled="true" Grouping="Or">
+                          <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                         </Condition>
                       </Trigger>
                     </Triggers>
