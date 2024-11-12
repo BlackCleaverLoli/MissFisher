@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<TriggernometryExport PluginVersion="1.2.0.713">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w46d" Enabled="true" RawEnvironmentVariables="版本 = 1.8.3&#xD;&#xA;快照 = 24w46d&#xD;&#xA;摘要 = 优化大鱼知识。&#xD;&#xA;namazu = 1.3.5.3">
+<TriggernometryExport PluginVersion="1.2.0.715">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w46e" Enabled="true" RawEnvironmentVariables="版本 = 1.8.5&#xD;&#xA;快照 = 24w46e&#xD;&#xA;摘要 = 新增练级模式；迁移海钓预设；优化自动手法；修复一些问题。&#xD;&#xA;namazu = 1.3.5.3">
 <Folders>
 <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
 <Folders>
@@ -488,7 +488,7 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="false" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
+<Trigger Enabled="true" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
 <Actions>
 <Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="空天姬：&#xD;&#xA;未配置强心剂键码 或 配置保存失败！" ActionType="MessageBox">
 <Condition Enabled="true" Grouping="Or">
@@ -540,7 +540,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
@@ -843,7 +843,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="空天姬主界面 Main" Id="f696e166-4375-4da4-8584-fbaa9f5e5176" RegularExpression="^空天姬窗口|^.{15}ChatLog 00:0038::[ ]*(空天姬|[Kk][Tt][Jj])[ ]*$|^.{26}003C::(“/(空天姬|[Kk][Tt][Jj])”出现问题：该命令不存在。|The command /(空天姬|[Kk][Tt][Jj]) does not exist.|そのコマンドはありません。： /(空天姬|[Kk][Tt][Jj]))$" EditAutofire="True" EditAutofireAllowCondition="True">
 <Actions>
-<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Drawing;&#xD;&#xA;using System.Linq;&#xD;&#xA;using System.Threading.Tasks;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;#region 初始化&#xD;&#xA;var 字体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F);&#xD;&#xA;var 斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Italic);&#xD;&#xA;var 小号 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F);&#xD;&#xA;var 楷体 = new Font(&quot;楷体&quot;, 15.75F); // 14.25 | 15 | 15.75&#xD;&#xA;var 小号加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F, FontStyle.Bold);&#xD;&#xA;var 加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold);&#xD;&#xA;var 加粗斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold | FontStyle.Italic);&#xD;&#xA;var 红色 = Color.FromArgb(139, 41, 41);&#xD;&#xA;var 黄色 = Color.FromArgb(249, 192, 106);&#xD;&#xA;var 蓝色 = Color.FromArgb(32, 69, 117);&#xD;&#xA;var 灰色 = Color.FromArgb(175, 175, 175);&#xD;&#xA;var 深灰 = Color.FromArgb(68, 68, 68);&#xD;&#xA;var 背景色 = Color.FromArgb(32, 55, 110);&#xD;&#xA;string 默语 = &quot;/e &quot;;&#xD;&#xA;string 输入提示 = &quot;输入鱼类全称&quot;;// 获取字典变量&#xD;&#xA;var 字典 = StaticHelpers.GetDictVariable(true, &quot;空天姬预设&quot;);// 获取并转换 &quot;说明&quot; 和 &quot;赞助&quot; 的值&#xD;&#xA;var 说明 = 字典.GetValue(&quot;说明&quot;)?.ToString() ?? &quot;&quot;;&#xD;&#xA;var 赞助 = 字典.GetValue(&quot;赞助&quot;)?.ToString() ?? &quot;&quot;;// 创建预设列表并过滤&#xD;&#xA;var 预设 = 字典&#xD;&#xA;.Values.Keys.Where(item =&gt;&#xD;&#xA;!string.IsNullOrEmpty(item) &amp;&amp; !char.IsDigit(item[0]) &amp;&amp; !item.StartsWith(&quot;空天姬&quot;)&#xD;&#xA;)&#xD;&#xA;.ToList();&#xD;&#xA;var 窗口 = new Form&#xD;&#xA;{Text = &quot;空天姬&quot;,&#xD;&#xA;StartPosition = FormStartPosition.CenterScreen,&#xD;&#xA;FormBorderStyle = FormBorderStyle.FixedSingle,&#xD;&#xA;MaximizeBox = false,&#xD;&#xA;AutoSize = true,&#xD;&#xA;AutoScaleMode = AutoScaleMode.Font,&#xD;&#xA;Padding = new Padding(5, 5, 0, 5),&#xD;&#xA;BackColor = 背景色,&#xD;&#xA;TopMost = true,&#xD;&#xA;SizeGripStyle = SizeGripStyle.Hide,};&#xD;&#xA;var 表格 = new TableLayoutPanel { AutoSize = true, Dock = DockStyle.Fill };// 中控部分&#xD;&#xA;Button 按钮同步 = new Button { Text = &quot;同步&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮同步, &quot;同步预设 需要能正常连接 GitHub&quot;);&#xD;&#xA;Button 按钮配置 = new Button { Text = &quot;配置&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮配置, &quot;打开用户配置&quot;);&#xD;&#xA;Button 按钮航线 = new Button { Text = &quot;航线&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮航线, &quot;在默语频道获得预报&quot;);&#xD;&#xA;Button 按钮海钓 = new Button { Text = &quot;启动自动冲分&quot; };&#xD;&#xA;ComboBox 下拉海钓 = new ComboBox() { Items = { &quot;冲分&quot;, &quot;蓝鱼&quot;, &quot;成就1&quot;, &quot;成就2&quot; } };&#xD;&#xA;TextBox 输入鱼名 = new TextBox { Text = 输入提示 };&#xD;&#xA;new ToolTip().SetToolTip(输入鱼名, 说明.Replace(&quot;\\r\\n&quot;, Environment.NewLine));&#xD;&#xA;TextBox 输入鸣谢 = new TextBox&#xD;&#xA;{ReadOnly = true,&#xD;&#xA;WordWrap = true,&#xD;&#xA;Multiline = true,&#xD;&#xA;ScrollBars = ScrollBars.Vertical,&#xD;&#xA;Text = 赞助.Replace(&quot;\\r\\n&quot;, Environment.NewLine),};&#xD;&#xA;new ToolTip().SetToolTip(输入鸣谢, &quot;双击复制爱发电链接&quot;);&#xD;&#xA;Label 文本签名 = new Label { Text = &quot;by BlackCleaverLoli&quot; };&#xD;&#xA;new ToolTip().SetToolTip(文本签名, &quot;双击复制仓库链接&quot;);&#xD;&#xA;Label 文本诗句 = new Label();&#xD;&#xA;string[] 诗句 = new string[]&#xD;&#xA;{&quot;聊 把 钓 竿 消 永 日\r\n溪 翁 沙 鹭 共 悠 悠&quot;,&#xD;&#xA;&quot;垂 钓 绿 湾 春\r\n春 深 杏 花 乱&quot;,&#xD;&#xA;&quot;独 钓 春 江 上\r\n春 江 引 趣 长&quot;,&#xD;&#xA;&quot;钓 船 归 去 斜 阳 尽\r\n惟 有 青 山 对 白 鸥&quot;,&#xD;&#xA;&quot;一 竿 风 月  一 蓑 烟 雨\r\n家 在 钓 台 西 住&quot;,&#xD;&#xA;&quot;江 上 晚 来 堪 画 处\r\n钓 鱼 人 一 蓑 归 去&quot;,&#xD;&#xA;&quot;白 发 一 老 翁\r\n垂 钓 溪 边 中&quot;,&#xD;&#xA;&quot;渭 水 如 镜 色\r\n中 有 鲤 与 鲂&quot;,&#xD;&#xA;&quot;闲 钓 江 鱼 不 钓 名\r\n瓦 瓯 斟 酒 暮 山 青&quot;,&#xD;&#xA;&quot;尽 日 池 边 钓 锦 鳞\r\n芰 荷 香 里 暗 消 魂&quot;,&#xD;&#xA;&quot;竹 竿 袅 袅 波 无 际\r\n不 知 何 者 吞 吾 钩&quot;,&#xD;&#xA;&quot;蓬 头 稚 子 学 垂 纶\r\n侧 坐 莓 苔 草 映 身&quot;,&#xD;&#xA;&quot;白 头 波 上 白 头 翁\r\n家 逐 船 移 浦 浦 风&quot;,&#xD;&#xA;&quot;一 蓑 一 笠 一 扁 舟\r\n一 丈 丝 纶 一 寸 钩&quot;,&#xD;&#xA;&quot;垂 钓 坐 磐 石\r\n水 清 心 亦 闲&quot;,&#xD;&#xA;&quot;江 上 雪  独 立 钓 渔 翁\r\n一 曲 高 歌 一 樽 酒\r\n一 人 独 钓 一 江 秋&quot;,&#xD;&#xA;&quot;夜 静 水 寒 鱼 不 食\r\n满 船 空 载 月 明 归&quot;,&#xD;&#xA;&quot;结 庐 黄 河 曲\r\n垂 钓 长 河 里&quot;,&#xD;&#xA;&quot;西 塞 山 前 白 鹭 飞\r\n桃 花 流 水 鳜 鱼 肥&quot;,&#xD;&#xA;&quot;孤 舟 蓑 笠 翁\r\n独 钓 寒 江 雪&quot;,&#xD;&#xA;&quot;今 来 伴 江 叟\r\n沙 头 坐 钓 鱼&quot;,&#xD;&#xA;&quot;潭 清 疑 水 浅\r\n荷 动 知 鱼 散&quot;,&#xD;&#xA;&quot;自 庇 一 身 青 箬 笠\r\n相 随 到 处 绿 蓑 衣\r\n斜 风 细 雨 不 须 归&quot;,&#xD;&#xA;&quot;你 知 道 吗？\r\n这个诗句框是为了弥补BUG&quot;,&#xD;&#xA;&quot;你 知 道 吗？\r\n母肥是世界的珍宝&quot;,};&#xD;&#xA;List&lt;string&gt; 所有诗句 = new List&lt;string&gt;(诗句);&#xD;&#xA;List&lt;string&gt; 已显示诗句 = new List&lt;string&gt;();&#xD;&#xA;Random 随机数 = new Random();&#xD;&#xA;#endregion&#xD;&#xA;#region 控件事件&#xD;&#xA;窗口.Shown += (sender, e) =&gt;&#xD;&#xA;{((Form)sender).TopMost = true;&#xD;&#xA;System.Threading.Thread.Sleep(10);&#xD;&#xA;((Form)sender).TopMost = false;};&#xD;&#xA;按钮海钓.Click += 输入海钓;&#xD;&#xA;下拉海钓.SelectedIndexChanged += 更新按钮文本;// 绑定双击事件&#xD;&#xA;输入鱼名.DoubleClick += (sender, e) =&gt;&#xD;&#xA;{ // 创建一个模拟的双击事件&#xD;&#xA;MouseEventArgs doubleClickEventArgs = new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0);&#xD;&#xA;输入预设(sender, doubleClickEventArgs);};// 绑定中键单击事件&#xD;&#xA;输入鱼名.MouseDown += (sender, e) =&gt;&#xD;&#xA;{if (e.Button == MouseButtons.Middle &amp;&amp; e.Clicks == 1)&#xD;&#xA;{输入预设(sender, e);&#xD;&#xA;}};// 绑定鼠标点击事件&#xD;&#xA;输入鱼名.MouseClick += (sender, e) =&gt;&#xD;&#xA;{输入预设(sender, e as MouseEventArgs);};// 绑定键盘事件&#xD;&#xA;输入鱼名.KeyDown += new KeyEventHandler(输入鱼名_KeyDown);&#xD;&#xA;输入鱼名.Leave += 提示;&#xD;&#xA;输入鱼名.TextChanged += 更新颜色;&#xD;&#xA;窗口.Deactivate += 提示;&#xD;&#xA;按钮配置.Click += 输入配置;&#xD;&#xA;按钮同步.Click += 输入同步;&#xD;&#xA;按钮航线.Click += 输入航线;&#xD;&#xA;输入鸣谢.DoubleClick += 复制爱发电;&#xD;&#xA;文本签名.DoubleClick += 复制仓库;&#xD;&#xA;文本诗句.Click += (sender, e) =&gt;&#xD;&#xA;{更新诗句();&#xD;&#xA;文本诗句.Focus();};&#xD;&#xA;#endregion&#xD;&#xA;初始化预设关联控件内容();&#xD;&#xA;设置控件关系();&#xD;&#xA;设置控件样式();&#xD;&#xA;更新诗句();&#xD;&#xA;窗口.ShowDialog();&#xD;&#xA;void 初始化预设关联控件内容()&#xD;&#xA;{ // 获取字典变量&#xD;&#xA;字典 = StaticHelpers.GetDictVariable(true, &quot;空天姬预设&quot;);&#xD;&#xA;// 获取并转换 &quot;说明&quot; 和 &quot;赞助&quot; 的值&#xD;&#xA;说明 = 字典.GetValue(&quot;说明&quot;)?.ToString() ?? &quot;&quot;;&#xD;&#xA;赞助 = 字典.GetValue(&quot;赞助&quot;)?.ToString() ?? &quot;&quot;;&#xD;&#xA;// 创建预设列表并过滤&#xD;&#xA;预设 = 字典&#xD;&#xA;.Values.Keys.Where(item =&gt;&#xD;&#xA;!string.IsNullOrEmpty(item) &amp;&amp; !char.IsDigit(item[0]) &amp;&amp; !item.StartsWith(&quot;空天姬&quot;)&#xD;&#xA;)&#xD;&#xA;.ToList();&#xD;&#xA;new ToolTip().SetToolTip(输入鱼名, 说明.Replace(&quot;\\r\\n&quot;, Environment.NewLine));&#xD;&#xA;输入鸣谢.Text = 赞助.Replace(&quot;\\r\\n&quot;, Environment.NewLine);}&#xD;&#xA;void 设置控件关系()&#xD;&#xA;{ // 添加控件关系：主表单&#xD;&#xA;窗口.Controls.Add(表格);&#xD;&#xA;表格.ColumnCount = 4; // 列&#xD;&#xA;表格.RowCount = 7; // 行&#xD;&#xA;// DPI 适配&#xD;&#xA;Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);&#xD;&#xA;float dpiX = graphics.DpiX;&#xD;&#xA;float dpiY = graphics.DpiY;&#xD;&#xA;graphics.Dispose();&#xD;&#xA;float scaleFactor = dpiY / 96f;&#xD;&#xA;int 行高像素 = (int)(38 * scaleFactor);&#xD;&#xA;int 列宽像素 = (int)(76 * scaleFactor);&#xD;&#xA;for (int i = 0; i &lt; 表格.RowCount; i++)&#xD;&#xA;{表格.RowStyles.Add(new RowStyle(SizeType.Absolute, 行高像素));&#xD;&#xA;}&#xD;&#xA;for (int j = 0; j &lt; 表格.ColumnCount; j++)&#xD;&#xA;{表格.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 列宽像素));&#xD;&#xA;}&#xD;&#xA;//表格.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;// 显示框线&#xD;&#xA;表格.Controls.Add(按钮海钓, 0, 3);&#xD;&#xA;表格.SetRowSpan(按钮海钓, 2);&#xD;&#xA;表格.SetColumnSpan(按钮海钓, 2);&#xD;&#xA;表格.Controls.Add(下拉海钓, 2, 3);&#xD;&#xA;表格.SetColumnSpan(下拉海钓, 2);&#xD;&#xA;表格.Controls.Add(按钮配置, 3, 1);&#xD;&#xA;表格.Controls.Add(按钮同步, 3, 0);&#xD;&#xA;表格.Controls.Add(按钮航线, 3, 2);&#xD;&#xA;表格.Controls.Add(输入鸣谢, 0, 0);&#xD;&#xA;表格.SetColumnSpan(输入鸣谢, 3);&#xD;&#xA;表格.SetRowSpan(输入鸣谢, 3);&#xD;&#xA;表格.Controls.Add(输入鱼名, 2, 4);&#xD;&#xA;表格.SetColumnSpan(输入鱼名, 2);&#xD;&#xA;表格.Controls.Add(文本诗句, 0, 5);&#xD;&#xA;表格.SetColumnSpan(文本诗句, 4);&#xD;&#xA;表格.SetRowSpan(文本诗句, 2);}&#xD;&#xA;void 设置控件样式()&#xD;&#xA;{ // 主表单&#xD;&#xA;foreach (Control 控件 in 表格.Controls)&#xD;&#xA;{ // 整体设置&#xD;&#xA;控件.Font = 字体;&#xD;&#xA;控件.ForeColor = Color.White;&#xD;&#xA;控件.AutoSize = true;&#xD;&#xA;控件.Dock = DockStyle.Fill;&#xD;&#xA;if (控件 is Label 标签)&#xD;&#xA;{标签.Font = 加粗;&#xD;&#xA;标签.ForeColor = Color.FromArgb(196, 172, 123); // 230, 218, 193&#xD;&#xA;标签.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;}&#xD;&#xA;文本签名.Font = 小号加粗;&#xD;&#xA;文本签名.ForeColor = Color.FromArgb(196, 197, 201); // 196, 197, 201&#xD;&#xA;文本签名.TextAlign = ContentAlignment.BottomRight;&#xD;&#xA;文本诗句.Font = 楷体;&#xD;&#xA;文本诗句.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;if (控件 is Button 按钮)&#xD;&#xA;{按钮.Font = 加粗;&#xD;&#xA;按钮.FlatStyle = FlatStyle.Flat;&#xD;&#xA;按钮.BackColor = Color.FromArgb(50, 81, 155);&#xD;&#xA;按钮.FlatAppearance.BorderColor = Color.FromArgb(19, 33, 68);&#xD;&#xA;}&#xD;&#xA;按钮配置.BackColor = 红色;&#xD;&#xA;按钮配置.ForeColor = 黄色;&#xD;&#xA;按钮同步.BackColor = 蓝色;&#xD;&#xA;按钮同步.ForeColor = 黄色;&#xD;&#xA;按钮航线.BackColor = 灰色;&#xD;&#xA;按钮航线.ForeColor = 深灰;&#xD;&#xA;if (控件 is TextBox 输入框)&#xD;&#xA;{输入框.Font = 加粗;&#xD;&#xA;输入框.BorderStyle = BorderStyle.FixedSingle;&#xD;&#xA;输入框.BackColor = Color.FromArgb(49, 67, 103);&#xD;&#xA;}&#xD;&#xA;输入鸣谢.Font = 小号加粗;&#xD;&#xA;输入鸣谢.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;输入鸣谢.BackColor = Color.FromArgb(21, 35, 71);&#xD;&#xA;输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.ForeColor = 灰色;&#xD;&#xA;if (控件 is CheckBox 勾选框)&#xD;&#xA;{勾选框.ForeColor = Color.FromArgb(234, 222, 195);&#xD;&#xA;}&#xD;&#xA;if (控件 is ComboBox 下拉框)&#xD;&#xA;{下拉框.DropDownStyle = ComboBoxStyle.DropDownList;&#xD;&#xA;下拉框.DrawMode = DrawMode.OwnerDrawFixed;&#xD;&#xA;下拉框.SelectedIndex = 0;&#xD;&#xA;下拉框.BackColor = Color.FromArgb(41, 60, 107); // 41, 60, 107 或 71, 96, 150&#xD;&#xA;下拉框.ForeColor = Color.FromArgb(234, 222, 195);&#xD;&#xA;添加下拉前缀(下拉框, &quot;▶&quot;); // ▶&#xD;&#xA;下拉框.DrawItem += new DrawItemEventHandler(绘制下拉框);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;StaticHelpers.SetScalarVariable(false, &quot;空天姬控制窗口I&quot;, &quot;1&quot;);&#xD;&#xA;RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, &quot;/e 窗口加载成功！&lt;se.9&gt;&quot;);}&#xD;&#xA;void 绘制下拉框(object sender, DrawItemEventArgs e)&#xD;&#xA;{e.Graphics.FillRectangle(new SolidBrush(e.BackColor), e.Bounds);&#xD;&#xA;StringFormat stringFormat = new StringFormat&#xD;&#xA;{Alignment = StringAlignment.Near,&#xD;&#xA;LineAlignment = StringAlignment.Center,&#xD;&#xA;};&#xD;&#xA;e.Graphics.DrawString(&#xD;&#xA;((ComboBox)sender).Items[e.Index].ToString(),&#xD;&#xA;e.Font,&#xD;&#xA;new SolidBrush(e.ForeColor),&#xD;&#xA;e.Bounds.X,&#xD;&#xA;e.Bounds.Y&#xD;&#xA;);&#xD;&#xA;using (Pen borderPen = new Pen(Color.FromArgb(41, 60, 107)))&#xD;&#xA;{e.Graphics.DrawRectangle(&#xD;&#xA;borderPen,&#xD;&#xA;e.Bounds.X,&#xD;&#xA;e.Bounds.Y,&#xD;&#xA;e.Bounds.Width - 1,&#xD;&#xA;e.Bounds.Height - 1&#xD;&#xA;);&#xD;&#xA;}}&#xD;&#xA;void 添加下拉前缀(ComboBox comboBox, string prefix)&#xD;&#xA;{int selectedIndex = comboBox.SelectedIndex;&#xD;&#xA;List&lt;string&gt; newItems = new List&lt;string&gt;();&#xD;&#xA;foreach (var item in comboBox.Items)&#xD;&#xA;{if (item is string strItem)&#xD;&#xA;{newItems.Add($&quot;{prefix}{strItem}&quot;);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;comboBox.Items.Clear();&#xD;&#xA;comboBox.Items.AddRange(newItems.ToArray());&#xD;&#xA;if (selectedIndex &gt;= 0 &amp;&amp; selectedIndex &lt; comboBox.Items.Count)&#xD;&#xA;{comboBox.SelectedIndex = selectedIndex;&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{comboBox.SelectedIndex = 0;&#xD;&#xA;}}&#xD;&#xA;void 更新按钮文本(object sender, EventArgs e)&#xD;&#xA;{string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;{海钓选项 = 海钓选项.Substring(1);&#xD;&#xA;}&#xD;&#xA;按钮海钓.Text = &quot;启动&quot; + 海钓选项;}&#xD;&#xA;void 输入海钓(object sender, EventArgs e)&#xD;&#xA;{string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;{海钓选项 = 海钓选项.Substring(1);&#xD;&#xA;}&#xD;&#xA;发送日志($&quot;空天姬海钓启动：{海钓选项}&quot;);}&#xD;&#xA;void 输入鱼名_KeyDown(object sender, KeyEventArgs e)&#xD;&#xA;{if (e.KeyCode == Keys.Enter)&#xD;&#xA;{ // 模拟左键双击&#xD;&#xA;MouseEventArgs leftDoubleClickEventArgs = new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0);&#xD;&#xA;输入预设(sender, leftDoubleClickEventArgs);&#xD;&#xA;}}&#xD;&#xA;void 更新颜色(object sender, EventArgs e)&#xD;&#xA;{if (!输入鱼名.Text.StartsWith(&quot;输&quot;))&#xD;&#xA;{if (预设.Contains(输入鱼名.Text))&#xD;&#xA;{输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;输入鱼名.BackColor = Color.FromArgb(21, 35, 71); // 深色&#xD;&#xA;if (文本诗句.Text != &quot;双 击 或 回 车\r\n启 动 预 设\r\n中 键 发 送 预 览&quot;)&#xD;&#xA;{延时更新(&quot;双 击 或 回 车\r\n启 动 预 设\r\n中 键 发 送 预 览&quot;, 10000)&#xD;&#xA;.ConfigureAwait(false);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;输入鱼名.BackColor = Color.FromArgb(49, 67, 103); // 浅色&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.BackColor = Color.FromArgb(49, 67, 103); // 浅色&#xD;&#xA;输入鱼名.ForeColor = 灰色; // 230, 218, 193&#xD;&#xA;}}&#xD;&#xA;void 提示(object sender, EventArgs e)&#xD;&#xA;{if (输入鱼名.Text == &quot;&quot;)&#xD;&#xA;{输入鱼名.Text = 输入提示;&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}}&#xD;&#xA;void 输入预设(object sender, MouseEventArgs e)&#xD;&#xA;{ // 检查是否为双击或中键单击&#xD;&#xA;if (&#xD;&#xA;(e.Button == MouseButtons.Left &amp;&amp; e.Clicks == 2)&#xD;&#xA;|| (e.Button == MouseButtons.Middle &amp;&amp; e.Clicks == 1)&#xD;&#xA;)&#xD;&#xA;{if (!输入鱼名.Text.StartsWith(&quot;输&quot;) &amp;&amp; !string.IsNullOrEmpty(输入鱼名.Text))&#xD;&#xA;{if (预设.Contains(输入鱼名.Text))&#xD;&#xA;{if (e.Button == MouseButtons.Left &amp;&amp; e.Clicks == 2)&#xD;&#xA;{RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;默语 + &quot;空天姬预设 &quot; + 输入鱼名.Text&#xD;&#xA;);&#xD;&#xA;延时更新(&quot;已 发 送 至 默 语 频 道&quot;, 3000).ConfigureAwait(false);&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}&#xD;&#xA;else if (e.Button == MouseButtons.Middle &amp;&amp; e.Clicks == 1)&#xD;&#xA;{RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;默语 + &quot;空天姬预设 查看 &quot; + 输入鱼名.Text&#xD;&#xA;);&#xD;&#xA;延时更新(&quot;已 发 送 至 默 语 频 道&quot;, 3000).ConfigureAwait(false);&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{延时更新(&quot;未 支 持 此 预 设\r\n反 馈 信 息 已 发 至 默 语&quot;, 5000)&#xD;&#xA;.ConfigureAwait(false);&#xD;&#xA;RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;默语 + &quot;空天姬预设 查看 &quot; + 输入鱼名.Text&#xD;&#xA;);&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{延时更新(&quot;请 输 入 鱼 名&quot;, 1500).ConfigureAwait(false);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else if (e.Button == MouseButtons.Left &amp;&amp; e.Clicks == 1)&#xD;&#xA;{if (输入鱼名.Text.StartsWith(&quot;输&quot;))&#xD;&#xA;{输入鱼名.Text = &quot;&quot;;&#xD;&#xA;}&#xD;&#xA;}}&#xD;&#xA;void 输入航线(object sender, EventArgs e)&#xD;&#xA;{发送日志(&quot;空天姬查询航线&quot;);}&#xD;&#xA;async Task 延时更新(string 文本内容, int 延迟毫秒数)&#xD;&#xA;{文本诗句.Text = 文本内容;&#xD;&#xA;await Task.Delay(延迟毫秒数);&#xD;&#xA;if (!所有诗句.Contains(文本诗句.Text))&#xD;&#xA;{更新诗句();&#xD;&#xA;}}&#xD;&#xA;void 复制爱发电(object sender, EventArgs e)&#xD;&#xA;{输入鸣谢.SelectionLength = 0;&#xD;&#xA;延时更新复制(&quot;已 复 制 爱 发 电 链 接&quot;, 3000, &quot;https://afdian.com/a/bcloli&quot;)&#xD;&#xA;.ConfigureAwait(false);}&#xD;&#xA;void 复制仓库(object sender, EventArgs e)&#xD;&#xA;{延时更新复制(&quot;已 复 制 仓 库 链 接&quot;, 3000, &quot;https://github.com/BlackCleaverLoli/MissFisher&quot;)&#xD;&#xA;.ConfigureAwait(false);}&#xD;&#xA;async Task 延时更新复制(string 文本内容, int 延迟毫秒数, string 链接)&#xD;&#xA;{await Task.Run(() =&gt;&#xD;&#xA;{Triggernometry.Action.ClipboardSetText(链接);&#xD;&#xA;});&#xD;&#xA;文本诗句.Text = 文本内容;&#xD;&#xA;await Task.Delay(延迟毫秒数);&#xD;&#xA;if (!所有诗句.Contains(文本诗句.Text))&#xD;&#xA;{更新诗句();&#xD;&#xA;}}&#xD;&#xA;void 输入同步(object sender, EventArgs e)&#xD;&#xA;{发送日志(&quot;空天姬更新预设&quot;);&#xD;&#xA;初始化预设关联控件内容();&#xD;&#xA;延时更新预设关联控件内容();}&#xD;&#xA;async Task 延时更新预设关联控件内容()&#xD;&#xA;{for (int i = 0; i &lt; 6; i++)&#xD;&#xA;{await Task.Delay(5000);&#xD;&#xA;初始化预设关联控件内容();&#xD;&#xA;}}&#xD;&#xA;void 输入配置(object sender, EventArgs e)&#xD;&#xA;{发送日志(&quot;空天姬打开配置&quot;);}&#xD;&#xA;void 更新诗句()&#xD;&#xA;{List&lt;string&gt; 可选诗句 = new List&lt;string&gt;(所有诗句);&#xD;&#xA;foreach (var 诗 in 已显示诗句)&#xD;&#xA;{可选诗句.Remove(诗);&#xD;&#xA;}&#xD;&#xA;if (可选诗句.Count &gt; 0)&#xD;&#xA;{int 随机索引 = 随机数.Next(可选诗句.Count);&#xD;&#xA;string 新诗句 = 可选诗句[随机索引];&#xD;&#xA;已显示诗句.Add(新诗句);&#xD;&#xA;文本诗句.Text = 新诗句;&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{已显示诗句.Clear();&#xD;&#xA;更新诗句();&#xD;&#xA;}}&#xD;&#xA;void 发送日志(string text)&#xD;&#xA;{var tri = new Trigger();&#xD;&#xA;StaticHelpers.fakectx.trig = tri;&#xD;&#xA;RealPlugin.plug.QueueAction(&#xD;&#xA;StaticHelpers.fakectx,&#xD;&#xA;StaticHelpers.fakectx.trig,&#xD;&#xA;m: null,&#xD;&#xA;new Triggernometry.Action&#xD;&#xA;{ActionType = Triggernometry.Action.ActionTypeEnum.LogMessage.ToString(),&#xD;&#xA;LogMessageText = $&quot;{text}&quot;,&#xD;&#xA;LogProcess = &quot;true&quot;,&#xD;&#xA;},&#xD;&#xA;DateTime.Now,&#xD;&#xA;releaseMutex: true&#xD;&#xA;);}" ActionType="ExecuteScript" DescBgColor="0df" />
+<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Drawing;&#xD;&#xA;using System.Linq;&#xD;&#xA;using System.Threading.Tasks;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;#region 初始化&#xD;&#xA;var 字体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F);&#xD;&#xA;var 斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Italic);&#xD;&#xA;var 小号 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F);&#xD;&#xA;var 楷体 = new Font(&quot;楷体&quot;, 15.75F); // 14.25 | 15 | 15.75&#xD;&#xA;var 小号加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F, FontStyle.Bold);&#xD;&#xA;var 加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold);&#xD;&#xA;var 加粗斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold | FontStyle.Italic);&#xD;&#xA;var 红色 = Color.FromArgb(139, 41, 41);&#xD;&#xA;var 黄色 = Color.FromArgb(249, 192, 106);&#xD;&#xA;var 蓝色 = Color.FromArgb(32, 69, 117);&#xD;&#xA;var 灰色 = Color.FromArgb(175, 175, 175);&#xD;&#xA;var 深灰 = Color.FromArgb(68, 68, 68);&#xD;&#xA;var 背景色 = Color.FromArgb(32, 55, 110);&#xD;&#xA;string 默语 = &quot;/e &quot;;&#xD;&#xA;string 输入提示 = &quot;输入鱼类全称&quot;;// 获取字典变量&#xD;&#xA;var 字典 = StaticHelpers.GetDictVariable(true, &quot;空天姬预设&quot;);// 获取并转换 &quot;说明&quot; 和 &quot;赞助&quot; 的值&#xD;&#xA;var 说明 = 字典.GetValue(&quot;说明&quot;)?.ToString() ?? &quot;&quot;;&#xD;&#xA;var 赞助 = 字典.GetValue(&quot;赞助&quot;)?.ToString() ?? &quot;&quot;;// 创建预设列表并过滤&#xD;&#xA;var 预设 = 字典&#xD;&#xA;.Values.Keys.Where(item =&gt;&#xD;&#xA;!string.IsNullOrEmpty(item) &amp;&amp; !char.IsDigit(item[0]) &amp;&amp; !item.StartsWith(&quot;空天姬&quot;)&#xD;&#xA;)&#xD;&#xA;.ToList();&#xD;&#xA;var 窗口 = new Form&#xD;&#xA;{Text = &quot;空天姬&quot;,&#xD;&#xA;StartPosition = FormStartPosition.CenterScreen,&#xD;&#xA;FormBorderStyle = FormBorderStyle.FixedSingle,&#xD;&#xA;MaximizeBox = false,&#xD;&#xA;AutoSize = true,&#xD;&#xA;AutoScaleMode = AutoScaleMode.Font,&#xD;&#xA;Padding = new Padding(5, 5, 0, 5),&#xD;&#xA;BackColor = 背景色,&#xD;&#xA;TopMost = true,&#xD;&#xA;SizeGripStyle = SizeGripStyle.Hide,};&#xD;&#xA;var 表格 = new TableLayoutPanel { AutoSize = true, Dock = DockStyle.Fill };// 中控部分&#xD;&#xA;Button 按钮同步 = new Button { Text = &quot;同步&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮同步, &quot;同步预设 需要能正常连接 GitHub&quot;);&#xD;&#xA;Button 按钮配置 = new Button { Text = &quot;配置&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮配置, &quot;打开用户配置&quot;);&#xD;&#xA;Button 按钮航线 = new Button { Text = &quot;航线&quot; };&#xD;&#xA;new ToolTip().SetToolTip(按钮航线, &quot;在默语频道获得预报&quot;);&#xD;&#xA;Button 按钮海钓 = new Button { Text = &quot;启动自动冲分&quot; };&#xD;&#xA;ComboBox 下拉海钓 = new ComboBox() { Items = { &quot;冲分&quot;, &quot;蓝鱼&quot;, &quot;成就1&quot;, &quot;成就2&quot;,&quot;练级&quot; } };&#xD;&#xA;TextBox 输入鱼名 = new TextBox { Text = 输入提示 };&#xD;&#xA;new ToolTip().SetToolTip(输入鱼名, 说明.Replace(&quot;\\r\\n&quot;, Environment.NewLine));&#xD;&#xA;TextBox 输入鸣谢 = new TextBox&#xD;&#xA;{ReadOnly = true,&#xD;&#xA;WordWrap = true,&#xD;&#xA;Multiline = true,&#xD;&#xA;ScrollBars = ScrollBars.Vertical,&#xD;&#xA;Text = 赞助.Replace(&quot;\\r\\n&quot;, Environment.NewLine),};&#xD;&#xA;new ToolTip().SetToolTip(输入鸣谢, &quot;双击复制爱发电链接&quot;);&#xD;&#xA;Label 文本签名 = new Label { Text = &quot;by BlackCleaverLoli&quot; };&#xD;&#xA;new ToolTip().SetToolTip(文本签名, &quot;双击复制仓库链接&quot;);&#xD;&#xA;Label 文本诗句 = new Label();&#xD;&#xA;string[] 诗句 = new string[]&#xD;&#xA;{&quot;聊 把 钓 竿 消 永 日\r\n溪 翁 沙 鹭 共 悠 悠&quot;,&#xD;&#xA;&quot;垂 钓 绿 湾 春\r\n春 深 杏 花 乱&quot;,&#xD;&#xA;&quot;独 钓 春 江 上\r\n春 江 引 趣 长&quot;,&#xD;&#xA;&quot;钓 船 归 去 斜 阳 尽\r\n惟 有 青 山 对 白 鸥&quot;,&#xD;&#xA;&quot;一 竿 风 月  一 蓑 烟 雨\r\n家 在 钓 台 西 住&quot;,&#xD;&#xA;&quot;江 上 晚 来 堪 画 处\r\n钓 鱼 人 一 蓑 归 去&quot;,&#xD;&#xA;&quot;白 发 一 老 翁\r\n垂 钓 溪 边 中&quot;,&#xD;&#xA;&quot;渭 水 如 镜 色\r\n中 有 鲤 与 鲂&quot;,&#xD;&#xA;&quot;闲 钓 江 鱼 不 钓 名\r\n瓦 瓯 斟 酒 暮 山 青&quot;,&#xD;&#xA;&quot;尽 日 池 边 钓 锦 鳞\r\n芰 荷 香 里 暗 消 魂&quot;,&#xD;&#xA;&quot;竹 竿 袅 袅 波 无 际\r\n不 知 何 者 吞 吾 钩&quot;,&#xD;&#xA;&quot;蓬 头 稚 子 学 垂 纶\r\n侧 坐 莓 苔 草 映 身&quot;,&#xD;&#xA;&quot;白 头 波 上 白 头 翁\r\n家 逐 船 移 浦 浦 风&quot;,&#xD;&#xA;&quot;一 蓑 一 笠 一 扁 舟\r\n一 丈 丝 纶 一 寸 钩&quot;,&#xD;&#xA;&quot;垂 钓 坐 磐 石\r\n水 清 心 亦 闲&quot;,&#xD;&#xA;&quot;江 上 雪  独 立 钓 渔 翁\r\n一 曲 高 歌 一 樽 酒\r\n一 人 独 钓 一 江 秋&quot;,&#xD;&#xA;&quot;夜 静 水 寒 鱼 不 食\r\n满 船 空 载 月 明 归&quot;,&#xD;&#xA;&quot;结 庐 黄 河 曲\r\n垂 钓 长 河 里&quot;,&#xD;&#xA;&quot;西 塞 山 前 白 鹭 飞\r\n桃 花 流 水 鳜 鱼 肥&quot;,&#xD;&#xA;&quot;孤 舟 蓑 笠 翁\r\n独 钓 寒 江 雪&quot;,&#xD;&#xA;&quot;今 来 伴 江 叟\r\n沙 头 坐 钓 鱼&quot;,&#xD;&#xA;&quot;潭 清 疑 水 浅\r\n荷 动 知 鱼 散&quot;,&#xD;&#xA;&quot;自 庇 一 身 青 箬 笠\r\n相 随 到 处 绿 蓑 衣\r\n斜 风 细 雨 不 须 归&quot;,&#xD;&#xA;&quot;你 知 道 吗？\r\n这个诗句框是为了弥补BUG&quot;,&#xD;&#xA;&quot;你 知 道 吗？\r\n母肥是世界的珍宝&quot;,};&#xD;&#xA;List&lt;string&gt; 所有诗句 = new List&lt;string&gt;(诗句);&#xD;&#xA;List&lt;string&gt; 已显示诗句 = new List&lt;string&gt;();&#xD;&#xA;Random 随机数 = new Random();&#xD;&#xA;#endregion&#xD;&#xA;#region 控件事件&#xD;&#xA;窗口.Shown += (sender, e) =&gt;&#xD;&#xA;{((Form)sender).TopMost = true;&#xD;&#xA;System.Threading.Thread.Sleep(10);&#xD;&#xA;((Form)sender).TopMost = false;};&#xD;&#xA;按钮海钓.Click += 输入海钓;&#xD;&#xA;下拉海钓.SelectedIndexChanged += 更新按钮文本;// 绑定双击事件&#xD;&#xA;输入鱼名.DoubleClick += (sender, e) =&gt;&#xD;&#xA;{ // 创建一个模拟的双击事件&#xD;&#xA;MouseEventArgs doubleClickEventArgs = new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0);&#xD;&#xA;输入预设(sender, doubleClickEventArgs);};// 绑定中键单击事件&#xD;&#xA;输入鱼名.MouseDown += (sender, e) =&gt;&#xD;&#xA;{if (e.Button == MouseButtons.Middle &amp;&amp; e.Clicks == 1)&#xD;&#xA;{输入预设(sender, e);&#xD;&#xA;}};// 绑定鼠标点击事件&#xD;&#xA;输入鱼名.MouseClick += (sender, e) =&gt;&#xD;&#xA;{输入预设(sender, e as MouseEventArgs);};// 绑定键盘事件&#xD;&#xA;输入鱼名.KeyDown += new KeyEventHandler(输入鱼名_KeyDown);&#xD;&#xA;输入鱼名.Leave += 提示;&#xD;&#xA;输入鱼名.TextChanged += 更新颜色;&#xD;&#xA;窗口.Deactivate += 提示;&#xD;&#xA;按钮配置.Click += 输入配置;&#xD;&#xA;按钮同步.Click += 输入同步;&#xD;&#xA;按钮航线.Click += 输入航线;&#xD;&#xA;输入鸣谢.DoubleClick += 复制爱发电;&#xD;&#xA;文本签名.DoubleClick += 复制仓库;&#xD;&#xA;文本诗句.Click += (sender, e) =&gt;&#xD;&#xA;{更新诗句();&#xD;&#xA;文本诗句.Focus();};&#xD;&#xA;#endregion&#xD;&#xA;初始化预设关联控件内容();&#xD;&#xA;设置控件关系();&#xD;&#xA;设置控件样式();&#xD;&#xA;更新诗句();&#xD;&#xA;窗口.ShowDialog();&#xD;&#xA;void 初始化预设关联控件内容()&#xD;&#xA;{ // 获取字典变量&#xD;&#xA;字典 = StaticHelpers.GetDictVariable(true, &quot;空天姬预设&quot;);&#xD;&#xA;// 获取并转换 &quot;说明&quot; 和 &quot;赞助&quot; 的值&#xD;&#xA;说明 = 字典.GetValue(&quot;说明&quot;)?.ToString() ?? &quot;&quot;;&#xD;&#xA;赞助 = 字典.GetValue(&quot;赞助&quot;)?.ToString() ?? &quot;&quot;;&#xD;&#xA;// 创建预设列表并过滤&#xD;&#xA;预设 = 字典&#xD;&#xA;.Values.Keys.Where(item =&gt;&#xD;&#xA;!string.IsNullOrEmpty(item) &amp;&amp; !char.IsDigit(item[0]) &amp;&amp; !item.StartsWith(&quot;空天姬&quot;)&#xD;&#xA;)&#xD;&#xA;.ToList();&#xD;&#xA;new ToolTip().SetToolTip(输入鱼名, 说明.Replace(&quot;\\r\\n&quot;, Environment.NewLine));&#xD;&#xA;输入鸣谢.Text = 赞助.Replace(&quot;\\r\\n&quot;, Environment.NewLine);}&#xD;&#xA;void 设置控件关系()&#xD;&#xA;{ // 添加控件关系：主表单&#xD;&#xA;窗口.Controls.Add(表格);&#xD;&#xA;表格.ColumnCount = 4; // 列&#xD;&#xA;表格.RowCount = 7; // 行&#xD;&#xA;// DPI 适配&#xD;&#xA;Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);&#xD;&#xA;float dpiX = graphics.DpiX;&#xD;&#xA;float dpiY = graphics.DpiY;&#xD;&#xA;graphics.Dispose();&#xD;&#xA;float scaleFactor = dpiY / 96f;&#xD;&#xA;int 行高像素 = (int)(38 * scaleFactor);&#xD;&#xA;int 列宽像素 = (int)(76 * scaleFactor);&#xD;&#xA;for (int i = 0; i &lt; 表格.RowCount; i++)&#xD;&#xA;{表格.RowStyles.Add(new RowStyle(SizeType.Absolute, 行高像素));&#xD;&#xA;}&#xD;&#xA;for (int j = 0; j &lt; 表格.ColumnCount; j++)&#xD;&#xA;{表格.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 列宽像素));&#xD;&#xA;}&#xD;&#xA;//表格.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;// 显示框线&#xD;&#xA;表格.Controls.Add(按钮海钓, 0, 3);&#xD;&#xA;表格.SetRowSpan(按钮海钓, 2);&#xD;&#xA;表格.SetColumnSpan(按钮海钓, 2);&#xD;&#xA;表格.Controls.Add(下拉海钓, 2, 3);&#xD;&#xA;表格.SetColumnSpan(下拉海钓, 2);&#xD;&#xA;表格.Controls.Add(按钮配置, 3, 1);&#xD;&#xA;表格.Controls.Add(按钮同步, 3, 0);&#xD;&#xA;表格.Controls.Add(按钮航线, 3, 2);&#xD;&#xA;表格.Controls.Add(输入鸣谢, 0, 0);&#xD;&#xA;表格.SetColumnSpan(输入鸣谢, 3);&#xD;&#xA;表格.SetRowSpan(输入鸣谢, 3);&#xD;&#xA;表格.Controls.Add(输入鱼名, 2, 4);&#xD;&#xA;表格.SetColumnSpan(输入鱼名, 2);&#xD;&#xA;表格.Controls.Add(文本诗句, 0, 5);&#xD;&#xA;表格.SetColumnSpan(文本诗句, 4);&#xD;&#xA;表格.SetRowSpan(文本诗句, 2);}&#xD;&#xA;void 设置控件样式()&#xD;&#xA;{ // 主表单&#xD;&#xA;foreach (Control 控件 in 表格.Controls)&#xD;&#xA;{ // 整体设置&#xD;&#xA;控件.Font = 字体;&#xD;&#xA;控件.ForeColor = Color.White;&#xD;&#xA;控件.AutoSize = true;&#xD;&#xA;控件.Dock = DockStyle.Fill;&#xD;&#xA;if (控件 is Label 标签)&#xD;&#xA;{标签.Font = 加粗;&#xD;&#xA;标签.ForeColor = Color.FromArgb(196, 172, 123); // 230, 218, 193&#xD;&#xA;标签.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;}&#xD;&#xA;文本签名.Font = 小号加粗;&#xD;&#xA;文本签名.ForeColor = Color.FromArgb(196, 197, 201); // 196, 197, 201&#xD;&#xA;文本签名.TextAlign = ContentAlignment.BottomRight;&#xD;&#xA;文本诗句.Font = 楷体;&#xD;&#xA;文本诗句.TextAlign = ContentAlignment.MiddleCenter;&#xD;&#xA;if (控件 is Button 按钮)&#xD;&#xA;{按钮.Font = 加粗;&#xD;&#xA;按钮.FlatStyle = FlatStyle.Flat;&#xD;&#xA;按钮.BackColor = Color.FromArgb(50, 81, 155);&#xD;&#xA;按钮.FlatAppearance.BorderColor = Color.FromArgb(19, 33, 68);&#xD;&#xA;}&#xD;&#xA;按钮配置.BackColor = 红色;&#xD;&#xA;按钮配置.ForeColor = 黄色;&#xD;&#xA;按钮同步.BackColor = 蓝色;&#xD;&#xA;按钮同步.ForeColor = 黄色;&#xD;&#xA;按钮航线.BackColor = 灰色;&#xD;&#xA;按钮航线.ForeColor = 深灰;&#xD;&#xA;if (控件 is TextBox 输入框)&#xD;&#xA;{输入框.Font = 加粗;&#xD;&#xA;输入框.BorderStyle = BorderStyle.FixedSingle;&#xD;&#xA;输入框.BackColor = Color.FromArgb(49, 67, 103);&#xD;&#xA;}&#xD;&#xA;输入鸣谢.Font = 小号加粗;&#xD;&#xA;输入鸣谢.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;输入鸣谢.BackColor = Color.FromArgb(21, 35, 71);&#xD;&#xA;输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.ForeColor = 灰色;&#xD;&#xA;if (控件 is CheckBox 勾选框)&#xD;&#xA;{勾选框.ForeColor = Color.FromArgb(234, 222, 195);&#xD;&#xA;}&#xD;&#xA;if (控件 is ComboBox 下拉框)&#xD;&#xA;{下拉框.DropDownStyle = ComboBoxStyle.DropDownList;&#xD;&#xA;下拉框.DrawMode = DrawMode.OwnerDrawFixed;&#xD;&#xA;下拉框.SelectedIndex = 0;&#xD;&#xA;下拉框.BackColor = Color.FromArgb(41, 60, 107); // 41, 60, 107 或 71, 96, 150&#xD;&#xA;下拉框.ForeColor = Color.FromArgb(234, 222, 195);&#xD;&#xA;添加下拉前缀(下拉框, &quot;▶&quot;); // ▶&#xD;&#xA;下拉框.DrawItem += new DrawItemEventHandler(绘制下拉框);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;StaticHelpers.SetScalarVariable(false, &quot;空天姬控制窗口I&quot;, &quot;1&quot;);&#xD;&#xA;RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, &quot;/e 窗口加载成功！&lt;se.9&gt;&quot;);}&#xD;&#xA;void 绘制下拉框(object sender, DrawItemEventArgs e)&#xD;&#xA;{e.Graphics.FillRectangle(new SolidBrush(e.BackColor), e.Bounds);&#xD;&#xA;StringFormat stringFormat = new StringFormat&#xD;&#xA;{Alignment = StringAlignment.Near,&#xD;&#xA;LineAlignment = StringAlignment.Center,&#xD;&#xA;};&#xD;&#xA;e.Graphics.DrawString(&#xD;&#xA;((ComboBox)sender).Items[e.Index].ToString(),&#xD;&#xA;e.Font,&#xD;&#xA;new SolidBrush(e.ForeColor),&#xD;&#xA;e.Bounds.X,&#xD;&#xA;e.Bounds.Y&#xD;&#xA;);&#xD;&#xA;using (Pen borderPen = new Pen(Color.FromArgb(41, 60, 107)))&#xD;&#xA;{e.Graphics.DrawRectangle(&#xD;&#xA;borderPen,&#xD;&#xA;e.Bounds.X,&#xD;&#xA;e.Bounds.Y,&#xD;&#xA;e.Bounds.Width - 1,&#xD;&#xA;e.Bounds.Height - 1&#xD;&#xA;);&#xD;&#xA;}}&#xD;&#xA;void 添加下拉前缀(ComboBox comboBox, string prefix)&#xD;&#xA;{int selectedIndex = comboBox.SelectedIndex;&#xD;&#xA;List&lt;string&gt; newItems = new List&lt;string&gt;();&#xD;&#xA;foreach (var item in comboBox.Items)&#xD;&#xA;{if (item is string strItem)&#xD;&#xA;{newItems.Add($&quot;{prefix}{strItem}&quot;);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;comboBox.Items.Clear();&#xD;&#xA;comboBox.Items.AddRange(newItems.ToArray());&#xD;&#xA;if (selectedIndex &gt;= 0 &amp;&amp; selectedIndex &lt; comboBox.Items.Count)&#xD;&#xA;{comboBox.SelectedIndex = selectedIndex;&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{comboBox.SelectedIndex = 0;&#xD;&#xA;}}&#xD;&#xA;void 更新按钮文本(object sender, EventArgs e)&#xD;&#xA;{string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;{海钓选项 = 海钓选项.Substring(1);&#xD;&#xA;}&#xD;&#xA;按钮海钓.Text = &quot;启动&quot; + 海钓选项;}&#xD;&#xA;void 输入海钓(object sender, EventArgs e)&#xD;&#xA;{string 海钓选项 = 下拉海钓.SelectedItem.ToString();&#xD;&#xA;if (海钓选项.StartsWith(&quot;▶&quot;))&#xD;&#xA;{海钓选项 = 海钓选项.Substring(1);&#xD;&#xA;}&#xD;&#xA;发送日志($&quot;空天姬海钓启动：{海钓选项}&quot;);}&#xD;&#xA;void 输入鱼名_KeyDown(object sender, KeyEventArgs e)&#xD;&#xA;{if (e.KeyCode == Keys.Enter)&#xD;&#xA;{ // 模拟左键双击&#xD;&#xA;MouseEventArgs leftDoubleClickEventArgs = new MouseEventArgs(MouseButtons.Left, 2, 0, 0, 0);&#xD;&#xA;输入预设(sender, leftDoubleClickEventArgs);&#xD;&#xA;}}&#xD;&#xA;void 更新颜色(object sender, EventArgs e)&#xD;&#xA;{if (!输入鱼名.Text.StartsWith(&quot;输&quot;))&#xD;&#xA;{if (预设.Contains(输入鱼名.Text))&#xD;&#xA;{输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;输入鱼名.BackColor = Color.FromArgb(21, 35, 71); // 深色&#xD;&#xA;if (文本诗句.Text != &quot;双 击 或 回 车\r\n启 动 预 设\r\n中 键 发 送 预 览&quot;)&#xD;&#xA;{延时更新(&quot;双 击 或 回 车\r\n启 动 预 设\r\n中 键 发 送 预 览&quot;, 10000)&#xD;&#xA;.ConfigureAwait(false);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.ForeColor = Color.FromArgb(196, 172, 123);&#xD;&#xA;输入鱼名.BackColor = Color.FromArgb(49, 67, 103); // 浅色&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{输入鱼名.Font = 字体;&#xD;&#xA;输入鱼名.BackColor = Color.FromArgb(49, 67, 103); // 浅色&#xD;&#xA;输入鱼名.ForeColor = 灰色; // 230, 218, 193&#xD;&#xA;}}&#xD;&#xA;void 提示(object sender, EventArgs e)&#xD;&#xA;{if (输入鱼名.Text == &quot;&quot;)&#xD;&#xA;{输入鱼名.Text = 输入提示;&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}}&#xD;&#xA;void 输入预设(object sender, MouseEventArgs e)&#xD;&#xA;{ // 检查是否为双击或中键单击&#xD;&#xA;if (&#xD;&#xA;(e.Button == MouseButtons.Left &amp;&amp; e.Clicks == 2)&#xD;&#xA;|| (e.Button == MouseButtons.Middle &amp;&amp; e.Clicks == 1)&#xD;&#xA;)&#xD;&#xA;{if (!输入鱼名.Text.StartsWith(&quot;输&quot;) &amp;&amp; !string.IsNullOrEmpty(输入鱼名.Text))&#xD;&#xA;{if (预设.Contains(输入鱼名.Text))&#xD;&#xA;{if (e.Button == MouseButtons.Left &amp;&amp; e.Clicks == 2)&#xD;&#xA;{RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;默语 + &quot;空天姬预设 &quot; + 输入鱼名.Text&#xD;&#xA;);&#xD;&#xA;延时更新(&quot;已 发 送 至 默 语 频 道&quot;, 3000).ConfigureAwait(false);&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}&#xD;&#xA;else if (e.Button == MouseButtons.Middle &amp;&amp; e.Clicks == 1)&#xD;&#xA;{RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;默语 + &quot;空天姬预设 查看 &quot; + 输入鱼名.Text&#xD;&#xA;);&#xD;&#xA;延时更新(&quot;已 发 送 至 默 语 频 道&quot;, 3000).ConfigureAwait(false);&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{延时更新(&quot;未 支 持 此 预 设\r\n反 馈 信 息 已 发 至 默 语&quot;, 5000)&#xD;&#xA;.ConfigureAwait(false);&#xD;&#xA;RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;默语 + &quot;空天姬预设 查看 &quot; + 输入鱼名.Text&#xD;&#xA;);&#xD;&#xA;输入鱼名.SelectionLength = 0;&#xD;&#xA;输入鱼名.SelectionStart = 输入鱼名.Text.Length;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{延时更新(&quot;请 输 入 鱼 名&quot;, 1500).ConfigureAwait(false);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;else if (e.Button == MouseButtons.Left &amp;&amp; e.Clicks == 1)&#xD;&#xA;{if (输入鱼名.Text.StartsWith(&quot;输&quot;))&#xD;&#xA;{输入鱼名.Text = &quot;&quot;;&#xD;&#xA;}&#xD;&#xA;}}&#xD;&#xA;void 输入航线(object sender, EventArgs e)&#xD;&#xA;{发送日志(&quot;空天姬查询航线&quot;);}&#xD;&#xA;async Task 延时更新(string 文本内容, int 延迟毫秒数)&#xD;&#xA;{文本诗句.Text = 文本内容;&#xD;&#xA;await Task.Delay(延迟毫秒数);&#xD;&#xA;if (!所有诗句.Contains(文本诗句.Text))&#xD;&#xA;{更新诗句();&#xD;&#xA;}}&#xD;&#xA;void 复制爱发电(object sender, EventArgs e)&#xD;&#xA;{输入鸣谢.SelectionLength = 0;&#xD;&#xA;延时更新复制(&quot;已 复 制 爱 发 电 链 接&quot;, 3000, &quot;https://afdian.com/a/bcloli&quot;)&#xD;&#xA;.ConfigureAwait(false);}&#xD;&#xA;void 复制仓库(object sender, EventArgs e)&#xD;&#xA;{延时更新复制(&quot;已 复 制 仓 库 链 接&quot;, 3000, &quot;https://github.com/BlackCleaverLoli/MissFisher&quot;)&#xD;&#xA;.ConfigureAwait(false);}&#xD;&#xA;async Task 延时更新复制(string 文本内容, int 延迟毫秒数, string 链接)&#xD;&#xA;{await Task.Run(() =&gt;&#xD;&#xA;{Triggernometry.Action.ClipboardSetText(链接);&#xD;&#xA;});&#xD;&#xA;文本诗句.Text = 文本内容;&#xD;&#xA;await Task.Delay(延迟毫秒数);&#xD;&#xA;if (!所有诗句.Contains(文本诗句.Text))&#xD;&#xA;{更新诗句();&#xD;&#xA;}}&#xD;&#xA;void 输入同步(object sender, EventArgs e)&#xD;&#xA;{发送日志(&quot;空天姬更新预设&quot;);&#xD;&#xA;初始化预设关联控件内容();&#xD;&#xA;延时更新预设关联控件内容();}&#xD;&#xA;async Task 延时更新预设关联控件内容()&#xD;&#xA;{for (int i = 0; i &lt; 6; i++)&#xD;&#xA;{await Task.Delay(5000);&#xD;&#xA;初始化预设关联控件内容();&#xD;&#xA;}}&#xD;&#xA;void 输入配置(object sender, EventArgs e)&#xD;&#xA;{发送日志(&quot;空天姬打开配置&quot;);}&#xD;&#xA;void 更新诗句()&#xD;&#xA;{List&lt;string&gt; 可选诗句 = new List&lt;string&gt;(所有诗句);&#xD;&#xA;foreach (var 诗 in 已显示诗句)&#xD;&#xA;{可选诗句.Remove(诗);&#xD;&#xA;}&#xD;&#xA;if (可选诗句.Count &gt; 0)&#xD;&#xA;{int 随机索引 = 随机数.Next(可选诗句.Count);&#xD;&#xA;string 新诗句 = 可选诗句[随机索引];&#xD;&#xA;已显示诗句.Add(新诗句);&#xD;&#xA;文本诗句.Text = 新诗句;&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{已显示诗句.Clear();&#xD;&#xA;更新诗句();&#xD;&#xA;}}&#xD;&#xA;void 发送日志(string text)&#xD;&#xA;{var tri = new Trigger();&#xD;&#xA;StaticHelpers.fakectx.trig = tri;&#xD;&#xA;RealPlugin.plug.QueueAction(&#xD;&#xA;StaticHelpers.fakectx,&#xD;&#xA;StaticHelpers.fakectx.trig,&#xD;&#xA;m: null,&#xD;&#xA;new Triggernometry.Action&#xD;&#xA;{ActionType = Triggernometry.Action.ActionTypeEnum.LogMessage.ToString(),&#xD;&#xA;LogMessageText = $&quot;{text}&quot;,&#xD;&#xA;LogProcess = &quot;true&quot;,&#xD;&#xA;},&#xD;&#xA;DateTime.Now,&#xD;&#xA;releaseMutex: true&#xD;&#xA;);}" ActionType="ExecuteScript" DescBgColor="0df" />
 <Action OrderNumber="2" LogMessageText="空天姬配置" LogProcess="True" ActionType="LogMessage" />
 <Action OrderNumber="3" UseTTSTextExpression="正在打开主界面" UseTTSRateExpression="3" ActionType="UseTTS">
 <Condition Enabled="true" Grouping="And">
@@ -866,7 +866,7 @@
 <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="空天姬查询下一航线" VariableExpression="( ${v:空天姬查询下一航线} + ( ${func:utctime(HH):${n: ${v:空天姬查询时间戳} + 7200 }} % 2 = 1 ? ${func:utctime(HH):${n: ${v:空天姬查询时间戳} + 7200 }} = 15 ? 2 : 1 : 0 ) ) % 12 + 1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬查询航线" VariableExpression="${func:format(System.Double,&quot;00&quot;):${v:空天姬查询航线}}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬查询下一航线" VariableExpression="${func:format(System.Double,&quot;00&quot;):${v:空天姬查询下一航线}}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &lt;se.9&gt;&#xD;&#xA;近海航线：${if: 120 - ( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 105 ? ${if: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 60  ? 距离开放登记 ${n: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) }: 出海航行中 } : 可登记时间 ${if: ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } == 0 ? 不到1 : ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } }}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 3600 : 0 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[1${v:空天姬查询航线}]}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 10800 : 7200 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[1${v:空天姬查询下一航线}]}&#xD;&#xA;远洋航线：${if: 120 - ( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 105 ? ${if: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 60  ? 距离开放登记 ${n: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) }: 出海航行中 } : 可登记时间 ${if: ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } == 0 ? 不到1 : ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } }}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 3600 : 0 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[2${v:空天姬查询航线}]}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 10800 : 7200 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[2${v:空天姬查询下一航线}]}&#xD;&#xA;（必带：石沙蚕、磷虾、刺螠、万能拟饵）" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &lt;se.9&gt;&#xD;&#xA;近海航线：${if: 120 - ( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 105 ? ${if: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 60  ? 距离开放登记 ${n: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) }: 出海航行中 } : 可登记时间 ${if: ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } == 0 ? 不到1 : ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } }}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 3600 : 0 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[1${v:空天姬查询航线}]}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 10800 : 7200 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[1${v:空天姬查询下一航线}]}&#xD;&#xA;远洋航线：${if: 120 - ( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 105 ? ${if: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) &lt; 60  ? 距离开放登记 ${n: 120 - floor( ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) }: 出海航行中 } : 可登记时间 ${if: ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } == 0 ? 不到1 : ${n: floor( 15 - ( ${v:空天姬查询时间戳} % 7200 ) / 60 ) } }}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 3600 : 0 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[2${v:空天姬查询航线}]}&#xD;&#xA;${f:format(System.Double,&quot;00&quot;):${n: ( floor( ${func:localtime(HH):${n: ${v:空天姬查询时间戳} + (${func:utctime(HH):${v:空天姬查询时间戳}} % 2 = 1 ? 10800 : 7200 ) }} ) ) }}:₀₀ - ${pd:空天姬航线表[2${v:空天姬查询下一航线}]}&#xD;&#xA;（必带：石沙蚕、磷虾、刺螠）" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="11" VariableOp="UnsetRegex" VariableName="^空天姬查询" ActionType="Variable" Asynchronous="False" />
 </Actions>
 </Trigger>
@@ -2610,7 +2610,6 @@
 </Action>
 <Action OrderNumber="6" TableVariableOp="SetLine" TableVariableName="空天姬目标" TableVariableExpression=",0,0,0" TableVariableX="3" ActionType="TableVariable" ExecutionDelayExpression="10" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="3|4" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4442,7 +4441,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬当前采集力强心剂}" ExpressionTypeL="Numeric" ExpressionR="${_me.maxgp} - ( 150 * 1 ) - 48" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬当前采集力强心剂}" ExpressionTypeL="Numeric" ExpressionR="${_me.maxgp} - ( 150 ) - 48" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼竿型1}" ExpressionTypeL="Numeric" ExpressionR="123" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -4488,6 +4487,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流状态}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </Condition>
 </Action>
@@ -4594,6 +4594,8 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="48" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬游动饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域时段}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -4633,7 +4635,7 @@
 </Action>
 <Action OrderNumber="33" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="熟练渔技" ActionType="ListVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼猎手}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型3}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -4643,15 +4645,13 @@
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制渔技状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬游动饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法攒鱼计}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="48" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼篓}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
@@ -4707,6 +4707,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="6" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="39" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="耐心II" ActionType="ListVariable" Asynchronous="False">
@@ -4757,10 +4758,11 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法套娃}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="48" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="560 - 8" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -4774,6 +4776,7 @@
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="40" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" ActionType="ListVariable" Asynchronous="False">
@@ -4929,6 +4932,7 @@
 </ConditionGroup>
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬撒饵强制}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -4944,6 +4948,7 @@
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="Numeric" ExpressionR="10" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
@@ -6027,12 +6032,23 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="true" Name="海钓区域不存在" Id="4a75a034-0560-4b8f-82df-bc4fbacf21f6" RegularExpression="^空天姬海钓参数|^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$">
+<Trigger Enabled="true" Name="海钓区域不存在" Id="4a75a034-0560-4b8f-82df-bc4fbacf21f6" RegularExpression="^空天姬海钓参数|^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)[ ]*确定[ ]*$">
 <Actions>
-<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 海域获取失败！区域转移未完成，或未处在出海垂钓中。" ActionType="NamedCallback" />
+<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 海域获取失败！区域转移未完成，或未处在出海垂钓中。" ActionType="NamedCallback">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓提醒}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="练级" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 空天姬预设 练级" ActionType="NamedCallback">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓提醒}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="练级" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
 </Actions>
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="...." ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="^.{4}" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 </Condition>
 </Trigger>
 <Trigger Enabled="true" Name=". 错误处理 中止 Error" Id="b43e394e-a56f-47ea-8564-8b73829009f5" RegularExpression="^.{32}29:150001:(?&lt;log&gt;DBC|421|DC7|467)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;停止|[Kk][Ee][Nn][Dd])[ ]*$|^.{26}003C::(“/(?&lt;log&gt;停止|[Kk][Ee][Nn][Dd])”出现问题：该命令不存在。|The command /(?&lt;log&gt;停止|[Kk][Ee][Nn][Dd]) does not exist.|そのコマンドはありません。： /(?&lt;log&gt;停止|[Kk][Ee][Nn][Dd]))$|^空天姬(?&lt;log&gt;超时|换饵|饵名错误|天气错误)(错误：(?&lt;lure&gt;.+))?|^.{15}ChatLog 00:003C::“/(?&lt;log&gt;停止|kend)”出现问题：该命令不存在。$|^.{15}\S+ 00:0839::(“\w+”的耐久度已降到(?&lt;log&gt;0%)。|The condition of your .+ is now (?&lt;log&gt;0%).|.+の耐久度が(?&lt;log&gt;0%)になった。)$" PeriodRefire="Deny" RefirePeriodExpression="1000">
@@ -6116,6 +6132,11 @@
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
+</Trigger>
+<Trigger Enabled="true" Name="海钓命令无默语转发" Id="52b0bdc8-a34f-42d5-8b7c-d1f751b732c0" RegularExpression="^.{26}003C::(“/(?: *(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级) *确定 *)”出现问题：该命令不存在。|The command /(?: *(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级) *确定 *) does not exist.|そのコマンドはありません。： /(?: *(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级) *确定 *))$">
+<Actions>
+<Action OrderNumber="1" LogMessageText="空天姬海钓启动：${log}" LogProcess="True" ActionType="LogMessage" />
+</Actions>
 </Trigger>
 </Triggers>
 </Folder>
@@ -6781,7 +6802,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬钓饵当前：${v:空天姬控制钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
 <Actions>
 <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" ActionType="LogMessage" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="抹茶格式。" DescriptionOverride="True" />
@@ -7870,9 +7891,9 @@
 <Action OrderNumber="3" LogMessageText="空天姬海钓执行" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="1.2 中断超时" Id="0a4bffdf-d85e-4988-9c82-2343138da5de" RegularExpression="^空天姬中断耐心">
+<Trigger Enabled="true" Name="1.2 中断超时" Id="0a4bffdf-d85e-4988-9c82-2343138da5de" RegularExpression="^空天姬中断耐心" PrevActions="Interrupt">
 <Actions>
-<Action OrderNumber="1" LogMessageText="空天姬海钓执行" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="20000" Asynchronous="False">
+<Action OrderNumber="1" LogMessageText="空天姬超时" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="20000" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬中断耐心}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
@@ -7911,84 +7932,89 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="0. 海钓预设 启动" Id="c6538f00-94c0-46e9-9abe-ce94a56aaa1d" RegularExpression="^空天姬海钓参数|^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$|^.{15}ChatLog 00:003C::“/(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定”出现问题：该命令不存在。$" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="0. 海钓预设 启动" Id="c6538f00-94c0-46e9-9abe-ce94a56aaa1d" RegularExpression="^空天姬海钓参数|^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)[ ]*确定[ ]*$" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓模式" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4[${log}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4,练级=5[${log}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="¹" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${f:contain(¹):${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就1?$" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="²" ExpressionTypeR="String" ConditionType="RegexMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就2$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${f:contain(²):${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="(塔尼瓦|琉璃龙|狱之蟹|梅泉宝龟|哈弗古法|海洋蟾蜍|盾齿龙|索蒂斯|珊瑚蝠鲼|石骨鱼|依拉丝莫龙)" ExpressionTypeR="String" ConditionType="RegexMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="蓝鱼$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="(?:塔尼瓦|琉璃龙|狱之蟹|梅泉宝龟|哈弗古法|海洋蟾蜍|盾齿龙|索蒂斯|珊瑚蝠鲼|石骨鱼|依拉丝莫龙)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="蓝鱼" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="冲分" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="冲分" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="练级" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </Condition>
 </Action>
 <Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="3" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就2$" ExpressionTypeR="String" ConditionType="RegexMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="²" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="¹" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${f:contain(¹):${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${f:contain(²):${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
 </Condition>
 </Action>
 <Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e 当前航线无成就 2 标识，将启动成就 1 模式。" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就2$" ExpressionTypeR="String" ConditionType="RegexMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="²" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="¹" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就[12]?$" ExpressionTypeR="String" ConditionType="RegexMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="²" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="¹" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${f:contain(¹):${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${f:contain(²):${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
 </Condition>
 </Action>
 <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e 当前航线无成就标识，将启动冲分模式。" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就[12]?$" ExpressionTypeR="String" ConditionType="RegexMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="²" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="¹" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="蓝鱼$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="蓝鱼" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="(塔尼瓦|琉璃龙|狱之蟹|梅泉宝龟|哈弗古法|海洋蟾蜍|盾齿龙|索蒂斯|珊瑚蝠鲼|石骨鱼|依拉丝莫龙)" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 </Condition>
 </Action>
 <Action OrderNumber="9" NamedCallbackName="command" NamedCallbackParam="/e 当前航线无蓝鱼，将启动冲分模式。" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="蓝鱼$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="蓝鱼" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="(塔尼瓦|琉璃龙|狱之蟹|梅泉宝龟|哈弗古法|海洋蟾蜍|盾齿龙|索蒂斯|珊瑚蝠鲼|石骨鱼|依拉丝莫龙)" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口&lt;se.13&gt;" UseTTSTextExpression="“${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2[${v:空天姬控制海钓标识}]}”启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
+<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口&lt;se.13&gt;" UseTTSTextExpression="“${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2,5=练级[${v:空天姬控制海钓标识}]}”启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" NamedCallbackName="hint" NamedCallbackParam="3&#xD;&#xA;${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2[${v:空天姬控制海钓标识}]}模式已启动" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="11" NamedCallbackName="hint" NamedCallbackParam="3&#xD;&#xA;${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2,5=练级[${v:空天姬控制海钓标识}]}模式已启动" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识类型" VariableExpression="${v:空天姬控制海钓标识} &gt; 2 ? 3 : ${v:空天姬控制海钓标识}" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识类型" VariableExpression="( ( ${v:空天姬控制海钓标识} = 3 ) || ( ${v:空天姬控制海钓标识} = 4 ) ) ? 3 : ${v:空天姬控制海钓标识}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="13" TriggerOp="DisableTrigger" TriggerId="f1bb6aa9-d26d-4e34-9f4c-0eab26c9023a" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="14" TriggerOp="EnableTrigger" TriggerId="af25275d-90e8-4232-8c1b-d973b711fd83" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="3|4" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识类型}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="15" TriggerOp="EnableTrigger" TriggerId="95d6a684-9f4a-4c79-b50f-6fdd5011be8d" ActionType="Trigger" Asynchronous="False">
@@ -8063,13 +8089,13 @@
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识} == 3 || ${v:空天姬控制海钓标识} == 4" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识类型}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericLess" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(aas${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识} == 3 || ${v:空天姬控制海钓标识} == 4" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识类型}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </Condition>
 </Action>
@@ -8150,8 +8176,31 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description=" 其他" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="52" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="random(100,300)" Asynchronous="False">
+<Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description=" 练级" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="52" Enabled="False" ActionType="Placeholder" Description=" 普海" DescriptionOverride="True" />
+<Action OrderNumber="53" NamedCallbackName="command" NamedCallbackParam="/e 耐心（${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(石沙蚕|刺螠|磷虾)}）（！！！）全部${f:capture(${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]},1):(精准|强力)}" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description=" 幻后" DescriptionOverride="True" />
+<Action OrderNumber="55" NamedCallbackName="command" NamedCallbackParam="/e 耐心（${f:capture(${pd:空天姬预设[ps${v:空天姬控制海域}]},1):(?&lt;1&gt;石沙蚕|刺螠|磷虾)}）all》all" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="56" Enabled="False" ActionType="Placeholder" Description=" 幻海" DescriptionOverride="True" />
+<Action OrderNumber="57" NamedCallbackName="command" NamedCallbackParam="/e 耐心（${f:capture(${pd:空天姬预设[ps${v:空天姬控制海域}]},1):(石沙蚕|刺螠|磷虾)}）全部》全部" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description=" 其他" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="59" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="random(100,300)" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -8160,19 +8209,19 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
 </Condition>
 </Action>
-<Action OrderNumber="53" NamedCallbackName="command" NamedCallbackParam="/e 启动了模式：${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2[${v:空天姬控制海钓标识}]}。&#xD;&#xA;更换海域后也将自动抛竿；可使用“/e 停止”来完全停止自动钓鱼。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="60" NamedCallbackName="command" NamedCallbackParam="/e 启动了模式：${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2,5=练级[${v:空天姬控制海钓标识}]}。&#xD;&#xA;更换海域后也将自动抛竿；可使用“/e 停止”来完全停止自动钓鱼。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="54" NamedCallbackName="command" NamedCallbackParam="/e 当前海域的幻海流渔分过低，将不提鱼王竿以减少触幻概率。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="61" NamedCallbackName="command" NamedCallbackParam="/e 当前海域的幻海流渔分过低，将不提鱼王竿以减少触幻概率。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="(12|0[589])12" ExpressionTypeR="String" ConditionType="RegexMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="55" NamedCallbackName="command" NamedCallbackParam="/e 当前海域的幻海流无数量成就所需鱼类，将不提鱼王竿以减少触幻概率。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="62" NamedCallbackName="command" NamedCallbackParam="/e 当前海域的幻海流无数量成就所需鱼类，将不提鱼王竿以减少触幻概率。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(as${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识类型}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -8180,7 +8229,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(an${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="56" NamedCallbackName="command" NamedCallbackParam="/e 当前海域的幻海流无蓝鱼，且临近蓝鱼海域，将不提鱼王竿以减少触幻概率。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="63" NamedCallbackName="command" NamedCallbackParam="/e 当前海域的幻海流无蓝鱼，且临近蓝鱼海域，将不提鱼王竿以减少触幻概率。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海域蓝鱼真空}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识类型}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -8188,23 +8237,24 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(ls${v:空天姬控制海域})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="57" VariableOp="SetString" VariableName="空天姬中断耐心" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="64" VariableOp="SetString" VariableName="空天姬中断耐心" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流状态}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="58" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 开始中断耐心。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="65" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 开始中断耐心。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬中断耐心}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="59" LogMessageText="空天姬中断耐心" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2000" Asynchronous="False">
+<Action OrderNumber="66" LogMessageText="空天姬中断耐心" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2000" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬中断耐心}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="60" TriggerOp="DisableTrigger" TriggerId="95d6a684-9f4a-4c79-b50f-6fdd5011be8d" ActionType="Trigger" ExecutionDelayExpression="6000" Asynchronous="False">
+<Action OrderNumber="67" TriggerOp="DisableTrigger" TriggerId="95d6a684-9f4a-4c79-b50f-6fdd5011be8d" ActionType="Trigger" ExecutionDelayExpression="6000" Asynchronous="False">
 <Condition Enabled="true" Grouping="Not">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
@@ -8220,7 +8270,7 @@
 </Action>
 </Actions>
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="...." ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="^.{4}" ExpressionTypeR="String" ConditionType="RegexMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域结束}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}${pd:空天姬预设.ekey(成就普海)}${pd:空天姬预设.ekey(成就幻海)}${pd:空天姬预设.ekey(成就幻后)}${pd:空天姬预设.ekey(蓝鱼幻海)}" ExpressionTypeL="String" ExpressionR="11111" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -8585,11 +8635,6 @@
 <Action OrderNumber="32" VariableOp="SetNumeric" VariableName="空天姬控制幻海流强心剂修正" VariableExpression="0" VariablePersist="True" ActionType="Variable" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="5.3 海钓命令纠错" Id="5eb2b4fb-e9f0-459c-96d9-40c849c6bd4e" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(空天姬 *海钓 *确定|空天姬[ ]*(海钓[ ]*($|[^确])|(冲分|蓝鱼|成就1?|成就2))|(冲分|蓝鱼|成就1?|成就2) *启动) *$">
-<Actions>
-<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e 空天姬" ActionType="NamedCallback" />
-</Actions>
-</Trigger>
 <Trigger Enabled="true" Name="4.2 幻海时长 播报" Id="6be9689e-a91e-4237-8d8c-8b0a1b98610b" RegularExpression="^空天姬(幻海时间)">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/${pd:空天姬配置[幻海频道]} ${n:round((${v:空天姬控制幻海流时间}-${v:空天姬控制幻海流罚时})/1000,0)} 秒 到  ${f:format(System.Double,&quot;00&quot;):${n:floor(${v:空天姬控制幻海流结束时间}/1000/60)}}:${f:format(System.Double,&quot;00&quot;):${n:(${v:空天姬控制幻海流结束时间}/1000)%60}}" ActionType="NamedCallback" Asynchronous="False" />
@@ -8597,7 +8642,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="4.1 普海钓饵 播报" Id="193f0e8d-4219-4b5a-8bf7-23a2adfbbfec" RegularExpression="^空天姬普海钓饵">
 <Actions>
-<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/${pd:空天姬配置[公共频道]} ${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]}" ActionType="NamedCallback" ExecutionDelayExpression="random(3000,5000) * (1 + ( ( ${pd:空天姬预设.ekey(as${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})} || ${pd:空天姬预设.ekey(ls${v:空天姬控制海域})} ) ? ( ( ${v:空天姬控制海钓标识} ?? 1 ) &gt; 0 ? 0 : 2 ) : 0 ) )" Asynchronous="False">
+<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/${pd:空天姬配置[公共频道]} ${pd:空天姬普海钓饵[${f:slice(2:4):${v:空天姬控制海域}}]}" ActionType="NamedCallback" ExecutionDelayExpression="random(3000,5000) * (1 + ( ( ${pd:空天姬预设.ekey(as${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})} || ${pd:空天姬预设.ekey(ls${v:空天姬控制海域})} ) ? ( ${ev:空天姬控制海钓标识} ? 0 : 2 ) : 0 ) )" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="(12|0[589])12" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -8614,6 +8659,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="0215|0514|0616|08(11|13)|1117|0123|0321|04(22|24)|05(22|23)" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </ConditionGroup>
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 当前海域的幻海流渔分过低，将不发送触幻钓法。" ActionType="NamedCallback" Asynchronous="False">
@@ -8640,7 +8686,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="5.1 预备 无海域映射" Id="23b8a0d2-ff50-4517-ae96-bb332a97e0d2" RegularExpression="^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$|^.{15}ChatLog 00:003C::“/(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定”出现问题：该命令不存在。$">
+<Trigger Enabled="true" Name="5.1 预备 无海域映射" Id="23b8a0d2-ff50-4517-ae96-bb332a97e0d2" RegularExpression="^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)[ ]*确定[ ]*$">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4[${log}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
@@ -8675,7 +8721,7 @@
 <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="空天姬控制海钓预备" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="...." ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="^.{4}" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}${pd:空天姬预设.ekey(成就普海)}${pd:空天姬预设.ekey(成就幻海)}${pd:空天姬预设.ekey(成就幻后)}${pd:空天姬预设.ekey(蓝鱼幻海)}" ExpressionTypeL="String" ExpressionR="11111" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
@@ -8808,7 +8854,7 @@
 <Trigger Enabled="false" Name="5.2 预备 启动" Id="f1bb6aa9-d26d-4e34-9f4c-0eab26c9023a" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:61(7[43210]|6[DEF]|4[BCDEF]|5[012345678])">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="f1bb6aa9-d26d-4e34-9f4c-0eab26c9023a" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e ${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4.keyof(${v:空天姬控制海钓标识})}确定" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
+<Action OrderNumber="2" LogMessageText="空天姬海钓启动：${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4,练级=5.keyof(${v:空天姬控制海钓标识})}" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="100" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 </Condition>
@@ -8834,7 +8880,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="5.4 启动提示" Id="bd5fe061-66e8-42cd-8fdd-4e0505e64478" RegularExpression="^.{15}\S+ 01:[^:]+:(出海垂钓|Ocean Fishing|オーシャンフィッシング)" RefirePeriodExpression="1000">
+<Trigger Enabled="true" Name="5.3 启动提示" Id="bd5fe061-66e8-42cd-8fdd-4e0505e64478" RegularExpression="^.{15}\S+ 01:[^:]+:(出海垂钓|Ocean Fishing|オーシャンフィッシング)" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制海钓提醒" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &#xD;&#xA;  宏语言：${?d:1=中文,2=英文,3=日文[${pd:空天姬配置[语言]}]}&#xD;&#xA;  触幻钓法：${?d:e=默语,p=小队,y=呼喊,sh=喊话[${pd:空天姬配置[公共频道]}]}&#xD;&#xA;  成就报数：${?d:e=默语,p=小队,y=呼喊,sh=喊话[${pd:空天姬配置[成就频道]}]}&#xD;&#xA;  幻海时长：${?d:e=默语,p=小队,y=呼喊,sh=喊话[${pd:空天姬配置[幻海频道]}]}" ActionType="NamedCallback" Asynchronous="False" />
@@ -8851,11 +8897,11 @@
 </Action>
 </Actions>
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="...." ExpressionTypeR="String" ConditionType="RegexNotMatch" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓提醒}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="^.{4}" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓提醒}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="5.5 预设缺失" Id="b75777aa-30da-44bf-ae84-cd13f450f9c0" RegularExpression="^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定[ ]*$|^.{15}ChatLog 00:003C::“/(?&lt;log&gt;冲分|蓝鱼|成就[12]?)[ ]*确定”出现问题：该命令不存在。$">
+<Trigger Enabled="true" Name="5.4 预设缺失" Id="b75777aa-30da-44bf-ae84-cd13f450f9c0" RegularExpression="^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)[ ]*确定[ ]*$">
 <Actions>
 <Action OrderNumber="1" MessageBoxIconType="Warning" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;海钓预设缺失，请同步预设到最新版！" ActionType="MessageBox" />
 <Action OrderNumber="2" UseTTSTextExpression="海钓预设缺失！" ActionType="UseTTS" Asynchronous="False" />
@@ -8912,11 +8958,6 @@
 <Trigger Enabled="true" Name="  网页 如何编写空天姬预设（右键执行）" Id="873eef71-ce34-44c9-ab8d-c4db219ecabf" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets" ActionType="LaunchProcess" />
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name=" 网页  内置预设表格（建设中）（右键执行）" Id="0c87bff1-4020-41bc-b8ae-0ca1ba63e138" RegularExpression="">
-<Actions>
-<Action OrderNumber="1" LaunchProcessPathExpression="https://docs.qq.com/sheet/DVlNaQ012amF4SW1G" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
 </Triggers>
@@ -8998,30 +9039,30 @@
 <Action OrderNumber="3" Enabled="False" ActionType="Placeholder" Description="    ■ 遇到无法使用等问题时，请先查看【使用说明】■" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True" />
 <Action OrderNumber="4" Enabled="False" ActionType="Placeholder" Description="    ·如有其他预料外情况或有功能建议，敬请联系作者帮助完善空天姬功能。" DescBgColor="fff" DescriptionOverride="True" />
 <Action OrderNumber="5" Enabled="False" ActionType="Placeholder" Description="    ·在报告前，请确保你了解钓鱼玩法且该预料外情况是最新版本下出现的。" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="6" Enabled="False" ActionType="Placeholder" ExecutionDelayExpression="20376e" Description="    命令" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="7" Enabled="False" ActionType="Placeholder" Description="    打开窗口" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Description="    ·打开主界面：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="9" Enabled="False" ActionType="Placeholder" Description="          /e ktj" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="10" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="11" Enabled="False" ActionType="Placeholder" Description="          /ktj" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="    ·打开用户配置界面：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="          /e ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬配置" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="          /ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="    ·打开预设生成器（建设中）：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="          /e ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬生成器" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="          /ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="    自动钓鱼" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="    ·使用预设中的参数自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="          /e &lt;空天姬预设&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="        接受的参数详见 Wiki【如何编写空天姬预设】。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="    ·以指定模式自动海钓：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="          /e 冲分确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="          /e 蓝鱼确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="          /e 成就确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="          /e 成就1确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="          /e 成就2确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="6" Enabled="False" ActionType="Placeholder" Description="    打开窗口" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="7" Enabled="False" ActionType="Placeholder" Description="    ·打开主界面：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Description="          /e ktj" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="9" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="10" Enabled="False" ActionType="Placeholder" Description="          /ktj" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="11" Enabled="False" ActionType="Placeholder" Description="    ·打开用户配置界面：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="          /e ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬配置" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="          /ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="    ·打开预设生成器（建设中）：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="          /e ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬生成器" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="          /ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="    自动钓鱼" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="    ·使用预设中的参数自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="          /e &lt;空天姬预设&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="        接受的参数详见 Wiki【如何编写空天姬预设】。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="    ·以指定模式自动海钓：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="          /e 冲分确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="          /e 蓝鱼确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="          /e 成就确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="          /e 成就1确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="          /e 成就2确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="          /e 练级确定" DescBgColor="fff" DescriptionOverride="True" />
 <Action OrderNumber="30" Enabled="False" ActionType="Placeholder" Description="        必须带齐 刺螠、石沙蚕、磷虾 + 万能拟饵 + 蓝鱼钓饵（如果是蓝鱼模式）" DescBgColor="ffd" DescriptionOverride="True" />
 <Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Description="        并留出 40 格以上背包空间。" DescBgColor="ffd" DescriptionOverride="True" />
 <Action OrderNumber="32" Enabled="False" ActionType="Placeholder" Description="        ·普通钓饵至少 50 个，拟饵至少 3 个。（不知道带什么请使用【航线预报】或百度“FF14鱼糕”）" DescBgColor="ffd" DescriptionOverride="True" />
@@ -9083,7 +9124,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬窗口" LogProcess="True" ActionType="LogMessage" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="  网页 使用说明（右键执行 碰到问题先看）" Id="9ae8db0b-e0b1-4ac9-b5f4-db5fc01d24e7" RegularExpression="">
+<Trigger Enabled="true" Name="  网页  使用说明（右键执行 碰到问题先看）" Id="9ae8db0b-e0b1-4ac9-b5f4-db5fc01d24e7" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/blob/main/README.md" ActionType="LaunchProcess" />
 </Actions>
@@ -9093,7 +9134,7 @@
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/blob/main/Changelog.md" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name=" 网页 7.0 钓鱼信息表格（右键执行）" Id="d79e0257-a1d2-4629-be00-ee97e181ddaf" RegularExpression="">
+<Trigger Enabled="true" Name=" 网页 7.0 钓鱼信息表格（右键执行 不含 7.1 或之后）" Id="d79e0257-a1d2-4629-be00-ee97e181ddaf" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://docs.qq.com/sheet/DVk1XaEpZZVBNcG5S" ActionType="LaunchProcess" />
 </Actions>
@@ -9111,6 +9152,11 @@
 <Trigger Enabled="true" Name=" 网页 加入 QQ 群聊（右键执行）" Id="ecf66d72-9d4d-43b1-9f73-adeb687aab6d" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&amp;authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&amp;noverify=0&amp;group_code=959153665" ActionType="LaunchProcess" />
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name=" 网页  内置预设表格（右键执行）" Id="0c87bff1-4020-41bc-b8ae-0ca1ba63e138" RegularExpression="">
+<Actions>
+<Action OrderNumber="1" LaunchProcessPathExpression="https://docs.qq.com/sheet/DVlNaQ012amF4SW1G" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
 </Triggers>
