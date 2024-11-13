@@ -138,7 +138,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 5. 可选的：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选。
 6. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
 7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
-> [!INFO]
+
 > `执行代码` 权限用于运行 空天姬 MissFisher 的界面窗口和读取游戏内存以获取必要的天气、钓饵等信息。  
 > `操作文件` 权限用于下载 `Preset.csv` 以更新 空天姬 MissFisher 内置预设。  
 > `启动进程` 权限用于在用户手动执行触发器时打开相关网页。
@@ -454,7 +454,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 命令|描述|备注
 -|-|-
 `/e <空天姬预设>`|使用预设中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)
-`/e 冲分确定`<br>`/e 蓝鱼确定`<br>`/e 成就确定`<br>`/e 成就1确定`<br>`/e 成就2确定`|以指定模式自动海钓|携带 3 种海钓钓饵各至少 50 个<br>另携带至少 1 个万能拟饵<br>同时留出至少 40 格背包空间
+`/e 冲分确定`<br>`/e 蓝鱼确定`<br>`/e 成就确定`<br>`/e 成就1确定`<br>`/e 成就2确定<br>`/e 练级确定`|以指定模式自动海钓|携带 3 种海钓钓饵各至少 50 个<br>同时留出至少 40 格背包空间
 `/e 空天姬预设 <鱼类全称> <定时分钟>`<br>`/e ktjys <鱼类全称> <定时分钟>`|使用对应的内置预设自动钓鱼|见条目 [支持的预设](#现在支持的内置预设)
 `/e 空天姬预设 查看 <鱼类全称>`<br>`/e ktjys show <鱼类全称>`|查看对应的内置预设|以方便修改或作钓鱼准备
 `/e ktjdbg`|调试自动功能|
