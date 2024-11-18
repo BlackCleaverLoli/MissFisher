@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.715">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.11" Enabled="true" RawEnvironmentVariables="版本 = 1.8.11&#xD;&#xA;快照 = 24w46l&#xD;&#xA;摘要 = 优化体验；修复没有切换阶段的问题。&#xD;&#xA;namazu = 1.3.5.3">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.12" Enabled="true" RawEnvironmentVariables="版本 = 1.8.12&#xD;&#xA;快照 = 24w47a&#xD;&#xA;摘要 = 优化体验；修复没有切换阶段的问题。&#xD;&#xA;namazu = 1.3.5.3">
 <Folders>
 <Folder FFXIVJobFilter="131072" Id="f41a9643-e93e-49d3-87d1-22944f5cc42d" ZoneFilterRegularExpression="by 黑色公主切萝莉肥" Name=" " Enabled="true">
 <Folders>
@@ -488,7 +488,7 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="false" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
+<Trigger Enabled="true" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
 <Actions>
 <Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="空天姬：&#xD;&#xA;未配置强心剂键码 或 配置保存失败！" ActionType="MessageBox">
 <Condition Enabled="true" Grouping="Or">
@@ -696,7 +696,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -1154,7 +1154,11 @@
 <Action OrderNumber="10" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="11" VariableName="空天姬预拍水模式" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="12" VariableName="空天姬饵鱼模式" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="13" VariableName="空天姬计数模式" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="13" VariableName="空天姬计数模式" ActionType="Variable" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
 <Action OrderNumber="14" LogMessageText="空天姬执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3293,13 +3297,13 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬大鱼目标3}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="111" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if: ${ev:空天姬控制海钓模式} ? :&lt;se.7&gt;}&#xD;&#xA;${?d: 1 = 平钓 , 2 = 大鱼 , 3 = 耐心 [${v:空天姬参数}] }模式${if: ( ${ev:空天姬手法攒鱼计} || ${ev:空天姬手法收藏品} || ${ev:空天姬手法不撒饵} || ${ev:空天姬鱼识参数} || ${ev:空天姬手法套娃} || ${ev:空天姬阶段参数} || ${ev:空天姬手法知识} || ${ev:空天姬手法引诱} || ${ev:空天姬手法重随} || ${ev:空天姬手法鱼影} || ${ev:空天姬手法钓组} || ${ev:空天姬手法鱼眼} ) ? （${if: ${ev:空天姬手法不撒饵} ? &quot;  不撒饵&quot; : }${if: ${ev:空天姬手法收藏品} ? &quot;  收藏品&quot; : }${if: ${ev:空天姬手法知识} ? &quot;  知识&quot; : }${if: ${ev:空天姬手法攒鱼计} ? &quot;  攒鱼计&quot; : }${if: ${ev:空天姬手法套娃} ? &quot;  套娃&quot; : }${if: ${ev:空天姬手法引诱} ? &quot;  引诱&quot; : }${if: ${ev:空天姬手法鱼影} ? &quot;  鱼影&quot; : }${if: ${ev:空天姬手法重随} ? &quot;  重随&quot; : }${if: ${ev:空天姬手法鱼眼} ? &quot; Θ 鱼眼&quot; : }${if: ${ev:空天姬鱼识参数} ? &quot;  鱼识&quot; : }${if: ${ev:空天姬阶段参数} ? &quot;  阶段&quot; : }${if: ${ev:空天姬手法钓组} ? &quot;  钓组&quot; : }）: }${if: (${ev:空天姬最大ET}${ev:空天姬天气}) ? &quot;&#xD;&#xA;&quot; : }${if: ( ${ev:空天姬最大ET} ) ? &quot; ${空天姬最小ET} - ${空天姬最大ET} 等待 ${n:round((${v:空天姬最小ET})/60000),0} &quot; : }${if: ${ev:空天姬天气} ?  天气  ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬天气}} : }&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间1} ? &quot;${v:空天姬大鱼最小区间1}+${v:空天姬大鱼最小区间非撒饵1} ${if: ${ev:空天姬大鱼最大区间1} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间1} ? &quot;${v:空天姬大鱼最大区间1}+${v:空天姬大鱼最大区间非撒饵1} ${if: ${ev:空天姬大鱼最小区间1} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王竿 , 2 = 中竿 , 1 = 轻竿 , 12 = 轻竿 和 中竿 , 13 = 轻竿 和 鱼王竿 , 23 = 中竿 和 鱼王竿 [${v:空天姬大鱼竿型1}]}${if:${ev:空天姬大鱼技巧提钩2}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩2} }&quot;:}${if: ${ev:空天姬大鱼鱼篓2} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓2}} } &quot; : } ${if:${ev:空天姬大鱼竿型2}?&quot;${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标1}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间2} ? &quot;${v:空天姬大鱼最小区间2}+${v:空天姬大鱼最小区间非撒饵2} ${if: ${ev:空天姬大鱼最大区间2} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间2} ? &quot;${v:空天姬大鱼最大区间2}+${v:空天姬大鱼最大区间非撒饵2} ${if: ${ev:空天姬大鱼最小区间2} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型2}]}${if:${ev:空天姬大鱼技巧提钩3}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩3} }&quot;:} &quot;:}${if: ${ev:空天姬大鱼鱼篓3} ?&quot;${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓3}} } &quot; : }${if:${ev:空天姬大鱼竿型3}?&quot;${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标2}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间3} ? &quot;${v:空天姬大鱼最小区间3}+${v:空天姬大鱼最小区间非撒饵3} ${if: ${ev:空天姬大鱼最大区间3} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间3} ? &quot;${v:空天姬大鱼最大区间3}+${v:空天姬大鱼最大区间非撒饵3} ${if: ${ev:空天姬大鱼最小区间3} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型3}]}${if:${ev:空天姬大鱼技巧提钩4}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩4} }&quot;:} &quot;:}${if: ${ev:空天姬大鱼鱼篓4} ?&quot;${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓4}} } &quot; : }${if:${ev:空天姬大鱼竿型4}?&quot;${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标3}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间4} ? &quot;${v:空天姬大鱼最小区间4}+${v:空天姬大鱼最小区间非撒饵4} ${if: ${ev:空天姬大鱼最大区间4} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间4} ? &quot;${v:空天姬大鱼最大区间4}+${v:空天姬大鱼最大区间非撒饵4} ${if: ${ev:空天姬大鱼最小区间4} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型4}]}${if:${ev:空天姬大鱼技巧提钩5}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩5} }&quot;:} &quot;:}${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬目标}}${if:${ev:空天姬拍目标}?&quot;&#xD;&#xA;${if:${ev:空天姬拍占位}?: 拍水} ${if: ${ev:空天姬拍最小区间} ? &quot;${v:空天姬拍最小区间}+${v:空天姬拍最小区间非撒饵} ${if: ${ev:空天姬拍最大区间} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬拍最大区间} ? &quot;${v:空天姬拍最大区间}+${v:空天姬拍最大区间非撒饵} ${if: ${ev:空天姬拍最小区间} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬拍竿型}]}${if:${ev:空天姬大鱼技巧提钩1}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩1} }&quot;:}${if:${ev:空天姬拍占位}?:${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬拍目标}}}${if:${ev:空天姬大鱼鱼篓1} ? &quot; 鱼篓&quot; : }&quot;:}${if:${ev:空天姬专一目标}?&quot;&#xD;&#xA; 专一 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬专一目标}} ${if:${ev:空天姬专一多提}? ${if: ( ${v:空天姬专一多提} ) &gt; 2 ? ${if: ( ${v:空天姬专一多提} ) &gt; 3 ? 双提 : 三提 } : }:}&quot;:}${if:${f:length:${空天姬计数目标1}}?&quot;&#xD;&#xA; 计数 ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}}${if:${t:空天姬目标[1][1]} ?? 0 ?&quot; × ${t:空天姬目标[1][1]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}}${if:${t:空天姬目标[1][2]} ?? 0 ?&quot; × ${t:空天姬目标[1][2]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}}${if:${t:空天姬目标[1][3]} ?? 0 ?&quot; × ${t:空天姬目标[1][3]}&quot;:}&quot;:}${if: ${ev:空天姬控制海钓模式} ?&quot;&#xD;&#xA; 海钓 播报手法仅供参考&quot;: }&#xD;&#xA; ${f:ifcontain(Snapshot,Snapshot ${env:快照},v${env:版本}):${_triggerpath}}&#xD;&#xA; 可使用“/e 停止”或“/e kend”来停止自动功能。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="111" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if: ${ev:空天姬控制海钓模式} ? :&lt;se.7&gt;}&#xD;&#xA;${?d: 1 = 平钓 , 2 = 大鱼 , 3 = 耐心 [${v:空天姬参数}] }模式${if: ( ${ev:空天姬手法攒鱼计} || ${ev:空天姬手法收藏品} || ${ev:空天姬手法不撒饵} || ${ev:空天姬鱼识参数} || ${ev:空天姬手法套娃} || ${ev:空天姬阶段参数} || ${ev:空天姬手法知识} || ${ev:空天姬手法引诱} || ${ev:空天姬手法重随} || ${ev:空天姬手法鱼影} || ${ev:空天姬手法钓组} || ${ev:空天姬手法鱼眼} ) ? （${if: ${ev:空天姬手法不撒饵} ? &quot;  不撒饵&quot; : }${if: ${ev:空天姬手法收藏品} ? &quot;  收藏品&quot; : }${if: ${ev:空天姬手法知识} ? &quot;  知识&quot; : }${if: ${ev:空天姬手法攒鱼计} ? &quot;  攒鱼计&quot; : }${if: ${ev:空天姬手法套娃} ? &quot;  套娃&quot; : }${if: ${ev:空天姬手法引诱} ? &quot;  引诱&quot; : }${if: ${ev:空天姬手法鱼影} ? &quot;  鱼影&quot; : }${if: ${ev:空天姬手法重随} ? &quot;  重随&quot; : }${if: ${ev:空天姬手法鱼眼} ? &quot; Θ 鱼眼&quot; : }${if: ${ev:空天姬鱼识参数} ? &quot;  鱼识&quot; : }${if: ${ev:空天姬阶段参数} ? &quot;  阶段&quot; : }${if: ${ev:空天姬手法钓组} ? &quot;  钓组&quot; : }）: }${if: (${ev:空天姬最大ET}${ev:空天姬天气}) ? &quot;&#xD;&#xA;&quot; : }${if: ( ${ev:空天姬最大ET} ) ? &quot; ${空天姬最小ET} - ${空天姬最大ET} 等待 ${n:round((${v:空天姬最小ET})/60000),0} &quot; : }${if: ${ev:空天姬天气} ?  天气  ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬天气}} : }&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间1} ? &quot;${v:空天姬大鱼最小区间1}+${v:空天姬大鱼最小区间非撒饵1} ${if: ${ev:空天姬大鱼最大区间1} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间1} ? &quot;${v:空天姬大鱼最大区间1}+${v:空天姬大鱼最大区间非撒饵1} ${if: ${ev:空天姬大鱼最小区间1} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王竿 , 2 = 中竿 , 1 = 轻竿 , 12 = 轻竿 和 中竿 , 13 = 轻竿 和 鱼王竿 , 23 = 中竿 和 鱼王竿 [${v:空天姬大鱼竿型1}]}${if:${ev:空天姬大鱼技巧提钩2}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩2} }&quot;:}${if: ${ev:空天姬大鱼鱼篓2} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓2}} }&quot; : } ${if:${ev:空天姬大鱼竿型2}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标1}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间2} ? &quot;${v:空天姬大鱼最小区间2}+${v:空天姬大鱼最小区间非撒饵2} ${if: ${ev:空天姬大鱼最大区间2} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间2} ? &quot;${v:空天姬大鱼最大区间2}+${v:空天姬大鱼最大区间非撒饵2} ${if: ${ev:空天姬大鱼最小区间2} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型2}]}${if:${ev:空天姬大鱼技巧提钩3}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩3} }&quot;:}&quot;:}${if: ${ev:空天姬大鱼鱼篓3} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓3}} }&quot; : }${if:${ev:空天姬大鱼竿型3}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标2}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间3} ? &quot;${v:空天姬大鱼最小区间3}+${v:空天姬大鱼最小区间非撒饵3} ${if: ${ev:空天姬大鱼最大区间3} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间3} ? &quot;${v:空天姬大鱼最大区间3}+${v:空天姬大鱼最大区间非撒饵3} ${if: ${ev:空天姬大鱼最小区间3} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型3}]}${if:${ev:空天姬大鱼技巧提钩4}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩4} }&quot;:}&quot;:}${if: ${ev:空天姬大鱼鱼篓4} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓4}} }&quot; : }${if:${ev:空天姬大鱼竿型4}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标3}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间4} ? &quot;${v:空天姬大鱼最小区间4}+${v:空天姬大鱼最小区间非撒饵4} ${if: ${ev:空天姬大鱼最大区间4} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间4} ? &quot;${v:空天姬大鱼最大区间4}+${v:空天姬大鱼最大区间非撒饵4} ${if: ${ev:空天姬大鱼最小区间4} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型4}]}${if:${ev:空天姬大鱼技巧提钩5}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩5} }&quot;:}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬目标}}${if:${ev:空天姬拍目标}?&quot;&#xD;&#xA;${if:${ev:空天姬拍占位}?: 拍水} ${if: ${ev:空天姬拍最小区间} ? &quot;${v:空天姬拍最小区间}+${v:空天姬拍最小区间非撒饵} ${if: ${ev:空天姬拍最大区间} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬拍最大区间} ? &quot;${v:空天姬拍最大区间}+${v:空天姬拍最大区间非撒饵} ${if: ${ev:空天姬拍最小区间} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬拍竿型}]}${if:${ev:空天姬大鱼技巧提钩1}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩1} }&quot;:}${if:${ev:空天姬大鱼鱼篓1} ? &quot; 鱼篓&quot; : } ${if:${ev:空天姬拍占位}?:${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬拍目标}}}&quot;:}${if:${ev:空天姬专一目标}?&quot;&#xD;&#xA; 专一 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬专一目标}} ${if:${ev:空天姬专一多提}? ${if: ( ${v:空天姬专一多提} ) &gt; 2 ? ${if: ( ${v:空天姬专一多提} ) &gt; 3 ? 双提 : 三提 } : }:}&quot;:}${if:${f:length:${空天姬计数目标1}}?&quot;&#xD;&#xA; 计数 ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}}${if:${t:空天姬目标[1][1]} ?? 0 ?&quot; × ${t:空天姬目标[1][1]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}}${if:${t:空天姬目标[1][2]} ?? 0 ?&quot; × ${t:空天姬目标[1][2]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}}${if:${t:空天姬目标[1][3]} ?? 0 ?&quot; × ${t:空天姬目标[1][3]}&quot;:}&quot;:}${if: ${ev:空天姬控制海钓模式} ?&quot;&#xD;&#xA; 海钓 播报手法仅供参考&quot;: }&#xD;&#xA; ${f:ifcontain(Snapshot,Snapshot ${env:快照},v${env:版本}):${_triggerpath}}&#xD;&#xA; 可使用“/e 停止”或“/e kend”来停止自动功能。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="112" NamedCallbackName="hint" NamedCallbackParam="3&#xD;&#xA;${if:${ev:空天姬阶段模式}?切换预设到了下一阶段……:程序启动！}" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="112" NamedCallbackName="hint" NamedCallbackParam="3&#xD;&#xA;${if:${ev:空天姬阶段模式}?切换到了下一阶段的预设……:程序启动！}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
@@ -3674,7 +3678,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="162" NamedCallbackName="command" NamedCallbackParam="/e 切换到了下一阶段。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="162" NamedCallbackName="command" NamedCallbackParam="/e 条件满足&#xD;&#xA;切换到了下一阶段。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
@@ -5372,7 +5376,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬收藏品初始状态}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="3.1.4 调整收藏状态" Id="f0790f9d-79b9-404e-a625-1e19951c9438" RegularExpression="^.{32}29:150001:(?&lt;log&gt;4(61|56))">
+<Trigger Enabled="true" Name="3.1.4 调整收藏状态" Id="f0790f9d-79b9-404e-a625-1e19951c9438" RegularExpression="^.{32}29:150001:(?&lt;log&gt;4(61|56))">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/ac ${pd:空天姬技能[${pd:空天姬配置[语言]}收藏品采集]}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
@@ -6124,14 +6128,6 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="耐久10告警" Id="2b9c3515-20f7-4e17-adf9-18770f5b9a19" RegularExpression="^.{15}\S+ 00:0839::(“\w+”的耐久度已降到10%以下。|The condition of your .+ has dropped to 10%.|.+の耐久度が10%以下になった。)$" PeriodRefire="Deny" RefirePeriodExpression="500">
-<Actions>
-<Action OrderNumber="1" UseTTSTextExpression="装备耐久低" ActionType="UseTTS" />
-</Actions>
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Trigger>
 <Trigger Enabled="true" Name="未注册回调 报错" Id="f3d9dc82-713c-4d21-bec3-3e36a2909178" RegularExpression="^.{15}\S+ 01:|^空天姬触发" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" ActionType="Placeholder" ExecutionDelayExpression="6000" Asynchronous="False" />
@@ -6154,6 +6150,14 @@
 <Actions>
 <Action OrderNumber="1" LogMessageText="空天姬海钓启动：${log}" LogProcess="True" ActionType="LogMessage" />
 </Actions>
+</Trigger>
+<Trigger Enabled="true" Name="耐久10告警" Id="2b9c3515-20f7-4e17-adf9-18770f5b9a19" RegularExpression="^.{15}\S+ 00:0839::(“\w+”的耐久度已降到10%以下。|The condition of your .+ has dropped to 10%.|.+の耐久度が10%以下になった。)$" PeriodRefire="Deny" RefirePeriodExpression="500">
+<Actions>
+<Action OrderNumber="1" UseTTSTextExpression="装备耐久低" ActionType="UseTTS" />
+</Actions>
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
 </Trigger>
 </Triggers>
 </Folder>
