@@ -220,6 +220,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 4. 有鱼咬饵时，悬浮窗的计时停止，并显示当前咬饵鱼类的竿震类型，同时角色自动使用技能 `提钩`。
 5. 在鱼成功上钩后，TTS 会播报：「目标达成。」，同时消息窗口出现刚刚上钩的鱼类的竿震类型、咬饵竿时等信息。
 6. 最后，通过按下 `移动键` 或手动使用技能 `中断` 使角色收起钓竿时，悬浮窗消失，消息窗口出现本次垂钓的统计信息。
+
 ## 测试关键日志行
 **测试步骤如下：**  
 > [!IMPORTANT]
@@ -355,6 +356,8 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 ### 同步内置预设功能无反应：
 * **授予仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器操作文件` - 点击 `是` - `保存更改` - 再次右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
+
+---
 ## 其他相关指南
 ### 咖啡转呆萌指北：
 > [!CAUTION]
