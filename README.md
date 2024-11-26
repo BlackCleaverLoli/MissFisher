@@ -175,15 +175,15 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 4. 在主界面中点击 `配置` 按钮 - 在打开的用户配置界面中找到配置项 `强心剂键位` - 点击右侧的文本框 - 输入要使用的强心剂所处的热键栏上的热键位来设置 `强心剂键码` （详细说明） - 根据自己的情况与喜好设置剩余的配置 - 点击 `保存` 以保存配置。
 5. 可选的：在 ACT 界面中切换到 `抹茶 Matcha` 分页（如有）- 找到 `日志及数据共享` 部分 - 勾选 `兼容模式` 以略微提高咬饵时 空天姬 MissFisher 的响应速度。
 
-> [!CAUTION]
+> [!NOTE]
 > 敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。  
 
 ### Dalamud 相关配置：
 > [!IMPORTANT]
-> **你不安装 Daily Routines 也可以使用 空天姬 MissFisher。**
+> Daily Routines 是一个包含众多体验优化功能的免费卫月插件。
+> **你不安装 Daily Routines 也可以使用 空天姬 MissFisher。**  
+> 跳过此条目：[验证自动功能](#验证自动功能)
 
-> [!NOTE]
-Daily Routines 是一个包含众多体验优化功能的免费卫月插件。
 - 可选的：启用 Daily Routines 的 `宏进入技能队列` 功能。可提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
 #### 获取 Daily Routines ：
 > [!IMPORTANT]
@@ -224,10 +224,10 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 ## 测试关键日志行
 **测试步骤如下：**  
 > [!IMPORTANT]
-> **必须已开放 80 级任务副本：末日暗影亚马乌罗提。**
+> **进行该测试的必要条件：必须已开放 80 级任务副本「末日暗影亚马乌罗提」。**
 
 > [!TIP]
-> 此行关乎自动海钓能否启动。  
+> **此类型的日志行关乎自动海钓能否启动。**  
 > 当游戏版本更新后，想确认自动海钓是否可用时，也可进行本测试。  
 1. 在游戏中消息窗口的 `聊天输入栏` 输入 `/e ktjlogtest`，然后按下 `回车键` 以启动关键日志行监听功能。
 2. 切换到 80 级以上的任意战斗职业。
@@ -251,9 +251,11 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 > [!NOTE]
 > 在默认的仓库设置下，每次启动 ACT 时 Triggernometry 都会自动更新远程仓库下的触发器，但你也可以手动更新它。
 
-- **手动更新远程仓库：** 在 Triggernometry 内 `右键` 空天姬 MissFisher 的远程仓库 - 点击 `更新` - 等待更新完成。
+- **手动更新远程仓库：**  
+  在 Triggernometry 内 `右键` 空天姬 MissFisher 的远程仓库 - 点击 `更新` - 等待更新完成。
 
 **本地触发器**  
+手动重新安装 空天姬 MissFisher ：
 1. 在 Triggernometry 内找到 空天姬 MissFisher 触发器的 `主分组` ，通常名为 `新能源钓竿 空天姬` 或 `MissFisher Snapshot`。
 2. 右键该 `主分组` - 点击 `移除` - 在弹出的对话框中点击 `确认` 。
 3. 参照条目 [方法 2：导入为本地触发器](#方法-2导入为本地触发器) 中的方法步骤进行安装。
