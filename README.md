@@ -180,7 +180,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 ### Dalamud 相关配置：
 > [!IMPORTANT]
-> Daily Routines 是一个包含众多体验优化功能的免费卫月插件。
+> Daily Routines 是一个包含众多体验优化功能的免费卫月插件。  
 > **你不安装 Daily Routines 也可以使用 空天姬 MissFisher。**  
 > 跳过此条目：[验证自动功能](#验证自动功能)
 
