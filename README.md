@@ -181,14 +181,15 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 
 ### Dalamud 相关配置：
 > [!IMPORTANT]
-> Daily Routines 是一个包含众多体验优化功能的免费卫月插件。  
 > **你不安装 Daily Routines 也可以使用 空天姬 MissFisher。**  
 > 跳过此条目：[验证自动功能](#验证自动功能)
 
 - 可选的：启用 Daily Routines 的 `宏进入技能队列` 功能。可提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
 #### 获取 Daily Routines ：
 > [!IMPORTANT]
-> 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。
+> **Daily Routines 是一个包含众多体验优化功能的免费卫月插件。**  
+> 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。  
+> 此外，你还需要运行 [Unban 插件](https://github.com/NightmareXIV/UnbanPluginsCN) 以解除 Dalamud 对部分插件的禁用。
 
 1. 在游戏的消息窗口输入 `/xlsettings` 并按下 `回车键` 以打开 Dalamud 设置 - 点击界面上方的 `测试版` 。  
 2. 在界面下方找到 `自定义插件仓库` 部分。  
