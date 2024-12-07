@@ -191,7 +191,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > [!IMPORTANT]
 > **Daily Routines 是一个包含众多体验优化功能的免费卫月插件。**  
 > 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。  
-> 此外，你还需要运行 [Unban 插件](https://github.com/NightmareXIV/UnbanPluginsCN) 以解除 Dalamud 对部分插件的禁用。
+> 如果是中国服：你还需要运行 [Unban 插件](https://github.com/NightmareXIV/UnbanPluginsCN) 以解除 Dalamud 对部分插件的禁用。
 
 1. 在游戏的消息窗口输入 `/xlsettings` 并按下 `回车键` 以打开 Dalamud 设置 - 点击界面上方的 `测试版` 。  
 2. 在界面下方找到 `自定义插件仓库` 部分。  
