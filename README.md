@@ -279,7 +279,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 ### 提示空天姬扩展未注册：
 * **检查是否有插件冲突：**  
 检查是否同时启用了 Daily Routines 的 `显示真实等待次序` 模块与 ACT 的 `AccurateWorldTravelQueue.dll` 插件。  
-如果你同时启用了它们：请关闭 ACT 的 `AccurateWorldTravelQueue.dll` 插件 - 将其移除 - 重启游戏。
+如果你同时启用了它们：请关闭 ACT 的 `AccurateWorldTravelQueue.dll` 插件 - 将其移除 - 重启游戏。  
   
 * **授予远程仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` - 右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
@@ -287,6 +287,10 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 * **检查 ACT 插件优先级：**  
 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。  
   
+* **检查 PostNamazu.dll 文件是否重复**  
+打开 ACT 文件夹，搜索是否有重复的 PostNamazu.dll 文件。  
+如有，关闭 ACT 等待其完全关闭，将除 Plugins 文件夹外的 PostNamazu.dll 文件删除。  
+
 - **如果全都确认无误并且你是 CafeACT，请尝试使用 呆萌 ACT：**  
 可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。
 ### 提示主界面窗口打开失败：
