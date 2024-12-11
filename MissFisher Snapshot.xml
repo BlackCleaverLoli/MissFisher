@@ -1,41 +1,36 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w49d" Enabled="true" RawEnvironmentVariables="版本 = 1.8.21&#xD;&#xA;快照 = 24w49d&#xD;&#xA;摘要 = 修复一个三语集合符的问题。&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w50a" Enabled="true" RawEnvironmentVariables="版本 = 1.8.22&#xD;&#xA;快照 = 24w50a&#xD;&#xA;摘要 = 修复一些问题。&#xD;&#xA;namazu = 1.3.5.4&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
 <Folder Id="701f8afb-7760-4457-8230-c25f75f4c5f7" Name=" 相关链接" Enabled="true">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Name="网页  鱼糕 FF14（右键执行）" Id="55ce1ddb-09c2-4621-b7fe-ef04f356923e" RegularExpression="">
+<Trigger Enabled="true" Name="鱼糕 FF14（右键执行）" Id="55ce1ddb-09c2-4621-b7fe-ef04f356923e" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://fish.ffmomola.com/#/" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="网页 阿洛的云盘 获取最新高级触发器插件（右键执行）" Id="8d814eca-d2da-4334-921b-7edf72917cd5" RegularExpression="">
-<Actions>
-<Action OrderNumber="1" LaunchProcessPathExpression="https://www.123pan.com/s/1xRXjv-340BH.html" ActionType="LaunchProcess" />
-</Actions>
-</Trigger>
-<Trigger Enabled="false" Name="字 如执行没反应 因你没有勾选远程仓库的允许启动进程" Id="acb72a79-e69b-459b-b523-cb6999715804" RegularExpression="">
+<Trigger Enabled="false" Name="字 如执行没反应 因你没有勾选远程仓库的允许启动进程 请勾选后更新仓库" Id="acb72a79-e69b-459b-b523-cb6999715804" RegularExpression="">
 <Actions />
 </Trigger>
-<Trigger Enabled="true" Name="网页  空天姬 GitHub 仓库（右键执行）" Id="e5d7e349-5079-439f-94d7-da4742ee0b46" RegularExpression="">
+<Trigger Enabled="true" Name="空天姬 GitHub 仓库（右键执行）" Id="e5d7e349-5079-439f-94d7-da4742ee0b46" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="网页  空天姬相关文件／环境依赖（右键执行）" Id="af2e54b1-99ef-4bc1-a927-ea393a76456c" RegularExpression="">
+<Trigger Enabled="true" Name="空天姬相关文件／环境依赖（右键执行）" Id="af2e54b1-99ef-4bc1-a927-ea393a76456c" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://www.123pan.com/s/YJHhTd-0ah13" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="网页  鱼糕 FF14 新海（右键执行）" Id="c99d3b5f-39c2-4cb9-9ffa-9dc47154badc" RegularExpression="">
+<Trigger Enabled="true" Name="鱼糕 新网站（右键执行）" Id="c99d3b5f-39c2-4cb9-9ffa-9dc47154badc" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://next.ffmomola.com/oceanFishing" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="  网页 如何编写空天姬预设（右键执行）" Id="873eef71-ce34-44c9-ab8d-c4db219ecabf" RegularExpression="">
+<Trigger Enabled="true" Name="  如何编写空天姬预设（右键执行）" Id="873eef71-ce34-44c9-ab8d-c4db219ecabf" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets" ActionType="LaunchProcess" />
 </Actions>
@@ -44,7 +39,7 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="false" Name="  预设生成器 表格（未完成 右键执行 需要打开允许启动进程）" Id="e4b112e3-5862-4d27-8ce4-b3c2f5dcef1d" RegularExpression="">
+<Trigger Enabled="false" Name="  预设生成器 表格（未完成）" Id="e4b112e3-5862-4d27-8ce4-b3c2f5dcef1d" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="2453366e-7c47-4c08-b276-ab8824fd1b98" TriggerForce="regexp" ActionType="Trigger" />
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 空天姬：正在尝试打开配置界面。如果你是用远程触发器获得的，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" Enabled="False" ActionType="NamedCallback" Asynchronous="False" Description="如果你看见“无效引用”，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True" />
@@ -60,7 +55,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬打开配置" LogProcess="True" ActionType="LogMessage" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="   在线同步内置预设（右键执行 从 腾讯云 同步预设 推荐国内网络）" Id="f94ae6a2-2ccc-4139-bf45-022f9c4d4cf3" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])[ ]*$|^.{26}(?&lt;log2&gt;003C)::(“/(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])”出现问题：该命令不存在。|The command /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]) does not exist.|そのコマンドはありません。： /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]))$" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="   从 腾讯云 同步内置预设（右键执行 推荐国内网络使用）" Id="f94ae6a2-2ccc-4139-bf45-022f9c4d4cf3" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])[ ]*$|^.{26}(?&lt;log2&gt;003C)::(“/(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])”出现问题：该命令不存在。|The command /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]) does not exist.|そのコマンドはありません。： /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]))$" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" DiskFileOpVar="空天姬预设" VariableName="空天姬控制预设I" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" UseTTSTextExpression="正在连接 腾讯云" ActionType="UseTTS" Asynchronous="False">
@@ -81,11 +76,11 @@
 <Action OrderNumber="8" DiskFileOpName="https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/Preset.csv" DiskFileOpVar="空天姬控制预设I" ActionType="DiskFile" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="( ${pd:空天姬配置[同步线路]} ) - 1" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
+<ConditionSingle Enabled="true" ExpressionL="( ${pd:空天姬配置[同步线路]} ) - 1" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${log0}${log1}${log2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="   在线同步内置预设（右键执行 从 GitHub 同步预设）" Id="0880d62f-47b0-4747-8be1-fd978d442b37" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])[ ]*$|^.{26}(?&lt;log2&gt;003C)::(“/(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])”出现问题：该命令不存在。|The command /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]) does not exist.|そのコマンドはありません。： /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]))$" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="   从 GitHub 同步内置预设（右键执行）" Id="0880d62f-47b0-4747-8be1-fd978d442b37" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])[ ]*$|^.{26}(?&lt;log2&gt;003C)::(“/(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])”出现问题：该命令不存在。|The command /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]) does not exist.|そのコマンドはありません。： /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]))$" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" DiskFileOpVar="空天姬预设" VariableName="空天姬控制预设I" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" UseTTSTextExpression="正在连接 GitHub" ActionType="UseTTS" Asynchronous="False">
@@ -109,17 +104,12 @@
 <ConditionSingle Enabled="true" ExpressionL="${log0}${log1}${log2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name=" 网页 内置预设请愿新增鱼类 / 鱼眼预设 / 内置预设反馈表（右键执行）" Id="34a500c0-0e57-4946-aebf-b4213506394d" RegularExpression="">
-<Actions>
-<Action OrderNumber="1" LaunchProcessPathExpression="https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP" ActionType="LaunchProcess" />
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name=" 网页 加入 QQ 群聊（右键执行）" Id="ecf66d72-9d4d-43b1-9f73-adeb687aab6d" RegularExpression="">
+<Trigger Enabled="true" Name=" 加入空天姬 QQ 群（右键执行）" Id="ecf66d72-9d4d-43b1-9f73-adeb687aab6d" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&amp;authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&amp;noverify=0&amp;group_code=959153665" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name=" 网页 前往云盘下载 渔捞风格自定义音效（右键执行）" Id="ccac4e7f-dd0c-41d7-9386-fe3f36b14b71" RegularExpression="">
+<Trigger Enabled="true" Name=" 前往 123 云盘 下载渔捞风格自定义音效（右键执行）" Id="ccac4e7f-dd0c-41d7-9386-fe3f36b14b71" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://www.123684.com/s/YJHhTd-NCH13" ActionType="LaunchProcess" />
 </Actions>
@@ -177,7 +167,145 @@
 </Triggers>
 </Folder>
 <Folder Id="79477cd0-a385-4cbd-93d0-1793beb55a81" Name="初始化" Enabled="true">
+<Folders>
+<Folder Id="0fda23cc-c05a-4f04-9fe2-b74b977ee265" Name="检查环境" Enabled="true">
+<Folders>
+<Folder Id="d5c87dde-ea8e-4c5d-87e4-7888455a9462" Name="检查日志" Enabled="true">
 <Folders />
+<Triggers>
+<Trigger Enabled="false" Name="检查 267 10B" Id="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:(?&lt;id&gt;\w+):(?&lt;log&gt;\w+)" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Actions>
+<Action OrderNumber="1" UseTTSTextExpression="成功监听到日志航" ActionType="UseTTS">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+</Condition>
+</Action>
+<Action OrderNumber="2" NamedCallbackName="hint" NamedCallbackParam="10&#xD;&#xA;////// 空天姬关键日志行测试 //////&#xD;&#xA;成功监听到关键日志行&#xD;&#xA;现在可退出副本&#xD;&#xA;即将帮您打开任务搜索器" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+</Condition>
+</Action>
+<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 成功监听到 NpcYell 日志行。&#xD;&#xA;267 10B&#xD;&#xA;ID:${id}&#xD;&#xA;TextID:${log}" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="5" NamedCallbackName="quit" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+</Condition>
+</Action>
+<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+</Condition>
+</Action>
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name="启用检查 10B" Id="3b5aa968-dfbe-493b-9cbc-42afbe8daa90" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt])[ ]*$|^.{26}003C::(“/(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt])”出现问题：该命令不存在。|The command /(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt]) does not exist.|そのコマンドはありません。： /(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt]))$">
+<Actions>
+<Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="2" TriggerOp="EnableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="3" UseTTSTextExpression="开始监听" ActionType="UseTTS" Asynchronous="False" />
+<Action OrderNumber="4" NamedCallbackName="hint" NamedCallbackParam="15&#xD;&#xA;////// 开始监听关键日志行 //////&#xD;&#xA;即将帮您打开任务搜索器&#xD;&#xA;请切换战斗职业&#xD;&#xA;设置任务搜索器解除限制后&#xD;&#xA;进入副本：末日暗影亚马乌罗提" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]&#xD;&#xA;////// 开始监听关键日志行 //////&#xD;&#xA;即将帮您打开任务搜索器&#xD;&#xA;请切换战斗职业&#xD;&#xA;设置任务搜索器解除限制后&#xD;&#xA;进入副本：末日暗影亚马乌罗提" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False" />
+</Actions>
+</Trigger>
+<Trigger Enabled="false" Name="关闭检查" Id="2e651e02-b638-4068-a783-4213103e9a5a" RegularExpression="^.{15}\S+ 01:(?!346)" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Actions>
+<Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 因转移到非测试区域，已关闭关键日志行测试。" ActionType="NamedCallback" Asynchronous="False" />
+</Actions>
+</Trigger>
+</Triggers>
+</Folder>
+</Folders>
+<Triggers>
+<Trigger Enabled="true" Name="检查空天姬配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
+<Actions>
+<Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="空天姬：&#xD;&#xA;未配置强心剂键码 或 配置保存失败！" ActionType="MessageBox">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="2" MessageBoxIconType="Error" MessageBoxText="空天姬：&#xD;&#xA;高级触发器版本过低。&#xD;&#xA;当前：${_const[TriggernometryVersionMajor]}.${_const[TriggernometryVersionMinor]}.${_const[TriggernometryVersionBuild]}.${_const[TriggernometryVersionRevision]}&#xD;&#xA;至少：1.2.0.704+（MnFeN 分支）" ActionType="MessageBox">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${_const[TriggernometryVersionMajor]} * 1000^3 + ${_const[TriggernometryVersionMinor]} * 1000^2 + ${_const[TriggernometryVersionBuild]} * 1000 + ${_const[TriggernometryVersionRevision]}" ExpressionTypeL="Numeric" ExpressionR="1 * 1000^3 + 2 * 1000^2 + 0 * 1000 + 704" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
+</Condition>
+</Action>
+<Action OrderNumber="3" TriggerId="fb8d4caa-1aa8-47bc-891e-fcb8e0b2f8e4" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[竿时悬浮窗]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e 正在打开配置界面……&#xD;&#xA;如果你是用远程触发器获得的，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" ActionType="NamedCallback">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[竿时悬浮窗]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="5" TriggerOp="DisableTrigger" TriggerId="643a1c95-3146-4e69-a65f-ad842851d15f" ActionType="Trigger">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[竿时悬浮窗]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="6" LogMessageText="空天姬检查鲶鱼精" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name="检查主界面" Id="85df0c6b-c8c4-47a3-b329-8bd586d1b1a9" RegularExpression="^空天姬窗口">
+<Actions>
+<Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="MessageBox" ExecutionDelayExpression="10 * 1000">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+<Actions>
+<Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
+<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
+<Action OrderNumber="3" ActOpType="LogAllNetwork" ActionType="ActInteraction" />
+<Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 防日志冲突&#xD;&#xA;匹配到抹茶「兼容模式」咬饵日志，将关闭一次解析插件调试选项的「输出所有网络数据至日志文件」。" ActionType="NamedCallback" />
+<Action OrderNumber="5" DictVariableOp="Set" VariableOp="SetNumeric" VariableName="空天姬控制抹茶I" VariableExpression="1" ActionType="Variable" />
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name="启用检查抹茶" Id="69f10b77-008e-42dd-9b2c-ba888d01ef6b" RegularExpression="^.{32}29:150001:(?&lt;log&gt;4(61|56))">
+<Actions>
+<Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
+<Action OrderNumber="2" TriggerOp="EnableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
+<Action OrderNumber="3" ActOpType="LogAllNetwork" ActOpBoolParam="True" ActionType="ActInteraction" />
+</Actions>
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制抹茶I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Trigger>
+<Trigger Enabled="true" Name="检查鲶鱼精" Id="32b47a35-1436-402a-910c-cea2f77184ae" RegularExpression="^空天姬检查鲶鱼精">
+<Actions>
+<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;void Main()&#xD;&#xA;{var postNamazu = RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;);&#xD;&#xA;if (postNamazu.pluginObj == null)&#xD;&#xA;{MessageBox.Show(&#xD;&#xA;&quot;鲶鱼精邮差 PostNamazu 未安装或未启动。&quot;,&#xD;&#xA;&quot;空天姬&quot;,&#xD;&#xA;MessageBoxButtons.OK,&#xD;&#xA;MessageBoxIcon.Error&#xD;&#xA;);&#xD;&#xA;发送日志(&quot;空天姬超时&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;var current = $&quot;目前安装的版本为：{postNamazu.FileVersion}&quot;;&#xD;&#xA;var correct = $&quot;所需的最低版本：${env:namazu}&quot;;&#xD;&#xA;if (new Version(postNamazu.FileVersion) &lt; new Version(&quot;${env:namazu}&quot;))&#xD;&#xA;{RealPlugin.plug.UpdatePostNamazu(&quot;${env:namazu}&quot;);&#xD;&#xA;MessageBox.Show(&#xD;&#xA;&quot;请重启 ACT 以完成 鲶鱼精邮差 PostNamazu 的更新。&quot;,&#xD;&#xA;&quot;空天姬&quot;,&#xD;&#xA;MessageBoxButtons.OK,&#xD;&#xA;MessageBoxIcon.Information&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{StaticHelpers.SetScalarVariable(false, &quot;空天姬控制鲶鱼精检查I&quot;, &quot;1&quot;);&#xD;&#xA;}}&#xD;&#xA;void 发送日志(string text)&#xD;&#xA;{var tri = new Trigger();&#xD;&#xA;StaticHelpers.fakectx.trig = tri;&#xD;&#xA;RealPlugin.plug.QueueAction(&#xD;&#xA;StaticHelpers.fakectx,&#xD;&#xA;StaticHelpers.fakectx.trig,&#xD;&#xA;m: null,&#xD;&#xA;new Triggernometry.Action&#xD;&#xA;{ActionType = Triggernometry.Action.ActionTypeEnum.LogMessage.ToString(),&#xD;&#xA;LogMessageText = $&quot;{text}&quot;,&#xD;&#xA;LogProcess = &quot;true&quot;,&#xD;&#xA;},&#xD;&#xA;DateTime.Now,&#xD;&#xA;releaseMutex: true&#xD;&#xA;);}&#xD;&#xA;Main();&#xD;&#xA;" ActionType="ExecuteScript" />
+</Actions>
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Trigger>
+</Triggers>
+</Folder>
+</Folders>
 <Triggers>
 <Trigger Enabled="true" Name="初始化 构筑字典" Id="c3e54c94-0d02-4420-9df1-cce1fc60ebcc" RegularExpression="" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
@@ -454,7 +582,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="注册回调 Ext" Id="51087756-8bf2-4f8b-93c3-49d82621f207" RegularExpression="^.{15}\S+ 01:|^空天姬触发">
+<Trigger Enabled="true" Name="注册回调 Ext" Id="51087756-8bf2-4f8b-93c3-49d82621f207" RegularExpression="^.{15}\S+ 01:|^空天姬触发" PeriodRefire="Deny" RefirePeriodExpression="500">
 <Actions>
 <Action OrderNumber="1" ExecScriptAssembliesExpression="PostNamazu, GreyMagic" ExecScriptExpression="using System;&#xD;&#xA;using GreyMagic;&#xD;&#xA;using PostNamazu;&#xD;&#xA;using PostNamazu.Common;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using System.Threading;&#xD;&#xA;bool initialized = false;&#xD;&#xA;for (int i = 1; i &lt;= 5; i++)&#xD;&#xA;{try&#xD;&#xA;{MissFisherExtension.Init();&#xD;&#xA;initialized = true;&#xD;&#xA;break;&#xD;&#xA;}&#xD;&#xA;catch&#xD;&#xA;{MissFisherExtension.Log(RealPlugin.DebugLevelEnum.Warning, $&quot;空天姬扩展初始化失败，正在重试第 {i} / 5 次……&quot;);&#xD;&#xA;if (i == 5) throw;&#xD;&#xA;}&#xD;&#xA;Thread.Sleep(i * 1000);}&#xD;&#xA;public static class MissFisherExtension&#xD;&#xA;{private static readonly string Name = &quot;MissFisherExtension&quot;;&#xD;&#xA;public static PostNamazu.PostNamazu NamazuPlugin =&gt;&#xD;&#xA;(PostNamazu.PostNamazu)RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;).pluginObj;&#xD;&#xA;public static ExternalProcessMemory Memory =&gt; NamazuPlugin?.Memory;&#xD;&#xA;public static SigScanner Scanner =&gt; NamazuPlugin?.SigScanner;&#xD;&#xA;public static void OnXivProcUpdate()&#xD;&#xA;{ScanSignatures();&#xD;&#xA;}&#xD;&#xA;public static void RegisterCallback(&#xD;&#xA;string callBackName,&#xD;&#xA;Action&lt;string&gt; callBackAction,&#xD;&#xA;IntPtr? ptr = null&#xD;&#xA;)&#xD;&#xA;{if (ptr == IntPtr.Zero)&#xD;&#xA;return;&#xD;&#xA;Triggernometry.RealPlugin.plug.RegisterNamedCallback(&#xD;&#xA;callBackName,&#xD;&#xA;new Action&lt;object, string&gt;((_, cmd) =&gt; callBackAction(cmd)),&#xD;&#xA;null,&#xD;&#xA;registrant: Name&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void Init()&#xD;&#xA;{OnXivProcUpdate();&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.RegisterXivProcessUpdatedAction(&#xD;&#xA;Name,&#xD;&#xA;new System.Action(OnXivProcUpdate)&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeBaitAuto&quot;, FishingHelper.ChangeBaitAuto, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeBaitById&quot;, FishingHelper.ChangeBaitById, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&#xD;&#xA;&quot;KTJChangeSwimBaitByIndex&quot;,&#xD;&#xA;FishingHelper.ChangeSwimBaitByIndex,&#xD;&#xA;ExecuteCommandPtr&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJGetCurrentBait&quot;, FishingHelper.GetCurrentBait, PlayerStatePtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&#xD;&#xA;&quot;KTJGetCurrentWeather&quot;,&#xD;&#xA;FishingHelper.GetCurrentWeather,&#xD;&#xA;WeatherManagerPtr&#xD;&#xA;);&#xD;&#xA;if (FishingHelper.CanChangeBait())&#xD;&#xA;{Echo($&quot;已激活：空天姬换饵组件\r\n{Name} v0.06 by Nyy&quot;);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{Echo($&quot;&quot;);&#xD;&#xA;Echo($&quot;{Name} 初始化失败！&quot;);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static IntPtr ExecuteCommandPtr;&#xD;&#xA;public static IntPtr PlayerStatePtr;&#xD;&#xA;public static IntPtr WeatherManagerPtr;&#xD;&#xA;public static void ScanSignatures()&#xD;&#xA;{try&#xD;&#xA;{ExecuteCommandPtr = Scanner.ScanText(&#xD;&#xA;&quot;E8 ?? ?? ?? ?? 48 83 C4 ?? C3 CC CC CC CC CC CC CC CC CC CC CC CC 48 83 EC ?? 45 0F B6 C0&quot;,&#xD;&#xA;nameof(ExecuteCommandPtr)&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;catch (Exception)&#xD;&#xA;{try&#xD;&#xA;{ExecuteCommandPtr = Scanner.ScanText(&#xD;&#xA;&quot;E8 ? ? ? ? 48 8B 06 48 8B CE FF 50 ? E9 ? ? ? ? 49 8B CC&quot;,&#xD;&#xA;nameof(ExecuteCommandPtr)&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;catch (Exception)&#xD;&#xA;{ExecuteCommandPtr = IntPtr.Zero;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;var PlayerStatePtrPtr = Scanner.ScanText(&#xD;&#xA;&quot;48 8D 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 84 C0 75 06 F6 43 18 02&quot;,&#xD;&#xA;nameof(PlayerStatePtr)&#xD;&#xA;);&#xD;&#xA;int relativeOffset = Memory.Read&lt;int&gt;(PlayerStatePtrPtr + 3);&#xD;&#xA;PlayerStatePtr = PlayerStatePtrPtr + relativeOffset + 7;&#xD;&#xA;var weatherManagerPtrPtr = Scanner.ScanText(&#xD;&#xA;&quot;48 8D 0D ?? ?? ?? ?? 44 0F B7 45&quot;,&#xD;&#xA;nameof(WeatherManagerPtr)&#xD;&#xA;);&#xD;&#xA;int weatherManagerrelativeOffset = Memory.Read&lt;int&gt;(weatherManagerPtrPtr + 3);&#xD;&#xA;WeatherManagerPtr = weatherManagerPtrPtr + weatherManagerrelativeOffset + 7;&#xD;&#xA;}&#xD;&#xA;public static class FishingHelper&#xD;&#xA;{public static bool CanChangeBait()&#xD;&#xA;{return !(ExecuteCommandPtr == null || ExecuteCommandPtr == IntPtr.Zero);&#xD;&#xA;}&#xD;&#xA;public static void ChangeBaitAuto(string cmd)&#xD;&#xA;{if (uint.TryParse(cmd, out var swimIndex) &amp;&amp; swimIndex is &gt;= 0 and &lt; 3)&#xD;&#xA;{ChangeSwimBaitByIndex(cmd);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{ChangeBaitById(cmd);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ChangeBaitById(string cmd)&#xD;&#xA;{if (uint.TryParse(cmd, out var baitId))&#xD;&#xA;{Memory.CallInjected64&lt;IntPtr&gt;(ExecuteCommandPtr, 701, 4, (int)baitId, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ChangeSwimBaitByIndex(string cmd)&#xD;&#xA;{if (uint.TryParse(cmd, out var swimIndex) &amp;&amp; swimIndex is &gt;= 0 and &lt; 3)&#xD;&#xA;{Memory.CallInjected64&lt;IntPtr&gt;(ExecuteCommandPtr, 701, 25, (int)swimIndex, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void GetCurrentBait(string cmd)&#xD;&#xA;{var currentBait = Memory.Read&lt;uint&gt;(PlayerStatePtr + 0x4A4);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(&#xD;&#xA;isPersistent: false,&#xD;&#xA;&quot;空天姬控制钓饵&quot;,&#xD;&#xA;currentBait&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void GetCurrentWeather(string cmd)&#xD;&#xA;{var current_weather = Memory.Read&lt;byte&gt;(WeatherManagerPtr + 0x64);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(&#xD;&#xA;isPersistent: false,&#xD;&#xA;&quot;空天姬天气ID&quot;,&#xD;&#xA;current_weather&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void Echo(string msg) =&gt; RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, $&quot;/e {msg}&quot;);&#xD;&#xA;public static void Log(RealPlugin.DebugLevelEnum level, string msg) =&gt; Interpreter.StaticHelpers.Log(level, msg);}&#xD;&#xA;" ActionType="ExecuteScript" />
 </Actions>
@@ -596,144 +724,6 @@
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="${_me.id}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制更新I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Trigger>
-</Triggers>
-</Folder>
-<Folder Id="0fda23cc-c05a-4f04-9fe2-b74b977ee265" Name="检查环境" Enabled="true">
-<Folders>
-<Folder Id="d5c87dde-ea8e-4c5d-87e4-7888455a9462" Name="检查日志" Enabled="true">
-<Folders />
-<Triggers>
-<Trigger Enabled="false" Name="检查 267 10B" Id="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:(?&lt;id&gt;\w+):(?&lt;log&gt;\w+)" PeriodRefire="Deny" RefirePeriodExpression="1000">
-<Actions>
-<Action OrderNumber="1" UseTTSTextExpression="成功监听到日志航" ActionType="UseTTS">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-</Condition>
-</Action>
-<Action OrderNumber="2" NamedCallbackName="hint" NamedCallbackParam="10&#xD;&#xA;////// 空天姬关键日志行测试 //////&#xD;&#xA;成功监听到关键日志行&#xD;&#xA;现在可退出副本&#xD;&#xA;即将帮您打开任务搜索器" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-</Condition>
-</Action>
-<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 成功监听到 NpcYell 日志行。&#xD;&#xA;267 10B&#xD;&#xA;ID:${id}&#xD;&#xA;TextID:${log}" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="5" NamedCallbackName="quit" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-</Condition>
-</Action>
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-</Condition>
-</Action>
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name="启用检查 10B" Id="3b5aa968-dfbe-493b-9cbc-42afbe8daa90" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt])[ ]*$|^.{26}003C::(“/(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt])”出现问题：该命令不存在。|The command /(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt]) does not exist.|そのコマンドはありません。： /(?:[Kk][Tt][Jj] *[Ll][Oo][Gg][Tt][Ee][Ss][Tt]))$">
-<Actions>
-<Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="2" TriggerOp="EnableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="3" UseTTSTextExpression="开始监听" ActionType="UseTTS" Asynchronous="False" />
-<Action OrderNumber="4" NamedCallbackName="hint" NamedCallbackParam="15&#xD;&#xA;////// 开始监听关键日志行 //////&#xD;&#xA;即将帮您打开任务搜索器&#xD;&#xA;请切换战斗职业&#xD;&#xA;设置任务搜索器解除限制后&#xD;&#xA;进入副本：末日暗影亚马乌罗提" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]&#xD;&#xA;////// 开始监听关键日志行 //////&#xD;&#xA;即将帮您打开任务搜索器&#xD;&#xA;请切换战斗职业&#xD;&#xA;设置任务搜索器解除限制后&#xD;&#xA;进入副本：末日暗影亚马乌罗提" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False" />
-</Actions>
-</Trigger>
-<Trigger Enabled="false" Name="关闭检查" Id="2e651e02-b638-4068-a783-4213103e9a5a" RegularExpression="^.{15}\S+ 01:(?!346)" PeriodRefire="Deny" RefirePeriodExpression="1000">
-<Actions>
-<Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 因转移到非测试区域，已关闭关键日志行测试。" ActionType="NamedCallback" Asynchronous="False" />
-</Actions>
-</Trigger>
-</Triggers>
-</Folder>
-</Folders>
-<Triggers>
-<Trigger Enabled="false" Name="检查配置" Id="643a1c95-3146-4e69-a65f-ad842851d15f" RegularExpression="^空天姬触发">
-<Actions>
-<Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="空天姬：&#xD;&#xA;未配置强心剂键码 或 配置保存失败！" ActionType="MessageBox">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="2" MessageBoxIconType="Error" MessageBoxText="空天姬：&#xD;&#xA;高级触发器版本过低。&#xD;&#xA;当前：${_const[TriggernometryVersionMajor]}.${_const[TriggernometryVersionMinor]}.${_const[TriggernometryVersionBuild]}.${_const[TriggernometryVersionRevision]}&#xD;&#xA;至少：1.2.0.704+（MnFeN 分支）" ActionType="MessageBox">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${_const[TriggernometryVersionMajor]} * 1000^3 + ${_const[TriggernometryVersionMinor]} * 1000^2 + ${_const[TriggernometryVersionBuild]} * 1000 + ${_const[TriggernometryVersionRevision]}" ExpressionTypeL="Numeric" ExpressionR="1 * 1000^3 + 2 * 1000^2 + 0 * 1000 + 704" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
-</Condition>
-</Action>
-<Action OrderNumber="3" TriggerId="fb8d4caa-1aa8-47bc-891e-fcb8e0b2f8e4" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[竿时悬浮窗]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e 正在打开配置界面……&#xD;&#xA;如果你是用远程触发器获得的，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" ActionType="NamedCallback">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[竿时悬浮窗]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="5" TriggerOp="DisableTrigger" TriggerId="643a1c95-3146-4e69-a65f-ad842851d15f" ActionType="Trigger">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[强心剂热键]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[竿时悬浮窗]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="6" LogMessageText="空天姬检查鲶鱼精" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Action>
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name="检查主界面" Id="85df0c6b-c8c4-47a3-b329-8bd586d1b1a9" RegularExpression="^空天姬窗口">
-<Actions>
-<Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="MessageBox" ExecutionDelayExpression="10 * 1000">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Action>
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
-<Actions>
-<Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
-<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
-<Action OrderNumber="3" ActOpType="LogAllNetwork" ActionType="ActInteraction" />
-<Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 防日志冲突&#xD;&#xA;匹配到抹茶「兼容模式」咬饵日志，将关闭一次解析插件调试选项的「输出所有网络数据至日志文件」。" ActionType="NamedCallback" />
-<Action OrderNumber="5" DictVariableOp="Set" VariableOp="SetNumeric" VariableName="空天姬控制抹茶I" VariableExpression="1" ActionType="Variable" />
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name="启用检查抹茶" Id="69f10b77-008e-42dd-9b2c-ba888d01ef6b" RegularExpression="^.{32}29:150001:(?&lt;log&gt;4(61|56))">
-<Actions>
-<Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
-<Action OrderNumber="2" TriggerOp="EnableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
-<Action OrderNumber="3" ActOpType="LogAllNetwork" ActOpBoolParam="True" ActionType="ActInteraction" />
-</Actions>
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[语言]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制抹茶I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Trigger>
-<Trigger Enabled="true" Name="检查鲶鱼精" Id="32b47a35-1436-402a-910c-cea2f77184ae" RegularExpression="^空天姬检查鲶鱼精">
-<Actions>
-<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;void Main()&#xD;&#xA;{var postNamazu = RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;);&#xD;&#xA;if (postNamazu.pluginObj == null)&#xD;&#xA;{MessageBox.Show(&quot;PostNamazu 鲶鱼精邮差插件未安装或未启动。&quot;, &quot;鲶鱼精邮差&quot;, MessageBoxButtons.OK, MessageBoxIcon.Error);&#xD;&#xA;发送日志(&quot;空天姬超时&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;var current = $&quot;目前安装的版本为：{postNamazu.FileVersion}&quot;;&#xD;&#xA;var correct = $&quot;所需的最低版本：${env:namazu}&quot;;&#xD;&#xA;if (new Version(postNamazu.FileVersion) &lt; new Version(&quot;${env:namazu}&quot;))&#xD;&#xA;{RealPlugin.plug.UpdatePostNamazu(&quot;${env:namazu}&quot;);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{StaticHelpers.SetScalarVariable(false, &quot;空天姬控制鲶鱼精检查I&quot;, &quot;1&quot;);&#xD;&#xA;}}&#xD;&#xA;void 发送日志(string text)&#xD;&#xA;{var tri = new Trigger();&#xD;&#xA;StaticHelpers.fakectx.trig = tri;&#xD;&#xA;RealPlugin.plug.QueueAction(&#xD;&#xA;StaticHelpers.fakectx,&#xD;&#xA;StaticHelpers.fakectx.trig,&#xD;&#xA;m: null,&#xD;&#xA;new Triggernometry.Action&#xD;&#xA;{ActionType = Triggernometry.Action.ActionTypeEnum.LogMessage.ToString(),&#xD;&#xA;LogMessageText = $&quot;{text}&quot;,&#xD;&#xA;LogProcess = &quot;true&quot;,&#xD;&#xA;},&#xD;&#xA;DateTime.Now,&#xD;&#xA;releaseMutex: true&#xD;&#xA;);}&#xD;&#xA;Main();" ActionType="ExecuteScript" />
-</Actions>
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Trigger>
 </Triggers>
@@ -4478,7 +4468,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作[${v:空天姬动作}]}" ExpressionTypeL="String" ExpressionR="抛竿" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${l:空天姬动作[${v:空天姬动作}]}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${l:空天姬动作[${v:空天姬动作}]}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -4488,47 +4478,33 @@
 <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作记录.indexof(${l:空天姬动作[${v:空天姬动作}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivisglobal}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="3" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${l:空天姬动作[${v:空天姬动作}]}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作[${v:空天姬动作}]}" ExpressionTypeL="String" ExpressionR="沙利亚克的恩宠" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域阶段}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
-</ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作记录.indexof(${l:空天姬动作[${v:空天姬动作}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-</ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivisglobal}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="4" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="5" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
+<Action OrderNumber="3" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="4" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="7" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
+<Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="6" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="8" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="9" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
+<Action OrderNumber="7" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="8" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="11" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
+<Action OrderNumber="9" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="10" KeypressType="WindowMessage" KeyPressCode="${pd:空天姬配置[强心剂热键]}" KeyPressWindow="^(?:F|最)" KeyPressProcId="${_ffxivprocid}" TriggerForce="regexp,conditions" ActionType="KeyPress" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="12" LogMessageText="空天姬执行" LogProcess="True" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
+<Action OrderNumber="11" LogMessageText="空天姬执行" LogProcess="True" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
 </Condition>
@@ -6211,17 +6187,8 @@
 </Trigger>
 <Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
-<Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivisglobal}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivisglobal}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="3" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
+<Action OrderNumber="2" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -9395,7 +9362,7 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="false" Name="  【命令列表】双击打开" Id="fd23e78e-7757-4852-9011-f4782e59a2cb" RegularExpression="">
+<Trigger Enabled="false" Name="  所有命令（双击打开）" Id="fd23e78e-7757-4852-9011-f4782e59a2cb" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="  空天姬 MissFisher丨by BlackCleaverLoli丨空天姬群：959153665丨ACT 触发器技术交流：556836295" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="    💚 空天姬系免费的，如果你以购买方式获得，请联系卖家退款并举报该商品。💚" DescBgColor="0f8" DescriptionOverride="True" />
@@ -9493,17 +9460,17 @@
 <Action OrderNumber="3" LogMessageText="空天姬窗口" LogProcess="True" ActionType="LogMessage" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="  网页  使用说明（右键执行 碰到问题先看）" Id="9ae8db0b-e0b1-4ac9-b5f4-db5fc01d24e7" RegularExpression="">
+<Trigger Enabled="true" Name="   使用说明 / 常见问题（右键执行 碰到问题先看）" Id="9ae8db0b-e0b1-4ac9-b5f4-db5fc01d24e7" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/blob/main/README.md" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="  网页 更新日志（右键执行）" Id="bb88f1de-3638-4d15-902a-ee2bc935e152" RegularExpression="">
+<Trigger Enabled="true" Name="  更新日志（右键执行）" Id="bb88f1de-3638-4d15-902a-ee2bc935e152" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/blob/main/Changelog.md" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name=" 网页 7.0 钓鱼信息表格（右键执行 不含 7.1 或之后）" Id="d79e0257-a1d2-4629-be00-ee97e181ddaf" RegularExpression="">
+<Trigger Enabled="true" Name=" 7.0 鱼类信息表格（右键执行 不含 7.1 或之后）" Id="d79e0257-a1d2-4629-be00-ee97e181ddaf" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://docs.qq.com/sheet/DVk1XaEpZZVBNcG5S" ActionType="LaunchProcess" />
 </Actions>
@@ -9513,9 +9480,14 @@
 <Action OrderNumber="1" LaunchProcessPathExpression="https://afdian.com/a/bcloli" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name=" 网页  内置预设表格（右键执行）" Id="0c87bff1-4020-41bc-b8ae-0ca1ba63e138" RegularExpression="">
+<Trigger Enabled="true" Name=" 空天姬内置预设表格（右键执行）" Id="0c87bff1-4020-41bc-b8ae-0ca1ba63e138" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://docs.qq.com/sheet/DVlNaQ012amF4SW1G" ActionType="LaunchProcess" />
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name=" 请愿新增鱼类预设 / 预设钓法反馈收集表（右键执行）" Id="34a500c0-0e57-4946-aebf-b4213506394d" RegularExpression="">
+<Actions>
+<Action OrderNumber="1" LaunchProcessPathExpression="https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
 </Triggers>
