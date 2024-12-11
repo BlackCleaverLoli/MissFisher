@@ -337,9 +337,6 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 ### 钓到鱼后不继续抛竿或在测试时没有报告「目标达成。」：     
 * **检查 ACT 解析插件设置：**  
 解析插件界面中 FFXIV 游戏数据部分的 `隐藏聊天日志` 不应被勾选，如果勾选了，请取消它。
-  
-* **检查游戏设置：**  
-角色设置 - Name Display Settings（人名显示设置）- 将自己名字的显示设置改为 Full Name（全名）。
 
 * **配置 Dalamud 插件 Chat2 的相关功能：**  
 可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。
@@ -347,8 +344,8 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 * **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
 可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
 
-- **移除风筝猫 Gaelicat：**  
-空天姬 MissFisher 包含所有风筝猫 Gaelicat 的功能，两者不应都处于启用状态，请移除风筝猫 Gaelicat 触发器。
+* **国际服：检查游戏设置：**  
+角色设置 - Name Display Settings（人名显示设置）- 将自己名字的显示设置改为 Full Name（全名）。  
 
 ### 海钓启动后无反应或提示海域获取失败：
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
