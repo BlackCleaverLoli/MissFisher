@@ -80,7 +80,7 @@
 * 可选的：抹茶 Matcha（仅国服）  
   建议安装，可减少使用 空天姬 MissFisher 时 ACT 的处理负担。
 > [!IMPORTANT]
-> **新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精 PostNamazu。**  
+> **新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精邮差 PostNamazu。**  
 > 因此，你必须通过以下步骤安装它们：
 > 
 > 1. 在 [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) 中获取安装器。  
