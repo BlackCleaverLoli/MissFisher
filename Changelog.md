@@ -1,4 +1,10 @@
 # 更新日志
+# MissFisher 1.8.23　2024-12-12
+> 修复弹窗问题。
+## BUG 修复及品质级改动
+## BUG 修复
+- 修复了一个 BUG，该 BUG 曾导致：因 Triggernometry 的 鲶鱼精邮差 PostNamazu 更新版本有误而导致反复弹窗。
+---
 # MissFisher 1.8.22　2024-12-11
 > 修复一些问题。
 ## BUG 修复及品质级改动
