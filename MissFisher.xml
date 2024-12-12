@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.22" Enabled="true" RawEnvironmentVariables="版本 = 1.8.22&#xD;&#xA;快照 = 24w50a&#xD;&#xA;摘要 = 修复一些问题。&#xD;&#xA;namazu = 1.3.5.4&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.8.23" Enabled="true" RawEnvironmentVariables="版本 = 1.8.23&#xD;&#xA;快照 = 24w50b&#xD;&#xA;摘要 = 修复弹窗问题。&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -297,7 +297,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="检查鲶鱼精" Id="32b47a35-1436-402a-910c-cea2f77184ae" RegularExpression="^空天姬检查鲶鱼精">
 <Actions>
-<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;void Main()&#xD;&#xA;{var postNamazu = RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;);&#xD;&#xA;if (postNamazu.pluginObj == null)&#xD;&#xA;{MessageBox.Show(&#xD;&#xA;&quot;鲶鱼精邮差 PostNamazu 未安装或未启动。&quot;,&#xD;&#xA;&quot;空天姬&quot;,&#xD;&#xA;MessageBoxButtons.OK,&#xD;&#xA;MessageBoxIcon.Error&#xD;&#xA;);&#xD;&#xA;发送日志(&quot;空天姬超时&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;var current = $&quot;目前安装的版本为：{postNamazu.FileVersion}&quot;;&#xD;&#xA;var correct = $&quot;所需的最低版本：${env:namazu}&quot;;&#xD;&#xA;if (new Version(postNamazu.FileVersion) &lt; new Version(&quot;${env:namazu}&quot;))&#xD;&#xA;{RealPlugin.plug.UpdatePostNamazu(&quot;${env:namazu}&quot;);&#xD;&#xA;MessageBox.Show(&#xD;&#xA;&quot;请重启 ACT 以完成 鲶鱼精邮差 PostNamazu 的更新。&quot;,&#xD;&#xA;&quot;空天姬&quot;,&#xD;&#xA;MessageBoxButtons.OK,&#xD;&#xA;MessageBoxIcon.Information&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{StaticHelpers.SetScalarVariable(false, &quot;空天姬控制鲶鱼精检查I&quot;, &quot;1&quot;);&#xD;&#xA;}}&#xD;&#xA;void 发送日志(string text)&#xD;&#xA;{var tri = new Trigger();&#xD;&#xA;StaticHelpers.fakectx.trig = tri;&#xD;&#xA;RealPlugin.plug.QueueAction(&#xD;&#xA;StaticHelpers.fakectx,&#xD;&#xA;StaticHelpers.fakectx.trig,&#xD;&#xA;m: null,&#xD;&#xA;new Triggernometry.Action&#xD;&#xA;{ActionType = Triggernometry.Action.ActionTypeEnum.LogMessage.ToString(),&#xD;&#xA;LogMessageText = $&quot;{text}&quot;,&#xD;&#xA;LogProcess = &quot;true&quot;,&#xD;&#xA;},&#xD;&#xA;DateTime.Now,&#xD;&#xA;releaseMutex: true&#xD;&#xA;);}&#xD;&#xA;Main();&#xD;&#xA;" ActionType="ExecuteScript" />
+<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;void Main()&#xD;&#xA;{var postNamazu = RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;);&#xD;&#xA;if (postNamazu.pluginObj == null)&#xD;&#xA;{MessageBox.Show(&#xD;&#xA;&quot;鲶鱼精邮差 PostNamazu 未安装或未启动。&quot;,&#xD;&#xA;&quot;空天姬&quot;,&#xD;&#xA;MessageBoxButtons.OK,&#xD;&#xA;MessageBoxIcon.Error&#xD;&#xA;);&#xD;&#xA;发送日志(&quot;空天姬超时&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;var current = $&quot;目前安装的版本为：{postNamazu.FileVersion}&quot;;&#xD;&#xA;var correct = $&quot;所需的最低版本：${env:namazu}&quot;;&#xD;&#xA;StaticHelpers.SetScalarVariable(false, &quot;空天姬控制鲶鱼精版本I&quot;, $&quot;{postNamazu.FileVersion}&quot;);&#xD;&#xA;if (new Version(postNamazu.FileVersion) &lt; new Version(&quot;${env:namazu}&quot;))&#xD;&#xA;{RealPlugin.plug.UpdatePostNamazu(&quot;${env:namazu}&quot;);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{StaticHelpers.SetScalarVariable(false, &quot;空天姬控制鲶鱼精检查I&quot;, &quot;1&quot;);&#xD;&#xA;}}&#xD;&#xA;void 发送日志(string text)&#xD;&#xA;{var tri = new Trigger();&#xD;&#xA;StaticHelpers.fakectx.trig = tri;&#xD;&#xA;RealPlugin.plug.QueueAction(&#xD;&#xA;StaticHelpers.fakectx,&#xD;&#xA;StaticHelpers.fakectx.trig,&#xD;&#xA;m: null,&#xD;&#xA;new Triggernometry.Action&#xD;&#xA;{ActionType = Triggernometry.Action.ActionTypeEnum.LogMessage.ToString(),&#xD;&#xA;LogMessageText = $&quot;{text}&quot;,&#xD;&#xA;LogProcess = &quot;true&quot;,&#xD;&#xA;},&#xD;&#xA;DateTime.Now,&#xD;&#xA;releaseMutex: true&#xD;&#xA;);}&#xD;&#xA;Main();&#xD;&#xA;" ActionType="ExecuteScript" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鲶鱼精检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4468,7 +4468,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${l:空天姬动作[${v:空天姬动作}]}" ExpressionTypeL="String" ExpressionR="抛竿" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${l:空天姬动作[${v:空天姬动作}]}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="2" NamedCallbackName="${if: ${_ffxivisglobal} ? ${if: ${v:空天姬控制鲶鱼精版本I} == 1.3.5.3 ? : normal } : normal }command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${l:空天姬动作[${v:空天姬动作}]}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -6187,7 +6187,7 @@
 </Trigger>
 <Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
-<Action OrderNumber="1" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
+<Action OrderNumber="1" NamedCallbackName="${if: ${_ffxivisglobal} ? ${if: ${v:空天姬控制鲶鱼精版本I} == 1.3.5.3 ? : normal } : normal }command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
