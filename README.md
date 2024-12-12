@@ -77,8 +77,8 @@
 * 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.5.3+`
 * OverlayPlugin  
   应已存在于适合 FFXIV 的 ACT 整合版本中，你无须额外安装。
-* 可选的：抹茶 Matcha（仅国服）  
-  建议安装，可减少使用 空天姬 MissFisher 时 ACT 的处理负担。
+* 可选的：抹茶 Matcha（仅国服有效）  
+  建议安装，可减少 ACT 的处理负担。
 > [!IMPORTANT]
 > **新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精邮差 PostNamazu。**  
 > 因此，你必须通过以下步骤安装它们：
