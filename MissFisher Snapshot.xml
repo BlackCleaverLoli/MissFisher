@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w50e" Enabled="true" RawEnvironmentVariables="版本 = 1.8.24&#xD;&#xA;快照 = 24w50e&#xD;&#xA;摘要 = 修复一些问题。&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w50f" Enabled="true" RawEnvironmentVariables="版本 = 1.8.24&#xD;&#xA;快照 = 24w50f&#xD;&#xA;摘要 = 修复一些问题。&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -276,7 +276,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
@@ -399,8 +399,8 @@
 <Action OrderNumber="28" LogMessageText="空天姬更新预设自动" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 <Action OrderNumber="29" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="版本" DictVariableValue="${f:capture(${env:版本},1):(^\d+)\.(\d+)\.(\d+)} * 10000 + ${f:capture(${env:版本},2):(^\d+)\.(\d+)\.(\d+)} * 100 + ${f:capture(${env:版本},3):(^\d+)\.(\d+)\.(\d+)}" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" ExecutionDelayExpression="1000" Asynchronous="False" />
 <Action OrderNumber="30" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="配置" DictVariableValue="${f:slice(:2):${env:快照}} * 10000 + ${f:slice(3:5):${env:快照}} * 100 + ${f:ord:${f:slice(-1:):${env:快照}}} - 96" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False" />
-<Action OrderNumber="31" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] v${f:slice(:1):${pd:空天姬配置[版本]}}.${f:format(System.Double,&quot;0&quot;):${f:slice(1:3):${pd:空天姬配置[版本]}}}.${f:format(System.Double,&quot;0&quot;):${f:slice(3:5):${pd:空天姬配置[版本]}}}.${pd:空天姬配置[配置]}&#xD;&#xA;最近版本更新摘要：${env:摘要}" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="32" MessageBoxIconType="Information" MessageBoxText="空天姬 MissFisher v${f:slice(:1):${pd:空天姬配置[版本]}}.${f:format(System.Double,&quot;0&quot;):${f:slice(1:3):${pd:空天姬配置[版本]}}}.${f:format(System.Double,&quot;0&quot;):${f:slice(3:5):${pd:空天姬配置[版本]}}}.${pd:空天姬配置[配置]}&#xD;&#xA;初始化成功，欢迎使用！&#xD;&#xA;&#xD;&#xA;- 最近版本更新摘要：&#xD;&#xA;${env:摘要}&#xD;&#xA;&#xD;&#xA;- 本触发器系免费的，谨防小店倒卖。祝您使用愉快！&#xD;&#xA;by 黑色公主切萝莉肥 BlackCleaverLoli" ActionType="MessageBox" />
+<Action OrderNumber="31" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] v${f:slice(:1):${pd:空天姬配置[版本]}}.${f:format(System.Double,&quot;0&quot;):${f:slice(1:3):${pd:空天姬配置[版本]}}}.${f:format(System.Double,&quot;0&quot;):${f:slice(3:5):${pd:空天姬配置[版本]}}}.${pd:空天姬配置[配置]}&#xD;&#xA;最近版本更新摘要：${env:摘要}${f:ifcontain(Snapshot,&quot;&#xD;&#xA;&#xD;&#xA;【测试用版本】&#xD;&#xA;你当前使用的是测试用的快照版本。不确保稳定。&quot;,&quot;&quot;):${_triggerpath}}" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="32" MessageBoxIconType="Information" MessageBoxText="空天姬 MissFisher v${f:slice(:1):${pd:空天姬配置[版本]}}.${f:format(System.Double,&quot;0&quot;):${f:slice(1:3):${pd:空天姬配置[版本]}}}.${f:format(System.Double,&quot;0&quot;):${f:slice(3:5):${pd:空天姬配置[版本]}}}.${pd:空天姬配置[配置]}&#xD;&#xA;初始化成功，欢迎使用！${f:ifcontain(Snapshot,&quot;&#xD;&#xA;&#xD;&#xA;【测试用版本】&#xD;&#xA;你当前使用的是测试用的快照版本。不确保稳定。&quot;,&quot;&quot;):${_triggerpath}}&#xD;&#xA;&#xD;&#xA;- 最近版本更新摘要：&#xD;&#xA;${env:摘要}&#xD;&#xA;&#xD;&#xA;- 本触发器系免费的，谨防小店倒卖。祝您使用愉快！&#xD;&#xA;by BlackCleaverLoli" ActionType="MessageBox" />
 </Actions>
 </Trigger>
 <Trigger Enabled="true" Name="跨区换职 销毁变量" Id="c123841c-d6ba-44f8-b292-6455ebcbb61b" RegularExpression="^.{15}\S+ 01:[^:]+:(?&lt;log&gt;[^:]+)|^.{15}ChatLog 00:0839::(.+的职业转换成了“(?&lt;job&gt;.+)”|You change to (?&lt;job&gt;.+).|は「(?&lt;job&gt;.+)」にチェンジした)">
@@ -820,7 +820,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -2514,7 +2514,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="模式：目标" Id="09e3c59a-caaf-4388-929b-8af661e09a9c" RegularExpression="^.{26}0843::(?:.+?成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+? (?&lt;空天姬目标&gt;.+?) measuring.+|.+?は(?&lt;空天姬目标&gt;[^ ]+?)を釣り上げた。)$">
+<Trigger Enabled="true" Name="模式：目标" Id="09e3c59a-caaf-4388-929b-8af661e09a9c" RegularExpression="^.{26}0843::(?:.+?成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+? (?&lt;空天姬目标&gt;.+?) measuring.+|.+?は(?&lt;空天姬目标&gt;[^ ]+?)を釣り上げた。)$">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬目标上钩" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="false" Grouping="Or">
@@ -4049,7 +4049,7 @@
 <Folder Id="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ZoneFilterRegularExpression="黑色公主切萝莉肥" Name="B.1 动作" Enabled="false">
 <Folders />
 <Triggers>
-<Trigger Enabled="false" Name="0. 推送动作" Id="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" RegularExpression="^(?&lt;log&gt;空天姬执行)|^.{32}29:150001:(?&lt;log&gt;62F|46[09]|45[DEF]|15D0)|^.{26}0843::(?:.+?成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+? (?&lt;空天姬目标&gt;.+?) measuring.+|.+?は(?&lt;空天姬目标&gt;[^ ]+?)を釣り上げた。)$" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="0. 推送动作" Id="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" RegularExpression="^(?&lt;log&gt;空天姬执行)|^.{32}29:150001:(?&lt;log&gt;62F|46[09]|45[DEF]|15D0)|^.{26}0843::(?:.+?成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+? (?&lt;空天姬目标&gt;.+?) measuring.+|.+?は(?&lt;空天姬目标&gt;[^ ]+?)を釣り上げた。)$" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="2" TriggerOp="CancelTrigger" TriggerId="153a0185-a08e-4767-be1a-6982c015acab" ActionType="Trigger" Asynchronous="False" />
@@ -5740,7 +5740,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬收藏品初始状态}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="3.1.4 调整收藏状态" Id="f0790f9d-79b9-404e-a625-1e19951c9438" RegularExpression="^.{32}29:150001:(?&lt;log&gt;4(61|56))">
+<Trigger Enabled="true" Name="3.1.4 调整收藏状态" Id="f0790f9d-79b9-404e-a625-1e19951c9438" RegularExpression="^.{32}29:150001:(?&lt;log&gt;4(61|56))">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/ac ${pd:空天姬技能[${pd:空天姬配置[语言]}收藏品采集]}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
@@ -7219,7 +7219,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="4.1 钓饵监控" Id="b0818af0-6d9c-4332-a214-af4b19277feb" RegularExpression="^.{26}0(?&lt;band&gt;03|8B)9::(将(?&lt;log&gt;.+)挂到了钓钩上。|You apply a (?&lt;log&gt;.+) to your line|(?&lt;log&gt;.+)を装着した。)">
+<Trigger Enabled="true" Name="4.1 钓饵监控" Id="b0818af0-6d9c-4332-a214-af4b19277feb" RegularExpression="^.{26}0(?&lt;band&gt;03|8B)9::(将(?&lt;log&gt;.+)挂到了钓钩上。|You apply an? (?&lt;log&gt;.+) to your line|(?&lt;log&gt;.+)を装着した。)">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制钓饵" VariableExpression="${pl:空天姬钓饵ID[${if: ${pl:空天姬钓饵名.indexof(${log})} &gt; ${env:单语言空间} ? ${if: ${pl:空天姬钓饵名.indexof(${log})} &gt; ${env:单语言空间}*2 ? ${n:${pl:空天姬钓饵名.indexof(${log})} - ${env:单语言空间}*2 } : ${n:${pl:空天姬钓饵名.indexof(${log})} - ${env:单语言空间} } } : ${pl:空天姬钓饵名.indexof(${log})} }]}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬游动饵" ActionType="Variable" Asynchronous="False">
@@ -7230,7 +7230,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬钓饵当前：${v:空天姬控制钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
 <Actions>
 <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" ActionType="LogMessage" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="抹茶格式。" DescriptionOverride="True" />
