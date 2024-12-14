@@ -4,7 +4,7 @@
 *空天姬 MissFisher* 是一组可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - **支持：** 国服、英文端、日文端  
 - **适配：Lv.1 - Lv.100**  
-- 仅有计时功能的版本： `风筝猫 Gaelicat` [ [123 云盘](https://www.123684.com/s/YJHhTd-M4H13) ] [ [Github](https://github.com/BlackCleaverLoli/MissFisher/blob/main/Gaelicat.xml) ]
+- 仅有计时功能的版本： `风筝猫 Gaelicat` [ [123 云盘](https://www.123684.com/s/YJHhTd-M4H13) ] 
 
 ## 主要特性
 - **优秀手法**  
