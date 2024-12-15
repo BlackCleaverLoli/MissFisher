@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.9.2" Enabled="true" RawEnvironmentVariables="版本 = 1.9.2&#xD;&#xA;快照 = 24w50o&#xD;&#xA;摘要 = 新增全局手法；优化手法；修复一些问题。如果想要在国际服练级模式，请更新鲶鱼精到1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.9.3" Enabled="true" RawEnvironmentVariables="版本 = 1.9.3&#xD;&#xA;快照 = 24w50p&#xD;&#xA;摘要 = 修复一个问题。如果想要在国际服练级模式，请更新鲶鱼精到1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -276,7 +276,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
@@ -642,7 +642,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制预设结果I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" MessageBoxIconType="Information" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;成功同步了内置预设！&#xD;&#xA;版本：v${pd:空天姬预设[空天姬预设]}&#xD;&#xA;日期：${f:slice(0:4):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(4:6):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(6:8):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}&#xD;&#xA;说明：${f:replace(&quot;\r\n&quot;,&quot;⏎&quot;):${pd:空天姬预设[说明]}}" ActionType="MessageBox">
+<Action OrderNumber="6" MessageBoxIconType="Information" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;成功同步了内置预设！&#xD;&#xA;预设：v${pd:空天姬预设[空天姬预设]}&#xD;&#xA;日期：${f:slice(0:4):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(4:6):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(6:8):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}&#xD;&#xA;说明：${f:replace(&quot;\r\n&quot;,&quot;⏎&quot;):${pd:空天姬预设[说明]}}" ActionType="MessageBox">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制预设结果I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -665,7 +665,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制预设结果I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]&#xD;&#xA;内置预设：v${pd:空天姬预设[空天姬预设]}&#xD;&#xA;日期：${f:slice(0:4):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(4:6):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(6:8):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}&#xD;&#xA;说明：${f:replace(&quot;\r\n&quot;,&quot;⏎&quot;):${pd:空天姬预设[说明]}}&#xD;&#xA;成功同步了内置预设！" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]&#xD;&#xA;预设：v${pd:空天姬预设[空天姬预设]}${if:$1==自动?:&quot;&#xD;&#xA;日期：${f:slice(0:4):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(4:6):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}-${f:slice(6:8):${f:capture(${pd:空天姬预设[空天姬预设]},4):(^\d+)\.(\d+)\.(\d+)\.(\d+)}}&#xD;&#xA;说明：${f:replace(&quot;\r\n&quot;,&quot;⏎&quot;):${pd:空天姬预设[说明]}}&quot;}&#xD;&#xA;成功同步了内置预设！" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制预设结果I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -799,7 +799,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="采集力 More then 2160p" Id="00c1cee3-923f-4251-b4b3-b0a7156ff5b3" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="false" Sequential="True" Name="采集力 More then 2160p" Id="00c1cee3-923f-4251-b4b3-b0a7156ff5b3" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -810,7 +810,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="采集力 2160p" Id="a4af6213-432b-4215-88fb-b4702a8b4a8e" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="false" Sequential="True" Name="采集力 2160p" Id="a4af6213-432b-4215-88fb-b4702a8b4a8e" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -821,7 +821,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="采集力 1440p" Id="fe70aaf5-698f-4813-9462-cbb771e4c3ea" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="false" Sequential="True" Name="采集力 1440p" Id="fe70aaf5-698f-4813-9462-cbb771e4c3ea" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -832,7 +832,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -843,7 +843,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
@@ -2203,7 +2203,7 @@
 <Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬预拍水模式攒鱼计" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="1800000" ExpressionTypeR="String" ConditionType="NumericGreater" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="180000" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Action>
 <Action OrderNumber="15" NamedCallbackName="command" NamedCallbackParam="/e ${if: ${ev:空天姬预拍水模式攒鱼计} ? 开始${if: (${v:空天姬控制鱼计}) &gt; 8 ? : 攒鱼计并 } : &quot;距离 ET 窗口期不足 3，将跳过攒鱼计&#xD;&#xA;开始&quot; }尝试预拍水……" ActionType="NamedCallback">
@@ -7291,7 +7291,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬钓饵当前：${v:空天姬控制钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
 <Actions>
 <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" ActionType="LogMessage" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="抹茶格式。" DescriptionOverride="True" />
