@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w50n" Enabled="true" RawEnvironmentVariables="版本 = 1.9.1&#xD;&#xA;快照 = 24w50n&#xD;&#xA;摘要 = 新增全局手法；优化手法；修复一些问题。如果想要在国际服练级模式，请更新鲶鱼精到1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w50o" Enabled="true" RawEnvironmentVariables="版本 = 1.9.2&#xD;&#xA;快照 = 24w50o&#xD;&#xA;摘要 = 新增全局手法；优化手法；修复一些问题。如果想要在国际服练级模式，请更新鲶鱼精到1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -3393,7 +3393,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(不收集):${空天姬目标}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="83" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${if:${f:contain(【):${空天姬目标}? ${f:capture(${空天姬目标},1):^(【[\w·#?'\s＝【】？\.\-・]+】)} : ${空天姬目标} }}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="83" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${if:${f:contain(【):${空天姬目标}}? ${f:capture(${空天姬目标},1):^(【[\w·#?'\s＝【】？\.\-・]+】)} : ${空天姬目标} }}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
