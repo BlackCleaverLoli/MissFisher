@@ -73,7 +73,7 @@
 > 4. 点击 `应用` 。
 
 ## ACT 及 ACT 插件：
-* 高级战斗追踪器 Advanced Combat Tracker [ [下载呆萌整合](https://act.diemoe.net/ACT.Setup.exe) ]
+* 高级战斗追踪器 Advanced Combat Tracker [ [下载呆萌整合](https://act.diemoe.net/ACT.Setup.exe) ]（国际服建议使用 [原版 ACT](https://github.com/EQAditu/AdvancedCombatTracker)）
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+` [ [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) ]
 * 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.5.3+`
 * OverlayPlugin  
@@ -349,6 +349,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 角色设置 - Name Display Settings（人名显示设置）- 将自己名字的显示设置改为 Full Name（全名）。  
 
 ### 海钓启动后无反应或提示海域获取失败：
+
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
 按条目 [ACT 及 ACT 插件](#act-及-act-插件) 的说明，安装合适版本的 鲶鱼精邮差 PostNamazu。  
 
@@ -363,6 +364,9 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
   
 - **如果全都确认无误并且你是 CafeACT，请尝试使用 呆萌 ACT：**  
 可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。
+  
+- **如果你在国际服使用 空天姬 MissFisher，请尝试使用 原版 ACT：**  
+可参考 [Advanced Combat Tracker](https://github.com/EQAditu/AdvancedCombatTracker)。
 ### 同步内置预设功能无反应：
 * **授予仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器操作文件` - 点击 `是` - `保存更改` - 再次右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
