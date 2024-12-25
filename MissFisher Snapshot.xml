@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w52d" Enabled="true" RawEnvironmentVariables="版本 = 1.9.13&#xD;&#xA;快照 = 24w52d&#xD;&#xA;摘要 = 修复一些问题。　如果想要在国际服使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w52e" Enabled="true" RawEnvironmentVariables="版本 = 1.9.13&#xD;&#xA;快照 = 24w52e&#xD;&#xA;摘要 = 修复一些问题。　如果想要在国际服使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -9197,7 +9197,7 @@
 <Action OrderNumber="4" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="xxn 0=无天气影响 1=有天气影响" DescriptionOverride="True" />
 <Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬控制海域时段" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="6" VariableName="空天姬控制海域结束" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 成功从内存获取海域信息。" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 成功从内存获取海域信息。&#xD;&#xA;从内存获取海域时间轴可能导致预期外的功能错误&#xD;&#xA;请前往 使用说明 - 常见问题 - 海钓启动后无反应或提示海域获取失败 条目排查可能存在的问题。" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
@@ -9213,27 +9213,42 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬控制海域时段" VariableExpression="3" ActionType="Variable" ExecutionDelayExpression="($1) ? ( ($1) &gt;= 260000 ? 0 : ($1) &gt; 130000 ? 260000 - ($1) : 130000 ) : 130000" Asynchronous="False" />
-<Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/e 当前海域时段：${f:toxivchar(true):3}" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="($1) ? ( ($1) &gt;= 390000 ? 0 : ($1) &gt; 260000 ? 390000 - ($1) : 0 ) : 130000" Asynchronous="False" />
-<Action OrderNumber="14" NamedCallbackName="command" NamedCallbackParam="/e 当前海域时段：结束" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="15" LogMessageText="123456789112345267 10B:::248D:614${if:${v:空天姬控制海钓当前海域}==3?6:4}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="11" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 当前的海域信息是从内存中获取的。&#xD;&#xA;从内存获取海域时间轴可能导致预期外的功能错误&#xD;&#xA;请前往 使用说明 - 常见问题 - 海钓启动后无反应或提示海域获取失败 条目排查可能存在的问题。" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="16" VariableOp="SetString" VariableName="空天姬控制海域结束" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="17" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="18" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="19" LogMessageText="123456789112345267 10B:::248D:614${if:${v:空天姬控制海钓当前海域}==3?7:5}" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="($1) ? ( ($1) &gt;= 420000 ? 0 : ($1) &gt; 390000 ? 420000 - ($1) : 0 ) : 300000" Asynchronous="False">
+<Action OrderNumber="12" VariableOp="SetString" VariableName="空天姬控制海域时段" VariableExpression="3" ActionType="Variable" ExecutionDelayExpression="($1) ? ( ($1) &gt;= 260000 ? 0 : ($1) &gt; 130000 ? 260000 - ($1) : 130000 ) : 130000" Asynchronous="False" />
+<Action OrderNumber="13" NamedCallbackName="command" NamedCallbackParam="/e 当前海域时段：${f:toxivchar(true):3}" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="14" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 当前的海域信息是从内存中获取的。&#xD;&#xA;从内存获取海域时间轴可能导致预期外的功能错误&#xD;&#xA;请前往 使用说明 - 常见问题 - 海钓启动后无反应或提示海域获取失败 条目排查可能存在的问题。" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="($1) ? ( ($1) &gt;= 390000 ? 0 : ($1) &gt; 260000 ? 390000 - ($1) : 0 ) : 130000" Asynchronous="False" />
+<Action OrderNumber="16" NamedCallbackName="command" NamedCallbackParam="/e 当前海域时段：结束" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="17" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 当前的海域信息是从内存中获取的。&#xD;&#xA;从内存获取海域时间轴可能导致预期外的功能错误&#xD;&#xA;请前往 使用说明 - 常见问题 - 海钓启动后无反应或提示海域获取失败 条目排查可能存在的问题。" UseTTSVolumeExpression="" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="18" LogMessageText="123456789112345267 10B:::248D:614${if:${v:空天姬控制海钓当前海域}==3?6:4}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="19" VariableOp="SetString" VariableName="空天姬控制海域结束" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="20" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="21" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="22" LogMessageText="123456789112345267 10B:::248D:614${if:${v:空天姬控制海钓当前海域}==3?7:5}" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="($1) ? ( ($1) &gt;= 420000 ? 0 : ($1) &gt; 390000 ? 420000 - ($1) : 0 ) : 30000" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="$1" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
