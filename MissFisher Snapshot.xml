@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w52i" Enabled="true" RawEnvironmentVariables="版本 = 1.10.2&#xD;&#xA;快照 = 24w52i&#xD;&#xA;摘要 = 修复一些问题。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 24w52j" Enabled="true" RawEnvironmentVariables="版本 = 1.10.3&#xD;&#xA;快照 = 24w52j&#xD;&#xA;摘要 = 修缮手法。修复一些问题。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -249,7 +249,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
@@ -4521,10 +4521,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬游动饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
-</ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="( ( ${ev:空天姬手法鱼篓} &amp;&amp; !${ev:空天姬饵鱼模式} &amp;&amp; (${t:空天姬鱼篓.h} + ${ev:空天姬鱼篓判断} &gt; 1 || (${v:空天姬参数} != 3 &amp;&amp; ${v:空天姬可用鱼计} &lt; 5)) &amp;&amp; !${ev:空天姬大鱼鱼篓3} &amp;&amp; !${ev:空天姬大鱼鱼篓4} ) || ( ${ev:空天姬饵鱼模式} &amp;&amp; (${t:空天姬鱼篓.h} + ${ev:空天姬鱼篓判断} &gt; 2 || ${_me.level} &lt; 91) &amp;&amp; !${ev:空天姬大鱼竿型3} ) )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼篓}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -4532,6 +4528,18 @@
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</ConditionGroup>
+</ConditionGroup>
 </ConditionGroup>
 </Condition>
 </Action>
@@ -5251,16 +5259,10 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流即将结束}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域时段}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericLess" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时间} - ${v:空天姬控制幻海流罚时} - ( ${_timestampms} - ${v:空天姬控制幻海流时刻} )" ExpressionTypeL="Numeric" ExpressionR="45000" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(ls${v:空天姬控制海域})}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(as${v:空天姬控制海域}0${?d:3=1,4=2[${v:空天姬控制海钓标识}]})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域时段}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericLess" />
-<ConditionSingle Enabled="false" ExpressionL="幻时 成就无目标" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识类型}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
 <ConditionSingle Enabled="false" ExpressionL="幻时 非3时段或蓝鱼模式" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5879,6 +5881,24 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬拍最小区间${v:空天姬提钩非撒饵}}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="12" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="12" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</ConditionGroup>
+</ConditionGroup>
+</ConditionGroup>
+</ConditionGroup>
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5904,7 +5924,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(${type}):${v:空天姬大鱼额外竿型${v:空天姬以小钓大阶段}}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ( ${v:空天姬专一多提} ) = 3 ? 三重 : ${if: ( ${v:空天姬专一多提} ) = 4 ? 双重 : } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬专一多提} ) = 3 ? 三重 : ${if: ( ${v:空天姬专一多提} ) = 4 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6270,6 +6290,18 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬拍最小区间${v:空天姬提钩非撒饵}}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</ConditionGroup>
+</ConditionGroup>
+</ConditionGroup>
 </Condition>
 </Action>
 <Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="4" ActionType="Variable" Asynchronous="False">
@@ -6303,7 +6335,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ( ${v:空天姬专一多提} ) = 3 ? 三重 : ${if: ( ${v:空天姬专一多提} ) = 4 ? 双重 : } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬专一多提} ) = 3 ? 三重 : ${if: ( ${v:空天姬专一多提} ) = 4 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6444,13 +6476,21 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionGroup Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</ConditionGroup>
+</ConditionGroup>
 </ConditionGroup>
 </Condition>
 </Trigger>
@@ -6514,12 +6554,18 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬咬钩时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="String" ConditionType="NumericGreater" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</ConditionGroup>
 </ConditionGroup>
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -7542,7 +7588,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬钓饵当前：${v:空天姬控制钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
 <Actions>
 <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" ActionType="LogMessage" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="抹茶格式。" DescriptionOverride="True" />
