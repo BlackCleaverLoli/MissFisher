@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w01a" Enabled="true" RawEnvironmentVariables="版本 = 1.10.8&#xD;&#xA;快照 = 25w01a&#xD;&#xA;摘要 = 修复一些问题。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w01b" Enabled="true" RawEnvironmentVariables="版本 = 1.10.9&#xD;&#xA;快照 = 25w01b&#xD;&#xA;摘要 = 修复一些问题。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -39,15 +39,6 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="false" Name="  预设生成器 表格（未完成）" Id="e4b112e3-5862-4d27-8ce4-b3c2f5dcef1d" RegularExpression="">
-<Actions>
-<Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="2453366e-7c47-4c08-b276-ab8824fd1b98" TriggerForce="regexp" ActionType="Trigger" />
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 空天姬：正在尝试打开配置界面。如果你是用远程触发器获得的，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" Enabled="False" ActionType="NamedCallback" Asynchronous="False" Description="如果你看见“无效引用”，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="3" LogMessageText="空天姬生成器" LogProcess="True" ActionType="LogMessage" />
-<Action OrderNumber="4" UseTTSTextExpression="已复制网址" ActionType="UseTTS" />
-<Action OrderNumber="5" VariableOp="Clipboard" VariableExpression="https://docs.qq.com/sheet/DVk1OaUVzemhLTHdP?tab=BB08J2" ActionType="Variable" />
-</Actions>
-</Trigger>
 <Trigger Enabled="true" Name="  用户配置界面（右键执行）" Id="a739dfbe-73df-4860-bf7c-d10f95c1a261" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="fb8d4caa-1aa8-47bc-891e-fcb8e0b2f8e4" TriggerForce="regexp" ActionType="Trigger" />
@@ -1029,6 +1020,20 @@
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制悬浮窗隐藏" VariableExpression="( ${v:空天姬控制悬浮窗隐藏} ) ^^ 1" ActionType="Variable" />
 <Action OrderNumber="2" UseTTSTextExpression="已切换" Enabled="False" ActionType="UseTTS" />
 <Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 悬浮窗显示状态已切换。" ActionType="NamedCallback" />
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Sequential="True" Name="Preset ERROR 未允许操作文件权限" Id="83eca4f1-ee35-414c-9743-cfc87b66b45a" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])[ ]*$|^.{26}(?&lt;log2&gt;003C)::(“/(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc])”出现问题：该命令不存在。|The command /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]) does not exist.|そのコマンドはありません。： /(空天姬 *同步|[Kk][Tt][Jj] *[Ss][Yy][Nn][Cc]))$">
+<Actions>
+<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher]&#xD;&#xA;未授权仓库权限，无法同步预设&#xD;&#xA;请按以下步骤授权：&#xD;&#xA;1. 右键 空天姬 远程仓库 - 点击 编辑&#xD;&#xA;2. 勾选 允许触发器执行代码 - 在弹出的对话窗口点击 是 - 保存更改&#xD;&#xA;3. 再次右键 仓库 - 点击 更新 - 等待仓库更新完成。" ActionType="NamedCallback" ExecutionDelayExpression="250">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设检查I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</Condition>
+</Action>
+<Action OrderNumber="2" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;未授权仓库权限，无法同步预设&#xD;&#xA;请按以下步骤授权：&#xD;&#xA;1. 右键 空天姬 远程仓库 - 点击 编辑&#xD;&#xA;2. 勾选 允许触发器执行代码 - 在弹出的对话窗口点击 是 - 保存更改&#xD;&#xA;3. 再次右键 仓库 - 点击 更新 - 等待仓库更新完成。" ActionType="MessageBox">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设检查I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</Condition>
+</Action>
 </Actions>
 </Trigger>
 </Triggers>
@@ -4173,7 +4178,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓3}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓4}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
@@ -4228,20 +4232,18 @@
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制渔技状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="48" ExpressionTypeR="String" ConditionType="NumericLess" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericLess" />
-</ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="String" ConditionType="NumericLess" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法攒鱼计}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -4261,8 +4263,14 @@
 </ConditionGroup>
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制渔技状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="48" ExpressionTypeR="String" ConditionType="NumericLess" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericLess" />
+</ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+</ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
@@ -4315,17 +4323,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制渔技状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericLess" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬参数} ) - 2" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼篓}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法攒鱼计}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4341,6 +4338,7 @@
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="9" ExpressionTypeR="String" ConditionType="NumericLess" />
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼篓}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -4364,6 +4362,23 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="NumericLess" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型3}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼篓}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬参数} ) - 2" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericLess" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
 </ConditionGroup>
 </ConditionGroup>
 </ConditionGroup>
@@ -5845,7 +5860,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="3.1.3 确定收藏动作" Id="ba21f505-c809-4ef8-bf12-b825735b61e3" RegularExpression="">
+<Trigger Enabled="true" Name="3.1.3 确定收藏动作" Id="ba21f505-c809-4ef8-bf12-b825735b61e3" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="sendkey" NamedCallbackParam="${pd:空天姬配置[确定热键]}" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="sendkey" NamedCallbackParam="${pd:空天姬配置[确定热键]}" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
@@ -6367,7 +6382,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+<Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="${if: ${_ffxivisglobal} ? ${if: ${v:空天姬控制鲶鱼精版本I} == 1.3.5.3 ? : normal } : normal }command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
@@ -7396,7 +7411,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -7407,7 +7422,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
@@ -8961,7 +8976,7 @@
 <Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description=" 成就航线字典键使用如：011101（航线+坏天气+成就标识顺位）" DescriptionOverride="True" />
 <Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description=" 通用" DescBgColor="059" DescTextColor="fff" DescriptionOverride="True" />
 <Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description=" 不触幻" DescriptionOverride="True" />
-<Action OrderNumber="23" NamedCallbackName="command" NamedCallbackParam="/e 平钓（${f:capture(${pd:空天姬预设[ps${v:空天姬控制海域}]},1):(?&lt;1&gt;石沙蚕|刺螠|磷虾)}）！+！！》all" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="23" NamedCallbackName="command" NamedCallbackParam="/e 平钓（石沙蚕）！+！！》全部" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域}" ExpressionTypeL="String" ExpressionR="(12|0[589])12" ExpressionTypeR="String" ConditionType="RegexMatch" />
@@ -9888,79 +9903,75 @@
 <Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="          /e ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
 <Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬配置" DescBgColor="fff" DescriptionOverride="True" />
 <Action OrderNumber="14" Enabled="False" ActionType="Placeholder" Description="          /ktjcfg" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="    ·打开预设生成器（建设中）：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="          /e ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬生成器" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="          /ktjcmd" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="    自动钓鱼" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="    ·使用预设中的参数自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="          /e &lt;空天姬预设&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="        接受的参数详见 Wiki【如何编写空天姬预设】。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="    ·以指定模式自动海钓：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="          /e 冲分确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="          /e 蓝鱼确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="          /e 成就确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="          /e 成就1确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="          /e 成就2确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="          /e 练级确定" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="30" Enabled="False" ActionType="Placeholder" Description="        必须带齐 刺螠、石沙蚕、磷虾 + 万能拟饵 + 蓝鱼钓饵（如果是蓝鱼模式）" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Description="        并留出 40 格以上背包空间。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="32" Enabled="False" ActionType="Placeholder" Description="        ·普通钓饵至少 50 个，拟饵至少 3 个。（不知道带什么请使用【航线预报】或百度“FF14鱼糕”）" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description="        ·成就指需要特定数量和种类的鱼才能获得的成就。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="34" Enabled="False" ActionType="Placeholder" Description="          ·成就 1 指鱼糕或航线预报中靠左的成就，成就 2 则是靠右的。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="35" Enabled="False" ActionType="Placeholder" Description="    ·使用对应的内置预设自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="          /e ktjys &lt;鱼类全称&gt; &lt;定时分钟（可选）&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设 &lt;鱼类全称&gt; &lt;定时分钟（可选）&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="    ·查看对应的内置预设：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="          /e ktjys show &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设 查看 &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="41" Enabled="False" ActionType="Placeholder" Description="    ·调试自动功能：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="42" Enabled="False" ActionType="Placeholder" Description="          /e ktjdbg" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="43" Enabled="False" ActionType="Placeholder" Description="          /ktjdbg" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="44" Enabled="False" ActionType="Placeholder" Description="    ·自动时强制撒饵一次：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="45" Enabled="False" ActionType="Placeholder" Description="          /e ktjchum" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="46" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬撒饵" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="47" Enabled="False" ActionType="Placeholder" Description="    ·暂停 / 恢复自动动作：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="48" Enabled="False" ActionType="Placeholder" Description="          /e ktjpause" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="49" Enabled="False" ActionType="Placeholder" Description="          /e kpause" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="50" Enabled="False" ActionType="Placeholder" Description="          /ktjpause" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description="          /ktjpause" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="52" Enabled="False" ActionType="Placeholder" Description="      ·部分功能不受暂停影响，例如「满足条件时的预设切换」。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="53" Enabled="False" ActionType="Placeholder" Description="    ·停止自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="          /e kend" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="55" Enabled="False" ActionType="Placeholder" Description="          /e 停止" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="56" Enabled="False" ActionType="Placeholder" Description="          /kend" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="57" Enabled="False" ActionType="Placeholder" Description="    ·在线同步内置预设：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description="          /e ktjsync" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="59" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬同步" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="60" Enabled="False" ActionType="Placeholder" Description="          /ktjsync" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="61" Enabled="False" ActionType="Placeholder" Description="      ·可手动执行触发器分组更多中的触发器来切换同步线路。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="62" Enabled="False" ActionType="Placeholder" Description="    ·（该功能缺乏维护）查看自定义保存的预设列表及指引：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="63" Enabled="False" ActionType="Placeholder" Description="          /e 自定义" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="64" Enabled="False" ActionType="Placeholder" Description="      ·可以录入以模式或“计数”开头的功能命令并保存在 ACT 中。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="65" Enabled="False" ActionType="Placeholder" Description="      ·录入的命令大于 10 个时，呼出的列表可能会被截断。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="66" Enabled="False" ActionType="Placeholder" Description="    工具功能" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="67" Enabled="False" ActionType="Placeholder" Description="    ·修改悬浮窗坐标偏移：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="68" Enabled="False" ActionType="Placeholder" Description="          /e ktjovl &lt;悬浮窗类型&gt; &lt;水平偏移&gt; &lt;垂直偏移&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="69" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬悬浮窗 &lt;悬浮窗类型&gt; &lt;水平偏移&gt; &lt;垂直偏移&gt;" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="70" Enabled="False" ActionType="Placeholder" Description="      ·类型：竿时 / time ; 采集力 / gp" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="71" Enabled="False" ActionType="Placeholder" Description="      ·偏移量支持负数；值越大，位置相对初始位置越靠近画面右下角。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="72" Enabled="False" ActionType="Placeholder" Description="    ·向默语频道发送航线预报：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="73" Enabled="False" ActionType="Placeholder" Description="          /e ktjhx" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="74" Enabled="False" ActionType="Placeholder" Description="          /e 航线" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="75" Enabled="False" ActionType="Placeholder" Description="          /ktjhx" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="76" Enabled="False" ActionType="Placeholder" Description="      ·以鱼糕推荐标签作为标识，同时会播报需要携带的钓饵。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="77" Enabled="False" ActionType="Placeholder" Description="        带星号的“冲分”和“保分”标识是作者额外添加的。" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="78" Enabled="False" ActionType="Placeholder" Description="    ·测试关键日志行：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="79" Enabled="False" ActionType="Placeholder" Description="          /e ktjlogtest" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="80" Enabled="False" ActionType="Placeholder" Description="          /ktjlogtest" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="81" Enabled="False" ActionType="Placeholder" Description="      ·按指引进行测试，需要已经开放副本：末日暗影亚马乌罗提" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="82" Enabled="False" ActionType="Placeholder" Description="    ·显示计数悬浮窗：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="83" Enabled="False" ActionType="Placeholder" Description="          /e 计数 &lt;参考数量&gt;&lt;鱼名关键词&gt;；" DescBgColor="fff" DescriptionOverride="True" />
-<Action OrderNumber="84" Enabled="False" ActionType="Placeholder" Description="      ·和部分自动功能冲突。可在关键词前加上数量，此时将在触发鱼识时清空已钓上的数量；" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="85" Enabled="False" ActionType="Placeholder" Description="        最多以如“2鱼；3虾；”的格式写入最多 3 组" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="86" Enabled="False" ActionType="Placeholder" Description="        鱼名关键词支持部分正则表达式" DescBgColor="ffd" DescriptionOverride="True" />
-<Action OrderNumber="87" Enabled="False" ActionType="Placeholder" Description="  关于丨by BlackCleaverLoli丨空天姬群：959153665丨ACT 触发器技术交流：556836295" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="    自动钓鱼" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="    ·使用预设中的参数自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="          /e &lt;空天姬预设&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="18" Enabled="False" ActionType="Placeholder" Description="        接受的参数详见 Wiki【如何编写空天姬预设】。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="19" Enabled="False" ActionType="Placeholder" Description="    ·以指定模式自动海钓：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="20" Enabled="False" ActionType="Placeholder" Description="          /e 冲分确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Description="          /e 蓝鱼确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Description="          /e 成就确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="23" Enabled="False" ActionType="Placeholder" Description="          /e 成就1确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="24" Enabled="False" ActionType="Placeholder" Description="          /e 成就2确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="25" Enabled="False" ActionType="Placeholder" Description="          /e 练级确定" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="26" Enabled="False" ActionType="Placeholder" Description="        必须带齐 刺螠、石沙蚕、磷虾 + 万能拟饵 + 蓝鱼钓饵（如果是蓝鱼模式）" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="27" Enabled="False" ActionType="Placeholder" Description="        并留出 40 格以上背包空间。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="28" Enabled="False" ActionType="Placeholder" Description="        ·普通钓饵至少 50 个，拟饵至少 3 个。（不知道带什么请使用【航线预报】或百度“FF14鱼糕”）" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="29" Enabled="False" ActionType="Placeholder" Description="        ·成就指需要特定数量和种类的鱼才能获得的成就。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="30" Enabled="False" ActionType="Placeholder" Description="          ·成就 1 指鱼糕或航线预报中靠左的成就，成就 2 则是靠右的。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Description="    ·使用对应的内置预设自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="32" Enabled="False" ActionType="Placeholder" Description="          /e ktjys &lt;鱼类全称&gt; &lt;定时分钟（可选）&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="33" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设 &lt;鱼类全称&gt; &lt;定时分钟（可选）&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="34" Enabled="False" ActionType="Placeholder" Description="    ·查看对应的内置预设：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="35" Enabled="False" ActionType="Placeholder" Description="          /e ktjys show &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="36" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬预设 查看 &lt;鱼类全称&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="37" Enabled="False" ActionType="Placeholder" Description="    ·调试自动功能：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="38" Enabled="False" ActionType="Placeholder" Description="          /e ktjdbg" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="39" Enabled="False" ActionType="Placeholder" Description="          /ktjdbg" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="40" Enabled="False" ActionType="Placeholder" Description="    ·自动时强制撒饵一次：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="41" Enabled="False" ActionType="Placeholder" Description="          /e ktjchum" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="42" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬撒饵" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="43" Enabled="False" ActionType="Placeholder" Description="    ·暂停 / 恢复自动动作：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="44" Enabled="False" ActionType="Placeholder" Description="          /e ktjpause" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="45" Enabled="False" ActionType="Placeholder" Description="          /e kpause" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="46" Enabled="False" ActionType="Placeholder" Description="          /ktjpause" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="47" Enabled="False" ActionType="Placeholder" Description="          /ktjpause" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="48" Enabled="False" ActionType="Placeholder" Description="      ·部分功能不受暂停影响，例如「满足条件时的预设切换」。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="49" Enabled="False" ActionType="Placeholder" Description="    ·停止自动钓鱼：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="50" Enabled="False" ActionType="Placeholder" Description="          /e kend" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="51" Enabled="False" ActionType="Placeholder" Description="          /e 停止" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="52" Enabled="False" ActionType="Placeholder" Description="          /kend" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="53" Enabled="False" ActionType="Placeholder" Description="    ·在线同步内置预设：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="54" Enabled="False" ActionType="Placeholder" Description="          /e ktjsync" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="55" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬同步" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="56" Enabled="False" ActionType="Placeholder" Description="          /ktjsync" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="57" Enabled="False" ActionType="Placeholder" Description="      ·可手动执行触发器分组更多中的触发器来切换同步线路。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description="    ·（该功能缺乏维护）查看自定义保存的预设列表及指引：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="59" Enabled="False" ActionType="Placeholder" Description="          /e 自定义" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="60" Enabled="False" ActionType="Placeholder" Description="      ·可以录入以模式或“计数”开头的功能命令并保存在 ACT 中。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="61" Enabled="False" ActionType="Placeholder" Description="      ·录入的命令大于 10 个时，呼出的列表可能会被截断。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="62" Enabled="False" ActionType="Placeholder" Description="    工具功能" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="63" Enabled="False" ActionType="Placeholder" Description="    ·修改悬浮窗坐标偏移：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="64" Enabled="False" ActionType="Placeholder" Description="          /e ktjovl &lt;悬浮窗类型&gt; &lt;水平偏移&gt; &lt;垂直偏移&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="65" Enabled="False" ActionType="Placeholder" Description="          /e 空天姬悬浮窗 &lt;悬浮窗类型&gt; &lt;水平偏移&gt; &lt;垂直偏移&gt;" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="66" Enabled="False" ActionType="Placeholder" Description="      ·类型：竿时 / time ; 采集力 / gp" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="67" Enabled="False" ActionType="Placeholder" Description="      ·偏移量支持负数；值越大，位置相对初始位置越靠近画面右下角。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="68" Enabled="False" ActionType="Placeholder" Description="    ·向默语频道发送航线预报：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="69" Enabled="False" ActionType="Placeholder" Description="          /e ktjhx" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="70" Enabled="False" ActionType="Placeholder" Description="          /e 航线" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="71" Enabled="False" ActionType="Placeholder" Description="          /ktjhx" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="72" Enabled="False" ActionType="Placeholder" Description="      ·以鱼糕推荐标签作为标识，同时会播报需要携带的钓饵。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="73" Enabled="False" ActionType="Placeholder" Description="        带星号的“冲分”和“保分”标识是作者额外添加的。" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="74" Enabled="False" ActionType="Placeholder" Description="    ·测试关键日志行：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="75" Enabled="False" ActionType="Placeholder" Description="          /e ktjlogtest" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="76" Enabled="False" ActionType="Placeholder" Description="          /ktjlogtest" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="77" Enabled="False" ActionType="Placeholder" Description="      ·按指引进行测试，需要已经开放副本：末日暗影亚马乌罗提" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="78" Enabled="False" ActionType="Placeholder" Description="    ·显示计数悬浮窗：" DescBgColor="32519b" DescTextColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="79" Enabled="False" ActionType="Placeholder" Description="          /e 计数 &lt;参考数量&gt;&lt;鱼名关键词&gt;；" DescBgColor="fff" DescriptionOverride="True" />
+<Action OrderNumber="80" Enabled="False" ActionType="Placeholder" Description="      ·和部分自动功能冲突。可在关键词前加上数量，此时将在触发鱼识时清空已钓上的数量；" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="81" Enabled="False" ActionType="Placeholder" Description="        最多以如“2鱼；3虾；”的格式写入最多 3 组" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="82" Enabled="False" ActionType="Placeholder" Description="        鱼名关键词支持部分正则表达式" DescBgColor="ffd" DescriptionOverride="True" />
+<Action OrderNumber="83" Enabled="False" ActionType="Placeholder" Description="  关于丨by BlackCleaverLoli丨空天姬群：959153665丨ACT 触发器技术交流：556836295" DescBgColor="20376e" DescTextColor="fff" DescriptionOverride="True" />
 </Actions>
 </Trigger>
 <Trigger Enabled="true" Name="   空天姬主界面（右键执行）" Id="308eecf7-dd8a-477a-973c-401de7c0b101" RegularExpression="" PeriodRefire="Deny" RefirePeriodExpression="500">
