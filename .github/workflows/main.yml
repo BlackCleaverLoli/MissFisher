@@ -6,7 +6,7 @@ jobs:
   UploadCOS:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2.3.5
     - name: Install coscmd
       run: sudo pip install coscmd
     - name: Configure coscmd
