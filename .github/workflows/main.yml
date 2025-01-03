@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.5
     - name: Install coscmd
-      run: sudo pip install coscmd
+      run: sudo pip3 install coscmd
     - name: Configure coscmd
       env:
         SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
