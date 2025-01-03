@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w01b" Enabled="true" RawEnvironmentVariables="版本 = 1.10.9&#xD;&#xA;快照 = 25w01b&#xD;&#xA;摘要 = 修复一些问题。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w01c" Enabled="true" RawEnvironmentVariables="版本 = 1.10.9&#xD;&#xA;快照 = 25w01c&#xD;&#xA;摘要 = 修复一些问题。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -240,7 +240,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
@@ -4123,7 +4123,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬预拍水模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="23" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${_me.currentgp} + ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) * ${pv:空天姬控制强心剂GP} + ${ev:空天姬恩宠判断} * 150 - ( ${ev:空天姬饵鱼模式} ? 100 : 0 )" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="23" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${_me.currentgp} + ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) * ${pv:空天姬控制强心剂GP} + ${ev:空天姬恩宠判断} * 150 - ( ${ev:空天姬手法鱼篓}${ev:空天姬饵鱼模式} ? 100 : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="24" VariableOp="SetString" VariableName="空天姬专一目标判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4393,10 +4393,10 @@
 </Condition>
 </Action>
 <Action OrderNumber="33" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="撒饵" ActionType="ListVariable" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
+<Condition Enabled="true" Grouping="Or">
+<ConditionGroup Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬撒饵强制}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="100 + ${v:空天姬额外所需采集力}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力} - ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} ) ? 0 : ${pv:空天姬控制强心剂GP} )" ExpressionTypeL="Numeric" ExpressionR="100 + ${v:空天姬额外所需采集力}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬撒饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
@@ -4428,6 +4428,11 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </ConditionGroup>
 </ConditionGroup>
+</ConditionGroup>
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬撒饵强制}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </ConditionGroup>
 </Condition>
 </Action>
@@ -4926,7 +4931,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬恩宠判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="35" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${v:空天姬当前采集力强心剂} + ( ${v:空天姬恩宠判断} ) * 150" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="35" VariableOp="SetNumeric" VariableName="空天姬可用采集力" VariableExpression="${v:空天姬当前采集力强心剂} + ( ${v:空天姬恩宠判断} ) * 150 - ( ${ev:空天姬手法鱼篓} ? 100 : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="36" VariableOp="SetString" VariableName="空天姬大鱼猎手判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5724,7 +5729,17 @@
 </Condition>
 </Action>
 <Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬提钩咬饵时刻" VariableExpression="${v:空天姬咬钩时刻}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬提钩判断" VariableExpression="${v:空天姬提钩咬饵时刻} ≤ 200 ? 1 : 0" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬提钩数量条件差值" VariableExpression="( ( ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) &gt; 0 ? ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) : 0 ) + ( ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) &gt; 0 ? ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) : 0 ) + ( ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) &gt; 0 ? ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) : 0 ) )" ActionType="Variable" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</Condition>
+</Action>
+<Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬提钩判断" VariableExpression="${v:空天姬提钩咬饵时刻} ≤ 200 ? 1 : 0" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -5749,7 +5764,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(${type}):${v:空天姬大鱼额外竿型${v:空天姬以小钓大阶段}}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -5799,36 +5814,36 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? 三重 : ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 4 &amp;&amp; ${_me.currentgp} ≥ 392 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 3 ? 三重 : ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 : } } : 三重 } : ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 2 &amp;&amp; ${_me.currentgp} ≥ 392 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 :  } : 双重 } : } } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? 三重 : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 4 &amp;&amp; ${_me.currentgp} ≥ 392 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 3 ? 三重 : ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 : } } : 三重 } : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) &gt; 2 &amp;&amp; ${_me.currentgp} ≥ 392 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 :  } : 双重 } : } } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} :  }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} :  }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(${type}):${v:空天姬大鱼额外竿型${v:空天姬以小钓大阶段}}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ${ev:空天姬专一多提} ? ${if: ${ev:空天姬鱼识参数} &amp;&amp; !${ev:空天姬鱼识状态} ? ${if: ( ( ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) &gt; 0 ? ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) : 0 ) + ( ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) &gt; 0 ? ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) : 0 ) + ( ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) &gt; 0 ? ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) : 0 ) ) &gt;= ${if: ${v:空天姬专一多提} == 3 ? 3 : 2 } ? ${if: ${v:空天姬专一多提} == 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? 三重 : ${if: ${v:空天姬专一多提} == 4 &amp;&amp; ${_me.currentgp} ≥ 392 ? 双重 : } } : } : ${if: ${v:空天姬专一多提} == 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? 三重 : ${if: ${v:空天姬专一多提} == 4 &amp;&amp; ${_me.currentgp} ≥ 392 ? 双重 : } } } : } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ${ev:空天姬专一多提} ? ${if: ( ${v:空天姬专一多提} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 3 ? 三重 : ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 : } } : 三重 } : ${if: ${_me.currentgp} ≥ 392 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 :  } : 双重 } : } } : } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="歇竿" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="12" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="歇竿" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="String" ConditionType="NumericLess" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True" />
-<Action OrderNumber="13" ListVariableOp="SetAll" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬禁用双提} ? : ${if: ${_me.level} &lt; 65 ? : 双重 } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="13" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True" />
+<Action OrderNumber="14" ListVariableOp="SetAll" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬禁用双提} ? : ${if: ${_me.level} &lt; 65 ? : 双重 } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="65" ExpressionTypeR="String" ConditionType="NumericLess" />
@@ -5838,17 +5853,17 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩}" ExpressionTypeL="String" ExpressionR="双重|三重" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="14" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="15" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="15" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="16" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="16" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
+<Action OrderNumber="17" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6080,7 +6095,17 @@
 </Condition>
 </Action>
 <Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬提钩咬饵时刻" VariableExpression="${v:空天姬咬钩时刻}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬提钩判断" VariableExpression="( ( ${v:空天姬提钩咬饵时刻} ) ≤ 200 )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬提钩数量条件差值" VariableExpression="( ( ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) &gt; 0 ? ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) : 0 ) + ( ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) &gt; 0 ? ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) : 0 ) + ( ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) &gt; 0 ? ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) : 0 ) )" ActionType="Variable" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+</Condition>
+</Action>
+<Action OrderNumber="7" VariableOp="SetNumeric" VariableName="空天姬提钩判断" VariableExpression="( ( ${v:空天姬提钩咬饵时刻} ) ≤ 200 )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬最小竿时}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
@@ -6105,7 +6130,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(${type}):${v:空天姬大鱼额外竿型${v:空天姬以小钓大阶段}}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="3" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="3" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流即将结束}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6155,7 +6180,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="2" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(${type}):${v:空天姬拍竿型}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6191,7 +6216,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="4" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="4" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -6206,35 +6231,35 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${v:空天姬提钩类型} : }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${v:空天姬提钩类型} : }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="4" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? 三重 : ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 4 &amp;&amp; ${_me.currentgp} ≥ 392 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="12" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩1} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 3 ? 三重 : ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 : } } : 三重 } : ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 2 &amp;&amp; ${_me.currentgp} ≥ 392 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 :  } : 双重 } : } } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? 三重 : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 4 &amp;&amp; ${_me.currentgp} ≥ 392 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 3 &amp;&amp; ${_me.currentgp} ≥ 692 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 3 ? 三重 : ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 : } } : 三重 } : ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) &gt; 2 &amp;&amp; ${_me.currentgp} ≥ 392 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 :  } : 双重 } : } } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ${ev:空天姬专一多提} ? ${if: ${ev:空天姬鱼识参数} &amp;&amp; !${ev:空天姬鱼识状态} ? ${if: ( ( ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) &gt; 0 ? ( ${t:空天姬目标[1][1]} ) - ( ${t:空天姬目标[3][1]} ) : 0 ) + ( ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) &gt; 0 ? ( ${t:空天姬目标[1][2]} ) - ( ${t:空天姬目标[3][2]} ) : 0 ) + ( ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) &gt; 0 ? ( ${t:空天姬目标[1][3]} ) - ( ${t:空天姬目标[3][3]} ) : 0 ) ) &gt;= ${if: ${v:空天姬专一多提} == 3 ? 3 : 2 } ? ${if: ${v:空天姬专一多提} == 3 ? 三重 : ${if: ${v:空天姬专一多提} == 4 ? 双重 : } } : } : ${if: ${v:空天姬专一多提} == 3 ? 三重 : ${if: ${v:空天姬专一多提} == 4 ? 双重 : } } } : } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ${ev:空天姬专一多提} ? ${if: ( ${v:空天姬专一多提} ) = 3 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 3 ? 三重 : ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 : } } : 三重 } : ${if: ( ${v:空天姬专一多提} ) = 2 ? ${if: ${ev:空天姬提钩数量条件差值} ? ${if: ( ${v:空天姬提钩数量条件差值} ) &gt;= 2 ? 双重 :  } : 双重 } : } } : } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 ) &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ${_me.currentgp} ≥ 692 ? 三重 : ${if: ${_me.currentgp} ≥ 392 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬耐心状态} ? ${if: ( ( ${v:空天姬大鱼技巧提钩${v:空天姬以小钓大技巧提钩阶段}} ) = 1 ) &amp;&amp; ( ${type} = 3 ) ? 精准 : ${v:空天姬提钩类型}} : ${if: ${_me.currentgp} ≥ 692 ? 三重 : ${if: ${_me.currentgp} ≥ 392 ? 双重 : } } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="歇竿" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="16" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="歇竿" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
@@ -6243,8 +6268,8 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬普海残竿}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True" />
-<Action OrderNumber="17" ListVariableOp="SetAll" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬禁用双提} ? : ${if: ${_me.level} &lt; 65 ? : 双重 } }提钩" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="17" Enabled="False" ActionType="Placeholder" Description="低等级/被禁用时" DescriptionOverride="True" />
+<Action OrderNumber="18" ListVariableOp="SetAll" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="${if: ${ev:空天姬禁用双提} ? : ${if: ${_me.level} &lt; 65 ? : 双重 } }提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="65" ExpressionTypeR="String" ConditionType="NumericLess" />
@@ -6254,17 +6279,17 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩}" ExpressionTypeL="String" ExpressionR="双重|三重" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="18" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="19" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="19" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="20" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="20" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
+<Action OrderNumber="21" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -7411,7 +7436,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -7422,7 +7447,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
@@ -7598,7 +7623,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬钓饵当前：${v:空天姬控制钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
 <Actions>
 <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" ActionType="LogMessage" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="抹茶格式。" DescriptionOverride="True" />
