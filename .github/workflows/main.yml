@@ -4,11 +4,11 @@ on: [push]
 
 jobs:
   UploadCOS:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v2.3.5
     - name: Install coscmd
-      run: sudo pip3 install coscmd
+      run: sudo pip install coscmd
     - name: Configure coscmd
       env:
         SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
