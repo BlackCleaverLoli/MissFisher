@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w02d" Enabled="true" RawEnvironmentVariables="版本 = 1.11.4&#xD;&#xA;快照 = 25w02d&#xD;&#xA;摘要 = 修复一些问题。最近新增拍水后预设参数。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w02e" Enabled="true" RawEnvironmentVariables="版本 = 1.11.5&#xD;&#xA;快照 = 25w02e&#xD;&#xA;摘要 = 修复一些问题。最近新增拍水后预设参数。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -240,7 +240,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
+<Trigger Enabled="false" Name="防抹茶日志冲突" Id="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" RegularExpression="^.{15}ChatLog 00:0:Matcha#[^#]+#chs-FishBite#">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" ActionType="Trigger" />
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e76b2768-9742-44bb-a7f4-b3a5ae8bb3ce" ActionType="Trigger" />
@@ -324,17 +324,17 @@
 <Actions>
 <Action OrderNumber="1" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " VariableOp="UnsetRegex" VariableName="^空天姬.+[^IT剂言口茶]$" VariableExpression="${_timestampms}" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
-<Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " VariableOp="UnsetRegex" VariableName="^空天姬[^控]" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="5" ListVariableOp="UnsetRegex" ListVariableName="^空天姬" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " VariableOp="UnsetRegex" VariableName="^空天姬" VariableExpression="${_timestampms}" ActionType="ListVariable" Asynchronous="False" />
-<Action OrderNumber="6" ListVariableName="^空天姬" NamedCallbackName="command" NamedCallbackParam="/e &#xD;&#xA;本次：${v:空天姬竿数} 竿&#xD;&#xA;&lt;se.12&gt; " VariableOp="UnsetRegex" VariableName="^空天姬" VariableExpression="${_timestampms}" TableVariableOp="UnsetRegex" TableVariableName="空天姬" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="3" VariableOp="UnsetRegex" VariableName="^空天姬.+[^IT剂言口茶]$" VariableExpression="${_timestampms}" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
+<Action OrderNumber="4" VariableOp="UnsetRegex" VariableName="^空天姬[^控]" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="5" ListVariableOp="UnsetRegex" ListVariableName="^空天姬" ActionType="ListVariable" Asynchronous="False" />
+<Action OrderNumber="6" TableVariableOp="UnsetRegex" TableVariableName="空天姬" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域阶段}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="CancelTrigger" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="8" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="CancelTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="7" TriggerOp="CancelTrigger" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="8" TriggerOp="CancelTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="9" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="9" TextAuraName="^空天姬[^采]" TextAuraFontName="宋体" ActionType="TextAura" Asynchronous="False" />
 <Action OrderNumber="10" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="9" TextAuraName="^空天姬[采]" TextAuraFontName="宋体" ActionType="TextAura" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
@@ -392,21 +392,21 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[悬浮窗字号]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="悬浮窗字号" DictVariableValue="2" DictSourcePersist="True" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerOp="EnableTrigger" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="7" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="悬浮窗字号" DictVariableValue="2" DictSourcePersist="True" TriggerOp="EnableTrigger" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_screenheight}" ExpressionTypeL="Numeric" ExpressionR="1080" ExpressionTypeR="String" ConditionType="NumericGreater" />
 <ConditionSingle Enabled="true" ExpressionL="${_screenheight}" ExpressionTypeL="Numeric" ExpressionR="1440" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[悬浮窗字号]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="悬浮窗字号" DictVariableValue="3" DictSourcePersist="True" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerOp="EnableTrigger" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="8" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="悬浮窗字号" DictVariableValue="3" DictSourcePersist="True" TriggerOp="EnableTrigger" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_screenheight}" ExpressionTypeL="Numeric" ExpressionR="1440" ExpressionTypeR="String" ConditionType="NumericGreater" />
 <ConditionSingle Enabled="true" ExpressionL="${_screenheight}" ExpressionTypeL="Numeric" ExpressionR="2160" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[悬浮窗字号]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="悬浮窗字号" DictVariableValue="4" DictSourcePersist="True" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerOp="EnableTrigger" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="9" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="悬浮窗字号" DictVariableValue="4" DictSourcePersist="True" TriggerOp="EnableTrigger" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_screenheight}" ExpressionTypeL="Numeric" ExpressionR="2160" ExpressionTypeR="String" ConditionType="NumericGreater" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[悬浮窗字号]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -541,7 +541,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="14" LogMessageText="空天姬检查预设$1$2" LogProcess="True" TriggerId="0fa0f29a-ae40-402c-945f-395cc6123260" ActionType="LogMessage" ExecutionDelayExpression="2500" Asynchronous="False" />
+<Action OrderNumber="14" LogMessageText="空天姬检查预设$1$2" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2500" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设检查I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -705,7 +705,7 @@
 <Triggers>
 <Trigger Enabled="true" Name="自定义预设" Id="d5909757-9106-46f0-a23c-f4dacd7e89e5" RegularExpression="^.{15}\S+ 00:0038::(?&lt;param&gt;[ ]*自定义[ ]*(/e )?[ ]*(?&lt;log&gt;(平钓|大鱼|耐心|计数).+)|[ ]*自定义[ ]*(?!删除)(((?&lt;num&gt;[1-9][0-9]?)[ ]*(?!删除)(确定)?$)|$)|[ ]*自定义[ ]*(删除[ ]*)?(?&lt;del&gt;[1-9][0-9]?)[ ]*(删除[ ]*)?(确定)?)">
 <Actions>
-<Action OrderNumber="1" ListVariableOp="Push" ListVariableName="空天姬自定义列表" ListVariableExpression="${log}" ListSourcePersist="True" NamedCallbackName="command" NamedCallbackParam="/e 空天姬：&lt;se.10&gt;&#xD;&#xA;已将自定义预设：&#xD;&#xA;        ${log}&#xD;&#xA;        添加到 引索 ${plvar:空天姬自定义列表.indexof(${log})} 中" TableVariableOp="Set" TableSourcePersist="True" ActionType="ListVariable" Asynchronous="False">
+<Action OrderNumber="1" ListVariableOp="Push" ListVariableName="空天姬自定义列表" ListVariableExpression="${log}" ListSourcePersist="True" TableVariableOp="Set" TableSourcePersist="True" ActionType="ListVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${plvar:空天姬自定义列表.indexof(${log})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -728,7 +728,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${param}" ExpressionTypeL="String" ExpressionR="自定义.+确定" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="5" ListVariableOp="Remove" ListVariableName="空天姬自定义列表" ListVariableExpression="${log}" ListVariableIndex="${del}" ListSourcePersist="True" NamedCallbackName="command" NamedCallbackParam="/e 空天姬：&lt;se.10&gt;&#xD;&#xA;已将自定义预设：&#xD;&#xA;        ${log}&#xD;&#xA;        添加到 引索 ${plvar:空天姬自定义列表.indexof(${log})} 中" TableVariableOp="Set" TableSourcePersist="True" ActionType="ListVariable" Asynchronous="False">
+<Action OrderNumber="5" ListVariableOp="Remove" ListVariableName="空天姬自定义列表" ListVariableExpression="${log}" ListVariableIndex="${del}" ListSourcePersist="True" TableVariableOp="Set" TableSourcePersist="True" ActionType="ListVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${del}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${param}" ExpressionTypeL="String" ExpressionR="自定义.*删除.*确定" ExpressionTypeR="String" ConditionType="RegexMatch" />
@@ -1059,8 +1059,8 @@
 <Triggers>
 <Trigger Enabled="true" Name="模式：结束窗口" Id="326d8df9-7841-4bd6-b3fd-b6bb6c8c1619" RegularExpression="^空天姬结束窗口" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="3800">
 <Actions>
-<Action OrderNumber="1" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="2" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="3" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="false" Grouping="Or">
 <ConditionSingle Enabled="false" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericGreater" />
@@ -1072,7 +1072,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口&lt;se.13&gt;" UseTTSTextExpression="窗口结束" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False" />
+<Action OrderNumber="6" UseTTSTextExpression="窗口结束" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False" />
 <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e 超出窗口。&lt;se.12&gt;" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/systemsounds ${pd:空天姬配置[系统音]}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
@@ -1082,21 +1082,21 @@
 </Action>
 <Action OrderNumber="9" NamedCallbackName="warn" NamedCallbackParam="5&#xD;&#xA;窗口期结束！" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="10" Enabled="False" ActionType="Placeholder" Description="超出窗口时保留提钩 60 秒" DescriptionOverride="True" />
-<Action OrderNumber="11" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="a4638071-4f3a-48bf-98b0-ce621a48c7e3" ActionType="Folder" ExecutionDelayExpression="60*1000" Asynchronous="False" />
+<Action OrderNumber="11" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" ActionType="Folder" ExecutionDelayExpression="60*1000" Asynchronous="False" />
 <Action OrderNumber="12" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
 </Actions>
 </Trigger>
 <Trigger Enabled="true" Name="模式：ET 计时" Id="3d62c5df-91d7-40c0-b991-f14cdfa448ab" RegularExpression="^空天姬等待ET" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="2" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="${v:空天姬最小ET}" Asynchronous="False">
+<Action OrderNumber="2" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="${v:空天姬最小ET}" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气当前}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气}" ExpressionTypeR="String" ConditionType="RegexMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="3" VariableOp="SetString" VariableName="空天姬最小ET" VariableExpression="0" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="4" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬结束窗口" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="LogMessage" ExecutionDelayExpression="${v:空天姬最大ET}-${v:空天姬最小ET}" Asynchronous="False">
+<Action OrderNumber="4" LogMessageText="空天姬结束窗口" LogProcess="True" TriggerOp="DisableTrigger" ActionType="LogMessage" ExecutionDelayExpression="${v:空天姬最大ET}-${v:空天姬最小ET}" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1106,12 +1106,12 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="6" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬切换鱼眼模式" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="7" LogMessageText="空天姬切换鱼眼模式" LogProcess="True" TriggerOp="DisableTrigger" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1126,21 +1126,21 @@
 <Actions>
 <Action OrderNumber="1" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="2" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="3" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="3" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="4" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="5" LogMessageText="拍水启动" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="7" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="8" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="9" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="6" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="7" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="8" TriggerOp="CancelTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="9" TriggerOp="CancelTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="10" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="11" VariableName="空天姬预拍水模式" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="12" VariableName="空天姬饵鱼模式" ActionType="Variable" Asynchronous="False" />
@@ -1155,7 +1155,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="15" LogMessageText="空天姬钓饵启动" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="15" LogMessageText="空天姬钓饵启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1173,7 +1173,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制系统音I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="18" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口&lt;se.13&gt;" UseTTSTextExpression="进入窗口" UseTTSRateExpression="3" ActionType="UseTTS" ExecutionDelayExpression="1500" Asynchronous="False">
+<Action OrderNumber="18" UseTTSTextExpression="进入窗口" UseTTSRateExpression="3" ActionType="UseTTS" ExecutionDelayExpression="1500" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数不播报}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1188,7 +1188,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="19" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="19" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="20" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1214,7 +1214,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="2" NamedCallbackName="KTJGetCurrentWeather" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="3" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬结束窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="3" LogMessageText="空天姬结束窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气[${v:空天姬天气ID}]}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气}" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1285,7 +1285,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="6" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -1307,7 +1307,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="7" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="7" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -1329,7 +1329,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="8" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬拍水启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="8" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气当前}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -1338,7 +1338,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="9" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬饵鱼启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="9" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气当前}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -1353,7 +1353,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬天气当前" VariableExpression="${pd:空天姬天气[${v:空天姬天气ID}]}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="12" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="12" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气[${v:空天姬天气ID}]}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气}" ExpressionTypeR="String" ConditionType="RegexMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1365,7 +1365,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="13" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬等待天气" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2917" Asynchronous="False">
+<Action OrderNumber="13" LogMessageText="空天姬等待天气" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2917" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
@@ -1394,7 +1394,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage">
+<Action OrderNumber="6" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1408,12 +1408,12 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder">
+<Action OrderNumber="8" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="DisableTrigger" ActionType="Folder">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬切换鱼眼模式" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="LogMessage">
+<Action OrderNumber="9" LogMessageText="空天姬切换鱼眼模式" LogProcess="True" TriggerOp="DisableTrigger" ActionType="LogMessage">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1548,7 +1548,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="19" ActionType="Placeholder" ExecutionDelayExpression="${ev:空天姬手法鱼眼采集力判断} &amp;&amp; ${el:空天姬动作} ? ( ( ${_me.currentgp} &gt;= ${if: ${l:空天姬动作[1]} == 专一垂钓 ? 342 : 192 } ? 0 : 5000 )  ) : 0" />
-<Action OrderNumber="20" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder">
+<Action OrderNumber="20" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1558,12 +1558,12 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="22" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" ExecutionDelayExpression="${el:空天姬动作} ? 3000 : 0">
+<Action OrderNumber="22" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" ExecutionDelayExpression="${el:空天姬动作} ? 3000 : 0">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="23" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder">
+<Action OrderNumber="23" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1625,7 +1625,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="8" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="8" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -1651,7 +1651,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="2" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬目标上钩}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1678,7 +1678,7 @@
 <Action OrderNumber="3" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" ActionType="ListVariable" Asynchronous="False" />
 <Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
 <Action OrderNumber="5" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="鱼眼" ActionType="ListVariable" Asynchronous="False" />
-<Action OrderNumber="6" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="6" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/systemsounds 0" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制系统音I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -1686,7 +1686,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="8" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20" Asynchronous="False" />
-<Action OrderNumber="9" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10000" Asynchronous="False">
+<Action OrderNumber="9" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" ActionType="LogMessage" ExecutionDelayExpression="10000" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1706,8 +1706,8 @@
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="7f400bc8-3114-4956-8974-c1db71e8d580" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="3" TriggerOp="CancelTrigger" TriggerId="30639d37-66d4-48ac-a966-bd8789f6c47b" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="4" TriggerOp="CancelTrigger" TriggerId="40e5b9ba-d629-424a-ac1d-7b0c33c8bed6" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="5" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="30639d37-66d4-48ac-a966-bd8789f6c47b" TriggerForce="regexp" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="6" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="30639d37-66d4-48ac-a966-bd8789f6c47b" TriggerForce="regexp" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="5" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="6" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="7" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬手法鱼眼钓饵启动" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
@@ -1852,7 +1852,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="9" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法|定时|鱼眼模式|拍水后)" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="10" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="10" TriggerOp="DisableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" ActionType="Trigger" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -1886,7 +1886,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="4" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1895,7 +1895,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="5" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1997,7 +1997,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="22" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬阶段参数}" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="22" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬阶段参数}" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -2081,7 +2081,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="6" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -2101,7 +2101,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="10" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -2133,7 +2133,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="17" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="17" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
@@ -2258,7 +2258,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制钓饵}" ExpressionTypeL="String" ExpressionR="${v:空天姬钓饵更换}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="14" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬执行" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="14" LogMessageText="空天姬执行" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -2276,7 +2276,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="15" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬海钓执行" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="15" LogMessageText="空天姬海钓执行" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -2286,7 +2286,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="16" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬拍水启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="16" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -2305,7 +2305,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="17" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬饵鱼启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="17" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -2326,7 +2326,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="18" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬鱼眼启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="18" LogMessageText="空天姬鱼眼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -2365,7 +2365,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制钓饵}" ExpressionTypeL="String" ExpressionR="${v:空天姬钓饵更换}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="22" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" TriggerId="3cb9e5de-f2b0-4425-b6d7-79a0f7292d8b" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="22" TriggerId="3cb9e5de-f2b0-4425-b6d7-79a0f7292d8b" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -2388,7 +2388,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数} % 10" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="24" LogMessageText="空天姬换饵错误：${v:空天姬钓饵}" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="24" LogMessageText="空天姬换饵错误：${v:空天姬钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2414,7 +2414,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="3" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="3" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬目标上钩}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -2460,23 +2460,23 @@
 <Action OrderNumber="3" NamedCallbackName="hint" NamedCallbackParam="5&#xD;&#xA;目标达成：${f:capture(${空天姬目标},1):([\w·#?'\s＝【】？\.\-・]+)}" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="4" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="6" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="7" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" TriggerOp="CancelTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="6" TriggerOp="DisableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="7" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="false" Grouping="Or">
 <ConditionSingle Enabled="false" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Action>
-<Action OrderNumber="8" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="CancelTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="8" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="false" Grouping="Or">
 <ConditionSingle Enabled="false" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Action>
-<Action OrderNumber="9" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="9" TriggerOp="CancelTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="false" Grouping="Or">
 <ConditionSingle Enabled="false" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Action>
-<Action OrderNumber="10" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="10" TriggerOp="CancelTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="false" Grouping="Or">
 <ConditionSingle Enabled="false" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
@@ -2554,7 +2554,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式以小钓大机会判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="9" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式以小钓大机会判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -2584,7 +2584,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式以小钓大机会判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="14" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="14" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式以小钓大机会判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -2601,7 +2601,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="18" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="18" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
@@ -2776,7 +2776,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="4" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="CancelTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="4" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2788,13 +2788,13 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="6" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="7" TriggerOp="CancelTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2807,7 +2807,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬鱼识参数}" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="9" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬鱼识参数}" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2858,7 +2858,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬目标上钩}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="17" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="17" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2909,13 +2909,13 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="5" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="6" TriggerOp="CancelTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2928,7 +2928,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬拍水后预设}" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="8" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬拍水后预设}" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1A" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2942,7 +2942,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬目标上钩}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" ExecutionDelayExpression="100" Asynchronous="False">
+<Action OrderNumber="11" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" TriggerText="123456789112345ChatLog 00:0038::${v:空天姬原参数}" ActionType="Trigger" ExecutionDelayExpression="100" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="1E" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬目标上钩}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -2975,7 +2975,7 @@
 <Triggers>
 <Trigger Enabled="true" Name="记录参数 启动" Id="73ecea2f-b8ac-4e9f-b59b-ed55f98a55f7" RegularExpression="^.{15}ChatLog 00:0038::\s*(?&lt;空天姬原参数&gt;(?&lt;param&gt;大鱼|耐心|平钓)\s*(?:[(（](?&lt;空天姬钓饵&gt;\w+)[)）])?\s*(?:拍\s*(?&lt;空天姬拍最小区间&gt;[\d.]+)?(?:\+(?&lt;空天姬拍最小区间非撒饵&gt;[\d.]+))?[~-]?(?:(?&lt;空天姬拍最大区间&gt;[\d.]+)?(?:\+(?&lt;空天姬拍最大区间非撒饵&gt;[\d.]+))?\s*(?&lt;空天姬拍竿型&gt;全部|[Aa][Ll][Ll]|[!！+]{1,8})?\s*(?&lt;空天姬大鱼技巧提钩1&gt;强力|精准|双重|三重|双提|三提)?\s*(?&lt;空天姬大鱼鱼篓1&gt;[&lt;《])?[(（]?(?&lt;空天姬拍目标&gt;[\]\(\)\[!\^、\w·#\?'＝【】？\-・\\]+(?&lt;![\d-~]))[)）]?[》&gt;]?)?)?\s*(?:[(（](?&lt;空天姬大鱼额外竿型1&gt;[!！]{1,3})[)）])?\s*(?:(?&lt;空天姬大鱼最小区间1&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最小区间非撒饵1&gt;[\d.]+))?[~-]?(?&lt;空天姬大鱼最大区间1&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最大区间非撒饵1&gt;[\d.]+))?)?\s*(?:(?&lt;空天姬大鱼竿型1&gt;全部|[Aa][Ll][Ll]|[!！+]{1,8})\s*(?&lt;空天姬大鱼技巧提钩2&gt;强力|精准|双重|三重|双提|三提)?)\s*(?:[&lt;《][(（]?(?&lt;空天姬大鱼鱼篓2&gt;[\^、\w·#\?'＝【】？\-・\.\\]+?)[）)]?|(?&lt;空天姬大鱼鱼篓2&gt;[&lt;《])?[(（]?(?&lt;空天姬大鱼目标1&gt;[\^、\w·#\?'＝【】？\-・\.\\]+?)?[）)]?[》&gt;]\s*(?:[(（](?&lt;空天姬大鱼额外竿型2&gt;[!！]{1,3})[)）])?\s*(?:(?&lt;空天姬大鱼最小区间2&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最小区间非撒饵2&gt;[\d.]+))?[~-]?(?&lt;空天姬大鱼最大区间2&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最大区间非撒饵2&gt;[\d.]+))?)?\s*(?&lt;空天姬大鱼竿型2&gt;全部|[Aa][Ll][Ll]|[!！+]{1,8})\s*(?&lt;空天姬大鱼技巧提钩3&gt;强力|精准|双重|三重|双提|三提)?(?:[&lt;《][(（]?(?&lt;空天姬大鱼鱼篓3&gt;[\^、\w·#\?'＝【】？\-・\.\\]+?)[）)]?|(?&lt;空天姬大鱼鱼篓3&gt;[&lt;《])?[(（]?(?&lt;空天姬大鱼目标2&gt;[\^、\w·#\?'＝【】？\-・\.\\]+?)?[）)]?[》&gt;]\s*(?:[(（](?&lt;空天姬大鱼额外竿型3&gt;[!！]{1,3})[)）])?\s*(?:(?&lt;空天姬大鱼最小区间3&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最小区间非撒饵3&gt;[\d.]+))?[~-]?(?&lt;空天姬大鱼最大区间3&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最大区间非撒饵3&gt;[\d.]+))?)?\s*(?&lt;空天姬大鱼竿型3&gt;全部|[Aa][Ll][Ll]|[!！+]{1,8})\s*(?&lt;空天姬大鱼技巧提钩4&gt;强力|精准|双重|三重|双提|三提)?(?:[&lt;《][(（]?(?&lt;空天姬大鱼鱼篓4&gt;[\^、\w·#\?'＝【】？\-・\.\\]+?)[）)]?|(?&lt;空天姬大鱼鱼篓4&gt;[&lt;《])?[(（]?(?&lt;空天姬大鱼目标3&gt;[\^、\w·#\?'＝【】？\-・\.\\]+?)?[）)]?[》&gt;]\s*(?:[(（](?&lt;空天姬大鱼额外竿型4&gt;[!！]{1,3})[)）])?\s*(?:(?&lt;空天姬大鱼最小区间4&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最小区间非撒饵4&gt;[\d.]+))?[~-]?(?&lt;空天姬大鱼最大区间4&gt;[\d.]+)?(?:\+(?&lt;空天姬大鱼最大区间非撒饵4&gt;[\d.]+))?)?\s*(?&lt;空天姬大鱼竿型4&gt;全部|[Aa][Ll][Ll]|[!！+]{1,8})\s*(?&lt;空天姬大鱼技巧提钩5&gt;强力|精准|双重|三重|双提|三提)?)?)?)?\s*(?:(?:[eE][tT])?\s*(?&lt;空天姬最小ET&gt;\d{4})[~-](?&lt;空天姬最大ET&gt;\d{4}))?\s*(?:[(（](?&lt;空天姬天气&gt;[、\w]+)[）)])?\s*(?:=\s*(?:(?&lt;空天姬目标计数1&gt;\d+)\s*[(（]?(?&lt;空天姬计数目标1&gt;[\^、\w·#\?'＝【】？\-・\.\\\!()]+?)[）)]?[；;](?:(?&lt;空天姬目标计数2&gt;\d+)\s*[(（]?(?&lt;空天姬计数目标2&gt;[\^、\w·#\?'＝【】？\-・\.\\\!()]+?)[）)]?[；;])?(?:(?&lt;空天姬目标计数3&gt;[\d]+)\s*[(（]?(?&lt;空天姬计数目标3&gt;[\^、\w·#\?'＝【】？\-・\.\\\!()]+?)[）)]?[；;])?)?[(（]?(?&lt;空天姬目标&gt;(?!专一)[\^、\w·#\?'＝【】？\-・\.\\]+?)?[）)]?)?\s*(?:=\s*专一\s*[(（]?\s*(?&lt;空天姬专一目标&gt;[\^、\w·#\?'＝【】？\-・\.\\]+?)[）)]?\s*(?:[=]\s*(?&lt;空天姬专一多提&gt;双重|三重|双提|三提))?)?\s*(?:/{2}[^》&gt;\n]+)?\s*(?:(?&lt;=[；;].*)[》&gt;]阶段\s*(?&lt;空天姬阶段参数&gt;(?:大鱼|耐心|平钓).+)[&lt;《])?\s*(?:[》&gt;](?:鱼识\s*(?&lt;空天姬鱼识参数&gt;(?:大鱼|耐心|平钓).+)|拍水后\s*(?&lt;空天姬拍水后预设&gt;(?:大鱼|耐心|平钓).+)))?\s*(?:/{2}.+)?)\s*$" PrevActions="Interrupt">
 <Actions>
-<Action OrderNumber="1" LogMessageText="空天姬触发" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" ActionType="LogMessage" Asynchronous="False" />
+<Action OrderNumber="1" LogMessageText="空天姬触发" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="KTJGetCurrentBait" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="3" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="4" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" ActionType="Folder" Asynchronous="False" />
@@ -2999,7 +2999,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制强心剂超时I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" VariableOp="SetString" VariableName="空天姬目标数量1" VariableExpression="${空天姬目标数量1}" TableVariableOp="Set" ActionType="ListVariable" Asynchronous="False" />
+<Action OrderNumber="8" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" TableVariableOp="Set" ActionType="ListVariable" Asynchronous="False" />
 <Action OrderNumber="9" VariableName="空天姬控制暂停" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -3012,7 +3012,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="12" VariableName="空天姬鱼识绝命竿" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬目标数量1" VariableExpression="${空天姬目标数量1}" TableVariableOp="UnsetRegex" TableVariableName="^空天姬目标" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="13" TableVariableOp="UnsetRegex" TableVariableName="^空天姬目标" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域阶段}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3389,7 +3389,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="84" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬鱼眼等待ET${n:(${v:空天姬最小ET})}" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="84" LogMessageText="空天姬鱼眼等待ET${n:(${v:空天姬最小ET})}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3601,7 +3601,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="121" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口&lt;se.13&gt;" UseTTSTextExpression="程序启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
+<Action OrderNumber="121" UseTTSTextExpression="程序启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3614,9 +3614,9 @@
 <Action OrderNumber="123" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力" VariableExpression="${v:空天姬模式所需采集力} + ( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬专一目标} ? 350 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 ) + ( ${ev:空天姬手法多提} ? ( ( ${v:空天姬手法多提} ) = 3 ? 684 : 384 ) : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="124" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力低优先" VariableExpression="( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="125" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="126" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="127" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="128" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="126" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="127" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="128" LogMessageText="拍水启动" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="129" VariableName="空天姬计数模式" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="130" VariableOp="SetString" VariableName="空天姬计数模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
@@ -3663,7 +3663,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="134" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="134" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -3672,7 +3672,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="135" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="135" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="鱼计" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
@@ -3706,7 +3706,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="138" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="138" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3721,7 +3721,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="139" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="139" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3742,23 +3742,23 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="140" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="EnableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="140" TriggerOp="EnableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="141" FolderOp="DisableFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="142" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="141" FolderOp="DisableFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="142" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬天气}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="143" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="144" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="145" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="143" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="144" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="145" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -3775,12 +3775,12 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="146" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="EnableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="146" TriggerOp="EnableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="147" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="EnableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="147" TriggerOp="EnableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -3796,26 +3796,26 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="148" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerOp="DisableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="149" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="148" TriggerOp="DisableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="149" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="150" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="EnableTrigger" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="150" TriggerOp="EnableTrigger" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="151" VariableOp="SetString" VariableName="空天姬手法钓组调整中" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法钓组}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制钓组状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="152" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerId="47285b0b-d63a-4837-9020-bf14d1d530d5" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="152" TriggerId="47285b0b-d63a-4837-9020-bf14d1d530d5" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法钓组}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制钓组状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="153" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="EnableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="153" TriggerOp="EnableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬天气}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -3837,7 +3837,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="155" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬等待ET" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="155" LogMessageText="空天姬等待ET" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3854,14 +3854,14 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="158" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="94c20c52-5a2f-4812-853c-bc973a701cb8" TriggerText="123456789112345StatusAdd 1A:238:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="158" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="94c20c52-5a2f-4812-853c-bc973a701cb8" TriggerText="123456789112345StatusAdd 1A:238:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="159" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="cd1744a7-bfc7-4c4f-a3f4-59fd5f5a5b6d" TriggerText="123456789112345StatusAdd 1A:70B:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="159" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="cd1744a7-bfc7-4c4f-a3f4-59fd5f5a5b6d" TriggerText="123456789112345StatusAdd 1A:70B:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3908,7 +3908,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="165" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬拍水启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="165" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3924,7 +3924,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="166" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬饵鱼启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="166" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3950,7 +3950,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="168" LogMessageText="空天姬钓饵启动" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="168" LogMessageText="空天姬钓饵启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3989,12 +3989,12 @@
 </Action>
 <Action OrderNumber="174" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="175" LogMessageText="空天姬预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="176" VariableName="空天姬阶段模式" ActionType="Variable" Asynchronous="False" />
@@ -4029,16 +4029,16 @@
 <Action OrderNumber="3" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="4" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="5" FolderOp="DisableFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="6" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="7" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="8" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="9" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="10" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="11" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="12" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="13" FolderOp="DisableFolder" FolderId="a85b5c61-9749-420b-98c6-d85e3f4d0416" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="14" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" TriggerOp="CancelTrigger" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="15" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="CancelTrigger" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="6" TriggerOp="DisableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="7" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="8" TriggerOp="DisableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="9" TriggerOp="DisableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="10" TriggerOp="DisableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="11" TriggerOp="DisableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="12" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="13" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="14" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="15" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="16" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="9" TextAuraName="^空天姬[^幻采]" TextAuraFontName="宋体" ActionType="TextAura" Asynchronous="False" />
 <Action OrderNumber="17" VariableOp="SetString" VariableName="空天姬历时时刻" VariableExpression="${if: ${n:(${_timestampms}-${v:空天姬历时时刻}&gt;=60000)} ? ${n:round((${_timestampms}-${v:空天姬历时时刻})/60000)} 分钟&#xD;&#xA; : ${n:round((${_timestampms}-${v:空天姬历时时刻})/1000)} 秒 }&#xD;&#xA;" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
@@ -4072,7 +4072,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="23" ListVariableOp="UnsetRegex" ListVariableName="^空天姬" VariableOp="SetNumeric" ActionType="ListVariable" Asynchronous="False" />
-<Action OrderNumber="24" ListVariableOp="UnsetRegex" ListVariableName="空天姬" VariableOp="SetString" TableVariableName="空天姬鱼篓" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="24" VariableOp="SetString" TableVariableName="空天姬鱼篓" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:length:${t:空天姬鱼篓[1][1]}}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
@@ -4086,7 +4086,7 @@
 <Action OrderNumber="27" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="28" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="29" FolderId="fe23526f-b43d-44bd-bb97-921eb52adae2" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="30" LogMessageText="空天姬触发" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/e 耐心拍all${f:capture(${pd:空天姬普海钓饵},$1):(石沙蚕|刺螠|磷虾)}all" ActionType="LogMessage" Asynchronous="False" />
+<Action OrderNumber="30" LogMessageText="空天姬触发" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 <Action OrderNumber="31" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="457=收竿 DB7=停止钓鱼 DBC=警惕性很高 换个" DescriptionOverride="True" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
@@ -4131,7 +4131,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬更换游动饵判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="16" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="16" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬更换游动饵判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -4746,7 +4746,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="7" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10500" Asynchronous="False">
+<Action OrderNumber="7" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" ActionType="LogMessage" ExecutionDelayExpression="10500" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4802,7 +4802,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬更换游动饵判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="18" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="18" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬更换游动饵判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -5550,7 +5550,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" TriggerId="b43e394e-a56f-47ea-8564-8b73829009f5" ActionType="LogMessage" ExecutionDelayExpression="10500" Asynchronous="False">
+<Action OrderNumber="2" LogMessageText="空天姬超时" LogProcess="True" VariableOp="Increment" ActionType="LogMessage" ExecutionDelayExpression="10500" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作记录}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5712,7 +5712,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍最大竿时判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerForce="regexp" ActionType="Trigger">
+<Action OrderNumber="10" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerForce="regexp" ActionType="Trigger">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="100" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5762,7 +5762,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger">
+<Action OrderNumber="11" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制收藏品}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5797,7 +5797,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="14" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger">
+<Action OrderNumber="14" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬断竿判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -5817,7 +5817,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法重随}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="17" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱重随" ActionType="Trigger">
+<Action OrderNumber="17" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱重随" ActionType="Trigger">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬重随判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -5969,7 +5969,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="17" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
+<Action OrderNumber="17" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6377,7 +6377,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="21" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
+<Action OrderNumber="21" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${type}}" ActionType="Trigger" ExecutionDelayExpression="120" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩咬饵时刻}" ExpressionTypeL="Numeric" ExpressionR="200" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6428,7 +6428,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬引诱类型}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱$1" ActionType="Trigger" ExecutionDelayExpression="200" Asynchronous="False">
+<Action OrderNumber="5" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱$1" ActionType="Trigger" ExecutionDelayExpression="200" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬引诱类型}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -6536,7 +6536,7 @@
 <ConditionSingle Enabled="true" ExpressionL="( ${_timestampms} - ${v:空天姬咬钩时刻} ) / 1000 + 5.5 + ( ${pd:空天姬配置[延迟时间]} )" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬拍最大区间${if:${ev:空天姬撒饵}?:非撒饵}}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="9" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="2000 + ( ${pd:空天姬配置[延迟时间]} ) * 1000">
+<Action OrderNumber="9" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="2000 + ( ${pd:空天姬配置[延迟时间]} ) * 1000">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼影成功}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼影}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6575,7 +6575,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="13" NamedCallbackName="command" NamedCallbackParam="/ac 提钩" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="500">
+<Action OrderNumber="13" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="500">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬真空重随判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -6586,7 +6586,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬真空最大竿时判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱重随" ActionType="Trigger">
+<Action OrderNumber="15" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" TriggerText="空天姬引诱重随" ActionType="Trigger">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬真空重随判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬真空最大竿时判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6596,7 +6596,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="3.1.1 触发收藏动作" Id="b0a30899-caab-427b-9d63-3700de24eb9f" RegularExpression="^空天姬收藏动作">
 <Actions>
-<Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="1000 * ${?d:=9,轻竿=6,中竿=9,鱼王竿=12[${v:空天姬咬钩竿型}]} - 1000" />
+<Action OrderNumber="1" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="1000 * ${?d:=9,轻竿=6,中竿=9,鱼王竿=12[${v:空天姬咬钩竿型}]} - 1000" />
 </Actions>
 </Trigger>
 <Trigger Enabled="true" Name="3.2.1 调整钓组状态" Id="47285b0b-d63a-4837-9020-bf14d1d530d5" RegularExpression="^.{15}StatusRemove 1E:2F9:[^:]+:[.0-9]+:(?&lt;id&gt;[^:]+):[^:]*:">
@@ -6714,7 +6714,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="4" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" LogMessageText="空天姬饵鱼启动" LogProcess="True" TriggerId="3d62c5df-91d7-40c0-b991-f14cdfa448ab" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="4" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -6875,7 +6875,7 @@
 <Action OrderNumber="3" TriggerOp="CancelTrigger" TriggerId="8262bba8-8731-46b6-9447-ed9d8d1991b2" ActionType="Trigger" />
 <Action OrderNumber="4" TriggerOp="CancelTrigger" TriggerId="bb9acc5f-2813-4ad3-87ea-7739dc37b917" ActionType="Trigger" />
 <Action OrderNumber="5" TriggerOp="CancelTrigger" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" ActionType="Trigger" />
-<Action OrderNumber="6" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" ActionType="Folder" />
+<Action OrderNumber="6" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" ActionType="Folder" />
 <Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬控制悬浮窗隐藏" VariableExpression="1" ActionType="Variable">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制悬浮窗隐藏}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
@@ -7458,13 +7458,13 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[悬浮窗字号]}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="3" FolderId="a517795e-b90f-43f4-a830-103aa94f5b47" TriggerOp="EnableTrigger" TriggerId="fe70aaf5-698f-4813-9462-cbb771e4c3ea" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="3" TriggerOp="EnableTrigger" TriggerId="fe70aaf5-698f-4813-9462-cbb771e4c3ea" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[禁用采集力悬浮窗]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[悬浮窗字号]}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="4" FolderId="c0addb7a-9e49-43c9-84a0-02733c53aedd" TriggerOp="EnableTrigger" TriggerId="a4af6213-432b-4215-88fb-b4702a8b4a8e" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="4" TriggerOp="EnableTrigger" TriggerId="a4af6213-432b-4215-88fb-b4702a8b4a8e" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[禁用采集力悬浮窗]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[悬浮窗字号]}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -7477,7 +7477,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬控制采集力悬浮窗" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="7" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerOp="EnableTrigger" TriggerId="66bfbb08-7c2f-4404-a91f-b988ba84540c" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="7" TriggerOp="EnableTrigger" TriggerId="66bfbb08-7c2f-4404-a91f-b988ba84540c" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[禁用采集力悬浮窗]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
@@ -7496,7 +7496,7 @@
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
 <Action OrderNumber="3" TextAuraFontSize="48" TextAuraForeground="fff" TextAuraOutline="142,106,12" TextAuraName="空天姬采集力" TextAuraExpression="${f:format(System.Double,&quot;00&quot;):${n:floor( ( ${v:空天姬控制采集力缺口} - ${_since} ) / 60 )}}:${f:format(System.Double,&quot;00&quot;):${n:( ${v:空天姬控制采集力缺口} - ${_since} ) % 60 }}" TextAuraXIniExpression="113*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移采集力X]} )" TextAuraYIniExpression="992*${_screenheight}/1080 + ( ${pd:空天姬配置[悬浮窗偏移采集力Y]} )" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="( ( ( ${v:空天姬控制悬浮窗隐藏} ) || ( ( ${pd:空天姬配置[采集力悬浮窗]} ) = 2 &amp;&amp; ( ${ev:空天姬参数} || ${ev:空天姬控制海钓模式} ) ) || ( ${pd:空天姬配置[采集力悬浮窗]} ) = 0 ) ? 0 : 100 )" TextAuraXTickExpression="113*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移采集力X]} )" TextAuraYTickExpression="992*${_screenheight}/1080 + ( ${pd:空天姬配置[悬浮窗偏移采集力Y]} )" TextAuraOTickExpression="( ( ( ${v:空天姬控制悬浮窗隐藏} ) || ( ( ${pd:空天姬配置[采集力悬浮窗]} ) = 2 &amp;&amp; ( ${ev:空天姬参数} || ${ev:空天姬控制海钓模式} ) ) || ( ${pd:空天姬配置[采集力悬浮窗]} ) = 0 ) ? 0 : 100 )" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura" Asynchronous="False" />
-<Action OrderNumber="4" FolderOp="DisableFolder" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerOp="DisableTrigger" TriggerId="00c1cee3-923f-4251-b4b3-b0a7156ff5b3" ActionType="Trigger" ExecutionDelayExpression="${v:空天姬控制采集力缺口}*1000" Asynchronous="False" />
+<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="00c1cee3-923f-4251-b4b3-b0a7156ff5b3" ActionType="Trigger" ExecutionDelayExpression="${v:空天姬控制采集力缺口}*1000" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -7507,7 +7507,7 @@
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
 <Action OrderNumber="3" TextAuraFontSize="27.75" TextAuraForeground="fff" TextAuraOutline="142,106,12" TextAuraName="空天姬采集力" TextAuraExpression="${f:format(System.Double,&quot;00&quot;):${n:floor( ( ${v:空天姬控制采集力缺口} - ${_since} ) / 60 )}}:${f:format(System.Double,&quot;00&quot;):${n:( ${v:空天姬控制采集力缺口} - ${_since} ) % 60 }}" TextAuraXIniExpression="113*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移采集力X]} )" TextAuraYIniExpression="992*${_screenheight}/1080 + ( ${pd:空天姬配置[悬浮窗偏移采集力Y]} )" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="( ( ( ${v:空天姬控制悬浮窗隐藏} ) || ( ( ${pd:空天姬配置[采集力悬浮窗]} ) = 2 &amp;&amp; ( ${ev:空天姬参数} || ${ev:空天姬控制海钓模式} ) ) || ( ${pd:空天姬配置[采集力悬浮窗]} ) = 0 ) ? 0 : 100 )" TextAuraXTickExpression="113*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移采集力X]} )" TextAuraYTickExpression="992*${_screenheight}/1080 + ( ${pd:空天姬配置[悬浮窗偏移采集力Y]} )" TextAuraOTickExpression="( ( ( ${v:空天姬控制悬浮窗隐藏} ) || ( ( ${pd:空天姬配置[采集力悬浮窗]} ) = 2 &amp;&amp; ( ${ev:空天姬参数} || ${ev:空天姬控制海钓模式} ) ) || ( ${pd:空天姬配置[采集力悬浮窗]} ) = 0 ) ? 0 : 100 )" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura" Asynchronous="False" />
-<Action OrderNumber="4" FolderOp="DisableFolder" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerOp="DisableTrigger" TriggerId="a4af6213-432b-4215-88fb-b4702a8b4a8e" ActionType="Trigger" ExecutionDelayExpression="${v:空天姬控制采集力缺口}*1000" Asynchronous="False" />
+<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="a4af6213-432b-4215-88fb-b4702a8b4a8e" ActionType="Trigger" ExecutionDelayExpression="${v:空天姬控制采集力缺口}*1000" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -7518,13 +7518,13 @@
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp}-${_me.currentgp})/( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 )*3+1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
 <Action OrderNumber="3" TextAuraFontSize="21.75" TextAuraForeground="fff" TextAuraOutline="142,106,12" TextAuraName="空天姬采集力" TextAuraExpression="${f:format(System.Double,&quot;00&quot;):${n:floor( ( ${v:空天姬控制采集力缺口} - ${_since} ) / 60 )}}:${f:format(System.Double,&quot;00&quot;):${n:( ${v:空天姬控制采集力缺口} - ${_since} ) % 60 }}" TextAuraXIniExpression="113*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移采集力X]} )" TextAuraYIniExpression="992*${_screenheight}/1080 + ( ${pd:空天姬配置[悬浮窗偏移采集力Y]} )" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="25*${_screenheight}/1080" TextAuraOIniExpression="( ( ( ${v:空天姬控制悬浮窗隐藏} ) || ( ( ${pd:空天姬配置[采集力悬浮窗]} ) = 2 &amp;&amp; ( ${ev:空天姬参数} || ${ev:空天姬控制海钓模式} ) ) || ( ${pd:空天姬配置[采集力悬浮窗]} ) = 0 ) ? 0 : 100 )" TextAuraXTickExpression="113*${_screenheight}/1080+${_screenwidth}/2 + ( ${pd:空天姬配置[悬浮窗偏移采集力X]} )" TextAuraYTickExpression="992*${_screenheight}/1080 + ( ${pd:空天姬配置[悬浮窗偏移采集力Y]} )" TextAuraOTickExpression="( ( ( ${v:空天姬控制悬浮窗隐藏} ) || ( ( ${pd:空天姬配置[采集力悬浮窗]} ) = 2 &amp;&amp; ( ${ev:空天姬参数} || ${ev:空天姬控制海钓模式} ) ) || ( ${pd:空天姬配置[采集力悬浮窗]} ) = 0 ) ? 0 : 100 )" TextAuraTTLTickExpression="1" TextAuraFontName="微软雅黑 Light" ActionType="TextAura" Asynchronous="False" />
-<Action OrderNumber="4" FolderOp="DisableFolder" FolderId="6fdc038e-ebbc-4ec0-a3cf-f5ec181c7530" TriggerOp="DisableTrigger" TriggerId="fe70aaf5-698f-4813-9462-cbb771e4c3ea" ActionType="Trigger" ExecutionDelayExpression="${v:空天姬控制采集力缺口}*1000" Asynchronous="False" />
+<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="fe70aaf5-698f-4813-9462-cbb771e4c3ea" ActionType="Trigger" ExecutionDelayExpression="${v:空天姬控制采集力缺口}*1000" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -7535,7 +7535,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
@@ -7548,17 +7548,17 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制采集力悬浮窗}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="4" FolderId="a517795e-b90f-43f4-a830-103aa94f5b47" TriggerId="fe70aaf5-698f-4813-9462-cbb771e4c3ea" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="4" TriggerId="fe70aaf5-698f-4813-9462-cbb771e4c3ea" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制采集力悬浮窗}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="5" FolderId="c0addb7a-9e49-43c9-84a0-02733c53aedd" TriggerId="a4af6213-432b-4215-88fb-b4702a8b4a8e" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="5" TriggerId="a4af6213-432b-4215-88fb-b4702a8b4a8e" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制采集力悬浮窗}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="6" FolderId="b0ef1dc3-02d0-4eca-827d-aafc5de70301" TriggerId="00c1cee3-923f-4251-b4b3-b0a7156ff5b3" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="6" TriggerId="00c1cee3-923f-4251-b4b3-b0a7156ff5b3" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制采集力悬浮窗}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
@@ -7601,7 +7601,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="单纯计数" Id="60476909-d7d4-450e-8149-7586ed838212" RegularExpression="^.{15}ChatLog 00:0038::计数[ ]*(?:(?&lt;空天姬目标计数1&gt;[1-9][0-9]?)?[ ]*(?&lt;空天姬计数目标1&gt;[\^、\w·#\?'＝【】？\-・\.]+)；(?:(?&lt;空天姬目标计数2&gt;[1-9][0-9]?)?[ ]*(?&lt;空天姬计数目标2&gt;[\^、\w·#\?'＝【】？\-・\.]+)[；;](?:(?&lt;空天姬目标计数3&gt;[1-9][0-9]?)?[ ]*(?&lt;空天姬计数目标3&gt;[\^、\w·#\?'＝【】？\-・\.]+)[；;])?)?)?">
 <Actions>
-<Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬目标数量1" VariableExpression="${空天姬目标数量1}" TableVariableOp="UnsetRegex" TableVariableName="^空天姬目标" TableVariableExpression="${空天姬目标数量1}" TableVariableX="1" TableVariableY="1" ActionType="TableVariable" Asynchronous="False" />
+<Action OrderNumber="1" TableVariableOp="UnsetRegex" TableVariableName="^空天姬目标" TableVariableExpression="${空天姬目标数量1}" TableVariableX="1" TableVariableY="1" ActionType="TableVariable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${空天姬目标计数1}" TableVariableX="1" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标计数1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -7712,7 +7712,7 @@
 <Action OrderNumber="3" LogMessageText="空天姬钓饵当前：${v:空天姬控制钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
+<Trigger Enabled="false" Source="FFXIVNetwork" Name=".bite 网络数据日志转发" Id="5df57624-b497-4c9c-a9e8-c7cbeae4fc54" RegularExpression="(?&lt;a&gt;^252\|.{33}\|[^|]*\|(?&lt;player&gt;[^|]{8})*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|0*(?&lt;log&gt;12[456])\|)">
 <Actions>
 <Action OrderNumber="1" LogMessageText="123456789112345ChatLog 00:0:Matcha##chs-FishBite#{&quot;type&quot;:${n:${log} - 123}}" LogProcess="True" ActionType="LogMessage" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="抹茶格式。" DescriptionOverride="True" />
@@ -7749,12 +7749,12 @@
 </Trigger>
 <Trigger Enabled="true" Name="1.1 抛竿计数 控制" Id="28403928-5a0a-4980-8a68-4757bf081be2" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[1079]|45[6DCF]|15(AA|83)|15D0)">
 <Actions>
-<Action OrderNumber="1" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="1" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461|456" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="2" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="2" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -7914,7 +7914,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬脱钩判定}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="25" VariableOp="SetString" VariableName="空天姬以小钓大II状态" VariableExpression="0" TriggerId="8a19cc46-1c82-4771-9de8-702e8ced0a7e" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="25" TriggerId="8a19cc46-1c82-4771-9de8-702e8ced0a7e" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大II机会}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -8162,7 +8162,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="63" ListVariableOp="Filter" ListVariableExpressionType="Numeric" ListVariableName="空天姬鱼篓" ListVariableExpression="${f:equal():${id}} ^^ 1" ListVariableTarget="空天姬鱼篓" TableVariableOp="RemoveLine" TableVariableName="空天姬鱼篓" TableVariableTarget="空天姬鱼篓" TableVariableY="${t:空天姬鱼篓.vl(${v:空天姬游动饵},1,::-1)}" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="63" TableVariableOp="RemoveLine" TableVariableName="空天姬鱼篓" TableVariableTarget="空天姬鱼篓" TableVariableY="${t:空天姬鱼篓.vl(${v:空天姬游动饵},1,::-1)}" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${et:空天姬鱼篓}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="456" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -8175,7 +8175,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬游动饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="65" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="65" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -8188,7 +8188,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="66" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="66" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="461|456" ExpressionTypeR="String" ConditionType="RegexMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -8225,7 +8225,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法不收集}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="72" FolderOp="CancelFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="72" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -8426,7 +8426,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="7" PlaySoundFileExpression="${_pluginpath}\${?d:1=轻竿,2=中竿,3=鱼王竿[${type}]}.${if:${pd:空天姬配置[自定义类型]} == 2 ? mp3 : wav }" UseTTSTextExpression="${?d:1=轻,2=中,3=鱼王竿！ [${type}]}" UseTTSVolumeExpression="75" UseTTSRateExpression="3" ActionType="PlaySound">
+<Action OrderNumber="7" PlaySoundFileExpression="${_pluginpath}\${?d:1=轻竿,2=中竿,3=鱼王竿[${type}]}.${if:${pd:空天姬配置[自定义类型]} == 2 ? mp3 : wav }" ActionType="PlaySound">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[自定义报竿]}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -8472,12 +8472,12 @@
 </Trigger>
 <Trigger Enabled="true" Name="4.2 鱼篓监控" Id="c4f90da5-5427-4ff1-bce8-af7250aa7465" RegularExpression="^.{32}29:150001:(?&lt;log&gt;15B[4567]|DC2):[^:]+:(?&lt;idold&gt;[^:]+):(?&lt;idnew&gt;[^:]+)">
 <Actions>
-<Action OrderNumber="1" ListVariableOp="Push" ListVariableName="空天姬鱼篓" TableVariableOp="InsertLine" TableVariableName="空天姬鱼篓" TableVariableExpression=",${n:0x${idold}},${v:空天姬以小钓大套娃判断},${v:空天姬以小钓大阶段}" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="1" TableVariableOp="InsertLine" TableVariableName="空天姬鱼篓" TableVariableExpression=",${n:0x${idold}},${v:空天姬以小钓大套娃判断},${v:空天姬以小钓大阶段}" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B4" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" ListVariableOp="Push" ListVariableName="空天姬鱼篓" TableVariableOp="InsertLine" TableVariableName="空天姬鱼篓" TableVariableExpression=",${n:0x${idnew}},${v:空天姬以小钓大套娃判断},${v:空天姬以小钓大阶段}" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="2" TableVariableOp="InsertLine" TableVariableName="空天姬鱼篓" TableVariableExpression=",${n:0x${idnew}},${v:空天姬以小钓大套娃判断},${v:空天姬以小钓大阶段}" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B5" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="false" ExpressionL="${t:空天姬鱼篓.vl(${idold},1)}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -8546,7 +8546,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B7" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="13" ListVariableOp="Push" ListVariableName="空天姬鱼篓" TableVariableOp="FilterLine" TableVariableExpressionType="Numeric" TableVariableName="空天姬鱼篓" TableVariableTarget="空天姬鱼篓" TableVariableY="${_row} &lt; 4 &amp;&amp; ${f:length:${_row[1]}}" ActionType="TableVariable" ExecutionDelayExpression="100" Asynchronous="False">
+<Action OrderNumber="13" TableVariableOp="FilterLine" TableVariableExpressionType="Numeric" TableVariableName="空天姬鱼篓" TableVariableTarget="空天姬鱼篓" TableVariableY="${_row} &lt; 4 &amp;&amp; ${f:length:${_row[1]}}" ActionType="TableVariable" ExecutionDelayExpression="100" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="15B4" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -8970,7 +8970,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓状态}" ExpressionTypeL="String" ExpressionR="${v:空天姬控制海域状态上一个}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="4" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerId="be0611a4-f043-47a0-8fba-cbeccc6b4887" TriggerText="空天姬检测海钓状态" TriggerZone="出海垂钓" ActionType="Trigger" ExecutionDelayExpression="1000" Asynchronous="False" />
+<Action OrderNumber="4" TriggerId="be0611a4-f043-47a0-8fba-cbeccc6b4887" TriggerText="空天姬检测海钓状态" TriggerZone="出海垂钓" ActionType="Trigger" ExecutionDelayExpression="1000" Asynchronous="False" />
 </Actions>
 </Trigger>
 </Triggers>
@@ -9006,8 +9006,8 @@
 <Trigger Enabled="true" Name="0. 海钓预设 启动" Id="c6538f00-94c0-46e9-9abe-ce94a56aaa1d" RegularExpression="^空天姬海钓参数|^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)[ ]*确定[ ]*$" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetString" VariableName="空天姬控制海钓模式" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4,练级=5[${log}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制海钓模式" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="3" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4,练级=5[${log}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(¹):${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -9029,7 +9029,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetString" VariableName="空天姬控制海钓标识" VariableExpression="3" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬控制海钓标识" VariableExpression="3" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -9044,7 +9044,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetString" VariableName="空天姬控制海钓标识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬控制海钓标识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="成就[12]?$" ExpressionTypeR="String" ConditionType="RegexMatch" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -9059,7 +9059,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetString" VariableName="空天姬控制海钓标识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬控制海钓标识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="蓝鱼" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="(塔尼瓦|琉璃龙|狱之蟹|梅泉宝龟|哈弗古法|海洋蟾蜍|盾齿龙|索蒂斯|珊瑚蝠鲼|石骨鱼|依拉丝莫龙)" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -9071,7 +9071,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬航线表[${f:slice(2:3):${v:空天姬控制海域}}${v:空天姬控制航线}]}" ExpressionTypeL="String" ExpressionR="(塔尼瓦|琉璃龙|狱之蟹|梅泉宝龟|哈弗古法|海洋蟾蜍|盾齿龙|索蒂斯|珊瑚蝠鲼|石骨鱼|依拉丝莫龙)" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口&lt;se.13&gt;" UseTTSTextExpression="“${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2,5=练级[${v:空天姬控制海钓标识}]}”启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
+<Action OrderNumber="10" UseTTSTextExpression="“${?d:1=冲分,2=蓝鱼,3=成就1,4=成就2,5=练级[${v:空天姬控制海钓标识}]}”启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
@@ -9081,7 +9081,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识类型" VariableExpression="( ( ${v:空天姬控制海钓标识} = 3 ) || ( ${v:空天姬控制海钓标识} = 4 ) ) ? 3 : ${v:空天姬控制海钓标识}" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="12" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识类型" VariableExpression="( ( ${v:空天姬控制海钓标识} = 3 ) || ( ${v:空天姬控制海钓标识} = 4 ) ) ? 3 : ${v:空天姬控制海钓标识}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="13" TriggerOp="DisableTrigger" TriggerId="f1bb6aa9-d26d-4e34-9f4c-0eab26c9023a" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="14" TriggerOp="EnableTrigger" TriggerId="af25275d-90e8-4232-8c1b-d973b711fd83" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
@@ -9350,7 +9350,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬中断耐心}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="71" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="71" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬中断耐心}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
@@ -9532,7 +9532,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" LogMessageText="空天姬幻海时间" LogProcess="True" NamedCallbackName="command" NamedCallbackParam="/sh &#xD;&#xA;" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="7" LogMessageText="空天姬幻海时间" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
@@ -9811,12 +9811,12 @@
 </Trigger>
 <Trigger Enabled="true" Name="5.1 预备 无海域映射" Id="23b8a0d2-ff50-4517-ae96-bb332a97e0d2" RegularExpression="^空天姬海钓启动：(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;冲分|蓝鱼|成就[12]?|练级)[ ]*确定[ ]*$">
 <Actions>
-<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${pd:空天姬预设[ps${v:空天姬控制海域}]}" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4,练级=5[${log}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制海钓标识" VariableExpression="${?d:冲分=1,蓝鱼=2,成就=3,成就1=3,成就2=4,练级=5[${log}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 进入窗口&lt;se.13&gt;" UseTTSTextExpression="预备启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
+<Action OrderNumber="2" UseTTSTextExpression="预备启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
