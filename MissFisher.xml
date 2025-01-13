@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.11.6" Enabled="true" RawEnvironmentVariables="版本 = 1.11.6&#xD;&#xA;快照 = 25w02f&#xD;&#xA;摘要 = 新增航线预报界面；修复一个问题。最近新增拍水后预设参数。丨国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.11.7" Enabled="true" RawEnvironmentVariables="版本 = 1.11.7&#xD;&#xA;快照 = 25w03a&#xD;&#xA;摘要 = 优化功能；修复一些问题。最近新增航线预报界面、拍水后预设参数。国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -457,7 +457,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="注册回调 Ext" Id="51087756-8bf2-4f8b-93c3-49d82621f207" RegularExpression="^.{15}\S+ 01:|^空天姬触发" PeriodRefire="Deny" RefirePeriodExpression="500">
 <Actions>
-<Action OrderNumber="1" ExecScriptAssembliesExpression="PostNamazu, GreyMagic" ExecScriptExpression="using System;&#xD;&#xA;using System.Globalization;&#xD;&#xA;using System.Linq;&#xD;&#xA;using System.Text;&#xD;&#xA;using System.Threading;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using PostNamazu;&#xD;&#xA;using PostNamazu.Common;&#xD;&#xA;using GreyMagic;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using Triggernometry.PluginBridges;&#xD;&#xA;using System.Numerics;&#xD;&#xA;bool initialized = false;&#xD;&#xA;for (int i = 1; i &lt;= 5; i++)&#xD;&#xA;{try&#xD;&#xA;{MissFisherExtension.Init();&#xD;&#xA;initialized = true;&#xD;&#xA;break;&#xD;&#xA;}&#xD;&#xA;catch&#xD;&#xA;{MissFisherExtension.Log(RealPlugin.DebugLevelEnum.Warning, $&quot;空天姬扩展初始化失败，正在重试第 {i} / 5 次……&quot;);&#xD;&#xA;if (i == 5) throw;&#xD;&#xA;}&#xD;&#xA;Thread.Sleep(i * 1000);}&#xD;&#xA;public static class MissFisherExtension&#xD;&#xA;{private static readonly string Name = &quot;MissFisherExtension&quot;;&#xD;&#xA;public static PostNamazu.PostNamazu NamazuPlugin =&gt;&#xD;&#xA;(PostNamazu.PostNamazu)RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;).pluginObj;&#xD;&#xA;public static ExternalProcessMemory Memory =&gt; NamazuPlugin?.Memory;&#xD;&#xA;public static SigScanner Scanner =&gt; NamazuPlugin?.SigScanner;&#xD;&#xA;public static bool IsCN =&gt; !BridgeFFXIV.GetMyself().GetValue(&quot;name&quot;).ToString().Contains(&quot; &quot;);&#xD;&#xA;private static PostNamazuUi _postNamazuUi;&#xD;&#xA;public static PostNamazuUi PostNamazuUi&#xD;&#xA;{get&#xD;&#xA;{if (_postNamazuUi?.Parent as TabPage == null)&#xD;&#xA;{_postNamazuUi = GetPostNamazuUi();&#xD;&#xA;}&#xD;&#xA;return _postNamazuUi;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static bool IsReady =&gt; Triggernometry.Interpreter.StaticHelpers.XivProcess != null &amp;&amp; Memory != null;&#xD;&#xA;public static bool IsValidPtr(IntPtr? ptr) =&gt; ptr.HasValue &amp;&amp; ptr.Value != IntPtr.Zero;&#xD;&#xA;private static PostNamazuUi GetPostNamazuUi()&#xD;&#xA;{TabPage tp = RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;).TabPage;&#xD;&#xA;return tp.Controls.OfType&lt;PostNamazuUi&gt;().FirstOrDefault();&#xD;&#xA;}&#xD;&#xA;public static void OnXivProcUpdate()&#xD;&#xA;{NamazuUiLog($&quot;空天姬初始化：开始扫描内存~&quot;);&#xD;&#xA;ScanSignatures();&#xD;&#xA;}&#xD;&#xA;public static void RegisterCallback(&#xD;&#xA;string callBackName,&#xD;&#xA;Action&lt;string&gt; callBackAction,&#xD;&#xA;params IntPtr?[] ptrs&#xD;&#xA;)&#xD;&#xA;{if (ptrs == null || ptrs.Length == 0 || ptrs.Any(p =&gt; !IsValidPtr(p)))&#xD;&#xA;{Log(RealPlugin.DebugLevelEnum.Error,&#xD;&#xA;$&quot;注册回调 {callBackName} 失败：指针无效 (ptr == IntPtr.Zero)&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;Triggernometry.RealPlugin.plug.RegisterNamedCallback(&#xD;&#xA;callBackName,&#xD;&#xA;new Action&lt;object, string&gt;((_, cmd) =&gt; callBackAction(cmd)),&#xD;&#xA;null,&#xD;&#xA;registrant: Name&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void Init()&#xD;&#xA;{OnXivProcUpdate();&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.RegisterXivProcessUpdatedAction(&#xD;&#xA;Name,&#xD;&#xA;new System.Action(OnXivProcUpdate)&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeBaitAuto&quot;, FishingHelper.ChangeBaitAuto, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeBaitById&quot;, FishingHelper.ChangeBaitById, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeSwimBaitByIndex&quot;, FishingHelper.ChangeSwimBaitByIndex, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJGetCurrentBait&quot;, FishingHelper.GetCurrentBait, PlayerStatePtr, FishManagerPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJGetCurrentWeather&quot;, FishingHelper.GetCurrentWeather, WeatherManagerPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJUseItem&quot;, FishingHelper.UseItem, ActionManagerPtr, UseActionPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJObtainOceanFishing&quot;, FishingHelper.ObtainOceanFishing, EventFrameworkPtr, GetInstanceContentDirectorPtr);&#xD;&#xA;if (FishingHelper.CanChangeBait())&#xD;&#xA;{Echo($&quot;已激活：空天姬内存组件\r\n{Name} v0.10 By Nyy&quot;);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{Echo($&quot;&quot;);&#xD;&#xA;Echo($&quot;{Name} 初始化失败！&quot;);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void CheckBeforeExecution()&#xD;&#xA;{if (!IsReady)&#xD;&#xA;throw new Exception(&quot;KTJCheckBeforeExecution 没有对应的 FFXIV 进程&quot;);&#xD;&#xA;}&#xD;&#xA;public static IntPtr ExecuteCommandPtr;&#xD;&#xA;public static IntPtr PlayerStatePtr;&#xD;&#xA;public static IntPtr WeatherManagerPtr;&#xD;&#xA;public static IntPtr ActionManagerPtr;&#xD;&#xA;public static IntPtr UseActionPtr;&#xD;&#xA;public static IntPtr EventFrameworkPtr;&#xD;&#xA;public static IntPtr FishManagerPtr;&#xD;&#xA;public static IntPtr GetInstanceContentDirectorPtr;&#xD;&#xA;public static void ScanSignatures()&#xD;&#xA;{ExecuteCommandPtr = ScanSignatureWithFallback(&#xD;&#xA;nameof(ExecuteCommandPtr),&#xD;&#xA;&quot;E8 ?? ?? ?? ?? 48 83 C4 ?? C3 CC CC CC CC CC CC CC CC CC CC CC CC 48 83 EC ?? 45 0F B6 C0&quot;,&#xD;&#xA;&quot;E8 ? ? ? ? 48 8B 06 48 8B CE FF 50 ? E9 ? ? ? ? 49 8B CC&quot;&#xD;&#xA;);&#xD;&#xA;var PlayerStatePtrPtr = Scanner.ScanText(&#xD;&#xA;&quot;48 8D 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 84 C0 75 06 F6 43 18 02&quot;,&#xD;&#xA;nameof(PlayerStatePtr)&#xD;&#xA;);&#xD;&#xA;PlayerStatePtr = PlayerStatePtrPtr + 7 + Memory.Read&lt;int&gt;(PlayerStatePtrPtr + 3);&#xD;&#xA;var weatherManagerPtrPtr = Scanner.ScanText(&quot;48 8D 0D ?? ?? ?? ?? 44 0F B7 45&quot;, nameof(WeatherManagerPtr));&#xD;&#xA;WeatherManagerPtr = weatherManagerPtrPtr + 7 + Memory.Read&lt;int&gt;(weatherManagerPtrPtr + 3);&#xD;&#xA;var actionManagerPtrPtr = Scanner.ScanText(&quot;48 8D 0D ?? ?? ?? ?? F3 0F 10 13&quot;, nameof(ActionManagerPtr));&#xD;&#xA;ActionManagerPtr = actionManagerPtrPtr + 7 + Memory.Read&lt;int&gt;(actionManagerPtrPtr + 3);&#xD;&#xA;UseActionPtr = Scanner.ScanText(&quot;E8 ?? ?? ?? ?? 41 89 9E ?? ?? ?? ?? EB 0B&quot;, nameof(UseActionPtr));&#xD;&#xA;var eventFrameworkPtrPtrPtr = ScanSignatureWithFallback(&#xD;&#xA;nameof(EventFrameworkPtr),&#xD;&#xA;&quot;48 8B 35 ?? ?? ?? ?? 0F B6 EA 4C 8B F1&quot;,&#xD;&#xA;&quot;4C 39 2D ?? ?? ?? ?? 74 14&quot; &#xD;&#xA;);&#xD;&#xA;var eventFrameworkPtrPtr = eventFrameworkPtrPtrPtr + 7 + Memory.Read&lt;int&gt;(eventFrameworkPtrPtrPtr + 3);&#xD;&#xA;EventFrameworkPtr = Memory.Read&lt;IntPtr&gt;(eventFrameworkPtrPtr);&#xD;&#xA;FishManagerPtr = Memory.Read&lt;IntPtr&gt;(EventFrameworkPtr + 0x70);&#xD;&#xA;GetInstanceContentDirectorPtr = ScanSignatureWithFallback(nameof(GetInstanceContentDirectorPtr), &quot;E8 ?? ?? ?? ?? 0F B6 98&quot;);&#xD;&#xA;}&#xD;&#xA;private static IntPtr ScanSignatureWithFallback(string name, params string[] patterns)&#xD;&#xA;{if (patterns == null || patterns.Length == 0)&#xD;&#xA;{Log(RealPlugin.DebugLevelEnum.Error, $&quot;ScanSignatureWithFallback: {name} 未提供任何 Sig&quot;);&#xD;&#xA;return IntPtr.Zero;&#xD;&#xA;}&#xD;&#xA;foreach (var pattern in patterns)&#xD;&#xA;{try&#xD;&#xA;{IntPtr ptr = Scanner.ScanText(pattern, name);&#xD;&#xA;if (ptr != IntPtr.Zero)&#xD;&#xA;{return ptr;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;catch (Exception ex) {}&#xD;&#xA;}&#xD;&#xA;Log(RealPlugin.DebugLevelEnum.Warning,  $&quot;ScanSignatureWithFallback: `{name}` 所有备用Sig均扫描失败/返回空指针。&quot;);&#xD;&#xA;return IntPtr.Zero;&#xD;&#xA;}&#xD;&#xA;public static class FishingHelper&#xD;&#xA;{public static bool CanChangeBait()&#xD;&#xA;{return !(ExecuteCommandPtr == null || ExecuteCommandPtr == IntPtr.Zero);&#xD;&#xA;}&#xD;&#xA;public static void ChangeBaitAuto(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var swimIndex) &amp;&amp; swimIndex is &gt;= 0 and &lt; 3)&#xD;&#xA;{ChangeSwimBaitByIndex(cmd);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{ChangeBaitById(cmd);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ChangeBaitById(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var baitId))&#xD;&#xA;{NamazuUiLog($&quot;KTJChangeBait: baitId = {baitId}&quot;);&#xD;&#xA;Memory.CallInjected64&lt;IntPtr&gt;(ExecuteCommandPtr, 701, 4, (int)baitId, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ChangeSwimBaitByIndex(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var swimIndex) &amp;&amp; swimIndex is &gt;= 0 and &lt; 3)&#xD;&#xA;{NamazuUiLog($&quot;KTJChangeSwimBait: swimIndex = {swimIndex}&quot;);&#xD;&#xA;Memory.CallInjected64&lt;IntPtr&gt;(ExecuteCommandPtr, 701, 25, (int)swimIndex, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void GetCurrentBait(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;var currentBaitId = Memory.Read&lt;uint&gt;(PlayerStatePtr + 0x4A4);&#xD;&#xA;&#xD;&#xA;var currentSelectedSwimIndex = Memory.Read&lt;byte&gt;(FishManagerPtr + 0x234);&#xD;&#xA;var swimBaits = new[]&#xD;&#xA;{Memory.Read&lt;uint&gt;(FishManagerPtr + 0x238),&#xD;&#xA;Memory.Read&lt;uint&gt;(FishManagerPtr + 0x23C),&#xD;&#xA;Memory.Read&lt;uint&gt;(FishManagerPtr + 0x240)&#xD;&#xA;};&#xD;&#xA;if (currentSelectedSwimIndex &lt; swimBaits.Length)&#xD;&#xA;{currentBaitId = swimBaits[currentSelectedSwimIndex];&#xD;&#xA;}&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(&#xD;&#xA;isPersistent: false,&#xD;&#xA;&quot;空天姬控制钓饵&quot;,&#xD;&#xA;currentBaitId&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void GetCurrentWeather(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;var current_weather = Memory.Read&lt;byte&gt;(WeatherManagerPtr + 0x64);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(&#xD;&#xA;isPersistent: false,&#xD;&#xA;&quot;空天姬天气ID&quot;,&#xD;&#xA;current_weather&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void UseItem(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var itemId))&#xD;&#xA;{NamazuUiLog($&quot;KTJUseItem: itemId = {itemId}&quot;);&#xD;&#xA;Memory.CallInjected64&lt;char&gt;(UseActionPtr, (long)ActionManagerPtr, 2, itemId, 0xE000_0000, 0xFFFF, 0, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ObtainOceanFishing(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;var directorPtr = Memory.CallInjected64&lt;IntPtr&gt;(GetInstanceContentDirectorPtr, EventFrameworkPtr);&#xD;&#xA;if (directorPtr == IntPtr.Zero || directorPtr == null)&#xD;&#xA;{MissFisherExtension.Log(RealPlugin.DebugLevelEnum.Warning, $&quot;{Name}: ContentDirector获取失败，现在真在副本中吗？&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;var directorType1 = Memory.Read&lt;ushort&gt;(directorPtr + 0xDCE); &#xD;&#xA;var directorType2 = Memory.Read&lt;ushort&gt;(directorPtr + 0xE1E); &#xD;&#xA;if (directorType1 != 0x10 &amp;&amp; directorType2 != 0x10) {MissFisherExtension.Log(RealPlugin.DebugLevelEnum.Warning, $&quot;{Name}: 现在真在海钓吗？({directorType1}|{directorType2})&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;var status = Memory.Read&lt;uint&gt;(directorPtr + 0x1DBC);&#xD;&#xA;var currentRoute = Memory.Read&lt;uint&gt;(directorPtr + 0x1DB8);&#xD;&#xA;var currentZone = Memory.Read&lt;uint&gt;(directorPtr + 0x1DC0);&#xD;&#xA;var spectralCurrentActive = Memory.Read&lt;bool&gt;(directorPtr + 0x1DD0);&#xD;&#xA;var weatherId = Memory.Read&lt;uint&gt;(directorPtr + 0x1DCC);&#xD;&#xA;var contentTimeLeft = Memory.Read&lt;float&gt;(directorPtr + 0xCF0);&#xD;&#xA;var timeOffset= Memory.Read&lt;uint&gt;(directorPtr + 0x1DC8);&#xD;&#xA;var timeLeft = contentTimeLeft - timeOffset; &#xD;&#xA;var entsAt = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + (int)timeLeft * 1000;&#xD;&#xA;var playerAllPoint= Memory.Read&lt;ushort&gt;(directorPtr + 0x220C + 0x4);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓状态&quot;, status); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前路线&quot;, currentRoute); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前海域&quot;, currentZone); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓是否幻海中&quot;, spectralCurrentActive);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前天气ID&quot;, weatherId);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前海域结束时间&quot;, entsAt); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓结束时总分数&quot;, playerAllPoint); &#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void Echo(string msg) =&gt; RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, $&quot;/e {msg}&quot;);&#xD;&#xA;public static void Log(RealPlugin.DebugLevelEnum level, string msg) =&gt; Interpreter.StaticHelpers.Log(level, msg);&#xD;&#xA;public static void NamazuUiLog(string msg) =&gt; PostNamazuUi?.Log($&quot;{Name}: {msg}&quot;);}&#xD;&#xA;" ActionType="ExecuteScript" />
+<Action OrderNumber="1" ExecScriptAssembliesExpression="PostNamazu, GreyMagic" ExecScriptExpression="using System;&#xD;&#xA;using System.Globalization;&#xD;&#xA;using System.Linq;&#xD;&#xA;using System.Text;&#xD;&#xA;using System.Threading;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using PostNamazu;&#xD;&#xA;using PostNamazu.Common;&#xD;&#xA;using GreyMagic;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using Triggernometry.PluginBridges;&#xD;&#xA;using System.Numerics;&#xD;&#xA;bool initialized = false;&#xD;&#xA;for (int i = 1; i &lt;= 5; i++)&#xD;&#xA;{try&#xD;&#xA;{MissFisherExtension.Init();&#xD;&#xA;initialized = true;&#xD;&#xA;break;&#xD;&#xA;}&#xD;&#xA;catch&#xD;&#xA;{MissFisherExtension.Log(RealPlugin.DebugLevelEnum.Warning, $&quot;空天姬扩展初始化失败，正在重试第 {i} / 5 次……&quot;);&#xD;&#xA;if (i == 5) throw;&#xD;&#xA;}&#xD;&#xA;Thread.Sleep(i * 1000);}&#xD;&#xA;public static class MissFisherExtension&#xD;&#xA;{private static readonly string Name = &quot;MissFisherExtension&quot;;&#xD;&#xA;public static PostNamazu.PostNamazu NamazuPlugin =&gt;&#xD;&#xA;(PostNamazu.PostNamazu)RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;).pluginObj;&#xD;&#xA;public static ExternalProcessMemory Memory =&gt; NamazuPlugin?.Memory;&#xD;&#xA;public static SigScanner Scanner =&gt; NamazuPlugin?.SigScanner;&#xD;&#xA;public static bool IsCN =&gt; !BridgeFFXIV.GetMyself().GetValue(&quot;name&quot;).ToString().Contains(&quot; &quot;);&#xD;&#xA;private static PostNamazuUi _postNamazuUi;&#xD;&#xA;public static PostNamazuUi PostNamazuUi&#xD;&#xA;{get&#xD;&#xA;{if (_postNamazuUi?.Parent as TabPage == null)&#xD;&#xA;{_postNamazuUi = GetPostNamazuUi();&#xD;&#xA;}&#xD;&#xA;return _postNamazuUi;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static bool IsReady =&gt; Triggernometry.Interpreter.StaticHelpers.XivProcess != null &amp;&amp; Memory != null;&#xD;&#xA;public static bool IsValidPtr(IntPtr? ptr) =&gt; ptr.HasValue &amp;&amp; ptr.Value != IntPtr.Zero;&#xD;&#xA;private static PostNamazuUi GetPostNamazuUi()&#xD;&#xA;{TabPage tp = RealPlugin.InstanceHook(null, &quot;PostNamazu.PostNamazu&quot;).TabPage;&#xD;&#xA;return tp.Controls.OfType&lt;PostNamazuUi&gt;().FirstOrDefault();&#xD;&#xA;}&#xD;&#xA;public static void OnXivProcUpdate()&#xD;&#xA;{NamazuUiLog($&quot;空天姬初始化：开始扫描内存~&quot;);&#xD;&#xA;ScanSignatures();&#xD;&#xA;}&#xD;&#xA;public static void RegisterCallback(&#xD;&#xA;string callBackName,&#xD;&#xA;Action&lt;string&gt; callBackAction,&#xD;&#xA;params IntPtr?[] ptrs&#xD;&#xA;)&#xD;&#xA;{if (ptrs == null || ptrs.Length == 0 || ptrs.Any(p =&gt; !IsValidPtr(p)))&#xD;&#xA;{Log(RealPlugin.DebugLevelEnum.Error,&#xD;&#xA;$&quot;注册回调 {callBackName} 失败：指针无效 (ptr == IntPtr.Zero)&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;Triggernometry.RealPlugin.plug.RegisterNamedCallback(&#xD;&#xA;callBackName,&#xD;&#xA;new Action&lt;object, string&gt;((_, cmd) =&gt; callBackAction(cmd)),&#xD;&#xA;null,&#xD;&#xA;registrant: Name&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void Init()&#xD;&#xA;{OnXivProcUpdate();&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.RegisterXivProcessUpdatedAction(&#xD;&#xA;Name,&#xD;&#xA;new System.Action(OnXivProcUpdate)&#xD;&#xA;);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeBaitAuto&quot;, FishingHelper.ChangeBaitAuto, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeBaitById&quot;, FishingHelper.ChangeBaitById, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJChangeSwimBaitByIndex&quot;, FishingHelper.ChangeSwimBaitByIndex, ExecuteCommandPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJGetCurrentBait&quot;, FishingHelper.GetCurrentBait, PlayerStatePtr, FishManagerPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJGetCurrentWeather&quot;, FishingHelper.GetCurrentWeather, WeatherManagerPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJUseItem&quot;, FishingHelper.UseItem, ActionManagerPtr, UseActionPtr);&#xD;&#xA;&#xD;&#xA;RegisterCallback(&quot;KTJObtainOceanFishing&quot;, FishingHelper.ObtainOceanFishing, EventFrameworkPtr, GetInstanceContentDirectorPtr);&#xD;&#xA;if (FishingHelper.CanChangeBait())&#xD;&#xA;{Echo($&quot;已激活：空天姬内存组件\r\n{Name} v0.11 By Nyy&quot;);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{Echo($&quot;&quot;);&#xD;&#xA;Echo($&quot;{Name} 初始化失败！&quot;);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void CheckBeforeExecution()&#xD;&#xA;{if (!IsReady)&#xD;&#xA;throw new Exception(&quot;KTJCheckBeforeExecution 没有对应的 FFXIV 进程&quot;);&#xD;&#xA;}&#xD;&#xA;public static IntPtr ExecuteCommandPtr;&#xD;&#xA;public static IntPtr PlayerStatePtr;&#xD;&#xA;public static IntPtr WeatherManagerPtr;&#xD;&#xA;public static IntPtr ActionManagerPtr;&#xD;&#xA;public static IntPtr UseActionPtr;&#xD;&#xA;public static IntPtr EventFrameworkPtr;&#xD;&#xA;public static IntPtr FishManagerPtr;&#xD;&#xA;public static IntPtr GetInstanceContentDirectorPtr;&#xD;&#xA;public static void ScanSignatures()&#xD;&#xA;{ExecuteCommandPtr = ScanSignatureWithFallback(&#xD;&#xA;nameof(ExecuteCommandPtr),&#xD;&#xA;&quot;E8 ?? ?? ?? ?? 48 83 C4 ?? C3 CC CC CC CC CC CC CC CC CC CC CC CC 48 83 EC ?? 45 0F B6 C0&quot;,&#xD;&#xA;&quot;E8 ? ? ? ? 48 8B 06 48 8B CE FF 50 ? E9 ? ? ? ? 49 8B CC&quot;&#xD;&#xA;);&#xD;&#xA;var PlayerStatePtrPtr = Scanner.ScanText(&#xD;&#xA;&quot;48 8D 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 84 C0 75 06 F6 43 18 02&quot;,&#xD;&#xA;nameof(PlayerStatePtr)&#xD;&#xA;);&#xD;&#xA;PlayerStatePtr = PlayerStatePtrPtr + 7 + Memory.Read&lt;int&gt;(PlayerStatePtrPtr + 3);&#xD;&#xA;var weatherManagerPtrPtr = Scanner.ScanText(&quot;48 8D 0D ?? ?? ?? ?? 44 0F B7 45&quot;, nameof(WeatherManagerPtr));&#xD;&#xA;WeatherManagerPtr = weatherManagerPtrPtr + 7 + Memory.Read&lt;int&gt;(weatherManagerPtrPtr + 3);&#xD;&#xA;var actionManagerPtrPtr = Scanner.ScanText(&quot;48 8D 0D ?? ?? ?? ?? F3 0F 10 13&quot;, nameof(ActionManagerPtr));&#xD;&#xA;ActionManagerPtr = actionManagerPtrPtr + 7 + Memory.Read&lt;int&gt;(actionManagerPtrPtr + 3);&#xD;&#xA;UseActionPtr = Scanner.ScanText(&quot;E8 ?? ?? ?? ?? 41 89 9E ?? ?? ?? ?? EB 0B&quot;, nameof(UseActionPtr));&#xD;&#xA;var eventFrameworkPtrPtrPtr = ScanSignatureWithFallback(&#xD;&#xA;nameof(EventFrameworkPtr),&#xD;&#xA;&quot;48 8B 35 ?? ?? ?? ?? 0F B6 EA 4C 8B F1&quot;,&#xD;&#xA;&quot;4C 39 2D ?? ?? ?? ?? 74 14&quot; &#xD;&#xA;);&#xD;&#xA;var eventFrameworkPtrPtr = eventFrameworkPtrPtrPtr + 7 + Memory.Read&lt;int&gt;(eventFrameworkPtrPtrPtr + 3);&#xD;&#xA;EventFrameworkPtr = Memory.Read&lt;IntPtr&gt;(eventFrameworkPtrPtr);&#xD;&#xA;FishManagerPtr = Memory.Read&lt;IntPtr&gt;(EventFrameworkPtr + 0x70);&#xD;&#xA;GetInstanceContentDirectorPtr = ScanSignatureWithFallback(nameof(GetInstanceContentDirectorPtr), &quot;E8 ?? ?? ?? ?? 0F B6 98&quot;);&#xD;&#xA;}&#xD;&#xA;private static IntPtr ScanSignatureWithFallback(string name, params string[] patterns)&#xD;&#xA;{if (patterns == null || patterns.Length == 0)&#xD;&#xA;{Log(RealPlugin.DebugLevelEnum.Error, $&quot;ScanSignatureWithFallback: {name} 未提供任何 Sig&quot;);&#xD;&#xA;return IntPtr.Zero;&#xD;&#xA;}&#xD;&#xA;foreach (var pattern in patterns)&#xD;&#xA;{try&#xD;&#xA;{IntPtr ptr = Scanner.ScanText(pattern, name);&#xD;&#xA;if (ptr != IntPtr.Zero)&#xD;&#xA;{return ptr;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;catch (Exception ex) {}&#xD;&#xA;}&#xD;&#xA;Log(RealPlugin.DebugLevelEnum.Warning,  $&quot;ScanSignatureWithFallback: `{name}` 所有备用Sig均扫描失败/返回空指针。&quot;);&#xD;&#xA;return IntPtr.Zero;&#xD;&#xA;}&#xD;&#xA;public static class FishingHelper&#xD;&#xA;{public static bool CanChangeBait()&#xD;&#xA;{return !(ExecuteCommandPtr == null || ExecuteCommandPtr == IntPtr.Zero);&#xD;&#xA;}&#xD;&#xA;public static void ChangeBaitAuto(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var swimIndex) &amp;&amp; swimIndex is &gt;= 0 and &lt; 3)&#xD;&#xA;{ChangeSwimBaitByIndex(cmd);&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{ChangeBaitById(cmd);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ChangeBaitById(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var baitId))&#xD;&#xA;{NamazuUiLog($&quot;KTJChangeBait: baitId = {baitId}&quot;);&#xD;&#xA;Memory.CallInjected64&lt;IntPtr&gt;(ExecuteCommandPtr, 701, 4, (int)baitId, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ChangeSwimBaitByIndex(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var swimIndex) &amp;&amp; swimIndex is &gt;= 0 and &lt; 3)&#xD;&#xA;{NamazuUiLog($&quot;KTJChangeSwimBait: swimIndex = {swimIndex}&quot;);&#xD;&#xA;Memory.CallInjected64&lt;IntPtr&gt;(ExecuteCommandPtr, 701, 25, (int)swimIndex, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void GetCurrentBait(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;var currentBaitId = Memory.Read&lt;uint&gt;(PlayerStatePtr + 0x4A4);&#xD;&#xA;&#xD;&#xA;var currentSelectedSwimIndex = Memory.Read&lt;byte&gt;(FishManagerPtr + 0x234);&#xD;&#xA;var swimBaits = new[]&#xD;&#xA;{Memory.Read&lt;uint&gt;(FishManagerPtr + 0x238),&#xD;&#xA;Memory.Read&lt;uint&gt;(FishManagerPtr + 0x23C),&#xD;&#xA;Memory.Read&lt;uint&gt;(FishManagerPtr + 0x240)&#xD;&#xA;};&#xD;&#xA;if (currentSelectedSwimIndex &lt;= swimBaits.Length)&#xD;&#xA;{currentBaitId = swimBaits[currentSelectedSwimIndex];&#xD;&#xA;}&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(&#xD;&#xA;isPersistent: false,&#xD;&#xA;&quot;空天姬控制钓饵&quot;,&#xD;&#xA;currentBaitId&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void GetCurrentWeather(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;var current_weather = Memory.Read&lt;byte&gt;(WeatherManagerPtr + 0x64);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(&#xD;&#xA;isPersistent: false,&#xD;&#xA;&quot;空天姬天气ID&quot;,&#xD;&#xA;current_weather&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;public static void UseItem(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;if (uint.TryParse(cmd, out var itemId))&#xD;&#xA;{NamazuUiLog($&quot;KTJUseItem: itemId = {itemId}&quot;);&#xD;&#xA;Memory.CallInjected64&lt;char&gt;(UseActionPtr, (long)ActionManagerPtr, 2, itemId, 0xE000_0000, 0xFFFF, 0, 0, 0);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void ObtainOceanFishing(string cmd)&#xD;&#xA;{CheckBeforeExecution();&#xD;&#xA;var directorPtr = Memory.CallInjected64&lt;IntPtr&gt;(GetInstanceContentDirectorPtr, EventFrameworkPtr);&#xD;&#xA;if (directorPtr == IntPtr.Zero || directorPtr == null)&#xD;&#xA;{MissFisherExtension.Log(RealPlugin.DebugLevelEnum.Warning, $&quot;{Name}: ContentDirector获取失败，现在真在副本中吗？&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;var directorType1 = Memory.Read&lt;ushort&gt;(directorPtr + 0xDCE); &#xD;&#xA;var directorType2 = Memory.Read&lt;ushort&gt;(directorPtr + 0xE1E); &#xD;&#xA;if (directorType1 != 0x10 &amp;&amp; directorType2 != 0x10) {MissFisherExtension.Log(RealPlugin.DebugLevelEnum.Warning, $&quot;{Name}: 现在真在海钓吗？({directorType1}|{directorType2})&quot;);&#xD;&#xA;return;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;var status = Memory.Read&lt;uint&gt;(directorPtr + 0x1DBC);&#xD;&#xA;var currentRoute = Memory.Read&lt;uint&gt;(directorPtr + 0x1DB8);&#xD;&#xA;var currentZone = Memory.Read&lt;uint&gt;(directorPtr + 0x1DC0);&#xD;&#xA;var spectralCurrentActive = Memory.Read&lt;bool&gt;(directorPtr + 0x1DD0);&#xD;&#xA;var weatherId = Memory.Read&lt;uint&gt;(directorPtr + 0x1DCC);&#xD;&#xA;var contentTimeLeft = Memory.Read&lt;float&gt;(directorPtr + 0xCF0);&#xD;&#xA;var timeOffset= Memory.Read&lt;uint&gt;(directorPtr + 0x1DC8);&#xD;&#xA;var timeLeft = contentTimeLeft - timeOffset; &#xD;&#xA;var entsAt = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() + (int)timeLeft * 1000;&#xD;&#xA;var playerAllPoint= Memory.Read&lt;ushort&gt;(directorPtr + 0x220C + 0x4);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓状态&quot;, status); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前路线&quot;, currentRoute); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前海域&quot;, currentZone); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓是否幻海中&quot;, spectralCurrentActive);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前天气ID&quot;, weatherId);&#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓当前海域结束时间&quot;, entsAt); &#xD;&#xA;Triggernometry.Interpreter.StaticHelpers.SetScalarVariable(isPersistent: false, &quot;空天姬控制海钓结束时总分数&quot;, playerAllPoint); &#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;public static void Echo(string msg) =&gt; RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, $&quot;/e {msg}&quot;);&#xD;&#xA;public static void Log(RealPlugin.DebugLevelEnum level, string msg) =&gt; Interpreter.StaticHelpers.Log(level, msg);&#xD;&#xA;public static void NamazuUiLog(string msg) =&gt; PostNamazuUi?.Log($&quot;{Name}: {msg}&quot;);}&#xD;&#xA;" ActionType="ExecuteScript" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1033,7 +1033,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="空天姬航线预报 Route" Id="e50bfa84-1192-46d9-b840-9bec99116ec0" RegularExpression="^空天姬查询航线|^.{15}ChatLog 00:0038::[ ]*([Kk][Tt][Jj] *[Hh][Xx]|航线)[ ]*$|^.{26}003C::(“/([Kk][Tt][Jj] *[Hh][Xx]|航线)”出现问题：该命令不存在。|The command /([Kk][Tt][Jj] *[Hh][Xx]|航线) does not exist.|そのコマンドはありません。： /([Kk][Tt][Jj] *[Hh][Xx]|航线))$">
 <Actions>
-<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Drawing;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;#region 初始化&#xD;&#xA;var 字体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F);&#xD;&#xA;var 斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Italic);&#xD;&#xA;var 小号 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F);&#xD;&#xA;var 楷体 = new Font(&quot;楷体&quot;, 15.75F); // 14.25 | 15 | 15.75&#xD;&#xA;var 小号加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F, FontStyle.Bold);&#xD;&#xA;var 加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold);&#xD;&#xA;var 加粗重点 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold | FontStyle.Underline);&#xD;&#xA;var 加粗斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold | FontStyle.Italic);&#xD;&#xA;var 白色 = Color.FromArgb(255, 255, 255);&#xD;&#xA;var 黑色 = Color.FromArgb(0, 0, 0);&#xD;&#xA;var 按钮红色 = Color.FromArgb(139, 41, 41);&#xD;&#xA;var 按钮字体黄色 = Color.FromArgb(249, 192, 106);&#xD;&#xA;var 按钮同步蓝色 = Color.FromArgb(32, 69, 117);&#xD;&#xA;var 灰色 = Color.FromArgb(175, 175, 175);&#xD;&#xA;var 深灰色 = Color.FromArgb(68, 68, 68);&#xD;&#xA;var 背景色 = Color.FromArgb(32, 55, 110);&#xD;&#xA;var 暗金色 = Color.FromArgb(196, 172, 123);&#xD;&#xA;var 标签暗金色 = Color.FromArgb(196, 171, 123);&#xD;&#xA;var 按钮蓝色 = Color.FromArgb(50, 81, 155);&#xD;&#xA;var 按钮黑蓝色 = Color.FromArgb(19, 33, 68);&#xD;&#xA;var 按钮发光黄色 = Color.FromArgb(255, 238, 173);&#xD;&#xA;var 按钮冰球紫色 = Color.FromArgb(215, 210, 236);&#xD;&#xA;var 输入框灰蓝色 = Color.FromArgb(49, 67, 103);&#xD;&#xA;var 输入框深蓝色 = Color.FromArgb(21, 35, 71);&#xD;&#xA;var 下拉框淡金色 = Color.FromArgb(234, 222, 195);&#xD;&#xA;var 显眼紫色 = Color.FromArgb(128, 0, 255);&#xD;&#xA;bool 指令 = false;&#xD;&#xA;var 表格 = new TableLayoutPanel&#xD;&#xA;{&#xD;&#xA;AutoSize = true, // 启用自动大小&#xD;&#xA;AutoSizeMode = AutoSizeMode.GrowAndShrink, // 自动调整大小&#xD;&#xA;Dock = DockStyle.Top, // 停靠在顶部&#xD;&#xA;Height =&#xD;&#xA;72&#xD;&#xA;* 38 // 表格总高度 = 行数 * 行高&#xD;&#xA;,&#xD;&#xA;};&#xD;&#xA;var 标签列表 = new List&lt;Label&gt;(); // 存储所有Label控件&#xD;&#xA;List&lt;string[]&gt; 航线表格 = new List&lt;string[]&gt;&#xD;&#xA;{&#xD;&#xA;new string[] { &quot;01&quot;, &quot;水母狂魔¹ / 冲分&quot;, &quot;加拉迪翁湾(日)》梅尔托尔海峡南(昏)》罗塔诺海(夜)&quot; },&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;02&quot;,&#xD;&#xA;&quot;横路不通¹ / 海洋蟾蜍 / 冲分*（潮虫）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(昏)》梅尔托尔海峡北(夜)》绯汐海(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;03&quot;,&#xD;&#xA;&quot;气鲀四海¹ / 只有我最鳐摆² / 冲分*&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(昏)》罗塔诺海(夜)》罗斯利特湾(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;04&quot;,&#xD;&#xA;&quot;索蒂斯 / 依拉丝莫龙（火萤、重铁板钩）&quot;,&#xD;&#xA;&quot;梅尔托尔海峡南(昏)》加拉迪翁湾(夜)》梅尔托尔海峡北(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;05&quot;,&#xD;&#xA;&quot;捕鲨人¹ / 冲分 / 珊瑚蝠鲼（小虾肉笼）&quot;,&#xD;&#xA;&quot;加拉迪翁湾(昏)》梅尔托尔海峡南(夜)》罗塔诺海(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;06&quot;,&#xD;&#xA;&quot;哈弗古法 / 依拉丝莫龙（乌贼丝、重铁板钩）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(夜)》梅尔托尔海峡北(日)》绯汐海(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;07&quot;,&#xD;&#xA;&quot;哈弗古法 / 盾齿龙 / 保分*（乌贼丝）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(夜)》罗塔诺海(日)》罗斯利特湾(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;08&quot;,&#xD;&#xA;&quot;龙马惊神¹ / 珊瑚蝠鲼 / 保分*（小虾肉笼）&quot;,&#xD;&#xA;&quot;梅尔托尔海峡南(夜)》加拉迪翁湾(日)》梅尔托尔海峡北(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;09&quot;,&#xD;&#xA;&quot;索蒂斯 / 石骨鱼（火萤、沟鼠尾巴）&quot;,&#xD;&#xA;&quot;加拉迪翁湾(夜)》梅尔托尔海峡南(日)》罗塔诺海(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;10&quot;,&#xD;&#xA;&quot;只有我最鳐摆¹ / 保分*&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(日)》梅尔托尔海峡北(昏)》绯汐海(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;11&quot;,&#xD;&#xA;&quot;气鲀四海¹ / 石骨鱼 / 保分*（沟鼠尾巴）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(日)》罗塔诺海(昏)》罗斯利特湾(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;12&quot;,&#xD;&#xA;&quot;八爪旅人¹ / 保分*&quot;,&#xD;&#xA;&quot;梅尔托尔海峡南(日)》加拉迪翁湾(昏)》梅尔托尔海峡北(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;01&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 琉璃龙 / 冲分*&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;02&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 大虾可重新来过² / 保分*&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;03&quot;,&#xD;&#xA;&quot;大虾可重新来过¹ / 狱之蟹 / 保分*（乌贼丝）&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;04&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;05&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;06&quot;,&#xD;&#xA;&quot;琉璃龙 / 梅泉宝龟（石蝇幼虫）&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;07&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 琉璃龙 / 冲分*&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;08&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 大虾可重新来过² / 保分*&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;09&quot;,&#xD;&#xA;&quot;大虾可重新来过¹ / 狱之蟹 / 保分*（乌贼丝）&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;10&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;11&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&#xD;&#xA;&quot;12&quot;,&#xD;&#xA;&quot;琉璃龙 / 梅泉宝龟（石蝇幼虫）&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;};&#xD;&#xA;var 空天姬航线预报 = new Form&#xD;&#xA;{&#xD;&#xA;Text = &quot;空天姬航线预报（窗口处于前台时才会刷新）&quot;,&#xD;&#xA;StartPosition = FormStartPosition.CenterScreen,&#xD;&#xA;FormBorderStyle = FormBorderStyle.FixedSingle,&#xD;&#xA;MaximizeBox = false,&#xD;&#xA;Size = new Size(1000, 664), // 固定窗口大小&#xD;&#xA;BackColor = 背景色,&#xD;&#xA;TopMost = true,&#xD;&#xA;SizeGripStyle = SizeGripStyle.Hide,&#xD;&#xA;};&#xD;&#xA;#endregion&#xD;&#xA;#region 控件事件&#xD;&#xA;空天姬航线预报.Shown += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;((Form)sender).TopMost = true;&#xD;&#xA;System.Threading.Thread.Sleep(10);&#xD;&#xA;((Form)sender).TopMost = false;&#xD;&#xA;};&#xD;&#xA;var 列表更新计时器 = new Timer { Interval = 60000 };&#xD;&#xA;var 行更新计时器 = new Timer { Interval = 50 };&#xD;&#xA;var 当前行索引 = 0; // 当前更新的行索引&#xD;&#xA;空天姬航线预报.Activated += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;列表更新计时器.Start(); // 窗口获得焦点时启动列表更新计时器&#xD;&#xA;if (!行更新计时器.Enabled) // 如果行更新计时器未运行&#xD;&#xA;{&#xD;&#xA;当前行索引 = 0; // 重置行索引&#xD;&#xA;行更新计时器.Start(); // 启动行更新计时器&#xD;&#xA;}&#xD;&#xA;};&#xD;&#xA;空天姬航线预报.Deactivate += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;列表更新计时器.Stop(); // 窗口失去焦点时停止列表更新计时器&#xD;&#xA;行更新计时器.Stop(); // 停止行更新计时器&#xD;&#xA;};&#xD;&#xA;列表更新计时器.Tick += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;if (!行更新计时器.Enabled) // 如果行更新计时器未运行&#xD;&#xA;{&#xD;&#xA;当前行索引 = 0; // 重置行索引&#xD;&#xA;行更新计时器.Start(); // 启动行更新计时器&#xD;&#xA;}&#xD;&#xA;};&#xD;&#xA;行更新计时器.Tick += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;更新单行航线(); // 逐行更新航线&#xD;&#xA;if (当前行索引 &gt;= 表格.RowCount)&#xD;&#xA;{&#xD;&#xA;行更新计时器.Stop();&#xD;&#xA;}&#xD;&#xA;};&#xD;&#xA;var 滚动面板 = new Panel { Dock = DockStyle.Fill, AutoScroll = true };&#xD;&#xA;滚动面板.Controls.Add(表格);&#xD;&#xA;滚动面板.MouseWheel += (sender, e) =&gt;&#xD;&#xA;{&#xD;&#xA;int 滚动量 = e.Delta &gt; 0 ? -50 : 50; // 每次滚动的距离&#xD;&#xA;滚动面板.AutoScrollPosition = new Point(&#xD;&#xA;-滚动面板.AutoScrollPosition.X,&#xD;&#xA;Math.Max(0, -滚动面板.AutoScrollPosition.Y + 滚动量)&#xD;&#xA;);&#xD;&#xA;};&#xD;&#xA;#endregion&#xD;&#xA;空天姬航线预报.Controls.Add(滚动面板); // 将滚动面板添加到窗口&#xD;&#xA;设置控件关系();&#xD;&#xA;设置控件样式();&#xD;&#xA;空天姬航线预报.ShowDialog();&#xD;&#xA;void 设置控件关系()&#xD;&#xA;{&#xD;&#xA;RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, &quot;/e [空天姬 MissFisher] 请稍后……&lt;se.7&gt;&quot;);&#xD;&#xA;表格.ColumnCount = 4; // 列（班次、航线名称、航线描述、序号）&#xD;&#xA;表格.RowCount = 72; // 行（36班次，每班次2行）&#xD;&#xA;Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);&#xD;&#xA;float dpiX = graphics.DpiX;&#xD;&#xA;float dpiY = graphics.DpiY;&#xD;&#xA;graphics.Dispose();&#xD;&#xA;float scaleFactor = dpiY / 96f; // 96是标准DPI&#xD;&#xA;int 行高像素 = (int)(42 * scaleFactor); // 基础行高为38像素&#xD;&#xA;for (int i = 0; i &lt; 表格.RowCount; i++)&#xD;&#xA;{&#xD;&#xA;表格.RowStyles.Add(new RowStyle(SizeType.Absolute, 行高像素));&#xD;&#xA;}&#xD;&#xA;for (int j = 0; j &lt; 表格.ColumnCount; j++)&#xD;&#xA;{&#xD;&#xA;表格.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); // 每列自适应内容&#xD;&#xA;}&#xD;&#xA;初始化表格();&#xD;&#xA;}&#xD;&#xA;void 初始化表格()&#xD;&#xA;{&#xD;&#xA;for (int row = 0; row &lt; 表格.RowCount; row++)&#xD;&#xA;{&#xD;&#xA;for (int col = 0; col &lt; 表格.ColumnCount; col++)&#xD;&#xA;{&#xD;&#xA;Label label = new Label&#xD;&#xA;{&#xD;&#xA;Text = &quot;&quot;, // 初始为空&#xD;&#xA;Dock = DockStyle.Fill,&#xD;&#xA;TextAlign =&#xD;&#xA;col == 0 ? ContentAlignment.MiddleRight&#xD;&#xA;: col == 1 ? ContentAlignment.MiddleLeft&#xD;&#xA;: col == 2 ? ContentAlignment.MiddleLeft&#xD;&#xA;: ContentAlignment.MiddleCenter,&#xD;&#xA;ForeColor =&#xD;&#xA;col == 0 ? 白色&#xD;&#xA;: col == 1 ? 下拉框淡金色&#xD;&#xA;: col == 2 ? 暗金色&#xD;&#xA;: 灰色,&#xD;&#xA;Font =&#xD;&#xA;col == 0 ? 加粗&#xD;&#xA;: col == 1 ? 加粗重点&#xD;&#xA;: col == 2 ? 小号加粗&#xD;&#xA;: 小号加粗,&#xD;&#xA;};&#xD;&#xA;表格.Controls.Add(label, col, row);&#xD;&#xA;标签列表.Add(label); // 添加到标签列表&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;void 设置控件样式()&#xD;&#xA;{&#xD;&#xA;foreach (Control c in 表格.Controls)&#xD;&#xA;{&#xD;&#xA;c.AutoSize = true;&#xD;&#xA;c.Dock = DockStyle.Fill;&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;void 更新单行航线()&#xD;&#xA;{&#xD;&#xA;if (当前行索引 &gt;= 表格.RowCount)&#xD;&#xA;{&#xD;&#xA;当前行索引 = 0; // 重置行索引&#xD;&#xA;}&#xD;&#xA;表格.SuspendLayout();&#xD;&#xA;long 当前时间戳 = DateTimeOffset.UtcNow.ToUnixTimeSeconds();&#xD;&#xA;DateTime utc时间 = DateTimeOffset.FromUnixTimeSeconds(当前时间戳).UtcDateTime;&#xD;&#xA;int utc小时数 = utc时间.Hour;&#xD;&#xA;if (utc小时数 % 2 == 1)&#xD;&#xA;{&#xD;&#xA;当前时间戳 += 7200; // 增加2小时（7200秒）&#xD;&#xA;}&#xD;&#xA;long 第一行时间戳 = 当前时间戳 - (当前时间戳 % 7200); // 取整到最近的两小时&#xD;&#xA;long 当前行时间戳 = 第一行时间戳 + (当前行索引 / 2) * 7200; // 每两小时递增&#xD;&#xA;int 班次航线序号 = 计算航线序号(当前行时间戳);&#xD;&#xA;int 行索引1 = 班次航线序号 - 1;&#xD;&#xA;int 行索引2 = 行索引1 + 12;&#xD;&#xA;string 航线名称1 = 航线表格[行索引1][1];&#xD;&#xA;string 航线描述1 = 航线表格[行索引1][2];&#xD;&#xA;string 航线名称2 = 航线表格[行索引2][1];&#xD;&#xA;string 航线描述2 = 航线表格[行索引2][2];&#xD;&#xA;int 行 = 当前行索引;&#xD;&#xA;标签列表[行 * 4 + 0].Text = 获取时间戳显示内容(当前行时间戳, 行); // 列索引0显示本地时间戳&#xD;&#xA;标签列表[行 * 4 + 1].Text = 航线名称1;&#xD;&#xA;标签列表[行 * 4 + 2].Text = 航线描述1;&#xD;&#xA;标签列表[行 * 4 + 3].Text = (行 % 2 == 0 || 行 == 0) ? 班次航线序号.ToString(&quot;D2&quot;) : &quot;&quot;; // 只在偶数行或0行显示序号&#xD;&#xA;行++;&#xD;&#xA;当前行时间戳 += 7200; // 下一行时间戳增加两小时&#xD;&#xA;标签列表[行 * 4 + 0].Text = 获取时间戳显示内容(当前行时间戳, 行); // 列索引0显示本地时间戳&#xD;&#xA;标签列表[行 * 4 + 1].Text = 航线名称2;&#xD;&#xA;标签列表[行 * 4 + 2].Text = 航线描述2;&#xD;&#xA;标签列表[行 * 4 + 3].Text = (行 % 2 == 0 || 行 == 0) ? 班次航线序号.ToString(&quot;D2&quot;) : &quot;&quot;; // 只在偶数行或0行显示序号&#xD;&#xA;当前行索引 += 2; // 每次更新两行&#xD;&#xA;表格.ResumeLayout();&#xD;&#xA;if (!指令)&#xD;&#xA;{&#xD;&#xA;指令 = true;&#xD;&#xA;RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;&quot;/e [空天姬 MissFisher] 预报初始化完成。&lt;se.10&gt;&quot;&#xD;&#xA;);&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;int 计算航线序号(long 时间戳)&#xD;&#xA;{&#xD;&#xA;long 基准时间戳 = 1715184000; // 基准时间戳（2024-05-09 00:00:00 UTC）&#xD;&#xA;long 时间差 = 时间戳 - 基准时间戳;&#xD;&#xA;int 偏移量 = (int)(时间差 / 7200) + (int)(时间差 / 86400) % 12;&#xD;&#xA;int 当前小时数 = (int)((时间差 % 86400) / 3600);&#xD;&#xA;int 修正值 = (当前小时数 % 2 == 1) ? (当前小时数 == 15 ? 2 : 1) : 0;&#xD;&#xA;int 航班序号 = (偏移量 + 修正值) % 12 + 1;&#xD;&#xA;return 航班序号;&#xD;&#xA;}&#xD;&#xA;string 获取时间戳显示内容(long 时间戳, int 行)&#xD;&#xA;{&#xD;&#xA;DateTime 本地时间 = DateTimeOffset.FromUnixTimeSeconds(时间戳).LocalDateTime;&#xD;&#xA;int 小时数 = 本地时间.Hour;&#xD;&#xA;if (行 == 0)&#xD;&#xA;{&#xD;&#xA;return $&quot;{本地时间:MM-dd} {小时数:00}:00&quot;; // 第一行显示完整本地时间戳&#xD;&#xA;}&#xD;&#xA;else if (行 % 2 == 1)&#xD;&#xA;{&#xD;&#xA;return &quot;&quot;; // 奇数行不显示&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;if (小时数 == 0 || 小时数 == 1)&#xD;&#xA;{&#xD;&#xA;return $&quot;{本地时间:MM-dd} {小时数:00}:00&quot;; // 小时数为0或1时显示日期&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;return $&quot;{小时数:00}:00&quot;; // 其他情况只显示时间&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;" ActionType="ExecuteScript" />
+<Action OrderNumber="1" ExecScriptExpression="using System;&#xD;&#xA;using System.Collections.Generic;&#xD;&#xA;using System.Drawing;&#xD;&#xA;using System.Windows.Forms;&#xD;&#xA;using Triggernometry;&#xD;&#xA;using static Triggernometry.Interpreter;&#xD;&#xA;#region 初始化&#xD;&#xA;var 字体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F);&#xD;&#xA;var 斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Italic);&#xD;&#xA;var 小号 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F);&#xD;&#xA;var 楷体 = new Font(&quot;楷体&quot;, 15.75F); &#xD;&#xA;var 小号加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 10.5F, FontStyle.Bold);&#xD;&#xA;var 加粗 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold);&#xD;&#xA;var 加粗重点 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold | FontStyle.Underline);&#xD;&#xA;var 加粗斜体 = new Font(&quot;Microsoft YaHei UI&quot;, 14.25F, FontStyle.Bold | FontStyle.Italic);&#xD;&#xA;var 白色 = Color.FromArgb(255, 255, 255);&#xD;&#xA;var 黑色 = Color.FromArgb(0, 0, 0);&#xD;&#xA;var 按钮红色 = Color.FromArgb(139, 41, 41);&#xD;&#xA;var 按钮字体黄色 = Color.FromArgb(249, 192, 106);&#xD;&#xA;var 按钮同步蓝色 = Color.FromArgb(32, 69, 117);&#xD;&#xA;var 灰色 = Color.FromArgb(175, 175, 175);&#xD;&#xA;var 深灰色 = Color.FromArgb(68, 68, 68);&#xD;&#xA;var 背景色 = Color.FromArgb(32, 55, 110);&#xD;&#xA;var 暗金色 = Color.FromArgb(196, 172, 123);&#xD;&#xA;var 标签暗金色 = Color.FromArgb(196, 171, 123);&#xD;&#xA;var 按钮蓝色 = Color.FromArgb(50, 81, 155);&#xD;&#xA;var 按钮黑蓝色 = Color.FromArgb(19, 33, 68);&#xD;&#xA;var 按钮发光黄色 = Color.FromArgb(255, 238, 173);&#xD;&#xA;var 按钮冰球紫色 = Color.FromArgb(215, 210, 236);&#xD;&#xA;var 输入框灰蓝色 = Color.FromArgb(49, 67, 103);&#xD;&#xA;var 输入框深蓝色 = Color.FromArgb(21, 35, 71);&#xD;&#xA;var 下拉框淡金色 = Color.FromArgb(234, 222, 195);&#xD;&#xA;var 显眼紫色 = Color.FromArgb(128, 0, 255);&#xD;&#xA;bool 指令 = false;&#xD;&#xA;var 表格 = new TableLayoutPanel&#xD;&#xA;{AutoSize = true, &#xD;&#xA;AutoSizeMode = AutoSizeMode.GrowAndShrink, &#xD;&#xA;Dock = DockStyle.Top, &#xD;&#xA;Height =&#xD;&#xA;72&#xD;&#xA;* 38 &#xD;&#xA;,};&#xD;&#xA;var 标签列表 = new List&lt;Label&gt;(); &#xD;&#xA;List&lt;string[]&gt; 航线表格 = new List&lt;string[]&gt;&#xD;&#xA;{new string[] { &quot;01&quot;, &quot;水母狂魔¹ / 冲分&quot;, &quot;加拉迪翁湾(日)》梅尔托尔海峡南(昏)》罗塔诺海(夜)&quot; },&#xD;&#xA;new string[]&#xD;&#xA;{&quot;02&quot;,&#xD;&#xA;&quot;横路不通¹ / 海洋蟾蜍 / 冲分*（潮虫）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(昏)》梅尔托尔海峡北(夜)》绯汐海(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;03&quot;,&#xD;&#xA;&quot;气鲀四海¹ / 只有我最鳐摆² / 冲分*&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(昏)》罗塔诺海(夜)》罗斯利特湾(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;04&quot;,&#xD;&#xA;&quot;索蒂斯 / 依拉丝莫龙（火萤、重铁板钩）&quot;,&#xD;&#xA;&quot;梅尔托尔海峡南(昏)》加拉迪翁湾(夜)》梅尔托尔海峡北(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;05&quot;,&#xD;&#xA;&quot;捕鲨人¹ / 冲分 / 珊瑚蝠鲼（小虾肉笼）&quot;,&#xD;&#xA;&quot;加拉迪翁湾(昏)》梅尔托尔海峡南(夜)》罗塔诺海(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;06&quot;,&#xD;&#xA;&quot;哈弗古法 / 依拉丝莫龙（乌贼丝、重铁板钩）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(夜)》梅尔托尔海峡北(日)》绯汐海(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;07&quot;,&#xD;&#xA;&quot;哈弗古法 / 盾齿龙 / 保分*（乌贼丝）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(夜)》罗塔诺海(日)》罗斯利特湾(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;08&quot;,&#xD;&#xA;&quot;龙马惊神¹ / 珊瑚蝠鲼 / 保分*（小虾肉笼）&quot;,&#xD;&#xA;&quot;梅尔托尔海峡南(夜)》加拉迪翁湾(日)》梅尔托尔海峡北(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;09&quot;,&#xD;&#xA;&quot;索蒂斯 / 石骨鱼（火萤、沟鼠尾巴）&quot;,&#xD;&#xA;&quot;加拉迪翁湾(夜)》梅尔托尔海峡南(日)》罗塔诺海(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;10&quot;,&#xD;&#xA;&quot;只有我最鳐摆¹ / 保分*&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(日)》梅尔托尔海峡北(昏)》绯汐海(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;11&quot;,&#xD;&#xA;&quot;气鲀四海¹ / 石骨鱼 / 保分*（沟鼠尾巴）&quot;,&#xD;&#xA;&quot;谢尔达莱群岛(日)》罗塔诺海(昏)》罗斯利特湾(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;12&quot;,&#xD;&#xA;&quot;八爪旅人¹ / 保分*&quot;,&#xD;&#xA;&quot;梅尔托尔海峡南(日)》加拉迪翁湾(昏)》梅尔托尔海峡北(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;01&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 琉璃龙 / 冲分*&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;02&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 大虾可重新来过² / 保分*&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;03&quot;,&#xD;&#xA;&quot;大虾可重新来过¹ / 狱之蟹 / 保分*（乌贼丝）&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;04&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;05&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;06&quot;,&#xD;&#xA;&quot;琉璃龙 / 梅泉宝龟（石蝇幼虫）&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;07&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 琉璃龙 / 冲分*&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》红玉海海面(昏)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;08&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 大虾可重新来过² / 保分*&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》无二江下游(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;09&quot;,&#xD;&#xA;&quot;大虾可重新来过¹ / 狱之蟹 / 保分*（乌贼丝）&quot;,&#xD;&#xA;&quot;妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;10&quot;,&#xD;&#xA;&quot;四海大宝贝¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;11&quot;,&#xD;&#xA;&quot;鱿型中队精英¹ / 塔尼瓦（青花鱼块）&quot;,&#xD;&#xA;&quot;妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)&quot;,&#xD;&#xA;},&#xD;&#xA;new string[]&#xD;&#xA;{&quot;12&quot;,&#xD;&#xA;&quot;琉璃龙 / 梅泉宝龟（石蝇幼虫）&quot;,&#xD;&#xA;&quot;妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)&quot;,&#xD;&#xA;},};&#xD;&#xA;var 空天姬航线预报 = new Form&#xD;&#xA;{Text = &quot;空天姬航线预报（窗口处于前台时才会刷新）&quot;,&#xD;&#xA;StartPosition = FormStartPosition.CenterScreen,&#xD;&#xA;FormBorderStyle = FormBorderStyle.FixedSingle,&#xD;&#xA;MaximizeBox = false,&#xD;&#xA;BackColor = 背景色,&#xD;&#xA;TopMost = true,&#xD;&#xA;SizeGripStyle = SizeGripStyle.Hide,};&#xD;&#xA;#endregion&#xD;&#xA;#region 控件事件&#xD;&#xA;空天姬航线预报.Shown += (sender, e) =&gt;&#xD;&#xA;{((Form)sender).TopMost = true;&#xD;&#xA;System.Threading.Thread.Sleep(10);&#xD;&#xA;((Form)sender).TopMost = false;};&#xD;&#xA;var 列表更新计时器 = new Timer { Interval = 60000 };&#xD;&#xA;var 行更新计时器 = new Timer { Interval = 50 };&#xD;&#xA;var 当前行索引 = 0; &#xD;&#xA;空天姬航线预报.Activated += (sender, e) =&gt;&#xD;&#xA;{列表更新计时器.Start(); &#xD;&#xA;if (!行更新计时器.Enabled) &#xD;&#xA;{当前行索引 = 0; &#xD;&#xA;行更新计时器.Start(); &#xD;&#xA;}};&#xD;&#xA;空天姬航线预报.Deactivate += (sender, e) =&gt;&#xD;&#xA;{列表更新计时器.Stop(); &#xD;&#xA;行更新计时器.Stop(); };&#xD;&#xA;列表更新计时器.Tick += (sender, e) =&gt;&#xD;&#xA;{if (!行更新计时器.Enabled) &#xD;&#xA;{当前行索引 = 0; &#xD;&#xA;行更新计时器.Start(); &#xD;&#xA;}};&#xD;&#xA;行更新计时器.Tick += (sender, e) =&gt;&#xD;&#xA;{更新单行航线(); &#xD;&#xA;&#xD;&#xA;if (当前行索引 &gt;= 表格.RowCount)&#xD;&#xA;{行更新计时器.Stop();&#xD;&#xA;}};&#xD;&#xA;&#xD;&#xA;var 滚动面板 = new Panel { Dock = DockStyle.Fill, AutoScroll = true };&#xD;&#xA;滚动面板.Controls.Add(表格);&#xD;&#xA;&#xD;&#xA;滚动面板.MouseWheel += (sender, e) =&gt;&#xD;&#xA;{int 滚动量 = e.Delta &gt; 0 ? -50 : 50; &#xD;&#xA;滚动面板.AutoScrollPosition = new Point(&#xD;&#xA;-滚动面板.AutoScrollPosition.X,&#xD;&#xA;Math.Max(0, -滚动面板.AutoScrollPosition.Y + 滚动量)&#xD;&#xA;);};&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;#endregion&#xD;&#xA;&#xD;&#xA;空天姬航线预报.Controls.Add(滚动面板); &#xD;&#xA;设置控件关系();&#xD;&#xA;设置控件样式();&#xD;&#xA;&#xD;&#xA;空天姬航线预报.ShowDialog();&#xD;&#xA;void 设置控件关系()&#xD;&#xA;{RealPlugin.plug.InvokeNamedCallback(&quot;command&quot;, &quot;/e [空天姬 MissFisher] 请稍后……&lt;se.7&gt;&quot;);&#xD;&#xA;&#xD;&#xA;表格.ColumnCount = 4; &#xD;&#xA;表格.RowCount = 72; &#xD;&#xA;&#xD;&#xA;Graphics graphics = Graphics.FromHwnd(IntPtr.Zero);&#xD;&#xA;float dpiX = graphics.DpiX;&#xD;&#xA;float dpiY = graphics.DpiY;&#xD;&#xA;graphics.Dispose();&#xD;&#xA;float scaleFactor = dpiY / 96f; &#xD;&#xA;int newWidth = (int)Math.Round(1000 * scaleFactor);&#xD;&#xA;int newHeight = (int)Math.Round(664 * scaleFactor);&#xD;&#xA;空天姬航线预报.Size = new Size(newWidth, newHeight);&#xD;&#xA;&#xD;&#xA;int 行高像素 = (int)(42 * scaleFactor); &#xD;&#xA;for (int i = 0; i &lt; 表格.RowCount; i++)&#xD;&#xA;{表格.RowStyles.Add(new RowStyle(SizeType.Absolute, 行高像素));&#xD;&#xA;}&#xD;&#xA;for (int j = 0; j &lt; 表格.ColumnCount; j++)&#xD;&#xA;{表格.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); &#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;初始化表格();}&#xD;&#xA;void 初始化表格()&#xD;&#xA;{for (int row = 0; row &lt; 表格.RowCount; row++)&#xD;&#xA;{for (int col = 0; col &lt; 表格.ColumnCount; col++)&#xD;&#xA;{Label label = new Label&#xD;&#xA;{Text = &quot;&quot;, &#xD;&#xA;Dock = DockStyle.Fill,&#xD;&#xA;TextAlign =&#xD;&#xA;col == 0 ? ContentAlignment.MiddleRight&#xD;&#xA;: col == 1 ? ContentAlignment.MiddleLeft&#xD;&#xA;: col == 2 ? ContentAlignment.MiddleLeft&#xD;&#xA;: ContentAlignment.MiddleCenter,&#xD;&#xA;ForeColor =&#xD;&#xA;col == 0 ? 白色&#xD;&#xA;: col == 1 ? 下拉框淡金色&#xD;&#xA;: col == 2 ? 暗金色&#xD;&#xA;: 灰色,&#xD;&#xA;Font =&#xD;&#xA;col == 0 ? 加粗&#xD;&#xA;: col == 1 ? 加粗重点&#xD;&#xA;: col == 2 ? 小号加粗&#xD;&#xA;: 小号加粗,&#xD;&#xA;};&#xD;&#xA;表格.Controls.Add(label, col, row);&#xD;&#xA;标签列表.Add(label); &#xD;&#xA;}&#xD;&#xA;}}&#xD;&#xA;void 设置控件样式()&#xD;&#xA;{&#xD;&#xA;foreach (Control c in 表格.Controls)&#xD;&#xA;{&#xD;&#xA;c.AutoSize = true;&#xD;&#xA;c.Dock = DockStyle.Fill;&#xD;&#xA;}}&#xD;&#xA;void 更新单行航线()&#xD;&#xA;{if (当前行索引 &gt;= 表格.RowCount)&#xD;&#xA;{当前行索引 = 0; &#xD;&#xA;}&#xD;&#xA;//// 暂停布局计算&#xD;&#xA;表格.SuspendLayout();&#xD;&#xA;&#xD;&#xA;long 当前时间戳 = DateTimeOffset.UtcNow.ToUnixTimeSeconds();&#xD;&#xA;&#xD;&#xA;DateTime utc时间 = DateTimeOffset.FromUnixTimeSeconds(当前时间戳).UtcDateTime;&#xD;&#xA;int utc小时数 = utc时间.Hour;&#xD;&#xA;&#xD;&#xA;if (utc小时数 % 2 == 1)&#xD;&#xA;{当前时间戳 += 7200; &#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;long 第一行时间戳 = 当前时间戳 - (当前时间戳 % 7200); &#xD;&#xA;&#xD;&#xA;long 当前行时间戳 = 第一行时间戳 + (当前行索引 / 2) * 7200; &#xD;&#xA;&#xD;&#xA;int 班次航线序号 = 计算航线序号(当前行时间戳);&#xD;&#xA;&#xD;&#xA;int 行索引1 = 班次航线序号 - 1;&#xD;&#xA;int 行索引2 = 行索引1 + 12;&#xD;&#xA;string 航线名称1 = 航线表格[行索引1][1];&#xD;&#xA;string 航线描述1 = 航线表格[行索引1][2];&#xD;&#xA;string 航线名称2 = 航线表格[行索引2][1];&#xD;&#xA;string 航线描述2 = 航线表格[行索引2][2];&#xD;&#xA;&#xD;&#xA;int 行 = 当前行索引;&#xD;&#xA;标签列表[行 * 4 + 0].Text = 获取时间戳显示内容(当前行时间戳, 行); &#xD;&#xA;标签列表[行 * 4 + 1].Text = 航线名称1;&#xD;&#xA;标签列表[行 * 4 + 2].Text = 航线描述1;&#xD;&#xA;标签列表[行 * 4 + 3].Text = (行 % 2 == 0 || 行 == 0) ? 班次航线序号.ToString(&quot;D2&quot;) : &quot;&quot;; &#xD;&#xA;行++;&#xD;&#xA;当前行时间戳 += 7200; &#xD;&#xA;标签列表[行 * 4 + 0].Text = 获取时间戳显示内容(当前行时间戳, 行); &#xD;&#xA;标签列表[行 * 4 + 1].Text = 航线名称2;&#xD;&#xA;标签列表[行 * 4 + 2].Text = 航线描述2;&#xD;&#xA;标签列表[行 * 4 + 3].Text = (行 % 2 == 0 || 行 == 0) ? 班次航线序号.ToString(&quot;D2&quot;) : &quot;&quot;; &#xD;&#xA;当前行索引 += 2; &#xD;&#xA;&#xD;&#xA;表格.ResumeLayout();&#xD;&#xA;if (!指令)&#xD;&#xA;{指令 = true;&#xD;&#xA;RealPlugin.plug.InvokeNamedCallback(&#xD;&#xA;&quot;command&quot;,&#xD;&#xA;&quot;/e [空天姬 MissFisher] 预报初始化完成。&lt;se.10&gt;&quot;&#xD;&#xA;);&#xD;&#xA;}}&#xD;&#xA;int 计算航线序号(long 时间戳)&#xD;&#xA;{long 基准时间戳 = 1715184000; &#xD;&#xA;long 时间差 = 时间戳 - 基准时间戳;&#xD;&#xA;&#xD;&#xA;int 偏移量 = (int)(时间差 / 7200) + (int)(时间差 / 86400) % 12;&#xD;&#xA;&#xD;&#xA;int 当前小时数 = (int)((时间差 % 86400) / 3600);&#xD;&#xA;&#xD;&#xA;int 修正值 = (当前小时数 % 2 == 1) ? (当前小时数 == 15 ? 2 : 1) : 0;&#xD;&#xA;&#xD;&#xA;int 航班序号 = (偏移量 + 修正值) % 12 + 1;&#xD;&#xA;return 航班序号;}&#xD;&#xA;string 获取时间戳显示内容(long 时间戳, int 行)&#xD;&#xA;{&#xD;&#xA;DateTime 本地时间 = DateTimeOffset.FromUnixTimeSeconds(时间戳).LocalDateTime;&#xD;&#xA;int 小时数 = 本地时间.Hour;&#xD;&#xA;if (行 == 0)&#xD;&#xA;{return $&quot;{本地时间:MM-dd} {小时数:00}:00&quot;; &#xD;&#xA;}&#xD;&#xA;else if (行 % 2 == 1)&#xD;&#xA;{return &quot;&quot;; &#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{if (小时数 == 0 || 小时数 == 1)&#xD;&#xA;{return $&quot;{本地时间:MM-dd} {小时数:00}:00&quot;; &#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{return $&quot;{小时数:00}:00&quot;; &#xD;&#xA;}&#xD;&#xA;}}&#xD;&#xA;" ActionType="ExecuteScript" />
 <Action OrderNumber="2" UseTTSTextExpression="请稍候" ActionType="UseTTS" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
@@ -1208,7 +1208,8 @@
 </Condition>
 </Action>
 <Action OrderNumber="2" NamedCallbackName="KTJGetCurrentWeather" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="3" LogMessageText="空天姬结束窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="3" VariableOp="SetNumeric" VariableName="空天姬天气转换时间" VariableExpression="( min(nextETms(00:00),nextETms(08:00),nextETms(16:00)) + ${_timestampms} ) / 1000" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="4" LogMessageText="空天姬结束窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气[${v:空天姬天气ID}]}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气}" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1216,7 +1217,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气上一个}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气当前}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬饵鱼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬饵鱼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -1250,7 +1251,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬饵鱼模式" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬饵鱼模式" VariableExpression="2" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -1279,7 +1280,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="6" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="7" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -1301,7 +1302,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="7" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="8" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -1323,7 +1324,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="8" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="9" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气当前}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -1332,7 +1333,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="9" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="10" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气当前}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -1341,13 +1342,13 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬天气上一个" VariableExpression="${if:${ev:空天姬天气当前}?${v:空天姬天气当前}:${pd:空天姬天气[${v:空天姬天气ID}]}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬天气上一个" VariableExpression="${if:${ev:空天姬天气当前}?${v:空天姬天气当前}:${pd:空天姬天气[${v:空天姬天气ID}]}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气[${v:空天姬天气ID}]}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气当前}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬天气当前" VariableExpression="${pd:空天姬天气[${v:空天姬天气ID}]}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="12" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="12" VariableOp="SetString" VariableName="空天姬天气当前" VariableExpression="${pd:空天姬天气[${v:空天姬天气ID}]}" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="13" LogMessageText="空天姬进入窗口" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气[${v:空天姬天气ID}]}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气}" ExpressionTypeR="String" ConditionType="RegexMatch" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1359,7 +1360,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="13" LogMessageText="空天姬等待天气" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2917" Asynchronous="False">
+<Action OrderNumber="14" LogMessageText="空天姬等待天气" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="2917" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
@@ -1397,17 +1398,26 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="${v:空天姬最大ET} - $1">
+<Action OrderNumber="7" VariableOp="SetNumeric" VariableName="空天姬最大ET结束时间" VariableExpression="( ${v:空天姬最大ET} - $1 + ${_timestampms} ) / 1000" ActionType="Variable">
+<Condition Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气当前}" ExpressionTypeL="String" ExpressionR="${v:空天姬天气}" ExpressionTypeR="String" ConditionType="RegexMatch" />
+</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="${v:空天姬最大ET} - $1">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="DisableTrigger" ActionType="Folder">
+<Action OrderNumber="9" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="DisableTrigger" ActionType="Folder">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" LogMessageText="空天姬切换鱼眼模式" LogProcess="True" TriggerOp="DisableTrigger" ActionType="LogMessage">
+<Action OrderNumber="10" LogMessageText="空天姬切换鱼眼模式" LogProcess="True" TriggerOp="DisableTrigger" ActionType="LogMessage">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -1423,16 +1433,21 @@
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="鱼眼模式" DescriptionOverride="True" />
 <Action OrderNumber="2" TriggerOp="CancelTrigger" TriggerId="40e5b9ba-d629-424a-ac1d-7b0c33c8bed6" TriggerForce="regexp" ActionType="Trigger" />
-<Action OrderNumber="3" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" />
-<Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" />
-<Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e 进入了鱼眼模式……${if:${ev:空天姬抛竿时间}?距离警惕 ${n:50 - round( ( ${_timestamp} - ( ${v:空天姬抛竿时间} ) ) / 60 )} :}${if:${ev:空天姬鱼眼次数}?&quot;&#xD;&#xA;已使用的鱼眼次数：${v:空天姬鱼眼次数}&quot;:}" ActionType="NamedCallback" />
-<Action OrderNumber="6" VariableName="空天姬以小钓大机会判断" ActionType="Variable" ExecutionDelayExpression="1000" />
-<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬鱼名判断" VariableExpression="${f:capture(${v:空天姬最后上钩},1):(?:.*?竿)? *(?:引诱)? *(?:.提)? *([\w·#?'\s＝【】？\.\-・]+)}" ActionType="Variable">
+<Action OrderNumber="3" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" />
+<Action OrderNumber="4" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" />
+<Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" />
+<Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" />
+<Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e 进入了鱼眼模式……${if:${ev:空天姬抛竿时间}?距离警惕 ${n:50 - round( ( ${_timestamp} - ( ${v:空天姬抛竿时间} ) ) / 60 )} :}${if:${ev:空天姬鱼眼次数}?&quot;&#xD;&#xA;已使用的鱼眼次数：${v:空天姬鱼眼次数}&quot;:}" ActionType="NamedCallback" />
+<Action OrderNumber="8" VariableName="空天姬以小钓大机会判断" ActionType="Variable" ExecutionDelayExpression="1000" />
+<Action OrderNumber="9" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" />
+<Action OrderNumber="10" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" />
+<Action OrderNumber="11" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" />
+<Action OrderNumber="12" VariableOp="SetString" VariableName="空天姬鱼名判断" VariableExpression="${f:capture(${v:空天姬最后上钩},1):(?:.*?竿)? *(?:引诱)? *(?:.提)? *([\w·#?'\s＝【】？\.\-・]+)}" ActionType="Variable">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最后上钩}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬以小钓大机会判断" VariableExpression="1" ActionType="Variable">
+<Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬以小钓大机会判断" VariableExpression="1" ActionType="Variable">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -1452,7 +1467,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼篓判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬手法鱼眼鱼名判断" VariableExpression="1" ActionType="Variable">
+<Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬手法鱼眼鱼名判断" VariableExpression="1" ActionType="Variable">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬以小钓大机会判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1460,7 +1475,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬手法鱼眼鱼名判断" VariableExpression="2" ActionType="Variable">
+<Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬手法鱼眼鱼名判断" VariableExpression="2" ActionType="Variable">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -1470,7 +1485,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大阶段}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}熟练妙招]}&quot;" VariableOp="SetNumeric" ActionType="NamedCallback">
+<Action OrderNumber="16" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}熟练妙招]}&quot;" VariableOp="SetNumeric" ActionType="NamedCallback">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制以小钓大机会}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1512,67 +1527,67 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼名判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" TriggerOp="EnableTrigger" TriggerId="7f400bc8-3114-4956-8974-c1db71e8d580" TriggerForce="regexp" ActionType="Trigger" />
-<Action OrderNumber="13" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" ActionType="ListVariable" />
-<Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="100">
+<Action OrderNumber="17" TriggerOp="EnableTrigger" TriggerId="7f400bc8-3114-4956-8974-c1db71e8d580" TriggerForce="regexp" ActionType="Trigger" />
+<Action OrderNumber="18" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" ActionType="ListVariable" />
+<Action OrderNumber="19" VariableOp="SetString" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="100">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼鱼名判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="15" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" ActionType="ListVariable">
+<Action OrderNumber="20" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="专一垂钓" ActionType="ListVariable">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬手法鱼眼鱼名判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="16" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" ActionType="ListVariable">
+<Action OrderNumber="21" ListVariableOp="Push" ListVariableName="空天姬动作" ListVariableExpression="拍击水面" ActionType="ListVariable">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬手法鱼眼鱼名判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="17" VariableOp="SetString" VariableName="空天姬手法鱼眼采集力判断" VariableExpression="1" ActionType="Variable">
+<Action OrderNumber="22" VariableOp="SetString" VariableName="空天姬手法鱼眼采集力判断" VariableExpression="1" ActionType="Variable">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${el:空天姬动作}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp} + 2 * ${pv:空天姬控制采集力恢复速度}" ExpressionTypeL="Numeric" ExpressionR="${if: ${l:空天姬动作[1]} == 专一垂钓 ? 342 : 192 }" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="18" NamedCallbackName="command" NamedCallbackParam="/e 开始等待采集力以使用${l:空天姬动作[1]}……&#xD;&#xA;请勿抛竿。" ActionType="NamedCallback">
+<Action OrderNumber="23" NamedCallbackName="command" NamedCallbackParam="/e 开始等待采集力以使用${l:空天姬动作[1]}……&#xD;&#xA;请勿抛竿。" ActionType="NamedCallback">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp}" ExpressionTypeL="String" ExpressionR="${if: ${l:空天姬动作[1]} == 专一垂钓 ? 342 : 192 }" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="19" ActionType="Placeholder" ExecutionDelayExpression="${ev:空天姬手法鱼眼采集力判断} &amp;&amp; ${el:空天姬动作} ? ( ( ${_me.currentgp} &gt;= ${if: ${l:空天姬动作[1]} == 专一垂钓 ? 342 : 192 } ? 0 : 5000 )  ) : 0" />
-<Action OrderNumber="20" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder">
+<Action OrderNumber="24" ActionType="Placeholder" ExecutionDelayExpression="${ev:空天姬手法鱼眼采集力判断} &amp;&amp; ${el:空天姬动作} ? ( ( ${_me.currentgp} &gt;= ${if: ${l:空天姬动作[1]} == 专一垂钓 ? 342 : 192 } ? 0 : 5000 )  ) : 0" />
+<Action OrderNumber="25" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="21" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20">
+<Action OrderNumber="26" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="20">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="22" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" ExecutionDelayExpression="${el:空天姬动作} ? 3000 : 0">
+<Action OrderNumber="27" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder" ExecutionDelayExpression="${el:空天姬动作} ? 3000 : 0">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="23" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder">
+<Action OrderNumber="28" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="DisableTrigger" ActionType="Folder">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼采集力判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="24" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" ActionType="ListVariable" />
-<Action OrderNumber="25" VariableOp="SetNumeric" VariableName="空天姬手法鱼眼强心剂等待毫秒" VariableExpression="( ${v:空天姬控制强心剂} ) ? 0 : ${v:空天姬控制强心剂使用时刻I} + ${f:pick(2,;):${pv:空天姬控制强心剂类型}} - ${_timestampms}" ActionType="Variable" />
-<Action OrderNumber="26" VariableOp="SetNumeric" VariableName="空天姬手法鱼眼采集力等待毫秒" VariableExpression="( ${_me.maxgp} - ${_me.currentgp} ) / ${pv:空天姬控制采集力恢复速度} * 3000" ActionType="Variable" />
-<Action OrderNumber="27" NamedCallbackName="command" NamedCallbackParam="/e 开始等待采集力和强心剂……需要 ${n:round((${v:空天姬手法鱼眼采集力等待毫秒} &gt; ${v:空天姬手法鱼眼强心剂等待毫秒} ? ${v:空天姬手法鱼眼采集力等待毫秒} : ${v:空天姬手法鱼眼强心剂等待毫秒})/60000),0} &#xD;&#xA;手动使用鱼眼时将跳过等待。" ActionType="NamedCallback">
+<Action OrderNumber="29" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" ActionType="ListVariable" />
+<Action OrderNumber="30" VariableOp="SetNumeric" VariableName="空天姬手法鱼眼强心剂等待毫秒" VariableExpression="( ${v:空天姬控制强心剂} ) ? 0 : ${v:空天姬控制强心剂使用时刻I} + ${f:pick(2,;):${pv:空天姬控制强心剂类型}} - ${_timestampms}" ActionType="Variable" />
+<Action OrderNumber="31" VariableOp="SetNumeric" VariableName="空天姬手法鱼眼采集力等待毫秒" VariableExpression="( ${_me.maxgp} - ${_me.currentgp} ) / ${pv:空天姬控制采集力恢复速度} * 3000" ActionType="Variable" />
+<Action OrderNumber="32" NamedCallbackName="command" NamedCallbackParam="/e 开始等待采集力和强心剂……需要 ${n:round((${v:空天姬手法鱼眼采集力等待毫秒} &gt; ${v:空天姬手法鱼眼强心剂等待毫秒} ? ${v:空天姬手法鱼眼采集力等待毫秒} : ${v:空天姬手法鱼眼强心剂等待毫秒})/60000),0} &#xD;&#xA;手动使用鱼眼时将跳过等待。" ActionType="NamedCallback">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬手法鱼眼采集力等待毫秒}${v:空天姬手法鱼眼强心剂等待毫秒}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="28" LogMessageText="空天姬更新采集力" LogProcess="True" ActionType="LogMessage" />
-<Action OrderNumber="29" ActionType="Placeholder" ExecutionDelayExpression="${v:空天姬手法鱼眼采集力等待毫秒} &gt; ${v:空天姬手法鱼眼强心剂等待毫秒} ? ${v:空天姬手法鱼眼采集力等待毫秒} : ${v:空天姬手法鱼眼强心剂等待毫秒}" />
-<Action OrderNumber="30" LogMessageText="空天姬鱼眼启动" LogProcess="True" ActionType="LogMessage" />
+<Action OrderNumber="33" LogMessageText="空天姬更新采集力" LogProcess="True" ActionType="LogMessage" />
+<Action OrderNumber="34" ActionType="Placeholder" ExecutionDelayExpression="${v:空天姬手法鱼眼采集力等待毫秒} &gt; ${v:空天姬手法鱼眼强心剂等待毫秒} ? ${v:空天姬手法鱼眼采集力等待毫秒} : ${v:空天姬手法鱼眼强心剂等待毫秒}" />
+<Action OrderNumber="35" LogMessageText="空天姬鱼眼启动" LogProcess="True" ActionType="LogMessage" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1729,7 +1744,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="1.2 追加鱼篓" Id="7f400bc8-3114-4956-8974-c1db71e8d580" RegularExpression="^.{26}0843::(?:.+?成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+? (?&lt;空天姬目标&gt;.+?) measuring.+|.+?は(?&lt;空天姬目标&gt;[^ ]+?)を釣り上げた。)$">
+<Trigger Enabled="false" Name="1.2 追加鱼篓" Id="7f400bc8-3114-4956-8974-c1db71e8d580" RegularExpression="^.{26}0843::(?:.+?成功钓上了(?&lt;空天姬目标&gt;.+)。|You land [^ ]+? (?&lt;空天姬目标&gt;.+?) measuring.+|.+?は(?&lt;空天姬目标&gt;[^ ]+?)を釣り上げた。)$">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬鱼名判断" VariableExpression="${f:capture(${空天姬目标},1):([\w·#?'\s＝【】？\.\-・]+)}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}熟练妙招]}&quot;" VariableOp="SetNumeric" ActionType="NamedCallback" Asynchronous="False">
@@ -2114,7 +2129,7 @@
 <Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬预拍水模式攒鱼计" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="max( ( ${ev:空天姬最大ET} ? (${v:空天姬最小ET}) : 0 ) , ( ${ev:空天姬天气} ? min(nextETms(00:00),nextETms(08:00),nextETms(20:00)) : 0 ) ) &gt;= 180000" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="max( ( ${ev:空天姬最大ET} ? (${v:空天姬最小ET}) : 0 ) , ( ${ev:空天姬天气} ? min(nextETms(00:00),nextETms(08:00),nextETms(16:00)) : 0 ) ) &gt;= 180000" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="15" NamedCallbackName="command" NamedCallbackParam="/e ${if: ${ev:空天姬预拍水模式攒鱼计} ? 开始${if: (${v:空天姬控制鱼计}) &gt; 8 ? : 攒鱼计并 } : &quot;距离窗口期不足 3，将跳过攒鱼计&#xD;&#xA;开始&quot; }尝试预拍水……" ActionType="NamedCallback">
@@ -2359,7 +2374,22 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制钓饵}" ExpressionTypeL="String" ExpressionR="${v:空天姬钓饵更换}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="22" TriggerId="3cb9e5de-f2b0-4425-b6d7-79a0f7292d8b" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="22" NamedCallbackName="command" NamedCallbackParam="/e 已尝试换饵……${n:${v:空天姬换饵动作次数}/10}0 次" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" ExecutionDelayExpression="20" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数} % 10" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="23" LogMessageText="空天姬换饵错误：${v:空天姬钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="String" ConditionType="NumericGreater" />
+</Condition>
+</Action>
+<Action OrderNumber="24" TriggerId="3cb9e5de-f2b0-4425-b6d7-79a0f7292d8b" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -2374,21 +2404,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵ID.indexof(${v:空天姬控制钓饵})}" ExpressionTypeL="String" ExpressionR="${env:普通钓饵空间}" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
 </ConditionGroup>
 </ConditionGroup>
-</Condition>
-</Action>
-<Action OrderNumber="23" NamedCallbackName="command" NamedCallbackParam="/e 已尝试换饵……${n:${v:空天姬换饵动作次数}/10}0 次" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数} % 10" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="24" LogMessageText="空天姬换饵错误：${v:空天姬钓饵}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬竿数}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数}" ExpressionTypeL="Numeric" ExpressionR="8" ExpressionTypeR="String" ConditionType="NumericGreater" />
-</ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬换饵动作次数}" ExpressionTypeL="Numeric" ExpressionR="120" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Action>
 </Actions>
@@ -3831,53 +3846,60 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="155" LogMessageText="空天姬等待ET" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="155" VariableOp="SetNumeric" VariableName="空天姬最大ET结束时间" VariableExpression="( ${v:空天姬最大ET} - ${v:空天姬最小ET} + ${_timestampms} ) / 1000" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="156" LogMessageText="空天姬等待天气" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="156" LogMessageText="空天姬等待ET" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+</Condition>
+</Action>
+<Action OrderNumber="157" LogMessageText="空天姬等待天气" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="157" NamedCallbackName="command" NamedCallbackParam="/statusoff &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}拍击水面]}&quot;" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="158" NamedCallbackName="command" NamedCallbackParam="/statusoff &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}拍击水面]}&quot;" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="158" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="94c20c52-5a2f-4812-853c-bc973a701cb8" TriggerText="123456789112345StatusAdd 1A:238:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="159" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="94c20c52-5a2f-4812-853c-bc973a701cb8" TriggerText="123456789112345StatusAdd 1A:238:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="159" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="cd1744a7-bfc7-4c4f-a3f4-59fd5f5a5b6d" TriggerText="123456789112345StatusAdd 1A:70B:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="160" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="cd1744a7-bfc7-4c4f-a3f4-59fd5f5a5b6d" TriggerText="123456789112345StatusAdd 1A:70B:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水后预设}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="160" VariableName="空天姬鱼识模式" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="161" VariableName="空天姬鱼识模式" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="161" VariableName="空天姬拍水模式" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="162" VariableName="空天姬拍水模式" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水后预设}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="162" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="163" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="163" LogMessageText="空天姬执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="164" LogMessageText="空天姬执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -3896,13 +3918,13 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="164" LogMessageText="空天姬海钓执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="165" LogMessageText="空天姬海钓执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="165" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="166" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3918,7 +3940,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="166" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="167" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3935,7 +3957,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="167" LogMessageText="空天姬鱼眼启动" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="168" LogMessageText="空天姬鱼眼启动" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3944,19 +3966,19 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="168" LogMessageText="空天姬钓饵启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="169" LogMessageText="空天姬钓饵启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="169" NamedCallbackName="command" NamedCallbackParam="/e 开始更换钓饵：${空天姬钓饵}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="170" NamedCallbackName="command" NamedCallbackParam="/e 开始更换钓饵：${空天姬钓饵}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="170" NamedCallbackName="command" NamedCallbackParam="/systemsounds 0" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" ExecutionDelayExpression="300" Asynchronous="False">
+<Action OrderNumber="171" NamedCallbackName="command" NamedCallbackParam="/systemsounds 0" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" ExecutionDelayExpression="300" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3965,40 +3987,40 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="171" NamedCallbackName="command" NamedCallbackParam="/e 指定天气时未提供 ET&#xD;&#xA;由于无法获取前置天气，当下个天气也符合给出的天气参数时将不会停止抛竿并提醒，请留意人工监控窗口期。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="172" NamedCallbackName="command" NamedCallbackParam="/e 指定天气时未提供 ET&#xD;&#xA;由于无法获取前置天气，当下个天气也符合给出的天气参数时将不会停止抛竿并提醒，请留意人工监控窗口期。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="172" NamedCallbackName="command" NamedCallbackParam="/e 条件满足&#xD;&#xA;切换到内层预设。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="173" NamedCallbackName="command" NamedCallbackParam="/e 条件满足&#xD;&#xA;切换到内层预设。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="173" VariableOp="SetString" VariableName="空天姬参数检查" VariableExpression="${if:${f:contain(【):${空天姬拍目标}}&amp;&amp;${f:startwith(|):${v:空天姬拍目标}}&amp;&amp;${f:endwith(|):${v:空天姬拍目标}}&amp;&amp;${f:contain(||):${v:空天姬拍目标}}? &quot;&#xD;&#xA;　在 空天姬拍目标 的值${空天姬拍目标}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓2}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓2 的值${空天姬大鱼鱼篓2}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标1}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标1}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标1 的值${空天姬大鱼目标1}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓3}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓3 的值${空天姬大鱼鱼篓3}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标2}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标2 的值${空天姬大鱼目标2}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓4}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓4}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓4 的值${空天姬大鱼鱼篓4}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标3}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标3 的值${空天姬大鱼目标3}&quot; :  }${if:${f:contain(【):${空天姬计数目标1}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][1]}}? &quot;&#xD;&#xA;　在 空天姬计数目标1 的值${空天姬计数目标1}&quot; :  }${if:${f:contain(【):${空天姬计数目标2}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][2]}}? &quot;&#xD;&#xA;　在 空天姬计数目标2 的值${空天姬计数目标2}&quot; :  }${if:${f:contain(【):${空天姬计数目标3}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][3]}}? &quot;&#xD;&#xA;　在 空天姬计数目标3 的值${空天姬计数目标3}&quot; :  }${if:${f:contain(【):${空天姬目标}}&amp;&amp;${f:startwith(|):${v:空天姬目标}}&amp;&amp;${f:endwith(|):${v:空天姬目标}}&amp;&amp;${f:contain(||):${v:空天姬目标}}? &quot;&#xD;&#xA;　在 空天姬目标 的值${空天姬目标}&quot; :  }${if:${f:contain(【):${空天姬专一目标}}&amp;&amp;${f:startwith(|):${v:空天姬专一目标}}&amp;&amp;${f:endwith(|):${v:空天姬专一目标}}&amp;&amp;${f:contain(||):${v:空天姬专一目标}}? &quot;&#xD;&#xA;　在 空天姬专一目标 的值${空天姬专一目标}&quot; :  }" TableVariableOp="Build" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="174" VariableOp="SetString" VariableName="空天姬参数检查" VariableExpression="${if:${f:contain(【):${空天姬拍目标}}&amp;&amp;${f:startwith(|):${v:空天姬拍目标}}&amp;&amp;${f:endwith(|):${v:空天姬拍目标}}&amp;&amp;${f:contain(||):${v:空天姬拍目标}}? &quot;&#xD;&#xA;　在 空天姬拍目标 的值${空天姬拍目标}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓2}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓2 的值${空天姬大鱼鱼篓2}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标1}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标1}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标1 的值${空天姬大鱼目标1}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓3}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓3 的值${空天姬大鱼鱼篓3}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标2}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标2 的值${空天姬大鱼目标2}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓4}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓4}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓4 的值${空天姬大鱼鱼篓4}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标3}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标3 的值${空天姬大鱼目标3}&quot; :  }${if:${f:contain(【):${空天姬计数目标1}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][1]}}? &quot;&#xD;&#xA;　在 空天姬计数目标1 的值${空天姬计数目标1}&quot; :  }${if:${f:contain(【):${空天姬计数目标2}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][2]}}? &quot;&#xD;&#xA;　在 空天姬计数目标2 的值${空天姬计数目标2}&quot; :  }${if:${f:contain(【):${空天姬计数目标3}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][3]}}? &quot;&#xD;&#xA;　在 空天姬计数目标3 的值${空天姬计数目标3}&quot; :  }${if:${f:contain(【):${空天姬目标}}&amp;&amp;${f:startwith(|):${v:空天姬目标}}&amp;&amp;${f:endwith(|):${v:空天姬目标}}&amp;&amp;${f:contain(||):${v:空天姬目标}}? &quot;&#xD;&#xA;　在 空天姬目标 的值${空天姬目标}&quot; :  }${if:${f:contain(【):${空天姬专一目标}}&amp;&amp;${f:startwith(|):${v:空天姬专一目标}}&amp;&amp;${f:endwith(|):${v:空天姬专一目标}}&amp;&amp;${f:contain(||):${v:空天姬专一目标}}? &quot;&#xD;&#xA;　在 空天姬专一目标 的值${空天姬专一目标}&quot; :  }" TableVariableOp="Build" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${空天姬原参数}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="174" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="175" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="175" LogMessageText="空天姬预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="176" LogMessageText="空天姬预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="176" VariableName="空天姬阶段模式" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="177" LogMessageText="空天姬饵名错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="177" VariableName="空天姬阶段模式" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="178" LogMessageText="空天姬饵名错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="178" LogMessageText="空天姬天气错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="179" LogMessageText="空天姬天气错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气.joinvalues}" ExpressionTypeL="String" ExpressionR="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬天气}}" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
@@ -4363,6 +4385,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="48" ExpressionTypeR="String" ConditionType="NumericLess" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericLess" />
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制渔技状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -4514,22 +4537,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼篓}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
-</ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
-</ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-</ConditionGroup>
-</ConditionGroup>
-</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( ${v:空天姬控制幻海流结束时间} ) - ${_timestamp} : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? ( ${ev:空天姬控制海域时刻} ? ( ( ${v:空天姬控制海域时刻} ) + 390000 ) / 1000 - ${_timestamp} : 4200 ) : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬撒饵强制}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -5975,7 +5983,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="3.1.3 确定收藏动作" Id="ba21f505-c809-4ef8-bf12-b825735b61e3" RegularExpression="">
+<Trigger Enabled="false" Name="3.1.3 确定收藏动作" Id="ba21f505-c809-4ef8-bf12-b825735b61e3" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="sendkey" NamedCallbackParam="${pd:空天姬配置[确定热键]}" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="sendkey" NamedCallbackParam="${pd:空天姬配置[确定热键]}" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
@@ -6471,25 +6479,10 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬鱼眼结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
-</ConditionGroup>
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识结束时间}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
-</ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-</ConditionGroup>
-</ConditionGroup>
-</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( ${v:空天姬控制幻海流结束时间} ) - ${_timestamp} : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? 4200 : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+<Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="${if: ${_ffxivisglobal} ? ${if: ${v:空天姬控制鲶鱼精版本I} == 1.3.5.3 ? : normal } : normal }command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
