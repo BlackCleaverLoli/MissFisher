@@ -163,7 +163,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 4. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
 ## 进行配置
 ### ACT 相关配置：
-1. 在 ACT 界面中切换到 `插件列表` 分页（CafeACT 则是 `插件商店` - `高级管理`）- 按下方给出的顺序调整 ACT 插件优先级：
+1. 在 ACT 界面中切换到 `插件列表` 分页（CafeACT 则是 `插件商店` - `高级管理`）- 按下方给出的顺序调整 ACT 插件优先级（请严格依照给出的顺序调整优先级，之间不能夹杂其他插件）：
 ```
 （0）CafeStore（如有，注意区分 Matcha）
 （1）FFXIV_ACT_Plugin
@@ -175,8 +175,13 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 （其他无关紧要的插件）
 ```
 2. 重启 ACT 并等待 ACT 完成启动。
-3. 在游戏中消息窗口的 `聊天输入栏` 输入命令 `/e ktj` - 按下 `回车键` 发生命令以打开 空天姬 MissFisher 的主界面（或右键触发器 `空天姬主界面` - 点击 `执行（强制/条件）`）。
+3. 在游戏中消息窗口的 `聊天输入栏` 输入命令 `/e ktj` - 按下 `回车键` 发生命令以打开 空天姬 MissFisher 的主界面（或右键主分组下的触发器 `空天姬主界面` - 然后 `执行（强制/条件）`）。
 4. 可选的：在 ACT 界面中切换到 `抹茶 Matcha` 分页（如有）- 找到 `日志及数据共享` 部分 - 勾选 `兼容模式` 以略微提高咬饵时 空天姬 MissFisher 的响应速度。
+
+> [!TIP]  
+> 勾选 抹茶 Matcha 的 `兼容模式`，也有助于降低使用 空天姬 MissFisher 时 ACT 的处理压力。
+>  
+> 你还可以在 抹茶 Matcha `钓鱼播报` 部分找到可能被默认启用的 `咬钩` 和 `咬钩力度` 选项，取消这两个选项以减少不必要的打扰。
 
 > [!NOTE]
 > 敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。  
@@ -444,7 +449,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 
 ③ **配置按钮：** 打开 空天姬 MissFisher 的配置界面。
 
-④ **航线按钮：** 向游戏发送一条包含航线预报的默语消息。
+④ **航线按钮：** 打开 空天姬 MissFisher 的航线预报界面。
 
 ⑤ **模式下拉菜单：** 选择 `冲分` 、`蓝鱼` 或 `成就` 作为自动海钓模式。
 
@@ -487,17 +492,18 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 
 1. 使用 `航线按钮` 或前往 [FF14 鱼糕](https://next.ffmomola.com/oceanFishing) 查看想去的航线。  
 2. 前往 `利姆萨·罗敏萨` 的 `x3.0 y12.7` 与 NPC `德瑞斯库托塔` 对话 - 进行乘船登记。  
-3. 准备好 40 格或更多背包空间以及所需的钓饵 - 点击主界面中的 `模式下拉菜单` 展开菜单 - 选择想要的模式。  
-4. 进入任务后 - 点击 `启动按钮` 。
-5. 当接收到含有海域信息的 NPC 喊话时，空天姬 MissFisher 将自动「抛竿」 。
+3. 准备好 40 格或更多背包空间以及所需的钓饵；必须携带 `刺螠` `磷虾` `石沙蚕` 各 99 个；部分蓝鱼需要另外携带其他钓饵。
+4. 点击主界面中的 `模式下拉菜单` 展开菜单 - 选择想要的模式。  
+5. 进入任务后 - 点击 `启动按钮` 。
+6. 当接收到含有海域信息的 NPC 喊话时，空天姬 MissFisher 将自动「抛竿」 。
 
 > [!TIP]
-> 使用【航线预报】功能可快速获取未来 2 条的航线信息与所需钓饵。
+> 使用【航线预报】功能可获取未来 36 班航线信息与蓝鱼模式时的所需钓饵。
 
 > [!NOTE]
 > - **关于模式：**  
 > *`冲分`* 表示将使用尽可能获得更多渔分的钓法；  
-> *`蓝鱼`* 表示将使用可钓起稀有度蓝色的鱼类的钓法；  
+> *`蓝鱼`* 表示将使用可钓起蓝色稀有度的传说级鱼类的钓法；  
 > *`成就`* 表示将使用尽可能多得钓起对应顺位的数量成就鱼类的钓法。  
 > 
 > - **顺位：**  
@@ -513,21 +519,22 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 -|-
 `/e ktj`<br>`/e 空天姬`|打开主界面
 `/e ktjcfg`<br>`/e 空天姬配置`|打开用户配置界面
+`/e ktjhx`<br>`/e 航线`|打开航线预报界面|
 ## 自动钓鱼：
 命令|描述|备注
 -|-|-
 `/e <空天姬预设>`|使用预设中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)
-`/e 冲分确定`<br>`/e 蓝鱼确定`<br>`/e 成就确定`<br>`/e 成就1确定`<br>`/e 成就2确定`<br>`/e 练级确定`|以指定模式自动海钓|携带 3 种海钓钓饵各至少 99 个<br>同时留出至少 40 格背包空间
+`/e 冲分确定`<br>`/e 蓝鱼确定`<br>`/e 成就确定`<br>`/e 成就1确定`<br>`/e 成就2确定`<br>`/e 练级确定`|以指定模式自动海钓|携带 `刺螠` `磷虾` `石沙蚕` 各 99 个<br>蓝鱼模式时需要另外携带其他钓饵<br>同时留出至少 40 格背包空间
 `/e 空天姬预设 <鱼类全称> <定时分钟>`<br>`/e ktjys <鱼类全称> <定时分钟>`|使用对应的内置预设自动钓鱼|见条目 [支持的预设](#现在支持的内置预设)
 `/e 空天姬预设 查看 <鱼类全称>`<br>`/e ktjys show <鱼类全称>`|查看对应的内置预设|以方便修改或作钓鱼准备
 `/e ktjdbg`|调试自动功能|
 `/e 空天姬撒饵`<br>`/e ktjchum`|自动时强制撒饵一次|无视采集力或其他条件
-`/e 停止`<br>`/e kend`|停止自动功能|
+`/e ktjpause`<br>`/e kpause`|暂停 / 恢复自动功能|部分功能不受暂停影响<br>例如「满足条件时的预设切换」
+`/e 停止`<br>`/e kend`|停止自动功能|完全停止一切自动功能
 `/e ktjsync`<br>`/e 空天姬同步`|在线同步内置预设|
 ## 工具功能：
 命令|描述|备注
 -|-|-
-`/e ktjhx`<br>`/e 航线`|向默语频道发送航线预报|
 `/e ktjlogtest`|测试关键日志行|按指引进行测试 需要已经开放副本：末日暗影亚马乌罗提
 `/e ktjovl`|切换悬浮窗状态|悬浮窗显示时将隐藏，而隐藏时将显示
 `/e ktjovl <悬浮窗类型> <水平偏移> <垂直偏移>`<br>`/e 空天姬悬浮窗 <悬浮窗类型> <水平偏移> <垂直偏移>`|修改悬浮窗坐标偏移 |类型：`竿时` / `time` ; `采集力` / `gp`<br>偏移量支持负数；值越大，位置相对初始位置越靠近画面右下角
@@ -543,13 +550,12 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 :-|:-|
 `/ktj`|空天姬主界面|
 `/ktjcfg`|用户配置界面|
-`/ktjcmd`|预设生成器|
-`/ktjys <子命令>`|空天姬预设|
+`/ktjhx`|航线预报界面|
+`/ktjys <子命令>`|调用内置预设|
 `/ktjdbg`|调试自动功能|
-`/kend`|停止自动功能|
 `/kpause`|暂停或恢复自动功能|
+`/kend`|停止自动功能|
 `/ktjsync`|在线同步内置预设|
-`/ktjhx`|查询航线预报|
 `/ktjovl`|悬浮窗相关命令|
   
 ## 现在支持的内置预设
@@ -557,10 +563,9 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 > 你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把内置预设在线同步到 空天姬 MissFisher 中。  
 > - **[如何使用内置预设](#方法-1使用内置预设)**。
 
-- 所有鱼王鱼皇（2.0 到 6.0）的预设均已补完，另外，还支持部分宠物和「肝武」。  
-鱼皇或需要施工前置的流程预设也正在缓慢优化。
+**所有 2.0 到 6.0 的鱼类预设均已补完** ；另外，还支持部分宠物。  
 
 这些预设来自作者与部分用户参与建设的在线表格 [空天姬内置预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) 。
 
-如果有缺少的鱼或认为预设的手法有误 / 需改进，你还可以通过 [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP) 来向作者请愿添加鱼类预设。
+如果有缺少的鱼或认为预设的手法有误 / 需改进，你还可以通过 [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP) 或 [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) 来向作者反馈。
 
