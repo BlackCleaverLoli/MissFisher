@@ -35,7 +35,7 @@
 ## 功能预览
 **功能**|**主界面**|
 -|-
-![幻海](https://github.com/user-attachments/assets/87a3db26-4a0c-45d6-8863-eb54523b5fdb)<br>![QQ20241005-085342123123123](https://github.com/user-attachments/assets/832d7078-ae3a-429e-8f98-c03941b50183)|![主界面224](https://github.com/user-attachments/assets/99e9766f-0340-48a6-8c62-5fec5b2f8558)|
+![幻海](https://github.com/user-attachments/assets/87a3db26-4a0c-45d6-8863-eb54523b5fdb)<br>![示例](https://github.com/user-attachments/assets/d638b5d4-8647-452c-8adc-1ad5d61b2424)|![主界面](https://github.com/user-attachments/assets/b49985bb-65c9-4454-aa8c-1b6d70de4430)|
 
 
 
