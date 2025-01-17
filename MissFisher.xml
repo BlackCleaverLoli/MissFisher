@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.11.11" Enabled="true" RawEnvironmentVariables="版本 = 1.11.11&#xD;&#xA;快照 = 25w03e&#xD;&#xA;摘要 = 修复一个问题。最近新增航线预报界面、拍水后预设参数。国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.11.12" Enabled="true" RawEnvironmentVariables="版本 = 1.11.12&#xD;&#xA;快照 = 25w03e&#xD;&#xA;摘要 = 修复一个问题。最近新增航线预报界面、拍水后预设参数。国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -2979,14 +2979,19 @@
 <Actions>
 <Action OrderNumber="1" LogMessageText="空天姬触发" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="KTJGetCurrentBait" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="3" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="4" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬控制鱼计" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="3" TriggerId="51087756-8bf2-4f8b-93c3-49d82621f207" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制钓饵}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="4" FolderOp="CancelFolder" FolderId="fed11fb2-4207-4c71-9a45-06489a8c3da9" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="5" FolderOp="CancelFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬控制鱼计" VariableExpression="0" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制鱼计}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬控制强心剂" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬控制强心剂" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制强心剂}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -2995,26 +3000,26 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="7" VariableName="空天姬控制强心剂超时I" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="8" VariableName="空天姬控制强心剂超时I" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制强心剂超时I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" TableVariableOp="Set" ActionType="ListVariable" Asynchronous="False" />
-<Action OrderNumber="9" VariableName="空天姬控制暂停" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="9" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" TableVariableOp="Set" ActionType="ListVariable" Asynchronous="False" />
+<Action OrderNumber="10" VariableName="空天姬控制暂停" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="UnsetRegex" VariableName="^空天姬(?:(拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|目标|参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段参数|手法|定时|拍水后)" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="11" VariableOp="UnsetRegex" VariableName="^空天姬鱼识参数" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="11" VariableOp="UnsetRegex" VariableName="^空天姬(?:(拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|目标|参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段参数|手法|定时|拍水后)" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="12" VariableOp="UnsetRegex" VariableName="^空天姬鱼识参数" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="12" VariableName="空天姬鱼识绝命竿" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="13" TableVariableOp="UnsetRegex" TableVariableName="^空天姬目标" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="13" VariableName="空天姬鱼识绝命竿" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="14" TableVariableOp="UnsetRegex" TableVariableName="^空天姬目标" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域阶段}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3026,55 +3031,55 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬原参数" VariableExpression="${空天姬原参数}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬原参数" VariableExpression="${空天姬原参数}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬阶段模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬阶段参数" VariableExpression="${空天姬阶段参数}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="16" VariableOp="SetString" VariableName="空天姬阶段参数" VariableExpression="${空天姬阶段参数}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="16" VariableOp="SetString" VariableName="空天姬鱼识参数" VariableExpression="${空天姬鱼识参数}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="17" VariableOp="SetString" VariableName="空天姬鱼识参数" VariableExpression="${空天姬鱼识参数}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬鱼识参数}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="17" VariableOp="SetString" VariableName="空天姬拍水后预设" VariableExpression="${空天姬拍水后预设}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="18" VariableOp="SetString" VariableName="空天姬拍水后预设" VariableExpression="${空天姬拍水后预设}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍水后预设}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="18" VariableOp="SetNumeric" VariableName="空天姬参数" VariableExpression="${?d: 平钓 = 1 , 大鱼 = 2 , 耐心 = 3 [${param}] }" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="19" VariableOp="SetString" VariableName="空天姬钓饵" VariableExpression="${空天姬钓饵}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="19" VariableOp="SetNumeric" VariableName="空天姬参数" VariableExpression="${?d: 平钓 = 1 , 大鱼 = 2 , 耐心 = 3 [${param}] }" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="20" VariableOp="SetString" VariableName="空天姬钓饵" VariableExpression="${空天姬钓饵}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="20" VariableOp="SetString" VariableName="空天姬天气" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬天气}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="21" VariableOp="SetString" VariableName="空天姬天气" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬天气}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气.joinvalues}" ExpressionTypeL="String" ExpressionR="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬天气}}" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="21" VariableOp="SetNumeric" VariableName="空天姬最小ET" VariableExpression="nextETms(${func:format(System.Double,&quot;00:00&quot;):${numeric:(${空天姬最小ET})}})" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="22" VariableOp="SetNumeric" VariableName="空天姬最小ET" VariableExpression="nextETms(${func:format(System.Double,&quot;00:00&quot;):${numeric:(${空天姬最小ET})}})" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="2400" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最小ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="22" VariableOp="SetNumeric" VariableName="空天姬最大ET" VariableExpression="nextETms(${func:format(System.Double,&quot;00:00&quot;):${numeric:(${空天姬最大ET})}})" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="23" VariableOp="SetNumeric" VariableName="空天姬最大ET" VariableExpression="nextETms(${func:format(System.Double,&quot;00:00&quot;):${numeric:(${空天姬最大ET})}})" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最大ET}" ExpressionTypeL="Numeric" ExpressionR="2400" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="23" VariableOp="SetString" VariableName="空天姬最小ET" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="24" VariableOp="SetString" VariableName="空天姬最小ET" VariableExpression="0" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬最大ET}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
@@ -3083,303 +3088,303 @@
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最小ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="24" VariableOp="SetString" VariableName="空天姬拍占位" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="25" VariableOp="SetString" VariableName="空天姬拍占位" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍目标}" ExpressionTypeL="String" ExpressionR="拍|占位" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="25" VariableOp="SetString" VariableName="空天姬拍竿型" VariableExpression="${f:ifmatch(${空天姬拍竿型},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬拍竿型},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬拍竿型},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬拍竿型},123,):全部}${f:ifmatch(${空天姬拍竿型},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="26" VariableOp="SetString" VariableName="空天姬拍竿型" VariableExpression="${f:ifmatch(${空天姬拍竿型},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬拍竿型},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬拍竿型},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬拍竿型},123,):全部}${f:ifmatch(${空天姬拍竿型},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍竿型}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="26" VariableOp="SetString" VariableName="空天姬拍目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬拍目标}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="27" VariableOp="SetString" VariableName="空天姬拍目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬拍目标}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="27" VariableOp="SetString" VariableName="空天姬拍目标" VariableExpression="${f:match(${v:空天姬拍目标}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬拍目标}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬拍目标}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬拍目标}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="28" VariableOp="SetString" VariableName="空天姬拍目标" VariableExpression="${f:match(${v:空天姬拍目标}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬拍目标}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬拍目标}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬拍目标}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬拍目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="28" VariableOp="SetString" VariableName="空天姬拍目标" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬拍目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬拍目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="29" VariableOp="SetString" VariableName="空天姬拍目标" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬拍目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬拍目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬拍目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬拍目标}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬拍目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="29" VariableOp="SetNumeric" VariableName="空天姬拍最小区间" VariableExpression="( ( ${空天姬拍最小区间非撒饵} ) ? ( ${空天姬拍最小区间} ) : ( ${空天姬拍最小区间} ) / 2 ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="30" VariableOp="SetNumeric" VariableName="空天姬拍最小区间" VariableExpression="( ( ${空天姬拍最小区间非撒饵} ) ? ( ${空天姬拍最小区间} ) : ( ${空天姬拍最小区间} ) / 2 ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍最小区间}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="30" VariableOp="SetNumeric" VariableName="空天姬拍最大区间" VariableExpression="( ( ${空天姬拍最大区间非撒饵} ) ? ( ${空天姬拍最大区间} ) : ( ${空天姬拍最大区间} ) / 2 ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="31" VariableOp="SetNumeric" VariableName="空天姬拍最大区间" VariableExpression="( ( ${空天姬拍最大区间非撒饵} ) ? ( ${空天姬拍最大区间} ) : ( ${空天姬拍最大区间} ) / 2 ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍最大区间}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="31" VariableOp="SetNumeric" VariableName="空天姬拍最小区间非撒饵" VariableExpression="( ( ${空天姬拍最小区间非撒饵} ) ? ( ${空天姬拍最小区间非撒饵} ) : ( ${空天姬拍最小区间} ) ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="32" VariableOp="SetNumeric" VariableName="空天姬拍最小区间非撒饵" VariableExpression="( ( ${空天姬拍最小区间非撒饵} ) ? ( ${空天姬拍最小区间非撒饵} ) : ( ${空天姬拍最小区间} ) ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍最小区间}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="32" VariableOp="SetNumeric" VariableName="空天姬拍最大区间非撒饵" VariableExpression="( ( ${空天姬拍最大区间非撒饵} ) ? ( ${空天姬拍最大区间非撒饵} ) : ( ${空天姬拍最大区间} ) ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="33" VariableOp="SetNumeric" VariableName="空天姬拍最大区间非撒饵" VariableExpression="( ( ${空天姬拍最大区间非撒饵} ) ? ( ${空天姬拍最大区间非撒饵} ) : ( ${空天姬拍最大区间} ) ) + ( ${pd:空天姬配置[延迟时间]} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍最大区间}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="33" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间1" VariableExpression="( ${空天姬大鱼最小区间非撒饵1} ) ? ( ${空天姬大鱼最小区间1} ) : ( ${空天姬大鱼最小区间1} ) / 2" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="34" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间1" VariableExpression="( ${空天姬大鱼最小区间非撒饵1} ) ? ( ${空天姬大鱼最小区间1} ) : ( ${空天姬大鱼最小区间1} ) / 2" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="34" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间1" VariableExpression="( ${空天姬大鱼最大区间非撒饵1} ) ? ( ${空天姬大鱼最大区间1} ) : ( ${空天姬大鱼最大区间1} ) / 2" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="35" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间1" VariableExpression="( ${空天姬大鱼最大区间非撒饵1} ) ? ( ${空天姬大鱼最大区间1} ) : ( ${空天姬大鱼最大区间1} ) / 2" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="35" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵1" VariableExpression="( ${空天姬大鱼最小区间非撒饵1} ) ? ( ${空天姬大鱼最小区间非撒饵1} ) : ( ${空天姬大鱼最小区间1} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="36" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵1" VariableExpression="( ${空天姬大鱼最小区间非撒饵1} ) ? ( ${空天姬大鱼最小区间非撒饵1} ) : ( ${空天姬大鱼最小区间1} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="36" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵1" VariableExpression="( ${空天姬大鱼最大区间非撒饵1} ) ? ( ${空天姬大鱼最大区间非撒饵1} ) : ( ${空天姬大鱼最大区间1} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="37" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵1" VariableExpression="( ${空天姬大鱼最大区间非撒饵1} ) ? ( ${空天姬大鱼最大区间非撒饵1} ) : ( ${空天姬大鱼最大区间1} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="37" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间2" VariableExpression="( ${空天姬大鱼最小区间非撒饵2} ) ? ( ${空天姬大鱼最小区间2} ) : ( ${空天姬大鱼最小区间2} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="38" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间2" VariableExpression="( ${空天姬大鱼最小区间非撒饵2} ) ? ( ${空天姬大鱼最小区间2} ) : ( ${空天姬大鱼最小区间2} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="38" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间2" VariableExpression="( ${空天姬大鱼最大区间非撒饵2} ) ? ( ${空天姬大鱼最大区间2} ) : ( ${空天姬大鱼最大区间2} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="39" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间2" VariableExpression="( ${空天姬大鱼最大区间非撒饵2} ) ? ( ${空天姬大鱼最大区间2} ) : ( ${空天姬大鱼最大区间2} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="39" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵2" VariableExpression="( ${空天姬大鱼最小区间非撒饵2} ) ? ( ${空天姬大鱼最小区间非撒饵2} ) : ( ${空天姬大鱼最小区间2} ) " ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="40" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵2" VariableExpression="( ${空天姬大鱼最小区间非撒饵2} ) ? ( ${空天姬大鱼最小区间非撒饵2} ) : ( ${空天姬大鱼最小区间2} ) " ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="40" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵2" VariableExpression="( ${空天姬大鱼最大区间非撒饵2} ) ? ( ${空天姬大鱼最大区间非撒饵2} ) : ( ${空天姬大鱼最大区间2} ) " ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="41" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵2" VariableExpression="( ${空天姬大鱼最大区间非撒饵2} ) ? ( ${空天姬大鱼最大区间非撒饵2} ) : ( ${空天姬大鱼最大区间2} ) " ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="41" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间3" VariableExpression="( ${空天姬大鱼最小区间非撒饵3} ) ? ( ${空天姬大鱼最小区间3} ) : ( ${空天姬大鱼最小区间3} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="42" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间3" VariableExpression="( ${空天姬大鱼最小区间非撒饵3} ) ? ( ${空天姬大鱼最小区间3} ) : ( ${空天姬大鱼最小区间3} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="42" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间3" VariableExpression="( ${空天姬大鱼最大区间非撒饵3} ) ? ( ${空天姬大鱼最大区间3} ) : ( ${空天姬大鱼最大区间3} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="43" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间3" VariableExpression="( ${空天姬大鱼最大区间非撒饵3} ) ? ( ${空天姬大鱼最大区间3} ) : ( ${空天姬大鱼最大区间3} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="43" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵3" VariableExpression="( ${空天姬大鱼最小区间非撒饵3} ) ? ( ${空天姬大鱼最小区间非撒饵3} ) : ( ${空天姬大鱼最小区间3} ) " ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="44" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵3" VariableExpression="( ${空天姬大鱼最小区间非撒饵3} ) ? ( ${空天姬大鱼最小区间非撒饵3} ) : ( ${空天姬大鱼最小区间3} ) " ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="44" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵3" VariableExpression="( ${空天姬大鱼最大区间非撒饵3} ) ? ( ${空天姬大鱼最大区间非撒饵3} ) : ( ${空天姬大鱼最大区间3} ) " ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="45" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵3" VariableExpression="( ${空天姬大鱼最大区间非撒饵3} ) ? ( ${空天姬大鱼最大区间非撒饵3} ) : ( ${空天姬大鱼最大区间3} ) " ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="45" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间4" VariableExpression="( ${空天姬大鱼最小区间非撒饵4} ) ? ( ${空天姬大鱼最小区间4} ) : ( ${空天姬大鱼最小区间4} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="46" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间4" VariableExpression="( ${空天姬大鱼最小区间非撒饵4} ) ? ( ${空天姬大鱼最小区间4} ) : ( ${空天姬大鱼最小区间4} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间4}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="46" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间4" VariableExpression="( ${空天姬大鱼最大区间非撒饵4} ) ? ( ${空天姬大鱼最大区间4} ) : ( ${空天姬大鱼最大区间4} )" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="47" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间4" VariableExpression="( ${空天姬大鱼最大区间非撒饵4} ) ? ( ${空天姬大鱼最大区间4} ) : ( ${空天姬大鱼最大区间4} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间4}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="47" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵4" VariableExpression="( ${空天姬大鱼最小区间非撒饵4} ) ? ( ${空天姬大鱼最小区间非撒饵4} ) : ( ${空天姬大鱼最小区间4} ) " ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="48" VariableOp="SetNumeric" VariableName="空天姬大鱼最小区间非撒饵4" VariableExpression="( ${空天姬大鱼最小区间非撒饵4} ) ? ( ${空天姬大鱼最小区间非撒饵4} ) : ( ${空天姬大鱼最小区间4} ) " ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最小区间4}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="48" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵4" VariableExpression="( ${空天姬大鱼最大区间非撒饵4} ) ? ( ${空天姬大鱼最大区间非撒饵4} ) : ( ${空天姬大鱼最大区间4} ) " ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="49" VariableOp="SetNumeric" VariableName="空天姬大鱼最大区间非撒饵4" VariableExpression="( ${空天姬大鱼最大区间非撒饵4} ) ? ( ${空天姬大鱼最大区间非撒饵4} ) : ( ${空天姬大鱼最大区间4} ) " ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼最大区间4}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="49" VariableOp="SetNumeric" VariableName="空天姬最小竿时" VariableExpression="${v:空天姬大鱼最小区间${if: ${v:空天姬撒饵} ?  : 非撒饵 }${v:空天姬以小钓大阶段}}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="50" VariableOp="SetNumeric" VariableName="空天姬最大竿时" VariableExpression="${v:空天姬大鱼最大区间${if: ${v:空天姬撒饵} ?  : 非撒饵 }${v:空天姬以小钓大阶段}}" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="51" VariableOp="SetString" VariableName="空天姬大鱼竿型1" VariableExpression="${f:ifmatch(${空天姬大鱼竿型1},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型1},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型1},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型1},123,):全部}${f:ifmatch(${空天姬大鱼竿型1},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="50" VariableOp="SetNumeric" VariableName="空天姬最小竿时" VariableExpression="${v:空天姬大鱼最小区间${if: ${v:空天姬撒饵} ?  : 非撒饵 }${v:空天姬以小钓大阶段}}" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="51" VariableOp="SetNumeric" VariableName="空天姬最大竿时" VariableExpression="${v:空天姬大鱼最大区间${if: ${v:空天姬撒饵} ?  : 非撒饵 }${v:空天姬以小钓大阶段}}" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="52" VariableOp="SetString" VariableName="空天姬大鱼竿型1" VariableExpression="${f:ifmatch(${空天姬大鱼竿型1},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型1},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型1},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型1},123,):全部}${f:ifmatch(${空天姬大鱼竿型1},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼竿型1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="52" VariableOp="SetString" VariableName="空天姬大鱼竿型2" VariableExpression="${f:ifmatch(${空天姬大鱼竿型2},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型2},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型2},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型2},123,):全部}${f:ifmatch(${空天姬大鱼竿型2},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="53" VariableOp="SetString" VariableName="空天姬大鱼竿型2" VariableExpression="${f:ifmatch(${空天姬大鱼竿型2},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型2},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型2},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型2},123,):全部}${f:ifmatch(${空天姬大鱼竿型2},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼竿型2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="53" VariableOp="SetString" VariableName="空天姬大鱼竿型3" VariableExpression="${f:ifmatch(${空天姬大鱼竿型3},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型3},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型3},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型3},123,):全部}${f:ifmatch(${空天姬大鱼竿型3},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="54" VariableOp="SetString" VariableName="空天姬大鱼竿型3" VariableExpression="${f:ifmatch(${空天姬大鱼竿型3},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型3},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型3},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型3},123,):全部}${f:ifmatch(${空天姬大鱼竿型3},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼竿型3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="54" VariableOp="SetString" VariableName="空天姬大鱼竿型4" VariableExpression="${f:ifmatch(${空天姬大鱼竿型4},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型4},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型4},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型4},123,):全部}${f:ifmatch(${空天姬大鱼竿型4},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="55" VariableOp="SetString" VariableName="空天姬大鱼竿型4" VariableExpression="${f:ifmatch(${空天姬大鱼竿型4},1,):(?&lt;![!！])[!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型4},2,):(?&lt;![!！])[!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型4},3,):(?&lt;![!！])[!！][!！][!！](?![!！])}${f:ifmatch(${空天姬大鱼竿型4},123,):全部}${f:ifmatch(${空天姬大鱼竿型4},123,):[Aa][Ll]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼竿型4}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="55" VariableOp="SetString" VariableName="空天姬大鱼额外竿型1" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型1},3,${f:ifmatch(${空天姬大鱼额外竿型1},2,${f:ifmatch(${空天姬大鱼额外竿型1},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="56" VariableOp="SetString" VariableName="空天姬大鱼额外竿型1" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型1},3,${f:ifmatch(${空天姬大鱼额外竿型1},2,${f:ifmatch(${空天姬大鱼额外竿型1},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼额外竿型1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="56" VariableOp="SetString" VariableName="空天姬大鱼额外竿型2" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型2},3,${f:ifmatch(${空天姬大鱼额外竿型2},2,${f:ifmatch(${空天姬大鱼额外竿型2},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="57" VariableOp="SetString" VariableName="空天姬大鱼额外竿型2" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型2},3,${f:ifmatch(${空天姬大鱼额外竿型2},2,${f:ifmatch(${空天姬大鱼额外竿型2},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼额外竿型2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="57" VariableOp="SetString" VariableName="空天姬大鱼额外竿型3" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型3},3,${f:ifmatch(${空天姬大鱼额外竿型3},2,${f:ifmatch(${空天姬大鱼额外竿型3},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="58" VariableOp="SetString" VariableName="空天姬大鱼额外竿型3" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型3},3,${f:ifmatch(${空天姬大鱼额外竿型3},2,${f:ifmatch(${空天姬大鱼额外竿型3},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼额外竿型3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="58" VariableOp="SetString" VariableName="空天姬大鱼额外竿型4" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型4},3,${f:ifmatch(${空天姬大鱼额外竿型4},2,${f:ifmatch(${空天姬大鱼额外竿型4},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="59" VariableOp="SetString" VariableName="空天姬大鱼额外竿型4" VariableExpression="${f:ifmatch(${空天姬大鱼额外竿型4},3,${f:ifmatch(${空天姬大鱼额外竿型4},2,${f:ifmatch(${空天姬大鱼额外竿型4},1,):(?&lt;![!！])[!！](?![!！])}):(?&lt;![!！])[!！][!！](?![!！])}):(?&lt;![!！])[!！][!！][!！](?![!！])}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼额外竿型4}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="59" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩1" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩1}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="60" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩1" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩1}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼技巧提钩1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="60" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩2" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩2}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="61" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩2" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩2}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼技巧提钩2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="61" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩3" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩3}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="62" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩3" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩3}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼技巧提钩3}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="62" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩4" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩4}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="63" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩4" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩4}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼技巧提钩4}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="63" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩5" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩5}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="64" VariableOp="SetString" VariableName="空天姬大鱼技巧提钩5" VariableExpression="${?d: 精准 = 1 , 强力 = 2 , 三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬大鱼技巧提钩5}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼技巧提钩5}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="64" VariableOp="SetString" VariableName="空天姬大鱼鱼篓1" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="65" VariableOp="SetString" VariableName="空天姬大鱼鱼篓1" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="65" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼鱼篓2}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="66" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼鱼篓2}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="66" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${f:match(${v:空天姬大鱼鱼篓2}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓2}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓2}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓2}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="67" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${f:match(${v:空天姬大鱼鱼篓2}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓2}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓2}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓2}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬大鱼鱼篓2}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓2}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="67" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼鱼篓2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼鱼篓2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="68" VariableOp="SetString" VariableName="空天姬大鱼鱼篓2" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼鱼篓2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼鱼篓2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓2}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓2}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬大鱼鱼篓2}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="68" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼鱼篓3}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="69" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼鱼篓3}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓3}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="69" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${f:match(${v:空天姬大鱼鱼篓3}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓3}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓3}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓3}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="70" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${f:match(${v:空天姬大鱼鱼篓3}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓3}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓3}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓3}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬大鱼鱼篓3}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓3}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="70" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼鱼篓3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼鱼篓3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="71" VariableOp="SetString" VariableName="空天姬大鱼鱼篓3" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼鱼篓3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼鱼篓3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓3}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓3}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬大鱼鱼篓3}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="71" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼鱼篓4}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="72" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼鱼篓4}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼鱼篓4}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="72" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${f:match(${v:空天姬大鱼鱼篓4}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓4}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓4}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓4}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="73" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${f:match(${v:空天姬大鱼鱼篓4}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓4}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓4}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼鱼篓4}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬大鱼鱼篓4}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓4}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="73" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼鱼篓4}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼鱼篓4}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="74" VariableOp="SetString" VariableName="空天姬大鱼鱼篓4" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼鱼篓4}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼鱼篓4}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼鱼篓4}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼鱼篓4}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓4}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬大鱼鱼篓4}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="74" VariableOp="SetString" VariableName="空天姬手法不撒饵" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="75" VariableOp="SetString" VariableName="空天姬手法不撒饵" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="[不无非]撒饵" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="75" VariableOp="SetString" VariableName="空天姬手法收藏品" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="76" VariableOp="SetString" VariableName="空天姬手法收藏品" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(收藏):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="76" VariableOp="SetString" VariableName="空天姬手法攒鱼计" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="77" VariableOp="SetString" VariableName="空天姬手法攒鱼计" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(攒鱼计):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="77" VariableOp="SetString" VariableName="空天姬手法套娃" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="78" VariableOp="SetString" VariableName="空天姬手法套娃" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(套娃):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="78" VariableOp="SetString" VariableName="空天姬手法知识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="79" VariableOp="SetString" VariableName="空天姬手法知识" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(知识):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="79" VariableOp="SetString" VariableName="空天姬手法引诱" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="80" VariableOp="SetString" VariableName="空天姬手法引诱" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(引诱):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="80" VariableOp="SetString" VariableName="空天姬手法重随" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="81" VariableOp="SetString" VariableName="空天姬手法重随" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(重随):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="81" VariableOp="SetString" VariableName="空天姬手法鱼影" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="82" VariableOp="SetString" VariableName="空天姬手法鱼影" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼影):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="82" VariableOp="SetString" VariableName="空天姬手法鱼篓" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="83" VariableOp="SetString" VariableName="空天姬手法鱼篓" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼鱼篓1}${ev:空天姬大鱼鱼篓2}${ev:空天姬大鱼鱼篓3}${ev:空天姬大鱼鱼篓4}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="83" VariableOp="SetString" VariableName="空天姬手法鱼眼" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="84" VariableOp="SetString" VariableName="空天姬手法鱼眼" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(鱼眼):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -3391,139 +3396,139 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="84" LogMessageText="空天姬鱼眼等待ET${n:(${v:空天姬最小ET})}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="85" LogMessageText="空天姬鱼眼等待ET${n:(${v:空天姬最小ET})}" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="85" VariableOp="SetString" VariableName="空天姬最小ET" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="86" VariableOp="SetString" VariableName="空天姬最小ET" VariableExpression="0" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="86" VariableOp="SetString" VariableName="空天姬手法钓组" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="87" VariableOp="SetString" VariableName="空天姬手法钓组" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(钓组):${空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="87" VariableOp="SetString" VariableName="空天姬手法不收集" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="88" VariableOp="SetString" VariableName="空天姬手法不收集" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(不收集):${空天姬目标}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="88" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${if:${f:contain(【):${空天姬目标}}? ${f:capture(${空天姬目标},1):^(【[\w·#?'\s＝【】？\.\-・]+】)} : ${空天姬目标} }}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="89" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${if:${f:contain(【):${空天姬目标}}? ${f:capture(${空天姬目标},1):^(【[\w·#?'\s＝【】？\.\-・]+】)} : ${空天姬目标} }}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="89" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${f:match(${v:空天姬目标}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬目标}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬目标}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬目标}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="90" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${f:match(${v:空天姬目标}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬目标}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬目标}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬目标}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬目标}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="90" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="91" VariableOp="SetString" VariableName="空天姬目标" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬目标}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬目标}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬目标}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬目标}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="91" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${空天姬目标计数1}" TableVariableX="1" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="92" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${空天姬目标计数1}" TableVariableX="1" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标计数1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="92" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${空天姬目标计数2}" TableVariableX="1" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="93" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${空天姬目标计数2}" TableVariableX="1" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标计数2}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="93" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${空天姬目标计数3}" TableVariableX="1" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="94" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${空天姬目标计数3}" TableVariableX="1" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标计数3}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="94" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬计数目标1}}" TableVariableX="2" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="95" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬计数目标1}}" TableVariableX="2" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="95" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:match(${t:空天姬目标[2][1]}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][1]}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][1]}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][1]}}}}" TableVariableX="2" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="96" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:match(${t:空天姬目标[2][1]}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][1]}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][1]}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][1]}}}}" TableVariableX="2" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${t:空天姬目标[2][1]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="96" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${t:空天姬目标[2][1]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${t:空天姬目标[2][1]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}*2}]} :  }" TableVariableX="2" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="97" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${t:空天姬目标[2][1]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${t:空天姬目标[2][1]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][1]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][1]}}&quot;)}})+${env:单语言空间}*2}]} :  }" TableVariableX="2" TableVariableY="1" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${t:空天姬目标[2][1]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="97" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬计数目标2}}" TableVariableX="2" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="98" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬计数目标2}}" TableVariableX="2" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="98" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:match(${t:空天姬目标[2][2]}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][2]}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][2]}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][2]}}}}" TableVariableX="2" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="99" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:match(${t:空天姬目标[2][2]}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][2]}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][2]}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][2]}}}}" TableVariableX="2" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${t:空天姬目标[2][2]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][2]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="99" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${t:空天姬目标[2][2]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${t:空天姬目标[2][2]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}*2}]} :  }" TableVariableX="2" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="100" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${t:空天姬目标[2][2]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${t:空天姬目标[2][2]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][2]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][2]}}&quot;)}})+${env:单语言空间}*2}]} :  }" TableVariableX="2" TableVariableY="2" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][2]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${t:空天姬目标[2][2]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="100" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬计数目标3}}" TableVariableX="2" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="101" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬计数目标3}}" TableVariableX="2" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标3}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="101" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:match(${t:空天姬目标[2][3]}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][3]}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][3]}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][3]}}}}" TableVariableX="2" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="102" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${f:match(${t:空天姬目标[2][3]}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][3]}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][3]}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${t:空天姬目标[2][3]}}}}" TableVariableX="2" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${t:空天姬目标[2][3]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][3]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="102" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${t:空天姬目标[2][3]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${t:空天姬目标[2][3]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}*2}]} :  }" TableVariableX="2" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="103" ListVariableOp="Set" VariableOp="SetString" TableVariableOp="Set" TableVariableName="空天姬目标" TableVariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${t:空天姬目标[2][3]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${t:空天姬目标[2][3]}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${t:空天姬目标[2][3]}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${t:空天姬目标[2][3]}}&quot;)}})+${env:单语言空间}*2}]} :  }" TableVariableX="2" TableVariableY="3" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][3]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${t:空天姬目标[2][3]}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="103" TableVariableOp="SetLine" TableVariableName="空天姬目标" TableVariableExpression=",0,0,0" TableVariableX="3" ActionType="TableVariable" Asynchronous="False">
+<Action OrderNumber="104" TableVariableOp="SetLine" TableVariableName="空天姬目标" TableVariableExpression=",0,0,0" TableVariableX="3" ActionType="TableVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标1}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="104" VariableOp="SetString" VariableName="空天姬专一目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬专一目标}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="105" VariableOp="SetString" VariableName="空天姬专一目标" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬专一目标}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬专一目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="105" VariableOp="SetString" VariableName="空天姬专一目标" VariableExpression="${f:match(${v:空天姬专一目标}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬专一目标}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬专一目标}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬专一目标}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="106" VariableOp="SetString" VariableName="空天姬专一目标" VariableExpression="${f:match(${v:空天姬专一目标}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬专一目标}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬专一目标}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬专一目标}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬专一目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一目标}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="106" VariableOp="SetString" VariableName="空天姬专一目标" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬专一目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬专一目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="107" VariableOp="SetString" VariableName="空天姬专一目标" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬专一目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬专一目标}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬专一目标}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬专一目标}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一目标}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬专一目标}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="107" VariableOp="SetString" VariableName="空天姬专一多提" VariableExpression="${?d:三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬专一多提}]}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="108" VariableOp="SetString" VariableName="空天姬专一多提" VariableExpression="${?d:三重 = 3 , 双重 = 4 , 三提 = 3 , 双提 = 4[${空天姬专一多提}]}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬专一多提}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="108" VariableOp="SetString" VariableName="空天姬手法多提" VariableExpression="${if: ${f:contain(3):${v:空天姬大鱼技巧提钩1}${v:空天姬大鱼技巧提钩2}${v:空天姬大鱼技巧提钩3}${v:空天姬大鱼技巧提钩4}${v:空天姬大鱼技巧提钩5}${v:空天姬专一多提}} ? 3 : 4 }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="109" VariableOp="SetString" VariableName="空天姬手法多提" VariableExpression="${if: ${f:contain(3):${v:空天姬大鱼技巧提钩1}${v:空天姬大鱼技巧提钩2}${v:空天姬大鱼技巧提钩3}${v:空天姬大鱼技巧提钩4}${v:空天姬大鱼技巧提钩5}${v:空天姬专一多提}} ? 3 : 4 }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:match(${v:空天姬大鱼技巧提钩1}${v:空天姬大鱼技巧提钩2}${v:空天姬大鱼技巧提钩3}${v:空天姬大鱼技巧提钩4}${v:空天姬大鱼技巧提钩5}${v:空天姬专一多提}):[34]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -3532,70 +3537,70 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="109" VariableOp="SetString" VariableName="空天姬大鱼目标1" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼目标1}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="110" VariableOp="SetString" VariableName="空天姬大鱼目标1" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼目标1}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼目标1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="110" VariableOp="SetString" VariableName="空天姬大鱼目标1" VariableExpression="${f:match(${v:空天姬大鱼目标1}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标1}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标1}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标1}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="111" VariableOp="SetString" VariableName="空天姬大鱼目标1" VariableExpression="${f:match(${v:空天姬大鱼目标1}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标1}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标1}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标1}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬大鱼目标1}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标1}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="111" VariableOp="SetString" VariableName="空天姬大鱼目标1" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼目标1}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼目标1}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="112" VariableOp="SetString" VariableName="空天姬大鱼目标1" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼目标1}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼目标1}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标1}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标1}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标1}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬大鱼目标1}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="112" VariableOp="SetString" VariableName="空天姬大鱼目标2" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼目标2}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="113" VariableOp="SetString" VariableName="空天姬大鱼目标2" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼目标2}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼目标2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="113" VariableOp="SetString" VariableName="空天姬大鱼目标2" VariableExpression="${f:match(${v:空天姬大鱼目标2}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标2}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标2}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标2}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="114" VariableOp="SetString" VariableName="空天姬大鱼目标2" VariableExpression="${f:match(${v:空天姬大鱼目标2}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标2}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标2}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标2}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬大鱼目标2}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标2}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="114" VariableOp="SetString" VariableName="空天姬大鱼目标2" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼目标2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼目标2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="115" VariableOp="SetString" VariableName="空天姬大鱼目标2" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼目标2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼目标2}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标2}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标2}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标2}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬大鱼目标2}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="115" VariableOp="SetString" VariableName="空天姬大鱼目标3" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼目标3}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="116" VariableOp="SetString" VariableName="空天姬大鱼目标3" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬大鱼目标3}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬大鱼目标3}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="116" VariableOp="SetString" VariableName="空天姬大鱼目标3" VariableExpression="${f:match(${v:空天姬大鱼目标3}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标3}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标3}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标3}}}}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="117" VariableOp="SetString" VariableName="空天姬大鱼目标3" VariableExpression="${f:match(${v:空天姬大鱼目标3}):^【\d},${f:pick(0,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标3}}}},${f:pick(1,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标3}}}},${f:pick(2,&quot;|&quot;):${f:replace(【,):${f:replace(】,):${v:空天姬大鱼目标3}}}}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${v:空天姬大鱼目标3}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标3}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="117" VariableOp="SetString" VariableName="空天姬大鱼目标3" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼目标3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼目标3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="118" VariableOp="SetString" VariableName="空天姬大鱼目标3" VariableExpression="${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(1):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}*2}]}${if:${f:length:${f:pick(2):${v:空天姬大鱼目标3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(2):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}*2}]} :  }${if:${f:length:${f:pick(3):${v:空天姬大鱼目标3}}}? |${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}})}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}}]}|${pl:空天姬钓饵名[${n:(${if:${f:pick(0):${v:空天姬大鱼目标3}}?${pl:空天姬钓饵ID.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}:${pl:空天姬钓饵名.indexof(&quot;${f:pick(3):${v:空天姬大鱼目标3}}&quot;)}})+${env:单语言空间}*2}]} :  }" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼目标3}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;,&quot;):${v:空天姬大鱼目标3}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="118" VariableOp="SetString" VariableName="空天姬预设备注" VariableExpression="${f:capture(${空天姬原参数},1):(?://|\\\\)(.+)}" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="119" VariableOp="SetString" VariableName="空天姬预设备注" VariableExpression="${f:capture(${空天姬原参数},1):(?://|\\\\)(.+)}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(&quot;//&quot;):${空天姬原参数}}${f:contain(&quot;\\&quot;):${空天姬原参数}}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="119" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if: ${ev:空天姬控制海钓模式} ? :&lt;se.7&gt;}&#xD;&#xA;${?d: 1 = 平钓 , 2 = 大鱼 , 3 = 耐心 [${v:空天姬参数}] }模式${if: ( ${ev:空天姬手法攒鱼计} || ${ev:空天姬手法收藏品} || ${ev:空天姬手法不撒饵} || ${ev:空天姬鱼识参数} || ${ev:空天姬拍水后预设} || ${ev:空天姬手法套娃} || ${ev:空天姬阶段参数} || ${ev:空天姬手法知识} || ${ev:空天姬手法引诱} || ${ev:空天姬手法重随} || ${ev:空天姬手法鱼影} || ${ev:空天姬手法钓组} || ${ev:空天姬手法鱼眼} || ${ev:空天姬手法不收集} || ${ev:空天姬手法多提} ) ? （${if: ${ev:空天姬手法不撒饵} ? &quot;  不撒饵&quot; : }${if: ${ev:空天姬手法收藏品} ? &quot;  收藏品手法&quot; : }${if: ${ev:空天姬手法不收集} ? &quot;  不收集收藏品&quot; : }${if: ${ev:空天姬手法知识} ? &quot;  大鱼知识&quot; : }${if: ${ev:空天姬手法攒鱼计} ? &quot;  攒鱼计&quot; : }${if: ${ev:空天姬手法套娃} ? &quot;  套娃优化&quot; : }${if: ${ev:空天姬手法引诱} ? &quot;  引诱&quot; : }${if: ${ev:空天姬手法鱼影} ? &quot;  鱼影&quot; : }${if: ${ev:空天姬手法重随} ? &quot;  重随手法&quot; : }${if: ${ev:空天姬手法多提} ? &quot; ◆ 多提优先&quot; : }${if: ${ev:空天姬手法鱼眼} ? &quot; Θ 鱼眼预设&quot; : }${if: ${ev:空天姬鱼识参数} ? &quot;  鱼识预设&quot; : }${if: ${ev:空天姬拍水后预设} ? &quot;  拍水预设&quot; : }${if: ${ev:空天姬阶段参数} ? &quot;  阶段条件&quot; : }${if: ${ev:空天姬手法钓组} ? &quot;  使用钓组&quot; : }）: }${if: (${ev:空天姬最大ET}${ev:空天姬天气}) ? &quot;&#xD;&#xA;&quot; : }${if: ( ${ev:空天姬最大ET} ) ? &quot; ${空天姬最小ET} - ${空天姬最大ET} 等待 ${n:round((${v:空天姬最小ET})/60000),0} &quot; : }${if: ${ev:空天姬天气} ?  天气  ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬天气}} : }&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间1} ? &quot;${v:空天姬大鱼最小区间1}+${v:空天姬大鱼最小区间非撒饵1} ${if: ${ev:空天姬大鱼最大区间1} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间1} ? &quot;${v:空天姬大鱼最大区间1}+${v:空天姬大鱼最大区间非撒饵1} ${if: ${ev:空天姬大鱼最小区间1} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王竿 , 2 = 中竿 , 1 = 轻竿 , 12 = 轻竿 和 中竿 , 13 = 轻竿 和 鱼王竿 , 23 = 中竿 和 鱼王竿 [${v:空天姬大鱼竿型1}]}${if:${ev:空天姬大鱼技巧提钩2}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩2} }&quot;:}${if: ${ev:空天姬大鱼鱼篓2} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓2}} }&quot; : } ${if:${ev:空天姬大鱼竿型2}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标1}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间2} ? &quot;${v:空天姬大鱼最小区间2}+${v:空天姬大鱼最小区间非撒饵2} ${if: ${ev:空天姬大鱼最大区间2} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间2} ? &quot;${v:空天姬大鱼最大区间2}+${v:空天姬大鱼最大区间非撒饵2} ${if: ${ev:空天姬大鱼最小区间2} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型2}]}${if:${ev:空天姬大鱼技巧提钩3}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩3} }&quot;:}&quot;:}${if: ${ev:空天姬大鱼鱼篓3} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓3}} }&quot; : }${if:${ev:空天姬大鱼竿型3}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标2}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间3} ? &quot;${v:空天姬大鱼最小区间3}+${v:空天姬大鱼最小区间非撒饵3} ${if: ${ev:空天姬大鱼最大区间3} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间3} ? &quot;${v:空天姬大鱼最大区间3}+${v:空天姬大鱼最大区间非撒饵3} ${if: ${ev:空天姬大鱼最小区间3} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型3}]}${if:${ev:空天姬大鱼技巧提钩4}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩4} }&quot;:}&quot;:}${if: ${ev:空天姬大鱼鱼篓4} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓4}} }&quot; : }${if:${ev:空天姬大鱼竿型4}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标3}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间4} ? &quot;${v:空天姬大鱼最小区间4}+${v:空天姬大鱼最小区间非撒饵4} ${if: ${ev:空天姬大鱼最大区间4} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间4} ? &quot;${v:空天姬大鱼最大区间4}+${v:空天姬大鱼最大区间非撒饵4} ${if: ${ev:空天姬大鱼最小区间4} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型4}]}${if:${ev:空天姬大鱼技巧提钩5}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩5} }&quot;:}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬目标}}${if:${ev:空天姬拍目标}?&quot;&#xD;&#xA;${if:${ev:空天姬拍占位}?: 拍水} ${if: ${ev:空天姬拍最小区间} ? &quot;${v:空天姬拍最小区间}+${v:空天姬拍最小区间非撒饵} ${if: ${ev:空天姬拍最大区间} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬拍最大区间} ? &quot;${v:空天姬拍最大区间}+${v:空天姬拍最大区间非撒饵} ${if: ${ev:空天姬拍最小区间} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬拍竿型}]}${if:${ev:空天姬大鱼技巧提钩1}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩1} }&quot;:}${if:${ev:空天姬大鱼鱼篓1} ? &quot; 鱼篓&quot; : } ${if:${ev:空天姬拍占位}?:${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬拍目标}}}&quot;:}${if:${ev:空天姬专一目标}?&quot;&#xD;&#xA; 专一 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬专一目标}} ${if:${ev:空天姬专一多提}? ${if: ( ${v:空天姬专一多提} ) &gt; 2 ? ${if: ( ${v:空天姬专一多提} ) &gt; 3 ? 双提 : 三提 } : }:}&quot;:}${if:${f:length:${空天姬计数目标1}}?&quot;&#xD;&#xA; 计数 ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}}${if:${t:空天姬目标[1][1]} ?? 0 ?&quot; × ${t:空天姬目标[1][1]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}}${if:${t:空天姬目标[1][2]} ?? 0 ?&quot; × ${t:空天姬目标[1][2]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}}${if:${t:空天姬目标[1][3]} ?? 0 ?&quot; × ${t:空天姬目标[1][3]}&quot;:}&quot;:}${if: ${ev:空天姬控制海钓模式} ?&quot;&#xD;&#xA; 海钓 播报手法仅供参考&quot;: }${if: ${ev:空天姬预设备注} ?&quot;&#xD;&#xA;// 备注：${v:空天姬预设备注}&quot;:  }&#xD;&#xA; ${f:ifcontain(Snapshot,Snapshot ${env:快照},v${env:版本}):${_triggerpath}}&#xD;&#xA; 可使用“/e 停止”或“/e kend”来停止自动功能。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="120" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] ${if: ${ev:空天姬控制海钓模式} ? :&lt;se.7&gt;}&#xD;&#xA;${?d: 1 = 平钓 , 2 = 大鱼 , 3 = 耐心 [${v:空天姬参数}] }模式${if: ( ${ev:空天姬手法攒鱼计} || ${ev:空天姬手法收藏品} || ${ev:空天姬手法不撒饵} || ${ev:空天姬鱼识参数} || ${ev:空天姬拍水后预设} || ${ev:空天姬手法套娃} || ${ev:空天姬阶段参数} || ${ev:空天姬手法知识} || ${ev:空天姬手法引诱} || ${ev:空天姬手法重随} || ${ev:空天姬手法鱼影} || ${ev:空天姬手法钓组} || ${ev:空天姬手法鱼眼} || ${ev:空天姬手法不收集} || ${ev:空天姬手法多提} ) ? （${if: ${ev:空天姬手法不撒饵} ? &quot;  不撒饵&quot; : }${if: ${ev:空天姬手法收藏品} ? &quot;  收藏品手法&quot; : }${if: ${ev:空天姬手法不收集} ? &quot;  不收集收藏品&quot; : }${if: ${ev:空天姬手法知识} ? &quot;  大鱼知识&quot; : }${if: ${ev:空天姬手法攒鱼计} ? &quot;  攒鱼计&quot; : }${if: ${ev:空天姬手法套娃} ? &quot;  套娃优化&quot; : }${if: ${ev:空天姬手法引诱} ? &quot;  引诱&quot; : }${if: ${ev:空天姬手法鱼影} ? &quot;  鱼影&quot; : }${if: ${ev:空天姬手法重随} ? &quot;  重随手法&quot; : }${if: ${ev:空天姬手法多提} ? &quot; ◆ 多提优先&quot; : }${if: ${ev:空天姬手法鱼眼} ? &quot; Θ 鱼眼预设&quot; : }${if: ${ev:空天姬鱼识参数} ? &quot;  鱼识预设&quot; : }${if: ${ev:空天姬拍水后预设} ? &quot;  拍水预设&quot; : }${if: ${ev:空天姬阶段参数} ? &quot;  阶段条件&quot; : }${if: ${ev:空天姬手法钓组} ? &quot;  使用钓组&quot; : }）: }${if: (${ev:空天姬最大ET}${ev:空天姬天气}) ? &quot;&#xD;&#xA;&quot; : }${if: ( ${ev:空天姬最大ET} ) ? &quot; ${空天姬最小ET} - ${空天姬最大ET} 等待 ${n:round((${v:空天姬最小ET})/60000),0} &quot; : }${if: ${ev:空天姬天气} ?  天气  ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬天气}} : }&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间1} ? &quot;${v:空天姬大鱼最小区间1}+${v:空天姬大鱼最小区间非撒饵1} ${if: ${ev:空天姬大鱼最大区间1} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间1} ? &quot;${v:空天姬大鱼最大区间1}+${v:空天姬大鱼最大区间非撒饵1} ${if: ${ev:空天姬大鱼最小区间1} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王竿 , 2 = 中竿 , 1 = 轻竿 , 12 = 轻竿 和 中竿 , 13 = 轻竿 和 鱼王竿 , 23 = 中竿 和 鱼王竿 [${v:空天姬大鱼竿型1}]}${if:${ev:空天姬大鱼技巧提钩2}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩2} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩2} }&quot;:}${if: ${ev:空天姬大鱼鱼篓2} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓2}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓2}} }&quot; : } ${if:${ev:空天姬大鱼竿型2}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标1}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间2} ? &quot;${v:空天姬大鱼最小区间2}+${v:空天姬大鱼最小区间非撒饵2} ${if: ${ev:空天姬大鱼最大区间2} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间2} ? &quot;${v:空天姬大鱼最大区间2}+${v:空天姬大鱼最大区间非撒饵2} ${if: ${ev:空天姬大鱼最小区间2} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型2}]}${if:${ev:空天姬大鱼技巧提钩3}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩3} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩3} }&quot;:}&quot;:}${if: ${ev:空天姬大鱼鱼篓3} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓3}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓3}} }&quot; : }${if:${ev:空天姬大鱼竿型3}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标2}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间3} ? &quot;${v:空天姬大鱼最小区间3}+${v:空天姬大鱼最小区间非撒饵3} ${if: ${ev:空天姬大鱼最大区间3} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间3} ? &quot;${v:空天姬大鱼最大区间3}+${v:空天姬大鱼最大区间非撒饵3} ${if: ${ev:空天姬大鱼最小区间3} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型3}]}${if:${ev:空天姬大鱼技巧提钩4}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩4} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩4} }&quot;:}&quot;:}${if: ${ev:空天姬大鱼鱼篓4} ?&quot; ${if: ( ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):《} || ${f:startwith(&quot;${空天姬大鱼鱼篓4}&quot;):&lt;} ) ? 鱼篓 : 鱼篓 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼鱼篓4}} }&quot; : }${if:${ev:空天姬大鱼竿型4}?&quot; ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬大鱼目标3}}&#xD;&#xA; ${if: ${ev:空天姬大鱼最小区间4} ? &quot;${v:空天姬大鱼最小区间4}+${v:空天姬大鱼最小区间非撒饵4} ${if: ${ev:空天姬大鱼最大区间4} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬大鱼最大区间4} ? &quot;${v:空天姬大鱼最大区间4}+${v:空天姬大鱼最大区间非撒饵4} ${if: ${ev:空天姬大鱼最小区间4} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬大鱼竿型4}]}${if:${ev:空天姬大鱼技巧提钩5}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩5} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩5} }&quot;:}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬目标}}${if:${ev:空天姬拍目标}?&quot;&#xD;&#xA;${if:${ev:空天姬拍占位}?: 拍水} ${if: ${ev:空天姬拍最小区间} ? &quot;${v:空天姬拍最小区间}+${v:空天姬拍最小区间非撒饵} ${if: ${ev:空天姬拍最大区间} ? 秒 到 : 秒 以上 } &quot; : }${if: ${ev:空天姬拍最大区间} ? &quot;${v:空天姬拍最大区间}+${v:空天姬拍最大区间非撒饵} ${if: ${ev:空天姬拍最小区间} ? 秒 : 秒 以下 }&quot; : }${?d: 123 = 全提 , 3 = 鱼王杆 , 2 = 中杆 , 1 = 轻杆 , 12 = 轻杆 和 中杆 , 13 = 轻杆 和 鱼王杆 , 23 = 中杆 和 鱼王杆 [${v:空天姬拍竿型}]}${if:${ev:空天姬大鱼技巧提钩1}?&quot; ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 2 ? ${if: ( ${v:空天姬大鱼技巧提钩1} ) &gt; 3 ? 双提 : 三提 } : ${空天姬大鱼技巧提钩1} }&quot;:}${if:${ev:空天姬大鱼鱼篓1} ? &quot; 鱼篓&quot; : } ${if:${ev:空天姬拍占位}?:${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬拍目标}}}&quot;:}${if:${ev:空天姬专一目标}?&quot;&#xD;&#xA; 专一 ${f:replace(&quot;|&quot;,&quot;、&quot;):${v:空天姬专一目标}} ${if:${ev:空天姬专一多提}? ${if: ( ${v:空天姬专一多提} ) &gt; 2 ? ${if: ( ${v:空天姬专一多提} ) &gt; 3 ? 双提 : 三提 } : }:}&quot;:}${if:${f:length:${空天姬计数目标1}}?&quot;&#xD;&#xA; 计数 ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][1]}}${if:${t:空天姬目标[1][1]} ?? 0 ?&quot; × ${t:空天姬目标[1][1]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][2]}}${if:${t:空天姬目标[1][2]} ?? 0 ?&quot; × ${t:空天姬目标[1][2]}&quot;:} ${f:replace(&quot;|&quot;,&quot;、&quot;):${t:空天姬目标[2][3]}}${if:${t:空天姬目标[1][3]} ?? 0 ?&quot; × ${t:空天姬目标[1][3]}&quot;:}&quot;:}${if: ${ev:空天姬控制海钓模式} ?&quot;&#xD;&#xA; 海钓 播报手法仅供参考&quot;: }${if: ${ev:空天姬预设备注} ?&quot;&#xD;&#xA;// 备注：${v:空天姬预设备注}&quot;:  }&#xD;&#xA; ${f:ifcontain(Snapshot,Snapshot ${env:快照},v${env:版本}):${_triggerpath}}&#xD;&#xA; 可使用“/e 停止”或“/e kend”来停止自动功能。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="120" NamedCallbackName="hint" NamedCallbackParam="3&#xD;&#xA;${if:${ev:空天姬阶段模式}?切换到了内层预设……:程序启动！}" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="121" NamedCallbackName="hint" NamedCallbackParam="3&#xD;&#xA;${if:${ev:空天姬阶段模式}?切换到了内层预设……:程序启动！}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3603,7 +3608,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="121" UseTTSTextExpression="程序启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
+<Action OrderNumber="122" UseTTSTextExpression="程序启动" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3612,15 +3617,15 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="122" VariableOp="SetNumeric" VariableName="空天姬模式所需采集力" VariableExpression="( ${v:空天姬参数} = 1 ? ( ${ev:空天姬手法收藏品} ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 0 ) : ( ${v:空天姬参数} == 2 ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 560 ) )" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="123" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力" VariableExpression="${v:空天姬模式所需采集力} + ( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬专一目标} ? 350 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 ) + ( ${ev:空天姬手法多提} ? ( ( ${v:空天姬手法多提} ) = 3 ? 684 : 384 ) : 0 )" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="124" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力低优先" VariableExpression="( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 )" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="125" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="126" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="127" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="128" LogMessageText="拍水启动" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="129" VariableName="空天姬计数模式" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="130" VariableOp="SetString" VariableName="空天姬计数模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="123" VariableOp="SetNumeric" VariableName="空天姬模式所需采集力" VariableExpression="( ${v:空天姬参数} = 1 ? ( ${ev:空天姬手法收藏品} ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 0 ) : ( ${v:空天姬参数} == 2 ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 560 ) )" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="124" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力" VariableExpression="${v:空天姬模式所需采集力} + ( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬专一目标} ? 350 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 ) + ( ${ev:空天姬手法多提} ? ( ( ${v:空天姬手法多提} ) = 3 ? 684 : 384 ) : 0 )" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="125" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力低优先" VariableExpression="( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 )" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="126" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="127" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="4868a45b-10b5-4f54-8b4a-38186ad0036f" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="128" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="218d9dd4-b1cc-41cb-a8fd-c51ff428750e" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="129" LogMessageText="拍水启动" LogProcess="True" TriggerOp="DisableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="130" VariableName="空天姬计数模式" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="131" VariableOp="SetString" VariableName="空天姬计数模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3628,7 +3633,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="131" VariableOp="SetString" VariableName="空天姬计数模式" VariableExpression="2" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="132" VariableOp="SetString" VariableName="空天姬计数模式" VariableExpression="2" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3643,13 +3648,13 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="132" VariableOp="SetString" VariableName="空天姬计数模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="133" VariableOp="SetString" VariableName="空天姬计数模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬计数目标1}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="133" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="134" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -3665,7 +3670,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="134" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="135" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="3f08c429-1513-4a70-891d-ef037c7fab19" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -3674,17 +3679,17 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="135" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="136" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="7b748038-76cb-4b9e-8d99-5fa8a724f3d8" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionR="鱼计" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Action>
-<Action OrderNumber="136" NamedCallbackName="command" NamedCallbackParam="/e ${if: ${v:空天姬计数模式} = 1 ? 开始计数 : 开始尝试预触 }……" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="137" NamedCallbackName="command" NamedCallbackParam="/e ${if: ${v:空天姬计数模式} = 1 ? 开始计数 : 开始尝试预触 }……" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬计数模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="137" VariableOp="SetString" VariableName="空天姬饵鱼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="138" VariableOp="SetString" VariableName="空天姬饵鱼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬专一}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3708,7 +3713,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="138" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="139" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬拍目标}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3723,7 +3728,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="139" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="140" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="8ccf019a-0d98-4282-8365-fbc7b94a24ab" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3744,23 +3749,23 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="140" TriggerOp="EnableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="141" TriggerOp="EnableTrigger" TriggerId="09e3c59a-caaf-4388-929b-8af661e09a9c" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬目标}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="141" FolderOp="DisableFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="142" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="142" FolderOp="DisableFolder" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="143" FolderId="f6b33082-96a1-48f6-97d2-e97d52059c68" TriggerOp="EnableTrigger" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬天气}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="143" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="144" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="145" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="144" TriggerOp="DisableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="145" TriggerOp="DisableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="146" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionGroup Enabled="true" Grouping="Or">
@@ -3777,12 +3782,12 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="146" TriggerOp="EnableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="147" TriggerOp="EnableTrigger" TriggerId="a718b032-bfe9-4a70-a421-237f70f346b1" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="147" TriggerOp="EnableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="148" TriggerOp="EnableTrigger" TriggerId="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -3798,31 +3803,31 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="148" TriggerOp="DisableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="149" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="149" TriggerOp="DisableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="150" TriggerOp="EnableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="150" TriggerOp="EnableTrigger" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="151" VariableOp="SetString" VariableName="空天姬手法钓组调整中" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="151" TriggerOp="EnableTrigger" TriggerId="f0790f9d-79b9-404e-a625-1e19951c9438" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="152" VariableOp="SetString" VariableName="空天姬手法钓组调整中" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法钓组}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制钓组状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="152" TriggerId="47285b0b-d63a-4837-9020-bf14d1d530d5" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="153" TriggerId="47285b0b-d63a-4837-9020-bf14d1d530d5" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法钓组}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制钓组状态}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="153" TriggerOp="EnableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="154" TriggerOp="EnableTrigger" TriggerId="e377a5a8-cb44-47bf-9f5b-3faf2844661e" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬天气}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="154" VariableOp="SetString" VariableName="空天姬参数不播报" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="155" VariableOp="SetString" VariableName="空天姬参数不播报" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -3839,60 +3844,60 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="155" VariableOp="SetNumeric" VariableName="空天姬最大ET结束时间" VariableExpression="( ${v:空天姬最大ET} + ${_timestampms} ) / 1000" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="156" VariableOp="SetNumeric" VariableName="空天姬最大ET结束时间" VariableExpression="( ${v:空天姬最大ET} + ${_timestampms} ) / 1000" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="156" LogMessageText="空天姬等待ET" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="157" LogMessageText="空天姬等待ET" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="157" LogMessageText="空天姬等待天气" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="158" LogMessageText="空天姬等待天气" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="158" NamedCallbackName="command" NamedCallbackParam="/statusoff &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}拍击水面]}&quot;" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="159" NamedCallbackName="command" NamedCallbackParam="/statusoff &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}拍击水面]}&quot;" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="159" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="94c20c52-5a2f-4812-853c-bc973a701cb8" TriggerText="123456789112345StatusAdd 1A:238:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="160" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="94c20c52-5a2f-4812-853c-bc973a701cb8" TriggerText="123456789112345StatusAdd 1A:238:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼识}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="160" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="cd1744a7-bfc7-4c4f-a3f4-59fd5f5a5b6d" TriggerText="123456789112345StatusAdd 1A:70B:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="161" LogMessageText="空天姬竿型:&quot;${type}&quot;" LogProcess="True" TriggerId="cd1744a7-bfc7-4c4f-a3f4-59fd5f5a5b6d" TriggerText="123456789112345StatusAdd 1A:70B:1:1:${_me.id}:" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水后预设}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="161" VariableName="空天姬鱼识模式" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="162" VariableName="空天姬鱼识模式" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼识参数}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="162" VariableName="空天姬拍水模式" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="163" VariableName="空天姬拍水模式" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍水后预设}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="163" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="164" VariableName="空天姬鱼眼模式" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="164" LogMessageText="空天姬执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="165" LogMessageText="空天姬执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
@@ -3911,13 +3916,13 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="165" LogMessageText="空天姬海钓执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="166" LogMessageText="空天姬海钓执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="166" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="167" LogMessageText="空天姬拍水启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬拍目标}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
@@ -3933,7 +3938,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型2}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="167" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="168" LogMessageText="空天姬饵鱼启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬最大ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬最小ET}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
@@ -3950,7 +3955,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="168" LogMessageText="空天姬鱼眼启动" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="169" LogMessageText="空天姬鱼眼启动" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3959,19 +3964,19 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="169" LogMessageText="空天姬钓饵启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="170" LogMessageText="空天姬钓饵启动" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="170" NamedCallbackName="command" NamedCallbackParam="/e 开始更换钓饵：${空天姬钓饵}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="171" NamedCallbackName="command" NamedCallbackParam="/e 开始更换钓饵：${空天姬钓饵}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="171" NamedCallbackName="command" NamedCallbackParam="/systemsounds 0" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" ExecutionDelayExpression="300" Asynchronous="False">
+<Action OrderNumber="172" NamedCallbackName="command" NamedCallbackParam="/systemsounds 0" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" ExecutionDelayExpression="300" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼识模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3980,40 +3985,40 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="172" NamedCallbackName="command" NamedCallbackParam="/e 指定天气时未提供 ET&#xD;&#xA;由于无法获取前置天气，当下个天气也符合给出的天气参数时将不会停止抛竿并提醒，请留意人工监控窗口期。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="173" NamedCallbackName="command" NamedCallbackParam="/e 指定天气时未提供 ET&#xD;&#xA;由于无法获取前置天气，当下个天气也符合给出的天气参数时将不会停止抛竿并提醒，请留意人工监控窗口期。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${空天姬最大ET}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="173" NamedCallbackName="command" NamedCallbackParam="/e 条件满足&#xD;&#xA;切换到内层预设。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="174" NamedCallbackName="command" NamedCallbackParam="/e 条件满足&#xD;&#xA;切换到内层预设。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="174" VariableOp="SetString" VariableName="空天姬参数检查" VariableExpression="${if:${f:contain(【):${空天姬拍目标}}&amp;&amp;${f:startwith(|):${v:空天姬拍目标}}&amp;&amp;${f:endwith(|):${v:空天姬拍目标}}&amp;&amp;${f:contain(||):${v:空天姬拍目标}}? &quot;&#xD;&#xA;　在 空天姬拍目标 的值${空天姬拍目标}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓2}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓2 的值${空天姬大鱼鱼篓2}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标1}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标1}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标1 的值${空天姬大鱼目标1}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓3}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓3 的值${空天姬大鱼鱼篓3}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标2}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标2 的值${空天姬大鱼目标2}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓4}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓4}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓4 的值${空天姬大鱼鱼篓4}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标3}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标3 的值${空天姬大鱼目标3}&quot; :  }${if:${f:contain(【):${空天姬计数目标1}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][1]}}? &quot;&#xD;&#xA;　在 空天姬计数目标1 的值${空天姬计数目标1}&quot; :  }${if:${f:contain(【):${空天姬计数目标2}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][2]}}? &quot;&#xD;&#xA;　在 空天姬计数目标2 的值${空天姬计数目标2}&quot; :  }${if:${f:contain(【):${空天姬计数目标3}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][3]}}? &quot;&#xD;&#xA;　在 空天姬计数目标3 的值${空天姬计数目标3}&quot; :  }${if:${f:contain(【):${空天姬目标}}&amp;&amp;${f:startwith(|):${v:空天姬目标}}&amp;&amp;${f:endwith(|):${v:空天姬目标}}&amp;&amp;${f:contain(||):${v:空天姬目标}}? &quot;&#xD;&#xA;　在 空天姬目标 的值${空天姬目标}&quot; :  }${if:${f:contain(【):${空天姬专一目标}}&amp;&amp;${f:startwith(|):${v:空天姬专一目标}}&amp;&amp;${f:endwith(|):${v:空天姬专一目标}}&amp;&amp;${f:contain(||):${v:空天姬专一目标}}? &quot;&#xD;&#xA;　在 空天姬专一目标 的值${空天姬专一目标}&quot; :  }" TableVariableOp="Build" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="175" VariableOp="SetString" VariableName="空天姬参数检查" VariableExpression="${if:${f:contain(【):${空天姬拍目标}}&amp;&amp;${f:startwith(|):${v:空天姬拍目标}}&amp;&amp;${f:endwith(|):${v:空天姬拍目标}}&amp;&amp;${f:contain(||):${v:空天姬拍目标}}? &quot;&#xD;&#xA;　在 空天姬拍目标 的值${空天姬拍目标}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓2}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓2 的值${空天姬大鱼鱼篓2}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标1}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标1}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标1}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标1 的值${空天姬大鱼目标1}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓3}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓3 的值${空天姬大鱼鱼篓3}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标2}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标2}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标2}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标2 的值${空天姬大鱼目标2}&quot; :  }${if:${f:contain(【):${空天姬大鱼鱼篓4}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼鱼篓4}}&amp;&amp;${f:contain(||):${v:空天姬大鱼鱼篓4}}? &quot;&#xD;&#xA;　在 空天姬大鱼鱼篓4 的值${空天姬大鱼鱼篓4}&quot; :  }${if:${f:contain(【):${空天姬大鱼目标3}}&amp;&amp;${f:startwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:endwith(|):${v:空天姬大鱼目标3}}&amp;&amp;${f:contain(||):${v:空天姬大鱼目标3}}? &quot;&#xD;&#xA;　在 空天姬大鱼目标3 的值${空天姬大鱼目标3}&quot; :  }${if:${f:contain(【):${空天姬计数目标1}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][1]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][1]}}? &quot;&#xD;&#xA;　在 空天姬计数目标1 的值${空天姬计数目标1}&quot; :  }${if:${f:contain(【):${空天姬计数目标2}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][2]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][2]}}? &quot;&#xD;&#xA;　在 空天姬计数目标2 的值${空天姬计数目标2}&quot; :  }${if:${f:contain(【):${空天姬计数目标3}}&amp;&amp;${f:startwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:endwith(|):${t:空天姬目标[2][3]}}&amp;&amp;${f:contain(||):${t:空天姬目标[2][3]}}? &quot;&#xD;&#xA;　在 空天姬计数目标3 的值${空天姬计数目标3}&quot; :  }${if:${f:contain(【):${空天姬目标}}&amp;&amp;${f:startwith(|):${v:空天姬目标}}&amp;&amp;${f:endwith(|):${v:空天姬目标}}&amp;&amp;${f:contain(||):${v:空天姬目标}}? &quot;&#xD;&#xA;　在 空天姬目标 的值${空天姬目标}&quot; :  }${if:${f:contain(【):${空天姬专一目标}}&amp;&amp;${f:startwith(|):${v:空天姬专一目标}}&amp;&amp;${f:endwith(|):${v:空天姬专一目标}}&amp;&amp;${f:contain(||):${v:空天姬专一目标}}? &quot;&#xD;&#xA;　在 空天姬专一目标 的值${空天姬专一目标}&quot; :  }" TableVariableOp="Build" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(【):${空天姬原参数}}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="175" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="176" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="176" LogMessageText="空天姬预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="177" LogMessageText="空天姬预设参数异常。提供的鱼类名称或 ID 有误。&#xD;&#xA;请复制此错误信息，访问以下链接进行反馈：https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP&#xD;&#xA;${v:空天姬参数检查}" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬参数检查}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="177" VariableName="空天姬阶段模式" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="178" LogMessageText="空天姬饵名错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="178" VariableName="空天姬阶段模式" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="179" LogMessageText="空天姬饵名错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="179" LogMessageText="空天姬天气错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="180" LogMessageText="空天姬天气错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬天气}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬天气.joinvalues}" ExpressionTypeL="String" ExpressionR="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬天气}}" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
