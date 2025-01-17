@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.718">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.11.13" Enabled="true" RawEnvironmentVariables="版本 = 1.11.13&#xD;&#xA;快照 = 25w03e&#xD;&#xA;摘要 = 修复一个问题。最近新增航线预报界面、拍水后预设参数。国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 1.11.14" Enabled="true" RawEnvironmentVariables="版本 = 1.11.14&#xD;&#xA;快照 = 25w03e&#xD;&#xA;摘要 = 修复一个问题。最近新增航线预报界面、拍水后预设参数。国际服如使用练级模式，请更新鲶鱼精到 1.3.5.4&#xD;&#xA;namazu = 1.3.5.3&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -3709,7 +3709,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="90" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </ConditionGroup>
 </ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${f:match(${空天姬原参数}):》\s*鱼识}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Action>
 <Action OrderNumber="139" LogMessageText="拍水启动" LogProcess="True" TriggerOp="EnableTrigger" TriggerId="c186fea6-ffb9-46a6-9028-df73b7f53164" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
