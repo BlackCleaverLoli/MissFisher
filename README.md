@@ -62,24 +62,22 @@
 # 安装指南
 ## 游戏内：
 - **职业：** `捕鱼人` 。
-- **消息窗口消息频道：** 启用 `系统消息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
+- **消息窗口消息频道：** 启用 `系统消息`、`错误信息`、`默语` 以及 `自己的采集信息`（钓鱼信息）。
 
    - 建议另行安装字库补丁，否则提供的默语消息中含有的部分简体汉字会无法正常显示（不影响功能）。
 > [!tip]
 >  如何启用相应的消息窗口消息频道？
 > 1. 在游戏中找到消息窗口，点击 `消息窗口设置`（齿轮样式的按钮）。
 > 2. 找到`消息过滤设置`部分，点击任一 `消息栏` ，切换到 `通知` 分页。
-> 3. 勾选频道 `系统消息`、`默语` 以及 `自己的采集信息` 。
+> 3. 勾选频道 `系统消息`、`错误信息`、`默语` 以及 `自己的采集信息` 。
 > 4. 点击 `应用` 。
 
 ## ACT 及 ACT 插件：
 * 高级战斗追踪器 Advanced Combat Tracker [ [下载呆萌整合](https://act.diemoe.net/ACT.Setup.exe) ]（国际服建议使用 [原版 ACT](https://overlayplugin.github.io/docs/setup/)）
-* 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.704+` [ [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) ]
-* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.5.3+`
-* OverlayPlugin  
-  应已存在于适合 FFXIV 的 ACT 整合版本中，你无须额外安装。
-* 可选的：抹茶 Matcha（仅国服有效）  
-  建议安装，可减少 ACT 的处理负担。
+* 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.720+` [ [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) ]
+* 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.6.0+`
+* FFXIV 解析插件 & OverlayPlugin  
+  两者都应已存在于适合 FFXIV 的 ACT 整合版本中，你无须额外安装。
 > [!IMPORTANT]
 > **新安装的 ACT 呆萌整合 并不包含 高级触发器 Triggernometry 与 鲶鱼精邮差 PostNamazu。**  
 > 因此，你必须通过以下步骤安装它们：
@@ -171,36 +169,32 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 （3）Triggernometry
 （4）CactbotOverlay
 （5）PostNamazu
-（6）CafeMatcha（如有）
 （其他无关紧要的插件）
 ```
 2. 重启 ACT 并等待 ACT 完成启动。
 3. 在游戏中消息窗口的 `聊天输入栏` 输入命令 `/e ktj` - 按下 `回车键` 发生命令以打开 空天姬 MissFisher 的主界面（或右键主分组下的触发器 `空天姬主界面` - 然后 `执行（强制/条件）`）。
-4. 可选的：在 ACT 界面中切换到 `抹茶 Matcha` 分页（如有）- 找到 `日志及数据共享` 部分 - 勾选 `兼容模式` 以略微提高咬饵时 空天姬 MissFisher 的响应速度。
 
 > [!TIP]  
-> 勾选 抹茶 Matcha 的 `兼容模式`，也有助于降低使用 空天姬 MissFisher 时 ACT 的处理压力。
->  
+> **如果存在 抹茶 Matcha 插件。**  
 > 你还可以在 抹茶 Matcha `钓鱼播报` 部分找到可能被默认启用的 `咬钩` 和 `咬钩力度` 选项，取消这两个选项以减少不必要的打扰。
-
-> [!NOTE]
-> 敬请触发器开发者留意：如勾选抹茶 `兼容模式`，当次运行的首次咬饵时会关闭一次解析插件的 `记录网络数据`。  
 
 ### Dalamud 相关配置：
 > [!IMPORTANT]
 > **你不安装 Daily Routines 也可以使用 空天姬 MissFisher。**  
-> 跳过此条目：[验证自动功能](#验证自动功能)
+> 跳过此条目：[验证 空天姬 MissFisher 的自动功能](#验证 空天姬 MissFisher 的自动功能)
 
 - 可选的：启用 Daily Routines 的 `宏进入技能队列` 功能。可提高 空天姬 MissFisher 在使用技能与强心剂时的流畅性。
 #### 获取 Daily Routines ：
 > [!IMPORTANT]
 > **Daily Routines 是一个包含众多体验优化功能的免费卫月插件。**  
-> 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。  
-> 如果是中国服：你还需要运行 [Unban 插件](https://github.com/NightmareXIV/UnbanPluginsCN) 以解除 Dalamud 对部分插件的禁用。
+> 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。 
+> 
+> **如果是中国服：**  
+> 你还需要运行 [Unban](https://github.com/NightmareXIV/UnbanPluginsCN) 以解除 Dalamud 对部分插件的隐藏（更建议使用下文中的 `Dont Ban My Plugin` 插件）。
 
 1. 在游戏的消息窗口输入 `/xlsettings` 并按下 `回车键` 以打开 Dalamud 设置 - 点击界面上方的 `测试版` 。  
 2. 在界面下方找到 `自定义插件仓库` 部分。  
-3. 选择一个链接填入空文本框：  
+3. 从下方 2 个 Daily Routines 仓库链接中选择一个复制，粘贴进空文本框：  
 - 国内加速：
 ```
 https://gh.atmoomen.top/DalamudPlugins/main/pluginmaster-cn.json
@@ -209,16 +203,29 @@ https://gh.atmoomen.top/DalamudPlugins/main/pluginmaster-cn.json
 ```
 https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json 
 ```
-4. 点击加号以添加仓库链接 - 点击 `软盘` 图标以保存 Dalamud 设置。  
+4. 点击加号以添加仓库链接。
+5. 如果你还需要解除 Dalamud 对部分插件的隐藏 ，继续添加下面这个链接，方法同上：
+```
+https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.json
+```
+6. 添加完毕后，点击 `软盘` 图标以保存 Dalamud 设置。  
 5. 在游戏的消息窗口输入 `/xlplugins` 并按下 `回车键` 以打开插件安装器 - 点击界面左侧的 `所有插件` 。  
-6. 在插件安装器搜索框输入 `DailyRoutines` - 在结果中找到 DailyRoutines 并点击它以展开插件介绍（如果没有找到，请返回第 3 步尝试更换链接）。  
+6. 在插件安装器搜索框输入 `Dont Ban My Plugin` - 在结果中找到 `Dont Ban My Plugin` 并点击它以展开插件介绍。
+7. 点击 `安装` 按钮并等待 `Dont Ban My Plugin` 安装完成。
+8. 点击插件安装器搜索框旁的 `×` 清除先前输入的插件名 - 在插件安装器搜索框输入 
+`Daily Routines` - 在结果中找到 `Daily Routines` 并点击它以展开插件介绍（如果没有找到，请返回第 3 步尝试更换链接）。  
 7. 点击 `安装` 按钮并等待安装完成。  
-8. 在游戏的消息窗口输入 `/pdr` 以打开 Daily Routines 的主界面。  
-9. 在 Daily Routines 主界面上方的搜索框输入 `宏` 。  
-10. 在搜索结果中找到 `宏进入技能队列` 功能，勾选以启用它。
+#### 启用宏队列功能：
+1. 在游戏的消息窗口输入 `/pdr` 以打开 Daily Routines 的主界面。  
+2. 在 Daily Routines 主界面上方的搜索框输入 `宏` 。  
+3. 在搜索结果中找到 `宏进入技能队列` 功能，勾选以启用它。
 
-## 验证自动功能
-#### 验证步骤如下：
+#### 如果你需要体验更多 Daily Routines 的模块：
+请前往 Daily Routines 的 [Discord 频道](https://discord.gg/dailyroutines) 进行插件验证。
+**插件的验证和使用都不收取任何费用。**
+
+## 验证 空天姬 MissFisher 的自动功能
+#### 步骤如下：
 1. 确认角色拥有钓饵 `万能拟饵`（如没有，请购买 1 个）。
 2. 找到任意钓场，操控角色靠近并面朝钓场直到 `抛竿` 技能亮起。
 3. 在游戏中消息窗口的 `聊天输入栏` 输入 `/e ktjdbg`，然后按下 `回车键` 。
@@ -281,7 +288,13 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 > [!TIP]  
 > 在开始前，你可以在 Triggernometry 找到 `远程触发器` 下的 `自检工具箱` ，  
 > 阅读分组内的使用说明后逐项自检，来排除一些常见的环境问题。
+> 
+> **如果下列测试和排查仍然不能解决问题：**  
+> 请尝试移除 空天姬 MissFisher 的远程仓库，然后重新添加，以重置某些重要组件的状态。
 ### 提示空天姬扩展未注册：
+> [!TIP]  
+> 该错误告警可能误报，如果自动功能正常，不必理会。
+  
 * **检查是否有插件冲突：**  
 检查是否同时启用了 Daily Routines 的 `显示真实等待次序` 模块与 ACT 的 `AccurateWorldTravelQueue.dll` 插件。  
 如果你同时启用了它们：请关闭 ACT 的 `AccurateWorldTravelQueue.dll` 插件 - 将其移除 - 重启游戏。  
@@ -299,6 +312,9 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 - **如果全都确认无误并且你是 CafeACT，请尝试使用 呆萌 ACT：**  
 可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。
 ### 提示主界面窗口打开失败：
+> [!TIP]  
+> 该错误告警可能误报，如果自动功能正常，不必理会。
+  
 * **授予远程仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` - 右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
   
@@ -323,39 +339,10 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 
 * **检查 ACT 插件优先级：**  
 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
-
-* **检查 ACT 解析插件设置：**  
-解析插件界面中 FFXIV 游戏数据部分的 `隐藏聊天日志` 不应被勾选，如果勾选了，请取消它。  
   
-* **检查游戏中消息窗口的相关频道是否已开启：**  
-启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 以及 `自己的采集信息` - 点击 `应用`。  
-   
 * **授予远程仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` - 右键 `仓库` - 点击 `更新` - 等待仓库更新完成。
    
-* **配置 Dalamud 插件 Chat2 的相关功能：**  
-可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。如果仍提示更换钓饵失败，请重启游戏。
-   
-* **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
-可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
-
-### 钓到鱼后不继续抛竿或在测试时没有报告「目标达成。」：      
-   
-* **检查游戏中消息窗口的相关频道是否已开启：**  
-启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 以及 `自己的采集信息` - 点击 `应用`。  
-    
-* **检查 ACT 解析插件设置：**  
-解析插件界面中 FFXIV 游戏数据部分的 `隐藏聊天日志` 不应被勾选，如果勾选了，请取消它。
-
-* **配置 Dalamud 插件 Chat2 的相关功能：**  
-可能的解决方案：取消勾选 Chat2 的 `隐藏原版聊天窗口` - 使用 `回车键` 唤出一次原生消息窗口。如果仍然需要前文提到的功能可再次启用它。
-   
-* **配置其他会修改聊天窗口样式的 Dalamud 插件：**  
-可能的解决方案：关闭所有修改 `消息窗口时间戳样式` 的 Dalamud 插件的相关功能，如果换饵仍然失败，尝试重启游戏。更进一步的：关闭所有修改了 `消息窗口样式` 的 Dalamud 插件，然后重启游戏。
-
-* **国际服：检查游戏设置：**  
-角色设置 - Name Display Settings（人名显示设置）- 将自己名字的显示设置改为 Full Name（全名）。  
-
 ### 海钓启动后无反应或提示海域获取失败：
 
 * **检查 鲶鱼精邮差 PostNamazu 版本：**  
@@ -365,7 +352,7 @@ https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json
 按条目 [ACT 相关配置](#act-相关配置) 中提供的方法调整 ACT 插件优先级。   
    
 * **检查游戏中消息窗口的相关频道是否已开启：**  
-启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`默语` 以及 `自己的采集信息` - 点击 `应用`。
+启用步骤：在游戏中找到消息窗口 - 点击 `消息窗口设置`（齿轮样式的按钮）- 找到 `消息过滤设置` 部分 - 点击任一 `消息栏` - 切换到 `通知` 分页 - 勾选频道 `系统消息`、`错误信息`、`默语` 以及 `自己的采集信息` - 点击 `应用`。
   
 * **检查触发器是否能接受到关键日志行：**  
 按条目 [测试关键日志行](#测试关键日志行) 中提供的方法进行测试。
