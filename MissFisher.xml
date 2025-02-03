@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.728">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 2.0.4" Enabled="true" RawEnvironmentVariables="版本 = 2.0.4&#xD;&#xA;快照 = 25w06c&#xD;&#xA;摘要 = 修复一个特殊的预设写法时的采集力浪费问题。&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="新能源钓竿 空天姬 2.0.5" Enabled="true" RawEnvironmentVariables="版本 = 2.0.5&#xD;&#xA;快照 = 25w06d&#xD;&#xA;摘要 = 修复收藏品时的手法问题。&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
 <Folders>
@@ -3101,7 +3101,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬拍水模式}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="40" VariableOp="SetNumeric" VariableName="空天姬模式所需采集力" VariableExpression="( ${v:空天姬参数} = 1 ? ( ${ev:空天姬手法收藏品} &amp;&amp; ( !${ev:空天姬手法不收集} || ${ev:空天姬控制海钓模式} ) ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 0 ) : ( ${v:空天姬参数} == 2 ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 560 ) )" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="40" VariableOp="SetNumeric" VariableName="空天姬模式所需采集力" VariableExpression="( ${v:空天姬参数} = 1 ? ( ${ev:空天姬手法收藏品} ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 0 ) : ( ${v:空天姬参数} == 2 ? ( ${ev:空天姬控制海钓模式} ? 200 : 400 ) : 560 ) )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="41" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力" VariableExpression="${v:空天姬模式所需采集力} + ( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬专一目标} ? 350 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 ) + ( ${ev:空天姬手法多提} ? ( ( ${v:空天姬手法多提} ) = 3 ? 684 : 384 ) : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="42" VariableOp="SetNumeric" VariableName="空天姬额外所需采集力低优先" VariableExpression="( ${ev:空天姬拍目标} ? 200 : 0 ) + ( ${ev:空天姬手法重随}${ev:空天姬手法重随}${ev:空天姬手法鱼影} ? 60 : 0 ) + ( ${ev:空天姬手法鱼篓} ? 100 : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="43" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
@@ -4751,7 +4751,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型${n:${v:空天姬以小钓大阶段} + 1}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="0${v:空天姬控制以小钓大II}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法不收集}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型${n:${v:空天姬以小钓大阶段} + 2}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4768,7 +4767,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericLess" />
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法不收集}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
 </Condition>
@@ -4788,7 +4786,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法不收集}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp} + ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) * ${pv:空天姬控制强心剂GP}" ExpressionTypeL="Numeric" ExpressionR="${_me.maxgp} - 198" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
@@ -4943,7 +4940,6 @@
 </ConditionGroup>
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法不收集}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
@@ -5014,7 +5010,6 @@
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法不收集}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
 </Condition>
@@ -5082,9 +5077,9 @@
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼竿型${n: ${v:空天姬游动饵阶段} + 1 }}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬游动饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</ConditionGroup>
-</ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法不收集}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+</ConditionGroup>
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用鱼计}" ExpressionTypeL="Numeric" ExpressionR="5" ExpressionTypeR="String" ConditionType="NumericLess" />
@@ -6041,11 +6036,7 @@
 <Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="UseAction" NamedCallbackParam="Action,${pd:空天姬技能ID[${v:空天姬提钩}]}" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
-<Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩}" ExpressionTypeL="String" ExpressionR="双重提钩" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
+<Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="3" LogMessageText="空天姬执行" LogProcess="True" TriggerId="77486bb5-979a-47bc-9547-0ceae445da95" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
