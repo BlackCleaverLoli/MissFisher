@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.728">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher 2.0.8" Enabled="true" RawEnvironmentVariables="版本 = 2.0.8&#xD;&#xA;快照 = 25w06g&#xD;&#xA;摘要 = 优化。&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher 2.0.9" Enabled="true" RawEnvironmentVariables="版本 = 2.0.9&#xD;&#xA;快照 = 25w06h&#xD;&#xA;摘要 = 优化一个游动饵问题。Fix a swimbait problem.&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
-<Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多" Enabled="true">
+<Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
-<Folder Id="701f8afb-7760-4457-8230-c25f75f4c5f7" Name=" 相关链接" Enabled="true">
+<Folder Id="701f8afb-7760-4457-8230-c25f75f4c5f7" Name=" 相关链接 Link" Enabled="true">
 <Folders />
 <Triggers>
 <Trigger Enabled="true" Name="鱼糕 FF14（右键执行）" Id="55ce1ddb-09c2-4621-b7fe-ef04f356923e" RegularExpression="">
@@ -39,7 +39,7 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="true" Name="  用户配置界面（右键执行）" Id="a739dfbe-73df-4860-bf7c-d10f95c1a261" RegularExpression="">
+<Trigger Enabled="true" Name="  用户配置界面 Cfg（右键执行 Right click and execute）" Id="a739dfbe-73df-4860-bf7c-d10f95c1a261" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="fb8d4caa-1aa8-47bc-891e-fcb8e0b2f8e4" TriggerForce="regexp" ActionType="Trigger" />
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 空天姬：正在尝试打开配置界面。如果你是用远程触发器获得的，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" Enabled="False" ActionType="NamedCallback" Asynchronous="False" Description="如果你看见“无效引用”，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True" />
@@ -4489,52 +4489,50 @@
 <Trigger Enabled="true" Name="3.2 强心剂超时" Id="902a83ab-9c79-43b2-b859-35d76543f90b" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" VariableName="空天姬强心剂超时" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="2" Asynchronous="False" />
-<Action OrderNumber="3" VariableOp="SetString" VariableName="空天姬尝试强心剂" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬尝试强心剂" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="4" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 尝试使用强心剂超时&#xD;&#xA;开始尝试使用其他强心剂。" ActionType="NamedCallback" ExecutionDelayExpression="3000" Asynchronous="False">
+<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 尝试使用强心剂超时&#xD;&#xA;开始尝试使用其他强心剂。" ActionType="NamedCallback" ExecutionDelayExpression="3000" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" Asynchronous="False" />
-<Action OrderNumber="6" TriggerId="43c6d30d-5c37-40fd-9161-163f26d8c1ec" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="4" TriggerId="43c6d30d-5c37-40fd-9161-163f26d8c1ec" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬强心剂超时" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="3500" Asynchronous="False">
+<Action OrderNumber="5" VariableOp="SetString" VariableName="空天姬强心剂超时" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="3500" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬控制强心剂超时I" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="6" VariableOp="SetString" VariableName="空天姬控制强心剂超时I" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬控制强心剂" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制强心剂超时I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬控制强心剂提前I" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬控制强心剂" VariableExpression="0" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制强心剂超时I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableName="空天姬尝试强心剂" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬控制强心剂提前I" VariableExpression="0" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制强心剂超时I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 尝试使用强心剂失败&#xD;&#xA;将禁用自动强心剂直到下次启动或有强心剂被手动使用。" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="9" VariableName="空天姬尝试强心剂" ActionType="Variable" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制强心剂超时I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="10" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] 尝试使用强心剂失败&#xD;&#xA;将禁用自动强心剂直到下次启动或有强心剂被手动使用。" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制强心剂超时I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6515,7 +6513,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -7144,7 +7142,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Source="FFXIVNetwork" Name="4.1 钓饵监控" Id="b0818af0-6d9c-4332-a214-af4b19277feb" RegularExpression="^(?:252(?:\|[^|]+)\|0{6}40\|(?&lt;id&gt;.{8})(?:\|[^|]+){6}\|00000(?&lt;band&gt;145|152)\|(?&lt;log&gt;.{8})\|)">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name="4.1 钓饵监控" Id="b0818af0-6d9c-4332-a214-af4b19277feb" RegularExpression="^(?:252(?:\|[^|]+)\|0{6}40\|(?&lt;id&gt;.{8})(?:\|[^|]+){6}\|00000(?&lt;band&gt;145|152)\|(?!0{4}F{4}))">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="KTJGetCurrentBait" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬游动饵" ActionType="Variable" Asynchronous="False">
