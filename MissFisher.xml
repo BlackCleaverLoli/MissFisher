@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<TriggernometryExport PluginVersion="1.2.0.728">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher 2.0.10" Enabled="true" RawEnvironmentVariables="版本 = 2.0.10&#xD;&#xA;快照 = 25w06i&#xD;&#xA;摘要 = 优化苦尔鳗；修复一个配置异常。Optimize the `ku'er`; Fix a configuration exception.&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<TriggernometryExport PluginVersion="1.2.0.730">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 2.0.11" Enabled="true" RawEnvironmentVariables="版本 = 2.0.11&#xD;&#xA;快照 = 25w06j&#xD;&#xA;摘要 = 修复了当坐下钓鱼出现的异常。Fixed the abnormality that occurred when fishing while sitting down&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -5973,7 +5973,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+<Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="UseAction" NamedCallbackParam="Action,${pd:空天姬技能ID[${v:空天姬提钩}]}" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False" />
@@ -6521,7 +6521,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -7130,7 +7130,7 @@
 <Folder Id="bd260c04-93b5-424d-9fcf-e49a1ac9a3bb" ZoneFilterRegularExpression=".|黑色公主切萝莉肥" Name="A.2 数据处理" Enabled="true">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Source="FFXIVNetwork" Name="3.1 以小钓大机会" Id="b234bcd8-7a44-46b9-b563-28c39cad375a" RegularExpression="^252(?:\|[^|]+)\|0{6}50\|(?&lt;id&gt;.{8})(?:\|[^|]+){8}\|00150001\|00000004\|00040001\|00000000\|00000003\|0000010F(?:\|[^|]+){1}\|.{7}(?&lt;log&gt;.)\|" PrevActions="Interrupt">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name="3.1 以小钓大机会" Id="b234bcd8-7a44-46b9-b563-28c39cad375a" RegularExpression="^252(?:\|[^|]+)\|0{6}50\|(?&lt;id&gt;.{8})(?:\|[^|]+){8}\|00150001\|00000004\|00040001\|00000000\|00000003\|00000(?:10F|C47)(?:\|[^|]+){1}\|.{7}(?&lt;log&gt;[9E])\|" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制以小钓大机会" VariableExpression="1" ActionType="Variable">
 <Condition Enabled="true" Grouping="Or">
@@ -8298,7 +8298,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Source="FFXIVNetwork" Name="1.4 脱钩" Id="4b527db4-b0ab-4918-bbde-5e5aaffbf325" RegularExpression="^252(?:\|[^|]+)\|0{6}50\|(?&lt;id&gt;.{8})(?:\|[^|]+){8}\|00150001(?:\|[^|]+){5}\|.{5}11B\|">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name="1.4 脱钩" Id="4b527db4-b0ab-4918-bbde-5e5aaffbf325" RegularExpression="^252(?:\|[^|]+)\|0{6}50\|(?&lt;id&gt;.{8})(?:\|[^|]+){8}\|00150001(?:\|[^|]+){5}\|.{5}(?:11B|C52)\|">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬脱钩信息" VariableExpression=" &#xA;${v:空天姬前置} ${func:format(System.Double,&quot;0.0&quot;):${v:空天姬控制咬钩显示}}${if:${ev:空天姬引诱判断}?*:} 秒${if:${ev:空天姬引诱判断}?&quot; 引诱&quot;:}${if:${ev:空天姬专一}||${ev:空天姬专一判断}?&quot; 专一&quot;:} ${v:空天姬咬钩竿型}${v:空天姬多提信息} 脱钩" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" UseTTSTextExpression="脱钩！" UseTTSVolumeExpression="75" UseTTSRateExpression="3" ActionType="UseTTS">
