@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.730">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 2.0.11" Enabled="true" RawEnvironmentVariables="版本 = 2.0.11&#xD;&#xA;快照 = 25w06j&#xD;&#xA;摘要 = 修复了当坐下钓鱼出现的异常。Fixed the abnormality that occurred when fishing while sitting down&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher 2.0.11" Enabled="true" RawEnvironmentVariables="版本 = 2.0.11&#xD;&#xA;快照 = 25w06j&#xD;&#xA;摘要 = 修复了当坐下钓鱼出现的异常。Fixed the abnormality that occurred when fishing while sitting down&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
