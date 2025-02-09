@@ -368,9 +368,11 @@ https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.js
   
 ### 启动 空天姬 MissFisher 的自动功能时游戏闪退：
 - **检查环境版本是否最新：**  
-在 Triggernometry 界面 找到页面右上方的 `选项` - 点击 `检查更新` ，如果有提示更新，请在更新后关闭并重新启动 Advanced Combat Tracker ；  
-右键 空天姬 MissFisher 的远程仓库，点击 `更新` ，更新完成后，关闭并重新启动 Advanced Combat Tracker ；  
-如以上操作后，游戏仍然在启动 空天姬 MissFisher 的自动功能时闪退，请尝试在备份 `Advanced Combat Tracker\Config` 文件夹后，删除 Advanced Combat Tracker 所在的文件夹，并重新安装 Advanced Combat Tracker 。
+在 Triggernometry 界面 找到页面右上方的 `选项` - 点击 `检查更新` - 右键 空天姬 MissFisher 的远程仓库，点击 `更新` ，如果其一操作时有提示更新，请在更新完成后关闭并重新启动 Advanced Combat Tracker 。  
+  
+- **重新安装 Advanced Combat Tracker 以重置软件配置：**  
+备份 `Advanced Combat Tracker\Config` 文件夹（复制一份到别处），删除 ACT 文件夹以卸载 Advanced Combat Tracker ，然后重新安装 Advanced Combat Tracker 。  
+安装完成后，根据需要，手动恢复 `Advanced Combat Tracker\Config` 文件夹内的配置文件。
 ---
 ## 其他相关指南
 ### 咖啡转呆萌指北：
