@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.730">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w07c" Enabled="true" RawEnvironmentVariables="版本 = 2.1.0&#xD;&#xA;快照 = 25w07c&#xD;&#xA;摘要 = 更新多语言文本。Added multi-language support.&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w07d" Enabled="true" RawEnvironmentVariables="版本 = 2.1.1&#xD;&#xA;快照 = 25w07d&#xD;&#xA;摘要 = 更新多语言文本。Added multi-language support.&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -7233,8 +7233,8 @@
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${t:空天姬目标[2][1]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓场}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬钓场}" ExpressionTypeL="String" ExpressionR="${pd:空天姬钓场[${n: 0x${place} }]}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓场ID}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬钓场ID}" ExpressionTypeL="String" ExpressionR="0x${place}" ExpressionTypeR="Numeric" ConditionType="StringNotEqualCase" />
 </ConditionGroup>
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬钓场ID}" ExpressionTypeL="String" ExpressionR="950" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
