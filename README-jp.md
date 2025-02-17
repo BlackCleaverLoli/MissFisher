@@ -67,7 +67,7 @@ Winformベースの直感的なUI。
 * **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues)**  
 
 ## 寄付  
-[<img width="300" src="https://storage.ko-fi.com/cdn/generated/zfskfgqnf/rest-2de132d9df0956fa702dd7c90fe98362-60e8xkth.jpg" alt="ko-fi">](https://ko-fi.com/blackcleaverloli)  
+[<img width="300" src="https://storage.ko-fi.com/cdn/generated/zfskfgqnf/rest-2de132d9df0956fa702dd7c90fe98362-60e8xkth.jpg" style="border-radius: 14px;" alt="ko-fi">](https://ko-fi.com/blackcleaverloli)   
 ***  
 # インストールガイド
 
