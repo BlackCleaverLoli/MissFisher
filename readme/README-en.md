@@ -1,9 +1,9 @@
 # MissFisher
 > [!TIP]  
-> **[← 返回中文](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README.md)**
+> **[← 返回中文](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README.md)**
 > 
 > **言語サポート：日本語**  
-> [このページを日本語で表示。](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README-jp.md)
+> [このページを日本語で表示。](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-jp.md)
 
 
 > [!CAUTION]

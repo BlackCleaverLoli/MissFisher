@@ -1,12 +1,10 @@
 # MissFisher
-
 > [!TIP]  
-> 
-> **[← 返回中文](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README.md)**
+> **[← 返回中文](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README.md)**
 > 
 >
 > **Language support: English**  
-> [View this page in English.](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README-en.md)
+> [View this page in English.](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-en.md)
 > 
 
 > [!CAUTION]
