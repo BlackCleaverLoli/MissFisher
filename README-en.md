@@ -65,7 +65,7 @@ Reports bite types via TTS; Sends fishing stats to Echo channel.
 * **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues)**  
 
 ## Donations  
-[<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)  
+[<img width="300" src="https://storage.ko-fi.com/cdn/generated/zfskfgqnf/rest-2de132d9df0956fa702dd7c90fe98362-60e8xkth.jpg" alt="ko-fi">](https://ko-fi.com/blackcleaverloli)  
 ***  
 # Installation Guide
 
