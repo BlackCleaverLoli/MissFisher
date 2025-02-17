@@ -1,10 +1,8 @@
 # 空天姬 MissFisher
 > [!TIP]  
-> **Language support: English**  
-> [View this page in English.](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README-en.md)
+> **Language support: English · 言語サポート：日本語**  
+> 🌐 [View this page in English.](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README-en.md) · [このページを日本語で表示。](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README-jp.md)
 > 
-> **言語サポート：日本語**  
-> [このページを日本語で表示。](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README-jp.md)
 
 **[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) | [金曦之遗辉的技能支持情况](https://github.com/BlackCleaverLoli/MissFisher/wiki#%E9%87%91%E6%9B%A6%E4%B9%8B%E9%81%97%E8%BE%89%E7%9A%84%E6%8A%80%E8%83%BD%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5)**  
 ## 简介
