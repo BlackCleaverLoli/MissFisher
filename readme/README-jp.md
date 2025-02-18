@@ -11,7 +11,7 @@
 > 本文はAIによる翻訳です。実際の用語と異なる場合があります。  
 > 問題点はGitHub Issuesで報告してください。
 
-**[インストールガイド](#インストールガイド) | [よくある質問](#よくある質問) | [2分クイックスタート](#クイックスタート) | [コマンド一覧](#コマンド) | [MissFisherプリセットの作成方法](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) | [金曦の遺輝スキルサポート](https://github.com/BlackCleaverLoli/MissFisher/wiki#金曦の遺輝スキルサポート)**  
+**[インストールガイド](#インストールガイド) | [よくある質問](#よくある質問) | [2分クイックスタート](#クイックスタート) | [コマンド一覧](#コマンド) | [MissFisherプリセットの作成方法](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)**  
 
 ## 概要  
 *MissFisher* はFFXIV釣りを自動化するTriggernometryトリガーセットです。  
