@@ -87,23 +87,11 @@ Reports bite types via TTS; Sends fishing stats to Echo channel.
 > [!CAUTION]
 > Some methods here may not apply to global server players.
 
-* **Advanced Combat Tracker**  
-  [Download DieMoe整合](https://act.diemoe.net/ACT.Setup.exe) (Global users: Use [Original ACT](https://overlayplugin.github.io/docs/setup/))
+* **Advanced Combat Tracker**  [Original ACT](https://overlayplugin.github.io/docs/setup/) 
 * **Triggernometry** [MnFeN's Fork](https://github.com/MnFeN/Triggernometry) `v1.2.0.720+`
 * **PostNamazu** [v1.3.6.0+](https://github.com/Natsukage/PostNamazu/releases)
-* **FFXIV Parsing Plugin & OverlayPlugin**  
-  Both are included in FFXIV-optimized ACT builds. No additional installation needed.
+* **FFXIV ACT Plugin & OverlayPlugin**  
 
-> [!IMPORTANT]
-> **New DieMoe ACT整合 does NOT include Triggernometry or PostNamazu.**  
-> Follow these steps to install them:
-> 
-> 1. Get the installer from [MnFeN's Triggernometry Fork](https://github.com/MnFeN/Triggernometry).
-> 2. Run the installer and follow prompts to install/update.
-> 3. Read the PDF guide "Triggernometry Beginner's Guide" for proper configuration.
-> 
-> - Alternatively, [manually install plugins](#manual-plugin-installation).
->   - Using the installer is strongly recommended.
 
 > [!NOTE]
 > **Automatic bait switching no longer requires Dalamud.**  
@@ -445,6 +433,6 @@ Send a MissFisher Preset to the Echo channel to activate.
 > - **[How to Use](#method-1-use-built-in-presets)**
 
 **All 2.0-6.0 fish presets are available**, including some pets.  
-Presets are sourced from [MissFisher Preset Sheet](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2).  
+Presets are sourced from [MissFisher Preset Sheet](https://docs.google.com/spreadsheets/d/1-1Xy7xlG_BRU2jJNkbjTL5Ijj8pGgNm6rHncHYiHguo/edit?usp=sharing).  
 
 Report missing/broken presets via [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues).  
