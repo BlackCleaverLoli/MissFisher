@@ -86,18 +86,10 @@ Winformベースの直感的なUI。
 > [!CAUTION]
 > 国際版ユーザーは一部手順が異なります
 
-* **Advanced Combat Tracker**  
-  [DieMoe整合版](https://act.diemoe.net/ACT.Setup.exe)（国際版は[公式ACT](https://overlayplugin.github.io/docs/setup/)）
+* **Advanced Combat Tracker**  [公式ACT](https://overlayplugin.github.io/docs/setup/)
 * **Triggernometry** [MnFeN版](https://github.com/MnFeN/Triggernometry) `v1.2.0.720+`
 * **PostNamazu** [v1.3.6.0+](https://github.com/Natsukage/PostNamazu/releases)
-* **FFXIV解析プラグイン & OverlayPlugin**  
-  整合版に既に含まれています
-
-> [!IMPORTANT]
-> **DieMoe整合版にはTriggernometry/PostNamazuが含まれていません**
-> 1. [MnFeNのリポジトリ](https://github.com/MnFeN/Triggernometry)からインストーラーを取得
-> 2. 指示に従いインストール
-> 3. 「Triggernometry初心者ガイド」PDFで設定確認
+* **FFXIV ACT Plugin & OverlayPlugin**  
 
 > [!NOTE]
 > **餌自動交換はDalamud不要になりました**  
@@ -366,6 +358,6 @@ MissFisherの主要機能が集約されたUIです。
 > - **[使用方法](#方法-1-内蔵プリセット使用)**
 
 **2.0～6.0の全魚種プリセットをサポート**（ペット含む）。  
-プリセットは [MissFisherプリセット表](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) から提供。  
+プリセットは [MissFisherプリセット表](https://docs.google.com/spreadsheets/d/1-1Xy7xlG_BRU2jJNkbjTL5Ijj8pGgNm6rHncHYiHguo/edit?usp=sharing) から提供。  
 
 不具合は [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) へ報告。  
