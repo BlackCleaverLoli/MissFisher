@@ -4,7 +4,7 @@
 > 🌐 [View this page in English.](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-en.md) · [このページを日本語で表示。](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-jp.md)
 > 
 
-**[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)**  
+**[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬钓法表达式](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Angex)**  
 ## 简介
 *空天姬 MissFisher* 是一组可使 FFXIV 钓鱼玩法自动化的 Triggernometry 触发器。
 - **支持：** 国服、英文端、日文端    

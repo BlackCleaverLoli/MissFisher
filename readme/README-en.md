@@ -11,7 +11,7 @@
 > Please report unclear text via GitHub issues. Thank you.
 
 
-**[Installation Guide](#installation-guide) | [FAQ](#Frequently-Asked-Questions) | [Quick Start (2 mins)](#quick-start) | [Commands](#commands) | [MissFisher Preset Syntax](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)**  
+**[Installation Guide](#installation-guide) | [FAQ](#Frequently-Asked-Questions) | [Quick Start (2 mins)](#quick-start) | [Commands](#commands) | [MissFisher Angling Expression Syntax](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Angex)**  
 
 ## Introduction  
 *MissFisher* is a Triggernometry trigger set for automating FFXIV fishing mechanics.  
