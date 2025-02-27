@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.730">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w08b" Enabled="true" RawEnvironmentVariables="版本 = 2.1.6&#xD;&#xA;快照 = 25w08b&#xD;&#xA;摘要 = 新增英文和日文的预设名称； Add preset names in English and Japanese.&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w09a" Enabled="true" RawEnvironmentVariables="版本 = 2.1.7&#xD;&#xA;快照 = 25w09a&#xD;&#xA;摘要 = 修复一个预设切换时发生的问题； Fix an issue that occurred during preset switching&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -254,7 +254,7 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="true" Name="初始化 构筑字典" Id="c3e54c94-0d02-4420-9df1-cce1fc60ebcc" RegularExpression="" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="true" Name="初始化 构筑字典" Id="c3e54c94-0d02-4420-9df1-cce1fc60ebcc" RegularExpression="" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="5000">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="构筑字典" DescriptionOverride="True" />
 <Action OrderNumber="2" DictVariableOp="Build" DictVariableTarget="空天姬航线表" DictVariableValue="=&#xD;&#xA;空天姬航线表=10&#xD;&#xA;101=水母狂魔¹/冲分&#xD;&#xA;102=横路不通¹/海洋蟾蜍/冲分*（潮虫）&#xD;&#xA;103=气鲀四海¹/只有我最鳐摆²/冲分*&#xD;&#xA;104=索蒂斯/依拉丝莫龙（火萤、重铁板钩）&#xD;&#xA;105=捕鲨人¹/冲分/珊瑚蝠鲼（小虾肉笼）&#xD;&#xA;106=哈弗古法/依拉丝莫龙（乌贼丝、重铁板钩）&#xD;&#xA;107=哈弗古法/盾齿龙/保分*（乌贼丝）&#xD;&#xA;108=龙马惊神¹/珊瑚蝠鲼/保分*（小虾肉笼）&#xD;&#xA;109=索蒂斯/石骨鱼（火萤、沟鼠尾巴）&#xD;&#xA;110=只有我最鳐摆¹/保分*&#xD;&#xA;111=气鲀四海¹/石骨鱼/保分*（沟鼠尾巴）&#xD;&#xA;112=八爪旅人¹/保分*&#xD;&#xA;201=鱿型中队精英¹/琉璃龙/冲分*&#xD;&#xA;202=四海大宝贝¹/大虾可重新来过²/保分*&#xD;&#xA;203=大虾可重新来过¹/狱之蟹/保分*（乌贼丝）&#xD;&#xA;204=四海大宝贝¹/塔尼瓦（青花鱼块）&#xD;&#xA;205=鱿型中队精英¹/塔尼瓦（青花鱼块）&#xD;&#xA;206=琉璃龙/梅泉宝龟（石蝇幼虫）&#xD;&#xA;207=鱿型中队精英¹/琉璃龙/冲分*&#xD;&#xA;208=四海大宝贝¹/大虾可重新来过²/保分*&#xD;&#xA;209=大虾可重新来过¹/狱之蟹/保分*（乌贼丝）&#xD;&#xA;210=四海大宝贝¹/塔尼瓦（青花鱼块）&#xD;&#xA;211=鱿型中队精英¹/塔尼瓦（青花鱼块）&#xD;&#xA;212=琉璃龙/梅泉宝龟（石蝇幼虫）" DictTargetPersist="True" ActionType="DictVariable" ExecutionDelayExpression="3000" Asynchronous="False" />
@@ -1956,12 +1956,6 @@
 <Action OrderNumber="31" VariableName="空天姬计数模式专一" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="32" VariableOp="UnsetRegex" VariableName="^空天姬((拍|专一)(占位|最|竿型|目标|多提)|大鱼[^猎]|最[^后]|鱼识参数|目标|原?参数|超出窗口|预设|换饵|钓饵|预拍水|天气|饵鱼模式|阶段|手法|定时|鱼眼模式|拍水后)" ActionType="Variable" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬阶段参数}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬计数模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 </Actions>
@@ -6635,7 +6629,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
+<Trigger Enabled="false" Sequential="True" Name="采集力 1080p" Id="7ed6989f-9e3a-420b-855a-35ddff6fd404" RegularExpression="" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口" VariableExpression="(${_me.maxgp} - ${_me.currentgp} ) / ( ${pv:空天姬控制采集力恢复速度} + ${ev:空天姬控制急速海豚} * 10 ) * 3 + 1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False" />
@@ -9704,7 +9698,7 @@
 <Action OrderNumber="58" Enabled="False" ActionType="Placeholder" Description="  Wow, you read all this!" DescBgColor="20376e" DescTextColor="888" DescriptionOverride="True" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="   空天姬主界面（右键执行）Main UI: Right click and `Fire`" Id="308eecf7-dd8a-477a-973c-401de7c0b101" RegularExpression="" PeriodRefire="Deny" RefirePeriodExpression="500">
+<Trigger Enabled="true" Name="   空天姬主界面（右键执行）/ Main UI: Right click and `Fire`" Id="308eecf7-dd8a-477a-973c-401de7c0b101" RegularExpression="" PeriodRefire="Deny" RefirePeriodExpression="500">
 <Actions>
 <Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="f696e166-4375-4da4-8584-fbaa9f5e5176" TriggerForce="regexp" ActionType="Trigger" />
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e 空天姬：正在尝试打开配置界面。如果你是用远程触发器获得的，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" Enabled="False" ActionType="NamedCallback" Asynchronous="False" Description="如果你看见“无效引用”，请右键仓库编辑，勾选“允许触发器执行代码”然后再右键更新，否则无法打开界面。" DescBgColor="00f" DescTextColor="fff" DescriptionOverride="True" />
@@ -9736,7 +9730,7 @@
 <Action OrderNumber="1" LaunchProcessPathExpression="https://ko-fi.com/blackcleaverloli" ActionType="LaunchProcess" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="GitHub Issues (Right click and `Fire` | Multilingual text suggestions welcome | 多言語テキストの改善提案歓迎)" Id="fd1cff60-5423-4f87-be36-85228a51cf06" RegularExpression="">
+<Trigger Enabled="false" Name="GitHub Issues (Right click and `Fire` | Multilingual text suggestions welcome / 多言語テキストの改善提案歓迎)" Id="fd1cff60-5423-4f87-be36-85228a51cf06" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/issues/new" ActionType="LaunchProcess" />
 </Actions>
@@ -9884,7 +9878,7 @@
 <Action OrderNumber="57" Enabled="False" ActionType="Placeholder" Description="  最後まで読んでくれてありがとう！" DescBgColor="20376e" DescTextColor="888" DescriptionOverride="True" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="   使用说明（右键执行 碰到问题先看）README: Right click and `Fire`" Id="909a245e-4288-4046-97c7-b37fef0b1cfe" RegularExpression="">
+<Trigger Enabled="true" Name="   使用说明（右键执行 碰到问题先看）/ README: Right click and `Fire`" Id="909a245e-4288-4046-97c7-b37fef0b1cfe" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" LaunchProcessPathExpression="https://github.com/BlackCleaverLoli/MissFisher/blob/main/README.md" ActionType="LaunchProcess" />
 </Actions>
