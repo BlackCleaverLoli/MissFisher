@@ -405,7 +405,7 @@ Send a MissFisher Preset to the Echo channel to activate.
 |-|-|
 | `/e mf` | Open Main UI |
 | `/e mfcfg` | Open User Config |
-| `/e mfhx` | Open Route Forecast |
+| `/e mfroute` | Open Route Forecast |
 
 ## Auto Fishing
 | Command | Description | Notes |

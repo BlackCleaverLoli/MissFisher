@@ -536,7 +536,7 @@ D:\ACT\AdvancedCombatTracker
 -|-
 `/e mf`<br>`/e 空天姬`|打开主界面
 `/e mfcfg`<br>`/e 空天姬配置`|打开用户配置界面
-`/e mfhx`<br>`/e 航线`|打开航线预报界面|
+`/e mfroute`<br>`/e 空天姬航线`|打开航线预报界面|
 ## 自动钓鱼：
 命令|描述|备注
 -|-|-
