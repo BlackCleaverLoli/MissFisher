@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<TriggernometryExport PluginVersion="1.2.0.734">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w12b" Enabled="true" RawEnvironmentVariables="版本 = 2.2.5&#xD;&#xA;快照 = 25w12b&#xD;&#xA;摘要 = 修复一个幻光鱼提钩错误；新增功能：钓法表达式生成器（预设编辑器）；New feature: Fishing Method Expression Generator (Preset Editor)&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
+<TriggernometryExport PluginVersion="1.2.0.735">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w12c" Enabled="true" RawEnvironmentVariables="版本 = 2.2.6&#xD;&#xA;快照 = 25w12c&#xD;&#xA;摘要 = 修复切换角色后可能出现的功能异常；新增功能：钓法表达式生成器（预设编辑器）；Fixed the issue that may occur when switching game characters; New feature: Fishing Method Expression Generator (Preset Editor)&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -177,80 +177,7 @@
 </Triggers>
 </Folder>
 <Folder Id="79477cd0-a385-4cbd-93d0-1793beb55a81" Name="初始化" Enabled="true">
-<Folders>
-<Folder Id="0fda23cc-c05a-4f04-9fe2-b74b977ee265" Name="检查环境" Enabled="true">
-<Folders>
-<Folder Id="d5c87dde-ea8e-4c5d-87e4-7888455a9462" Name="检查日志" Enabled="true">
 <Folders />
-<Triggers>
-<Trigger Enabled="false" Name="检查 267 10B" Id="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:(?&lt;id&gt;\w+):(?&lt;log&gt;\w+)" PeriodRefire="Deny" RefirePeriodExpression="1000">
-<Actions>
-<Action OrderNumber="1" UseTTSTextExpression="成功监听到日志航" ActionType="UseTTS">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="2" NamedCallbackName="hint" NamedCallbackParam="10&#xD;&#xA;${storage:KTJGetTranslationByIndex( 横幅成功监听到日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息成功监听到日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="5" NamedCallbackName="quit" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</Condition>
-</Action>
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name="启用检查 10B" Id="3b5aa968-dfbe-493b-9cbc-42afbe8daa90" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?:(?:ktj|mf) *logtest)[ ]*$|^.{26}003C::(“/(?:(?:ktj|mf) *logtest)”出现问题：该命令不存在。|The command /(?:(?:ktj|mf) *logtest) does not exist.|そのコマンドはありません。： /(?:(?:ktj|mf) *logtest))$">
-<Actions>
-<Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="2" TriggerOp="EnableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="3" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音开始监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" Asynchronous="False" />
-<Action OrderNumber="4" NamedCallbackName="hint" NamedCallbackParam="15&#xD;&#xA;${storage:KTJGetTranslationByIndex( 横幅开始监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息开始监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False" />
-</Actions>
-</Trigger>
-<Trigger Enabled="false" Name="关闭检查" Id="2e651e02-b638-4068-a783-4213103e9a5a" RegularExpression="^.{15}\S+ 01:(?!346)" PeriodRefire="Deny" RefirePeriodExpression="1000">
-<Actions>
-<Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息停止监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
-</Actions>
-</Trigger>
-</Triggers>
-</Folder>
-</Folders>
-<Triggers>
-<Trigger Enabled="true" Sequential="True" Name="检查主界面" Id="85df0c6b-c8c4-47a3-b329-8bd586d1b1a9" RegularExpression="^空天姬窗口" PrevActions="Interrupt">
-<Actions>
-<Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="MessageBox" ExecutionDelayExpression="10000">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Action>
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="NamedCallback">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-</Condition>
-</Action>
-</Actions>
-</Trigger>
-</Triggers>
-</Folder>
-</Folders>
 <Triggers>
 <Trigger Enabled="true" Name="初始化 构筑字典" Id="c3e54c94-0d02-4420-9df1-cce1fc60ebcc" RegularExpression="" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="5000">
 <Actions>
@@ -336,7 +263,7 @@
 </Action>
 </Actions>
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="384|48B" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="^(?:384|48B)" ExpressionTypeR="String" ConditionType="RegexNotMatch" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制收藏品}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制鱼计}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -642,6 +569,94 @@
 <Action OrderNumber="24" VariableOp="SetString" VariableName="空天姬控制强心剂GP防溢出" VariableExpression="448" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pv:空天姬控制强心剂GP防溢出}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name="处理角色更换" Id="918e735f-533e-4e6c-8aba-185237129573" RegularExpression="^.{15}\S+ 01:">
+<Actions>
+<Action OrderNumber="1" TriggerId="51087756-8bf2-4f8b-93c3-49d82621f207" TriggerForce="regexp,conditions" ActionType="Trigger" ExecutionDelayExpression="1000" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${_me.id}" ExpressionTypeL="String" ExpressionR="${v:空天姬控制当前角色实体IDI}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制当前角色实体IDI}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制当前角色实体IDI" VariableExpression="${_me.id}" ActionType="Variable" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${_me.id}" ExpressionTypeL="String" ExpressionR="00000000" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_me.id}" ExpressionTypeL="String" ExpressionR="${v:空天姬当前角色实体IDI}" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+</Actions>
+</Trigger>
+</Triggers>
+</Folder>
+<Folder Id="0fda23cc-c05a-4f04-9fe2-b74b977ee265" Name="检查环境" Enabled="true">
+<Folders>
+<Folder Id="d5c87dde-ea8e-4c5d-87e4-7888455a9462" Name="检查日志" Enabled="true">
+<Folders />
+<Triggers>
+<Trigger Enabled="false" Name="检查 267 10B" Id="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:(?&lt;id&gt;\w+):(?&lt;log&gt;\w+)" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Actions>
+<Action OrderNumber="1" UseTTSTextExpression="成功监听到日志航" ActionType="UseTTS">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="2" NamedCallbackName="hint" NamedCallbackParam="10&#xD;&#xA;${storage:KTJGetTranslationByIndex( 横幅成功监听到日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息成功监听到日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="4" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="5" NamedCallbackName="quit" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海钓模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid}" ExpressionTypeL="Numeric" ExpressionR="838" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+</Actions>
+</Trigger>
+<Trigger Enabled="true" Name="启用检查 10B" Id="3b5aa968-dfbe-493b-9cbc-42afbe8daa90" RegularExpression="^.{15}ChatLog 00:0038::[ ]*(?:(?:ktj|mf) *logtest)[ ]*$|^.{26}003C::(“/(?:(?:ktj|mf) *logtest)”出现问题：该命令不存在。|The command /(?:(?:ktj|mf) *logtest) does not exist.|そのコマンドはありません。： /(?:(?:ktj|mf) *logtest))$">
+<Actions>
+<Action OrderNumber="1" TriggerOp="EnableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="2" TriggerOp="EnableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="3" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音开始监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" Asynchronous="False" />
+<Action OrderNumber="4" NamedCallbackName="hint" NamedCallbackParam="15&#xD;&#xA;${storage:KTJGetTranslationByIndex( 横幅开始监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="5" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息开始监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/dfinder" ActionType="NamedCallback" ExecutionDelayExpression="1000" Asynchronous="False" />
+</Actions>
+</Trigger>
+<Trigger Enabled="false" Name="关闭检查" Id="2e651e02-b638-4068-a783-4213103e9a5a" RegularExpression="^.{15}\S+ 01:(?!346)" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Actions>
+<Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="73ca26a2-f1d5-42a0-917f-69e8ac5a1fa7" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="2e651e02-b638-4068-a783-4213103e9a5a" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="3" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息停止监听日志行 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
+</Actions>
+</Trigger>
+</Triggers>
+</Folder>
+</Folders>
+<Triggers>
+<Trigger Enabled="true" Sequential="True" Name="检查主界面" Id="85df0c6b-c8c4-47a3-b329-8bd586d1b1a9" RegularExpression="^空天姬窗口" PrevActions="Interrupt">
+<Actions>
+<Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="[空天姬 MissFisher]&#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="MessageBox" ExecutionDelayExpression="10000">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e [空天姬 MissFisher] &#xD;&#xA;主界面打开失败！&#xD;&#xA;请尝试检查插件排序（详见环境配置指南和常见问题）&#xD;&#xA;如果是远程仓库：&#xD;&#xA;请右键编辑远程仓库-勾选允许代码-保存更改&#xD;&#xA;然后更新远程仓库后再次尝试" ActionType="NamedCallback">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制窗口I}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 </Actions>
@@ -7366,11 +7381,6 @@
 <ConditionSingle Enabled="true" ExpressionL="${lang}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
-</Actions>
-</Trigger>
-<Trigger Enabled="true" Name="登记强制注册" Id="40fb00d8-586a-4d63-a27d-c9aa7f42ffc7" RegularExpression="^.{15}ChatLog 00:003D:(?:德瑞斯库托塔|Dryskthota|ドリスクトータ):(?:欢迎来到捕鱼人行会引以为傲的大型渔船……|Welcome to the Endeavor!|ようこそ！　漁師ギルドが誇る大型漁船……)" PeriodRefire="Deny" RefirePeriodExpression="30000">
-<Actions>
-<Action OrderNumber="1" TriggerId="51087756-8bf2-4f8b-93c3-49d82621f207" TriggerForce="regexp,conditions" ActionType="Trigger" />
 </Actions>
 </Trigger>
 </Triggers>
