@@ -78,7 +78,7 @@
 > 4. 点击 `应用` 。
 
 ## ACT 及 ACT 插件：
-* 高级战斗追踪器 Advanced Combat Tracker [ [下载呆萌整合](https://act.diemoe.net/ACT.Setup.exe) ]（国际服建议使用 [原版 ACT](https://overlayplugin.github.io/docs/setup/)）
+* 高级战斗追踪器 Advanced Combat Tracker [ [下载呆萌整合](https://act.diemoe.net/ACT.Setup.exe) ]（国际服建议使用 [原版 ACT](https://overlayplugin.github.io/docs/setup/)）（不支持 CafeACT）
 * 高级触发器 [MnFeN‘s fork of Triggernometry](https://github.com/MnFeN/Triggernometry) `v1.2.0.720+` [ [阿洛的 123 云盘](https://www.123pan.com/s/1xRXjv-340BH.html) ]
 * 鲶鱼精邮差 [PostNamazu](https://github.com/Natsukage/PostNamazu/releases) `v1.3.6.0+`
 * FFXIV 解析插件 & OverlayPlugin  
@@ -264,7 +264,7 @@ https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.js
 
 > [!NOTE]
 > - 如果迟迟未有消息提醒且游戏版本刚刚更新，则请耐心等待 ACT 整合更新。
-> - 如果使用的是 CafeACT，请尝试使用 呆萌 ACT（[咖啡转呆萌指北](#咖啡转呆萌指北)）。
+> - 如果使用的是 CafeACT，请更换使用 呆萌 ACT（[咖啡转呆萌指北](#咖啡转呆萌指北)）。
 
 ## 更新与卸载
 ### 如何更新：
@@ -300,6 +300,9 @@ https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.js
 > [!TIP]  
 > 该错误告警可能误报，如果自动功能正常，不必理会。
   
+- **如果你是 CafeACT，请使用 呆萌 ACT：**  
+可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。  
+  
 * **检查是否有插件冲突：**  
 检查是否同时启用了 Daily Routines 的 `显示真实等待次序` 模块与 ACT 的 `AccurateWorldTravelQueue.dll` 插件。  
 如果你同时启用了它们：请关闭 ACT 的 `AccurateWorldTravelQueue.dll` 插件 - 将其移除 - 重启游戏。  
@@ -314,12 +317,13 @@ https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.js
 打开 ACT 文件夹，搜索是否有重复的 PostNamazu.dll 文件。  
 如有，关闭 ACT 等待其完全关闭，将除 Plugins 文件夹外的 PostNamazu.dll 文件删除。  
 
-- **如果全都确认无误并且你是 CafeACT，请尝试使用 呆萌 ACT：**  
-可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。
 ### 提示主界面窗口打开失败：
 > [!TIP]  
 > 该错误告警可能误报，如果自动功能正常，不必理会。
-  
+
+- **如果你是 CafeACT，请使用 呆萌 ACT：**  
+可参考 [咖啡转呆萌指北](#咖啡转呆萌指北)。  
+   
 * **授予远程仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器执行代码` - 点击 `是` - `保存更改` - 右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
   
