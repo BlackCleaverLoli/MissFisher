@@ -1,7 +1,7 @@
 # 空天姬 MissFisher
 > [!TIP]  
-> **Language support: English · 言語サポート：日本語**  
-> 🌐 [View this page in English.](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-en.md) · [このページを日本語で表示。](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-jp.md)
+> **Language support: English / 言語サポート：日本語**  
+> 🌐 [View this page in English.](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-en.md) / [このページを日本語で表示。](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README-jp.md)
 > 
 
 **[安装指南](#安装指南) | [常见问题](#常见问题) | [2 分钟快速上手](#快速上手) | [所有命令](#命令) | [如何编写空天姬钓法表达式](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Angex)**  
