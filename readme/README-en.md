@@ -129,7 +129,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ```
 
 3. **Required:** Check `Allow Code Execution` (for UI and game memory access).  
-4. **Required:** Check `Allow File Operations` (to update built-in presets).  
+4. **Required:** Check `Allow File Operations` (to update presets).  
 5. Optional: Check `Allow Process Launching` (for browser triggers).  
 6. Click `Add` → Wait for repository sync → Proceed to [Configuration](#configuration).
 
@@ -338,7 +338,7 @@ MissFisher provides a feature-rich user interface.
 ![Main Interface](https://github.com/user-attachments/assets/ce49c874-52f4-4326-be17-8ef6ca23a2b0)
 
 ① **Notice Board:** Top-left section showing credits and sponsors.  
-② **Sync Button:** Synchronize built-in presets online.  
+② **Sync Button:** Synchronize presets online.  
 ③ **Config Button:** Open configuration window.  
 ④ **Route Forecast:** View ocean fishing schedules.  
 ⑤ **Mode Dropdown:** Select ocean fishing mode: `Scoring`, `Bluefish`, or `Achievement`.  
@@ -352,7 +352,7 @@ Send a MissFisher Preset to the Echo channel to activate.
   - Lower GP may reduce efficiency.
 
 ### Non-Ocean Fishing
-#### Method 1: Built-in Presets
+#### Method 1: Presets
 1. Copy target fish name from [FF14 Fish Guide](https://fish.ffmomola.com/#/).  
 2. Prepare bait and inventory space → Face fishing spot.  
 3. Input fish name in `Preset Input` → Box darkens if preset exists.  
@@ -389,6 +389,22 @@ Send a MissFisher Preset to the Echo channel to activate.
 >   Left-to-right order in route info. Example:  
 >   For route `Balloon Catchers¹/Sticking it to the Manta²/Scoring*`,  
 >   `Achievement 2` refers to `Sticking it to the Manta²`.  
+
+### For Diadem Achievements:
+MissFisher has modes to assist with related achievements.  
+Click the `Mode Dropdown Menu` in the main interface to select a mode.
+
+Target | Achievement Name | Required Bait
+:-:|:-:|-
+SkyBuiG2 | The Height of Angling | Diadem Hoverworm  
+SkyBuiG3 | Fishers of a Feather | Diadem Crane Fly  
+SkyBuiG4 | An Ode to Angling | Diadem Crane Fly, Diadem Balloon Bug  
+SkywardPt | Skyward Rod | Diadem Crane Fly, Diadem Balloon Bug  
+SBGreen | Dauntless Treader | Versatile Lure, Diadem Crane Fly, Diadem Balloon Bug, Diadem Red Balloon  
+
+> [!TIP]  
+> Activate any Diadem Mode upon entering the Diadem to obtain fishing spot intel.
+
 ---
 # Commands
 - **Use MissFisher features by sending commands to the Echo channel.**
@@ -411,9 +427,10 @@ Send a MissFisher Preset to the Echo channel to activate.
 | Command | Description | Notes |
 |-|-|-|
 | `/e <Preset Expression>` | Auto-fish with custom parameters | [Preset Syntax](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) (Chinese-only) |
-| `/e mfscore`<br>`/e mfscoring`<br>`/e mfbluefish`<br>`/e mfbf`<br>`/e mfachiev1`<br>`/e mfachiev2`<br>`/e mfleveling`<br>`/e mfxp` | Ocean Fishing modes | - 99+ Plump Worm/Krill/Ragworm<br>- Extra bait for Bluefish<br>- 40+ inventory slots<br>- `Achievement 2` refers to the second achievement fish (e.g., "Sticking it to the Manta²") |
-| `/e mfpreset <Fish Name> <Timer>`<br>`/e ktjys <Fish Name> <Timer>` | Use built-in preset | [Preset List](#supported-presets) (Chinese-only) |
-| `/e mfpreset show <Fish Name>`<br>`/e ktjys show <Fish Name>` | View built-in preset | Chinese fish names only |
+| `/e mfscore`<br>`/e mfscoring`<br>`/e mfbluefish`<br>`/e mfbf`<br>`/e mfachiev1`<br>`/e mfachiev2`<br>`/e mfleveling`<br>`/e mfxp` | Ocean Fishing modes | Bring 99+ Plump Worms/Krill/Ragworm. Bluefish mode requires other bait.<br>Reserve 40+ inventory slots.<br>· Achievement mode refers to achievements that require catching specific types of fish in<br>ocean fishing to obtain titles.<br>· If route IDs are [Balloon Catchers¹] [Sticking it to the Manta²],<br>'achiev2' refers to [Sticking it to the Manta²].
+`/e mfSkyBuiG2`<br>`/e mfSkyBuiG3`<br>`/e mfSkyBuiG4`<br>`/e mfSkywardPt`<br>`/e mfSBGreen`|Start with specified Diadem's targets<br>(case-insensitive)|Upon entering the Diadem, activate any Diadem Mode to obtain fishing spot intel.<br>Corresponding Diadem's Targets &gt; Diadem's Achievement Name &gt; Required Bait<br>· SkyBuiG2 &gt; The Height of Angling &gt; Diadem Hoverworm<br>· SkyBuiG3 &gt; Fishers of a Feather &gt; Diadem Crane Fly<br>· SkyBuiG4 &gt; An Ode to Angling &gt; Diadem Crane Fly, Diadem Balloon Bug<br>· SkywardPt &gt; Skyward Rod &gt; Diadem Crane Fly, Diadem Balloon Bug<br>· SBGreen &gt; Dauntless Treader &gt; Versatile Lure, Diadem Crane Fly, Diadem Balloon Bug, Diadem Red Balloon
+| `/e mfpreset <Fish Name> <Timer>` | Use preset | [Preset List](https://docs.google.com/spreadsheets/d/1-1Xy7xlG_BRU2jJNkbjTL5Ijj8pGgNm6rHncHYiHguo/edit?usp=sharing)  |
+| `/e mfpreset show <Fish Name>` | View preset | |
 | `/e mfdbg` | Debug automation | |
 | `/e mfchum` | Force Chum | Ignores GP checks |
 | `/e mfpause`<br>`/e kpause` | Pause/Resume | Some features remain active |
@@ -430,7 +447,7 @@ Send a MissFisher Preset to the Echo channel to activate.
 ## Supported Presets
 > [!TIP]
 > Sync presets via the **Sync Button** or the `Online Sync` trigger under `More` group.  
-> - **[How to Use](#method-1-use-built-in-presets)**
+> - **[How to Use](#method-1-use-presets)**
 
 **All 2.0-6.0 fish presets are available**, including some pets.  
 Presets are sourced from [MissFisher Preset Sheet](https://docs.google.com/spreadsheets/d/1-1Xy7xlG_BRU2jJNkbjTL5Ijj8pGgNm6rHncHYiHguo/edit?usp=sharing).  
