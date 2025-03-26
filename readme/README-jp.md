@@ -1,6 +1,6 @@
 # MissFisher
 > [!TIP]  
-> **[← 返回中文](https://github.com/BlackCleaverLoli/MissFisher/blob/main/readme/README.md)**
+> **[← 返回中文](https://github.com/BlackCleaverLoli/MissFisher/blob/main/README.md)**
 > 
 >
 > **Language support: English**  
