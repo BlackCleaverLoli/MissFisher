@@ -39,6 +39,7 @@
  
 ## 功能预览
 **功能**|**主界面**|
+
 -|-
 ![幻海](https://github.com/user-attachments/assets/87a3db26-4a0c-45d6-8863-eb54523b5fdb)<br>![示例](https://github.com/user-attachments/assets/d638b5d4-8647-452c-8adc-1ad5d61b2424)|![主界面](https://github.com/user-attachments/assets/b49985bb-65c9-4454-aa8c-1b6d70de4430)|
 
@@ -455,7 +456,7 @@ D:\ACT\AdvancedCombatTracker
 
 ### 界面概览 
 
-![主界面](https://github.com/user-attachments/assets/ce49c874-52f4-4326-be17-8ef6ca23a2b0)
+![366731534-ce49c874-52f4-4326-be17-8ef6ca23a2b0](https://github.com/user-attachments/assets/424aa3d7-6a56-4870-9183-67e8dc330933)
 
 ① **公告栏：** 位于界面顶部左侧，展示鸣谢以及赞助名单。
 
