@@ -335,7 +335,7 @@ MissFisher provides a feature-rich user interface.
 > - Right-click the `MissFisher Main Interface` trigger → `Execute (Force/Condition)`.
 
 ### UI Overview
-![Main Interface](https://github.com/user-attachments/assets/cdc7570c-2ae1-4cb2-bf19-6828af4c3277)
+![QQ20250327-081235121231233123123](https://github.com/user-attachments/assets/ed8325f5-0d36-408c-ac4d-c7b6bea49f1a)
 
 ① **Notice Board:** Top-left section showing credits and sponsors.  
 ② **Generator Button:** Open Angex Generator.  
