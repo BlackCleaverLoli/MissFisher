@@ -260,7 +260,7 @@ MissFisherの主要機能が集約されたUIです。
 > - `空天姫メイン画面`トリガーを右クリック → `実行（強制/条件）`
 
 ### UI構成  
-![メイン画面](https://github.com/user-attachments/assets/ce49c874-52f4-4326-be17-8ef6ca23a2b0)
+![メイン画面](https://github.com/user-attachments/assets/cdc7570c-2ae1-4cb2-bf19-6828af4c3277)
 
 ① **告知欄:** クレジットとスポンサー表示  
 ② **式構ボタン:** Angex ジェネレーターを開きます  
