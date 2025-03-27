@@ -404,6 +404,8 @@ SBGreen | Dauntless Treader | Versatile Lure, Diadem Crane Fly, Diadem Balloon B
 
 > [!TIP]  
 > Activate any Diadem Mode upon entering the Diadem to obtain fishing spot intel.
+>
+> Suggested order of completion: SBGreen > SkyBuiG2&SkyBuiG3 > SkywardPt(SkyBuiG4)
 
 ---
 # Commands
@@ -428,7 +430,7 @@ SBGreen | Dauntless Treader | Versatile Lure, Diadem Crane Fly, Diadem Balloon B
 |-|-|-|
 | `/e <Preset Expression>` | Auto-fish with custom parameters | [Preset Syntax](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets) (Chinese-only) |
 | `/e mfscore`<br>`/e mfscoring`<br>`/e mfbluefish`<br>`/e mfbf`<br>`/e mfachiev1`<br>`/e mfachiev2`<br>`/e mfleveling`<br>`/e mfxp` | Ocean Fishing modes | Bring 99+ Plump Worms/Krill/Ragworm. Bluefish mode requires other bait.<br>Reserve 40+ inventory slots.<br>· Achievement mode refers to achievements that require catching specific types of fish in<br>ocean fishing to obtain titles.<br>· If route IDs are [Balloon Catchers¹] [Sticking it to the Manta²],<br>'achiev2' refers to [Sticking it to the Manta²].
-`/e mfSkyBuiG2`<br>`/e mfSkyBuiG3`<br>`/e mfSkyBuiG4`<br>`/e mfSkywardPt`<br>`/e mfSBGreen`|Start with specified Diadem's targets<br>(case-insensitive)|Upon entering the Diadem, activate any Diadem Mode to obtain fishing spot intel.<br>Corresponding Diadem's Targets &gt; Diadem's Achievement Name &gt; Required Bait<br>· SkyBuiG2 &gt; The Height of Angling &gt; Diadem Hoverworm<br>· SkyBuiG3 &gt; Fishers of a Feather &gt; Diadem Crane Fly<br>· SkyBuiG4 &gt; An Ode to Angling &gt; Diadem Crane Fly, Diadem Balloon Bug<br>· SkywardPt &gt; Skyward Rod &gt; Diadem Crane Fly, Diadem Balloon Bug<br>· SBGreen &gt; Dauntless Treader &gt; Versatile Lure, Diadem Crane Fly, Diadem Balloon Bug, Diadem Red Balloon
+`/e mfSkyBuiG2`<br>`/e mfSkyBuiG3`<br>`/e mfSkyBuiG4`<br>`/e mfSkywardPt`<br>`/e mfSBGreen`|Start with specified Diadem's targets<br>(case-insensitive)|Upon entering the Diadem, activate any Diadem Mode to obtain fishing spot intel.<br>Corresponding Diadem's Targets &gt; Diadem's Achievement Name &gt; Required Bait<br>· SkyBuiG2 &gt; The Height of Angling &gt; Diadem Hoverworm<br>· SkyBuiG3 &gt; Fishers of a Feather &gt; Diadem Crane Fly<br>· SkyBuiG4 &gt; An Ode to Angling &gt; Diadem Crane Fly, Diadem Balloon Bug<br>· SkywardPt &gt; Skyward Rod &gt; Diadem Crane Fly, Diadem Balloon Bug<br>· SBGreen &gt; Dauntless Treader &gt; Versatile Lure, Diadem Crane Fly, Diadem Balloon Bug, Diadem Red Balloon<br>Suggested order of completion: SBGreen > SkyBuiG2&SkyBuiG3 > SkywardPt(SkyBuiG4)
 | `/e mfpreset <Fish Name> <Timer>` | Use preset | [Preset List](https://docs.google.com/spreadsheets/d/1-1Xy7xlG_BRU2jJNkbjTL5Ijj8pGgNm6rHncHYiHguo/edit?usp=sharing)  |
 | `/e mfpreset show <Fish Name>` | View preset | |
 | `/e mfdbg` | Debug automation | |
