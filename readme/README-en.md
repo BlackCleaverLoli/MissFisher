@@ -338,7 +338,7 @@ MissFisher provides a feature-rich user interface.
 ![Main Interface](https://github.com/user-attachments/assets/ce49c874-52f4-4326-be17-8ef6ca23a2b0)
 
 ① **Notice Board:** Top-left section showing credits and sponsors.  
-② **Sync Button:** Synchronize presets online.  
+② **Generator Button:** Open Angex Generator.  
 ③ **Config Button:** Open configuration window.  
 ④ **Route Forecast:** View ocean fishing schedules.  
 ⑤ **Mode Dropdown:** Select ocean fishing mode: `Scoring`, `Bluefish`, or `Achievement`.  
@@ -448,7 +448,7 @@ SBGreen | Dauntless Treader | Versatile Lure, Diadem Crane Fly, Diadem Balloon B
 
 ## Supported Presets
 > [!TIP]
-> Sync presets via the **Sync Button** or the `Online Sync` trigger under `More` group.  
+> Sync presets via the `Sync Preset` trigger under `More` group.  
 > - **[How to Use](#method-1-use-presets)**
 
 **All 2.0-6.0 fish presets are available**, including some pets.  

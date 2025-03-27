@@ -39,7 +39,6 @@
  
 ## 功能预览
 **功能**|**主界面**|
-
 -|-
 ![幻海](https://github.com/user-attachments/assets/87a3db26-4a0c-45d6-8863-eb54523b5fdb)<br>![示例](https://github.com/user-attachments/assets/d638b5d4-8647-452c-8adc-1ad5d61b2424)|![主界面](https://github.com/user-attachments/assets/b49985bb-65c9-4454-aa8c-1b6d70de4430)|
 
@@ -60,7 +59,7 @@
 ## 致谢
 **感谢 [@MnFeN](https://github.com/MnFeN/) [@Nyy](#致谢) [@Fragile](https://github.com/zfxsquare) [@欧尼棒棒](https://github.com/ONBBss/) 等大佬在 空天姬 MissFisher 开发时给予的大力支持与帮助！**
 ## 反馈
-* **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP)**
+* **[GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) | [QQ 群 959153665](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=63jvtAHAPHWQ-OPTaoaX5RtOqk4MEVOn&authKey=G45B9uDTIztCX66qbP0B1pRSGU6pabIYMFYoYlDtYAQ42guIYY86q6HTJnjF%2BG3J&noverify=0&group_code=959153665) | [预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP)**
 ## 无偿赞助
 
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)
@@ -142,7 +141,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ``` 
 
 3. 必选：勾选 `允许触发器执行代码` - 然后点击 `是` 来确定勾选（用于运行 空天姬 MissFisher 的界面窗口和读取游戏内存以获取必要的天气、钓饵等信息）。
-4. 必选：勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（用于下载 `Preset.csv` 以更新 空天姬 MissFisher 内置预设）。
+4. 必选：勾选 `允许触发器操作文件` - 然后点击 `是` 来确定勾选（用于下载 `Preset.csv` 以更新 空天姬 MissFisher 预设）。
 5. 可选的：勾选 `允许触发器启动进程` - 然后点击 `是` 来确定勾选（用于在用户手动执行前往网页的触发器时打开浏览器，如不勾选，含有实用网站的触发器将不存在）。
 6. 点击 `添加` 以完成仓库创建 - 等待仓库更新 - 确认仓库更新成功。
 7. 按条目 [进行配置](#进行配置) 中提供的方法来配置环境。
@@ -372,7 +371,7 @@ https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.js
   
 - **如果你在国际服使用 空天姬 MissFisher，请尝试使用 原版 ACT：**  
 可参考 [FFXIV ACT 安装指南](https://overlayplugin.github.io/docs/setup/)。
-### 同步内置预设功能无反应：
+### 同步预设功能无反应：
 * **授予仓库允许触发器执行代码权限：**  
 右键 `仓库` - 点击 `编辑` - 勾选 `允许触发器操作文件` - 点击 `是` - `保存更改` - 再次右键 `仓库` - 点击 `更新` - 等待仓库更新完成。  
   
@@ -456,11 +455,11 @@ D:\ACT\AdvancedCombatTracker
 
 ### 界面概览 
 
-![366731534-ce49c874-52f4-4326-be17-8ef6ca23a2b0](https://github.com/user-attachments/assets/424aa3d7-6a56-4870-9183-67e8dc330933)
+![QQ20250327-081235123123123](https://github.com/user-attachments/assets/cdc7570c-2ae1-4cb2-bf19-6828af4c3277)
 
 ① **公告栏：** 位于界面顶部左侧，展示鸣谢以及赞助名单。
 
-② **同步按钮：** 在线同步 空天姬 MissFisher 的内置预设。
+② **生成按钮：** 打开 空天姬 MissFisher 的钓法表达式生成器。
 
 ③ **配置按钮：** 打开 空天姬 MissFisher 的配置界面。
 
@@ -479,7 +478,7 @@ D:\ACT\AdvancedCombatTracker
 - 建议最大采集力 `960` 或更多，建议准备充足的 `强心剂` 系列道具，`高级强心剂` 最佳。
    - 否则，钓鱼的效率会受影响。
 ### 对于「非出海垂钓」：
-#### 方法 1：使用内置预设
+#### 方法 1：使用预设
 
 1. 使用 [FF14 鱼糕](https://fish.ffmomola.com/#/) 等工具查看想钓的鱼 - 复制目标鱼类的全称。
 2. 准备好一些背包空间与所需的钓饵 - 前往目标鱼类所处的钓场并使角色面向钓场。
@@ -487,7 +486,7 @@ D:\ACT\AdvancedCombatTracker
 4. `鼠标左键双击` `输入框` 或按下 `回车键` 以启动自动钓鱼。
 
 > [!TIP]
-> - **要查看指定鱼类的内置预设：**  
+> - **要查看指定鱼类的预设：**  
 >   可在游戏内输入 `/e 空天姬预设 查看 <鱼名>` ，可能存在的注释中可能包含有用的说明。  
 >   
 > - **有窗口期限制的鱼类：**  
@@ -567,13 +566,13 @@ D:\ACT\AdvancedCombatTracker
 `/e <空天姬钓法表达式>`|使用表达式中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)<br>目前暂时只支持中文
 `/e mfscore`<br>`/e mfscoring`<br>`/e mfbluefish`<br>`/e mfbf`<br>`/e mfachiev1`<br>`/e mfachiev2`<br>`/e mfleveling`<br>`/e mfxp`<br>`/e 空天姬冲分`<br>`/e 空天姬蓝鱼`<br>`/e 空天姬成就1`<br>`/e 空天姬成就2`<br>`/e 空天姬练级`|以指定模式自动海钓|必须携带充足的「刺螠」「磷虾」「石沙蚕」（例如 99 个）<br>蓝鱼模式需要另外携带其他钓饵<br>留出 40 格或更多背包空间。<br><br>成就指需要在出海垂钓中钓到特定种类达到特定数量的鱼类才能获得称号的成就。<br>假设航线标识是「气鲀四海¹」「只有我最鳐摆²」<br>那么「成就2」指「只有我最鳐摆²」。
 `/e 空天姬二期特供`<br>`/e 空天姬三期特供`<br>`/e 空天姬四期特供`<br>`/e 空天姬技巧点`<br>`/e 空天姬特供绿鱼`<br>`/e mfSkyBuiG2`<br>`/e mfSkyBuiG3`<br>`/e mfSkyBuiG4`<br>`/e mfSkywardPt`<br>`/e mfSBGreen`|以指定的空岛目标自动垂钓<br>（指令不限大小写）|进入云冠群岛，启动任意空岛模式，即可得到钓场位置情报。<br>以下是对应的空岛目标 &gt; 空岛成就名 &gt; 所需的钓饵<br>· 二期特供 &gt; 新巢居住区的捕鱼人 &gt; 云冠浮游虫<br>· 三期特供 &gt; 落羽商业区的捕鱼人 &gt; 云冠大蚊<br>· 四期特供 &gt; 升歌文化区的捕鱼人 &gt; 云冠大蚊、云冠气球虫<br>· 技巧点 &gt; 天穹街的捕鱼人 &gt; 云冠大蚊、云冠气球虫<br>· 特供绿鱼 &gt; 观天的捕鱼人 &gt; 万能拟饵、云冠大蚊、云冠气球虫、云冠红气球虫<br>建议的完成顺序：特供绿鱼 > 二期特供&三期特供 > 技巧点（四期特供）
-`/e mfpreset <鱼类全称> <定时分钟>`<br>`/e ktjys <鱼类全称> <定时分钟>`<br>`/e 空天姬预设 <鱼类全称> <定时分钟>`|使用对应的内置预设自动钓鱼|见条目 [支持的预设](#现在支持的内置预设)<br>预设名暂时只支持中文
-`/e 空天姬预设 查看 <鱼类全称>`<br>`/e mfpreset show <鱼类全称>`<br>`/e ktjys show <鱼类全称>`|查看对应的内置预设|以方便修改或作钓鱼准备<br>预设名暂时只支持中文
+`/e mfpreset <鱼类全称> <定时分钟>`<br>`/e ktjys <鱼类全称> <定时分钟>`<br>`/e 空天姬预设 <鱼类全称> <定时分钟>`|使用对应的预设自动钓鱼|见条目 [支持的预设](#现在支持的预设)<br>预设名暂时只支持中文
+`/e 空天姬预设 查看 <鱼类全称>`<br>`/e mfpreset show <鱼类全称>`<br>`/e ktjys show <鱼类全称>`|查看对应的预设|以方便修改或作钓鱼准备<br>预设名暂时只支持中文
 `/e mfdbg`|调试自动功能|
 `/e mfchum`<br>`/e 空天姬撒饵`|自动时强制撒饵一次|无视采集力或其他条件
 `/e mfpause`<br>`/e kpause`|暂停 / 恢复自动功能|部分功能不受暂停影响<br>例如「满足条件时的预设切换」
 `/e mfend`<br>`/e kend`<br>`/e 停止`|停止自动功能|完全停止一切自动功能
-`/e mfsync`<br>`/e 空天姬同步`|在线同步内置预设|
+`/e mfsync`<br>`/e 空天姬同步`|在线同步预设|
 ## 工具功能：
 命令|描述|备注
 -|-|-
@@ -581,14 +580,14 @@ D:\ACT\AdvancedCombatTracker
 `/e mfovl`|切换悬浮窗状态|悬浮窗显示时将隐藏，而隐藏时将显示
 `/e mfovl <悬浮窗类型> <水平偏移> <垂直偏移>`<br>`/e 空天姬悬浮窗 <悬浮窗类型> <水平偏移> <垂直偏移>`|修改悬浮窗坐标偏移 |类型：`竿时` / `time` ; `采集力` / `gp`<br>偏移量支持负数；值越大，位置相对初始位置越靠近画面右下角
   
-## 现在支持的内置预设
+## 现在支持的预设
 > [!TIP]
-> 你可以使用主界面的【同步按钮】或右键执行触发器 `更多` 分组下的 `在线同步内置预设` 来把内置预设在线同步到 空天姬 MissFisher 中。  
-> - **[如何使用内置预设](#方法-1使用内置预设)**。
+> 你可以右键执行触发器 `更多` 分组下的 `在线同步预设` 来把预设在线同步到 空天姬 MissFisher 中。  
+> - **[如何使用预设](#方法-1使用预设)**。
 
 **所有 2.0 到 6.0 的鱼类预设均已补完** ；另外，还支持部分宠物。  
 
-这些预设来自作者与部分用户参与建设的在线表格 [空天姬内置预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) 。
+这些预设来自作者与部分用户参与建设的在线表格 [空天姬预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=BB08J2) 。
 
-如果有缺少的鱼或认为预设的手法有误 / 需改进，你还可以通过 [内置预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP) 或 [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) 来向作者反馈。
+如果有缺少的鱼或认为预设的手法有误 / 需改进，你还可以通过 [预设反馈收集表](https://docs.qq.com/form/page/DVnBMaVNKQU1OVWlP) 或 [GitHub Issues](https://github.com/BlackCleaverLoli/MissFisher/issues) 来向作者反馈。
 
