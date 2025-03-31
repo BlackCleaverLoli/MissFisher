@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.735">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher 2.4.6" Enabled="true" RawEnvironmentVariables="版本 = 2.4.6&#xD;&#xA;快照 = 25w14a&#xD;&#xA;&quot;摘要 = 修复一个罕见BUG，补充脱钩报告，优化成就模式数量报告&#xD;&#xA;Fixed a rare BUG, ​​added line breaks report, optimized achievement mode quantity report.&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持 7.2 / Support 7.20&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 44347&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w14b" Enabled="true" RawEnvironmentVariables="版本 = 2.4.7&#xD;&#xA;快照 = 25w14b&#xD;&#xA;&quot;摘要 = 修复一系列 BUG&#xD;&#xA;Fixed a series of bugs.&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持 7.2 / Support 7.20&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 44347&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -3816,7 +3816,7 @@
 <Trigger Enabled="true" Sequential="True" Name="2.1 动作执行" Id="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬无消耗技能判断" VariableExpression="${l:空天姬动作[${n:(0${v:空天姬动作})}]} == 抛竿 || ${l:空天姬动作[${n:(0${v:空天姬动作})}]} == 以小钓大" ActionType="Variable" />
-<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 ) ) ? 1 : 0 ) : 0&#xD;&#xA;" ActionType="Variable">
+<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 ) ) ? 1 : 0 ) : 0&#xD;&#xA;" ActionType="Variable">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬无消耗技能判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -3845,7 +3845,7 @@
 <ConditionSingle Enabled="true" ExpressionL="0${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="6" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3857,7 +3857,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬尝试强心剂}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="8" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="9" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3869,7 +3869,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬尝试强心剂}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="11" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="12" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -3881,7 +3881,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬尝试强心剂}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="14" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="14" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="15" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4005,7 +4005,7 @@
 </Condition>
 </Action>
 <Action OrderNumber="21" VariableOp="SetString" VariableName="空天姬动作" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="120 + ( ( 0${v:空天姬耐心最后竿} || ${f:length:${v:空天姬多提信息}} ) ? 333 : 0 )" Asynchronous="False" />
-<Action OrderNumber="22" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( ${v:空天姬控制强心剂} ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="22" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( ${v:空天姬控制强心剂} ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="23" VariableOp="SetNumeric" VariableName="空天姬当前采集力强心剂" VariableExpression="${_me.currentgp} + ${v:空天姬强心剂判断} * ${pv:空天姬控制强心剂GP}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="24" VariableOp="SetString" VariableName="空天姬鱼篓判断" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
@@ -4483,9 +4483,9 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识} == 3 || ${v:空天姬控制海钓标识} == 4" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 </ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬以小钓大机会判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼猎手判断}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="552" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -5380,7 +5380,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼篓}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </ConditionGroup>
-<ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( ${v:空天姬控制幻海流结束时间} ) - ${_timestamp} : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? ( ${ev:空天姬控制海域时刻} ? ( ( ${v:空天姬控制海域时刻} ) + 390000 ) / 1000 - ${_timestamp} : 4200 ) : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
+<ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( 0${v:空天姬控制幻海流结束时刻} - ${_timestampms} ) / 1000 : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? ( ${ev:空天姬控制海域时刻} ? ( ( ${v:空天姬控制海域时刻} ) + 390000 ) / 1000 - ${_timestamp} : 4200 ) : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="String" ConditionType="NumericGreater" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬可用采集力}" ExpressionTypeL="Numeric" ExpressionR="100 + ${v:空天姬额外所需采集力}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
@@ -6009,7 +6009,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬提钩判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${_me.currentgp} + ( ${v:空天姬控制强心剂} ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 ) + 2 * ${pv:空天姬控制采集力恢复速度} + floor( ${v:空天姬控制鱼计} / 3 + ( ${v:空天姬大鱼猎手} ) ) * 150" ExpressionTypeL="Numeric" ExpressionR="1650 - 24 - ( ${v:空天姬控制幻海流时间} - ${v:空天姬控制幻海流罚时} - 18000 - ( ${_timestamp} - ${v:空天姬控制幻海流时刻} ) ) / 3 * 8" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${_me.currentgp} + ( 0${v:空天姬控制强心剂} ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 ) + 2 * ${pv:空天姬控制采集力恢复速度} + floor( ${v:空天姬控制鱼计} / 3 + ( ${ev:空天姬大鱼猎手} ) ) * 150" ExpressionTypeL="Numeric" ExpressionR="1650 - 24 - ( ${v:空天姬控制幻海流时间} - ${v:空天姬控制幻海流罚时} - 18000 - ( ${_timestamp} - ${v:空天姬控制幻海流时刻} ) ) / 3 * 8" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时段}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${_me.currentgp}" ExpressionTypeL="String" ExpressionR="692" ExpressionTypeR="String" ConditionType="NumericLess" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一目标}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6080,7 +6080,7 @@
 <Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬提钩判断" VariableExpression="4" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼猎手}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼猎手}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="false" ExpressionL="非大鱼时提" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流状态}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海钓标识}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -6252,11 +6252,11 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬专一}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬手法鱼眼绝命竿}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( ${v:空天姬控制幻海流结束时间} ) - ${_timestamp} : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? 4200 : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( 0${v:空天姬控制幻海流结束时刻} - ${_timestampms} ) / 1000 : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? 4200 : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Trigger>
 <Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
@@ -9345,84 +9345,89 @@
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="幻海触发 计算幻海时间" DescriptionOverride="True" />
 <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时刻" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="空天姬控制幻海流罚时" VariableExpression="${v:空天姬控制幻海流时间}-(${v:空天姬控制海域时刻}+390000-${_timestampms})" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域时刻}+390000-${_timestampms}" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬控制幻海流时间}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
 </Condition>
 </Action>
 <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬控制幻海流结束时间" VariableExpression="420000 - ( ${_timestampms} - ${v:空天姬控制海域时刻} + ${v:空天姬控制幻海流时间} - ${v:空天姬控制幻海流罚时} )" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" TriggerId="7eae2db5-8e6b-483a-a56c-f8961afc9b8c" TriggerText="空天姬幻海流时段" TriggerZone="出海垂钓" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬控制幻海流结束时刻" VariableExpression="${v:空天姬控制幻海流时刻} + ${v:空天姬控制幻海流时间} - ${v:空天姬控制幻海流罚时}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" LogMessageText="空天姬幻海时间" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="7" TriggerId="7eae2db5-8e6b-483a-a56c-f8961afc9b8c" TriggerText="空天姬幻海流时段" TriggerZone="出海垂钓" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="海域倒数 30 秒 结束并给出下次幻海时间" DescriptionOverride="True" />
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="8" LogMessageText="空天姬幻海时间" LogProcess="True" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="6C" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="9" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="海域倒数 30 秒 结束并给出下次幻海时间" DescriptionOverride="True" />
+<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="384|48B" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="10" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="120*1000" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="11" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="120*1000" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制海域阶段}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制海域阶段}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${_timestampms}-${v:空天姬控制幻海流时刻}" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬控制幻海流时间}" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="120*1000+${v:空天姬控制幻海流时间}-(${_timestampms}-${v:空天姬控制幻海流时刻})" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="12" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="120*1000+${v:空天姬控制幻海流时间}-(${_timestampms}-${v:空天姬控制幻海流时刻})" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${_timestampms}-${v:空天姬控制幻海流时刻}" ExpressionTypeL="Numeric" ExpressionR="${v:空天姬控制幻海流时间}" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
-</Condition>
-</Action>
-<Action OrderNumber="12" VariableOp="SetString" VariableName="空天姬控制幻海流罚时" VariableExpression="0" ActionType="Variable" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="384|48B" ExpressionTypeR="String" ConditionType="RegexMatch" />
-</ConditionGroup>
 </Condition>
 </Action>
 <Action OrderNumber="13" VariableOp="SetString" VariableName="空天姬控制幻海流强心剂修正" VariableExpression="0" VariablePersist="True" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="384|48B" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="14" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="12" TextAuraForeground="White" TextAuraBackground="56,102,155" TextAuraName="空天姬幻海流" TextAuraXIniExpression="(-204*0.5)*${_screenheight}/1080+${_screenwidth}/2" TextAuraYIniExpression="12*${_screenheight}/1080+${_screenheight}/2" TextAuraWIniExpression="204*${_screenheight}/1080" TextAuraHIniExpression="5*${_screenheight}/1080" TextAuraOIniExpression="100" TextAuraXTickExpression="(-204*0.5+204/${v:空天姬控制幻海流时间}*${_sincems}/2)*${_screenheight}/1080+${_screenwidth}/2" TextAuraWTickExpression="(204-(204/${v:空天姬控制幻海流时间}*${_sincems}))*${_screenheight}/1080" TextAuraTTLTickExpression="${_sincems}" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
-<Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<Action OrderNumber="14" VariableOp="SetString" VariableName="空天姬控制幻海流罚时" VariableExpression="0" ActionType="Variable" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="384|48B" ExpressionTypeR="String" ConditionType="RegexMatch" />
+</ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="海域结束 如果没幻海就 180 如果累加的幻海时间大于 180 则调整" DescriptionOverride="True" />
-<Action OrderNumber="16" ListVariableOp="Filter" ListVariableExpressionType="Numeric" VariableOp="SetString" VariableName="空天姬控制海域阶段" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="15" TextAuraOp="DeactivateAuraRegex" TextAuraFontSize="12" TextAuraName="^空天姬幻海流" TextAuraFontName="微软雅黑" ActionType="TextAura" Asynchronous="False">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="16" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="海域结束 如果没幻海就 180 如果累加的幻海时间大于 180 则调整" DescriptionOverride="True" />
+<Action OrderNumber="17" ListVariableOp="Filter" ListVariableExpressionType="Numeric" VariableOp="SetString" VariableName="空天姬控制海域阶段" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6145" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -9431,30 +9436,39 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="17" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="180*1000" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="18" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="180*1000" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6145" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制幻海流时刻}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="18" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="180*1000" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="19" VariableOp="SetNumeric" VariableName="空天姬控制幻海流时间" VariableExpression="180*1000" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流时间}" ExpressionTypeL="Numeric" ExpressionR="180*1000" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6145" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="19" VariableName="空天姬控制幻海流时刻" VariableExpression="60*1000" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="20" VariableName="空天姬控制幻海流时刻" VariableExpression="60*1000" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6145" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="20" VariableName="空天姬控制幻海流状态" VariableExpression="60*1000" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="21" VariableName="空天姬控制幻海流状态" VariableExpression="60*1000" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6145" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="21" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="超出窗口" DescriptionOverride="True" />
-<Action OrderNumber="22" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="5000" Asynchronous="False">
+<Action OrderNumber="22" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="超出窗口" DescriptionOverride="True" />
+<Action OrderNumber="23" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="5000" Asynchronous="False">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="384|48B" ExpressionTypeR="String" ConditionType="RegexMatch" />
+</ConditionGroup>
+</Condition>
+</Action>
+<Action OrderNumber="24" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -9463,16 +9477,7 @@
 </ConditionGroup>
 </Condition>
 </Action>
-<Action OrderNumber="23" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False">
-<Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionGroup Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${v:空天姬控制幻海流罚时}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="384|48B" ExpressionTypeR="String" ConditionType="RegexMatch" />
-</ConditionGroup>
-</Condition>
-</Action>
-<Action OrderNumber="24" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False">
+<Action OrderNumber="25" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${text}" ExpressionTypeL="String" ExpressionR="6144" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 <ConditionGroup Enabled="true" Grouping="And">
@@ -9757,7 +9762,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="3.2 强心剂补充" Id="a01bbaea-7c4d-4a74-95c0-9280f215d175" RegularExpression="^空天姬强心剂">
 <Actions>
-<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${v:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) ) ? 1 : 0 ) : 0 )" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="UseAction" NamedCallbackParam="Item,${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬超出窗口}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -9862,6 +9867,12 @@
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}${pd:空天姬预设.ekey(成就普海)}${pd:空天姬预设.ekey(成就幻海)}${pd:空天姬预设.ekey(成就幻后)}${pd:空天姬预设.ekey(蓝鱼幻海)}" ExpressionTypeL="String" ExpressionR="11111" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
+</Trigger>
+<Trigger Enabled="true" Name="1.4.3 幻海流刚刚进入" Id="c6d9f80e-d12b-4ec2-9894-651f5b81e417" RegularExpression="^空天姬幻海流时段">
+<Actions>
+<Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制幻海流刚刚进入" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="2" VariableName="空天姬控制幻海流刚刚进入" ActionType="Variable" ExecutionDelayExpression="3000" Asynchronous="False" />
+</Actions>
 </Trigger>
 </Triggers>
 </Folder>
