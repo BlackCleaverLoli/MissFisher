@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.735">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w14b" Enabled="true" RawEnvironmentVariables="版本 = 2.4.7&#xD;&#xA;快照 = 25w14b&#xD;&#xA;&quot;摘要 = 修复一系列 BUG&#xD;&#xA;Fixed a series of bugs.&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持 7.2 / Support 7.20&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 44347&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by 黑色公主切萝莉肥 空天姬是免费的" Name="MissFisher Snapshot 25w14c" Enabled="true" RawEnvironmentVariables="版本 = 2.4.8&#xD;&#xA;快照 = 25w14c&#xD;&#xA;&quot;摘要 = 修复一个当采集力超过1050左右时，三专大三少用一个恩宠的问题。&#xD;&#xA;Fixed the issue that TH-IC-PC-TH used one less TF when GP≥1050.&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持 7.2 / Support 7.20&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 44347&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -377,7 +377,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ecallback:KTJChangeBaitById}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="首次运行 自动主窗口更新检查" Id="beb3d54d-69f7-46c5-b303-08b85b76bd8e" RegularExpression="^.{15}AddCombatant 03:(?&lt;id&gt;\w+):[^:]+:12:" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="500">
+<Trigger Enabled="true" Sequential="True" Name="首次运行 自动主窗口更新检查" Id="beb3d54d-69f7-46c5-b303-08b85b76bd8e" RegularExpression="^.{15}AddCombatant 03:(?&lt;id&gt;[^:]+):[^:]+:12:" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="500">
 <Actions>
 <Action OrderNumber="1" MessageBoxIconType="Error" MessageBoxText="空天姬：&#xD;&#xA;高级触发器版本过低。&#xD;&#xA;当前：${_const[TriggernometryVersionMajor]}.${_const[TriggernometryVersionMinor]}.${_const[TriggernometryVersionBuild]}.${_const[TriggernometryVersionRevision]}&#xD;&#xA;至少：1.2.0.704+（MnFeN 分支）" Enabled="False" ActionType="MessageBox">
 <Condition Enabled="true" Grouping="And">
@@ -4343,7 +4343,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="81" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 </Condition>
 </Action>
-<Action OrderNumber="40" VariableOp="SetNumeric" VariableName="空天姬恩宠判断" VariableExpression="floor( ( 692 + ( ${ev:空天姬专一垂钓判断} ? 350 : 0 ) - ${v:空天姬当前采集力强心剂} ) / 150 ) + 1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="40" VariableOp="SetNumeric" VariableName="空天姬恩宠判断" VariableExpression="floor( ( 892 + ( ${ev:空天姬专一垂钓判断} ? 350 : 0 ) - ${v:空天姬当前采集力强心剂} ) / 150 ) + 1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬大鱼猎手判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬大鱼技巧提钩2}" ExpressionTypeL="String" ExpressionR="3" ExpressionTypeR="String" ConditionType="StringEqualCase" />
