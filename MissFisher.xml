@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.4.11" Enabled="true" RawEnvironmentVariables="版本 = 2.4.11&#xD;&#xA;快照 = 25w15a&#xD;&#xA;&quot;摘要 = 优化「鱼眼」的等待时间，优化使用体验。&#xD;&#xA;Optimize the waiting time of &quot;Fisheye&quot; and optimize the user experience.&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持 7.2 / Support 7.20&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 44347&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.4.12" Enabled="true" RawEnvironmentVariables="版本 = 2.4.12&#xD;&#xA;快照 = 25w15b&#xD;&#xA;&quot;摘要 = 修复一个海钓更换区域导致反复初始化问题。&#xD;&#xA;Fixed a problem that caused repeated initialization when changing the area of ​​Ocean Fishing.&quot;&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持 7.2 / Support 7.20&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 44347&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 105&#xD;&#xA;非水产品空间 = 128">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -268,7 +268,10 @@
 </ConditionGroup>
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="String" ExpressionR="${_me.id}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
 </ConditionGroup>
 </Condition>
 </Trigger>
@@ -6904,7 +6907,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
