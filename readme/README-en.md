@@ -98,7 +98,7 @@ Reports bite types via TTS; Sends fishing stats to Echo channel.
 > For those interested in Daily Routines (free plugin with QoL features) → [Daily Routines Setup](#dalamud-configuration).
 
 ## Versions
-MissFisher has two distribution versions:
+MissFisher has two release versions:
 
 - **Stable**  
   Reliable for general users. Updated only for major features/critical fixes.

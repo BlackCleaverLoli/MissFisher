@@ -101,7 +101,7 @@
 > 但如果你对包含众多体验优化功能的免费卫月插件 Daily Routines 感兴趣的话 → [如何获取 Daily Routines](#dalamud-相关配置) 。
 
 ## 版本
-空天姬 MissFisher 有以下分发版本：
+空天姬 MissFisher 有以下发布版本：
 
 - **正式版**  
 相对稳定，适合一般用户。  
