@@ -120,11 +120,10 @@ Winformベースの直感的なUI。
 ### ACT設定
 1. プラグイン優先順位を厳守:
 ```
-(0) CafeStore
 (1) FFXIV_ACT_Plugin
 (2) OverlayPlugin
 (3) Triggernometry
-(4) CactbotOverlay
+(4) CactbotOverlay（もしあれば）
 (5) PostNamazu
 ```
 2. ACT再起動 → ゲーム内で`/e mf`を実行

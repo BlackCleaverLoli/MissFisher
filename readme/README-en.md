@@ -149,11 +149,10 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 ### ACT Configuration
 1. Set plugin priority in ACT (strict order):
 ```
-(0) CafeStore (if present; distinguish from Matcha)
 (1) FFXIV_ACT_Plugin
 (2) OverlayPlugin
 (3) Triggernometry
-(4) CactbotOverlay
+(4) CactbotOverlay (if present)
 (5) PostNamazu
 (Other plugins)
 ```
