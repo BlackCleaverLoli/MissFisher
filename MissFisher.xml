@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.4.17" Enabled="true" RawEnvironmentVariables="版本 = 2.4.17&#xD;&#xA;快照 = 25w17e&#xD;&#xA;&quot;摘要 = 现在可使用物品ID来调用预设；修复一些问题&#xD;&#xA;Now you can use item ID to call presets; fixed some issues&#xD;&#xA;アイテム ID を使用してプリセットを呼び出すことができるようになりました。いくつかの問題を修正しました&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持国际服 7.21，修复无法读取月球钓饵的问题&#xD;&#xA;Support global server 7.21, fix the problem of not being able to read the moon bait&#xD;&#xA;グローバルサーバー7.21をサポートし、ムーンベイトを読み取れない問題を修正しました&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 50000&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 126&#xD;&#xA;非水产品空间 = 128&#xD;&#xA;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
+<ExportedFolder FFXIVJobFilter="131072" Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.4.18" Enabled="true" RawEnvironmentVariables="版本 = 2.4.18&#xD;&#xA;快照 = 25w17f&#xD;&#xA;&quot;摘要 = 现在可使用物品ID来调用预设；修复一些问题&#xD;&#xA;Now you can use item ID to call presets; fixed some issues&#xD;&#xA;アイテム ID を使用してプリセットを呼び出すことができるようになりました。いくつかの問題を修正しました&#xD;&#xA;&#xD;&#xA;- 最近更新 / Recent updates&#xD;&#xA;支持国际服 7.21，修复无法读取月球钓饵的问题&#xD;&#xA;Support global server 7.21, fix the problem of not being able to read the moon bait&#xD;&#xA;グローバルサーバー7.21をサポートし、ムーンベイトを読み取れない問題を修正しました&#xD;&#xA;新增适用于完成空岛成就的模式。&#xD;&#xA;New Diadem Achievement Mode Added.&#xD;&#xA;ディアデムアチーブメントモード新規追加。&quot;&#xD;&#xA;最大水产品ID = 50000&#xD;&#xA;单语言空间 = 4096&#xD;&#xA;普通钓饵空间 = 126&#xD;&#xA;非水产品空间 = 128&#xD;&#xA;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -9853,7 +9853,7 @@
 </Actions>
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:length:${v:空天姬控制海域}}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="NumericLess" />
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}${pd:空天姬预设.ekey(成就普海)}${pd:空天姬预设.ekey(成就幻海)}${pd:空天姬预设.ekey(成就幻后)}${pd:空天姬预设.ekey(蓝鱼幻海)}" ExpressionTypeL="String" ExpressionR="11111" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
 <Trigger Enabled="false" Name="4.3 蓝鱼上钩播报" Id="95d6a684-9f4a-4c79-b50f-6fdd5011be8d" RegularExpression="^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
@@ -9989,12 +9989,12 @@
 <Action OrderNumber="9" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息提前启动可预备启动提示 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False" />
 <Action OrderNumber="10" MessageBoxIconType="Warning" MessageBoxText="${storage:KTJGetTranslationByIndex( 对话框海钓预设缺失 , 0${pd:空天姬配置[界面语言]} )}" ActionType="MessageBox" ExecutionDelayExpression="3000">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}${pd:空天姬预设.ekey(成就普海)}${pd:空天姬预设.ekey(成就幻海)}${pd:空天姬预设.ekey(成就幻后)}${pd:空天姬预设.ekey(蓝鱼幻海)}" ExpressionTypeL="String" ExpressionR="11111" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="11" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音海钓预设缺失 , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}${pd:空天姬预设.ekey(成就普海)}${pd:空天姬预设.ekey(成就幻海)}${pd:空天姬预设.ekey(成就幻后)}${pd:空天姬预设.ekey(蓝鱼幻海)}" ExpressionTypeL="String" ExpressionR="11111" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 </Actions>
@@ -10009,7 +10009,7 @@
 <Action OrderNumber="2" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音海钓预设缺失 , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}" ExpressionTypeL="String" ExpressionR="11111" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Trigger>
 <Trigger Enabled="true" Name="1.4.3 幻海流刚刚进入" Id="c6d9f80e-d12b-4ec2-9894-651f5b81e417" RegularExpression="^空天姬幻海流时段">
