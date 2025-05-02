@@ -5,9 +5,8 @@ repos:
       name: Update Versions
       entry: python xml_version_handler.py
       language: system
-      files: |
-        MissFisher\.xml$
-        MissFisher Snapshot\.xml$
+      files: \.xml$
       pass_filenames: true
       stages: [pre-commit]
       verbose: true
+      always_run: true 
