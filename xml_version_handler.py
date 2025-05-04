@@ -11,6 +11,7 @@ import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def process_files():
+    print("[DEBUG] 接收到的文件参数:", sys.argv[1:])
     modified_files = sys.argv[1:] if len(sys.argv) > 1 else []
     main_data, snapshot_data = {}, {}
     main_updated, snapshot_updated = False, False
@@ -43,11 +44,52 @@ def process_files():
     return True
 
 def parse_xml(xml_path, is_main):
-    # 原有解析逻辑保持不变...
-    # （与问题中提供的原始parse_xml函数内容完全一致）
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+    exported_folder = root.find(".//ExportedFolder")
+    
+    raw_vars = exported_folder.get("RawEnvironmentVariables", "")
+    
+    # 提取版本号
+    version_match = re.search(r'版本\s*=\s*(\d+\.\d+\.\d+)', raw_vars)
+    if not version_match:
+        raise ValueError("未找到版本号")
+    version = version_match.group(1)
+    
+    # 提取快照号（仅快照文件）
+    snapshot = ""
+    if not is_main:
+        snapshot_match = re.search(r'快照\s*=\s*([^\r\n]+)', raw_vars)
+        if not snapshot_match:
+            raise ValueError("未找到快照号")
+        snapshot = snapshot_match.group(1)
+    
+    # 提取摘要
+    changelog_match = re.search(r'摘要\s*=\s*(.*?)(?=\"?\r?\n\S+\s*=|\Z)', raw_vars, re.DOTALL)
+    changelog = changelog_match.group(1).strip() if changelog_match else ""
+    
+    # 生成新名称
+    new_name = (
+        f"MissFisher {version}" if is_main 
+        else f"MissFisher Snapshot {snapshot}"
+    )
+    exported_folder.set("Name", new_name)
+    
+    # 保存XML（手动控制换行符）
+    xml_str = ET.tostring(root, encoding="utf-8", xml_declaration=True).decode()
+    with open(xml_path, "w", encoding="utf-8", newline="\n") as f:
+        f.write(xml_str.replace("\r\n", "\n"))
+    
+    return {
+        "version": version,
+        "snapshot": snapshot,
+        "changelog": process_changelog(changelog)
+    }
 
 def process_changelog(text):
-    # 原有日志处理逻辑保持不变...
+    return (
+        text.replace("\r\n", r"丨")
+    )
 
 def generate_csv(csv_path, main_data, snapshot_data, main_updated, snapshot_updated):
     # 读取现有CSV内容
