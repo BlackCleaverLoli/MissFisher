@@ -6,6 +6,7 @@ repos:
       entry: python xml_version_handler.py
       language: system
       files: \.xml$
-      pass_filenames: true
+      pass_filenames: true  # 自动传递修改的XML文件路径给脚本
       stages: [pre-commit]
+      always_run: false      # 仅在匹配文件修改时运行
       verbose: true
