@@ -54,7 +54,7 @@ def parse_xml(xml_path, is_main):
         snapshot = snapshot_match.group(1)
     
     # 提取摘要
-    changelog_match = re.search(r'摘要\s*=\s*(.*?)(?=\r?\n\S+\s*=|\Z)', raw_vars, re.DOTALL)
+    changelog_match = re.search(r'摘要\s*=\s*(.*?)(?=\"?\r?\n\S+\s*=|\Z)', raw_vars, re.DOTALL)
     changelog = changelog_match.group(1).strip() if changelog_match else ""
     
     # 生成新名称
