@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.5.2" Enabled="true" RawEnvironmentVariables="版本 = 2.5.2&#13;&#10;快照 = 25w19c&#13;&#10;&quot;摘要 = 新增功能：有新版本时提示。&#13;&#10;New feature: Prompt when a new version is available.&#13;&#10;新機能: 新しいバージョンが利用可能になったときに通知する。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.5.3" Enabled="true" RawEnvironmentVariables="版本 = 2.5.3&#13;&#10;快照 = 25w19d&#13;&#10;&quot;摘要 = 修复：远程仓库未授权错误。&#13;&#10;Fix: Remote repository unauthorized error.&#13;&#10;修正: リモートリポジトリの不正エラー。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -46,22 +46,23 @@
 <Action OrderNumber="1" DiskFileOpVar="空天姬预设" VariableName="空天姬控制预设I" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" DiskFileOpVar="空天姬预设" VariableName="空天姬控制预设名I" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="3" DiskFileOpVar="空天姬预设" VariableName="空天姬控制鱼王位置I" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="4" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音连接腾讯云 , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" Asynchronous="False">
+<Action OrderNumber="4" VariableName="空天姬控制预设下载I" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="5" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音连接腾讯云 , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${auto}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="同步线路" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="6" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="同步线路" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log0}${log1}${log2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="( ${pd:空天姬配置[同步线路]} )" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息已切换预设同步频道切换同步线路 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬控制预设检查I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="8" LogMessageText="空天姬检查预设${auto}TENCENT${ocean}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬控制更新I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="10" LogMessageText="空天姬下载预设文件：https://${if:${pd:空天姬配置[同步线路]}??${if:0${_ffxivlanguage}==0CN?2:1}=1?github.com/BlackCleaverLoli/MissFisher/raw/refs/heads/main/:missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
+<Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息已切换预设同步频道切换同步线路 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬控制预设检查I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="9" LogMessageText="空天姬检查预设${auto}TENCENT${ocean}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
+<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬控制更新I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="11" LogMessageText="空天姬下载预设文件：https://${if:${pd:空天姬配置[同步线路]}??${if:0${_ffxivlanguage}==0CN?2:1}=1?github.com/BlackCleaverLoli/MissFisher/raw/refs/heads/main/:missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log0}${log1}${log2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -77,21 +78,22 @@
 <Action OrderNumber="1" DiskFileOpVar="空天姬预设" VariableName="空天姬控制预设I" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" DiskFileOpVar="空天姬预设" VariableName="空天姬控制预设名I" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="3" DiskFileOpVar="空天姬预设" VariableName="空天姬控制鱼王位置I" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="4" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音连接github , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" Asynchronous="False">
+<Action OrderNumber="4" VariableName="空天姬控制预设下载I" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="5" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音连接github , 0${pd:空天姬配置[界面语言]} )}" ActionType="UseTTS" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${auto}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="同步线路" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="6" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="同步线路" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${log0}${log1}${log2}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="6" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息已切换预设同步频道切换同步线路 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="7" VariableOp="SetString" VariableName="空天姬控制预设检查I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="8" LogMessageText="空天姬检查预设${auto}GITHUB${ocean}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬控制更新I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
-<Action OrderNumber="10" LogMessageText="空天姬下载预设文件：https://${if:${pd:空天姬配置[同步线路]}??${if:0${_ffxivlanguage}==0CN?2:1}=1?github.com/BlackCleaverLoli/MissFisher/raw/refs/heads/main/:missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
+<Action OrderNumber="7" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息已切换预设同步频道切换同步线路 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False" />
+<Action OrderNumber="8" VariableOp="SetString" VariableName="空天姬控制预设检查I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="9" LogMessageText="空天姬检查预设${auto}GITHUB${ocean}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
+<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬控制更新I" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="11" LogMessageText="空天姬下载预设文件：https://${if:${pd:空天姬配置[同步线路]}??${if:0${_ffxivlanguage}==0CN?2:1}=1?github.com/BlackCleaverLoli/MissFisher/raw/refs/heads/main/:missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/}" LogProcess="True" ActionType="LogMessage" Asynchronous="False" />
 </Actions>
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="0( ${pd:空天姬配置[同步线路]} )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -944,21 +946,26 @@
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息悬浮窗切换 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Sequential="True" Name="Preset ERROR 未允许操作文件权限" Id="83eca4f1-ee35-414c-9743-cfc87b66b45a" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|(?:ktj|mf) *sync)[ ]*$|^空天姬命令：(空天姬 *同步|(?:ktj|mf) *sync)$">
+<Trigger Enabled="true" Sequential="True" Name="同步预设 报错 未允许操作文件权限" Id="83eca4f1-ee35-414c-9743-cfc87b66b45a" RegularExpression="^(?&lt;log0&gt;空天姬更新预设)(?&lt;auto&gt;自动)?|^.{15}ChatLog 00:(?&lt;log1&gt;0038)::[ ]*(空天姬 *同步|(?:ktj|mf) *sync)[ ]*$|^空天姬命令：(空天姬 *同步|(?:ktj|mf) *sync)$">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息未授权操作文件 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" ExecutionDelayExpression="250">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设检查I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设下载I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" MessageBoxIconType="Error" MessageBoxText="${storage:KTJGetTranslationByIndex( 对话框未授权操作文件 , 0${pd:空天姬配置[界面语言]} )}" ActionType="MessageBox">
+<Action OrderNumber="2" TriggerOp="CancelTrigger" TriggerId="0fa0f29a-ae40-402c-945f-395cc6123260" ActionType="Trigger">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设检查I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设下载I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</Condition>
+</Action>
+<Action OrderNumber="3" MessageBoxIconType="Error" MessageBoxText="${storage:KTJGetTranslationByIndex( 对话框未授权操作文件 , 0${pd:空天姬配置[界面语言]} )}" ActionType="MessageBox">
+<Condition Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制预设下载I}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 </Actions>
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${auto}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
+<ConditionSingle Enabled="true" ExpressionL="${auto}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
 <Trigger Enabled="true" Name="空天姬航线预报 Route" Id="e50bfa84-1192-46d9-b840-9bec99116ec0" RegularExpression="^空天姬查询航线|^.{15}ChatLog 00:0038::[ ]*(?:ktj *hx|空天姬 *航线|mf *route)[ ]*$|^空天姬命令：(?:ktj *hx|空天姬 *航线|mf *route)$">
@@ -1118,9 +1125,10 @@
 </Trigger>
 <Trigger Enabled="true" Name="同步预设 下载预设文件" Id="dcb38ce2-cb52-493d-b1ec-5aaf73cfbe2c" RegularExpression="^空天姬下载预设文件：(.+)">
 <Actions>
-<Action OrderNumber="1" DiskFileOpName="$1Preset4V2.csv" DiskFileOpVar="空天姬控制预设I" ActionType="DiskFile" />
-<Action OrderNumber="2" DiskFileOpName="$1PresetName.csv" DiskFileOpVar="空天姬控制预设名I" ActionType="DiskFile" />
-<Action OrderNumber="3" DiskFileOpName="$1BigfishPlace.csv" DiskFileOpVar="空天姬控制鱼王位置I" ActionType="DiskFile" />
+<Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制预设下载I" VariableExpression="1" ActionType="Variable" />
+<Action OrderNumber="2" DiskFileOpName="$1Preset4V2.csv" DiskFileOpVar="空天姬控制预设I" ActionType="DiskFile" />
+<Action OrderNumber="3" DiskFileOpName="$1PresetName.csv" DiskFileOpVar="空天姬控制预设名I" ActionType="DiskFile" />
+<Action OrderNumber="4" DiskFileOpName="$1BigfishPlace.csv" DiskFileOpVar="空天姬控制鱼王位置I" ActionType="DiskFile" />
 </Actions>
 </Trigger>
 </Triggers>
@@ -6527,7 +6535,7 @@
 <ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( 0${v:空天姬控制幻海流结束时刻} - ${_timestampms} ) / 1000 : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? 4200 : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+<Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="UseAction" NamedCallbackParam="Action,${pd:空天姬技能ID[${v:空天姬提钩}]}" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False" />
