@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w19e" Enabled="true" RawEnvironmentVariables="版本 = 2.5.4&#13;&#10;快照 = 25w19e&#13;&#10;&quot;摘要 = 修复：未启用提钩信息时，暂存游动饵会导致停止动作。&#13;&#10;Fix: Fixed: Automatic temporary storage of swimming bait will cause timeout when hook information is not enabled.&#13;&#10;修正: フック情報が有効になっていない場合、スイムベイトの自動保存でタイムアウトが発生することがある。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w19f" Enabled="true" RawEnvironmentVariables="版本 = 2.5.5&#13;&#10;快照 = 25w19f&#13;&#10;&quot;摘要 = 修复：在罕见情况下导致自动动作停下；一些其他问题。&#13;&#10;Fixed: Automatic actions stopped in rare cases; Some other issues.&#13;&#10;修正: まれに自動アクションが停止する問題。その他の問題。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -758,7 +758,7 @@
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制系统音I" VariableExpression="${log}" ActionType="Variable" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="空天姬预设 Preset" Id="3b444ce2-d343-4b11-add5-6a8604fd3733" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设 *(查看)?|(?:ktj *ys|mf *preset) *(?:[Ss][Hh][Oo][Ww])?)\s*((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设 *(查看)?|(?:ktj *ys|mf *preset) *(?:[Ss][Hh][Oo][Ww])?)\s*((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$">
+<Trigger Enabled="true" Name="空天姬预设 Preset" Id="3b444ce2-d343-4b11-add5-6a8604fd3733" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设 *(查看)?|(?:ktj *ys|mf *preset) *(?:[Ss][Hh][Oo][Ww])?)\s+?((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设 *(查看)?|(?:ktj *ys|mf *preset) *(?:[Ss][Hh][Oo][Ww])?)\s+?((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制预设名小写I" VariableExpression="${f:tolower:${log}}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬控制预设内容I" ActionType="Variable" Asynchronous="False" />
@@ -1737,7 +1737,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="3.2 鱼眼绝命竿" Id="8e30d108-f83b-4d0c-abad-bf0adbf34070" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[DEF]|15D0)|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
+<Trigger Enabled="false" Name="3.2 鱼眼绝命竿" Id="8e30d108-f83b-4d0c-abad-bf0adbf34070" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[DEF]|15D0|1583):|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息鱼眼绝命竿 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" ExecutionDelayExpression="1100" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
@@ -2719,7 +2719,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="模式：鱼识绝命竿" Id="e72491ce-8834-432a-9ab9-2736d2971103" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[DEF]|15D0)|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
+<Trigger Enabled="false" Name="模式：鱼识绝命竿" Id="e72491ce-8834-432a-9ab9-2736d2971103" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[DEF]|15D0|1583):|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="返回原模式" DescriptionOverride="True" />
 <Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息鱼识绝命竿 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" ExecutionDelayExpression="100" Asynchronous="False">
@@ -2981,7 +2981,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="模式：定时" Id="198ddb78-f2ff-413a-9188-719456f7479e" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设 *|(?:mf *preset|ktj *ys) *?)\s*(?&lt;log&gt;(?:(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设 *|(?:mf *preset|ktj *ys) *?)\s*(?&lt;log&gt;(?:(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="模式：定时" Id="198ddb78-f2ff-413a-9188-719456f7479e" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设|(?:mf *preset|ktj *ys))\s+?(?&lt;log&gt;(?!(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设|(?:mf *preset|ktj *ys))\s+?(?&lt;log&gt;(?!(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制预设名小写I" VariableExpression="${f:tolower:${log}}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬控制预设内容I" ActionType="Variable" Asynchronous="False" />
@@ -4016,7 +4016,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="收竿终止 播报" Id="632b5360-5c17-404d-bb7a-8730991be677" RegularExpression="^.{32}29:150001:(?&lt;log&gt;457|DB[7C])|^.{15}267 10B:[^:]*:[^:]*:248D:614[57]" PeriodRefire="Deny" RefirePeriodExpression="500">
+<Trigger Enabled="true" Name="收竿终止 播报" Id="632b5360-5c17-404d-bb7a-8730991be677" RegularExpression="^.{32}29:150001:(?&lt;log&gt;457|DB[7C]):|^.{15}267 10B:[^:]*:[^:]*:248D:614[57]:" PeriodRefire="Deny" RefirePeriodExpression="500">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬目标上钩" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
@@ -4231,7 +4231,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制暂停}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="1.1 推送海钓动作" Id="a718b032-bfe9-4a70-a421-237f70f346b1" RegularExpression="^(?&lt;log&gt;空天姬海钓执行)|^.{32}29:150001:(?&lt;log&gt;62F|46[079]|45[DEF]|15D0)|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)" PrevActions="Interrupt">
+<Trigger Enabled="false" Name="1.1 推送海钓动作" Id="a718b032-bfe9-4a70-a421-237f70f346b1" RegularExpression="^(?&lt;log&gt;空天姬海钓执行)|^.{32}29:150001:(?&lt;log&gt;62F|46[079]|45[DEF]|15D0|1583):|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" TriggerOp="CancelTrigger" TriggerId="153a0185-a08e-4767-be1a-6982c015acab" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="2" TriggerOp="CancelTrigger" TriggerId="2b602d08-3cda-41c8-8d1c-b4a53a55e0b1" ActionType="Trigger" Asynchronous="False" />
@@ -5115,7 +5115,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼篓暂存判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="0. 推送动作" Id="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" RegularExpression="^(?&lt;log&gt;空天姬执行)|^.{32}29:150001:(?&lt;log&gt;62F|46[09]|45[DEF]|15D0)|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)" PrevActions="Interrupt">
+<Trigger Enabled="false" Name="0. 推送动作" Id="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" RegularExpression="^(?&lt;log&gt;空天姬执行)|^.{32}29:150001:(?&lt;log&gt;62F|46[09]|45[DEF]|15D0|1583):|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="ba21f505-c809-4ef8-bf12-b825735b61e3" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="2" TriggerOp="CancelTrigger" TriggerId="153a0185-a08e-4767-be1a-6982c015acab" ActionType="Trigger" Asynchronous="False" />
@@ -6533,7 +6533,7 @@
 <ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( 0${v:空天姬控制幻海流结束时刻} - ${_timestampms} ) / 1000 : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? 4200 : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+<Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="UseAction" NamedCallbackParam="Action,${pd:空天姬技能ID[${v:空天姬提钩}]}" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False" />
@@ -6837,7 +6837,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${f:length:${v:空天姬控制海域}}" ExpressionTypeL="String" ExpressionR="4" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name=". 错误处理 中止 Error" Id="b43e394e-a56f-47ea-8564-8b73829009f5" RegularExpression="^.{32}29:150001:(?&lt;log&gt;DBC|421|DC7|467)|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;停止|(?:[Mm][Ff]|[Kk])[Ee][Nn][Dd])[ ]*$|^空天姬命令：(?&lt;log&gt;停止|(?:[Mm][Ff]|[Kk])[Ee][Nn][Dd])$|^空天姬(?&lt;log&gt;超时|换饵|饵名错误|天气错误)(错误：(?&lt;lure&gt;.+))?|^.{15}\S+ 00:0839::(“[^”]+”的耐久度已降到(?&lt;log&gt;0%)。|The condition of your .+ is now (?&lt;log&gt;0%).|.+の耐久度が(?&lt;log&gt;0%)になった。)$" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="true" Name=". 错误处理 中止 Error" Id="b43e394e-a56f-47ea-8564-8b73829009f5" RegularExpression="^.{32}29:150001:(?&lt;log&gt;DBC|421|DC7|467):|^.{15}ChatLog 00:0038::[ ]*(?&lt;log&gt;停止|(?:[Mm][Ff]|[Kk])[Ee][Nn][Dd])[ ]*$|^空天姬命令：(?&lt;log&gt;停止|(?:[Mm][Ff]|[Kk])[Ee][Nn][Dd])$|^空天姬(?&lt;log&gt;超时|换饵|饵名错误|天气错误)(错误：(?&lt;lure&gt;.+))?|^.{15}\S+ 00:0839::(“[^”]+”的耐久度已降到(?&lt;log&gt;0%)。|The condition of your .+ is now (?&lt;log&gt;0%).|.+の耐久度が(?&lt;log&gt;0%)になった。)$" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="DBC=警惕性很高 421=背包上限 DC7=获得力不足 467=钓饵不适合" DescriptionOverride="True" />
 <Action OrderNumber="2" UseTTSTextExpression="${storage:KTJGetTranslationByIndex( 语音报错集合 , 0${pd:空天姬配置[界面语言]} )}" UseTTSVolumeExpression="75" UseTTSRateExpression="3" ActionType="UseTTS" Asynchronous="False">
@@ -7139,7 +7139,7 @@
 <Folder Id="e54f5b49-0dfc-4e31-8ff1-7e43735e9ba4" Name="1080p" Enabled="true">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Name="幻海流" Id="d0b5816a-c308-4436-9459-8b6dd4dec7d6" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C)|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
+<Trigger Enabled="true" Name="幻海流" Id="d0b5816a-c308-4436-9459-8b6dd4dec7d6" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C):|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="幻海流=6C 海域最后半分钟=6144" DescriptionOverride="True" />
@@ -7161,7 +7161,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="竿时竿型" Id="1fc0402b-f92f-4ffd-89cf-aeae111cffed" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0)|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
+<Trigger Enabled="true" Name="竿时竿型" Id="1fc0402b-f92f-4ffd-89cf-aeae111cffed" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0):|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="469=空提 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
@@ -7267,7 +7267,7 @@
 <Folder Id="6eb56caf-24ee-4e3c-a0d5-26f62cdda650" Name="1440p" Enabled="false">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Name="竿时竿型" Id="11ecb201-f999-4cf8-a55d-fd7895592527" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0)|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
+<Trigger Enabled="true" Name="竿时竿型" Id="11ecb201-f999-4cf8-a55d-fd7895592527" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0):|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="469=空提 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
@@ -7362,7 +7362,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="幻海流" Id="30292a62-aa7b-4a8a-81af-868de64537ef" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C)|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
+<Trigger Enabled="true" Name="幻海流" Id="30292a62-aa7b-4a8a-81af-868de64537ef" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C):|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="幻海流=6C 海域最后半分钟=6144" DescriptionOverride="True" />
@@ -7395,7 +7395,7 @@
 <Folder Id="b0b9c76a-9e71-4172-9c34-a8a3d965eef2" Name="2160p" Enabled="false">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Name="竿时竿型" Id="7b160e15-c692-4116-a30a-7d91300f1786" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0)|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
+<Trigger Enabled="true" Name="竿时竿型" Id="7b160e15-c692-4116-a30a-7d91300f1786" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0):|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="469=空提 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
@@ -7490,7 +7490,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="幻海流" Id="2b385d59-6b2e-4179-8b37-6cf900b3ce0e" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C)|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
+<Trigger Enabled="true" Name="幻海流" Id="2b385d59-6b2e-4179-8b37-6cf900b3ce0e" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C):|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="幻海流=6C 海域最后半分钟=6144" DescriptionOverride="True" />
@@ -7523,7 +7523,7 @@
 <Folder Id="d2ea4d0d-9a70-47ca-a8c4-9607ff8f7bd5" Name="More than 2160p" Enabled="false">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Name="竿时竿型" Id="5ca4f39f-fbe2-42c0-9117-a1bd4f9d1a4d" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0)|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
+<Trigger Enabled="true" Name="竿时竿型" Id="5ca4f39f-fbe2-42c0-9117-a1bd4f9d1a4d" RegularExpression="^.{32}29:150001:(?&lt;log&gt;62F|46[179]|45[7D6]|DB[C]|1583|15D0):|^空天姬(?&lt;param&gt;咬饵)：(?&lt;type&gt;[123])|^空天姬悬浮窗(?&lt;log&gt;十五)">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="469=空提 467=不适合钓场 45D=被吃掉了 45E=吃假饵 45F=逃走了 457=收竿 45C=咬钩提 456=抛竿 461=以小钓大" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
@@ -7618,7 +7618,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="幻海流" Id="d258da55-eb2a-4f9d-bb23-164b5f0b6015" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C)|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
+<Trigger Enabled="true" Name="幻海流" Id="d258da55-eb2a-4f9d-bb23-164b5f0b6015" RegularExpression="^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C):|^.{15}\S+ 01:(?&lt;area&gt;384|48B):">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="字号丨1080p=四号14.25磅丨1440p=二号21.75磅丨2160p=28号27.75磅丨大于2160p=48号48磅" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="幻海流=6C 海域最后半分钟=6144" DescriptionOverride="True" />
@@ -7714,7 +7714,7 @@
 <Folder FFXIVZoneFilterEnabled="True" FfxivZoneFilterRegularExpression="^(?!425|900|1163)\d+$" Id="311f42cb-6121-4202-b402-dde2fabe4b3d" Name="检查更新" Enabled="true">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Name="0. 尝试开始" Id="5a8ef9d7-b41f-4732-9ad1-0e3bcb530301" RegularExpression="^.{15}AddCombatant 03:(?&lt;id&gt;[^:]+):[^:]+:12:|^.{32}29:150001:(?&lt;log&gt;457|DB[7C])" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="0. 尝试开始" Id="5a8ef9d7-b41f-4732-9ad1-0e3bcb530301" RegularExpression="^.{15}AddCombatant 03:(?&lt;id&gt;[^:]+):[^:]+:12:|^.{32}29:150001:(?&lt;log&gt;457|DB[7C]):" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" LogMessageText="空天姬检查版本" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="5000">
 <Condition Enabled="true" Grouping="And">
@@ -8751,7 +8751,7 @@
 <Action OrderNumber="15" Enabled="False" ActionType="Placeholder" Description="15B4=存某饵鱼入鱼篓 15B5=存某饵鱼入鱼篓并替换了某饵鱼 15B6=将鱼篓中的某饵鱼挂上了钓钩 15B7=放生了鱼篓中的饵鱼" DescriptionOverride="True" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="2.3 引诱/鱼影成功 Lure/Shdw Scs" Id="6b759bda-721f-4e91-8ee0-9caba444b704" RegularExpression="^.{32}29:150001:(?&lt;log&gt;15(?:BD|C1|BC))">
+<Trigger Enabled="true" Name="2.3 引诱/鱼影成功 Lure/Shdw Scs" Id="6b759bda-721f-4e91-8ee0-9caba444b704" RegularExpression="^.{32}29:150001:(?&lt;log&gt;15(?:BD|C1|BC)):">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="15BE=大型引诱 15BF=大型引诱x2 15C0=大型引诱x3" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Description="15B4=存某饵鱼入鱼篓 15B5=存某饵鱼入鱼篓并替换了某饵鱼 15B6=将鱼篓中的某饵鱼挂上了钓钩 15B7=放生了鱼篓中的饵鱼" DescriptionOverride="True" />
@@ -9163,7 +9163,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="2. 调用动作推送" Id="b68050a7-124b-4645-9e13-bac2d0c59ce9" RegularExpression="^.{32}29:150001:457" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="2. 调用动作推送" Id="b68050a7-124b-4645-9e13-bac2d0c59ce9" RegularExpression="^.{32}29:150001:457:" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" TriggerOp="CancelTrigger" TriggerId="0a4bffdf-d85e-4988-9c82-2343138da5de" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="b63ca274-40b4-4c10-a7c5-aa337bc15b25" ActionType="Trigger" Asynchronous="False" />
@@ -9245,7 +9245,7 @@
 </Folder>
 </Folders>
 <Triggers>
-<Trigger Enabled="false" Name="1.4.2 幻海流绝命竿" Id="e9b00ac0-4d73-4ad3-b754-72917ba7fce1" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[CD])|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
+<Trigger Enabled="false" Name="1.4.2 幻海流绝命竿" Id="e9b00ac0-4d73-4ad3-b754-72917ba7fce1" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[CD]|1583):|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="e9b00ac0-4d73-4ad3-b754-72917ba7fce1" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬控制幻海流即将结束" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
@@ -9653,7 +9653,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬预设.ekey(冲分幻海)}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="1.1 航线数据" Id="ea07885c-fcc0-436f-9980-5ebb92f9cc03" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:(?&lt;log&gt;61(7[43210]|6[DEF]|4[BCDEF]|5[012345678]))">
+<Trigger Enabled="true" Name="1.1 航线数据" Id="ea07885c-fcc0-436f-9980-5ebb92f9cc03" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:(?&lt;log&gt;61(7[43210]|6[DEF]|4[BCDEF]|5[012345678])):">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Description="所有开始海域的 NPC 喊话对话框日志（BattleTalk2）" DescriptionOverride="True" />
 <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="6bdb42ac-4c5a-4d4a-8a05-20c3c91678e7" TriggerOp="CancelTrigger" ActionType="Folder" Asynchronous="False" />
@@ -9779,7 +9779,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="1.3 幻海流数据" Id="21ffbf18-294d-4b04-a5d4-10103d9e60cb" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:(?&lt;text&gt;614[45])|^.{15}\S+ 01:(?&lt;log&gt;384|48B):|^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C)">
+<Trigger Enabled="true" Name="1.3 幻海流数据" Id="21ffbf18-294d-4b04-a5d4-10103d9e60cb" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:(?&lt;text&gt;614[45]):|^.{15}\S+ 01:(?&lt;log&gt;384|48B):|^.{15}Director 21:[^:]*:[^:]*:(?&lt;log&gt;6C):">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="6145=转海域 6144=最后30秒" DescriptionOverride="True" />
 <Action OrderNumber="2" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="幻海触发 计算幻海时间" DescriptionOverride="True" />
@@ -10161,7 +10161,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名[${pl:空天姬钓饵ID.indexof(${fishid})}]}" ExpressionTypeL="String" ExpressionR="^(?:${pd:空天姬成就计数[${f:slice(0:3):${v:空天姬控制海域}}${n:${v:空天姬控制海钓标识} - 2 }]})$" ExpressionTypeR="String" ConditionType="RegexMatch" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="4.4 成就数量 播报" Id="af25275d-90e8-4232-8c1b-d973b711fd83" RegularExpression="^.{32}29:150001:(457)|^空天姬海钓参数">
+<Trigger Enabled="true" Name="4.4 成就数量 播报" Id="af25275d-90e8-4232-8c1b-d973b711fd83" RegularExpression="^.{32}29:150001:(457):|^空天姬海钓参数">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息成就数量播报默语 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" ExecutionDelayExpression="8 * 1000" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
@@ -10226,7 +10226,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="5.2 预备 启动" Id="f1bb6aa9-d26d-4e34-9f4c-0eab26c9023a" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:61(7[43210]|6[DEF]|4[BCDEF]|5[012345678])">
+<Trigger Enabled="false" Name="5.2 预备 启动" Id="f1bb6aa9-d26d-4e34-9f4c-0eab26c9023a" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:61(7[43210]|6[DEF]|4[BCDEF]|5[012345678]):">
 <Actions>
 <Action OrderNumber="1" TriggerOp="DisableTrigger" TriggerId="f1bb6aa9-d26d-4e34-9f4c-0eab26c9023a" ActionType="Trigger" Asynchronous="False" />
 <Action OrderNumber="2" LogMessageText="空天姬海钓启动：${v:空天姬控制海钓标识}" LogProcess="True" ActionType="LogMessage" ExecutionDelayExpression="100" Asynchronous="False">
@@ -10236,7 +10236,7 @@
 </Action>
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="3.3 海钓结束 中断动作" Id="504b8d1d-9c96-43a7-8c7d-c111770e41fa" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:614(6|7)">
+<Trigger Enabled="true" Name="3.3 海钓结束 中断动作" Id="504b8d1d-9c96-43a7-8c7d-c111770e41fa" RegularExpression="^.{15}267 10B:[^:]*:[^:]*:248D:614(6|7):">
 <Actions>
 <Action OrderNumber="1" ListVariableOp="UnsetRegex" ListVariableName="^空天姬动作" ActionType="ListVariable" />
 <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" TriggerOp="CancelTrigger" ActionType="Folder" />
