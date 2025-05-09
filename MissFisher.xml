@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.5.5" Enabled="true" RawEnvironmentVariables="版本 = 2.5.5&#13;&#10;快照 = 25w19f&#13;&#10;&quot;摘要 = 修复：在罕见情况下导致自动动作停下；一些其他问题。&#13;&#10;Fixed: Automatic actions stopped in rare cases; Some other issues.&#13;&#10;修正: まれに自動アクションが停止する問題。その他の問題。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.5.6" Enabled="true" RawEnvironmentVariables="版本 = 2.5.6&#13;&#10;快照 = 25w19g&#13;&#10;&quot;摘要 = 修复：没有按预期在钓到某些鱼类时使用以小钓大。&#13;&#10;Fixed: Mooch not being used as intended when catching certain fish.&#13;&#10;修正: 特定の魚を釣る際に「泳がせ釣り」が期待通りに使用されない問題を修正。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -1682,7 +1682,7 @@
 </Trigger>
 <Trigger Enabled="true" Name="3.1 回到原预设" Id="d132aa79-be01-4c43-a11c-4e80020ab7ae" RegularExpression="^空天姬(?&lt;log&gt;切换鱼眼模式)|^.{15}StatusRemove 1E:2FA:[^:]+:[.0-9]+:(?&lt;id&gt;[^:]+):[^:]*:">
 <Actions>
-<Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="100" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬鱼眼模式}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬目标上钩}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -1737,7 +1737,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="3.2 鱼眼绝命竿" Id="8e30d108-f83b-4d0c-abad-bf0adbf34070" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[DEF]|15D0|1583):|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
+<Trigger Enabled="true" Name="3.2 鱼眼绝命竿" Id="8e30d108-f83b-4d0c-abad-bf0adbf34070" RegularExpression="^.{32}29:150001:(?&lt;log&gt;46[09]|45[DEF]|15D0|1583):|^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息鱼眼绝命竿 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" ExecutionDelayExpression="1100" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
@@ -1792,34 +1792,35 @@
 </Trigger>
 <Trigger Enabled="true" Name="2.2 状态启动" Id="2a712dc1-7650-478e-8f51-1b87eec32b40" RegularExpression="^.{15}StatusAdd 1A:2FA:[^:]+:[.0-9]+:(?&lt;id&gt;[^:]+):[^:]*:">
 <Actions>
-<Action OrderNumber="1" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息发动鱼眼 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="1" TriggerOp="CancelTrigger" TriggerId="d132aa79-be01-4c43-a11c-4e80020ab7ae" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息发动鱼眼 , 0${pd:空天姬配置[界面语言]} )}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="2" TriggerOp="DisableTrigger" TriggerId="7f400bc8-3114-4956-8974-c1db71e8d580" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="3" TriggerOp="CancelTrigger" TriggerId="30639d37-66d4-48ac-a966-bd8789f6c47b" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="4" TriggerOp="CancelTrigger" TriggerId="40e5b9ba-d629-424a-ac1d-7b0c33c8bed6" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="5" TriggerOp="CancelTrigger" TriggerId="d232da83-7fdc-4637-acc7-fb1d494ed808" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="6" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="7" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
-<Action OrderNumber="8" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="9" VariableOp="SetString" VariableName="空天姬手法鱼眼钓饵启动" VariableExpression="1" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="3" TriggerOp="DisableTrigger" TriggerId="7f400bc8-3114-4956-8974-c1db71e8d580" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="4" TriggerOp="CancelTrigger" TriggerId="30639d37-66d4-48ac-a966-bd8789f6c47b" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="5" TriggerOp="CancelTrigger" TriggerId="40e5b9ba-d629-424a-ac1d-7b0c33c8bed6" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="6" TriggerOp="CancelTrigger" TriggerId="d232da83-7fdc-4637-acc7-fb1d494ed808" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="7" FolderOp="CancelFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="8" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
+<Action OrderNumber="9" TriggerOp="EnableTrigger" TriggerId="4559cac8-4dff-41fb-9cf0-b0b1005a63f3" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="10" VariableOp="SetString" VariableName="空天姬手法鱼眼钓饵启动" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" LogMessageText="空天姬钓饵启动" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="11" LogMessageText="空天姬钓饵启动" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableName="空天姬超出窗口" ActionType="Variable" Asynchronous="False">
+<Action OrderNumber="12" VariableName="空天姬超出窗口" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" LogMessageText="空天姬执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
+<Action OrderNumber="13" LogMessageText="空天姬执行" LogProcess="True" TriggerForce="regexp" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬钓饵}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
 </Condition>
@@ -1830,7 +1831,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬鱼眼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="1.2 追加鱼篓" Id="7f400bc8-3114-4956-8974-c1db71e8d580" RegularExpression="^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
+<Trigger Enabled="false" Name="1.2 追加鱼篓" Id="7f400bc8-3114-4956-8974-c1db71e8d580" RegularExpression="^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
 <Actions>
 <Action OrderNumber="1" VariableName="空天姬手法鱼眼鱼篓判断" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬手法鱼眼鱼篓判断" VariableExpression="1" ActionType="Variable" ExecutionDelayExpression="120" Asynchronous="False">
@@ -6533,7 +6534,7 @@
 <ConditionSingle Enabled="true" ExpressionL="min( ${ev:空天姬鱼眼结束时间} ? ( ${v:空天姬鱼眼结束时间} ) - ${_timestamp} : 4200 , ( ${ev:空天姬鱼识模式} ? ( ${v:空天姬控制鱼识结束时间} ) - ${_timestamp} : 4200 ) ,  ${ev:空天姬控制幻海流状态} ? ( 0${v:空天姬控制幻海流结束时刻} - ${_timestampms} ) / 1000 : 4200 , ${_ffxivzoneid} = 900 || ${_ffxivzoneid} = 1163 ? 4200 : min( ${ev:空天姬最大ET结束时间} ? ( ${v:空天姬最大ET结束时间} ) - ${_timestamp} : 4200 , ${ev:空天姬天气转换时间} ? ( ${v:空天姬天气转换时间} ) - ${_timestamp} : 4200 )  )" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="NumericGreater" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
+<Trigger Enabled="false" Name="1.3 提钩 执行" Id="77486bb5-979a-47bc-9547-0ceae445da95" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="UseAction" NamedCallbackParam="Action,${pd:空天姬技能ID[${v:空天姬提钩}]}" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False" />
@@ -8472,7 +8473,7 @@
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制渔获鱼名" VariableExpression="${if:${pl:空天姬钓饵ID.indexof(${v:空天姬控制渔获ID})}?${pl:空天姬钓饵名[${n:${pl:空天姬钓饵ID.indexof(${v:空天姬控制渔获ID})} + ( ( ( ${pd:空天姬配置[界面语言]} ?? 2 ) - 1 ) * ${env:单语言空间} )}]}:${pl:空天姬非水产品名[${n:${pl:空天姬非水产品ID.indexof(${v:空天姬控制渔获ID})} + ( ( ( ${pd:空天姬配置[界面语言]} ?? 2 ) - 1 ) * ${env:非水产品空间} )}]}}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="3" VariableOp="SetString" VariableName="空天姬控制以小钓大机会" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${m}==1||${m}==5||${m}==7" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="0x${m} &amp; 1" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${c}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬渔技抛竿}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -8482,7 +8483,7 @@
 <Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬控制以小钓大II机会" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${c}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${m}==1||${m}==5||${m}==7" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="0x${m} &amp; 1" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="5" VariableOp="Increment" VariableName="空天姬鱼数" VariableExpression="${num}" ActionType="Variable" Asynchronous="False" />
