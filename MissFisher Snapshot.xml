@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w19g" Enabled="true" RawEnvironmentVariables="版本 = 2.5.6&#13;&#10;快照 = 25w19g&#13;&#10;&quot;摘要 = 修复：没有按预期在钓到某些鱼类时使用以小钓大。&#13;&#10;Fixed: Mooch not being used as intended when catching certain fish.&#13;&#10;修正: 特定の魚を釣る際に「泳がせ釣り」が期待通りに使用されない問題を修正。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w19h" Enabled="true" RawEnvironmentVariables="版本 = 2.5.7&#13;&#10;快照 = 25w19h&#13;&#10;&quot;摘要 = 修复：升级时自动功能会停止；一些其他问题。&#13;&#10;Fixed: Automatic functionality stops when upgrading; some other issues.&#13;&#10;修正: アップグレード時に自動機能が停止します。その他の問題。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -229,7 +229,7 @@
 <Action OrderNumber="38" TriggerId="51087756-8bf2-4f8b-93c3-49d82621f207" TriggerForce="regexp,conditions" ActionType="Trigger" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="跨区换职 销毁变量" Id="c123841c-d6ba-44f8-b292-6455ebcbb61b" RegularExpression="^.{15}\S+ 01:(?&lt;log&gt;[^:]+):|^.{15}AddCombatant 03:(?&lt;id&gt;[^:]+):">
+<Trigger Enabled="true" Name="跨区换职 销毁变量" Id="c123841c-d6ba-44f8-b292-6455ebcbb61b" RegularExpression="^.{15}\S+ 01:(?&lt;log&gt;[^:]+):|^.{15}AddCombatant 03:(?&lt;id&gt;[^:]+):[^:]+:(?!12:)">
 <Actions>
 <Action OrderNumber="1" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" ActionType="Folder" Asynchronous="False" />
 <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="ce3bfe6d-61e7-4804-9b54-aa2a84b8b6c0" ActionType="Folder" Asynchronous="False" />
@@ -4093,7 +4093,7 @@
 <Trigger Enabled="true" Sequential="True" Name="2.1 动作执行" Id="550c0c65-1fd1-4b25-8bc8-cbc0fb4d0497" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬无消耗技能判断" VariableExpression="${l:空天姬动作[${n:(0${v:空天姬动作})}]} == 抛竿 || ${l:空天姬动作[${n:(0${v:空天姬动作})}]} == 以小钓大" ActionType="Variable" />
-<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 ) ) ? 1 : 0 ) : 0&#13;&#10;" ActionType="Variable">
+<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( 0${v:空天姬控制强心剂} || 0${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( !${ev:空天姬手法引诱} ? 0${pv:空天姬控制强心剂GP防溢出} + ( 0${pv:空天姬控制幻海流强心剂修正} ) : 0${pv:空天姬控制强心剂GP} - 16 ) ) ? 1 : 0 ) : 0" ActionType="Variable">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬无消耗技能判断}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -4122,7 +4122,7 @@
 <ConditionSingle Enabled="true" ExpressionL="0${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="5" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( 0${v:空天姬控制强心剂} || 0${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( 0${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? 0${pv:空天姬控制强心剂GP防溢出} + ( 0${pv:空天姬控制幻海流强心剂修正} ) : 0${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="6" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4134,7 +4134,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬尝试强心剂}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="8" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( 0${v:空天姬控制强心剂} || 0${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( 0${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? 0${pv:空天姬控制强心剂GP防溢出} + ( 0${pv:空天姬控制幻海流强心剂修正} ) : 0${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="9" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4146,7 +4146,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬尝试强心剂}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="11" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( 0${v:空天姬控制强心剂} || 0${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( 0${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? 0${pv:空天姬控制强心剂GP防溢出} + ( 0${pv:空天姬控制幻海流强心剂修正} ) : 0${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="12" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -4158,7 +4158,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬尝试强心剂}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="14" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( ( ${v:空天姬控制强心剂} ) || ( ${v:空天姬控制强心剂提前I} ) ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( ${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? ${pv:空天姬控制强心剂GP防溢出} + ( ${pv:空天姬控制幻海流强心剂修正} ) : ${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
+<Action OrderNumber="14" VariableOp="SetNumeric" VariableName="空天姬强心剂判断" VariableExpression="( !${ev:空天姬强心剂超时} &amp;&amp; ( 0${v:空天姬控制强心剂} || 0${v:空天姬控制强心剂提前I} ) ) ? ( ${_me.currentgp} ≤ ( ${_me.maxgp} - ( 0${v:空天姬无消耗技能判断} &amp;&amp; !${ev:空天姬手法引诱} ? 0${pv:空天姬控制强心剂GP防溢出} + ( 0${pv:空天姬控制幻海流强心剂修正} ) : 0${pv:空天姬控制强心剂GP} - 16 )  ) ? 1 : 0 ) : 0" ActionType="Variable" />
 <Action OrderNumber="15" NamedCallbackName="KTJUseItem" NamedCallbackParam="${pv:空天姬控制强心剂ID}" ActionType="NamedCallback" ExecutionDelayExpression="( ${v:空天姬强心剂判断} ) * 120">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${v:空天姬强心剂判断}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
@@ -7783,7 +7783,7 @@
 <Action OrderNumber="8" TriggerId="2e337b1d-1769-4582-82cc-87a06a334f4c" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="1.1 发起开始" Id="9f0444c6-e551-4b5b-8acd-db07c1f27dd5" RegularExpression="^空天姬检查版本" PeriodRefire="Deny" RefirePeriodExpression="60000">
+<Trigger Enabled="true" Name="1.1 发起开始" Id="9f0444c6-e551-4b5b-8acd-db07c1f27dd5" RegularExpression="^空天姬检查版本" PeriodRefire="Deny" RefirePeriodExpression="3600000">
 <Actions>
 <Action OrderNumber="1" VariableName="空天姬控制版本信息I" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬控制版本检查结果I" ActionType="Variable" Asynchronous="False" />
@@ -7962,7 +7962,7 @@
 </Action>
 <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="空天姬咬钩时刻" VariableExpression="${_timestampms}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${log}" ExpressionTypeL="String" ExpressionR="4(61|56)" ExpressionTypeR="String" ConditionType="RegexMatch" />
+<ConditionSingle Enabled="true" ExpressionL="${log} == 456 || ${log} == 461" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="空天姬控制咬钩显示" VariableExpression="${func:format(System.Double,&quot;0.0&quot;):${n:round((${_timestampms}-${v:空天姬咬钩时刻})/1000,1)}}" ActionType="Variable" Asynchronous="False">
