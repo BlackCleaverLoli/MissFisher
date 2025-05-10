@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w19h" Enabled="true" RawEnvironmentVariables="版本 = 2.5.7&#13;&#10;快照 = 25w19h&#13;&#10;&quot;摘要 = 修复：升级时自动功能会停止；一些其他问题。&#13;&#10;Fixed: Automatic functionality stops when upgrading; some other issues.&#13;&#10;修正: アップグレード時に自動機能が停止します。その他の問題。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w19i" Enabled="true" RawEnvironmentVariables="版本 = 2.5.8&#13;&#10;快照 = 25w19i&#13;&#10;&quot;摘要 = 修复：一些问题。&#13;&#10;Fixed: some issues.&#13;&#10;修正済み：いくつかの問題。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -464,114 +464,129 @@
 <Trigger Enabled="true" Name="初始化 配置缺省值" Id="52c07085-c4db-41e2-aa48-25655f8045c1" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="旧版适应" DescriptionOverride="True" />
-<Action OrderNumber="2" TriggerId="fb8d4caa-1aa8-47bc-891e-fcb8e0b2f8e4" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+<Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制强心剂ID" VariableExpression="16911" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[配置]}" ExpressionTypeL="Numeric" ExpressionR="251909" ExpressionTypeR="String" ConditionType="NumericLess" />
+</Condition>
+</Action>
+<Action OrderNumber="3" VariableOp="SetString" VariableName="空天姬控制强心剂GP" VariableExpression="150" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[配置]}" ExpressionTypeL="Numeric" ExpressionR="251909" ExpressionTypeR="String" ConditionType="NumericLess" />
+</Condition>
+</Action>
+<Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬控制强心剂GP防溢出" VariableExpression="198" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
+<Condition Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[配置]}" ExpressionTypeL="Numeric" ExpressionR="251909" ExpressionTypeR="String" ConditionType="NumericLess" />
+</Condition>
+</Action>
+<Action OrderNumber="5" TriggerId="fb8d4caa-1aa8-47bc-891e-fcb8e0b2f8e4" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[配置]}" ExpressionTypeL="Numeric" ExpressionR="244807" ExpressionTypeR="String" ConditionType="NumericLess" />
 </Condition>
 </Action>
-<Action OrderNumber="3" TriggerOp="EnableTrigger" TriggerId="c4f90da5-5427-4ff1-bce8-af7250aa7465" ActionType="Trigger" Asynchronous="False" />
-<Action OrderNumber="4" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="主界面主题" DictVariableValue="0" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="6" TriggerOp="EnableTrigger" TriggerId="c4f90da5-5427-4ff1-bce8-af7250aa7465" ActionType="Trigger" Asynchronous="False" />
+<Action OrderNumber="7" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="主界面主题" DictVariableValue="0" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[配置]}" ExpressionTypeL="Numeric" ExpressionR="250401" ExpressionTypeR="String" ConditionType="NumericLess" />
 </Condition>
 </Action>
-<Action OrderNumber="5" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="缺省值" DescriptionOverride="True" />
-<Action OrderNumber="6" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="语言" DictVariableValue="${if: ${_ffxivlanguage} == CN ? 1 : ${if: ${_ffxivlanguage} == JP ? 3 : 2 } }" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="8" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="缺省值" DescriptionOverride="True" />
+<Action OrderNumber="9" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="语言" DictVariableValue="${if: ${_ffxivlanguage} == CN ? 1 : ${if: ${_ffxivlanguage} == JP ? 3 : 2 } }" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="0${pd:空天姬配置[语言]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="7" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="界面语言" DictVariableValue="${if: ${_ffxivlanguage} == CN ? 1 : ${if: ${_ffxivlanguage} == JP ? 3 : 2 } }" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="10" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="界面语言" DictVariableValue="${if: ${_ffxivlanguage} == CN ? 1 : ${if: ${_ffxivlanguage} == JP ? 3 : 2 } }" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="0${pd:空天姬配置[界面语言]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="8" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="系统音" DictVariableValue="100" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="11" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="系统音" DictVariableValue="100" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[系统音]}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="9" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="关闭系统音" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="12" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="关闭系统音" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[关闭系统音]}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="10" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="竿时悬浮窗" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="13" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="竿时悬浮窗" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="0${pd:空天姬配置[竿时悬浮窗]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="11" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="采集力悬浮窗" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
+<Action OrderNumber="14" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="采集力悬浮窗" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" ActionType="DictVariable" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="0${pd:空天姬配置[采集力悬浮窗]}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="12" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="TTS报竿" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="15" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="TTS报竿" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[TTS报竿]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="13" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="音效报竿" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="16" DictVariableOp="Set" DictVariableValueType="Numeric" DictVariableName="空天姬配置" DictVariableKey="音效报竿" DictVariableValue="2" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[音效报竿]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="14" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="调试模式" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="17" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="调试模式" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[调试模式]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="15" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="公共频道" DictVariableValue="e" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="18" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="公共频道" DictVariableValue="e" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[公共频道]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="16" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="幻海频道" DictVariableValue="e" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="19" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="幻海频道" DictVariableValue="e" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[幻海频道]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="17" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="成就频道" DictVariableValue="p" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="20" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="成就频道" DictVariableValue="p" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[成就频道]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="18" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="同步线路" DictVariableValue="${if: ${_ffxivlanguage} == CN ? 2 : 1 }" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="21" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="同步线路" DictVariableValue="${if: ${_ffxivlanguage} == CN ? 2 : 1 }" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[同步线路]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="19" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="主界面自启" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="22" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="主界面自启" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[主界面自启]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="20" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="节日主题" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="23" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="节日主题" DictVariableValue="1" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[节日主题]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="21" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="延迟时间" DictVariableValue="0" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="24" DictVariableOp="Set" DictVariableName="空天姬配置" DictVariableKey="延迟时间" DictVariableValue="0" DictSourcePersist="True" VariableOp="SetNumeric" TriggerOp="DisableTrigger" ActionType="DictVariable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${pd:空天姬配置[延迟时间]}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="22" VariableOp="SetString" VariableName="空天姬控制采集力恢复速度" VariableExpression="8" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="25" VariableOp="SetString" VariableName="空天姬控制采集力恢复速度" VariableExpression="1" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pv:空天姬控制采集力恢复速度}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="23" VariableOp="SetString" VariableName="空天姬控制强心剂ID" VariableExpression="12669" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="26" VariableOp="SetString" VariableName="空天姬控制强心剂ID" VariableExpression="16911" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pv:空天姬控制强心剂ID}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="24" VariableOp="SetString" VariableName="空天姬控制强心剂GP" VariableExpression="400" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="27" VariableOp="SetString" VariableName="空天姬控制强心剂GP" VariableExpression="150" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pv:空天姬控制强心剂GP}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
-<Action OrderNumber="25" VariableOp="SetString" VariableName="空天姬控制强心剂GP防溢出" VariableExpression="448" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
+<Action OrderNumber="28" VariableOp="SetString" VariableName="空天姬控制强心剂GP防溢出" VariableExpression="198" VariablePersist="True" ActionType="Variable" Asynchronous="False" DescBgColor="fff">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pv:空天姬控制强心剂GP防溢出}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
@@ -6034,8 +6049,8 @@
 <Action OrderNumber="15" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${_me.CurrentGP}" ExpressionTypeL="String" ExpressionR="34" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${_me.CurrentGP}" ExpressionTypeL="String" ExpressionR="50 - ( ${pv:空天姬控制采集力恢复速度} ?? 1 ) * 2" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
 </Condition>
 </Action>
 <Action OrderNumber="16" NamedCallbackName="command" NamedCallbackParam="/ac &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}${v:空天姬提钩}]}&quot;" ActionType="NamedCallback" Asynchronous="False">
@@ -6418,7 +6433,7 @@
 <Action OrderNumber="19" VariableOp="SetString" VariableName="空天姬提钩" VariableExpression="提钩" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬耐心状态}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${_me.CurrentGP}" ExpressionTypeL="String" ExpressionR="34" ExpressionTypeR="String" ConditionType="NumericLessEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${_me.CurrentGP}" ExpressionTypeL="String" ExpressionR="50 - ( ${pv:空天姬控制采集力恢复速度} ?? 1 ) * 2" ExpressionTypeR="Numeric" ConditionType="NumericLessEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬提钩}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Action>
@@ -8474,10 +8489,7 @@
 <Action OrderNumber="3" VariableOp="SetString" VariableName="空天姬控制以小钓大机会" VariableExpression="1" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="0x${m} &amp; 1" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${c}" ExpressionTypeL="String" ExpressionR="9" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${ev:空天姬渔技抛竿}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-</ConditionGroup>
+<ConditionSingle Enabled="true" ExpressionL="0x${c} &amp; 0x8" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 </Condition>
 </Action>
 <Action OrderNumber="4" VariableOp="SetString" VariableName="空天姬控制以小钓大II机会" VariableExpression="1" ActionType="Variable" Asynchronous="False">
