@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w19j" Enabled="true" RawEnvironmentVariables="版本 = 2.5.9&#13;&#10;快照 = 25w19j&#13;&#10;&quot;摘要 = 修复：一些问题。&#13;&#10;Fixed: some issues.&#13;&#10;修正済み：いくつかの問題。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w20a" Enabled="true" RawEnvironmentVariables="版本 = 2.5.10&#13;&#10;快照 = 25w20a&#13;&#10;&quot;摘要 = 修复：一些问题。&#13;&#10;Fixed: some issues.&#13;&#10;修正済み：いくつかの問題。&#13;&#10;&#13;&#10;- 最近更新 / Recent updates&#13;&#10;新增「鱼王」和「鱼皇」模式可自动识别钓场之王目标。&#13;&#10;新增适用于完成空岛成就的模式。&#13;&#10;New Diadem Achievement Mode Added.&#13;&#10;Added 'Big Fish' and 'Legends' modes with auto-detection of the Location's target rulers.&#13;&#10;ディアデムアチーブメントモード新規追加。&#13;&#10;追加された「ヌシ」モードと「オオヌシ」モードは釣り場のターゲットを自動識別します。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -779,7 +779,7 @@
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制系统音I" VariableExpression="${log}" ActionType="Variable" />
 </Actions>
 </Trigger>
-<Trigger Enabled="true" Name="空天姬预设 Preset" Id="3b444ce2-d343-4b11-add5-6a8604fd3733" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设\s*?(查看)?|(?:ktj *ys|mf *preset)\s*?(?:[Ss][Hh][Oo][Ww])?)\s*?((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设\s*?(查看)?|(?:ktj *ys|mf *preset)\s*?(?:[Ss][Hh][Oo][Ww])?)\s*?((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$">
+<Trigger Enabled="true" Name="空天姬预设 Preset" Id="3b444ce2-d343-4b11-add5-6a8604fd3733" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设\s*(查看)?|(?:ktj *ys|mf *preset)\s*(?:[Ss][Hh][Oo][Ww])?)\s*((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设\s*(查看)?|(?:ktj *ys|mf *preset)\s*(?:[Ss][Hh][Oo][Ww])?)\s*((?&lt;log&gt;\d+)|(?&lt;log&gt;(?!(?i)show|查看).+?)(?&lt;!\s+\d+))\s*)$">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制预设名小写I" VariableExpression="${f:tolower:${log}}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬控制预设内容I" ActionType="Variable" Asynchronous="False" />
@@ -3003,7 +3003,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="模式：定时" Id="198ddb78-f2ff-413a-9188-719456f7479e" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设|(?:mf *preset|ktj *ys))\s*?(?&lt;log&gt;(?!(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设|(?:mf *preset|ktj *ys))\s*?(?&lt;log&gt;(?!(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$" PrevActions="Interrupt">
+<Trigger Enabled="true" Name="模式：定时" Id="198ddb78-f2ff-413a-9188-719456f7479e" RegularExpression="^.{15}ChatLog 00:0038::\s*(?:(?&lt;cmd&gt;空天姬 *预设|(?:mf *preset|ktj *ys))\s*(?&lt;log&gt;(?!(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$|^空天姬命令：(?:(?&lt;cmd&gt;空天姬 *预设|(?:mf *preset|ktj *ys))\s*(?&lt;log&gt;(?!(?i)show|查看).+?)\s+(?&lt;mm&gt;\d+)\s*)$" PrevActions="Interrupt">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬控制预设名小写I" VariableExpression="${f:tolower:${log}}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬控制预设内容I" ActionType="Variable" Asynchronous="False" />
