@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w20d" Enabled="true" RawEnvironmentVariables="版本 = 2.5.12&#13;&#10;快照 = 25w20d&#13;&#10;&quot;摘要 = 新增：支持 C、D 级宇宙探索任务预设，可用 '/e mf stellar' 调用。&#13;&#10;New: Supports preset C and D-level Stellar Missions, which can be called with '/e mf Stellar'.&#13;&#10;新規：C、Dレベルのコスモエクスプローラープリセットをサポートし、'/e mf stellar'呼び出しが可能。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w20e" Enabled="true" RawEnvironmentVariables="版本 = 2.5.13&#13;&#10;快照 = 25w20e&#13;&#10;&quot;摘要 = 新增：支持 C、D 级宇宙探索任务预设，可用 '/e mf stellar' 调用。&#13;&#10;New: Supports preset C and D-level Stellar Missions, which can be called with '/e mf Stellar'.&#13;&#10;新規：C、Dレベルのコスモエクスプローラープリセットをサポートし、'/e mf stellar'呼び出しが可能。&quot;&#13;&#10;最大水产品ID = 50000&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -6809,7 +6809,7 @@
 <Action OrderNumber="16" NamedCallbackName="KTJUseItem" NamedCallbackParam="16911" ActionType="NamedCallback" ExecutionDelayExpression="200" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="1.4 宇宙提钩 执行" Id="326786dd-7650-46a9-9032-f65e94b2c952" RegularExpression="">
+<Trigger Enabled="true" Name="1.4 宇宙提钩 执行" Id="326786dd-7650-46a9-9032-f65e94b2c952" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="UseAction" NamedCallbackParam="5,27" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/gaction &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}任务指令2]}&quot;" ActionType="NamedCallback" Asynchronous="False" />
@@ -7168,7 +7168,7 @@
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
 </Condition>
 </Trigger>
-<Trigger Enabled="true" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
+<Trigger Enabled="false" Name="ServerTick 转发" Id="66bfbb08-7c2f-4404-a91f-b988ba84540c" RegularExpression="^.{15}UpdateHp 27:[^:]+:[^:]+:[^:]+:[^:]+:0" PeriodRefire="Deny" RefirePeriodExpression="1000">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="空天姬控制采集力缺口GP" VariableExpression="${_me.maxgp} - ${_me.currentgp}" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" VariableOp="SetString" VariableName="空天姬控制采集力悬浮窗" VariableExpression="0" ActionType="Variable" Asynchronous="False">
@@ -10531,7 +10531,7 @@
 <Trigger Enabled="true" Name="0. 读取输入预设" Id="ee0797fd-67d3-4583-b90e-288ae8adb1d4" RegularExpression="^.{15}ChatLog 00:0038::(?:(?:ktj|mf) *(?&lt;log&gt;(?i)stellar))$|^空天姬命令：(?:(?:ktj|mf) *(?&lt;log&gt;(?i)stellar))$">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="KTJObtainWKS" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False" />
-<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e mfpreset stell${v:空天姬控制宇宙任务ID}" ActionType="NamedCallback" Asynchronous="False">
+<Action OrderNumber="2" NamedCallbackName="command" NamedCallbackParam="/e mfpreset stell${v:空天姬控制宇宙当前任务ID}" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="Or">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬控制宇宙当前任务ID}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 </Condition>
