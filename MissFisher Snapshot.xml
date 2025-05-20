@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.736">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w21a" Enabled="true" RawEnvironmentVariables="版本 = 2.5.17&#13;&#10;快照 = 25w21a&#13;&#10;&quot;摘要 = 修复一些问题。&#13;&#10;Fix some issues.&#13;&#10;いくつかの問題を修正する。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w21b" Enabled="true" RawEnvironmentVariables="版本 = 2.5.18&#13;&#10;快照 = 25w21b&#13;&#10;&quot;摘要 = 修复一些问题。&#13;&#10;Fix some issues.&#13;&#10;いくつかの問題を修正する。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -7080,7 +7080,7 @@
 <Trigger Enabled="true" Name="获取 CPS" Id="d2fdd1af-3250-4130-9d89-fe9b2a29a4c3" RegularExpression="" PeriodRefire="Deny" RefirePeriodExpression="3100">
 <Actions>
 <Action OrderNumber="1" Enabled="False" ActionType="Placeholder" Asynchronous="False" Description="1=2 70=3 80=5 90=8" DescriptionOverride="True" />
-<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力恢复速度" VariableExpression="${_me.level}≥90?8:${_me.level}≥80?5:${_me.level}≥70?3:2" VariablePersist="True" ActionType="Variable" Asynchronous="False" />
+<Action OrderNumber="2" VariableOp="SetNumeric" VariableName="空天姬控制采集力恢复速度" VariableExpression="${_me.level}≥83?8:${_me.level}≥80?7:${_me.level}≥70?6:5" VariablePersist="True" ActionType="Variable" />
 </Actions>
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${_me.maxgp}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
