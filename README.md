@@ -576,6 +576,7 @@ D:\ACT\AdvancedCombatTracker
 -|-|-
 `/e <空天姬钓法表达式>`|使用表达式中的参数自动钓鱼|自定义参数的预设<br>[如何编写空天姬预设](https://github.com/BlackCleaverLoli/MissFisher/wiki/Learn-Presets)<br>目前暂时只支持中文
 `/e mfBigFish`<br>`/e mfLegends`<br>`/e 空天姬鱼王`<br>`/e 空天姬鱼皇`|以指定的钓场之王类型自动垂钓<br>（不限大小写）|
+`/e mfCosmic`<br>`/e 空天姬宇宙`|以已开始的宇宙探索任务要求自动垂钓<br>（不限大小写）|
 `/e mfscore`<br>`/e mfscoring`<br>`/e mfbluefish`<br>`/e mfbf`<br>`/e mfachiev1`<br>`/e mfachiev2`<br>`/e mfleveling`<br>`/e mfxp`<br>`/e 空天姬冲分`<br>`/e 空天姬蓝鱼`<br>`/e 空天姬成就1`<br>`/e 空天姬成就2`<br>`/e 空天姬练级`|以指定模式自动海钓|必须携带充足的「刺螠」「磷虾」「石沙蚕」（例如 99 个）<br>蓝鱼模式需要另外携带其他钓饵<br>留出 40 格或更多背包空间。<br><br>成就指需要在出海垂钓中钓到特定种类达到特定数量的鱼类才能获得称号的成就。<br>假设航线标识是「气鲀四海¹」「只有我最鳐摆²」<br>那么「成就2」指「只有我最鳐摆²」。
 `/e mfSkyBuiG2`<br>`/e mfSkyBuiG3`<br>`/e mfSkyBuiG4`<br>`/e mfSkywardPt`<br>`/e mfSBGreen`<br>`/e 空天姬二期特供`<br>`/e 空天姬三期特供`<br>`/e 空天姬四期特供`<br>`/e 空天姬技巧点`<br>`/e 空天姬特供绿鱼`|以指定的空岛目标自动垂钓<br>（指令不限大小写）|进入云冠群岛，启动任意空岛模式，即可得到钓场位置情报。<br>以下是对应的空岛目标 &gt; 空岛成就名 &gt; 所需的钓饵<br>· 二期特供 &gt; 新巢居住区的捕鱼人 &gt; 云冠浮游虫<br>· 三期特供 &gt; 落羽商业区的捕鱼人 &gt; 云冠大蚊<br>· 四期特供 &gt; 升歌文化区的捕鱼人 &gt; 云冠大蚊、云冠气球虫<br>· 技巧点 &gt; 天穹街的捕鱼人 &gt; 云冠大蚊、云冠气球虫<br>· 特供绿鱼 &gt; 观天的捕鱼人 &gt; 万能拟饵、云冠大蚊、云冠气球虫、云冠红气球虫<br>建议的完成顺序：特供绿鱼 > 二期特供&三期特供 > 技巧点（四期特供）
 `/e mfpreset <鱼类全称> [定时分钟]`<br>`/e ktjys <鱼类全称> [定时分钟]`<br>`/e 空天姬预设 <鱼类全称> [定时分钟]`|使用对应的预设自动钓鱼|见条目 [支持的预设](#现在支持的预设)
