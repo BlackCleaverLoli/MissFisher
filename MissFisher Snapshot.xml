@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.744">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w26b" Enabled="true" RawEnvironmentVariables="版本 = 2.6.1&#13;&#10;快照 = 25w26b&#13;&#10;&quot;摘要 = 接取宇宙任务时自动启动。&#13;&#10;Automatically start when accepting a stellar mission.&#13;&#10;コスモミッションを受け入れると自動的に開始されます。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher Snapshot 25w26c" Enabled="true" RawEnvironmentVariables="版本 = 2.6.2&#13;&#10;快照 = 25w26c&#13;&#10;&quot;摘要 = 接取宇宙任务时自动启动，修复一个问题。&#13;&#10;Automatically start when accepting a stellar mission. Fix a bug.&#13;&#10;コスモミッションを受け入れると自動的に開始されます。バグを修正する。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -2199,7 +2199,7 @@
 </ConditionGroup>
 </Condition>
 </Trigger>
-<Trigger Enabled="false" Name="模式：计数" Id="3f08c429-1513-4a70-891d-ef037c7fab19" RegularExpression="^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
+<Trigger Enabled="true" Name="模式：计数" Id="3f08c429-1513-4a70-891d-ef037c7fab19" RegularExpression="^空天姬渔获：(?&lt;fishid&gt;[^|]+)\|(?&lt;num&gt;[^|]+)">
 <Actions>
 <Action OrderNumber="1" VariableOp="SetString" VariableName="空天姬超出窗口" VariableExpression="1" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="2" FolderOp="DisableFolder" FolderId="77e764c5-2e86-408a-a888-b23d6a594ddc" TriggerOp="DisableTrigger" ActionType="Folder" Asynchronous="False">
@@ -4029,10 +4029,16 @@
 <Action OrderNumber="102" VariableName="空天姬阶段模式" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="103" LogMessageText="空天姬饵名错误" LogProcess="True" VariableOp="SetString" ActionType="LogMessage" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})} &gt; ${env:普通钓饵空间}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵ID.indexof(${空天姬钓饵})} &gt; ${env:普通钓饵空间}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})} &gt; ${env:普通钓饵空间}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵ID.indexof(${空天姬钓饵})}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
 </ConditionGroup>
 </Condition>
 </Action>
