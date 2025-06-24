@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <TriggernometryExport PluginVersion="1.2.0.744">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.6.4" Enabled="true" RawEnvironmentVariables="版本 = 2.6.4&#13;&#10;快照 = 25w26e&#13;&#10;&quot;摘要 = 修复一个问题。&#13;&#10;Fix a bug.&#13;&#10;バグを修正する。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.6.5" Enabled="true" RawEnvironmentVariables="版本 = 2.6.5&#13;&#10;快照 = 25w26f&#13;&#10;&quot;摘要 = 修复一个问题。&#13;&#10;Fix a bug.&#13;&#10;バグを修正する。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -3465,8 +3465,17 @@
 <Action OrderNumber="21" VariableOp="SetNumeric" VariableName="空天姬参数" VariableExpression="${?d: 平钓 = 1 , 大鱼 = 2 , 耐心 = 3 [${param}] }" ActionType="Variable" Asynchronous="False" />
 <Action OrderNumber="22" VariableOp="SetString" VariableName="空天姬钓饵" VariableExpression="${空天姬钓饵}" ActionType="Variable" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
-<ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+<ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵ID.indexof(${空天姬钓饵})} &gt; ${env:普通钓饵空间}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})} &gt; ${env:普通钓饵空间}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵ID.indexof(${空天姬钓饵})}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</ConditionGroup>
+</ConditionGroup>
 </Condition>
 </Action>
 <Action OrderNumber="23" VariableOp="SetString" VariableName="空天姬天气" VariableExpression="${f:replace(&quot;、&quot;,&quot;|&quot;):${空天姬天气}}" ActionType="Variable" Asynchronous="False">
@@ -3980,7 +3989,16 @@
 <Action OrderNumber="93" NamedCallbackName="command" NamedCallbackParam="/e ${storage:KTJGetTranslationByIndex( 消息开始更换钓饵 , 0${pd:空天姬配置[界面语言]} )}" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" Asynchronous="False">
 <Condition Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${空天姬钓饵}" ExpressionTypeL="String" ExpressionR="" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
-<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericNotEqual" />
+<ConditionGroup Enabled="true" Grouping="And">
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵ID.indexof(${空天姬钓饵})} &gt; ${env:普通钓饵空间}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})} &gt; ${env:普通钓饵空间}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+</ConditionGroup>
+<ConditionGroup Enabled="true" Grouping="Or">
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵ID.indexof(${空天姬钓饵})}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+<ConditionSingle Enabled="true" ExpressionL="${pl:空天姬钓饵名.indexof(${空天姬钓饵})}" ExpressionTypeL="String" ExpressionR="0" ExpressionTypeR="String" ConditionType="StringNotEqualCase" />
+</ConditionGroup>
+</ConditionGroup>
 </Condition>
 </Action>
 <Action OrderNumber="94" NamedCallbackName="command" NamedCallbackParam="/systemsounds 0" TriggerText="123456789112345ChatLog 00:0039::系统音已设置为静音状态" ActionType="NamedCallback" ExecutionDelayExpression="300" Asynchronous="False">
@@ -5642,7 +5660,7 @@
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${ev:空天姬饵鱼模式}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
 <ConditionGroup Enabled="true" Grouping="Or">
-<ConditionSingle Enabled="true" ExpressionL="${t:空天姬鱼篓.h} + ${ev:空天姬鱼篓判断}" ExpressionTypeL="String" ExpressionR="2" ExpressionTypeR="String" ConditionType="NumericGreater" />
+<ConditionSingle Enabled="true" ExpressionL="${t:空天姬鱼篓.h} + ${ev:空天姬鱼篓判断}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="String" ConditionType="NumericGreaterEqual" />
 <ConditionSingle Enabled="true" ExpressionL="${_me.level}" ExpressionTypeL="String" ExpressionR="91" ExpressionTypeR="String" ConditionType="NumericLess" />
 <ConditionGroup Enabled="true" Grouping="And">
 <ConditionSingle Enabled="true" ExpressionL="${f:contain(3):${v:空天姬大鱼竿型1}}" ExpressionTypeL="String" ExpressionR="1" ExpressionTypeR="String" ConditionType="StringEqualCase" />
