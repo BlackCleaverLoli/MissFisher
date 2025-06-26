@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TriggernometryExport PluginVersion="1.2.0.744">
-<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.6.6" Enabled="true" RawEnvironmentVariables="版本 = 2.6.6&#13;&#10;快照 = 25w26g&#13;&#10;&quot;摘要 = 修复一个问题。&#13;&#10;Fix a bug.&#13;&#10;バグを修正する。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
+<TriggernometryExport PluginVersion="1.2.0.745">
+<ExportedFolder Id="d4f12b0f-6d04-407c-9116-a60916459a7c" ZoneFilterRegularExpression="by GitHub@BlackCleaverLoli 空天姬是免费的" Name="MissFisher 2.6.7" Enabled="true" RawEnvironmentVariables="版本 = 2.6.7&#13;&#10;快照 = 25w26h&#13;&#10;&quot;摘要 = 修复一个问题。&#13;&#10;Fix a bug.&#13;&#10;バグを修正する。&#13;&#10;&quot;&#13;&#10;单语言空间 = 4096&#13;&#10;普通钓饵空间 = 126&#13;&#10;非水产品空间 = 128&#13;&#10;预拍水攒鱼计屏蔽 = |33242|镜中蝶|41410|餐叉尾|17591|云海蝴蝶螺|">
 <Folders>
 <Folder Id="73ba9ce8-fa77-4491-b210-8f571b0f3a51" Name="更多 More" Enabled="true">
 <Folders>
@@ -6879,7 +6879,7 @@
 <Action OrderNumber="16" NamedCallbackName="KTJUseItem" NamedCallbackParam="16911" ActionType="NamedCallback" ExecutionDelayExpression="200" Asynchronous="False" />
 </Actions>
 </Trigger>
-<Trigger Enabled="false" Name="1.4 宇宙提钩 执行" Id="326786dd-7650-46a9-9032-f65e94b2c952" RegularExpression="">
+<Trigger Enabled="true" Name="1.4 宇宙提钩 执行" Id="326786dd-7650-46a9-9032-f65e94b2c952" RegularExpression="">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="UseAction" NamedCallbackParam="5,27" ActionType="NamedCallback" ExecutionDelayExpression="120" Asynchronous="False" />
 <Action OrderNumber="2" NamedCallbackName="normalcommand" NamedCallbackParam="/gaction &quot;${pd:空天姬技能[${pd:空天姬配置[语言]}任务指令2]}&quot;" ActionType="NamedCallback" Asynchronous="False" />
@@ -8010,7 +8010,7 @@
 <Folder Id="bd260c04-93b5-424d-9fcf-e49a1ac9a3bb" ZoneFilterRegularExpression=".|黑色公主切萝莉肥" Name="A.2 数据处理" Enabled="true">
 <Folders />
 <Triggers>
-<Trigger Enabled="true" Source="FFXIVNetwork" Name="4.1 钓饵监控" Id="b0818af0-6d9c-4332-a214-af4b19277feb" RegularExpression="^(?:252(?:\|[^|]+)\|0{6}40\|(?&lt;id&gt;.{8})(?:\|[^|]+){6}\|00000(?&lt;band&gt;145|152)\|(?!0{4}F{4}))">
+<Trigger Enabled="true" Source="FFXIVNetwork" Name="4.1 钓饵监控" Id="b0818af0-6d9c-4332-a214-af4b19277feb" RegularExpression="^(?:252(?:\|[^|]+)\|0{6}40\|(?&lt;id&gt;.{8})(?:\|[^|]+){6}\|00000(?&lt;band&gt;145|152)\|(?!0{4}F{4}))|^252\|.{33}\|0{6}40\|(?&lt;id&gt;[^|]{8})(?:\|[^|]{8}){6}\|0{5}DAD">
 <Actions>
 <Action OrderNumber="1" NamedCallbackName="KTJGetCurrentBait" NamedCallbackParam="1" ActionType="NamedCallback" Asynchronous="False" />
 <Action OrderNumber="2" VariableName="空天姬游动饵" ActionType="Variable" Asynchronous="False">
