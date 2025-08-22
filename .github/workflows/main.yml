@@ -1,6 +1,6 @@
 name: Upload to COS
 
-on: [push]
+on: workflow_dispatch:
 
 jobs:
   UploadCOS:
