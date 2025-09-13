@@ -124,18 +124,12 @@
 
 **正式版：**
 ```
-// 腾讯云 推荐国内网络
-https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher.xml
-
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
 ``` 
 
 **快照版：**
 ```
-// 腾讯云 推荐国内网络
-https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisher%20Snapshot.xml
-
 // GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
 ``` 
@@ -195,7 +189,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20
 > 在获取 Daily Routines 前，你需要已经安装好 Dalamud 且其成功注入了游戏。 
 > 
 > **如果是中国服：**  
-> 你还需要运行 [Unban](https://github.com/NightmareXIV/UnbanPluginsCN) 以解除 Dalamud 对部分插件的隐藏（更建议使用下文中的 `Dont Ban My Plugin` 插件）。
+> 你应该使用 [XIVLauncherCN (Soil)](https://github.com/AtmoOmen/FFXIVQuickLauncher) 来启动游戏并注入 Dalamud，这是最佳实践。
 
 1. 在游戏的消息窗口输入 `/xlsettings` 并按下 `回车键` 以打开 Dalamud 设置 - 点击界面上方的 `测试版` 。  
 2. 在界面下方找到 `自定义插件仓库` 部分。  
@@ -209,17 +203,10 @@ https://gh.atmoomen.top/DalamudPlugins/main/pluginmaster-cn.json
 https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json 
 ```
 4. 点击加号以添加仓库链接。
-5. 如果你还需要解除 Dalamud 对部分插件的隐藏 ，继续添加下面这个链接，方法同上：
-```
-https://raw.githubusercontent.com/NiGuangOwO/DalamudPlugins/main/pluginmaster.json
-```
-6. 添加完毕后，点击 `软盘` 图标以保存 Dalamud 设置。  
-5. 在游戏的消息窗口输入 `/xlplugins` 并按下 `回车键` 以打开插件安装器 - 点击界面左侧的 `所有插件` 。  
-6. 在插件安装器搜索框输入 `Dont Ban My Plugin` - 在结果中找到 `Dont Ban My Plugin` 并点击它以展开插件介绍。
-7. 点击 `安装` 按钮并等待 `Dont Ban My Plugin` 安装完成。
-8. 点击插件安装器搜索框旁的 `×` 清除先前输入的插件名 - 在插件安装器搜索框输入 
-`Daily Routines` - 在结果中找到 `Daily Routines` 并点击它以展开插件介绍（如果没有找到，请返回第 3 步尝试更换链接）。  
-7. 点击 `安装` 按钮并等待安装完成。  
+5. 添加完毕后，点击 `软盘` 图标以保存 Dalamud 设置。  
+6. 在游戏的消息窗口输入 `/xlplugins` 并按下 `回车键` 以打开插件安装器 - 点击界面左侧的 `所有插件` 。  
+7. 在插件安装器搜索框输入 `Daily Routines` - 在结果中找到 `Daily Routines` 并点击它以展开插件介绍（如果没有找到，请返回第 3 步尝试更换链接）。  
+8. 点击 `安装` 按钮并等待安装完成。  
 #### 启用宏队列功能：
 1. 在游戏的消息窗口输入 `/pdr` 以打开 Daily Routines 的主界面。  
 2. 在 Daily Routines 主界面上方的搜索框输入 `宏` 。  
