@@ -1,3 +1,5 @@
+# 基于 Dalamud 平台的重制版即将发布，敬请期待。
+---
 # 空天姬 MissFisher
 > [!TIP]  
 > **Language support: English · 言語サポート：日本語**  
