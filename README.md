@@ -1,4 +1,5 @@
 # 基于 Dalamud 平台的重制版即将发布，敬请期待。
+# 在此之前，请使用 GitHub 仓库链接来使用 Triggernometry 版本的 空天姬 MissFisher
 ---
 # 空天姬 MissFisher
 > [!TIP]  
