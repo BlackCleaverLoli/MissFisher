@@ -54,7 +54,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 ## 认证步骤  
   
 1. **获取识别码**：插件主界面 → 信息页查看  
-2. **前往 Discord**：[加入认证频道](https://discord.gg/uayPR6MPzH)  
+2. **前往 Discord**：[加入认证频道](https://discord.gg/C3KuXT7FRR)  
 3. **执行认证**：阅读须知，按指引操作  
   
 *国内用户请注意：访问 Discord 可能需要网络代理*  
