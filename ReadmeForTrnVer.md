@@ -128,13 +128,11 @@
 
 **正式版：**
 ```
-// GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.xml
 ``` 
 
 **快照版：**
 ```
-// GitHub
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher%20Snapshot.xml
 ``` 
 
