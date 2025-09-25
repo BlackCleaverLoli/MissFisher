@@ -5,7 +5,7 @@
         "Punchline": "让你飞起来！",
         "Description": "专注于钓鱼。",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.0.3.4",
+        "AssemblyVersion": "1.1.0.0",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "Changelog": "修复一些问题；脱钩播报",
+        "Changelog": "进一步适配在宇宙探索的全自动；优化体验",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
