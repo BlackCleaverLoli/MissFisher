@@ -5,7 +5,7 @@
         "Punchline": "让你飞起来！",
         "Description": "专注于钓鱼。",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.2.1.4",
+        "AssemblyVersion": "1.2.1.5",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "Changelog": "修复了一个 BUG，该 BUG 曾导致：钓法没有提供最大咬饵时间时异常歇竿\n修复了一个 BUG，该 BUG 曾导致：即使出现了鱼影或诱饵成功，也会错误地继续使用诱饵技能。",
+        "Changelog": "修复了一个 BUG，该 BUG 曾导致：图标悬浮窗不能保存用户改变的位置\n修复了一些问题（也可能新增一大堆）；",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
