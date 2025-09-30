@@ -5,7 +5,7 @@
         "Punchline": "让你飞起来！",
         "Description": "专注于钓鱼。",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.2.2.1",
+        "AssemblyVersion": "1.2.2.2",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "Changelog": "修复游动饵和以小钓大判断相关的问题。\n修复一些可能在需求优先大尺寸手法的场景会发生问题。\n将原先的「收藏品」钓法标志拆分为「收藏品」和「大尺寸」以规范行为。",
+        "Changelog": "修复真空期误歇竿问题。",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
