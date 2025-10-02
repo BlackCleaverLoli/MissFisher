@@ -3,9 +3,9 @@
         "Author": "Fragile, MistyDai",
         "Name": "MissFisher",
         "Punchline": "让你飞起来！",
-        "Description": "【不包含 24 小时全自动】专注于钓鱼。",
+        "Description": "专注于钓鱼。【不包含 24 小时全自动】",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.2.3.2",
+        "AssemblyVersion": "1.2.3.3",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "Changelog": "- v1.2.3.0\n适配 ICE 的相关钓鱼改动。\n将在启动时自动关闭 AutoHook",
+        "Changelog": "- v1.2.3.0\n适配 ICE 的相关钓鱼改动。\n将在启动时自动关闭 AutoHook\n- v1.2.3.3\n添加禁用强心剂设置项",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
