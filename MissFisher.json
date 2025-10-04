@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "Changelog": "- v1.2.3.0\n适配 ICE 的相关钓鱼改动。\n将在启动时自动关闭 AutoHook\n- v1.2.3.3\n添加禁用强心剂设置项",
+        "Changelog": "- v1.3.0.0\n现在当满足条件时，自动行为不再保留拍击水面的采集力（有助于增加撒饵数量）\n修改了表达式语法，如单词“=》鱼识@”现在应写为“@鱼识=》”，详询作者\n补充了可用的命令及说明\n修复一系列问题",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
