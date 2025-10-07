@@ -1,15 +1,5 @@
 # MissFisher 安装与验证指南  
-  
-> [!CAUTION]  
-> **重要提醒**    
-> 基于 Dalamud 平台的重制版已发布，但功能尚不稳定且存在部分缺失。建议使用功能完整且稳定的 **Triggernometry 版本** 来完成游戏的旧版玩法内容（7.0 之前的）。  
-  
-> [!TIP]  
-> **在重制版稳定之前**    
-> 更建议 [使用 GitHub 仓库链接](https://github.com/BlackCleaverLoli/MissFisher/blob/main/ReadmeForTrnVer.md#%E6%96%B9%E6%B3%95-1%E6%B7%BB%E5%8A%A0%E4%B8%BA%E8%BF%9C%E7%A8%8B%E8%A7%A6%E5%8F%91%E5%99%A8) 安装和使用 Triggernometry 版本的 MissFisher。  
-  
----  
-  
+> 暂无使用说明。  
 ## 安装说明  
   
 ### Dalamud 版本安装方法  
