@@ -5,7 +5,7 @@
         "Punchline": "让你飞起来！",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.4.1.1",
+        "AssemblyVersion": "1.4.1.2",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
