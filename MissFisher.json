@@ -5,7 +5,7 @@
         "Punchline": "让你飞起来！",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.4.1.3",
+        "AssemblyVersion": "1.4.1.4",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "Changelog": "- v1.4.1.3\n修复笔记数据有误的问题\n尝试修复有时会提示启动超时的问题\n- v1.4.1.2\n修改一处描述\n- v1.4.1.1\n修复无法捕获笔记数据的问题\n- v1.4.1.0\n在设置页面新增功能入口可导出钓鱼笔记数据\n修复一个问题，该问题曾导致：自动行为在持有拍水时会尝试更换游动饵而导致流程卡死\n- v1.4.0.1\n修复鱼识预备成功后，启动其他预设没有正常进入预备行为的问题\n- v1.4.0.0\n修复了当钓法中存在窗口期与阶段钓法时，切换到嵌套的阶段钓法会异常停止的问题\n新增设置项：不将技能「垂钓之光」作为主界面开关\n现在将自动管理几个钓鱼相关的 Daily Routines 模块\n修改了钓法表达式的语法\n修复若干自动行为问题\n优化体验",
+        "Changelog": "- v1.4.1.4\n修复笔记数据有误的问题\n- v1.4.1.3\n修复笔记数据有误的问题\n尝试修复有时会提示启动超时的问题\n- v1.4.1.2\n修改一处描述\n- v1.4.1.1\n修复无法捕获笔记数据的问题\n- v1.4.1.0\n在设置页面新增功能入口可导出钓鱼笔记数据\n修复一个问题，该问题曾导致：自动行为在持有拍水时会尝试更换游动饵而导致流程卡死\n- v1.4.0.1\n修复鱼识预备成功后，启动其他预设没有正常进入预备行为的问题\n- v1.4.0.0\n修复了当钓法中存在窗口期与阶段钓法时，切换到嵌套的阶段钓法会异常停止的问题\n新增设置项：不将技能「垂钓之光」作为主界面开关\n现在将自动管理几个钓鱼相关的 Daily Routines 模块\n修改了钓法表达式的语法\n修复若干自动行为问题\n优化体验",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
