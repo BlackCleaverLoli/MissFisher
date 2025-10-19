@@ -5,7 +5,7 @@
         "Punchline": "让你飞起来！",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.4.3.2",
+        "AssemblyVersion": "1.4.3.3",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "Changelog": "- v1.4.3.2\n修复一些问题\n- v1.4.3.1\n修复一些问题\n- v1.4.3.0\n为功能补全鱼眼功能\n修复远海航线识别错误的问题\n尝试修复幻海流数据错误的问题",
+        "ChAngleog": "- v1.4.3.3\n修复部分预设时鱼眼无法自动启动的问题\n- v1.4.3.2\n修复一些问题\n- v1.4.3.1\n修复一些问题\n- v1.4.3.0\n为功能补全鱼眼功能\n修复远海航线识别错误的问题\n尝试修复幻海流数据错误的问题",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
