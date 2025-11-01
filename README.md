@@ -11,7 +11,7 @@ MissFisher 内置了优异的自动钓鱼手法，无需复杂调参，准备好
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)  
   
  ---  
-## 部署 Dalamud  
+## 安装指南  
 > [!NOTE]  
 > Dalamud 是一个完全免费的 FF14 第三方插件平台。  
   
@@ -19,20 +19,21 @@ MissFisher 内置了优异的自动钓鱼手法，无需复杂调参，准备好
 > 推荐通过第三方启动器 XIVLauncher CN (Soil) 来使用适合中国服的 Dalamud  
 > - XIVLauncher 同样完全免费。  
   
+### 部署 Dalamud  
 #### 安装 XIVLauncher CN (Soil)  
 1. 前往 XIVLauncher CN (Soil) 的 [GitHub 仓库](https://github.com/AtmoOmen/FFXIVQuickLauncher)  
 2. 点击 XIVLauncher CN (Soil) 仓库页面右侧的 Releases  
 3. 点击最新 Releases 的 Assets 下的 XIVLauncherCN-win-Portable.zip 以下载  
 4. 解压 XIVLauncherCN-win-Portable.zip 中的文件到合适的位置。  
 5. 打开解压后路径下的 XIVLauncherCN.exe  
-### 设置 XIVLauncher CN (Soil)  
+#### 设置 XIVLauncher CN (Soil)  
 1. 点击 XIVLauncher CN (Soil) 界面右下角齿轮图标  
 2. 设置游戏文件夹路径  
 3. 选择 Dalamud 页签 - 确认已勾选 启用 Dalamud  
 4. 点击右下角的 提钩 按钮来保存设置  
 5. 从 XIVLauncher CN (Soil) 登陆并启动游戏，Dalamud 应会自动注入游戏进程  
 ---  
-## 安装 MissFisher  
+### 安装 MissFisher  
 1. 在游戏中按下键盘上的 `Esc`  
 2. 点击 `Dalamud插件`  
 3. 点击插件安装器下方的 `设置`  
@@ -45,14 +46,13 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 7. 点击保存按钮（软盘图标）  
 8. 返回插件安装器，搜索 `MissFisher`  
 9. 点击安装并等待完成  
----  
-## 完成认证以获得 MissFisher 使用权限  
+### 完成认证以获得 MissFisher 使用权限  
 > [!NOTE]  
 > 认证完全免费。  
   
 > [!CAUTION]  
 > MissFisher 从未委托任何人在任何渠道以帮忙认证（验证）或任何理由收取认证相关的费用。  
-### 识别凭证  
+#### 识别凭证  
 识别凭证会在 MissFisher 主界面的信息页中自动生成。  
   
   
@@ -74,7 +74,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 >   更换了组成电脑的重要配件  
 >   使用一些手段变更了配件在软件上的识别信息  
   
-### 认证步骤  
+#### 认证步骤  
 1. 在游戏中输入 `/mf` 以打开 MissFisher 主界面  
 2. 点击 Discord 前往 MissFisher 的 Discord 服务器  
 3. 按指引登陆或注册 Discord 并接受邀请  
@@ -87,7 +87,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 10. 发送并等待机器人确认  
   
   
-### 替换凭证  
+#### 替换凭证  
 你可以在 MissFisher 的 Discord 服务器中的「点这里认证」频道中使用 `/replace` 命令来将旧凭证替换为新凭证：  
   
 1. 进入 MissFisher 的 Discord 服务器中的「点这里认证」频道  
@@ -120,6 +120,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 >   [捕鱼人练级推荐之宇宙探索](https://nga.178.com/read.php?tid=45353336)  
 >   [捕鱼人升级路线研究与推荐](https://nga.178.com/read.php?tid=37816417&authorid=60919598)  
   
+---  
 ### MissFisher 的预设  
 > [!IMPORTANT]  
 > - **预设是 MissFisher 实现自动钓鱼的关键**  
@@ -136,6 +137,8 @@ MissFisher 的预设由特殊的钓法表达式组成，目前仅由作者一人
 修改预设中的参数或钓法：[钓法表达式快速修改指南](https://github.com/BlackCleaverLoli/MissFisher/wiki/QuicklyEditingExistingPresets)。  
   
 如果你是经验老到的捕鱼人且发现自动时的钓法与理想钓法不符，欢迎反馈。  
+  
+---  
 ### 用 MissFisher 练级？  
 > [!note]  
 > 练级过程只占游戏中钓鱼玩法的很少一部分，且难以重复测试效果，因此 MissFisher 的自动行为并没有专门针对未满级的捕鱼人或练级过程进行完全的优化。  
@@ -148,10 +151,41 @@ MissFisher 的预设由特殊的钓法表达式组成，目前仅由作者一人
 否则，你可以参考攻略：[NGA-捕鱼人升级路线研究与推荐](https://nga.178.com/read.php?tid=37816417&authorid=60919598)。  
 如果你觉得 MissFisher 可以新增预设以减少在练级过程中的重复劳动，欢迎反馈。  
   
-### MissFisher 中的航线预报  
+---  
+### 用 MissFisher 出海垂钓  
 > [!IMPORTANT]  
 > 如果你不知道出海垂钓是什么，请看 [灰机Wiki-出海垂钓](https://ff14.huijiwiki.com/wiki/%E5%87%BA%E6%B5%B7%E5%9E%82%E9%92%93)  
   
+> [!TIP]  
+> MissFisher 内置了完备的自动预设切换，可全自动地完成整场出海垂钓。  
+  
+可使用 MissFisher 中的下列模式来自动出海垂钓：  
+  
+模式|主要目的|备注  
+-|-|-  
+*冲分*|称号【海王】【世界级钓手】<br>大地票据（效率不如收藏品）|冲分请优先去近海航线<br>另外，冲分比较看运气  
+*蓝鱼*|点亮蓝色稀有度的鱼类的图鉴|会尝试钓航线中所有可钓的蓝鱼，当已无蓝鱼可钓时将使用冲分手法  
+*成就x*|航线预报中角标x的成就&称号|请留意选择的模式<br>部分成就需要组队才能完成  
+*练级*|在出海垂钓中提升等级|如果你已推完6.x<br>在海钓练级的效率不如 [宇宙探索](https://nga.178.com/read.php?tid=45353336)  
+  
+#### 使用 MissFisher 出海垂钓的步骤：  
+1. 查看 [航线预报](#missfisher-中的航线预报) 以确认想去的航线：点击主界面的 `航线` 按钮切换到航线预报分页（或者 [访问鱼糕](https://fish.ffmomola.com/ng/#/oceanFishing)）。  
+2. 准备好至少 40 格或更多背包空间以及所需的钓饵；必须携带 `刺螠` `磷虾` `石沙蚕` 各 99 个；部分蓝鱼需要另外携带其他钓饵。  
+3. 点击主界面中的 `模式下拉菜单` 展开菜单 - 选择想要的模式。  
+4. 在出海垂钓即将或已可登记时前往 `利姆萨·罗敏萨` `X:3.0 Y:12.7` 与 NPC `德瑞斯库托塔` 对话 - 进行乘船登记。  
+5. 进入任务后 - 使角色站在甲板边缘并面朝船舷外 - 点击 `启动` 。  
+  
+> [!IMPORTANT]  
+> - **使用对应的成就模式：**  
+> 假设当前航线标识是 `「气鲀四海¹」「只有我最鳐摆²」「挑战高分」` ，那么想要完成 `只有我最鳐摆` 应启动 `成就 2`  
+>   - 注意角标：  
+> `「〇〇〇¹」` = 【成就1】  
+> `「〇〇〇²」` = 【成就2】  
+  
+> [!TIP]  
+> 可在主界面已选择海钓相关模式的情况下，按住 Ctrl 对着 模式选择 按下滚轮，可调用 Lifestream 快捷传送到海都码头。  
+---  
+### MissFisher 中的航线预报  
 > [!tip]  
 > 你可以在主界面点击 航线 按钮来切换到航线预报界面。  
   
@@ -188,33 +222,5 @@ MissFisher 的航线预报由 2 行为 1 组：
 >   - 例如成就「大虾可重新来过」，要求个人合计钓到50只以上的虾类  
 >   - 其他详见 [灰机Wiki的相关条目](https://ff14.huijiwiki.com/wiki/%E5%87%BA%E6%B5%B7%E5%9E%82%E9%92%93#%E5%A5%96%E5%8A%B1)  
   
-### 用 MissFisher 出海垂钓  
-> [!TIP]  
-> MissFisher 内置了完备的自动预设切换，可全自动地完成整场出海垂钓。  
   
-可使用 MissFisher 中的下列模式来自动出海垂钓：  
-  
-模式|主要目的|备注  
--|-|-  
-*冲分*|称号【海王】【世界级钓手】<br>大地票据（效率不如收藏品）|冲分请优先去近海航线<br>另外，冲分比较看运气  
-*蓝鱼*|点亮蓝色稀有度的鱼类的图鉴|会尝试钓航线中所有可钓的蓝鱼，当已无蓝鱼可钓时将使用冲分手法  
-*成就x*|航线预报中角标x的成就&称号|请留意选择的模式（见下文提示）<br>部分成就需要组队才能完成  
-*练级*|在出海垂钓中提升等级|如果你已推完6.x<br>在海钓练级的效率不如 [宇宙探索](https://nga.178.com/read.php?tid=45353336)  
-  
-  
-  
-1. 查看想去的航线：点击主界面的 `航线` 按钮切换到航线预报分页，（或者 [访问鱼糕](https://fish.ffmomola.com/ng/#/oceanFishing)）。  
-2. 准备好至少 40 格或更多背包空间以及所需的钓饵；必须携带 `刺螠` `磷虾` `石沙蚕` 各 99 个；部分蓝鱼需要另外携带其他钓饵。  
-3. 点击主界面中的 `模式下拉菜单` 展开菜单 - 选择想要的模式。  
-4. 在出海垂钓即将或已可登记时前往 `利姆萨·罗敏萨` `X:3.0 Y:12.7` 与 NPC `德瑞斯库托塔` 对话 - 进行乘船登记。  
-> [!TIP]  
-> 可在主界面已选择海钓相关模式的情况下，按住 Ctrl 对着 模式选择 按下滚轮，可调用 Lifestream 快捷传送到海都码头。  
-5. 进入任务后 - 使角色站在甲板边缘并面朝船舷外 - 点击 `启动` 。  
-  
-> [!IMPORTANT]  
-> - **使用对应的成就模式：**  
-> 假设航线标识是 `「气鲀四海¹」「只有我最鳐摆²」「挑战高分」` ，那么 `成就 2` 指 `只有我最鳐摆`  
->   - 注意角标：  
-> `¹` = 成就1  
-> `²` = 成就2  
   
