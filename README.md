@@ -1,4 +1,7 @@
 # MissFisher  
+> [!note]  
+> 如果你要查看已停止更新的 Trn 版本的 README，请点 [这里](https://github.com/BlackCleaverLoli/MissFisher/blob/main/ReadmeForTrnVer.md)。  
+  
   
 **[安装指南](#安装指南) | [完成认证](#完成认证以获得-missfisher-使用权) | [使用说明](#使用说明) | [钓鱼王](#用-missfisher-钓特定的鱼类) | [自动海钓](#用-missfisher-出海垂钓) | [宇宙探索](#用-missfisher-完成宇宙探索任务) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求) | [练级](#用-missfisher-练级)**  
   
@@ -6,52 +9,44 @@
 MissFisher 是一个基于 Dalamud 的免费插件，用于在 FF14 中自动化钓鱼相关玩法。  
   
 > [!CAUTION]  
-> - MissFisher 完全免费，从未委托过任何人在任何渠道进行售卖，也从未委托过任何人以教学等名义收取任何形式的费用。  
-  
-> [!note]  
-> 如果你要查看已停止更新的 Trn 版本的 README，请点 [这里](https://github.com/BlackCleaverLoli/MissFisher/blob/main/ReadmeForTrnVer.md)。  
+> - MissFisher 完全免费，从未委托过任何人在任何渠道进行售卖，也从未委托过任何人以帮忙安装、更新等名义收取任何形式的费用。  
 ## 特性与功能  
 - **支持多种钓鱼玩法：**  
 钓场之王、出海垂钓、宇宙探索、云冠群岛  
 - **提供钓鱼辅助功能：**  
 提钩结果信息、抛竿计时器、咬饵播报、幻海流计时等  
-  
-  
 - **内置优异的钓鱼手法：**  
 无需复杂调参，准备好钓鱼，一键启动。  
 - **不抢夺用户操作：**  
 收竿或中断，自动行为立刻终止。  
   
-## 反馈  
-你可以前往 MissFisher 的 Discord、或在本仓库的 Issues 提交反馈信息。  
-  
 ## 支持开发  
   
 [<img width="200" src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="afdian">](https://afdian.com/a/bcloli)  
+  
+## 反馈  
+你可以前往 MissFisher 的 Discord、或在本仓库的 Issues 提交反馈信息。  
   
 ---  
 # 安装指南  
   
 ## 环境依赖  
-### 部署 Dalamud  
-Dalamud 是一个完全免费的 FF14 插件平台，它需要运行在 FF14 进程中。  
+## 部署 Dalamud  
+Dalamud 是一个完全免费的 FF14 插件平台。  
+你需要从 XIVLauncher 启动游戏，才能使用 Dalamud。  
   
-你需要从 XIVLauncher 启动游戏，才能将 Dalamud 内核注入到游戏进程。  
-  
-XIVLauncher 是比官方启动器更便捷的第三方 FF14 启动器，它有一个分支：XIVLauncher CN (Soil) 。  
-  
-### XIVLauncher CN (Soil)  
-XIVLauncher CN (Soil) 是 AtmoOmen 的 XIVLauncher CN 分支。  
-  
+## XIVLauncher CN (Soil)  
+XIVLauncher 是比官方启动器更便捷的第三方 FF14 启动器。  
+XIVLauncher CN (Soil) 是它的分支。  
 相比主库，它解除了没有必要的限制，并优化了逻辑。  
   
-#### 安装并打开 XIVLauncher CN (Soil)  
+### 安装并打开 XIVLauncher CN (Soil)  
   
 1. [下载 XIVLauncher CN (Soil).zip](https://github.com/AtmoOmen/FFXIVQuickLauncher/releases/latest/download/XIVLauncherCN-win-Portable.zip)  
 2. 等待下载  
 2. 解压下载好的 XIVLauncherCN-win-Portable.zip 中的文件到合适的位置。  
 5. 打开解压后路径下的 XIVLauncherCN.exe  
-#### 设置 XIVLauncher CN (Soil) 并用它来启动游戏  
+### 设置 XIVLauncher CN (Soil) 并用它来启动游戏  
 1. 点击 XIVLauncher CN (Soil) 界面右下角齿轮图标  
 2. 设置游戏文件夹路径  
 3. 选择 Dalamud 页签 - 确认已勾选 启用 Dalamud  
@@ -59,7 +54,7 @@ XIVLauncher CN (Soil) 是 AtmoOmen 的 XIVLauncher CN 分支。
 5. 从 XIVLauncher CN (Soil) 登陆并启动游戏，Dalamud 应会自动注入游戏进程  
 ---  
 ## 安装 MissFisher  
-#### 打开 Dalamud 插件安装器  
+### 打开 Dalamud 插件安装器  
   
 已登陆角色时：  
   
@@ -70,7 +65,7 @@ XIVLauncher CN (Soil) 是 AtmoOmen 的 XIVLauncher CN 分支。
   
 1. 在游戏标题画面左侧找到 Dalamud 图标  
 2. 移动鼠标到图标上 - 点击 插件安装器  
-#### 添加第三方仓库链接并安装 MissFisher  
+### 添加第三方仓库链接并安装 MissFisher  
 1. 点击插件安装器下方的 `设置`  
 2. 选择 `实验性功能` 分页  
 3. 在页面下方找到 `自定义插件仓库` 部分  
@@ -81,13 +76,13 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 5. 点击保存按钮（软盘图标）  
 6. 返回插件安装器，搜索 `MissFisher`  
 7. 点击安装并等待完成  
-### 完成认证以获得 MissFisher 使用权  
+## 完成认证以获得 MissFisher 使用权  
 > [!NOTE]  
 > 认证完全免费。  
   
 > [!CAUTION]  
-> MissFisher 从未委托任何人在任何渠道以帮忙认证（验证）或任何理由收取认证相关的费用。  
-#### 识别凭证  
+> MissFisher 从未委托任何人在任何渠道以帮忙认证（验证）的理由收取费用。  
+### 识别凭证  
 识别凭证会在 MissFisher 主界面的信息页中自动生成。  
   
   
@@ -109,7 +104,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 >   更换了组成电脑的重要配件  
 >   使用一些手段变更了配件在软件上的识别信息  
   
-#### 认证步骤  
+### 认证步骤  
   
 **前往 Discord：**  
 1. 在游戏中输入 `/mf` 以打开 MissFisher 主界面  
@@ -126,7 +121,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 7. 发送并等待机器人确认  
   
   
-#### 替换凭证  
+### 替换凭证  
 你可以在 MissFisher 的 Discord 服务器中的「点这里认证」频道中使用 `/replace` 命令来将旧凭证替换为新凭证：  
   
 **获取指引与旧凭证：**  
@@ -216,20 +211,20 @@ MissFisher 的预设由特殊的钓法表达式组成，目前仅由作者一人
 > - **别浪费自己的时间**  
 > 请在捕鱼人升到满级，且在完成职业任务以学习技能 耐心II 后，再尝试钓钓场之王（鱼王）。  
   
-#### 准备好钓鱼：  
+### 准备好钓鱼：  
 1. 访问 [鱼糕](https://fish.ffmomola.com/ng/#/fishing) 或一些攻略，查看要钓的鱼类的窗口期等信息  
 2. 复制要钓的鱼类名称，将其填入 MissFisher 主界面的主页右下角的预设名输入框  
 3. 对预设名输入框按下鼠标滚轮，MissFisher 会在消息窗口显示所需钓饵  
 4. 准备好所需钓饵和至少 5 ~ 10 格背包空间  
   
-#### 前往钓场：  
+### 前往钓场：  
 1. 按住 Ctrl 对预设名输入框按下鼠标滚轮，MissFisher 会调用其他插件的快捷传送  
 2. 到达目标鱼类所在钓场的地图后，按住 Shift 对预设名输入框按下鼠标滚轮，MissFisher 会调用其他插件的自动寻路  
 同时，MissFisher 会在消息窗口提供可点击用来 停止寻路 的链接文本  
 3. 当角色即将到达目标鱼类所在钓场时，点击消息窗口中的 停止寻路  
 4. 操控角色靠近钓场边缘，使角色面朝钓场可垂钓区域的中心  
   
-#### 启动！  
+### 启动！  
 1. 对预设名输入框双击鼠标左键，MissFisher 会启动可用的对应预设  
   
 > [!tip]  
@@ -257,7 +252,7 @@ MissFisher 的预设由特殊的钓法表达式组成，目前仅由作者一人
 > 启动后会全自动完成整场出海垂钓。  
 > - **快捷传送：**  
 > 在主界面已选择海钓相关模式的情况下，按住 Ctrl 对着 模式选择 按下滚轮，即可调用 Lifestream 快捷传送到出海垂钓登记处附近。  
-#### 使用 MissFisher 出海垂钓的步骤：  
+### 使用 MissFisher 出海垂钓的步骤：  
 **查看想去的航线：**  
 1. 点击主界面的 `航线` 按钮切换到航线预报分页；或者 [访问鱼糕](https://fish.ffmomola.com/ng/#/oceanFishing)  
   
@@ -288,7 +283,7 @@ MissFisher 的预设由特殊的钓法表达式组成，目前仅由作者一人
   
   
 ---  
-### MissFisher 中的航线预报  
+## MissFisher 中的航线预报  
 > [!tip]  
 > 你可以在主界面点击 航线 按钮来切换到航线预报界面。  
   
@@ -303,7 +298,7 @@ MissFisher 的 1 组航线预报由 2 行内容组成：
   
 - 每列从左到右分别是：开放登记时间、航线标识、海域与时间带、在 MissFisher 的内部序号。  
   
-#### 航线预报中的航线标识  
+### 航线预报中的航线标识  
 航线预报中的航线标识灵感和顺序来自 [鱼糕-出海垂钓航线](https://fish.ffmomola.com/ng/#/oceanFishing)，你也可以访问鱼糕获取特定航线的更多信息。  
   
 亦有部分鱼糕中没有的标识，系笔者在开发 Triggernometry 版本时在数月的维护和测试中得出的。  
@@ -319,13 +314,13 @@ MissFisher 的 1 组航线预报由 2 行内容组成：
 远洋<br>数量<br>成就|「大虾可重新来过²」<br>「大虾可重新来过¹」<br>「四海大宝贝¹」<br>「鱿型中队精英¹」|角标 `¹` `²`：<br>表示需求为该标识时应使用的成就模式<br>`¹` = 成就1<br>`²` = 成就2  
   
 ---  
-### 钓出海垂钓中的特定鱼类  
+## 钓出海垂钓中的特定鱼类  
 > [!note]  
 > - **MissFisher 没有如“图鉴模式”的功能**  
 > 因此，对于幻海流时的非蓝色稀有度鱼类，你只能自己手动尝试钓到。  
 > - **MissFisher 有钓非幻海流时绿色稀有度鱼类的预设**  
 > 但不能自动识别并切换到对应钓法，你必须手动查看对应鱼类的出现海域，并在出海垂钓时的合适时机启动对应的预设。  
-#### 钓非幻海流时的绿色稀有度鱼类  
+### 钓非幻海流时的绿色稀有度鱼类  
 你可以在主界面主页的右下角找到预设输入框，将非幻海流时的绿色稀有度鱼类名称输入，双击输入框即可启动预设。  
   
 > [!tip]  
@@ -341,7 +336,7 @@ MissFisher 的 1 组航线预报由 2 行内容组成：
 > - **建议安装的插件：ICE**  
 > ICE 可以自动刷取、接取和提交特定任务。  
 > 如果你还未安装，你可以在 MissFisher 的设置页中找到 ICE 的仓库链接。  
-### 满足各类宇宙探索需求  
+## 满足各类宇宙探索需求  
   
 > [!CAUTION]  
 > - **作者并未深度宇宙探索**  
@@ -385,18 +380,17 @@ MissFisher 有一些模式可帮助达成相关成就：
 > - **建议的捕鱼人伊修加德重建成就完成顺序：**  
 > 特供绿鱼 → 二期特供 & 三期特供 → 技巧点/四期特供  
   
-### 使用云冠群岛模式的步骤  
-#### 前往云冠群岛  
+## 使用云冠群岛模式的步骤  
+### 前往云冠群岛  
 1. 准备好至少 6 ~ 10 格背包空间  
 2. 在 MissFisher 主界面主页选择好空岛相关模式  
 3. 按住 Ctrl 对 `模式选择` 控件按下鼠标滚轮，MissFisher 会调用其他插件传送到 `伊修加德`  
 4. 交互 `伊修加德基础层` 的以太之光，选择 `传送到天穹街`  
 （如没有该选项，则你还未完成开放天穹街所需的相关任务）  
 5. 前往 `天穹街` `X:10.9 Y:13.2` 与 NPC `奥瓦埃尔` 对话 - 前往云冠群岛  
-#### 启动空岛模式  
+### 启动空岛模式  
 1. 进入云冠群岛后，尝试启动需要的空岛相关模式，即可得到对应钓场位置情报  
 2. 若不在对应钓场范围，MissFisher 会尝试调用其他插件的自动寻路  
 3. 当角色即将到达目标鱼类所在钓场时，点击消息窗口中的 `停止寻路`  
 4. 操控角色靠近空岛边缘，使角色面朝空岛外  
 5. 点击 `启动`  
-  
