@@ -1,7 +1,4 @@
 # MissFisher  
-> [!note]  
-> 如果你要查看已停止更新的 Trn 版本的 README，请点 [这里](https://github.com/BlackCleaverLoli/MissFisher/blob/main/ReadmeForTrnVer.md)。  
-  
   
 **[安装指南](#安装指南) | [完成认证](#完成认证以获得-missfisher-使用权) | [使用说明](#使用说明) | [钓鱼王](#用-missfisher-钓特定的鱼类) | [自动海钓](#用-missfisher-出海垂钓) | [宇宙探索](#用-missfisher-完成宇宙探索任务) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求) | [练级](#用-missfisher-练级)**  
   
