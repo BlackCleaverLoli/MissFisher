@@ -2,10 +2,10 @@
     {
         "Author": "Fragile, MistyDai",
         "Name": "MissFisher",
-        "Punchline": "让你飞起来！",
-        "Description": "专注于钓鱼。【不包含 24 小时全自动】",
+        "Punchline": "专注于钓鱼。 / Focus on fishing.",
+        "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.4.5.8",
+        "AssemblyVersion": "1.5.0.0",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -14,7 +14,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "ChangeLog": "- v1.4.5.8\n调整以适配游戏7.38版本\n- v1.4.5.7\n调整以向下适配游戏7.35版本\n- v1.4.5.6\n适配游戏7.38版本\n- v1.4.5.5\n修复一些问题\n- v1.4.5.4\n修复一些问题\n- v1.4.5.3\n修复一些问题\n- v1.4.5.2\n修复一些问题\n- v1.4.5.1\n修复一些问题，优化体验\n- v1.4.5.0\n追加了空岛相关模式的功能及入口\n优化了体验\n修复一些问题",
+        "ChangeLog": "- v1.5.0.0\n现在可变更界面和打印文本的语言\n修复一些问题\n- v1.4.5.8\n调整以适配游戏7.38版本\n- v1.4.5.7\n调整以向下适配游戏7.35版本\n- v1.4.5.6\n适配游戏7.38版本\n- v1.4.5.5\n修复一些问题\n- v1.4.5.4\n修复一些问题\n- v1.4.5.3\n修复一些问题\n- v1.4.5.2\n修复一些问题\n- v1.4.5.1\n修复一些问题，优化体验\n- v1.4.5.0\n追加了空岛相关模式的功能及入口\n优化了体验\n修复一些问题",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
