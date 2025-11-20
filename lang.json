@@ -76,7 +76,7 @@
     ],
     "ICE自动提交冲突警告": [
         "可能会与 ICE 的自动提交冲突\n如果你发现 ICE 一直在反复开关任务列表\n请取消本选项后重新开始 ICE",
-        "May conflict with ICE auto submission\nIf ICE keeps toggling task list, disable this and restart ICE",
+        "May conflict with ICE auto submission\nIf ICE keeps toggling stellar missions list, disable this and restart ICE",
         "ICEの自動提出と競合する可能性があります\nICEがタスクリストを繰り返し開閉する場合は\nこのオプションをオフにして再起動してください"
     ],
     "ICE警惕提交": [
@@ -229,6 +229,11 @@
         "IC: ",
         "セムキャ "
     ],
+    "丢弃配置组名": [
+    "丢弃配置组名",
+    "Discard group name",
+    "破棄グループ名"
+],
     "中竿": [
         "中竿",
         "!!",
@@ -300,10 +305,10 @@
     "X|V「クリアブルー」"
 ],
     "主题深色": [
-        "X|V「深色」",
-        "X|V 'Dark'",
-        "X|V「ダーク」"
-    ],
+            "X|V「深色」",
+            "X|V 'Dark'",
+            "X|V「ダーク」"
+        ],
     "主题经典": [
         "X|V「经典」",
         "X|V 'Classic'",
@@ -435,14 +440,19 @@
             "「オクトパストラベラー¹」「World Class Troller」"
         ],
     "其他": [
-        "其他",
-        "Other",
-        "その他"
-    ],
+    "其他",
+    "Other",
+    "その他"
+],
     "其他设置": [
         "其他设置",
         "Other Settings",
         "その他設定"
+    ],
+    "写入AutoDiscard配置": [
+        "点击将 Daily Routines 的模块 AutoDiscard\n包含海钓鱼类的可导入配置文本写入剪贴板",
+        "Click to write DR AutoDiscard module's\nimportable config with ocean fish to clipboard",
+        "Daily Routines の AutoDiscard モジュール用の、\n海釣り魚を含むインポート可能設定をクリップボードに書き込む"
     ],
     "写入剪贴板": [
         "将捕获记录写入剪贴板",
@@ -458,6 +468,11 @@
         "准备设置输入框焦点",
         "Preparing to set input focus",
         "入力フォーカス設定準備"
+    ],
+    "出海垂钓": [
+        "出海垂钓",
+        "Ocean Fishing",
+        "オーシャンフィッシング"
     ],
     "出海海钓结束": [
         "出海海钓已结束",
@@ -676,7 +691,7 @@
     ],
     "命令帮助": [
         "\n/mf config → 打开设置界面\n/mf route → 打开航线预报界面\n\n=========命令说明=========\n\n<尖括号> 为必须参数\n- 如 /mf preset <name> 输入时应提供一个预设名如 /mf preset 全提\n<尖括号|或符> 为必选分支\n- 如 /mf <end|stop> 输入时应写为 /mf end 或 /mf stop\n[方括号] 为可选参数\n- 如 /mf pause [on|off] 输入时可省略为 /mf pause\n\n=========模式命令=========\n\n/mf cosmic → 宇宙探索，启动适合当前探索任务的预设\n\n/mf <xp|leveling> → 启动练级模式（以经验获取为目标，在非出海垂钓区域也可启动）\n/mf scoring → 启动冲分模式（以渔分为目标）\n/mf <bf|bluefish> → 启动蓝鱼模式（以蓝色稀有度鱼类为目标）\n/mf <v1|achiev1> → 启动成就 1 模式（以航线预报中角标为「1」的称号所需的鱼类为目标，大多数需要组队完成）\n/mf <v2|achiev2> → 同上，但角标为2\n\n/mf sbg2 → 启动空岛二期模式（以捕获更多重建二期特供鱼类为目标）\n/mf sbg3 → 启动空岛三期模式（以捕获更多重建三期特供鱼类为目标）\n/mf sbg4 → 启动空岛四期模式（以捕获更多重建四期特供鱼类为目标）\n/mf spt → 启动空岛技巧分模式（以获取伊修加德重建捕鱼人技巧分为目标）\n/mf spg → 启动空岛绿鱼模式（以捕获更多绿色稀有度的特供鱼类为目标）\n\n=========其他命令=========\n\n/mf test → 启动测试（使用万能拟饵钓一条鱼）\n/mf preset <name> [minutes] → 启动预设，提供额外参数时会延迟 [minutes] 分钟启动\n/mf preset show <name> → 查看预设内容及预设中所需的钓饵\n/mf pause [on|off] → 不提供参数时切换暂停/恢复，提供参数时切换到指定的暂停状态\n/mf <end|stop> → 终止自动动作，包括正在或即将执行的\n/mf <Angex> → 使用钓法表达式启动\n/mf reset int → 重置记录在配置中的所有角色的鱼识进度\n/mf tola → 将剪贴板中的第 2 版钓法表达式转换到最新版钓法表达式\n/mf isla → 检查剪贴板中的钓法表达式是否是最新版语法\n/mf addid → 为剪贴板中的钓法表达式参数添加 ID 以适配其他语言的客户端",
-        "\n/mf config → Open settings interface\n/mf route → Open route forecast interface\n\n=========Command Guide=========\n\n<angle brackets> indicate required parameters\n- Example: /mf preset <name> should include a preset name, e.g. /mf preset FullCatch\n<angle brackets|pipe> indicate exclusive options\n- Example: /mf <end|stop> should be written as /mf end or /mf stop\n[square brackets] indicate optional parameters\n- Example: /mf pause [on|off] can be shortened to /mf pause\n\n=========Mode Commands=========\n\n/mf cosmic → Universe Exploration mode, activates preset suitable for current exploration tasks\n\n/mf <xp|leveling> → Leveling mode (focuses on EXP gain, can be used even outside ocean fishing areas)\n/mf scoring → Scoring mode (focuses on Fisher's Points)\n/mf <bf|bluefish> → Bluefish mode (targets blue-rarity fish)\n/mf <v1|achiev1> → Achievement 1 mode (targets fish needed for title marked “1” in route forecast, usually requires party)\n/mf <v2|achiev2> → Same as above, but for mark 2\n\n/mf sbg2 → Skybuilder Phase 2 mode (targets fish specific to Phase 2 reconstruction)\n/mf sbg3 → Skybuilder Phase 3 mode (targets fish specific to Phase 3 reconstruction)\n/mf sbg4 → Skybuilder Phase 4 mode (targets fish specific to Phase 4 reconstruction)\n/mf spt → Skybuilder Skill Point mode (focuses on earning Ishgardian Reconstruction Fisher’s skill points)\n/mf spg → Skybuilder Greenfish mode (targets green-rarity reconstruction fish)\n\n=========Other Commands=========\n\n/mf test → Run test (catch a single fish using Universal Lure)\n/mf preset <name> [minutes] → Start preset; if extra parameter is provided, delay start by [minutes] minutes\n/mf preset show <name> → Show preset details and bait list\n/mf pause [on|off] → Toggle pause/resume if no parameter, or set explicitly if parameter is given\n/mf <end|stop> → Stop all automated actions, including ongoing or scheduled ones\n/mf <Angex> → Start with Angling Expression\n/mf reset int → Reset fish knowledge progress for all characters stored in config\n/mf tola → Convert version 2 Angling Expression from clipboard to the latest version\n/mf isla → Check if Angling Expression in clipboard uses latest syntax\n/mf addid → Add ID tags to Angling Expression parameters for multi-language client compatibility",
+        "\n/mf config → Open settings interface\n/mf route → Open route forecast interface\n\n=========Command Guide=========\n\n<angle brackets> indicate required parameters\n- Example: /mf preset <name> should include a preset name, e.g. /mf preset FullCatch\n<angle brackets|pipe> indicate exclusive options\n- Example: /mf <end|stop> should be written as /mf end or /mf stop\n[square brackets] indicate optional parameters\n- Example: /mf pause [on|off] can be shortened to /mf pause\n\n=========Mode Commands=========\n\n/mf cosmic → Cosmic Exploration mode, activates preset suitable for current exploration missions\n\n/mf <xp|leveling> → Leveling mode (focuses on EXP gain, can be used even outside ocean fishing areas)\n/mf scoring → Scoring mode (focuses on Fisher's Points)\n/mf <bf|bluefish> → Bluefish mode (targets blue-rarity fish)\n/mf <v1|achiev1> → Achievement 1 mode (targets fish needed for title marked “1” in route forecast, usually requires party)\n/mf <v2|achiev2> → Same as above, but for mark 2\n\n/mf sbg2 → Skybuilder Phase 2 mode (targets fish specific to Phase 2 reconstruction)\n/mf sbg3 → Skybuilder Phase 3 mode (targets fish specific to Phase 3 reconstruction)\n/mf sbg4 → Skybuilder Phase 4 mode (targets fish specific to Phase 4 reconstruction)\n/mf spt → Skybuilder Skill Point mode (focuses on earning Ishgardian Reconstruction Fisher’s skill points)\n/mf spg → Skybuilder Greenfish mode (targets green-rarity reconstruction fish)\n\n=========Other Commands=========\n\n/mf test → Run test (catch a single fish using Universal Lure)\n/mf preset <name> [minutes] → Start preset; if extra parameter is provided, delay start by [minutes] minutes\n/mf preset show <name> → Show preset details and bait list\n/mf pause [on|off] → Toggle pause/resume if no parameter, or set explicitly if parameter is given\n/mf <end|stop> → Stop all automated actions, including ongoing or scheduled ones\n/mf <Angex> → Start with Angling Expression\n/mf reset int → Reset fish knowledge progress for all characters stored in config\n/mf tola → Convert version 2 Angling Expression from clipboard to the latest version\n/mf isla → Check if Angling Expression in clipboard uses latest syntax\n/mf addid → Add ID tags to Angling Expression parameters for multi-language client compatibility",
         "\n/mf config → 設定画面を開く\n/mf route → 航路予報画面を開く\n\n=========コマンド説明=========\n\n<山括弧> は必須パラメータ\n- 例：/mf preset <name> の場合、/mf preset 全提 のようにプリセット名を指定\n<山括弧|パイプ> は排他的選択肢\n- 例：/mf <end|stop> の場合、/mf end または /mf stop と入力\n[角括弧] は任意パラメータ\n- 例：/mf pause [on|off] は /mf pause と省略可能\n\n=========モードコマンド=========\n\n/mf cosmic → 宇宙探索モード。現在の探索任務に適したプリセットを起動\n\n/mf <xp|leveling> → レベリングモード（経験値重視、海釣り以外の地域でも使用可能）\n/mf scoring → スコアリングモード（漁師ポイント重視）\n/mf <bf|bluefish> → ブルーフィッシュモード（青レア魚を狙う）\n/mf <v1|achiev1> → アチーブメント1モード（航路予報で角印「1」の称号に必要な魚を狙う。多くはパーティ推奨）\n/mf <v2|achiev2> → 同上、ただし角印「2」\n\n/mf sbg2 → 蒼天街第二期モード（第二期復興専用魚を狙う）\n/mf sbg3 → 蒼天街第三期モード（第三期復興専用魚を狙う）\n/mf sbg4 → 蒼天街第四期モード（第四期復興専用魚を狙う）\n/mf spt → 蒼天街技巧点モード（漁師技巧点の獲得を目的）\n/mf spg → 蒼天街グリーンフィッシュモード（緑レア魚を狙う）\n\n=========その他のコマンド=========\n\n/mf test → テストを実行（万能ルアーで魚を1匹釣る）\n/mf preset <name> [minutes] → プリセットを起動。追加パラメータ指定時は [minutes] 分後に遅延起動\n/mf preset show <name> → プリセット内容と必要な餌を表示\n/mf pause [on|off] → 引数なしで一時停止／再開を切替。指定時は明示的に切替\n/mf <end|stop> → すべての自動動作を停止（実行中・予定中を含む）\n/mf <Angex> → 釣法式を使用して起動\n/mf reset int → 設定に記録された全キャラの魚識進捗をリセット\n/mf tola → クリップボードの第2版釣法式を最新バージョンに変換\n/mf isla → クリップボードの釣法式が最新構文か確認\n/mf addid → 多言語クライアント対応のため、釣法式パラメータにIDを追加"
     ],
     "咬饵音效说明": [
@@ -768,6 +783,11 @@
         "已复制到剪贴板",
         "Copied to clipboard",
         "クリップボードにコピーされました"
+    ],
+    "复制配置文本": [
+        "复制配置",
+        "Copy",
+        "コピー"
     ],
     "多提优先": [
         "多提优先",
@@ -871,18 +891,18 @@
     ],
     "宇宙探索": [
         "宇宙探索",
-        "Universe Exploration",
-        "宇宙探索"
+        "Cosmic Exploration",
+        "惑星探索"
     ],
     "宇宙探索ICE适配模式": [
         "在宇宙探索区域使用 ICE 适配模式",
-        "ICE Mode in Universe Exploration",
-        "宇宙探索ICEモード"
+        "ICE Mode in Cosmic Exploration",
+        "惑星探索ICEモード"
     ],
     "宇宙探索ICE适配模式说明": [
         "启用后将有以下变化：\n- 在接取任务时自动启动合适的预设\n- 且将延迟以适配 ICE 刷取任务的行为\n- 不进行部分播报以减少打扰\n- 在部分任务中会以银星汇报\n- 在进入宇宙探索区域或接取探索任务时\n\n  将自动禁用 AutoHook",
-        "Enabling will cause the following changes:\n- Automatically activate suitable preset when accepting tasks\n- Delay to adapt to ICE scraping task behaviors\n- Skip some announcements to reduce disturbance\n- Report with Silver Star in some quests\n- AutoHook will be automatically disabled when entering Universe Exploration or accepting exploration quests",
-        "有効化すると以下の変化があります：\n- タスク受注時に適切なプリセットを自動起動\n- ICEのタスク収集動作に適応するため遅延\n- 一部放送を省略し邪魔を減らす\n- 一部タスクで銀星として報告\n- 宇宙探索エリア入場または探索タスク受注時に\n\n  AutoHookを自動無効化"
+        "Enabling will cause the following changes:\n- Automatically activate suitable preset when accepting missions\n- Delay to adapt to ICE scraping missions behaviors\n- Skip some announcements to reduce disturbance\n- Report with Silver Star in some quests\n- AutoHook will be automatically disabled when entering Cosmic Exploration or accepting exploration quests",
+        "有効化すると以下の変化があります：\n- タスク受注時に適切なプリセットを自動起動\n- ICEのタスク収集動作に適応するため遅延\n- 一部放送を省略し邪魔を減らす\n- 一部タスクで銀星として報告\n- 惑星探索エリア入場または探索タスク受注時に\n\n  AutoHookを自動無効化"
     ],
     "安装启用GatherbuddyReborn提示": [
         "安装并启用\nGatherbuddyReborn 以\n使用快捷传送",
@@ -891,8 +911,8 @@
     ],
     "安装启用ICE提示": [
         "安装并启用 ICE 以在宇宙探索中\n享受 ICE 带来的便捷功能",
-        "Install and enable ICE to enjoy its convenience\nin Universe Exploration",
-        "ICEをインストール・有効化し、宇宙探索で\nICEの便利機能を利用してください"
+        "Install and enable ICE to enjoy its convenience\nin Cosmic Exploration",
+        "ICEをインストール・有効化し、惑星探索で\nICEの便利機能を利用してください"
     ],
     "安装启用Lifestream提示": [
         "安装并启用\nLifestream 以\n使用快捷传送",
@@ -949,6 +969,11 @@
         "Mooch bait ready, now waiting for window.",
         "泳がせエサ魚準備完了、ウィンドウを待機中。"
     ],
+    "尝试调用AutoDiscard": [
+    "尝试调用了 AutoDiscard，组名 {0}",
+    "Tried calling AutoDiscard with preset {0}",
+    "AutoDiscard を呼び出し、グループ名 {0}"
+],
     "工具悬浮窗": [
         "工具悬浮窗",
         "Tools Floating Window",
@@ -970,10 +995,10 @@
         "※ {0} がインストール・有効化済み"
     ],
     "已完成标记": [
-        "completed",
-        "completed",
-        "完了"
-    ],
+            "completed",
+            "completed",
+            "完了"
+        ],
     "已捕获所有鱼类": [
         "已捕获到所有所需的鱼类",
         "All required fish caught",
@@ -1091,7 +1116,7 @@
     ],
     "开始提交任务": [
         "开始提交或放弃任务",
-        "Starting submit/abort task",
+        "Starting submit/abort missions",
         "提出/放棄を開始"
     ],
     "开始更换游动饵": [
@@ -1360,6 +1385,11 @@
         "Cannot access gearset manager",
         "ギアセットマネージャーにアクセス不可"
     ],
+    "无法调用AutoDiscard": [
+        "\n因此无法调用 AutoDiscard",
+        "\nAutoDiscard cannot be triggered",
+        "\nAutoDiscard を呼び出せません"
+    ],
     "无适合海钓预设": [
         "没有适合当前情况的海钓预设",
         "No suitable Ocean Fishing preset for current situation",
@@ -1406,9 +1436,24 @@
         "ベストウェイ・バロー"
     ],
     "未使用": [
-        "未使用",
-        "Unused",
-        "未使用"
+            "未使用",
+            "Unused",
+            "未使用"
+        ],
+    "未启用DailyRoutines": [
+        "\n启用 Daily Routines",
+        "\nEnable Daily Routines",
+        "\nDaily Routines を有効化"
+    ],
+    "未启用DailyRoutines模块AutoDiscard": [
+        "\nDaily Routines 的 AutoDiscard 模块未启用",
+        "\nDR AutoDiscard module is disabled",
+        "\nDaily Routines の AutoDiscard モジュールは無効です"
+    ],
+    "未填写AutoDiscard组名": [
+        "\n填写应传给 DR AutoDiscard 模块的配置组名称",
+        "\nFill config group name for DR AutoDiscard",
+        "\nDR AutoDiscard の設定グループ名を入力"
     ],
     "未安装ICE": [
         "未安装 ICE，无法进入 ICE 适配模式",
@@ -1475,6 +1520,11 @@
         "Disconnected",
         "未接続"
     ],
+    "未配置AutoDiscard": [
+    "你还没有：",
+    "You have not: ",
+    "まだ以下が未設定です："
+],
     "本地时间格式1": [
         "{0:MM-dd} {1:00}:00",
         "{0:MM-dd} {1:00}:00",
@@ -1601,10 +1651,10 @@
         "出海中はタイマー起動不可"
     ],
     "海钓模式未定义": [
-        "在启动海钓模式时\n未定义的模式：",
-        "Starting Ocean Fishing mode\nUndefined mode: ",
-        "海釣りモード起動時\n未定義モード："
-    ],
+            "在启动海钓模式时\n未定义的模式：",
+            "Starting Ocean Fishing mode\nUndefined mode: ",
+            "海釣りモード起動時\n未定義モード："
+        ],
     "海钓预设错误": [
         "海钓预设错误",
         "Sea fishing preset error",
@@ -1797,10 +1847,10 @@
         "キャスト時間と竿震タイプ情報を提供\n- 自動サイレント：自動動作中は非表示"
     ],
     "竿时悬浮窗隐藏调试": [
-        "竿时悬浮窗\n取消勾选「调整位置」\n以隐藏调试文本",
-        "Tug Timer Overlay\nUncheck 'Adjust Position'\nto hide debug text",
-        "竿時浮動窗\n取消「位置調整」チェック\nデバッグテキスト非表示"
-    ],
+    "竿时悬浮窗\n取消勾选「调整位置」\n以隐藏调试文本",
+    "Tug Timer Overlay\nUncheck 'Adjust Position'\nto hide debug text",
+    "竿時浮動窗\n取消「位置調整」チェック\nデバッグテキスト非表示"
+],
     "等待": [
         "等待",
         "Waiting",
@@ -1946,6 +1996,16 @@
         "Escaped！",
         "バラし！"
     ],
+    "自动丢弃": [
+        "自动丢弃",
+        "Auto Discard",
+        "自動破棄"
+    ],
+    "自动丢弃提示": [
+        "如非空，将在海钓收竿时使用提供的\n配置组名调用 Daily Routines 的 AutoDiscord\n- 依赖 Daily Routines 的模块 AutoDiscord\n- 留空时等效于禁用该功能",
+        "If not empty, calls Daily Routines' AutoDiscord with the specified group name when ending a fishing session.\n- Requires Daily Routines AutoDiscord module\n- Leave empty to disable",
+        "空でなければ、収竿時に指定グループ名で\nDaily Routines AutoDiscord を呼び出します\n・Daily Routines AutoDiscord が必要\n・空欄なら無効"
+    ],
     "自动功能": [
         "自动功能",
         "Automatic Features",
@@ -1963,12 +2023,12 @@
     ],
     "自动提交任务超时重试": [
         "自动提交任务超时，正在重试……",
-        "Task auto-submit timed out, retrying…",
+        "Mission auto-submit timed out, retrying…",
         "自動納品がタイムアウト、再試行中…"
     ],
     "自动提交失败": [
         "自动提交任务失败",
-        "Auto-submit task failed",
+        "Auto-submit mission failed",
         "自動提出失敗"
     ],
     "自动收集收藏品": [
@@ -2333,8 +2393,8 @@
     ],
     "钓鱼探索任务自动提交": [
         "达成钓鱼探索任务要求时自动提交",
-        "Auto submit fishing exploration task",
-        "釣り探索タスク自動提出"
+        "Auto-submit FSH Stellar Missions",
+        "釣り探索任務自動報告"
     ],
     "银星提交": [
         "因钓法要求银星提交，开始提交或放弃任务",
