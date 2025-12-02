@@ -2,19 +2,21 @@
     {
         "Author": "Fragile, MistyDai",
         "Name": "MissFisher",
-        "Punchline": "专注于钓鱼。 / Focus on fishing.",
+        "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.5.1.5",
+        "AssemblyVersion": "1.6.0.0",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
-            "Fishing"
+            "Fishing",
+            "FSH",
+            "OceanFishing"
         ],
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "ChangeLog": "- v1.5.1.5\n修复一个问题\n- v1.5.1.4\n修复一个问题\n- v1.5.1.3\n修复一个问题\n- v1.5.1.2\n补全了插件安装器中 MissFisher 的配置界面打开支持\n修复一些问题\n- v1.5.1.1\n修复一些问题\n- v1.5.1.0\n添加调用DR Discard的功能和配置项\n修复一些问题\n- v1.5.0.0\n现在可变更界面和打印文本的语言\n修复一些问题",
+        "ChangeLog": "- v1.6.0.0\n支持多语言调用预设\n追加了成就模式的计数器工具功能\n现在当钓法有计数参数时将总是显示计数器\n优化预设搜索\n优化了多处代码的性能表现\n修复一些问题",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
