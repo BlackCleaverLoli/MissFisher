@@ -5,7 +5,7 @@
         "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.2.1",
+        "AssemblyVersion": "1.6.2.2",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -16,7 +16,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "ChangeLog": "- v1.6.2.1\n修复一个海钓模式修正错误的问题\n- v1.6.2.0\n新增功能和配置项可自动发送对应海域的触幻提示\n（已在之前版本添加默语成就报数）\n现在即使在海都也能使用传送到码头按钮了\n- v1.6.1.0\n修复一些问题\n更换了底层依赖\n- v1.6.0.5\n修复了一个问题\n- v1.6.0.4\n修复当上次三海未触发幻海流时，下次海钓的幻海流时间会错误的问题\n- v1.6.0.3\n补全了未提钩时的信息打印\n追加了几个错误发生场景的处理\n提升用户体验\n- v1.6.0.2\n修复一个问题，该问题曾导致：当周围有其他玩家使用特定技能时，会错误放弃以小钓大机会。\n- v1.6.0.0\n支持多语言调用预设\n追加了成就模式的计数器工具功能\n现在当钓法有计数参数时将总是显示计数器\n优化预设搜索\n优化了多处代码的性能表现\n修复一些问题",
+        "ChangeLog": "- v1.6.2.2\n修复一些问题\n- v1.6.2.1\n修复一个海钓模式修正错误的问题\n- v1.6.2.0\n新增功能和配置项可自动发送对应海域的触幻提示\n（已在之前版本添加默语成就报数）\n现在即使在海都也能使用传送到码头按钮了\n- v1.6.1.0\n修复一些问题\n更换了底层依赖\n- v1.6.0.5\n修复了一个问题\n- v1.6.0.4\n修复当上次三海未触发幻海流时，下次海钓的幻海流时间会错误的问题\n- v1.6.0.3\n补全了未提钩时的信息打印\n追加了几个错误发生场景的处理\n提升用户体验\n- v1.6.0.2\n修复一个问题，该问题曾导致：当周围有其他玩家使用特定技能时，会错误放弃以小钓大机会。\n- v1.6.0.0\n支持多语言调用预设\n追加了成就模式的计数器工具功能\n现在当钓法有计数参数时将总是显示计数器\n优化预设搜索\n优化了多处代码的性能表现\n修复一些问题",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
