@@ -5,7 +5,7 @@
         "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.3.0",
+        "AssemblyVersion": "1.6.3.1",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -16,7 +16,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "ChangeLog": "- v1.6.3.0\n为主界面增加重定位到鼠标位置特性，并添加相应配置项\n如果钓法将选择性地不触幻，将在启动后显示一条提示\n修复一些问题",
+        "ChangeLog": "- v1.6.3.1\n现在通过图标悬浮窗打开不再跟随鼠标\n- v1.6.3.0\n为主界面增加重定位到鼠标位置特性，并添加相应配置项\n如果钓法将选择性地不触幻，将在启动后显示一条提示\n修复一些问题",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
