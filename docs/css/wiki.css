@@ -65,8 +65,8 @@ body {
 
 /* 主内容区 */
 .content {
-    flex: 1;
-    margin-left: 250px;
+    /* 去掉 margin-left */
+    margin: 0 auto;  /* 自动左右外边距 */
     padding: 40px 60px;
     max-width: 900px;
     width: 100%;
