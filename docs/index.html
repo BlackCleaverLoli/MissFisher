@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MissFisher Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css">
+</head>
+<body>
+    <div class="wiki-container">
+        <nav class="sidebar">
+            <h2>📖 MissFisher Wiki</h2>
+            <ul id="nav-links">
+                <li><a href="?page=QuicklyEditingExistingPresets" class="nav-link">快速修改指南</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div id="markdown-content">
+                <p>正在加载...</p>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Markdown 解析器 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/dsl-highlighter.js"></script>
+    <script>
+        // 获取要显示的页面
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page') || 'QuicklyEditingExistingPresets';
+        
+        // 加载 Markdown 文件
+        fetch(`${page}.md`)
+            .then(response => {
+                if (!response.ok) throw new Error('文件未找到');
+                return response.text();
+            })
+            .then(markdown => {
+                // 渲染 Markdown
+                document.getElementById('markdown-content').innerHTML = marked.parse(markdown);
+                // 高亮 DSL 代码块
+                highlightDSLBlocks();
+            })
+            .catch(error => {
+                document.getElementById('markdown-content').innerHTML = 
+                    `<h1>⚠️ 加载失败</h1><p>无法加载页面: ${page}.md</p><p>${error.message}</p>`;
+            });
+        
+        // 高亮当前页面的导航链接
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href.includes(`page=${page}`)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,252 @@
+﻿/* MissFisher Wiki 样式 - VS Code Dark+ 主题 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    line-height: 1.6;
+}
+
+.wiki-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 侧边栏 */
+.sidebar {
+    width: 250px;
+    background-color: #252526;
+    padding: 20px;
+    border-right: 1px solid #3c3c3c;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: #e0e0e0;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+}
+
+.sidebar a {
+    color: #9cdcfe;
+    text-decoration: none;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: #37373d;
+}
+
+.sidebar a.active {
+    background-color: #094771;
+    color: #ffffff;
+}
+
+/* 主内容区 */
+.content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 40px 60px;
+    max-width: 900px;
+}
+
+/* Markdown 渲染样式 */
+#markdown-content h1 {
+    color: #4ec9b0;
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+#markdown-content h2 {
+    color: #dcdcaa;
+    font-size: 1.5em;
+    margin: 30px 0 15px 0;
+}
+
+#markdown-content h3 {
+    color: #9cdcfe;
+    font-size: 1.2em;
+    margin: 20px 0 10px 0;
+}
+
+#markdown-content p {
+    margin: 15px 0;
+}
+
+#markdown-content a {
+    color: #569cd6;
+    text-decoration: none;
+}
+
+#markdown-content a:hover {
+    text-decoration: underline;
+}
+
+#markdown-content ul, #markdown-content ol {
+    margin: 15px 0 15px 25px;
+}
+
+#markdown-content li {
+    margin: 8px 0;
+}
+
+#markdown-content blockquote {
+    border-left: 4px solid #569cd6;
+    padding: 10px 20px;
+    margin: 15px 0;
+    background-color: #2d2d30;
+    border-radius: 0 4px 4px 0;
+}
+
+/* 代码块样式 - VS Code Dark+ */
+#markdown-content pre {
+    background-color: #1e1e1e;
+    border: 1px solid #3c3c3c;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+#markdown-content code {
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    font-size: 14px;
+}
+
+#markdown-content p code,
+#markdown-content li code {
+    background-color: #2d2d30;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #ce9178;
+}
+
+/* DSL 语法高亮 - VS Code Dark+ 配色 */
+.dsl-keyword {
+    color: #569cd6;        /* 蓝色 - 关键字: 大鱼, 耐心, 平钓 */
+    font-weight: bold;
+}
+
+.dsl-control-flow {
+    color: #d8a0df;        /* 浅紫色 - 控制流关键字: @XX, 》, ！ */
+}
+
+.dsl-function {
+    color: #dcdcaa;        /* 黄色 - 函数: 《 */
+}
+
+.dsl-string {
+    color: #d69d85;        /* 珊瑚色 - 字符串/鱼名 【xxx】内容 */
+}
+
+.dsl-identifier {
+    color: #dcdcdc;        /* 浅灰色 - 默认识别符: 【】、| 等 */
+}
+
+.dsl-variable {
+    color: #9cdcfe;        /* 浅蓝色 - 变量: 叹号后的提钩类型 */
+}
+
+.dsl-number {
+    color: #b5cea8;        /* 浅绿色 - 数字 */
+}
+
+.dsl-comment {
+    color: #57a64a;        /* 绿色 - 注释 */
+    font-style: italic;
+}
+
+.dsl-punctuation {
+    color: #dcdcdc;        /* 浅灰色 - 标点符号 */
+}
+
+.dsl-literal {
+    color: #569cd6;        /* 蓝色 - 字面量: 全部, all */
+}
+
+.dsl-weather {
+    color: #c586c0;        /* 紫色 - 天气 */
+}
+
+.dsl-modifier {
+    color: #b8d7a3;        /* 浅绿色 - 手法修饰词 */
+}
+
+/* Diff 代码块样式 */
+.diff-add {
+    background-color: rgba(87, 166, 74, 0.2);  /* 绿色背景 */
+    display: block;
+}
+
+.diff-remove {
+    background-color: rgba(214, 37, 37, 0.2);  /* 红色背景 */
+    display: block;
+}
+
+/* 表格样式 */
+#markdown-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+}
+
+#markdown-content th, #markdown-content td {
+    border: 1px solid #3c3c3c;
+    padding: 10px;
+    text-align: left;
+}
+
+#markdown-content th {
+    background-color: #2d2d30;
+    color: #4ec9b0;
+}
+
+#markdown-content tr:nth-child(even) {
+    background-color: #252526;
+}
+
+/* diff 代码块 */
+#markdown-content pre code .diff-add {
+    color: #b5cea8;
+    background-color: rgba(155, 185, 85, 0.2);
+}
+
+#markdown-content pre code .diff-remove {
+    color: #f48771;
+    background-color: rgba(244, 135, 113, 0.2);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
