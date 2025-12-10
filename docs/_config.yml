@@ -1,0 +1,37 @@
+﻿# GitHub Pages Jekyll 配置
+
+# Jekyll 设置
+theme: jekyll-theme-minimal
+title: MissFisher Wiki
+description: FF14 自动钓鱼插件 - 官方文档
+logo: 
+favicon:
+
+# 本地设置
+url: "https://blackcleaverloli.github.io/MissFisher"
+baseurl: "/MissFisher"
+
+# 输出设置
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
+
+# 输出目录
+destination: _site
+source: docs
+
+# 排除文件
+exclude:
+  - .gitignore
+  - README.md
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
