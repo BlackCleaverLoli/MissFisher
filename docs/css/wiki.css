@@ -66,9 +66,10 @@ body {
 /* 主内容区 */
 .content {
     flex: 1;
-    margin-left: 250px;
+    margin: 0 auto;
     padding: 40px 60px;
     max-width: 900px;
+    width: 100%;
 }
 
 /* Markdown 渲染样式 */
@@ -249,4 +250,3 @@ body {
         padding: 20px;
     }
 }
-
