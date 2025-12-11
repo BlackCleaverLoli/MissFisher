@@ -175,7 +175,7 @@ MissFisher 的预设由特殊的钓法表达式组成，目前仅由作者一人
   
 如果缺少有重要价值的鱼类预设，请反馈。（不接受白色稀有度鱼类的反馈，除非有重要价值，仅为了图鉴收集除外）  
   
-修改预设中的参数或钓法：[钓法表达式快速修改指南](https://github.com/BlackCleaverLoli/MissFisher/wiki/QuicklyEditingExistingPresets)。  
+修改预设中的参数或钓法：[钓法表达式快速修改指南](https://blackcleaverloli.github.io/MissFisher/)。  
   
 如果你是经验老到的捕鱼人且发现自动时的钓法与理想钓法不符，欢迎反馈。  
   
