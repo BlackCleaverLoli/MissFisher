@@ -20,6 +20,7 @@ body {
 
 /* 侧边栏 */
 .sidebar {
+    display: none;
     width: 250px;
     background-color: #252526;
     padding: 20px;
@@ -65,7 +66,6 @@ body {
 
 /* 主内容区 */
 .content {
-    /* 去掉 margin-left */
     margin: 0 auto;  /* 自动左右外边距 */
     padding: 40px 60px;
     max-width: 900px;
