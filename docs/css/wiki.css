@@ -16,84 +16,122 @@ body {
 .wiki-container {
     display: flex;
     min-height: 100vh;
+    /* keep layout but allow overlay sidebar */
 }
 
 /* 侧边栏 */
 .sidebar {
-    display: none;
-    width: 250px;
-    background-color: #252526;
-    padding: 20px;
+    width: 260px; /* 略微增加宽度，提升阅读舒适度 */
+    background-color: #252526; /* 保持原色 */
+    padding: 20px 15px; /* 内边距左右稍收紧 */
     border-right: 1px solid #3c3c3c;
     position: fixed;
+    left: 0;
+    top: 0;
     height: 100vh;
     overflow-y: auto;
+
+    /* 优化滚动条样式 */
+    scrollbar-width: thin;               /* Firefox */
+    scrollbar-color: #454545 transparent; /* Firefox */
 }
 
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #454545;  /* 较深的滚动条 */
+    border-radius: 8px;
+    border: 2px solid transparent; /* 给与间距感 */
+    background-clip: content-box;
+}
+
+/* 侧栏链接交互优化 */
+.sidebar a {
+    color: #d4d4d4 !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+    color: #4ec9b0 !important;  /* 柔和的高亮色 */
+    text-decoration: underline;
+}
+
+/* 侧栏标题加粗并灵活间距 */
 .sidebar h2 {
-    color: #e0e0e0;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #3c3c3c;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.25em;
+    color: #d4d4d4 !important;
 }
 
+/* 侧栏列表项间距优化 */
 .sidebar ul {
     list-style: none;
+    padding-left: 0;
 }
 
 .sidebar li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-.sidebar a {
-    color: #9cdcfe;
-    text-decoration: none;
-    display: block;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+/* 小屏幕时优化侧栏 */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
 }
 
-.sidebar a:hover {
-    background-color: #37373d;
-}
-
-.sidebar a.active {
-    background-color: #094771;
-    color: #ffffff;
-}
-
-/* 主内容区 */
+/* 主内容区 - 完全居中 */
 .content {
-    margin: 0 auto;  /* 自动左右外边距 */
     padding: 40px 60px;
     max-width: 900px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 40px auto; /* center horizontally */
+    /* remove the fixed left offset so content stays centered even when sidebar visible */
+    /* display: flex; flex-direction: column; align-items: center; 都移除 */
+    position: relative;
+    z-index: 0;
+}
+
+/* 当侧栏可见并希望不被侧栏遮挡时，可在 .content 加上左侧内边距（可选） */
+body:not(.sidebar-collapsed) .content {
+    /* leave a small gap from the left edge so sidebar doesn't overlap text when wide */
+    padding-left: 80px; /* small safe area; user can tweak if needed */
 }
 
 /* Markdown 渲染样式 */
 #markdown-content h1 {
-    color: #4ec9b0;
-    font-size: 2em;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    color: #40c7b7 !important;        /* 主标题略微调整为更柔和的青绿色 */
+    font-size: 2.25em;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
     border-bottom: 1px solid #3c3c3c;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.4); /* 添加轻微投影 */
+    font-weight: 700;
 }
 
 #markdown-content h2 {
-    color: #dcdcaa;
-    font-size: 1.5em;
-    margin: 30px 0 15px 0;
+    color: #dcdcaa !important;
+    font-size: 1.75em;
+    margin: 32px 0 18px 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 #markdown-content h3 {
-    color: #9cdcfe;
-    font-size: 1.2em;
-    margin: 20px 0 10px 0;
+    color: #a0cef9 !important;  /* 使蓝色更清晰，提升辨识度 */
+    font-size: 1.35em;
+    margin: 22px 0 12px 0;
+    font-weight: 600;
+    letter-spacing: 0.01em;
 }
 
 #markdown-content p {
@@ -141,61 +179,101 @@ body {
 }
 
 #markdown-content p code,
-#markdown-content li code {
+#markdown-content li code,
+#markdown-content td code,
+#markdown-content th code {
     background-color: #2d2d30;
     padding: 2px 6px;
     border-radius: 3px;
-    color: #ce9178;
+    color: #dcdcdc;
 }
 
-/* DSL 语法高亮 - VS Code Dark+ 配色 */
-.dsl-keyword {
+/* Ensure sidebar text and its children keep normal color regardless of DSL classes */
+.sidebar,
+.sidebar h2,
+.sidebar ul,
+.sidebar li,
+.sidebar a,
+.sidebar p {
+    color: #d4d4d4 !important;
+}
+
+
+
+/* Scope DSL styles to code blocks / language containers to avoid leaking into other elements */
+
+/* DSL 语法高亮 - VS Code Dark+ 配色 (仅在代码块中生效) */
+pre code .dsl-keyword,
+.language-dsl .dsl-keyword,
+.language-angex .dsl-keyword {
     color: #569cd6;        /* 蓝色 - 关键字: 大鱼, 耐心, 平钓 */
     font-weight: bold;
 }
 
-.dsl-control-flow {
+pre code .dsl-control-flow,
+.language-dsl .dsl-control-flow,
+.language-angex .dsl-control-flow {
     color: #d8a0df;        /* 浅紫色 - 控制流关键字: @XX, 》, ！ */
 }
 
-.dsl-function {
+pre code .dsl-function,
+.language-dsl .dsl-function,
+.language-angex .dsl-function {
     color: #dcdcaa;        /* 黄色 - 函数: 《 */
 }
 
-.dsl-string {
+pre code .dsl-string,
+.language-dsl .dsl-string,
+.language-angex .dsl-string {
     color: #d69d85;        /* 珊瑚色 - 字符串/鱼名 【xxx】内容 */
 }
 
-.dsl-identifier {
+pre code .dsl-identifier,
+.language-dsl .dsl-identifier,
+.language-angex .dsl-identifier {
     color: #dcdcdc;        /* 浅灰色 - 默认识别符: 【】、| 等 */
 }
 
-.dsl-variable {
+pre code .dsl-variable,
+.language-dsl .dsl-variable,
+.language-angex .dsl-variable {
     color: #9cdcfe;        /* 浅蓝色 - 变量: 叹号后的提钩类型 */
 }
 
-.dsl-number {
+pre code .dsl-number,
+.language-dsl .dsl-number,
+.language-angex .dsl-number {
     color: #b5cea8;        /* 浅绿色 - 数字 */
 }
 
-.dsl-comment {
+pre code .dsl-comment,
+.language-dsl .dsl-comment,
+.language-angex .dsl-comment {
     color: #57a64a;        /* 绿色 - 注释 */
     font-style: italic;
 }
 
-.dsl-punctuation {
+pre code .dsl-punctuation,
+.language-dsl .dsl-punctuation,
+.language-angex .dsl-punctuation {
     color: #dcdcdc;        /* 浅灰色 - 标点符号 */
 }
 
-.dsl-literal {
+pre code .dsl-literal,
+.language-dsl .dsl-literal,
+.language-angex .dsl-literal {
     color: #569cd6;        /* 蓝色 - 字面量: 全部, all */
 }
 
-.dsl-weather {
+pre code .dsl-weather,
+.language-dsl .dsl-weather,
+.language-angex .dsl-weather {
     color: #c586c0;        /* 紫色 - 天气 */
 }
 
-.dsl-modifier {
+pre code .dsl-modifier,
+.language-dsl .dsl-modifier,
+.language-angex .dsl-modifier {
     color: #b8d7a3;        /* 浅绿色 - 手法修饰词 */
 }
 
@@ -213,23 +291,60 @@ body {
 /* 表格样式 */
 #markdown-content table {
     border-collapse: collapse;
-    width: 100%;
+    width: auto;
     margin: 15px 0;
+    font-size: 15px;
+    background: #1e1e1e;
 }
 
 #markdown-content th, #markdown-content td {
     border: 1px solid #3c3c3c;
     padding: 10px;
+    /* 默认左对齐 */
     text-align: left;
+    vertical-align: middle;
 }
 
 #markdown-content th {
-    background-color: #2d2d30;
-    color: #4ec9b0;
+    background-color: #2d2d30;      /* 表头背景色，深色调 */
+    color: #4ec9b0;                 /* 表头文字颜色，青绿色 */
+    font-weight: 600;               /* 加粗 */
+    text-align: center;             /* 居中对齐，常见效果 */
+    padding: 12px 15px;             /* 内边距，保持表头内容舒适 */
+    border: 1px solid #3c3c3c;     /* 边框，和表体统一 */
+    user-select: none;              /* 禁止选中，避免误操作（可选） */
+    /* 其他样式，根据需求可以添加 */
 }
 
 #markdown-content tr:nth-child(even) {
     background-color: #252526;
+}
+
+/* 支持 align 属性和常见对齐 class，模拟 GitHub 效果 */
+#markdown-content th[align="center"],
+#markdown-content td[align="center"],
+#markdown-content .align-center {
+    text-align: center !important;
+}
+#markdown-content th[align="right"],
+#markdown-content td[align="right"],
+#markdown-content .align-right {
+    text-align: right !important;
+}
+#markdown-content th[align="left"],
+#markdown-content td[align="left"],
+#markdown-content .align-left {
+    text-align: left !important;
+}
+
+/* 兼容 GFM 的 pipe 表格样式 */
+#markdown-content table {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+#markdown-content th, #markdown-content td {
+    word-break: break-word;
 }
 
 /* diff 代码块 */
@@ -251,5 +366,7 @@ body {
     .content {
         margin-left: 0;
         padding: 20px;
+        width: 100%;
+        max-width: 100%;
     }
 }
