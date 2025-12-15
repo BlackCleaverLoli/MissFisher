@@ -157,10 +157,21 @@ body:not(.sidebar-collapsed) .content {
 
 #markdown-content blockquote {
     border-left: 4px solid #569cd6;
-    padding: 10px 20px;
-    margin: 15px 0;
+    padding: 6px 14px; /* 更紧凑的内边距 */
+    margin: 10px 0;    /* 更小的上下间距 */
     background-color: #2d2d30;
-    border-radius: 0 4px 4px 0;
+    border-radius: 3px 4px 4px 3px; /* 更小的圆角 */
+}
+
+#markdown-content blockquote code {
+    background-color: #232325;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #dcdcdc;
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    font-size: 14px;
+    font-variant-ligatures: none;
+    font-feature-settings: "liga" 0;
 }
 
 /* 代码块样式 - VS Code Dark+ */
@@ -171,11 +182,15 @@ body:not(.sidebar-collapsed) .content {
     padding: 16px;
     overflow-x: auto;
     margin: 15px 0;
+    font-variant-ligatures: none; /* 禁用连字，防止 <= => 被替换 */
+    font-feature-settings: "liga" 0; /* 兼容性写法 */
 }
 
 #markdown-content code {
     font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
     font-size: 14px;
+    font-variant-ligatures: none; /* 禁用连字，防止 <= => 被替换 */
+    font-feature-settings: "liga" 0; /* 兼容性写法 */
 }
 
 #markdown-content p code,
