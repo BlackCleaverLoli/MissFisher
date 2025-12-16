@@ -157,8 +157,8 @@ body:not(.sidebar-collapsed) .content {
 
 #markdown-content blockquote {
     border-left: 4px solid #569cd6;
-    padding: 6px 14px; /* 更紧凑的内边距 */
-    margin: 10px 0;    /* 更小的上下间距 */
+    padding: 1px 12px;         /* 减小上下内边距 */
+    margin: 6px 0;             /* 减小上下外边距 */
     background-color: #2d2d30;
     border-radius: 3px 4px 4px 3px; /* 更小的圆角 */
 }
