@@ -5,7 +5,7 @@
         "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.6.1",
+        "AssemblyVersion": "1.6.7.0",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -17,7 +17,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "ChangeLog": "- v1.6.6.0\n适配游戏补丁 7.4\n- v1.6.6.1\n修复一个问题",
+        "ChangeLog": "- v1.6.7.0\n同步适配了游戏内新增的 2 个主题\n修复部分主题元素可视度差的问题\n修复一些问题\n- v1.6.6.1\n修复一个问题\n- v1.6.6.0\n适配游戏补丁 7.4",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
