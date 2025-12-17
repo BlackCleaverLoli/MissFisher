@@ -277,7 +277,7 @@ pre code .dsl-punctuation,
 pre code .dsl-literal,
 .language-dsl .dsl-literal,
 .language-angex .dsl-literal {
-    color: #569cd6;        /* 蓝色 - 字面量: 全部, all */
+    color: #d69d85;        /* 珊瑚色 - 字面量: 全部, all */
 }
 
 pre code .dsl-weather,
