@@ -5,7 +5,7 @@
         "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.9.7",
+        "AssemblyVersion": "1.6.10.0",
         "ApplicableVersion": "any",
         "Tags": [
             "Auto",
@@ -17,7 +17,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "IsHide": false,
         "IsTestingExclusive": false,
-        "ChangeLog": "- v1.6.9.7\n修复一处强心剂不生效问题\n- v1.6.9.6\n修复一处会导致游戏崩溃的问题\n- v1.6.9.5\n同步依赖修复\n- v1.6.9.4\n尝试修复json文件问题\n- v1.6.9.1\n修复一个专一垂钓问题\n- v1.6.9.0\n新增一个蓝粉配色的主题\n修复部分主题元素可视度差的问题\n- v1.6.8.1\n修复部分主题元素可视度差的问题\n- v1.6.8.0\n新增一个透明黑色主题\n（已在上一版本新增新的粉色主题）\n- v1.6.7.0\n同步适配了游戏内新增的 2 个主题\n修复部分主题元素可视度差的问题\n修复一些问题\n- v1.6.6.1\n修复一个问题\n- v1.6.6.0\n适配游戏补丁 7.4",
+        "ChangeLog": "- v1.6.10.0\n当主界面的预设输入框中包含有效的定时参数时，将在悬浮提示中提供预计的启动时间\n优化部分主题元素的可视性\n修复了一些文本错误\n- v1.6.9.7\n修复一处强心剂不生效问题\n- v1.6.9.6\n修复一处会导致游戏崩溃的问题\n- v1.6.9.5\n同步依赖修复\n- v1.6.9.4\n尝试修复json文件问题\n- v1.6.9.1\n修复一个专一垂钓问题\n- v1.6.9.0\n新增一个蓝粉配色的主题\n修复部分主题元素可视度差的问题\n- v1.6.8.1\n修复部分主题元素可视度差的问题\n- v1.6.8.0\n新增一个透明黑色主题\n（已在上一版本新增新的粉色主题）\n- v1.6.7.0\n同步适配了游戏内新增的 2 个主题\n修复部分主题元素可视度差的问题\n修复一些问题\n- v1.6.6.1\n修复一个问题\n- v1.6.6.0\n适配游戏补丁 7.4",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
