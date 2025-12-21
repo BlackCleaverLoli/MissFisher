@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.10.3",
+        "AssemblyVersion": "1.6.10.4",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -22,6 +22,8 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "AcceptsFeedback": true,
-        "ChangeLog": "- v1.6.10.4\n  打包优化\n- v1.6.10.3\n  修复一个旧版依赖导致投影台界面操作时游戏崩溃的问题\n- v1.6.10.2\n  修复禁用强心剂配置项无效的问题\n- v1.6.10.1\n  修复宇宙探索任务读取失败的问题\n- v1.6.10.0\n  当主界面的预设输入框中包含有效的定时参数时，将在悬浮提示中提供预计的启动时间\n  优化部分主题元素的可视性\n  修复了一些文本错误\n"
+        "ChangeLog": "- v1.6.10.4\n  打包优化\n- v1.6.10.3\n  修复一个旧版依赖导致投影台界面操作时游戏崩溃的问题\n- v1.6.10.2\n  修复禁用强心剂配置项无效的问题\n- v1.6.10.1\n  修复宇宙探索任务读取失败的问题\n- v1.6.10.0\n  当主界面的预设输入框中包含有效的定时参数时，将在悬浮提示中提供预计的启动时间\n  优化部分主题元素的可视性\n  修复了一些文本错误\n",
+        "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
+        "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
 ]
