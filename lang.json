@@ -210,15 +210,15 @@
         "トリプル"
     ],
     "三提七条所需获得力大于等于3450": [
-"三提七条所需获得力 ≥ 3450",
-"Triple collection of seven fish requires gathering power ≥ 3450",
-"三提七匹に必要な獲得力は3450以上です"
-],
+        "三提七条所需获得力 ≥ 3450",
+        "Triple collection of seven fish requires gathering power ≥ 3450",
+        "三提七匹に必要な獲得力は3450以上です"
+    ],
     "不定收藏价值换材料可能溢出或不足": [
-            "不定收藏价值换材料可能溢出或不足",
-            "Variable collectable value may cause material overflow or insufficiency",
-            "不定の収集価値で素材が溢れたり不足する可能性があります"
-        ],
+        "不定收藏价值换材料可能溢出或不足",
+        "Variable collectable value may cause material overflow or insufficiency",
+        "不定の収集価値で素材が溢れたり不足する可能性があります"
+    ],
     "不将垂钓之光作为开关": [
         "不将「垂钓之光」作为主界面开关",
         "Don't use 'Cast Light' as main",
@@ -319,10 +319,20 @@
         "X|V 'Light'",
         "X|V「ライト」"
     ],
-    "主题浅蓝": [
-        "X|V「浅蓝」",
+    "主题透明蓝": [
+        "X|V「透明蓝」",
         "X|V 'Clear Blue'",
         "X|V「クリアブルー」"
+    ],
+    "主题透明白": [
+        "X|V「透明白」",
+        "X|V 'Clear White'",
+        "X|V「クリアホワイト」"
+    ],
+    "主题透明绿": [
+        "X|V「透明绿」",
+        "X|V 'Clear Green'",
+        "X|V「クリアグリーン」"
     ],
     "主题深色": [
         "X|V「深色」",
@@ -333,6 +343,21 @@
         "X|V「经典」",
         "X|V 'Classic'",
         "X|V「クラシック」"
+    ],
+    "主题粉色": [
+        "灵感「粉」",
+        "Inspo 'Pink'",
+        "灵感「ピンク」"
+    ],
+    "主题冰茶": [
+        "灵感「海盐冰茶」",
+        "Inspo 'Iced Tea'",
+        "灵感「アイスティー」"
+    ],
+    "主题新世代": [
+        "灵感「新世代」",
+        "Inspo 'Neo'",
+        "灵感「次世代」"
     ],
     "主题鸣潮": [
         "灵感「呜潮」",
@@ -414,6 +439,11 @@
         "Use Snagging",
         "引掛釣り使用"
     ],
+    "跳阶段": [
+        "跳阶段",
+        "Skip Phase",
+        "フェーズをスキップ"
+    ],
     "保存文件失败": [
         "保存文件失败: {0}",
         "Failed to save file: {0}",
@@ -489,11 +519,6 @@
         "Scoring",
         "スコアリング"
     ],
-    "准备设置输入框焦点": [
-        "准备设置输入框焦点",
-        "Preparing to set input focus",
-        "入力フォーカス設定準備"
-    ],
     "出海垂钓": [
         "出海垂钓",
         "Ocean Fishing",
@@ -532,7 +557,7 @@
     "分钟符号": [
         "",
         "",
-        ""
+        ""
     ],
     "切换到内层钓法": [
         "切换到了内层钓法……",
@@ -730,9 +755,9 @@
         "コマンド引数 {0} が不正"
     ],
     "命令帮助": [
-        "\n/mf config → 打开设置界面\n/mf route → 打开航线预报界面\n\n=========命令说明=========\n\n<尖括号> 为必须参数\n- 如 /mf preset <name> 输入时应提供一个预设名如 /mf preset 全提\n<尖括号|或符> 为必选分支\n- 如 /mf <end|stop> 输入时应写为 /mf end 或 /mf stop\n[方括号] 为可选参数\n- 如 /mf pause [on|off] 输入时可省略为 /mf pause\n\n=========模式命令=========\n\n/mf cosmic → 宇宙探索，启动适合当前探索任务的预设\n\n/mf <xp|leveling> → 启动练级模式（以经验获取为目标，在非出海垂钓区域也可启动）\n/mf scoring → 启动冲分模式（以渔分为目标）\n/mf <bf|bluefish> → 启动蓝鱼模式（以蓝色稀有度鱼类为目标）\n/mf <v1|achiev1> → 启动成就 1 模式（以航线预报中角标为「1」的称号所需的鱼类为目标，大多数需要组队完成）\n/mf <v2|achiev2> → 同上，但角标为2\n\n/mf sbg2 → 启动空岛二期模式（以捕获更多重建二期特供鱼类为目标）\n/mf sbg3 → 启动空岛三期模式（以捕获更多重建三期特供鱼类为目标）\n/mf sbg4 → 启动空岛四期模式（以捕获更多重建四期特供鱼类为目标）\n/mf spt → 启动空岛技巧分模式（以获取伊修加德重建捕鱼人技巧分为目标）\n/mf spg → 启动空岛绿鱼模式（以捕获更多绿色稀有度的特供鱼类为目标）\n\n=========其他命令=========\n\n/mf test → 启动测试（使用万能拟饵钓一条鱼）\n/mf preset <name> [minutes] → 启动预设，提供额外参数时会延迟 [minutes] 分钟启动\n/mf preset show <name> → 查看预设内容及预设中所需的钓饵\n/mf pause [on|off] → 不提供参数时切换暂停/恢复，提供参数时切换到指定的暂停状态\n/mf <end|stop> → 终止自动动作，包括正在或即将执行的\n/mf <Angex> → 使用钓法表达式启动",
-        "\n/mf config → Open settings interface\n/mf route → Open route forecast interface\n\n=========Command Guide=========\n\n<angle brackets> indicate required parameters\n- Example: /mf preset <name> should include a preset name, e.g. /mf preset FullCatch\n<angle brackets|pipe> indicate exclusive options\n- Example: /mf <end|stop> should be written as /mf end or /mf stop\n[square brackets] indicate optional parameters\n- Example: /mf pause [on|off] can be shortened to /mf pause\n\n=========Mode Commands=========\n\n/mf cosmic → Cosmic Exploration mode, activates preset suitable for current exploration missions\n\n/mf <xp|leveling> → Leveling mode (focuses on EXP gain, can be used even outside ocean fishing areas)\n/mf scoring → Scoring mode (focuses on Fisher's Points)\n/mf <bf|bluefish> → Bluefish mode (targets blue-rarity fish)\n/mf <v1|achiev1> → Achievement 1 mode (targets fish needed for title marked “1” in route forecast, usually requires party)\n/mf <v2|achiev2> → Same as above, but for mark 2\n\n/mf sbg2 → Skybuilder Phase 2 mode (targets fish specific to Phase 2 reconstruction)\n/mf sbg3 → Skybuilder Phase 3 mode (targets fish specific to Phase 3 reconstruction)\n/mf sbg4 → Skybuilder Phase 4 mode (targets fish specific to Phase 4 reconstruction)\n/mf spt → Skybuilder Skill Point mode (focuses on earning Ishgardian Reconstruction Fisher’s skill points)\n/mf spg → Skybuilder Greenfish mode (targets green-rarity reconstruction fish)\n\n=========Other Commands=========\n\n/mf test → Run test (catch a single fish using Universal Lure)\n/mf preset <name> [minutes] → Start preset; if extra parameter is provided, delay start by [minutes] minutes\n/mf preset show <name> → Show preset details and bait list\n/mf pause [on|off] → Toggle pause/resume if no parameter, or set explicitly if parameter is given\n/mf <end|stop> → Stop all automated actions, including ongoing or scheduled ones\n/mf <Angex> → Start with Angling Expression",
-        "\n/mf config → 設定画面を開く\n/mf route → 航路予報画面を開く\n\n=========コマンド説明=========\n\n<山括弧> は必須パラメータ\n- 例：/mf preset <name> の場合、/mf preset 全提 のようにプリセット名を指定\n<山括弧|パイプ> は排他的選択肢\n- 例：/mf <end|stop> の場合、/mf end または /mf stop と入力\n[角括弧] は任意パラメータ\n- 例：/mf pause [on|off] は /mf pause と省略可能\n\n=========モードコマンド=========\n\n/mf cosmic → 宇宙探索モード。現在の探索任務に適したプリセットを起動\n\n/mf <xp|leveling> → レベリングモード（経験値重視、海釣り以外の地域でも使用可能）\n/mf scoring → スコアリングモード（漁師ポイント重視）\n/mf <bf|bluefish> → ブルーフィッシュモード（青レア魚を狙う）\n/mf <v1|achiev1> → アチーブメント1モード（航路予報で角印「1」の称号に必要な魚を狙う。多くはパーティ推奨）\n/mf <v2|achiev2> → 同上、ただし角印「2」\n\n/mf sbg2 → 蒼天街第二期モード（第二期復興専用魚を狙う）\n/mf sbg3 → 蒼天街第三期モード（第三期復興専用魚を狙う）\n/mf sbg4 → 蒼天街第四期モード（第四期復興専用魚を狙う）\n/mf spt → 蒼天街技巧点モード（漁師技巧点の獲得を目的）\n/mf spg → 蒼天街グリーンフィッシュモード（緑レア魚を狙う）\n\n=========その他のコマンド=========\n\n/mf test → テストを実行（万能ルアーで魚を1匹釣る）\n/mf preset <name> [minutes] → プリセットを起動。追加パラメータ指定時は [minutes] 分後に遅延起動\n/mf preset show <name> → プリセット内容と必要な餌を表示\n/mf pause [on|off] → 引数なしで一時停止／再開を切替。指定時は明示的に切替\n/mf <end|stop> → すべての自動動作を停止（実行中・予定中を含む）\n/mf <Angex> → 釣法式を使用して起動"
+        "\n/mf config → 打开设置界面\n/mf route → 打开航线预报界面\n\n=========命令说明=========\n\n<尖括号> 为必须参数\n- 如 /mf preset <name> 输入时应提供一个预设名如 /mf preset 全提\n<尖括号|或符> 为必选分支\n- 如 /mf <end|stop> 输入时应写为 /mf end 或 /mf stop\n[方括号] 为可选参数\n- 如 /mf pause [on|off] 输入时可省略为 /mf pause\n\n=========模式命令=========\n\n/mf cosmic → 宇宙探索，启动适合当前探索任务的预设\n\n/mf <xp|leveling> → 启动练级模式（以经验获取为目标，在非出海垂钓区域也可启动）\n/mf scoring → 启动冲分模式（以渔分为目标）\n/mf <bf|bluefish> → 启动蓝鱼模式（以蓝色稀有度鱼类为目标）\n/mf <v1|achiev1> → 启动成就 1 模式（以航线预报中角标为「1」的称号所需的鱼类为目标，大多数需要组队完成）\n/mf <v2|achiev2> → 同上，但角标为2\n\n/mf sbg2 → 启动空岛二期模式（以捕获更多重建二期特供鱼类为目标）\n/mf sbg3 → 启动空岛三期模式（以捕获更多重建三期特供鱼类为目标）\n/mf sbg4 → 启动空岛四期模式（以捕获更多重建四期特供鱼类为目标）\n/mf spt → 启动空岛技巧分模式（以获取伊修加德重建捕鱼人技巧分为目标）\n/mf spg → 启动空岛绿鱼模式（以捕获更多绿色稀有度的特供鱼类为目标）\n\n=========其他命令=========\n\n/mf test → 启动测试（使用万能拟饵钓一条鱼）\n/mf preset <name> [minutes] → 启动预设，提供额外参数时会延迟 [minutes] 分钟启动\n/mf preset show <name> → 查看预设内容及预设中所需的钓饵\n/mf pause [on|off] → 不提供参数时切换暂停/恢复，提供参数时切换到指定的暂停状态\n/mf <end|stop> → 终止自动动作，包括正在或即将执行的\n/mf <Angex> → 使用钓法表达式启动\n/mf isla → 检查剪贴板中的钓法表达式是否合法\n/mf addid → 为剪贴板中的钓法表达式的参数添加 ID 以适配其他语言的客户端",
+        "\n/mf config → Open settings interface\n/mf route → Open route forecast interface\n\n=========Command Guide=========\n\n<angle brackets> indicate required parameters\n- Example: /mf preset <name> should include a preset name, e.g. /mf preset FullCatch\n<angle brackets|pipe> indicate exclusive options\n- Example: /mf <end|stop> should be written as /mf end or /mf stop\n[square brackets] indicate optional parameters\n- Example: /mf pause [on|off] can be shortened to /mf pause\n\n=========Mode Commands=========\n\n/mf cosmic → Cosmic Exploration mode, activates preset suitable for current exploration missions\n\n/mf <xp|leveling> → Leveling mode (focuses on EXP gain, can be used even outside ocean fishing areas)\n/mf scoring → Scoring mode (focuses on Fisher's Points)\n/mf <bf|bluefish> → Bluefish mode (targets blue-rarity fish)\n/mf <v1|achiev1> → Achievement 1 mode (targets fish needed for title marked “1” in route forecast, usually requires party)\n/mf <v2|achiev2> → Same as above, but for mark 2\n\n/mf sbg2 → Skybuilder Phase 2 mode (targets fish specific to Phase 2 reconstruction)\n/mf sbg3 → Skybuilder Phase 3 mode (targets fish specific to Phase 3 reconstruction)\n/mf sbg4 → Skybuilder Phase 4 mode (targets fish specific to Phase 4 reconstruction)\n/mf spt → Skybuilder Skill Point mode (focuses on earning Ishgardian Reconstruction Fisher’s skill points)\n/mf spg → Skybuilder Greenfish mode (targets green-rarity reconstruction fish)\n\n=========Other Commands=========\n\n/mf test → Run test (catch a single fish using Universal Lure)\n/mf preset <name> [minutes] → Start preset; if extra parameter is provided, delay start by [minutes] minutes\n/mf preset show <name> → Show preset details and bait list\n/mf pause [on|off] → Toggle pause/resume if no parameter, or set explicitly if parameter is given\n/mf <end|stop> → Stop all automated actions, including ongoing or scheduled ones\n/mf <Angex> → Start with Angling Expression\n/mf isla → Check if Angling Expression in clipboard uses latest syntax\n/mf addid → Add ID tags to Angling Expression parameters for multi-language client compatibility",
+        "\n/mf config → 設定画面を開く\n/mf route → 航路予報画面を開く\n\n=========コマンド説明=========\n\n<山括弧> は必須パラメータ\n- 例：/mf preset <name> の場合、/mf preset 全提 のようにプリセット名を指定\n<山括弧|パイプ> は排他的選択肢\n- 例：/mf <end|stop> の場合、/mf end または /mf stop と入力\n[角括弧] は任意パラメータ\n- 例：/mf pause [on|off] は /mf pause と省略可能\n\n=========モードコマンド=========\n\n/mf cosmic → 宇宙探索モード。現在の探索任務に適したプリセットを起動\n\n/mf <xp|leveling> → レベリングモード（経験値重視、海釣り以外の地域でも使用可能）\n/mf scoring → スコアリングモード（漁師ポイント重視）\n/mf <bf|bluefish> → ブルーフィッシュモード（青レア魚を狙う）\n/mf <v1|achiev1> → アチーブメント1モード（航路予報で角印「1」の称号に必要な魚を狙う。多くはパーティ推奨）\n/mf <v2|achiev2> → 同上、ただし角印「2」\n\n/mf sbg2 → 蒼天街第二期モード（第二期復興専用魚を狙う）\n/mf sbg3 → 蒼天街第三期モード（第三期復興専用魚を狙う）\n/mf sbg4 → 蒼天街第四期モード（第四期復興専用魚を狙う）\n/mf spt → 蒼天街技巧点モード（漁師技巧点の獲得を目的）\n/mf spg → 蒼天街グリーンフィッシュモード（緑レア魚を狙う）\n\n=========その他のコマンド=========\n\n/mf test → テストを実行（万能ルアーで魚を1匹釣る）\n/mf preset <name> [minutes] → プリセットを起動。追加パラメータ指定時は [minutes] 分後に遅延起動\n/mf preset show <name> → プリセット内容と必要な餌を表示\n/mf pause [on|off] → 引数なしで一時停止／再開を切替。指定時は明示的に切替\n/mf <end|stop> → すべての自動動作を停止（実行中・予定中を含む）\n/mf <Angex> → 釣法式を使用して起動\n/mf isla → クリップボードの釣法式が最新構文か確認\n/mf addid → 多言語クライアント対応のため、釣法式パラメータにIDを追加"
     ],
     "咬饵音效说明": [
         "当鱼咬饵时播放音效\n- 自动静默：自动功能运行时静音",
@@ -790,200 +815,200 @@
         "地点名が見つかりません：{0}"
     ],
     "声音设置": [
-            "声音设置",
-            "Sound Settings",
-            "音声設定"
-        ],
+        "声音设置",
+        "Sound Settings",
+        "音声設定"
+    ],
     "处理JSON未预期错误": [
         "处理JSON文件时发生未预期的错误: {0}",
         "Unexpected error processing JSON file: {0}",
         "JSON処理中に予期せぬエラー発生: {0}"
     ],
     "备注stell510": [
-    "金牌流程：启动预设钓到7条→再启动预设钓到7条共14条→使用恩宠&强心剂（如果可用）→制作2次→再启动预设钓到7条→制作1次",
-    "Gold medal flow: start preset to catch 7 fish→start again to catch 7 more totaling 14→use Favor & Stimulator (if available)→craft twice→start preset to catch 7→craft once",
-    "ゴールドメダルの流れ：プリセットを起動して7匹釣る→再度プリセットを起動して合計14匹釣る→恩寵と強心剤（使用可能なら）を使う→2回作成→再びプリセットを起動して7匹釣る→1回作成"
+        "金牌流程：启动预设钓到7条→再启动预设钓到7条共14条→使用恩宠&强心剂（如果可用）→制作2次→再启动预设钓到7条→制作1次",
+        "Gold medal flow: start preset to catch 7 fish→start again to catch 7 more totaling 14→use Favor & Stimulator (if available)→craft twice→start preset to catch 7→craft once",
+        "ゴールドメダルの流れ：プリセットを起動して7匹釣る→再度プリセットを起動して合計14匹釣る→恩寵と強心剤（使用可能なら）を使う→2回作成→再びプリセットを起動して7匹釣る→1回作成"
     ],
     "备注七彩天主": [
         "完整的半自动流程大约需要一个多小时：先使用【七彩天主起手】开始，人工监控是否钓满蓝彩鱼或橙彩鱼其中一种，例如：钓了 3 条橙彩鱼，就接着使用预设【鱼眼蓝彩鱼】，否则，使用【鱼眼橙彩鱼】。当警惕时，你应该到远离原位置几米远的地方再启动相同的预设。当钓满 3 条蓝彩鱼与 3 条橙彩鱼时，请打开相关钓鱼时钟网站的鱼眼模式查看绿彩鱼的窗口期，在其窗口期内使用【七彩天主最终】来收尾，祝你好运！",
         "The complete semi-automatic process takes about an hour: start with 【24994-a1】 and manually monitor if you catch full 3 blue or orange rainbowfish. For example, if caught 3 orange, next use preset 【24203-Fish Eyes】, else use 【23056-Fish Eyes】. When cautioned, move several meters away to restart the same preset. After catching full 3 blue and 3 orange rainbowfish, open the related fishing clock website's fish-eye mode to check the green rainbowfish window, and use 【24994-a2】 in that period to finish. Good luck!",
         "半自動プロセスは約1時間かかります：【24994-a1】から開始し、青またはオレンジのレインボーフィッシュ3匹を目標に手動監視します。例として、オレンジを3匹釣ったら次に【24203-Fish Eyes】を使用し、そうでなければ【23056-Fish Eyes】を使います。警戒されたら、元の位置から数メートル離れて同じプリセットを再起動してください。青のレインボーフィッシュ3匹とオレンジのレインボーフィッシュ3匹を釣った後、釣り時計の魚眼モードで緑のレインボーフィッシュのウィンドウを確認し、その期間に【24994-a2】を使用して仕上げてください。幸運を祈ります！"
-        ],
+    ],
     "备注七彩天主最终": [
-  "「蓝彩鱼」和「橙彩鱼」都钓满时，在天气符合「绿彩鱼」条件时使用",
-  "Both \"Indigo Prismfish\" and \"Firelight Goldfish\" caught; use when weather suits \"Green Prismfish\"",
-  "「藍彩魚」と「橙彩魚」を全て釣った後、天候が「緑彩魚」の条件に合うときに使用してください"
-  ],
+        "「蓝彩鱼」和「橙彩鱼」都钓满时，在天气符合「绿彩鱼」条件时使用",
+        "Both \"Indigo Prismfish\" and \"Firelight Goldfish\" caught; use when weather suits \"Green Prismfish\"",
+        "「藍彩魚」と「橙彩魚」を全て釣った後、天候が「緑彩魚」の条件に合うときに使用してください"
+    ],
     "备注七彩天主起手": [
-    "从零开始使用，当钓满「蓝彩鱼」或「橙彩鱼」时请手动更换【蓝彩鱼鱼眼】或【橙彩鱼鱼眼】",
-    "Start from zero; when full \"Indigo Prismfish\" or \"Firelight Goldfish\" caught, manually switch to 【24203-Fish Eyes】 or 【23056-Fish Eyes】",
-    "ゼロから開始し、「藍彩魚」または「橙彩魚」を満たしたら手動で【24203-Fish Eyes】または【23056-Fish Eyes】に切り替えてください"
+        "从零开始使用，当钓满「蓝彩鱼」或「橙彩鱼」时请手动更换【蓝彩鱼鱼眼】或【橙彩鱼鱼眼】",
+        "Start from zero; when full \"Indigo Prismfish\" or \"Firelight Goldfish\" caught, manually switch to 【24203-Fish Eyes】 or 【23056-Fish Eyes】",
+        "ゼロから開始し、「藍彩魚」または「橙彩魚」を満たしたら手動で【24203-Fish Eyes】または【23056-Fish Eyes】に切り替えてください"
     ],
     "备注嘎儿鱼": [
         "半自动流程如下：钓场名应为「熏香海岸」，可以通过抛竿来确认，在确认后移动到同位置同钓场的几米外（更换钓点）以防警惕。\n提前在「矛齿鲸」窗口期到来前到场（如果「矛齿鲸」和「嘎儿鱼」的窗口期起始间隔在18分钟以内，可使用【嘎儿鱼短流程）），启动预设【嘎儿鱼起手】或【嘎儿鱼三提起手】。\n提醒完成时更换钓点，在「嘎儿鱼」窗口期到来前半小时左右启动【嘎儿鱼收藏最终】或【嘎儿鱼自动最终】。\n「收藏」和「自动」的区别：「自动」可全自动完成最终手法（有概率亏鱼识时间），「收藏」则需要你手动在「嘎儿鱼」窗口到来时点击收藏窗口的「否」。\n如果有连续的「嘎儿鱼」窗口，可查看【嘎儿鱼连续窗口方案】。祝你好运！",
         "The semi-auto process: the fishing place should be \"Perfumed Tides\", which can be confirmed by casting. After confirmation, move several meters away at the same spot and fishing area (change fishing position) to prevent caution.\nArrive before the \"Basilosaurus\" window starts (if the gap between \"Basilosaurus\" and \"Gharlichthys\" windows is within 18 minutes, you can use 【41408-c1】), start preset 【41408-a1】 or 【41408-b1】.\nUpon completion, change fishing position; around half an hour before the \"Gharlichthys\" window starts, start 【41408-a2】 or 【41408-b2】.\nDifference between \"41408-a2\" and \"41408-b2\": \"41408-b2\" can fully automate the final technique (may lose Fisher's Intuition time occasionally), \"41408-a2\" requires you to manually click \"No\" on the collect window when the \"Gharlichthys\" window arrives.\nIf there are consecutive \"Gharlichthys\" windows, refer to 【Gharlichthys Consecutive Window Plan】. Good luck!",
         "半自動の流れは以下の通りです：釣り場は「薫香の浜」で、竿を投げて確認できます。確認後、同じ位置と釣り場内で数メートル離れた場所に移動（釣りスポット変更）して警戒を防ぎます。\n「ドンドルドン」ウィンドウ開始前に到着（「ドンドルドン」と「ガールシクティス」のウィンドウ開始差が18分以内なら【41408-c1】使用可）、【41408-a1】または【41408-b1】を起動してください。\n完了後に釣りスポットを変更し、「ガールシクティス」ウィンドウ開始の約30分前に【41408-a2】または【41408-b2】を起動します。\n「41408-a2」と「41408-b2」の違い：「41408-b2」は最終手法を全自動で行えます（魚のアタリ時間を逃すこともあります）、「41408-a2」は「ガールシクティス」ウィンドウ到来時に収集ウィンドウの「いいえ」を手動でクリックする必要があります。\n連続した「ガールシクティス」ウィンドウがある場合は【ガールシクティス連続ウィンドウプラン】をご覧ください。幸運を祈ります！"
-      ],
+    ],
     "备注嘎儿鱼收藏最终": [
-  "预期是你还缺 2 条「矛齿鲸」，关掉其他插件自动确认收藏的功能，需要卡确认收集收藏品对话框手动在「嘎儿鱼」窗口期到来时点「否」",
-  "If expected to lack 2 \"Basilosaurus\", disable other plugins' auto collect confirmation; stall collect dialog and click \"No\" manually when \"Gharlichthys\" window arrives",
-  "「ドルドン」が2匹不足すると予想される場合、他のプラグインの自動収集確認機能をオフにし、収集品確認ダイアログで「いいえ」を手動でクリックしてください。「ガールシクティス」ウィンドウ時に行います"
-  ],
+        "预期是你还缺 2 条「矛齿鲸」，关掉其他插件自动确认收藏的功能，需要卡确认收集收藏品对话框手动在「嘎儿鱼」窗口期到来时点「否」",
+        "If expected to lack 2 \"Basilosaurus\", disable other plugins' auto collect confirmation; stall collect dialog and click \"No\" manually when \"Gharlichthys\" window arrives",
+        "「ドルドン」が2匹不足すると予想される場合、他のプラグインの自動収集確認機能をオフにし、収集品確認ダイアログで「いいえ」を手動でクリックしてください。「ガールシクティス」ウィンドウ時に行います"
+    ],
     "备注嘎儿鱼自动最终": [
-"预期是你还缺 2 条「矛齿鲸」",
-"You are expected to still lack 2 \"Basilosaurus\"",
-"「ドルドン」が2匹不足していることが予想されます"
-],
+        "预期是你还缺 2 条「矛齿鲸」",
+        "You are expected to still lack 2 \"Basilosaurus\"",
+        "「ドルドン」が2匹不足していることが予想されます"
+    ],
     "备注嘎儿鱼连续窗口方案": [
-  "如果有连续的「嘎儿鱼」窗口，而第 1 个窗口没钓够「矛齿鲸」，可到其他钓场抛竿后回到「熏香海岸」重新开始起手。也可继续钓够起手所需的数量：更换钓点后启动起手，人工监控剩余的「矛齿鲸」直到总数 10 以完成起手（其他同主方案）。",
-  "If there are consecutive \"Gharlichthys\" windows and the first window hasn't caught enough \"Basilosaurus\", you can cast at other fishing spots then return to \"Perfumed Tides\" to restart the initial fishing. You can also continue fishing until the initial required quantity is met: after changing fishing spots, start the initial fishing and manually monitor the remaining \"Basilosaurus\" until the total reaches 10 to complete the start (similar for other main plans).",
-  "「ガールシクティス」の連続ウィンドウがあり、第1ウィンドウで「ドンドルドン」が不足の場合、他の釣り場で竿を投げてから「薫香の浜」に戻って最初の釣りを再開できます。起手に必要な数量を満たすまで続行可能：釣り場を変えた後に起手を開始し、残りの「ドンドルドン」を手動で監視し、合計10匹に達したら起手を完了します（他の主要プランも同様）。"
-],
+        "如果有连续的「嘎儿鱼」窗口，而第 1 个窗口没钓够「矛齿鲸」，可到其他钓场抛竿后回到「熏香海岸」重新开始起手。也可继续钓够起手所需的数量：更换钓点后启动起手，人工监控剩余的「矛齿鲸」直到总数 10 以完成起手（其他同主方案）。",
+        "If there are consecutive \"Gharlichthys\" windows and the first window hasn't caught enough \"Basilosaurus\", you can cast at other fishing spots then return to \"Perfumed Tides\" to restart the initial fishing. You can also continue fishing until the initial required quantity is met: after changing fishing spots, start the initial fishing and manually monitor the remaining \"Basilosaurus\" until the total reaches 10 to complete the start (similar for other main plans).",
+        "「ガールシクティス」の連続ウィンドウがあり、第1ウィンドウで「ドンドルドン」が不足の場合、他の釣り場で竿を投げてから「薫香の浜」に戻って最初の釣りを再開できます。起手に必要な数量を満たすまで続行可能：釣り場を変えた後に起手を開始し、残りの「ドンドルドン」を手動で監視し、合計10匹に達したら起手を完了します（他の主要プランも同様）。"
+    ],
     "备注带冒号": [
         "备注：",
         "Note: ",
         "注記："
     ],
     "备注星鲸": [
-            "有两种半自动方案流程来钓「星鲸」，长流程预设建议提前两三个「法拉伊那」的窗口期开始，「短流程预设」则适合在「星鲸」的窗口期到来前半个多小时开始。\n以下是「星鲸长流程」预设说明：先在「法拉伊那」窗口期到来前，面对钓场「湖丙β」使用预设【法拉伊那】，在钓到「法拉伊那」后，使用预设【星鲸长流程未受生魂】来钓2条「未受生魂」（MissFisher 会自动计数并提醒）。\n最后，更换垂钓位置到远离原位置几米远的地方，在「星鲸」窗口期到来前的第25分钟启动【星鲸长流程最终】。\n如果你甚至没有钓到「法拉伊那」，可以使用预设【星鲸短流程方案】阅读。",
-            "There are two semi-auto plans to fish \"Sidereal Whale\": the long flow preset (41412-a) is recommended to start 2-3 windows of \"Phallaina\" ahead, the short flow preset (41412-b) is suitable to start about half an hour before the \"Sidereal Whale\" window.\n\"Long Sidereal Whale Flow(41412-a)\" preset instructions: before \"Phallaina\" window arrives, face fishing spot \"Limne 3-β\" and use preset 【Phallaina】; after catching \"Phallaina\", use preset 【41412-a1】 to catch 2 \"Unbegotten\" (MissFisher auto counts and alerts).\nFinally, change fishing position a few meters away from original position, and launch 【41412-a2】 25 minutes before \"Sidereal Whale\" window arrival.\nIf you haven't caught \"Phallaina\" at all, you can read preset 【Sidereal Whale Short Flow Plan】.",
-            "「スターホエール」を釣るための2つの半自動プランがあります。長フロー(41412-a)は「パライナ」のウィンドウ2〜3回前に開始推奨、短フロー(41412-b)は「スターホエール」ウィンドウ開始約30分前に適しています。\n「スターホエール」長フローのプリセット(41412-a)説明：まず「パライナ」ウィンドウ開始前に、釣り場「リムニ・トゥリアβ」に向かって【パライナ】プリセットを使用。パライナを釣った後【41412-a1】を使い「アンビゴッテン」2匹を釣ります（MissFisherが自動カウント＆通知）。\n最後に、元の位置から数メートル離れた釣り場に移動し、「スターホエール」ウィンドウ開始の25分前に【41412-a2】を起動します。\nもし「パライナ」を全く釣っていなければ、【スターホエール短フロー案】を使ってください。"
-          ],
+        "有两种半自动方案流程来钓「星鲸」，长流程预设建议提前两三个「法拉伊那」的窗口期开始，「短流程预设」则适合在「星鲸」的窗口期到来前半个多小时开始。\n以下是「星鲸长流程」预设说明：先在「法拉伊那」窗口期到来前，面对钓场「湖丙β」使用预设【法拉伊那】，在钓到「法拉伊那」后，使用预设【星鲸长流程未受生魂】来钓2条「未受生魂」（MissFisher 会自动计数并提醒）。\n最后，更换垂钓位置到远离原位置几米远的地方，在「星鲸」窗口期到来前的第25分钟启动【星鲸长流程最终】。\n如果你甚至没有钓到「法拉伊那」，可以使用预设【星鲸短流程方案】阅读。",
+        "There are two semi-auto plans to fish \"Sidereal Whale\": the long flow preset (41412-a) is recommended to start 2-3 windows of \"Phallaina\" ahead, the short flow preset (41412-b) is suitable to start about half an hour before the \"Sidereal Whale\" window.\n\"Long Sidereal Whale Flow(41412-a)\" preset instructions: before \"Phallaina\" window arrives, face fishing spot \"Limne 3-β\" and use preset 【Phallaina】; after catching \"Phallaina\", use preset 【41412-a1】 to catch 2 \"Unbegotten\" (MissFisher auto counts and alerts).\nFinally, change fishing position a few meters away from original position, and launch 【41412-a2】 25 minutes before \"Sidereal Whale\" window arrival.\nIf you haven't caught \"Phallaina\" at all, you can read preset 【Sidereal Whale Short Flow Plan】.",
+        "「スターホエール」を釣るための2つの半自動プランがあります。長フロー(41412-a)は「パライナ」のウィンドウ2〜3回前に開始推奨、短フロー(41412-b)は「スターホエール」ウィンドウ開始約30分前に適しています。\n「スターホエール」長フローのプリセット(41412-a)説明：まず「パライナ」ウィンドウ開始前に、釣り場「リムニ・トゥリアβ」に向かって【パライナ】プリセットを使用。パライナを釣った後【41412-a1】を使い「アンビゴッテン」2匹を釣ります（MissFisherが自動カウント＆通知）。\n最後に、元の位置から数メートル離れた釣り場に移動し、「スターホエール」ウィンドウ開始の25分前に【41412-a2】を起動します。\nもし「パライナ」を全く釣っていなければ、【スターホエール短フロー案】を使ってください。"
+    ],
     "备注星鲸短流程方案": [
-            "星鲸短流程预设说明：在「星鲸」窗口期到来前（最好是提前一个小时或半小时）启动【星鲸短流程起手】来钓总计5条的2种「星鲸」鱼识前置（MissFisher 会自动计数并提醒）。在完成后，更换钓点到远离原位置几米远的地方，在「星鲸」窗口期到来前的第25分钟启动【星鲸短流程最终】，祝你好运！",
-            "\"Short Sidereal Whale\" flow preset instructions: Start 【41412-b1】 preset 1 hour or half hour before the \"Sidereal Whale\" window to catch a total of 5 \"Sidereal Whale\" fish of 2 species for pre-preparation (MissFisher auto counts and alerts). After completion, change fishing spot to a place a few meters away from original location, and start 【41412-b1】 25 minutes before \"Sidereal Whale\" window is open. Good luck!",
-            "「スターホエール」短フローのプリセット説明：ウィンドウ開始の1時間または30分前に【41412-b1】を開始し、「スターホエール」2種を合計5匹釣ります（MissFisherが自動カウント＆通知）。完了後、元の場所から数メートル離れた位置に移動し、ウィンドウ開始25分前に【41412-b1】を起動します。幸運を祈ります！"
-        ],
+        "星鲸短流程预设说明：在「星鲸」窗口期到来前（最好是提前一个小时或半小时）启动【星鲸短流程起手】来钓总计5条的2种「星鲸」鱼识前置（MissFisher 会自动计数并提醒）。在完成后，更换钓点到远离原位置几米远的地方，在「星鲸」窗口期到来前的第25分钟启动【星鲸短流程最终】，祝你好运！",
+        "\"Short Sidereal Whale\" flow preset instructions: Start 【41412-b1】 preset 1 hour or half hour before the \"Sidereal Whale\" window to catch a total of 5 \"Sidereal Whale\" fish of 2 species for pre-preparation (MissFisher auto counts and alerts). After completion, change fishing spot to a place a few meters away from original location, and start 【41412-b1】 25 minutes before \"Sidereal Whale\" window is open. Good luck!",
+        "「スターホエール」短フローのプリセット説明：ウィンドウ開始の1時間または30分前に【41412-b1】を開始し、「スターホエール」2種を合計5匹釣ります（MissFisherが自動カウント＆通知）。完了後、元の場所から数メートル離れた位置に移動し、ウィンドウ開始25分前に【41412-b1】を起動します。幸運を祈ります！"
+    ],
     "备注星鲸短流程最终": [
-    "更换钓点在「星鲸」到来前第25分钟启动，只缺「法拉伊那」也可以用。",
-    "Change fishing spot and start 25 minutes before \"Sidereal Whale\" arrives; usable if only \"Phallaina\" is missing",
-    "釣り場を変え、「スターホエール」到来の25分前に起動します。「パライナ」が足りない場合でも使用可能です"
+        "更换钓点在「星鲸」到来前第25分钟启动，只缺「法拉伊那」也可以用。",
+        "Change fishing spot and start 25 minutes before \"Sidereal Whale\" arrives; usable if only \"Phallaina\" is missing",
+        "釣り場を変え、「スターホエール」到来の25分前に起動します。「パライナ」が足りない場合でも使用可能です"
     ],
     "备注星鲸短流程起手": [
-    "「星鲸」到来前一个或半个小时启动，没钓到「法拉伊那」也可以从这个开始",
-    "Start 1 or half an hour before \"Sidereal Whale\" arrives; can start even if \"Phallaina\" not caught",
-    "「スターホエール」到来の1時間または30分前に開始し、「パライナ」を釣っていなくてもここから始められます"
+        "「星鲸」到来前一个或半个小时启动，没钓到「法拉伊那」也可以从这个开始",
+        "Start 1 or half an hour before \"Sidereal Whale\" arrives; can start even if \"Phallaina\" not caught",
+        "「スターホエール」到来の1時間または30分前に開始し、「パライナ」を釣っていなくてもここから始められます"
     ],
     "备注星鲸长流程最终": [
-    "距离触发鱼识还需 3 条「实体」时使用这个；如果第一次鱼识结束后「仍在法拉伊那的窗口期」，你可以继续从预设【法拉伊那】开始，如果钓到了「法拉伊那」，则【星鲸长流程未受生魂】，然后【星鲸长流程最终】",
-    "Use this when 3 \"E.B.E.\" remain before triggering Fisher's Intuition; if first bite ended but still within \"Phallaina\" window, continue from preset 【36521】, if caught \"Phallaina\", then use 【41412-a1】 and then 【41412-a2】",
-    "漁師の直感まであと3匹の「E.B.E.」がある時に使用します。最初の漁師の直感が終了しても「パライナ」ウィンドウ内であれば、プリセット【36521】から続けて、「パライナ」を釣ったら【41412-a1】を使用し、その後に【41412-a2】を使います"
+        "距离触发鱼识还需 3 条「实体」时使用这个；如果第一次鱼识结束后「仍在法拉伊那的窗口期」，你可以继续从预设【法拉伊那】开始，如果钓到了「法拉伊那」，则【星鲸长流程未受生魂】，然后【星鲸长流程最终】",
+        "Use this when 3 \"E.B.E.\" remain before triggering Fisher's Intuition; if first bite ended but still within \"Phallaina\" window, continue from preset 【36521】, if caught \"Phallaina\", then use 【41412-a1】 and then 【41412-a2】",
+        "漁師の直感まであと3匹の「E.B.E.」がある時に使用します。最初の漁師の直感が終了しても「パライナ」ウィンドウ内であれば、プリセット【36521】から続けて、「パライナ」を釣ったら【41412-a1】を使用し、その後に【41412-a2】を使います"
     ],
     "备注星鲸长流程未受生魂": [
-    "钓到「法拉伊那」后使用，完成后换钓点在「星鲸」窗口期到来前25分钟使用【星鲸长流程最终】",
-    "After catching \"Phallaina\", use preset; after completion, change fishing spot and use 【41412-a2】 25 minutes before \"Sidereal Whale\" window",
-    "「パライナ」を釣った後に使用し、完了したら釣り場を変え、「スターホエール」ウィンドウ開始25分前に【41412-a2】を使用します"
+        "钓到「法拉伊那」后使用，完成后换钓点在「星鲸」窗口期到来前25分钟使用【星鲸长流程最终】",
+        "After catching \"Phallaina\", use preset; after completion, change fishing spot and use 【41412-a2】 25 minutes before \"Sidereal Whale\" window",
+        "「パライナ」を釣った後に使用し、完了したら釣り場を変え、「スターホエール」ウィンドウ開始25分前に【41412-a2】を使用します"
     ],
     "备注潜龙": [
-    "预备阶段触发鱼识然后在鱼识结束时重复启动是正常的",
-    "Triggering Fisher's Intuition during preparation and restarting after bite ends is normal",
-    "予備段階で漁師の直感が起こり、漁師の直感終了後に再起動するのは正常です"
+        "预备阶段触发鱼识然后在鱼识结束时重复启动是正常的",
+        "Triggering Fisher's Intuition during preparation and restarting after bite ends is normal",
+        "予備段階で漁師の直感が起こり、漁師の直感終了後に再起動するのは正常です"
     ],
     "备注特利平鲶": [
-    "该鱼不适合作为紫票来源，请使用【36473】钓紫票",
-    "This fish is not suitable as a source for purple tickets; please use 【36473】 to fish purple tickets",
-    "この魚は紫チケットのソースとして適していません。【36473】を使用して紫チケットを釣ってください"
+        "该鱼不适合作为紫票来源，请使用【36473】钓紫票",
+        "This fish is not suitable as a source for purple tickets; please use 【36473】 to fish purple tickets",
+        "この魚は紫チケットのソースとして適していません。【36473】を使用して紫チケットを釣ってください"
     ],
     "备注胸脊鲨": [
-"关掉其他插件自动确认收藏的功能，需要卡确认收集收藏品对话框手动在「胸脊鲨」窗口期到来时点「否」",
-"Disable other plugins' auto collect confirmation; stall collect dialog and click \"No\" manually during \"Stethacanthus\" window",
-"他のプラグインの自動収集確認機能をオフにし、「ステタカントゥス」ウィンドウ中に収集品確認ダイアログで「いいえ」を手動でクリックしてください"
-],
+        "关掉其他插件自动确认收藏的功能，需要卡确认收集收藏品对话框手动在「胸脊鲨」窗口期到来时点「否」",
+        "Disable other plugins' auto collect confirmation; stall collect dialog and click \"No\" manually during \"Stethacanthus\" window",
+        "他のプラグインの自動収集確認機能をオフにし、「ステタカントゥス」ウィンドウ中に収集品確認ダイアログで「いいえ」を手動でクリックしてください"
+    ],
     "备注胸脊鲨鱼眼": [
-"适用于0000-0800的雷雨，关掉其他插件自动确认收藏的功能，需要卡确认收集收藏品对话框,手动在「胸脊鲨」窗口期到来时「否」。如有天气条件，请在符合天气条件时启动",
-"Applicable for 00:00-08:00 thunderstorm: disable other plugins' auto confirmation of collectibles; need to stall confirmation dialog manually at \"Stethacanthus\" window by clicking \"No\". If there are weather conditions, start when they are met.",
-"0000-0800の雷雨に適用。他のプラグインの収集品自動確認機能をオフにし、「ステタカントゥス」ウィンドウ時に収集品確認ダイアログを手動で「いいえ」にしてください。天候条件があれば、条件に合った時に起動してください"
-],
+        "适用于0000-0800的雷雨，关掉其他插件自动确认收藏的功能，需要卡确认收集收藏品对话框,手动在「胸脊鲨」窗口期到来时「否」。如有天气条件，请在符合天气条件时启动",
+        "Applicable for 00:00-08:00 thunderstorm: disable other plugins' auto confirmation of collectibles; need to stall confirmation dialog manually at \"Stethacanthus\" window by clicking \"No\". If there are weather conditions, start when they are met.",
+        "0000-0800の雷雨に適用。他のプラグインの収集品自動確認機能をオフにし、「ステタカントゥス」ウィンドウ時に収集品確認ダイアログを手動で「いいえ」にしてください。天候条件があれば、条件に合った時に起動してください"
+    ],
     "复制ICE仓库链接说明": [
-    "点击复制 ICE（国服适配）的仓库链接",
-    "Click to copy ICE (CN Version) repository link",
-    "ICE（中国版）リポジトリリンクをコピー"
-],
+        "点击复制 ICE（国服适配）的仓库链接",
+        "Click to copy ICE (CN Version) repository link",
+        "ICE（中国版）リポジトリリンクをコピー"
+    ],
     "复制Lifestream仓库链接说明": [
-      "点击复制 Lifestream（国服适配）的仓库链接",
-      "Click to copy Lifestream (CN Version) repository link",
-      "Lifestream（中国版）リポジトリリンクをコピー"
-  ],
+        "点击复制 Lifestream（国服适配）的仓库链接",
+        "Click to copy Lifestream (CN Version) repository link",
+        "Lifestream（中国版）リポジトリリンクをコピー"
+    ],
     "复制vnavmesh仓库链接说明": [
         "点击复制 vnavmesh（国服适配）的仓库链接",
         "Click to copy vnavmesh (CN Version) repository link",
         "vnavmesh（中国版）リポジトリリンクをコピー"
     ],
     "复制仓库链接": [
-      "复制仓库链接",
-      "Copy repository link",
-      "リポジトリリンクをコピー"
-  ],
+        "复制仓库链接",
+        "Copy repository link",
+        "リポジトリリンクをコピー"
+    ],
     "复制到剪贴板提示": [
-          "已复制到剪贴板",
-          "Copied to clipboard",
-          "クリップボードにコピーされました"
-      ],
+        "已复制到剪贴板",
+        "Copied to clipboard",
+        "クリップボードにコピーされました"
+    ],
     "复制配置文本": [
         "复制配置",
         "Copy",
         "コピー"
     ],
     "多提优先": [
-      "多提优先",
-      "Multi Hook Pri.",
-      "マルチフック優先"
-  ],
+        "多提优先",
+        "Multi Hook Pri.",
+        "マルチフック優先"
+    ],
     "大虾可重新来过丨狱之蟹丨世界级钓手": [
-          "「大虾可重新来过¹」「狱之蟹（乌贼丝）」「世界级钓手」",
-          "[Shrimp Smorgasbord¹] [Hells' Claw(Squid Strip)] [World-class Troller]",
-          "「海老散らない¹」「獄之蟹（イカの切り身）」「World Class Troller」"
-      ],
+        "「大虾可重新来过¹」「狱之蟹（乌贼丝）」「世界级钓手」",
+        "[Shrimp Smorgasbord¹] [Hells' Claw(Squid Strip)] [World-class Troller]",
+        "「海老散らない¹」「獄之蟹（イカの切り身）」「World Class Troller」"
+    ],
     "大鱼": [
-            "大鱼",
-            "PRIZE",
-            "大狙"
-        ],
+        "大鱼",
+        "PRIZE",
+        "大狙"
+    ],
     "大鱼知识": [
-              "大鱼知识",
-              "BGF",
-              "大物の知識"
-          ],
+        "大鱼知识",
+        "BGF",
+        "大物の知識"
+    ],
     "天气": [
-      "天气 ",
-      "Weather: ",
-      "天気 "
-  ],
+        "天气 ",
+        "Weather: ",
+        "天気 "
+    ],
     "天气暴雪时前置不可钓": [
-"天气暴雪时前置不可钓",
-"No pre-fishing allowed during blizzard weather",
-"吹雪時は前置釣り不可です"
-],
+        "天气暴雪时前置不可钓",
+        "No pre-fishing allowed during blizzard weather",
+        "吹雪時は前置釣り不可です"
+    ],
     "失去拍水切换": [
-      "失去拍水效果，切换到前置钓法。",
-      "Surface Slap lost, switching to pre-buff method.",
-      "水しぶき効果が切れました、前置き釣り方に切り替え。"
-  ],
+        "失去拍水效果，切换到前置钓法。",
+        "Surface Slap lost, switching to pre-buff method.",
+        "水しぶき効果が切れました、前置き釣り方に切り替え。"
+    ],
     "失去鱼眼处理": [
-    "失去鱼眼效果，将等待或准备。",
-    "Fish Eyes lost, will wait or prepare.",
-    "フィッシュアイの効果が切れました、待機または準備します。"
-],
+        "失去鱼眼效果，将等待或准备。",
+        "Fish Eyes lost, will wait or prepare.",
+        "フィッシュアイの効果が切れました、待機または準備します。"
+    ],
     "失去鱼识切换": [
         "失去鱼识效果，切换到前置钓法。",
         "Fisher's Intuition lost, switching to pre-buff method.",
         "漁師の直感効果が切れました、前置き釣り方に切り替え。"
     ],
     "套娃优化": [
-            "套娃优化",
-            "Mooch Loop Opt.",
-            "泳がせループ最適化"
-        ],
+        "套娃优化",
+        "Mooch Loop Opt.",
+        "泳がせループ最適化"
+    ],
     "套娃成功提示": [
         "哇，真的是你呀？！\r{0} {1} 次 套娃",
         "Here's {0}!\r{0} {1} times Mooch Loop",
         "どうも、{0}です。\r {1}回連続泳がせループ"
     ],
     "如有天气条件请在符合天气条件时启动": [
-    "如有天气条件请在符合天气条件时启动",
-    "If there are weather conditions, please start when conditions are met",
-    "天候条件がある場合は、条件に合ったときに開始してください"
-],
+        "如有天气条件请在符合天气条件时启动",
+        "If there are weather conditions, please start when conditions are met",
+        "天候条件がある場合は、条件に合ったときに開始してください"
+    ],
     "妖歌海海面丿夜乁丨黄金港近海丿日乁丨无二江下游丿昏乁": [
         "妖歌海海面(夜)》黄金港近海(日)》无二江下游(昏)",
         "Sirensong Sea(Night)》Kugane Coast(Day)》One River(Dusk)",
@@ -1000,15 +1025,15 @@
         "セイレーン海(昼)》クガネ(夕方)》無二江(夜)"
     ],
     "妖歌海海面丿日乁丨黄金港近海丿昏乁丨红玉海海面丿夜乁": [
-            "妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)",
-            "Sirensong Sea(Day)》Kugane Coast(Dusk)》Ruby Sea(Night)",
-            "セイレーン海(昼)》クガネ(夕方)》紅玉海(夜)"
-        ],
+        "妖歌海海面(日)》黄金港近海(昏)》红玉海海面(夜)",
+        "Sirensong Sea(Day)》Kugane Coast(Dusk)》Ruby Sea(Night)",
+        "セイレーン海(昼)》クガネ(夕方)》紅玉海(夜)"
+    ],
     "妖歌海海面丿昏乁丨黄金港近海丿夜乁丨无二江下游丿日乁": [
-            "妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)",
-            "Sirensong Sea(Dusk)》Kugane Coast(Night)》One River(Day)",
-            "セイレーン海(夕方)》クガネ(夜)》無二江(昼)"
-        ],
+        "妖歌海海面(昏)》黄金港近海(夜)》无二江下游(日)",
+        "Sirensong Sea(Dusk)》Kugane Coast(Night)》One River(Day)",
+        "セイレーン海(夕方)》クガネ(夜)》無二江(昼)"
+    ],
     "妖歌海海面丿昏乁丨黄金港近海丿夜乁丨红玉海海面丿日乁": [
         "妖歌海海面(昏)》黄金港近海(夜)》红玉海海面(日)",
         "Sirensong Sea(Dusk)》Kugane Coast(Night)》Ruby Sea(Day)",
@@ -1055,29 +1080,29 @@
         "インストールして有効にし、\nGatherbuddyRebornで\nクイックテレポートを使用"
     ],
     "安装启用ICE提示": [
-    "安装并启用 ICE 以在宇宙探索中\n享受 ICE 带来的便捷功能",
-    "Install and enable ICE to enjoy its convenience\nin Cosmic Exploration",
-    "ICEをインストール・有効化し、惑星探索で\nICEの便利機能を利用してください"
-],
+        "安装并启用 ICE 以在宇宙探索中\n享受 ICE 带来的便捷功能",
+        "Install and enable ICE to enjoy its convenience\nin Cosmic Exploration",
+        "ICEをインストール・有効化し、惑星探索で\nICEの便利機能を利用してください"
+    ],
     "安装启用Lifestream提示": [
         "安装并启用\nLifestream 以\n使用快捷传送",
         "Install and enable\nLifestream to\nuse quick teleport",
         "インストールして有効にし、\nLifestreamで\nクイックテレポートを使用"
     ],
     "安装启用vnavmesh提示": [
-            "安装并启用\nvnavmesh 以使用寻路到标记",
-            "Install and enable\nvnavmesh to use pathfinding to markers",
-            "パスファインディングのために\nvnavmeshをインストール・有効化してください"
-        ],
+        "安装并启用\nvnavmesh 以使用寻路到标记",
+        "Install and enable\nvnavmesh to use pathfinding to markers",
+        "パスファインディングのために\nvnavmeshをインストール・有効化してください"
+    ],
     "完成攒鱼计": [
         "已完成攒鱼计",
         "AA fully stacked",
         "ビッフィを満タンにしました"
     ],
     "完成时间": [
-        "完成时间：{0} 秒",
-        "Completion time: {0}s",
-        "完了時間：{0}秒"
+        "完成时间：{0:f0} 秒",
+        "Completion time: {0:f0}s",
+        "完了時間：{0:f0} 秒"
     ],
     "定时分钟": [
         "定时 {0:f0} 分",
@@ -1086,8 +1111,13 @@
     ],
     "定时启动": [
         "定时启动  {0} \r将在 {1} 时 {2} 分 启动【{3}】\n输入「/mf end」来终止",
-        "Scheduled start  {0}min \rWill start 【{3}】 at {1}:{2}\nType `/mf end` to cancel",
-        "タイマー起動  {0}分 \r{1}時{2}分に【{3}】開始\n「/mf end」で中止"
+        "Scheduled start  {0} \rWill start 【{3}】 at {1}:{2}\nType `/mf end` to cancel",
+        "タイマー起動  {0} \r{1} 時 {2} 分に【{3}】開始\n「/mf end」で中止"
+    ],
+    "定时启动界面提示": [
+        "将在 {2:D2} 时 {3:D2} 分 启动\n「{0} {1}」",
+        "Will start at {2:D2}:{3:D2}\n「{0} {1}」",
+        "{2:D2} 時 {3:D2} 分に開始予定\n「{0} {1}」"
     ],
     "定时启动已终止": [
         "定时启动已终止",
@@ -1096,7 +1126,7 @@
     ],
     "定时启动提示": [
         "定时启动\r {0}  {1} \r将在 {2:D2} 时 {3:D2} 分 启动",
-        "Scheduled start\r {0}  {1} \rWill start at {2:D2}:{3:D2}",
+        "Scheduled start\r {0}  {1} \rWill start at {2:D2}:{3:D2}",
         "定時起動\r {0}  {1} \r{2:D2}時{3:D2}分に開始"
     ],
     "导出图鉴数据": [
@@ -1294,6 +1324,21 @@
         "Lure",
         "ルアー"
     ],
+    "雄心": [
+        "雄心",
+        "A-Lure",
+        "アンビル"
+    ],
+    "谦逊": [
+        "谦逊",
+        "M-Lure",
+        "モデル"
+    ],
+    "等待专一": [
+        "等待专一",
+        "Wait IC",
+        "IC待機"
+    ],
     "强力": [
         "强力",
         "Powerful",
@@ -1303,6 +1348,11 @@
         "当前不处在云冠群岛中。",
         "Not in the Diadem.",
         "ディアデム諸島にいません。"
+    ],
+    "当前不处在宇宙探索中": [
+        "当前不处在宇宙探索中。",
+        "Not in Cosmic Exploration.",
+        "宇宙探索中ではありません。"
     ],
     "当前不处在出海垂钓中": [
         "当前不处在出海垂钓中。",
@@ -1628,6 +1678,16 @@
         "未安装 ICE，无法进入 ICE 适配模式",
         "ICE is not installed, cannot enter ICE Adaptation Mode",
         "ICE がインストールされていません。ICE適配モードに入れません"
+    ],
+    "未接取探索任务": [
+        "你还未接取探索任务",
+        "You have not accepted an exploration mission",
+        "探索ミッションを受け入れていません"
+    ],
+    "插件依赖": [
+        "插件依赖",
+        "Plugin Dependencies",
+        "プラグイン依存関係"
     ],
     "未安装数量提示": [
         "还有 {0} 个未安装 / 启用",
@@ -1985,20 +2045,20 @@
         "アイドル"
     ],
     "窗口期到来前反复抛竿是正常的": [
-"窗口期到来前反复抛竿是正常的",
-"Repeatedly casting before window period arrives is normal",
-"ウィンドウ到来前に繰り返し竿を投げるのは正常です"
-],
+        "窗口期到来前反复抛竿是正常的",
+        "Repeatedly casting before window period arrives is normal",
+        "ウィンドウ到来前に繰り返し竿を投げるのは正常です"
+    ],
     "窗口期结束": [
         "窗口期结束！",
         "Window period ended!",
         "ウィンドウ期間終了！"
     ],
     "窗口结束保留": [
-            "窗口结束，将保留咬饵处理 200 秒",
-            "Window ended, bite handling will remain active for 200 seconds",
-            "ウィンドウ終了、200秒間はヒット処理を維持します"
-        ],
+        "窗口结束，将保留咬饵处理 200 秒",
+        "Window ended, bite handling will remain active for 200 seconds",
+        "ウィンドウ終了、200秒間はヒット処理を維持します"
+    ],
     "窗口重定位完成": [
         "窗口重定位完成: X:{0}, Y:{1}",
         "Window reposition completed: X:{0}, Y:{1}",
@@ -2008,6 +2068,11 @@
         "窗口重定位错误: {0}",
         "Window reposition error: {0}",
         "ウィンドウ再配置エラー: {0}"
+    ],
+    "不将主界面重定位到鼠标": [
+        "不将主界面重定位到鼠标位置",
+        "Disable main window repositioning",
+        "メインウィンドウのマウス再配置無効"
     ],
     "竿时": [
         "竿时",
@@ -2105,20 +2170,20 @@
         "泳がせ釣りII"
     ],
     "结果前缀大鱼": [
-            "大鱼",
-            "Prize",
-            "大狙"
-        ],
+        "大鱼",
+        "Prize",
+        "大狙"
+    ],
     "结果前缀平钓": [
         "平钓",
         "Cast",
         "キャス"
     ],
     "结果前缀拍水": [
-    "拍水",
-    "S.S.",
-    "トレリリ"
-],
+        "拍水",
+        "S.S.",
+        "トレリリ"
+    ],
     "结果前缀撒饵": [
         "撒饵",
         "Chum",
@@ -2150,9 +2215,9 @@
         "ウィンドウ終了まで200秒未満のため、自動ヒット処理継続。"
     ],
     "缓存加载成功": [
-    "缓存加载成功：共 {0} 条预设\n预设版本：v{1}",
-    "Successfully loaded: {0} presets\nPreset version: v{1}",
-    "キャッシュ読み込み成功：{0} 個のプリセット\nプリセットバージョン：v{1}"
+        "缓存加载成功：共 {0} 条预设\n预设版本：v{1}",
+        "Successfully loaded: {0} presets\nPreset version: v{1}",
+        "キャッシュ読み込み成功：{0} 個のプリセット\nプリセットバージョン：v{1}"
     ],
     "网络连接异常": [
         "网络连接异常，请检查网络设置或稍后重试",
@@ -2189,10 +2254,10 @@
         "自動機能"
     ],
     "自动动作已恢复": [
-    "自动动作已恢复",
-    "Auto actions resumed",
-    "自動動作を再開しました"
-],
+        "自动动作已恢复",
+        "Auto actions resumed",
+        "自動動作を再開しました"
+    ],
     "自动动作已暂停": [
         "自动动作已暂停",
         "Auto actions paused",
@@ -2249,16 +2314,37 @@
         "魚の解除データ取得失敗: {0}"
     ],
     "获得力不足":["鱼王脱钩，获得力不足","Big Fish escaped, insufficient gathering power","大物がバレた！(獲得力不足)"],
+    "获得力不足以启动预设":["获得力不足，无法启动该预设。","Your gathering power is insufficient to activate this preset.","獲得力が不足しているため、このプリセットを起動できません。"],
+    "获得力不足以启动预设至少需要": [
+        "获得力不足，无法启动【{0}】。\n「{1}」至少需要 {2} 获得力（当前 {3}）。",
+        "Your gathering power is insufficient to activate 【{0}】.\n\"{1}\" requires at least {2} gathering power (current: {3}).",
+        "獲得力が不足しているため、【{0}】を起動できません。\n「{1}」は最低でも {2} の獲得力が必要です（現在の獲得力：{3}）。"
+    ],
+    "获得力提示": [
+        "「{0}」需要至少 {1} 获得力，当前 {2}（{3}）",
+        "\"{0}\" requires at least {1} gathering power, current {2} ({3})",
+        "「{0}」は最低でも {1} の獲得力が必要です。現在の値は {2}（{3}）です"
+    ],
+    "未满足": [
+        "未满足",
+        "Unmet",
+        "未達成"
+    ],
+    "已满足": [
+        "已满足",
+        "Met",
+        "達成済み"
+    ],
     "获得拍水切换": [
         "获得拍水效果，切换到拍水后钓法。",
         "Surface Slap activated, switching to post-splash method.",
         "水しぶき効果獲得、拍水後釣り方に切り替え。"
     ],
     "蓝彩鱼橙彩鱼都钓满天气符合绿彩鱼条件时使用七星彩天主最终": [
-"「蓝彩鱼」和「橙彩鱼」都钓满时，在天气符合「绿彩鱼」条件时使用【七彩天主最终】",
-"When both \"Indigo Prismfish\" and \"Firelight Goldfish\" are caught, use 【24994-a2】 when weather matches \"Green Prismfish\" conditions",
-"「藍彩魚」と「橙彩魚」を釣り切ったら、天候が「緑彩魚」の条件に合うときに【24994-a2】を使用してください"
-],
+        "「蓝彩鱼」和「橙彩鱼」都钓满时，在天气符合「绿彩鱼」条件时使用【七彩天主最终】",
+        "When both \"Indigo Prismfish\" and \"Firelight Goldfish\" are caught, use 【24994-a2】 when weather matches \"Green Prismfish\" conditions",
+        "「藍彩魚」と「橙彩魚」を釣り切ったら、天候が「緑彩魚」の条件に合うときに【24994-a2】を使用してください"
+    ],
     "蓝鱼": [
         "蓝鱼",
         "Blue Fish",
@@ -2270,10 +2356,10 @@
         "航路に青魚なし、得点モード起動。"
     ],
     "表达式匹配失败": [
-            "表达式匹配失败，语法可能有误",
-            "Expression match failed, the syntax may be incorrect",
-            "式のマッチに失敗しました。構文に誤りがある可能性があります"
-        ],
+        "表达式匹配失败，语法可能有误",
+        "Expression match failed, the syntax may be incorrect",
+        "式のマッチに失敗しました。構文に誤りがある可能性があります"
+    ],
     "表达式启动错误": [
         "在通过钓法表达式启动时出现错误",
         "Error starting via fishing expression",
@@ -2293,6 +2379,11 @@
         "装备耐久耗尽",
         "Equipment durability depleted",
         "装備の耐久度が尽きました"
+    ],
+    "意外抛竿采集力等待已提前结束": [
+        "由于意外抛竿，采集力等待已提前结束",
+        "Due to unexpected cast, GP recovery wait has been terminated early",
+        "予期しないキャストのため、GP回復の待機が早期に終了しました"
     ],
     "认证提示": [
         "你需要前往 Discord 完成认证\n成功激活后才能使用 MissFisher",
@@ -2400,10 +2491,10 @@
         "シェルダレー諸島(夕方)》メルトール海峡北(夜)》緋汐海(昼)"
     ],
     "谢尔达莱群岛丿昏乁丨罗塔诺海丿夜乁丨罗斯利特湾丿日乁": [
-            "谢尔达莱群岛(昏)》罗塔诺海(夜)》罗斯利特湾(日)",
-            "Cieldalaes(Dusk)》Rhotano Sea(Night)》Rothlyt Sound(Day)",
-            "シェルダレー諸島(夕方)》ロータノ海(夜)》ロズリト湾(昼)"
-        ],
+        "谢尔达莱群岛(昏)》罗塔诺海(夜)》罗斯利特湾(日)",
+        "Cieldalaes(Dusk)》Rhotano Sea(Night)》Rothlyt Sound(Day)",
+        "シェルダレー諸島(夕方)》ロータノ海(夜)》ロズリト湾(昼)"
+    ],
     "账号识别凭证": [
         "账号识别凭证：",
         "Account ID: ",
@@ -2435,10 +2526,10 @@
         "クリップボードをv3に変換成功"
     ],
     "转换参数错误": [
-    "在转换到钓法时发生错误\n以下参数无法被转换：",
-    "Error converting to fishing method\nFollowing parameters could not be converted:",
-    "釣法変換時にエラー\n以下の引数が変換できません："
-],
+        "在转换到钓法时发生错误\n以下参数无法被转换：",
+        "Error converting to fishing method\nFollowing parameters could not be converted:",
+        "釣法変換時にエラー\n以下の引数が変換できません："
+    ],
     "转换器错误": [
         "转换器错误：输入为空",
         "Converter error: Input is empty",
@@ -2576,8 +2667,8 @@
     ],
     "重随手法": [
         "重随手法",
-        "Resnap Technique",
-        "スナップリセット"
+        "Re-roll",
+        "再抽選"
     ],
     "钓点警惕": [
         "无法抛竿，钓点警惕",
@@ -2655,29 +2746,79 @@
         "予期しないエサ引数："
     ],
     "预触时触发1次鱼识是正常的": [
-"预触时触发1次鱼识是正常的",
-"Triggering Fisher's Intuition once at the pre-bite is normal",
-"予備漁師の直感時に1回漁師の直感が発動するのは正常です"
-],
+        "预触时触发1次鱼识是正常的",
+        "Triggering Fisher's Intuition once at the pre-bite is normal",
+        "予備漁師の直感時に1回漁師の直感が発動するのは正常です"
+    ],
     "预设不存在": [
-    "预设【{0}】不存在。\n预设版本：v{1}\n可前往以下表格搜索已有预设：[0]\n确认表格中存在有效预设后，请同步预设再尝试；若仍有问题，请反馈。",
-  "Preset 【{0}】 does not exist.\nPreset Version: v{1}\nSearch existing presets here: [0]\nIf the preset exists in the sheet, please sync presets and try again.\nIf the issue persists, please report it.",
-    "プリセット【{0}】が存在しません。\nプリセットバージョン：v{1}\n以下のシートで既存プリセットを検索してください：[0]\nシートに存在することを確認したら、同期してから再試行してください。\n問題が続く場合は報告してください。"
+        "预设【{0}】不存在。\n预设版本：v{1}\n可前往以下表格搜索已有预设：[0]\n确认表格中存在有效预设后，请同步预设再尝试；若仍有问题，请反馈。",
+        "Preset 【{0}】 does not exist.\nPreset Version: v{1}\nSearch existing presets here: [0]\nIf the preset exists in the sheet, please sync presets and try again.\nIf the issue persists, please report it.",
+        "プリセット【{0}】が存在しません。\nプリセットバージョン：v{1}\n以下のシートで既存プリセットを検索してください：[0]\nシートに存在することを確認したら、同期してから再試行してください。\n問題が続く場合は報告してください。"
     ],
     "预设加载失败": [
         "预设加载失败，请稍后重试",
         "Preset loading failed, retry later",
         "プリセット読み込み失敗、後で再試行"
     ],
+    "预设加载失败前缀": [
+        "预设加载失败: {0}",
+        "Preset loading failed: {0}",
+        "プリセット読み込み失敗: {0}"
+    ],
+    "预设缓存保存成功": [
+        "预设缓存保存成功",
+        "Preset cache saved successfully",
+        "プリセットキャッシュ保存成功"
+    ],
+    "保存预设缓存失败": [
+        "保存预设缓存失败: {0}",
+        "Failed to save preset cache: {0}",
+        "プリセットキャッシュ保存失敗: {0}"
+    ],
+    "未找到嵌入资源": [
+        "未找到嵌入资源: {0}",
+        "Embedded resource not found: {0}",
+        "埋め込みリソースが見つかりません: {0}"
+    ],
+    "网络下载失败且缓存不可用": [
+        "网络连接失败，且本地缓存不可用，请检查网络连接或稍后重试",
+        "Network download failed and local cache unavailable, check connection or retry later",
+        "ネットワーク接続失敗、ローカルキャッシュも利用不可、接続確認または後で再試行"
+    ],
+    "预设数据不完整或损坏": [
+        "预设数据不完整或已损坏，请尝试重新同步",
+        "Preset data incomplete or corrupted, try syncing again",
+        "プリセットデータが不完全または破損、再同期をお試しください"
+    ],
+    "加载预设时发生错误": [
+        "加载预设时发生错误，请查看日志获取详情",
+        "Error occurred while loading presets, check logs for details",
+        "プリセット読み込み中にエラー発生、詳細はログを確認"
+    ],
+    "未找到可用预设数据": [
+        "未找到可用的预设数据",
+        "No available preset data found",
+        "利用可能なプリセットデータが見つかりません"
+    ],
     "预设加载状态": [
-        "✓ {0}：共 {1} 条预设\n版本：v{2}\n说明：{3}[0]",
-        "✓ {0}: {1} presets loaded\nVersion: v{2}\nInfo: {3}[0]",
-        "✓ {0}：{1} 個のプリセット\nバージョン：v{2}\n情報：{3}[0]"
+        "✓ {0}：共 {1} 条预设\n版本：v{2}\n说明：{3} [0]",
+        "✓ {0}: {1} presets loaded\nVersion: v{2}\nInfo: {3} [0]",
+        "✓ {0}：{1} 個のプリセット\nバージョン：v{2}\n情報：{3} [0]"
     ],
     "预设同步中": [
         "正在同步预设……",
         "Syncing presets...",
         "プリセットを同期中..."
+    ],
+    "预设": [
+        "预设",
+        "PRE",
+        "予設"
+    ],
+    "预设版本": [
+        "预设版本",
+        "Preset",
+        "プリセット"
     ],
     "预设同步完成": [
         "预设同步完成 ({0} 项)",
@@ -2685,10 +2826,10 @@
         "プリセット同期完了（{0}件）"
     ],
     "预设名冒号": [
-            "预设名：",
-            "Preset name: ",
-            "プリセット名："
-        ],
+        "预设名：",
+        "Preset name: ",
+        "プリセット名："
+    ],
     "预设名定时分钟": [
         "预设名 定时分钟",
         "Preset [Min]",
@@ -2773,5 +2914,55 @@
         "「龙马惊神¹」「珊瑚蝠鲼（小虾肉笼）」「世界级钓手」",
         "[Maritime Dragonslayers¹] [Coral Manta(Shrimp Cage Feeder)] [World-class Troller]",
         "「シードラゴンキラー¹」「コーラルマンタ（シュリンプフィーダー）」「World Class Troller」"
+    ],
+    "冲分模式低分海域提示": [
+        "当前海域的幻海流渔分过低，将不提鱼王竿以减少触幻概率。",
+        "The spectral current in the current sector yields insufficient points; heavy bites will not be called to reduce the probability of triggering a spectral current.",
+        "現在の海域の幻海流の漁分が低いため、重咬みを提言せず、幻海流発生確率を低減します。"
+    ],
+    "蓝鱼模式无幻中预设提示": [
+        "当前海域的幻海流无蓝鱼，且临近蓝鱼海域，将不提鱼王竿以减少触幻概率。",
+        "The spectral current in the current sector has no legendary fish, whereas the adjacent sector does; heavy bites will not be called to reduce the probability of triggering a spectral current.",
+        "現在の海域の幻海流に伝説魚がなく、隣接海域に伝説魚があるため、重咬みを提言せず、幻海流発生確率を低減します。"
+    ],
+    "数量成就模式无预设提示": [
+        "当前海域的幻海流无数量成就所需鱼类，将不提鱼王竿以减少触幻概率。",
+        "The spectral current in the current sector lacks fish required for quantity achievements; heavy bites will not be called to reduce the probability of triggering a spectral current.",
+        "現在の海域の幻海流に数量達成に必要な魚種がないため、重咬みを提言せず、幻海流発生確率を低減します。"
+    ],
+    "验证服务器连接失败": [
+        "验证服务器连接失败，部分功能可能受限",
+        "Failed to connect to verification server, some features may be limited",
+        "認証サーバーへの接続に失敗しました。一部の機能が制限される場合があります"
+    ],
+    "验证系统初始化失败": [
+        "验证系统初始化失败",
+        "Verification system initialization failed",
+        "認証システムの初期化に失敗しました"
+    ],
+    "刷新授权认证失败": [
+        "刷新授权认证失败，请检查网络连接",
+        "Failed to refresh authorization, please check network connection",
+        "認可の更新に失敗しました。ネットワーク接続を確認してください"
+    ],
+    "刷新认证中": [
+        "正在刷新认证状态...",
+        "Refreshing authentication status...",
+        "認証状態を更新中..."
+    ],
+    "刷新认证成功": [
+        "认证状态刷新成功",
+        "Authentication status refreshed successfully",
+        "認証状態の更新に成功しました"
+    ],
+    "验证服务器未连接无法刷新": [
+        "验证服务器未连接，无法刷新认证状态",
+        "Verification server not connected, unable to refresh authentication status",
+        "認証サーバーに接続されていないため、認証状態を更新できません"
+    ],
+    "验证服务器未连接": [
+        "验证服务器未连接",
+        "Verification server not connected",
+        "認証サーバーに接続されていません"
     ]
 }
