@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.11.1",
+        "AssemblyVersion": "1.6.11.2",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "AcceptsFeedback": true,
-        "ChangeLog": "- v1.6.11.1\n  修复误报获得力不足的问题。\n- v1.6.11.0\n  新增功能，将在特定预设或钓法表达式启动前，检查当前获得力是否满足预设要求。现支持 6.55 - 7.4 版本的钓场之王。\n  优化了钓法表达式的撒饵咬饵时间转换逻辑。\n",
+        "ChangeLog": "- v1.6.11.2\n  再次修复误报获得力不足的问题。\n- v1.6.11.1\n  修复误报获得力不足的问题。\n- v1.6.11.0\n  新增功能，将在特定预设或钓法表达式启动前，检查当前获得力是否满足预设要求。现支持 6.55 - 7.4 版本的钓场之王。\n  优化了钓法表达式的撒饵咬饵时间转换逻辑。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
