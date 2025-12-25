@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.14.3",
+        "AssemblyVersion": "1.6.14.4",
         "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。/ Focus on fishing.",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.6.14.3\n- 修复一个问题，该问题曾导致：意外例如别处出现错误而导致补全菜单关闭时，补全菜单的样式会溢出到其他 imgui 界面。\n# v1.6.14.2\n- 修复因传承录查表导致的错误。\n# v1.6.14.1\n- 修复可能因依赖不同步导致的崩溃问题。\n# v1.6.14.0\n- 在查看预设内容和使用预设或钓法表达式启动时，将检查所需传承录并按需提示。\n- 在查看预设内容时，将为展示的钓饵名称分级染色以提示背包中钓饵的当前数量：\n  - 假饵的数量在 0 或以下时对应名称将是红色，数量在 1 或以下时对应名称将是黄色；\n  - 真饵的数量在 10 或以下时对应名称将是红色，数量在 20 或以下时对应名称将是黄色。\n- 因 FastDalamudCn 现在可加速 Dalamud 的网络访问，现在将从 GitHub 获取将在安装器中显示的插件图标（而不是原来的从腾讯云获取）。\n",
+        "ChangeLog": "# v1.6.14.4\n- 修复一个问题，该问题曾导致：调用预设时没有检查传承录。\n# v1.6.14.3\n- 修复一个问题，该问题曾导致：意外例如别处出现错误而导致补全菜单关闭时，补全菜单的样式会溢出到其他 imgui 界面。\n# v1.6.14.2\n- 修复因传承录查表导致的错误。\n# v1.6.14.1\n- 修复可能因依赖不同步导致的崩溃问题。\n# v1.6.14.0\n- 在查看预设内容和使用预设或钓法表达式启动时，将检查所需传承录并按需提示。\n- 在查看预设内容时，将为展示的钓饵名称分级染色以提示背包中钓饵的当前数量：\n  - 假饵的数量在 0 或以下时对应名称将是红色，数量在 1 或以下时对应名称将是黄色；\n  - 真饵的数量在 10 或以下时对应名称将是红色，数量在 20 或以下时对应名称将是黄色。\n- 因 FastDalamudCn 现在可加速 Dalamud 的网络访问，现在将从 GitHub 获取将在安装器中显示的插件图标（而不是原来的从腾讯云获取）。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
