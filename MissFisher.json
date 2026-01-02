@@ -3,8 +3,8 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.8.0.0",
-        "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
+        "AssemblyVersion": "1.8.0.1",
+        "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
         "Tags": [
@@ -21,9 +21,9 @@
         "CanUnloadAsync": false,
         "LoadPriority": 0,
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
-        "Punchline": "专注于钓鱼。/ Focus on fishing.",
+        "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.8.0.0\n- **自动行为：**\n- 优化了熟练渔技在仅以小钓大场景的使用行为。\n- 修复了一个问题，该问题曾导致：错误地无法判断未来的天气。\n- 尝试防止连续使用恩宠时采集力溢出的问题。\n- 使用新的钓法表达式解析器来完全代替正则表达式，以解析钓法表达式中的参数。\n- **界面：**\n- 新增一个开发钓法表达式用的带分析器的编辑器面板。\n- 自动功能运行时，「查看当前」按钮将同时展示之前的预设信息和当前钓法信息。\n- 主界面切换预设页的按钮更灵敏了（和其他按钮一样点击就切换而不是松开才切换）。\n- 现在在透明主题时，控件状态更容易分辨了。\n- 补全了生成器的多语言支持。\n- **悬浮窗：**\n- 使钓到鱼时显示的准备阶段技能使用倒计时进度条不再错误地增长，而是正确地逐渐从长到短来展现倒计时。\n- 使前述的进度条更透明了。\n",
+        "ChangeLog": "# v1.8.0.1\n- 优化了信息页在字体缩放设为大比例下的元素显示效果。\n- 更改了插件在安装器界面的描述。\n# v1.8.0.0\n- **自动行为：**\n- 优化了熟练渔技在仅以小钓大场景的使用行为。\n- 修复了一个问题，该问题曾导致：错误地无法判断未来的天气。\n- 尝试防止连续使用恩宠时采集力溢出的问题。\n- 使用新的钓法表达式解析器来完全代替正则表达式，以解析钓法表达式中的参数。\n- **界面：**\n- 新增一个开发钓法表达式用的带分析器的编辑器面板。\n- 自动功能运行时，「查看当前」按钮将同时展示之前的预设信息和当前钓法信息。\n- 主界面切换预设页的按钮更灵敏了（和其他按钮一样点击就切换而不是松开才切换）。\n- 现在在透明主题时，控件状态更容易分辨了。\n- 补全了生成器的多语言支持。\n- **悬浮窗：**\n- 使钓到鱼时显示的准备阶段技能使用倒计时进度条不再错误地增长，而是正确地逐渐从长到短来展现倒计时。\n- 使前述的进度条更透明了。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
