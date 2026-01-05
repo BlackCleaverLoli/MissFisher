@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.8.1.4",
+        "AssemblyVersion": "1.8.2.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.8.1.4\n- 优化了主界面的前往flag调用。\n# v1.8.1.3\n- 优化了查看当前按钮的输出内容。\n- 为表达式生成器参数输入控件补全了悬浮提示。\n- 优化了编辑器的布局和格式化选项。\n# v1.8.1.2\n- 修复完成预备后可能未如预期使用撒饵或专一垂钓的问题\n\n",
+        "ChangeLog": "# v1.8.2.0\n- 现在采集力相关技能和连招将更迅捷地使用了。\n- 修复了一个问题，该问题曾导致：恩宠被意外地额外使用了。\n- 修复了一个问题，该问题曾导致：原本应在预备完成后使用的专一或者撒饵没有被使用。\n- 修复了一个问题，该问题曾导致：窗口期参数的语法不如预期般被接受。\n- 优化了内部的技能实现结构。\n\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
