@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.8.2.2",
+        "AssemblyVersion": "1.8.3.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.8.2.2\n- 修复依赖版本差异带来的问题。\n- 同步依赖版本。\n# v1.8.2.1\n- 修复生成的预设重复问题\n# v1.8.2.0\n- 现在采集力相关技能和连招将更迅捷地使用了。\n- 修复了一个问题，该问题曾导致：恩宠被意外地额外使用了。\n- 修复了一个问题，该问题曾导致：原本应在预备完成后使用的专一或者撒饵没有被使用。\n- 修复了一个问题，该问题曾导致：窗口期参数的语法不如预期般被接受。\n- 优化了内部的技能实现结构。\n\n",
+        "ChangeLog": "# v1.8.3.0\n- 接管了前往钓场/钓点时计算坐标、传送、开始寻路的逻辑。\n- 现在不再依赖 Lifestream 和 Gatherbuddy。\n- 同步依赖。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
