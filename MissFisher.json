@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.8.4.0\n- 为竿时悬浮窗新增功能，在抛竿时间条下会显示诱饵技能带来的咬饵真空期的倒计时。\n- 补全了一些主界面可用但无命令入口的命令。\n- 新增手法修饰词参数，引诱、雄心、谦逊后可写次数来限制诱饵技能的次数。\n- 修复海钓换区域时仍发送丢弃指令的问题。\n- 改善了寻路的重定位表现。\n- 重构了代码结构。\n",
+        "ChangeLog": "# v1.8.4.1\n- 缩短打开城内以太传送网菜单后的等待时间。\n- 尝试修复在提钩结果播报中双、三提检测错误的问题。\n- 同步了依赖版本。\n# v1.8.4.0\n- 为竿时悬浮窗新增功能，在抛竿时间条下会显示诱饵技能带来的咬饵真空期的倒计时。\n- 补全了一些主界面可用但无命令入口的命令。\n- 新增手法修饰词参数，引诱、雄心、谦逊后可写次数来限制诱饵技能的次数。\n- 修复海钓换区域时仍发送丢弃指令的问题。\n- 改善了寻路的重定位表现。\n- 重构了代码结构。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
