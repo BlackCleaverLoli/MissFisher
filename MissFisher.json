@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.1.1",
+        "AssemblyVersion": "1.9.1.2",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.1.1\n- 修复一些问题\n# v1.9.1.0\n- 新增配置项，无蓝鱼时冲分，选择后将在耐力蓝鱼模式当前窗口期内无所需蓝鱼时，使用冲分的流程\n- 新增配置项，完成后命令，填写后将在会提示窗口结束或目标达成的情景中，退出钓鱼并将配置文本作为命令发送\n- 现在空岛模式传送和启动都将有完整的寻路-进入流程了\n- 现在一般的海钓模式的预备启动也会自己找船舷并启动了\n- 优化寻路时的主界面交互\n- 优化空岛的寻路表现\n- 补全了打印的钓法信息中的天气参数显示\n- 修复海钓启动前未如预期在开始时避开玩家的问题\n- 调整一处海钓时大鱼猎手的异常使用问题\n- 调整了寻路流程开始所需的钓饵数量\n",
+        "ChangeLog": "# v1.9.1.2\n- 修复一些问题\n# v1.9.1.1\n- 修复一些问题\n# v1.9.1.0\n- 新增配置项，无蓝鱼时冲分，选择后将在耐力蓝鱼模式当前窗口期内无所需蓝鱼时，使用冲分的流程\n- 新增配置项，完成后命令，填写后将在会提示窗口结束或目标达成的情景中，退出钓鱼并将配置文本作为命令发送\n- 现在空岛模式传送和启动都将有完整的寻路-进入流程了\n- 现在一般的海钓模式的预备启动也会自己找船舷并启动了\n- 优化寻路时的主界面交互\n- 优化空岛的寻路表现\n- 补全了打印的钓法信息中的天气参数显示\n- 修复海钓启动前未如预期在开始时避开玩家的问题\n- 调整一处海钓时大鱼猎手的异常使用问题\n- 调整了寻路流程开始所需的钓饵数量\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
