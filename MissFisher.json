@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.3.1",
+        "AssemblyVersion": "1.9.4.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.3.1\n- 修复一处耐力海钓时的落位错误\n- 修复补全菜单在简体时错误转换字符导致补全后的预设名无法调用预设的问题\n# v1.9.3.0\n- 现在自动预备将在距离窗口期还有25分钟时才启动\n- 优化耐力的避让行为\n- 优化补全菜单的简/繁显示策略\n",
+        "ChangeLog": "# v1.9.4.0\n- 新增：当主界面预设名输入框匹配时，将额外在下方显示小面板来使用查看预设与前往所在地功能\n- 新增：可通过探索任务对应客户端语言的任务名来检索预设并查看内容\n- 新增：现在在钓法表达式中仅提供目标名时，提供的目标名必须只对应单一ID，否则视为非法\n- 修复：一处钓法报告中的文本缺失\n- 优化：主界面元素在非100%缩放设置下的效果\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
