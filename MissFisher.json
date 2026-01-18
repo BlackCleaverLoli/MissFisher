@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.4.1",
+        "AssemblyVersion": "1.9.4.2",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.4.1\n- 新增：在主页的预设输入框不为空时，显示一个点击后可清空输入框内容的X图案按钮\n- 修复：补全钓法表达式编辑器的多语言\n- 修复：在耐力海钓时意外将 navmesh 的构建状态当做错误来处理了\n- 修复：在主页的前往和查看预设额外操作按钮不再于信息页显示时出现\n- 优化：现在耐力海钓的落位和避让使用新的逻辑\n# v1.9.4.0\n- 新增：当主界面预设名输入框匹配时，将额外在下方显示小面板来使用查看预设与前往所在地功能\n- 新增：可通过探索任务对应客户端语言的任务名来检索预设并查看内容\n- 新增：现在在钓法表达式中仅提供目标名时，提供的目标名必须只对应单一ID，否则视为非法\n- 修复：一处钓法报告中的文本缺失\n- 优化：主界面元素在非100%缩放设置下的效果\n",
+        "ChangeLog": "# v1.9.4.2\n- 新增：耐力海钓时将不使用tts提示模式启动\n- 优化：耐力海钓启动和重新进入循环时将统一检查所需状态\n# v1.9.4.1\n- 新增：在主页的预设输入框不为空时，显示一个点击后可清空输入框内容的X图案按钮\n- 修复：补全钓法表达式编辑器的多语言\n- 修复：在耐力海钓时意外将 navmesh 的构建状态当做错误来处理了\n- 修复：在主页的前往和查看预设额外操作按钮不再于信息页显示时出现\n- 优化：现在耐力海钓的落位和避让使用新的逻辑\n# v1.9.4.0\n- 新增：当主界面预设名输入框匹配时，将额外在下方显示小面板来使用查看预设与前往所在地功能\n- 新增：可通过探索任务对应客户端语言的任务名来检索预设并查看内容\n- 新增：现在在钓法表达式中仅提供目标名时，提供的目标名必须只对应单一ID，否则视为非法\n- 修复：一处钓法报告中的文本缺失\n- 优化：主界面元素在非100%缩放设置下的效果\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
