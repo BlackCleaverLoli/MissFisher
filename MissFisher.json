@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.5.0",
+        "AssemblyVersion": "1.9.6.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIcon128.png",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.5.0\n- 移除：主界面主页的预设名输入框下的小面板\n- 新增：当主界面预设名输入框匹配时，将在模式下拉的位置显示查看按钮（默认不启用）\n- 新增：增加设置可选项以控制是否显示前述的查看按钮\n- 优化：优化主界面部分元素的部分交互逻辑和显示效果\n- 优化：主页预设名补全菜单的排序逻辑\n- 优化：完成后命令的延迟现在分2个阶段且更长，且触发时会调用dalamud消息\n- 修复：某些情况下意外地没有完全停止自动功能\n- 修复：某些情况下未按预期使用沙利亚克的恩宠\n",
+        "ChangeLog": "# v1.9.6.0\n- 新增：钓法表达式语法新增手法修饰词“梭哈”，包含该修饰词将使自动手法忽视钓法模式的基本采集力需求\n- 新增：一个可选配置项“忽视银星提交”，作用详见设置页的对应复选框悬浮提示\n- 优化：现在将在适当时候自动切换主页的模式下拉选择的模式\n- 修复：耐力海钓模式中有时不会自动前往船舷导致流程无法进行的问题\n- 修复：修复了发送触幻提示时会崩溃的问题\n- 修复：在当前采集力极少时有时会在使用完恢复采集力的技能后没有接着预期中应该使用的技能\n- 修复：命令参数 addid 未能识别所有合法天气参数并为其添加 id\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
