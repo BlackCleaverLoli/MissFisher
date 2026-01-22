@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.6.4",
+        "AssemblyVersion": "1.9.6.5",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.6.4\n- 优化：修正文本错误\n# v1.9.6.3\n- 优化：修改了插件图标，界面内将根据情况使用不同的图标\n# v1.9.6.2\n- 新增：将在海钓出总分时输出总分信息\n- 优化：现在自动前往钓场时将选择包含预设钓法中所有鱼类的钓场\n- 优化：提升海钓模式部分流程的拟人程度（笑）\n- 优化：现在部分界面文案在非中文时不再被截断，统一了部分用语\n- 修复：修复幻海流结束时的海域剩余时间总是30秒的问题\n# v1.9.6.1\n- 新增：钓法表达式编辑器的格式化和复制功能现在可在输入框有焦点时使用快捷键调用\n- 新增：/mf format 可格式化剪贴板中的钓法表达式\n- 优化：规范化了钓法表达式的语法，涉及 et、天气参数、内嵌表达式顺序等\n- 优化：为所有预设补全了窗口期前天气参数\n# v1.9.6.0\n- 新增：钓法表达式语法新增手法修饰词“梭哈”，包含该修饰词将使自动手法忽视钓法模式的基本采集力需求\n- 新增：一个可选配置项“忽视银星提交”，作用详见设置页的对应复选框悬浮提示\n- 优化：现在将在适当时候自动切换主页的模式下拉选择的模式\n- 修复：耐力海钓模式中有时不会自动前往船舷导致流程无法进行的问题\n- 修复：修复了发送触幻提示时会崩溃的问题\n- 修复：在当前采集力极少时有时会在使用完恢复采集力的技能后没有接着预期中应该使用的技能\n- 修复：命令参数 addid 未能识别所有合法天气参数并为其添加 id\n",
+        "ChangeLog": "# v1.9.6.5\n- 优化：修正耐力海钓模式初始前往的npc位置\n- 优化：现在非耐力海钓模式的预备启动也会使用一致的找船舷点和避让逻辑\n- 修复：修复耐力海钓在找船舷点和避让时有时会因为抛竿可用的变化而无法正常继续流程的问题\n- 修复：在幻海中的专一后没有如预期尽可能使用多提\n- 修复：有时没有如预期在使用强心剂后接着使用恩宠\n# v1.9.6.4\n- 优化：修正文本错误\n# v1.9.6.3\n- 优化：修改了插件图标，界面内将根据情况使用不同的图标\n# v1.9.6.2\n- 新增：将在海钓出总分时输出总分信息\n- 优化：现在自动前往钓场时将选择包含预设钓法中所有鱼类的钓场\n- 优化：提升海钓模式部分流程的拟人程度（笑）\n- 优化：现在部分界面文案在非中文时不再被截断，统一了部分用语\n- 修复：修复幻海流结束时的海域剩余时间总是30秒的问题\n# v1.9.6.1\n- 新增：钓法表达式编辑器的格式化和复制功能现在可在输入框有焦点时使用快捷键调用\n- 新增：/mf format 可格式化剪贴板中的钓法表达式\n- 优化：规范化了钓法表达式的语法，涉及 et、天气参数、内嵌表达式顺序等\n- 优化：为所有预设补全了窗口期前天气参数\n# v1.9.6.0\n- 新增：钓法表达式语法新增手法修饰词“梭哈”，包含该修饰词将使自动手法忽视钓法模式的基本采集力需求\n- 新增：一个可选配置项“忽视银星提交”，作用详见设置页的对应复选框悬浮提示\n- 优化：现在将在适当时候自动切换主页的模式下拉选择的模式\n- 修复：耐力海钓模式中有时不会自动前往船舷导致流程无法进行的问题\n- 修复：修复了发送触幻提示时会崩溃的问题\n- 修复：在当前采集力极少时有时会在使用完恢复采集力的技能后没有接着预期中应该使用的技能\n- 修复：命令参数 addid 未能识别所有合法天气参数并为其添加 id\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
