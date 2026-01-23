@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.7.1",
+        "AssemblyVersion": "1.9.7.2",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.7.1\n- 新增：耐力海钓模式的任务进程变化和导航时将强制显示调试日志。\n# v1.9.7.0\n- 新增：耐力练级模式可前往自动循环海钓练级模式\n- 新增：新增配置项可使 MissFisher 不发送 <se> 音效\n- 优化：现在在启动耐力海钓模式时会检查是否满足开启相应航线的条件\n# v1.9.6.5\n- 优化：修正耐力海钓模式初始前往的npc位置\n- 优化：现在非耐力海钓模式的预备启动也会使用一致的找船舷点和避让逻辑\n- 修复：修复耐力海钓在找船舷点和避让时有时会因为抛竿可用的变化而无法正常继续流程的问题\n- 修复：在幻海中的专一后没有如预期尽可能使用多提\n- 修复：有时没有如预期在使用强心剂后接着使用恩宠\n",
+        "ChangeLog": "# v1.9.7.2\n- 优化：耐力海钓模式的导航调试日志将不重复显示\n# v1.9.7.1\n- 新增：耐力海钓模式的任务进程变化和导航时将强制显示调试日志。\n# v1.9.7.0\n- 新增：耐力练级模式可前往自动循环海钓练级模式\n- 新增：新增配置项可使 MissFisher 不发送 <se> 音效\n- 优化：现在在启动耐力海钓模式时会检查是否满足开启相应航线的条件\n# v1.9.6.5\n- 优化：修正耐力海钓模式初始前往的npc位置\n- 优化：现在非耐力海钓模式的预备启动也会使用一致的找船舷点和避让逻辑\n- 修复：修复耐力海钓在找船舷点和避让时有时会因为抛竿可用的变化而无法正常继续流程的问题\n- 修复：在幻海中的专一后没有如预期尽可能使用多提\n- 修复：有时没有如预期在使用强心剂后接着使用恩宠\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
