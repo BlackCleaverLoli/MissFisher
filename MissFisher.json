@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.10.1",
+        "AssemblyVersion": "1.9.11.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.10.1\n- 新增：提钩结果输出现在将在数量后使用星号作为加钩的简单标识\n- 修复：为加钩添加单任务最多3次的限制\n# v1.9.10.0\n- 新增：现在钓法表达式编辑器将使用边框颜色的变化来提示解析状况\n- 新增：为钓法表达式编辑器的格式化快捷键追加 Ctrl+X\n- 新增：现在主界面边缘将有一圈淡阴影\n- 优化：自动行为现在不再对专一垂钓目标使用拍击水面（防呆）\n- 优化：为钓法信息输出追加了钓法修饰词「鱼篓」「鱼篓专一」\n- 优化：将钓法修饰词「多提」更名为「确保多提」以明确含义\n- 优化：现在将不再重复输出探索任务的「完成时间」\n- 优化：现在将不再在宇宙探索区域告警钓饵低\n- 优化：优化了钓法表达式编辑器的界面尺寸样式\n- 优化：修改了一些文案的措辞\n- 优化：调整了钓法修饰词的顺序\n",
+        "ChangeLog": "# v1.9.11.0\n- 新增：钓法表达式参数「专一后钓法」，与「鱼识钓法」「拍水后钓法」共享参数位（互斥），行为类似「拍水后钓法」\n- 新增：钓法修饰词「多提回退」「允许溢出」\n- 新增：主题「最终地」（难以复刻捏）\n- 修复：自动行为时加钩可用次数识别错误而导致动作超时的问题\n- 修复：自动行为时在使用加钩后跳过了采集力恢复技能的问题\n- 修复：自动行为时有时会错误地在采集力不满足手法中的拍击水面的要求时对拍击水面目标咬饵使用提钩，从而导致在钓起目标后没有对其使用拍击水面，现在将更多地不对其使用提钩\n- 修复：自动行为时有时在切换到拍水后钓法后立刻抛竿而导致跳过了应使用的准备阶段技能\n- 修复：自动行为时有时即使可用也没有如预期触发回收采集力连招\n- 修复：自动行为时有时使用加钩后会导致回复采集力的技能被跳过\n- 修复：有时不会如预期输出探索任务的完成时间\n- 修复：探索任务不支持时输出的文本没跟随界面语言的问题\n- 修复：修正一些文案错误\n- 优化：自动行为时技能「以回收采集力为目的的大鱼猎手」「大鱼的知识」「加钩」将只在下列情形使用：当仅有拍击水面目标且已获得拍击水面时、当仅有专一垂钓目标且已获得专一垂钓时、当同时有拍击水面目标与专一垂钓目标且已获得专一垂钓时\n- 优化：自动行为时在非海钓模式时专一垂钓的采集力优先级现在将完全高于拍击水面\n- 优化：自动行为时钓法中若有修饰词「跳阶段」，将在多重提钩时忽视计数上限\n- 杂项：现在从编辑器启动时将不再切换到主页\n- 杂项：预设缓存文件的类型从txt改为csv\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
