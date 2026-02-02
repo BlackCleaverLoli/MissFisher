@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.12.0",
+        "AssemblyVersion": "1.9.13.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.12.0\n- 新增：钓法修饰词「无恩宠」\n- 修复：自动行为在特定的计数器参数下计数行为和预期严重不符\n- 修复：自动行为在嵌套钓法内时无法切换到拍水后或专一后钓法的问题\n- 修复：自动行为在可以小钓大时意外使用大鱼的知识放弃了以小钓大的机会\n- 新增：自动行为现在当钓法存在钓法修饰词「鱼影」时，如果也存在「引诱」，将不再因为未触发鱼影而提前使用歇竿\n- 修复：自动行为在罕见情景下会在不需要拍击水面时意外保留拍击水面所需的采集力\n- 修复：竿时悬浮窗的计数器文本没有正确表示排除模式\n- 优化：自动行为现在诱饵技能将合理在钓法包含修饰词「确保多提」时避让多重提钩，在所需的采集力不足时不使用诱饵技能\n- 优化：自动行为现在不再于新钓法启动时使自动行为延迟1秒再判断\n- 优化：竿时悬浮窗的计数器文本现在将在简略名后添加加号以表示此计数器拥有多个目标\n- 杂项：现在默认启用忽视银星\n",
+        "ChangeLog": "# v1.9.13.0\n- 新增：钓法修饰词「等待华丽」\n- 修复：修复了自动行为在等待专一垂钓所需采集力时，即使专一垂钓机会已经错过，也没有取消等待的问题\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
