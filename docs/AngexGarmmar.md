@@ -1,4 +1,5 @@
 ﻿# Angex 语法规范（钓法表达式）
+> 本文由 AI 生成
 
 本文档以 `AngexParser` 的实际实现为准，是 Angex 的权威语法规范，面向高级用户与开发者。
 本文明确不包含正则解析器的语法。
@@ -31,7 +32,7 @@
 - 注意：单个 `|` 保留给 `name|id` 的 `IdOrName` 语法。
 
 ### 排除前缀
-- 仅支持全角 `？`。
+- 支持全角 `？` 与半角 `?`。
 
 ### 备注
 - `//` 开始备注，直到文本结尾。
@@ -51,13 +52,15 @@
 `拍水 | 拍 | ss | 专一 | 专 | ic`
 
 ### 嵌套关键字
-`阶段 | stg | stage | 鱼识 | int | 拍水后 | pss | 拍水 | 拍 | ss | 专一 | 专 | ic`
+`阶段 | stg | stage | 鱼识 | int | 拍水后 | pss | 专一后 | pic | 拍水 | 拍 | ss | 专一 | 专 | ic`
 
 ### 修饰词（全局参数）
 `不撒饵/nochum, 收藏品/coll, 不收集/nocoll, 钓组/snag, 大尺寸/large, 攒鱼计/aa,
-套娃/mooch-loop, 等待专一/waitic, 大鱼知识/bfg, 引诱/lure, 雄心/a-lure, 谦逊/m-lure,
-重随/re-roll, 鱼影/shadow, 多提/mh, 回收/recy, 鱼眼/fe, 鱼篓/sh, 鱼篓专一/sh-ic,
-跳阶段/skipstg, 银星/silver, 无强心剂/nocord`
+套娃/mooch-loop, 梭哈/all-in, 等待专一/waitic, 大鱼知识/bfg, 引诱/lure, 雄心/a-lure, 谦逊/m-lure,
+重随/re-roll, 鱼影/shadow, 多提/mhs, 加钩/mh, 回收/recy, 鱼眼/fe, 鱼篓/sh, 鱼篓专一/sh-ic,
+多提回退/mhs-back, 允许溢出/overflow, 等待华丽/wait-sh, 跳阶段/skipstg, 强制预备/force-prep, 银星/silver, 无强心剂/nocord, 无恩宠/nofavor`
+
+补充：`引诱/雄心/谦逊/鱼影/重随` 可在末尾追加正整数以限制引诱叠层上限（按当前身上引诱 buff 层数判断），例如 `引诱2`、`a-lure3`。当存在 `鱼影` 或 `重随` 修饰词时，该限制不生效。
 
 ## 语法（EBNF）
 
@@ -76,30 +79,32 @@ WindowOpt      ::= "@" WS* EtRangeOpt WS* WeatherOpt | ε ;
 EtRangeOpt     ::= EtRange | ε ;
 EtRange        ::= EtTime WS* ("-" | "~") WS* EtTime ;
 EtTime         ::= Digit Digit Digit Digit ;
-WeatherOpt     ::= WeatherBracket
-                 | WeatherBracket WS* WindowArrow WS* WeatherBracket
-                 | ε ;
+WeatherOpt     ::= WeatherBracket | ε ;
 WindowArrow    ::= "=" WS* Arrow ;
-WeatherBracket ::= ("(" | "（") WeatherList (")" | "）") ;
+WeatherBracket ::= ("(" | "（") WeatherInner (")" | "）") ;
+WeatherInner   ::= WeatherList (WS* WindowArrow WS* WeatherList)? ;
 WeatherList    ::= IdOrName (WS* ListSep WS* IdOrName)* ;
 
 Phase1         ::= Phase InlineSpecialsOpt ;
 Phase          ::= ExtraBiteOpt WS* BiteTimeOpt WS* BiteTypes WS* HooksetOpt
                    WS* SwimbaitOpt WS* TargetsOpt ;
 
-ExtraBiteOpt   ::= ("(" | "（") Bang1to3 (")" | "）") | ε ;
+ExtraBiteOpt   ::= ("(" | "（") ExtraBiteToken (")" | "）") | ε ;
 
 BiteTimeOpt    ::= BiteTimeRange | ε ;
-BiteTimeRange  ::= RangeStartMax | RangeMin (RangeMax)? ;
+BiteTimeRange  ::= RangeStartMax | RangeMin RangeMaxReq ;
 RangeStartMax  ::= ("-" | "~") Number ("+" Number)? ;
 RangeMin       ::= Number ("+" Number)? ;
+RangeMaxReq    ::= RangeMax | RangeOpenEnd ;
 RangeMax       ::= ("-" | "~") Number ("+" Number)? ;
+RangeOpenEnd   ::= ("-" | "~") ;
 Number         ::= Digit+ ("." Digit+)? ;
 
 BiteTypes      ::= AllBite | BangToken (WS* "+" WS* BangToken)* ;
 AllBite        ::= "全部" | "all" ;
 BangToken      ::= ("!" | "！"){1,3} ;
 Bang1to3       ::= ("!" | "！"){1,3} ;
+ExtraBiteToken ::= AllBite | Bang1to3 ;
 
 HooksetOpt     ::= Hookset Digit? | ε ;
 Hookset        ::= "强力" | "精准" | "双重" | "双提" | "三重" | "三提" | "华丽"
@@ -123,11 +128,11 @@ TargetSet       ::= Brackets TargetList ;
 TargetList      ::= TargetToken (WS* ListSep WS* TargetToken)* ;
 ListSep         ::= "、" | "||" ;
 TargetToken     ::= ExclusionPrefix? TargetAtom ;
-ExclusionPrefix ::= "？" ;
-TargetAtom      ::= "any" | "任何" | "占位" | "《" | IdOrName ;
+ExclusionPrefix ::= "？" | "?" ;
+TargetAtom      ::= "any" | "任何" | "占位" | "ph" | "《" | IdOrName ;
 IdOrName        ::= NAME ("|" UINT)? | UINT ;
 
-GlobalParamsOpt ::= "=" WS* GlobalSeg (WS* SegmentSep WS* GlobalSeg)* (WS* SegmentSep)? | ε ;
+GlobalParamsOpt ::= "=" WS* GlobalSeg (WS* SegmentSep WS* GlobalSeg)* WS* SegmentSep | ε ;
 SegmentSep      ::= ";" | "；" ;
 GlobalSeg       ::= CounterOrTerm | ModifierList ;
 CounterOrTerm   ::= UINT? WS* TargetSet ;
@@ -140,6 +145,7 @@ NestedExpr      ::= "@" WS* NestedKind WS* "=" WS* Arrow WS* Expression StageClo
 NestedKind      ::= "阶段" | "stg" | "stage"
                   | "鱼识" | "int"
                   | "拍水后" | "pss"
+                  | "专一后" | "pic"
                   | "拍水" | "ss"
                   | "专一" | "ic" ;
 StageCloseOpt   ::= (WS* ("<" | "《") WS* "=") | ε ;
@@ -153,12 +159,15 @@ UINT            ::= Digit+ ;
 NAME            ::= <不包含列表分隔符的非空文本> ;
 ```
 
+补充：`RangeMin` 后仅出现 `-` 或 `~` 表示“以上”（无上限）。
+
 ## 语义约束与解析说明
 
 1) 窗口期 (`@`) 至少包含以下之一：
    - ET 时间段，或
    - 天气集合。
-   否则报错“窗口期为空”。
+     否则报错“窗口期为空”。
+   - 双段天气必须写在同一组括号内，例如 `(晴朗=>阴云)` 或 `（晴朗=》阴云）`。
 
 2) ET 时间为 4 位数字（0000-2359），`2400` 被视为 `0000`。
 
@@ -166,46 +175,57 @@ NAME            ::= <不包含列表分隔符的非空文本> ;
    - 每个阶段必须存在。
    - `全部/all` 不能与 `!` 混用。
 
-4) 阶段目标：
+4) 咬饵时间：
+   - 仅提供一组数值时，必须显式包含 `-` 或 `~`（前置或后置）。
+
+5) 阶段目标：
    - 游动饵目标与普通目标不可同时存在。
 
-5) 额外咬饵类型：
-   - 仅支持 1-3 个 `!`。
+6) 额外咬饵类型：
+   - 支持 `全部/all` 或 1-3 个 `!`。
    - 若无效，解析会回退并在后续以“缺少咬饵类型”等错误结束。
 
-6) 提钩类型：
+7) 提钩类型：
    - 如果给出多重提钩数量，则必须给出提钩类型。
 
-7) 内联特殊（仅阶段 1）：
+8) 内联特殊（仅阶段 1）：
    - 内联拍水必须有目标（`<[...]` 或 `[...]`）。
    - 内联专一必须有目标（`[...]`）。
    - 若内联拍水未给咬饵类型，则使用阶段 1 的咬饵类型与咬饵时间。
    - 允许出现在阶段 1 目标之前或之后（用于兼容旧写法与序列化输出）。
+   - 序列化输出时会固定放在阶段 1 目标之前。
 
-8) 嵌套表达式：
+9) 嵌套表达式：
    - 只能出现在全局参数之后。
    - `@阶段=》...` 必须闭合 `< =` 或 `《 =`。
+   - `@鱼识=》...` 会尽可能吞掉其后的内容，直到备注开始（`//`）。
    - 其他嵌套关键字会消费到下一个嵌套表达式起始或备注起始（允许连续书写多个嵌套表达式）。
-   - 嵌套表达式前允许有分号，结尾也允许分号作为分隔。
+   - 若存在全局参数，嵌套表达式前必须以分号结束全局参数段。
 
-9) 全局参数：
-   - `=` 开始全局参数。
-   - 以 `;` 或 `；` 分隔多个段。
-   - 没有数量的目标段若位于第一个位置，则视为“终止目标”。
-   - 计数器必须有数量。
-   - 修饰词使用 `、` 或 `||` 连接，解析器允许仅修饰词而无目标段。
+10) 鱼识 / 拍水后 / 专一后（同级互斥）：
+- 同一层级最多出现一个（`@鱼识` / `@拍水后` / `@专一后`），否则报错。
+- 不同层级互不影响（例如外层 `@鱼识`，内层 `@专一后` 允许）。
 
-10) 目标项：
-   - `any` / `任何` 表示“匹配任何”。
-   - `占位` 表示“不匹配任何”。
-   - `《` 作为目标项表示鱼篓标记。
-   - `？` 前缀表示排除模式。
+11) 全局参数：
+- `=` 开始全局参数。
+- 以 `;` 或 `；` 分隔多个段。
+- 全局参数最后一段必须以 `;` 或 `；` 结束（即使后面是嵌套表达式或备注）。
+- 没有数量的目标段若位于第一个位置，则视为“终止目标”。
+- 计数器必须有数量。
+- 修饰词使用 `、` 或 `||` 连接，解析器允许仅修饰词而无目标段。
+- 引诱相关修饰词尾随数字表示“引诱最多叠到 X 层”，但在 `鱼影` 或 `重随` 手法下会被忽略。
 
-11) 天气项：
-   - 仅支持 `IdOrName`，不支持排除或占位等特殊项。
+12) 目标项：
+- `any` / `任何` 表示“匹配任何”。
+- `占位` / `ph` 表示“不匹配任何”。
+- `《` 作为目标项表示鱼篓标记。
+- `？` / `?` 前缀表示排除模式。
 
-12) 游动饵占位：
-   - 单独出现的游动饵操作符（如 `《》` 中的 `《`）会被视为“鱼篓标志”，等价于游动饵目标包含 `《`。
+13) 天气项：
+- 仅支持 `IdOrName`，不支持排除或占位等特殊项。
+
+14) 游动饵占位：
+- 单独出现的游动饵操作符（如 `《》` 中的 `《`）会被视为“鱼篓标志”，等价于游动饵目标包含 `《`。
 
 ## 最小示例
 
