@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.13.6",
+        "AssemblyVersion": "1.9.13.7",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.13.6\n- 修复：自动行为在特定情况下没有如预期般使用耐心系技能或大鱼猎手\n# v1.9.13.5\n- 新增：钓法表达式的额外咬饵类型支持 `全部` 关键字\n- 优化：自动行为时调整了额外咬饵类型和主要咬饵类型的判断优先级\n# v1.9.13.4\n- 修复：自动行为会错误得在预期外时尝试使用熟练妙招\n# v1.9.13.3\n- 优化：优化自动行为在特定情境下的技能使用逻辑，现在会更多地在合适时先使用低优先级的准备阶段技能，再用强心剂或沙利亚克的恩宠（在之前自动行为在前述情境不会使用预期的准备阶段技能、或会使用效率低的强心剂补充采集力后才使用预期的准备阶段技能）\n- 杂项：调整了一处未激活认证时尝试使用功能的提示行为\n# v1.9.13.2\n- 优化：优化自动行为在特定情景下选择多重提钩和采集力计算的相关逻辑\n- 优化：现在预设同步在源请求失败时将尝试向备用源请求数据\n- 杂项：修正部分文案的格式\n# v1.9.13.1\n- 修复：修复了自动行为时特殊钓法下会因主目标参数需求提前歇竿而无法拍水的问题\n- 修复：修复了自动行为时鱼眼模式下在首次循环结束后刷屏卡流程而无法继续的问题\n- 修复：修复了钓法表达式解析器不将半角问号作为排除符的问题\n# v1.9.13.0\n- 新增：钓法修饰词「等待华丽」\n- 修复：修复了自动行为在等待专一垂钓所需采集力时，即使专一垂钓机会已经错过，也没有取消等待的问题\n",
+        "ChangeLog": "# v1.9.13.7\n- 修复：自动行为在极罕见情况下钓到鱼后会卡住不继续自动且不会有任何告警\n- 优化：优化了自动前往钓场的寻路逻辑\n# v1.9.13.6\n- 修复：自动行为在特定情况下没有如预期般使用耐心系技能或大鱼猎手\n# v1.9.13.5\n- 新增：钓法表达式的额外咬饵类型支持 `全部` 关键字\n- 优化：自动行为时调整了额外咬饵类型和主要咬饵类型的判断优先级\n# v1.9.13.4\n- 修复：自动行为会错误得在预期外时尝试使用熟练妙招\n# v1.9.13.3\n- 优化：优化自动行为在特定情境下的技能使用逻辑，现在会更多地在合适时先使用低优先级的准备阶段技能，再用强心剂或沙利亚克的恩宠（在之前自动行为在前述情境不会使用预期的准备阶段技能、或会使用效率低的强心剂补充采集力后才使用预期的准备阶段技能）\n- 杂项：调整了一处未激活认证时尝试使用功能的提示行为\n# v1.9.13.2\n- 优化：优化自动行为在特定情景下选择多重提钩和采集力计算的相关逻辑\n- 优化：现在预设同步在源请求失败时将尝试向备用源请求数据\n- 杂项：修正部分文案的格式\n# v1.9.13.1\n- 修复：修复了自动行为时特殊钓法下会因主目标参数需求提前歇竿而无法拍水的问题\n- 修复：修复了自动行为时鱼眼模式下在首次循环结束后刷屏卡流程而无法继续的问题\n- 修复：修复了钓法表达式解析器不将半角问号作为排除符的问题\n# v1.9.13.0\n- 新增：钓法修饰词「等待华丽」\n- 修复：修复了自动行为在等待专一垂钓所需采集力时，即使专一垂钓机会已经错过，也没有取消等待的问题\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
