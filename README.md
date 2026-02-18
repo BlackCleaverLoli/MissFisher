@@ -1,6 +1,6 @@
 # MissFisher  
   
-**[安装指南](#安装指南-) | [完成认证](#完成认证以获得-missfisher-使用权-) | [使用说明](#使用说明-) | [预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=yirja0) | [钓鱼王](#用-missfisher-钓特定的鱼类-) | [自动海钓](#用-missfisher-出海垂钓-) | [宇宙探索](#用-missfisher-完成宇宙探索任务-) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求-) | [练级？](#用-missfisher-练级-)**  
+**[安装指南](#安装指南) | [完成认证](#完成认证以获得-missfisher-使用权) | [使用说明](#使用说明) | [预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=yirja0) | [钓鱼王](#用-missfisher-钓特定的鱼类) | [自动海钓](#用-missfisher-出海垂钓) | [宇宙探索](#用-missfisher-完成宇宙探索任务) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求) | [练级？](#用-missfisher-练级)**  
   
 ## 简介  
 MissFisher 是一个基于 Dalamud 的 FF14 插件，致力于（半）自动化游戏中的钓鱼相关玩法。  
@@ -379,7 +379,7 @@ MissFisher 有一些模式可帮助达成相关成就：
   
 你可以在主界面上的模式下拉菜单中找到 MissFisher 的练级模式，但该模式在出海垂钓外的行为只是使用「万能拟饵」来抛竿，然后对任何咬饵使用普通提钩。  
   
-如果你不愿意手动钓鱼，请看：[用 MissFisher 出海垂钓](#用-missfisher-出海垂钓-)。  
+如果你不愿意手动钓鱼，请看：[用 MissFisher 出海垂钓](#用-missfisher-出海垂钓)。  
   
 否则，你可以参考攻略：[NGA-捕鱼人升级路线研究与推荐](https://nga.178.com/read.php?tid=37816417&authorid=60919598)。  
   
