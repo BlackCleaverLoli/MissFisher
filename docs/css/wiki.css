@@ -292,6 +292,16 @@ pre code .dsl-comment,
     display: block;
 }
 
+.diff-add .diff-token-change {
+    background-color: rgba(87, 166, 74, 0.38);
+    border-radius: 2px;
+}
+
+.diff-remove .diff-token-change {
+    background-color: rgba(214, 37, 37, 0.35);
+    border-radius: 2px;
+}
+
 /* 表格样式 */
 #markdown-content table {
     border-collapse: collapse;
