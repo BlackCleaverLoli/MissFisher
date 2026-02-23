@@ -217,79 +217,68 @@ body:not(.sidebar-collapsed) .content {
 
 /* Scope DSL styles to code blocks / language containers to avoid leaking into other elements */
 
-/* DSL 语法高亮 - VS Code Dark+ 配色 (仅在代码块中生效) */
-pre code .dsl-keyword,
-.language-dsl .dsl-keyword,
-.language-angex .dsl-keyword {
-    color: #569cd6;        /* 蓝色 - 关键字: 大鱼, 耐心, 平钓 */
+/* DSL 语义类型 */
+pre code .dsl-mode,
+.language-dsl .dsl-mode,
+.language-angex .dsl-mode {
+    color: #569cd6;
     font-weight: bold;
 }
 
-pre code .dsl-control-flow,
-.language-dsl .dsl-control-flow,
-.language-angex .dsl-control-flow {
-    color: #d8a0df;        /* 浅紫色 - 控制流关键字: @XX, 》, ！ */
+pre code .dsl-trigger,
+.language-dsl .dsl-trigger,
+.language-angex .dsl-trigger {
+    color: #4fc1ff;
+    font-weight: 600;
 }
 
-pre code .dsl-function,
-.language-dsl .dsl-function,
-.language-angex .dsl-function {
-    color: #dcdcaa;        /* 黄色 - 函数: 《 */
+pre code .dsl-hook,
+.language-dsl .dsl-hook,
+.language-angex .dsl-hook {
+    color: #dcdcaa;
 }
 
-pre code .dsl-string,
-.language-dsl .dsl-string,
-.language-angex .dsl-string {
-    color: #d69d85;        /* 珊瑚色 - 字符串/鱼名 【xxx】内容 */
+pre code .dsl-bite,
+.language-dsl .dsl-bite,
+.language-angex .dsl-bite {
+    color: #ce9178;
 }
 
-pre code .dsl-identifier,
-.language-dsl .dsl-identifier,
-.language-angex .dsl-identifier {
-    color: #dcdcdc;        /* 浅灰色 - 默认识别符: 【】、| 等 */
+pre code .dsl-time,
+.language-dsl .dsl-time,
+.language-angex .dsl-time {
+    color: #b5cea8;
 }
 
-pre code .dsl-variable,
-.language-dsl .dsl-variable,
-.language-angex .dsl-variable {
-    color: #9cdcfe;        /* 浅蓝色 - 变量: 叹号后的提钩类型 */
+pre code .dsl-name,
+.language-dsl .dsl-name,
+.language-angex .dsl-name {
+    color: #9cdcfe;
 }
 
-pre code .dsl-number,
-.language-dsl .dsl-number,
-.language-angex .dsl-number {
-    color: #b5cea8;        /* 浅绿色 - 数字 */
+pre code .dsl-id,
+.language-dsl .dsl-id,
+.language-angex .dsl-id {
+    color: #4ec9b0;
+}
+
+pre code .dsl-op,
+.language-dsl .dsl-op,
+.language-angex .dsl-op {
+    color: #d4d4d4;
+}
+
+pre code .dsl-sep,
+.language-dsl .dsl-sep,
+.language-angex .dsl-sep {
+    color: #c5c5c5;
 }
 
 pre code .dsl-comment,
 .language-dsl .dsl-comment,
 .language-angex .dsl-comment {
-    color: #57a64a;        /* 绿色 - 注释 */
+    color: #57a64a;
     font-style: italic;
-}
-
-pre code .dsl-punctuation,
-.language-dsl .dsl-punctuation,
-.language-angex .dsl-punctuation {
-    color: #dcdcdc;        /* 浅灰色 - 标点符号 */
-}
-
-pre code .dsl-literal,
-.language-dsl .dsl-literal,
-.language-angex .dsl-literal {
-    color: #d69d85;        /* 珊瑚色 - 字面量: 全部, all */
-}
-
-pre code .dsl-weather,
-.language-dsl .dsl-weather,
-.language-angex .dsl-weather {
-    color: #c586c0;        /* 紫色 - 天气 */
-}
-
-pre code .dsl-modifier,
-.language-dsl .dsl-modifier,
-.language-angex .dsl-modifier {
-    color: #b8d7a3;        /* 浅绿色 - 手法修饰词 */
 }
 
 /* Diff 代码块样式 */

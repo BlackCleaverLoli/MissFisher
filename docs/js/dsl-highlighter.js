@@ -3,11 +3,9 @@
  * 基于 AngexConverter.cs 中的语法定义
  * 使用粗粒度正则匹配整个语法块
  *
- * 颜色/类别规则（简化并统一）：
- * - 钓法基本模式(平钓/大鱼/耐心) = 关键字 dsl-keyword
- * - 变量（物品名、ID、数字、时间、天气等） = 字面量 dsl-literal
- * - 符号（括号、分隔符、@、=、|、》《、标点等） = 符号 dsl-symbol
- * - // 注释 = 注释 dsl-comment
+ * 颜色/类别规则：
+ * - 语义类型：dsl-mode / dsl-trigger / dsl-hook / dsl-bite / dsl-time / dsl-name / dsl-id / dsl-op / dsl-sep / dsl-comment
+ * - 语法异常不做特殊类型，按 dsl-op 简单渲染
  */
 
 // 基础模式定义（以 docs/AngexGarmmar.md 为准）
@@ -35,6 +33,23 @@ function wrap(className, content) {
     return `<span class="${className}">${escapeHtml(content)}</span>`;
 }
 
+const tokenClassMap = {
+    mode: 'dsl-mode',
+    trigger: 'dsl-trigger',
+    hook: 'dsl-hook',
+    bite: 'dsl-bite',
+    time: 'dsl-time',
+    name: 'dsl-name',
+    id: 'dsl-id',
+    op: 'dsl-op',
+    sep: 'dsl-sep',
+    comment: 'dsl-comment',
+};
+
+function token(kind, content) {
+    return wrap(tokenClassMap[kind] || 'dsl-op', content);
+}
+
 /**
  * 高亮数值范围（咬饵时间/ET）
  */
@@ -49,9 +64,9 @@ function highlightNumericOperators(text) {
             result += escapeHtml(text.slice(idx, m.index));
         }
         if (m[1]) {
-            result += wrap('dsl-literal', m[1]);
+            result += token('time', m[1]);
         } else {
-            result += wrap('dsl-symbol', m[2]);
+            result += token('op', m[2]);
         }
         idx = m.index + m[0].length;
     }
@@ -68,7 +83,7 @@ function highlightNumericOperators(text) {
 function highlightIdOrNameToken(text) {
     const m = text.match(/^(\s*)([\s\S]*?)(\s*)$/);
     if (!m) {
-        return wrap('dsl-literal', text);
+        return token('name', text);
     }
 
     const leading = m[1];
@@ -82,11 +97,15 @@ function highlightIdOrNameToken(text) {
 
     const aliasMatch = core.match(/^([\s\S]*?)(\s*\|\s*)(\d+)$/);
     if (aliasMatch && aliasMatch[1].trim().length > 0) {
-        result += wrap('dsl-literal', aliasMatch[1]);
-        result += wrap('dsl-symbol', aliasMatch[2]);
-        result += wrap('dsl-literal', aliasMatch[3]);
+        result += token('name', aliasMatch[1]);
+        result += token('op', aliasMatch[2]);
+        result += token('id', aliasMatch[3]);
     } else {
-        result += wrap('dsl-literal', core);
+        if (/^\d+$/.test(core.trim())) {
+            result += token('id', core);
+        } else {
+            result += token('name', core);
+        }
     }
 
     return result + escapeHtml(trailing);
@@ -103,7 +122,7 @@ function highlightListContent(text, tokenHighlighter = highlightIdOrNameToken) {
             continue;
         }
         if (part === '||' || part === '、') {
-            result += wrap('dsl-symbol', part);
+            result += token('sep', part);
         } else {
             result += tokenHighlighter(part);
         }
@@ -130,12 +149,12 @@ function highlightTargetToken(text) {
     }
 
     if (core[0] === '?' || core[0] === '？') {
-        result += wrap('dsl-symbol', core[0]);
+        result += token('op', core[0]);
         core = core.slice(1);
     }
 
     if (core === '《' || core === '<') {
-        result += wrap('dsl-symbol', core);
+        result += token('op', core);
     } else {
         result += highlightIdOrNameToken(core);
     }
@@ -154,7 +173,7 @@ function highlightWeatherInner(text) {
             continue;
         }
         if (/^\s*=\s*[>》]\s*$/.test(seg)) {
-            result += wrap('dsl-symbol', seg);
+            result += token('op', seg);
         } else {
             result += highlightListContent(seg, highlightIdOrNameToken);
         }
@@ -193,7 +212,7 @@ function highlightDSL(code) {
         // 1. 注释 //...
         const commentMatch = remaining.match(/^(\/\/[^\n]*)/);
         if (commentMatch) {
-            result += wrap('dsl-comment', commentMatch[1]);
+            result += token('comment', commentMatch[1]);
             remaining = remaining.slice(commentMatch[1].length);
             matched = true;
             continue;
@@ -202,11 +221,11 @@ function highlightDSL(code) {
         // 2. 模式 + 可选钓饵
         const modeWithBaitMatch = remaining.match(modeWithBaitRegex);
         if (modeWithBaitMatch) {
-            result += wrap('dsl-keyword', modeWithBaitMatch[1]);
+            result += token('mode', modeWithBaitMatch[1]);
             result += escapeHtml(modeWithBaitMatch[2]);
-            result += wrap('dsl-symbol', modeWithBaitMatch[3]);
+            result += token('op', modeWithBaitMatch[3]);
             result += highlightIdOrNameToken(modeWithBaitMatch[4]);
-            result += wrap('dsl-symbol', modeWithBaitMatch[5]);
+            result += token('op', modeWithBaitMatch[5]);
             remaining = remaining.slice(modeWithBaitMatch[0].length);
             matched = true;
             continue;
@@ -215,7 +234,7 @@ function highlightDSL(code) {
         // 3. 仅模式
         const modeOnlyMatch = remaining.match(modeOnlyRegex);
         if (modeOnlyMatch) {
-            result += wrap('dsl-keyword', modeOnlyMatch[1]);
+            result += token('mode', modeOnlyMatch[1]);
             remaining = remaining.slice(modeOnlyMatch[0].length);
             matched = true;
             continue;
@@ -224,7 +243,7 @@ function highlightDSL(code) {
         // 4. @窗口期：支持 @ET / @天气 / @ET天气，天气支持 晴=>阴 或 晴=》阴
         const windowMatch = remaining.match(windowRegex);
         if (windowMatch && (windowMatch[2] || windowMatch[5])) {
-            result += wrap('dsl-symbol', '@');
+            result += token('op', '@');
             result += escapeHtml(windowMatch[1]);
             if (windowMatch[2]) {
                 result += highlightNumericOperators(windowMatch[2]);
@@ -233,9 +252,9 @@ function highlightDSL(code) {
                 }
             }
             if (windowMatch[4]) {
-                result += wrap('dsl-symbol', windowMatch[4]);
+                result += token('op', windowMatch[4]);
                 result += highlightWeatherInner(windowMatch[5]);
-                result += wrap('dsl-symbol', windowMatch[6]);
+                result += token('op', windowMatch[6]);
             }
             remaining = remaining.slice(windowMatch[0].length);
             matched = true;
@@ -245,11 +264,11 @@ function highlightDSL(code) {
         // 5. 嵌套表达式起始：@类型 =》 / => ...
         const nestedStartMatch = remaining.match(nestedStartRegex);
         if (nestedStartMatch) {
-            result += wrap('dsl-symbol', '@');
+            result += token('op', '@');
             result += escapeHtml(nestedStartMatch[1]);
-            result += wrap('dsl-keyword', nestedStartMatch[2]);
-            result += wrap('dsl-symbol', nestedStartMatch[3]);
-            result += wrap('dsl-symbol', nestedStartMatch[4]);
+            result += token('trigger', nestedStartMatch[2]);
+            result += token('op', nestedStartMatch[3]);
+            result += token('op', nestedStartMatch[4]);
             remaining = remaining.slice(nestedStartMatch[0].length);
             matched = true;
             continue;
@@ -258,9 +277,9 @@ function highlightDSL(code) {
         // 6. @拍水（内联）
         const surfaceMatch = remaining.match(surfaceRegex);
         if (surfaceMatch) {
-            result += wrap('dsl-symbol', '@');
+            result += token('op', '@');
             result += escapeHtml(surfaceMatch[1]);
-            result += wrap('dsl-keyword', surfaceMatch[2]);
+            result += token('trigger', surfaceMatch[2]);
             remaining = remaining.slice(surfaceMatch[0].length);
             matched = true;
             continue;
@@ -269,9 +288,9 @@ function highlightDSL(code) {
         // 7. @专一（内联）
         const focusMatch = remaining.match(focusRegex);
         if (focusMatch) {
-            result += wrap('dsl-symbol', '@');
+            result += token('op', '@');
             result += escapeHtml(focusMatch[1]);
-            result += wrap('dsl-keyword', focusMatch[2]);
+            result += token('trigger', focusMatch[2]);
             remaining = remaining.slice(focusMatch[0].length);
             matched = true;
             continue;
@@ -279,7 +298,7 @@ function highlightDSL(code) {
         
         // 8. 》阶段分隔符
         if (remaining[0] === '》' || remaining[0] === '>') {
-            result += wrap('dsl-symbol', remaining[0]);
+            result += token('op', remaining[0]);
             remaining = remaining.slice(1);
             matched = true;
             continue;
@@ -287,7 +306,7 @@ function highlightDSL(code) {
         
         // 9. 《 / <（游动饵标记或阶段闭合）
         if (remaining[0] === '《' || remaining[0] === '<') {
-            result += wrap('dsl-symbol', remaining[0]);
+            result += token('op', remaining[0]);
             remaining = remaining.slice(1);
             matched = true;
             continue;
@@ -298,11 +317,11 @@ function highlightDSL(code) {
         if (extraBiteMatch) {
             const parts = extraBiteMatch[1].match(/^([（(]\s*)([\s\S]*?)(\s*[)）])$/);
             if (parts) {
-                result += wrap('dsl-symbol', parts[1]);
-                result += wrap('dsl-literal', parts[2]);
-                result += wrap('dsl-symbol', parts[3]);
+                result += token('op', parts[1]);
+                result += token('bite', parts[2]);
+                result += token('op', parts[3]);
             } else {
-                result += wrap('dsl-symbol', extraBiteMatch[1]);
+                result += token('op', extraBiteMatch[1]);
             }
             remaining = remaining.slice(extraBiteMatch[1].length);
             matched = true;
@@ -327,9 +346,9 @@ function highlightDSL(code) {
                     continue;
                 }
                 if (/^\s*\+\s*$/.test(part)) {
-                    result += wrap('dsl-symbol', part);
+                    result += token('op', part);
                 } else {
-                    result += wrap('dsl-literal', part);
+                    result += token('bite', part);
                 }
             }
             if (biteHookMatch[2]) {
@@ -337,7 +356,7 @@ function highlightDSL(code) {
                 const hook = biteHookMatch[2].slice(ws.length);
                 result += escapeHtml(ws);
                 if (hook) {
-                    result += wrap('dsl-keyword', hook);
+                    result += token('hook', hook);
                 }
             }
             remaining = remaining.slice(biteHookMatch[0].length);
@@ -348,7 +367,7 @@ function highlightDSL(code) {
         // 13. 通用数字（计数器/ID/普通数字）
         const numberMatch = remaining.match(/^(\d+(?:\.\d+)?)/);
         if (numberMatch) {
-            result += wrap('dsl-literal', numberMatch[1]);
+            result += token('time', numberMatch[1]);
             remaining = remaining.slice(numberMatch[1].length);
             matched = true;
             continue;
@@ -357,9 +376,9 @@ function highlightDSL(code) {
         // 14. 括号内容（目标集合/钓饵名/IdOrName）
         const bracketMatch = remaining.match(bracketRegex);
         if (bracketMatch) {
-            result += wrap('dsl-symbol', bracketMatch[1]);
+            result += token('op', bracketMatch[1]);
             result += highlightListContent(bracketMatch[2], highlightTargetToken);
-            result += wrap('dsl-symbol', bracketMatch[3]);
+            result += token('op', bracketMatch[3]);
             remaining = remaining.slice(bracketMatch[0].length);
             matched = true;
             continue;
@@ -368,13 +387,13 @@ function highlightDSL(code) {
         // 15. 全局参数起始：= ... ;
         const equalMatch = remaining.match(equalRegex);
         if (equalMatch) {
-            result += wrap('dsl-symbol', '=');
+            result += token('op', '=');
             const content = equalMatch[2];
             if (content) {
                 result += highlightDSL(content);
             }
             if (equalMatch[3]) {
-                result += wrap('dsl-symbol', equalMatch[3]);
+                result += token('sep', equalMatch[3]);
             }
             remaining = remaining.slice(equalMatch[0].length);
             matched = true;
@@ -383,7 +402,7 @@ function highlightDSL(code) {
 
         // 16. 单独的 @（没有匹配到上面的模式）
         if (remaining[0] === '@') {
-            result += wrap('dsl-symbol', '@');
+            result += token('op', '@');
             remaining = remaining.slice(1);
             matched = true;
             continue;
@@ -393,9 +412,9 @@ function highlightDSL(code) {
         if (remaining[0] === '`') {
             const closeIdx = remaining.indexOf('`', 1);
             if (closeIdx !== -1) {
-                result += wrap('dsl-symbol', '`');
+                result += token('op', '`');
                 result += highlightDSL(remaining.slice(1, closeIdx));
-                result += wrap('dsl-symbol', '`');
+                result += token('op', '`');
                 remaining = remaining.slice(closeIdx + 1);
                 matched = true;
                 continue;
@@ -404,7 +423,11 @@ function highlightDSL(code) {
         
         // 18. 标点符号
         if ('~-;；()（）|+、，[]{}?？='.includes(remaining[0])) {
-            result += wrap('dsl-symbol', remaining[0]);
+            if (remaining[0] === ';' || remaining[0] === '；' || remaining[0] === '、') {
+                result += token('sep', remaining[0]);
+            } else {
+                result += token('op', remaining[0]);
+            }
             remaining = remaining.slice(1);
             matched = true;
             continue;
@@ -412,7 +435,11 @@ function highlightDSL(code) {
         
         // 19. 其他字符直接输出（已转义）
         if (!matched) {
-            result += escapeHtml(remaining[0]);
+            if (/\s/.test(remaining[0])) {
+                result += escapeHtml(remaining[0]);
+            } else {
+                result += token('op', remaining[0]);
+            }
             remaining = remaining.slice(1);
         }
     }
