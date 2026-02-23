@@ -10,15 +10,13 @@
  * - // 注释 = 注释 dsl-comment
  */
 
-// 基础模式定义（参考 AngexConverter.cs）
+// 基础模式定义（以 docs/AngexGarmmar.md 为准）
 const 钓法模式 = '大鱼|耐心|平钓|bf|pt|nm';
-const 全部模式 = '全部|all';
+const 全部模式 = '全部|all(?![A-Za-z-])';
 const 提钩模式 = '强力|精准|双提|三提|华丽|双重|三重|pw|pc|dh|th|sh';
-const 拍水模式 = '拍水|ss';
-const 专一模式 = '专一|ic';
-const 阶段模式 = '阶段|stage';
-const 鱼识模式 = '鱼识|int';
-const 拍水后模式 = '拍水后|pss';
+const 内联拍水模式 = '拍水|拍|ss';
+const 内联专一模式 = '专一|专|ic';
+const 嵌套模式 = '拍水后|专一后|阶段|stg|stage|鱼识|int|pss|pic|拍水|拍|ss|专一|专|ic';
 
 /**
  * 转义 HTML 特殊字符
@@ -38,11 +36,156 @@ function wrap(className, content) {
 }
 
 /**
+ * 高亮数值范围（咬饵时间/ET）
+ */
+function highlightNumericOperators(text) {
+    let result = '';
+    let idx = 0;
+    const re = /(\d+(?:\.\d+)?)|([+\-~])/g;
+    let m;
+
+    while ((m = re.exec(text)) !== null) {
+        if (m.index > idx) {
+            result += escapeHtml(text.slice(idx, m.index));
+        }
+        if (m[1]) {
+            result += wrap('dsl-literal', m[1]);
+        } else {
+            result += wrap('dsl-symbol', m[2]);
+        }
+        idx = m.index + m[0].length;
+    }
+
+    if (idx < text.length) {
+        result += escapeHtml(text.slice(idx));
+    }
+    return result;
+}
+
+/**
+ * 高亮 IdOrName（支持 name|id）
+ */
+function highlightIdOrNameToken(text) {
+    const m = text.match(/^(\s*)([\s\S]*?)(\s*)$/);
+    if (!m) {
+        return wrap('dsl-literal', text);
+    }
+
+    const leading = m[1];
+    const core = m[2];
+    const trailing = m[3];
+    let result = escapeHtml(leading);
+
+    if (!core) {
+        return result + escapeHtml(trailing);
+    }
+
+    const aliasMatch = core.match(/^([\s\S]*?)(\s*\|\s*)(\d+)$/);
+    if (aliasMatch && aliasMatch[1].trim().length > 0) {
+        result += wrap('dsl-literal', aliasMatch[1]);
+        result += wrap('dsl-symbol', aliasMatch[2]);
+        result += wrap('dsl-literal', aliasMatch[3]);
+    } else {
+        result += wrap('dsl-literal', core);
+    }
+
+    return result + escapeHtml(trailing);
+}
+
+/**
+ * 高亮列表内容（分隔符：、 或 ||）
+ */
+function highlightListContent(text, tokenHighlighter = highlightIdOrNameToken) {
+    let result = '';
+    const parts = text.split(/(\|\||、)/);
+    for (const part of parts) {
+        if (!part) {
+            continue;
+        }
+        if (part === '||' || part === '、') {
+            result += wrap('dsl-symbol', part);
+        } else {
+            result += tokenHighlighter(part);
+        }
+    }
+    return result;
+}
+
+/**
+ * 高亮目标集合项（支持 ? / ？ 前缀）
+ */
+function highlightTargetToken(text) {
+    const m = text.match(/^(\s*)([\s\S]*?)(\s*)$/);
+    if (!m) {
+        return highlightIdOrNameToken(text);
+    }
+
+    const leading = m[1];
+    let core = m[2];
+    const trailing = m[3];
+    let result = escapeHtml(leading);
+
+    if (!core) {
+        return result + escapeHtml(trailing);
+    }
+
+    if (core[0] === '?' || core[0] === '？') {
+        result += wrap('dsl-symbol', core[0]);
+        core = core.slice(1);
+    }
+
+    if (core === '《' || core === '<') {
+        result += wrap('dsl-symbol', core);
+    } else {
+        result += highlightIdOrNameToken(core);
+    }
+
+    return result + escapeHtml(trailing);
+}
+
+/**
+ * 高亮天气括号内部（支持 晴=>阴 / 晴=》阴）
+ */
+function highlightWeatherInner(text) {
+    let result = '';
+    const weatherSegments = text.split(/(\s*=\s*[>》]\s*)/);
+    for (const seg of weatherSegments) {
+        if (!seg) {
+            continue;
+        }
+        if (/^\s*=\s*[>》]\s*$/.test(seg)) {
+            result += wrap('dsl-symbol', seg);
+        } else {
+            result += highlightListContent(seg, highlightIdOrNameToken);
+        }
+    }
+    return result;
+}
+
+/**
  * 高亮 DSL 代码 - 使用粗粒度正则匹配
  */
 function highlightDSL(code) {
     let result = '';
     let remaining = code;
+    const modeWithBaitRegex = new RegExp(
+        `^(${钓法模式})(\\s*)([【\\[(（])([^】\\]）)]+)([】\\]）)])`,
+        'i'
+    );
+    const modeOnlyRegex = new RegExp(`^(${钓法模式})(?![A-Za-z0-9_\\u4E00-\\u9FFF])`, 'i');
+    const windowRegex = /^@(\s*)(?:(\d{4}\s*[~-]\s*\d{4})(\s*))?(?:([（(])([^）)]+)([）)]))?/;
+    const nestedStartRegex = new RegExp(`^@(\\s*)(${嵌套模式})(\\s*=\\s*)([>》])`, 'i');
+    const surfaceRegex = new RegExp(`^@(\\s*)(${内联拍水模式})(?!\\s*=)`, 'i');
+    const focusRegex = new RegExp(`^@(\\s*)(${内联专一模式})(?!\\s*=)`, 'i');
+    const extraBiteRegex = /^([（(]\s*(?:全部|all|[!！]{1,3})\s*[)）])/i;
+    const biteTimeRangeRegex =
+        /^((?:[~-]\s*\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)|(?:\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?\s*[~-](?:\s*\d+(?:\.\d+)?(?:\s*\+\s*\d+(?:\.\d+)?)?)?))/;
+    const biteHookRegex = new RegExp(
+        `^((?:${全部模式}|[!！]{1,3}(?:\\s*\\+\\s*[!！]{1,3})*))(\\s*(?:${提钩模式})\\d?)?`,
+        'i'
+    );
+    const bracketRegex = /^([【\[(（])([^】\]）)]+)([】\]）)])/;
+    const equalRegex = /^(=)([^；;@》>《<]*?)([；;]|$)/;
     
     while (remaining.length > 0) {
         let matched = false;
@@ -56,33 +199,21 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 2. 钓法基本模式 + 可选的【钓饵】 -> 钓法模式为关键字
-        const modeWithBaitMatch = remaining.match(new RegExp(
-            `^(${钓法模式})([【\\[(（])([^】\\]）)]+)([】\\]）)])`, 'i'
-        ));
+        // 2. 模式 + 可选钓饵
+        const modeWithBaitMatch = remaining.match(modeWithBaitRegex);
         if (modeWithBaitMatch) {
-            result += wrap('dsl-keyword', modeWithBaitMatch[1]); // 钓法基本模式 = 关键字
-            if (modeWithBaitMatch[2]) {
-                // 括号符号统一为符号色
-                result += wrap('dsl-symbol', modeWithBaitMatch[2]); // 开括号
-                const baitContent = modeWithBaitMatch[3];
-                // 名称或 名称|ID -> 内容当作字面量，分隔符作为符号
-                if (baitContent.includes('|')) {
-                    const parts = baitContent.split('|');
-                    result += wrap('dsl-literal', parts[0]);
-                    result += wrap('dsl-symbol', '|');
-                    result += wrap('dsl-literal', parts.slice(1).join('|'));
-                } else {
-                    result += wrap('dsl-literal', baitContent);
-                }
-                result += wrap('dsl-symbol', modeWithBaitMatch[4]); // 闭括号
-            }
+            result += wrap('dsl-keyword', modeWithBaitMatch[1]);
+            result += escapeHtml(modeWithBaitMatch[2]);
+            result += wrap('dsl-symbol', modeWithBaitMatch[3]);
+            result += highlightIdOrNameToken(modeWithBaitMatch[4]);
+            result += wrap('dsl-symbol', modeWithBaitMatch[5]);
             remaining = remaining.slice(modeWithBaitMatch[0].length);
             matched = true;
             continue;
         }
-        // 如果没有匹配到【钓饵】，只匹配钓法基本模式
-        const modeOnlyMatch = remaining.match(new RegExp(`^(${钓法模式})(?![【\\[(（])`, 'i'));
+
+        // 3. 仅模式
+        const modeOnlyMatch = remaining.match(modeOnlyRegex);
         if (modeOnlyMatch) {
             result += wrap('dsl-keyword', modeOnlyMatch[1]);
             remaining = remaining.slice(modeOnlyMatch[0].length);
@@ -90,106 +221,63 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 3. @窗口期: @数字~数字（天气）或 @（天气）
-        const windowMatch = remaining.match(/^@(\d{4})([~-])(\d{4})?([（(])([^）)]+)([）)])/);
-        if (windowMatch) {
-            result += wrap('dsl-symbol', '@'); // @ = 符号
-            result += wrap('dsl-literal', windowMatch[1]); // 开始时间数字 = 字面量
-            result += wrap('dsl-symbol', windowMatch[2]); // 分隔符 ~- = 符号
-            if (windowMatch[3]) {
-                result += wrap('dsl-literal', windowMatch[3]); // 结束时间数字
-            }
-            result += wrap('dsl-symbol', windowMatch[4]); // 开括号
-            const weatherContent = windowMatch[5];
-            const weatherParts = weatherContent.split(/([、|])/);
-            for (const part of weatherParts) {
-                if (part === '、' || part === '|') {
-                    result += wrap('dsl-symbol', part);
-                } else if (part) {
-                    result += wrap('dsl-literal', part);
+        // 4. @窗口期：支持 @ET / @天气 / @ET天气，天气支持 晴=>阴 或 晴=》阴
+        const windowMatch = remaining.match(windowRegex);
+        if (windowMatch && (windowMatch[2] || windowMatch[5])) {
+            result += wrap('dsl-symbol', '@');
+            result += escapeHtml(windowMatch[1]);
+            if (windowMatch[2]) {
+                result += highlightNumericOperators(windowMatch[2]);
+                if (windowMatch[3]) {
+                    result += escapeHtml(windowMatch[3]);
                 }
             }
-            result += wrap('dsl-symbol', windowMatch[6]); // 闭括号
+            if (windowMatch[4]) {
+                result += wrap('dsl-symbol', windowMatch[4]);
+                result += highlightWeatherInner(windowMatch[5]);
+                result += wrap('dsl-symbol', windowMatch[6]);
+            }
             remaining = remaining.slice(windowMatch[0].length);
             matched = true;
             continue;
         }
-        // 只有时间没有天气：@数字~数字
-        const timeOnlyMatch = remaining.match(/^@(\d{4})([~-])(\d{4})/);
-        if (timeOnlyMatch) {
+        
+        // 5. 嵌套表达式起始：@类型 =》 / => ...
+        const nestedStartMatch = remaining.match(nestedStartRegex);
+        if (nestedStartMatch) {
             result += wrap('dsl-symbol', '@');
-            result += wrap('dsl-literal', timeOnlyMatch[1]);
-            result += wrap('dsl-symbol', timeOnlyMatch[2]);
-            result += wrap('dsl-literal', timeOnlyMatch[3]);
-            remaining = remaining.slice(timeOnlyMatch[0].length);
-            matched = true;
-            continue;
-        }
-        // 只有天气没有时间：@（天气）
-        const weatherOnlyMatch = remaining.match(/^@([（(])([^）)]+)([）)])/);
-        if (weatherOnlyMatch) {
-            result += wrap('dsl-symbol', '@');
-            result += wrap('dsl-symbol', weatherOnlyMatch[1]); // 开括号
-            const weatherContent = weatherOnlyMatch[2];
-            const weatherParts = weatherContent.split(/([、|])/);
-            for (const part of weatherParts) {
-                if (part === '、' || part === '|') {
-                    result += wrap('dsl-symbol', part);
-                } else if (part) {
-                    result += wrap('dsl-literal', part);
-                }
-            }
-            result += wrap('dsl-symbol', weatherOnlyMatch[3]); // 闭括号
-            remaining = remaining.slice(weatherOnlyMatch[0].length);
+            result += escapeHtml(nestedStartMatch[1]);
+            result += wrap('dsl-keyword', nestedStartMatch[2]);
+            result += wrap('dsl-symbol', nestedStartMatch[3]);
+            result += wrap('dsl-symbol', nestedStartMatch[4]);
+            remaining = remaining.slice(nestedStartMatch[0].length);
             matched = true;
             continue;
         }
         
-        // 4. @拍水段: @拍水... -> @ 符号, 拍水视作关键字
-        const surfaceMatch = remaining.match(new RegExp(`^@(${拍水模式})`, 'i'));
+        // 6. @拍水（内联）
+        const surfaceMatch = remaining.match(surfaceRegex);
         if (surfaceMatch) {
             result += wrap('dsl-symbol', '@');
-            result += wrap('dsl-keyword', surfaceMatch[1]);
+            result += escapeHtml(surfaceMatch[1]);
+            result += wrap('dsl-keyword', surfaceMatch[2]);
             remaining = remaining.slice(surfaceMatch[0].length);
             matched = true;
             continue;
         }
         
-        // 5. @专一段: @专一 -> @ 符号, 专一视作关键字
-        const focusMatch = remaining.match(new RegExp(`^@(${专一模式})`, 'i'));
+        // 7. @专一（内联）
+        const focusMatch = remaining.match(focusRegex);
         if (focusMatch) {
             result += wrap('dsl-symbol', '@');
-            result += wrap('dsl-keyword', focusMatch[1]);
+            result += escapeHtml(focusMatch[1]);
+            result += wrap('dsl-keyword', focusMatch[2]);
             remaining = remaining.slice(focusMatch[0].length);
             matched = true;
             continue;
         }
         
-        // 6. @阶段/鱼识/拍水后: treat as symbol + keyword
-        const specialAtMatch = remaining.match(new RegExp(
-            `^(@(?:${阶段模式}|${鱼识模式}|${拍水后模式})=)`, 'i'
-        ));
-        if (specialAtMatch) {
-            // 把 @ 和 = 均视为符号，内部关键字部分高亮为关键字
-            const full = specialAtMatch[1];
-            // 分割 @ 和 后面的内容
-            result += wrap('dsl-symbol', full[0]);
-            const rest = full.slice(1);
-            // rest 里可能包含 =，只把名称当关键字，等号作为符号
-            const eqIdx = rest.indexOf('=');
-            if (eqIdx !== -1) {
-                const name = rest.slice(0, eqIdx);
-                result += wrap('dsl-keyword', name);
-                result += wrap('dsl-symbol', '=');
-            } else {
-                result += wrap('dsl-keyword', rest);
-            }
-            remaining = remaining.slice(specialAtMatch[0].length);
-            matched = true;
-            continue;
-        }
-        
-        // 7. 》阶段分隔符 -> 符号色
+        // 8. 》阶段分隔符
         if (remaining[0] === '》' || remaining[0] === '>') {
             result += wrap('dsl-symbol', remaining[0]);
             remaining = remaining.slice(1);
@@ -197,7 +285,7 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 8. 《（用于游动饵目标标记或阶段结束） -> 符号色
+        // 9. 《 / <（游动饵标记或阶段闭合）
         if (remaining[0] === '《' || remaining[0] === '<') {
             result += wrap('dsl-symbol', remaining[0]);
             remaining = remaining.slice(1);
@@ -205,86 +293,85 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 9. (额外咬饵类型): (！！) 或 （！！！） -> 符号色
-        const extraBiteMatch = remaining.match(/^([（(][!！]{1,3}[)）])/);
+        // 10. 额外咬饵类型：(全部/all/!/!!/!!!)
+        const extraBiteMatch = remaining.match(extraBiteRegex);
         if (extraBiteMatch) {
-            result += wrap('dsl-symbol', extraBiteMatch[1]);
+            const parts = extraBiteMatch[1].match(/^([（(]\s*)([\s\S]*?)(\s*[)）])$/);
+            if (parts) {
+                result += wrap('dsl-symbol', parts[1]);
+                result += wrap('dsl-literal', parts[2]);
+                result += wrap('dsl-symbol', parts[3]);
+            } else {
+                result += wrap('dsl-symbol', extraBiteMatch[1]);
+            }
             remaining = remaining.slice(extraBiteMatch[1].length);
             matched = true;
             continue;
         }
         
-        // 10. 咬饵时间或数字: 数字/时间等 -> 字面量
-        const timeMatch = remaining.match(/^([\d.]+(?:\+[\d.]+)?(?:[~-][\d.]+(?:\+[\d.]+)?)?)/);
-        if (timeMatch && timeMatch[1].length > 0) {
-            result += wrap('dsl-literal', timeMatch[1]);
-            remaining = remaining.slice(timeMatch[1].length);
+        // 11. 咬饵时间范围：~6 / 6~ / 6+10~17+32 / 10~32 ...
+        const biteTimeRangeMatch = remaining.match(biteTimeRangeRegex);
+        if (biteTimeRangeMatch && biteTimeRangeMatch[1].length > 0) {
+            result += highlightNumericOperators(biteTimeRangeMatch[1]);
+            remaining = remaining.slice(biteTimeRangeMatch[1].length);
             matched = true;
             continue;
         }
         
-        // 11. 咬饵类型 + 提钩类型: 全部/叹号/强力/精准 等 -> 字面量/关键字混合（咬饵类型作为字面量，提钩作为关键字）
-        const biteHookMatch = remaining.match(new RegExp(
-            `^((?:${全部模式}|[!！+]{1,8})((?:${提钩模式})\\d?)?)`, 'i'
-        ));
-        if (biteHookMatch) {
-            const biteType = biteHookMatch[1].match(new RegExp(`^(${全部模式}|[!！+]{1,8})`, 'i'));
-            if (biteType) {
-                result += wrap('dsl-literal', biteType[1]);
+        // 12. 咬饵类型 + 提钩类型（严格匹配）
+        const biteHookMatch = remaining.match(biteHookRegex);
+        if (biteHookMatch && biteHookMatch[1]) {
+            const biteParts = biteHookMatch[1].split(/(\s*\+\s*)/);
+            for (const part of biteParts) {
+                if (!part) {
+                    continue;
+                }
+                if (/^\s*\+\s*$/.test(part)) {
+                    result += wrap('dsl-symbol', part);
+                } else {
+                    result += wrap('dsl-literal', part);
+                }
             }
             if (biteHookMatch[2]) {
-                result += wrap('dsl-keyword', biteHookMatch[2]);
+                const ws = (biteHookMatch[2].match(/^\s*/) || [''])[0];
+                const hook = biteHookMatch[2].slice(ws.length);
+                result += escapeHtml(ws);
+                if (hook) {
+                    result += wrap('dsl-keyword', hook);
+                }
             }
             remaining = remaining.slice(biteHookMatch[0].length);
             matched = true;
             continue;
         }
+
+        // 13. 通用数字（计数器/ID/普通数字）
+        const numberMatch = remaining.match(/^(\d+(?:\.\d+)?)/);
+        if (numberMatch) {
+            result += wrap('dsl-literal', numberMatch[1]);
+            remaining = remaining.slice(numberMatch[1].length);
+            matched = true;
+            continue;
+        }
         
-        // 12. 【目标鱼】或【任意内容】（非钓饵位置） -> 括号为符号，内容为字面量（若含|则拆分）
-        const bracketMatch = remaining.match(/^([【\[(（])([^】\]）)]+)([】\]）)])/);
+        // 14. 括号内容（目标集合/钓饵名/IdOrName）
+        const bracketMatch = remaining.match(bracketRegex);
         if (bracketMatch) {
             result += wrap('dsl-symbol', bracketMatch[1]);
-            const innerContent = bracketMatch[2];
-            if (innerContent.includes('|')) {
-                const parts = innerContent.split('|');
-                result += wrap('dsl-literal', parts[0]);
-                result += wrap('dsl-symbol', '|');
-                result += wrap('dsl-literal', parts.slice(1).join('|'));
-            } else if (/^\d+$/.test(innerContent)) {
-                result += wrap('dsl-literal', innerContent);
-            } else {
-                result += wrap('dsl-literal', innerContent);
-            }
+            result += highlightListContent(bracketMatch[2], highlightTargetToken);
             result += wrap('dsl-symbol', bracketMatch[3]);
             remaining = remaining.slice(bracketMatch[0].length);
             matched = true;
             continue;
         }
         
-        // 13. = 及其右侧处理：将 = 视为符号，右侧按递归规则处理为字面量或其他
-        const equalMatch = remaining.match(/^(=)([^；;@》>《<]*?)([；;]|$)/);
+        // 15. 全局参数起始：= ... ;
+        const equalMatch = remaining.match(equalRegex);
         if (equalMatch) {
             result += wrap('dsl-symbol', '=');
             const content = equalMatch[2];
             if (content) {
-                // 如果内容是以括号开始的目标，尽量将内部作为字面量处理
-                const targetMatch = content.match(/^([【\[(（][^】\]）)]+[】\]）)])/);
-                if (targetMatch) {
-                    const innerText = targetMatch[1];
-                    // 括号内若不含数字则作为字面量
-                    if (!/\d/.test(innerText)) {
-                        result += wrap('dsl-literal', innerText);
-                    } else {
-                        result += highlightDSL(innerText);
-                    }
-                    const rest = content.slice(targetMatch[1].length);
-                    if (rest) {
-                        result += highlightDSL(rest);
-                    }
-                } else {
-                    // 其他内容按递归处理
-                    result += highlightDSL(content);
-                }
+                result += highlightDSL(content);
             }
             if (equalMatch[3]) {
                 result += wrap('dsl-symbol', equalMatch[3]);
@@ -294,7 +381,7 @@ function highlightDSL(code) {
             continue;
         }
 
-        // 14. 单独的 @（没有匹配到上面的模式）
+        // 16. 单独的 @（没有匹配到上面的模式）
         if (remaining[0] === '@') {
             result += wrap('dsl-symbol', '@');
             remaining = remaining.slice(1);
@@ -302,7 +389,7 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 15. markdown 反引号 `内容`
+        // 17. markdown 反引号 `内容`
         if (remaining[0] === '`') {
             const closeIdx = remaining.indexOf('`', 1);
             if (closeIdx !== -1) {
@@ -315,15 +402,15 @@ function highlightDSL(code) {
             }
         }
         
-        // 16. 标点符号
-        if ('~-;；()（）|+、，[]{}'.includes(remaining[0])) {
+        // 18. 标点符号
+        if ('~-;；()（）|+、，[]{}?？='.includes(remaining[0])) {
             result += wrap('dsl-symbol', remaining[0]);
             remaining = remaining.slice(1);
             matched = true;
             continue;
         }
         
-        // 17. 其他字符直接输出（已转义）
+        // 19. 其他字符直接输出（已转义）
         if (!matched) {
             result += escapeHtml(remaining[0]);
             remaining = remaining.slice(1);
