@@ -447,18 +447,234 @@ function highlightDSL(code) {
     return result;
 }
 
+function unescapeHtml(text) {
+    return text
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&');
+}
+
+const diffEquivalentSymbolMap = {
+    '》': '>',
+    '>': '>',
+    '《': '<',
+    '<': '<',
+    '；': ';',
+    ';': ';',
+    '！': '!',
+    '!': '!',
+    '（': '(',
+    '(': '(',
+    '）': ')',
+    ')': ')',
+    '【': '[',
+    '[': '[',
+    '】': ']',
+    ']': ']',
+    '？': '?',
+    '?': '?',
+};
+
+function normalizeDiffComparable(text) {
+    let normalized = '';
+    for (const ch of text) {
+        normalized += diffEquivalentSymbolMap[ch] || ch;
+    }
+    return normalized.replace(/\s+/g, '');
+}
+
+function parseHighlightedSegments(html) {
+    const segments = [];
+    const spanRegex = /<span class="([^"]+)">([\s\S]*?)<\/span>/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = spanRegex.exec(html)) !== null) {
+        if (match.index > lastIndex) {
+            const raw = html.slice(lastIndex, match.index);
+            segments.push({
+                type: 'raw',
+                html: raw,
+                text: unescapeHtml(raw),
+            });
+        }
+
+        segments.push({
+            type: 'span',
+            html: match[0],
+            className: match[1],
+            innerHtml: match[2],
+            text: unescapeHtml(match[2]),
+        });
+
+        lastIndex = spanRegex.lastIndex;
+    }
+
+    if (lastIndex < html.length) {
+        const raw = html.slice(lastIndex);
+        segments.push({
+            type: 'raw',
+            html: raw,
+            text: unescapeHtml(raw),
+        });
+    }
+
+    return segments;
+}
+
+function addClassToSpan(spanHtml, className) {
+    return spanHtml.replace(
+        /^<span class="([^"]+)">/,
+        (_, classes) => `<span class="${classes} ${className}">`
+    );
+}
+
+function buildComparableTokens(segments) {
+    const tokens = [];
+    for (let i = 0; i < segments.length; i++) {
+        const key = normalizeDiffComparable(segments[i].text);
+        if (!key) {
+            continue;
+        }
+        tokens.push({
+            segIndex: i,
+            key,
+        });
+    }
+    return tokens;
+}
+
+function computeMatchedSegmentIndexes(leftSegments, rightSegments) {
+    const left = buildComparableTokens(leftSegments);
+    const right = buildComparableTokens(rightSegments);
+    const n = left.length;
+    const m = right.length;
+    const dp = Array.from({ length: n + 1 }, () => Array(m + 1).fill(0));
+
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= m; j++) {
+            if (left[i - 1].key === right[j - 1].key) {
+                dp[i][j] = dp[i - 1][j - 1] + 1;
+            } else {
+                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+            }
+        }
+    }
+
+    const leftMatched = new Set();
+    const rightMatched = new Set();
+    let i = n;
+    let j = m;
+
+    while (i > 0 && j > 0) {
+        if (left[i - 1].key === right[j - 1].key) {
+            leftMatched.add(left[i - 1].segIndex);
+            rightMatched.add(right[j - 1].segIndex);
+            i--;
+            j--;
+        } else if (dp[i - 1][j] >= dp[i][j - 1]) {
+            i--;
+        } else {
+            j--;
+        }
+    }
+
+    return { leftMatched, rightMatched };
+}
+
+function renderSegmentsWithDiffMarks(segments, matchedSet) {
+    let result = '';
+
+    for (let i = 0; i < segments.length; i++) {
+        const seg = segments[i];
+        const key = normalizeDiffComparable(seg.text);
+
+        if (!key || matchedSet.has(i)) {
+            result += seg.html;
+            continue;
+        }
+
+        if (seg.type === 'span') {
+            result += addClassToSpan(seg.html, 'diff-token-change');
+        } else {
+            result += `<span class="diff-token-change">${seg.html}</span>`;
+        }
+    }
+
+    return result;
+}
+
+function highlightDiffPair(removedText, addedText) {
+    const removedHtml = highlightDSL(removedText);
+    const addedHtml = highlightDSL(addedText);
+    const removedSegments = parseHighlightedSegments(removedHtml);
+    const addedSegments = parseHighlightedSegments(addedHtml);
+    const { leftMatched, rightMatched } = computeMatchedSegmentIndexes(removedSegments, addedSegments);
+
+    return {
+        removed: renderSegmentsWithDiffMarks(removedSegments, leftMatched),
+        added: renderSegmentsWithDiffMarks(addedSegments, rightMatched),
+    };
+}
+
 /**
  * 高亮 diff 代码块
+ * - 对 +/- 代码块做 token 级语义对比
+ * - 比较时忽略空白差异与等价符号差异（如 > / 》, [ / 【, ; / ；）
  */
 function highlightDiff(code) {
-    return code.split('\n').map(line => {
-        if (line.startsWith('+')) {
-            return `<span class="diff-add">${escapeHtml(line[0])}${highlightDSL(line.slice(1))}</span>`;
-        } else if (line.startsWith('-')) {
-            return `<span class="diff-remove">${escapeHtml(line[0])}${highlightDSL(line.slice(1))}</span>`;
+    const lines = code.split('\n');
+    const output = [];
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+
+        if (line.startsWith('+') || line.startsWith('-')) {
+            const block = [];
+            while (i < lines.length && (lines[i].startsWith('+') || lines[i].startsWith('-'))) {
+                block.push({
+                    type: lines[i][0],
+                    content: lines[i].slice(1),
+                    render: null,
+                });
+                i++;
+            }
+            i--;
+
+            const removedIndexes = [];
+            const addedIndexes = [];
+            for (let j = 0; j < block.length; j++) {
+                if (block[j].type === '-') {
+                    removedIndexes.push(j);
+                } else {
+                    addedIndexes.push(j);
+                }
+            }
+
+            const pairCount = Math.min(removedIndexes.length, addedIndexes.length);
+            for (let p = 0; p < pairCount; p++) {
+                const rIdx = removedIndexes[p];
+                const aIdx = addedIndexes[p];
+                const pair = highlightDiffPair(block[rIdx].content, block[aIdx].content);
+                block[rIdx].render = pair.removed;
+                block[aIdx].render = pair.added;
+            }
+
+            for (const entry of block) {
+                const content = entry.render || highlightDSL(entry.content);
+                if (entry.type === '+') {
+                    output.push(`<span class="diff-add">${escapeHtml('+')}${content}</span>`);
+                } else {
+                    output.push(`<span class="diff-remove">${escapeHtml('-')}${content}</span>`);
+                }
+            }
+            continue;
         }
-        return highlightDSL(line);
-    }).join('\n');
+
+        output.push(highlightDSL(line));
+    }
+
+    return output.join('\n');
 }
 
 /**
