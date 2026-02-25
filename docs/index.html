@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="wiki-container">
-        <nav class="sidebar">
+        <nav id="wiki-sidebar" class="sidebar">
             <h2>MissFisher Wiki</h2>
             <ul id="nav-links">
                 <li><a href="?page=QuicklyEditingExistingPresets" class="nav-link">快速修改指南</a></li>
@@ -17,7 +17,7 @@
                 <li><a href="?page=Lure" class="nav-link">诱饵技能</a></li>
             </ul>
         </nav>
-        <button id="sidebar-toggle" aria-label="切换侧栏">☰</button>
+        <button id="sidebar-toggle" type="button" aria-controls="wiki-sidebar" aria-expanded="false" aria-label="打开侧栏">☰</button>
         <main class="content">
             <div id="markdown-content">
                 <p>正在加载...</p>
@@ -60,4 +60,5 @@
     <script src="js/sidebar-toggle.js"></script>
 </body>
 </html>
+
 
