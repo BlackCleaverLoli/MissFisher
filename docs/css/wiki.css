@@ -1,4 +1,15 @@
-﻿/* MissFisher Wiki 样式 - VS Code Dark+ 主题 */
+/* MissFisher Wiki 样式 - VS Code Dark+ 主题 */
+
+:root {
+    --sidebar-width: 260px;
+    --content-max-width: 900px;
+    --surface-0: #1e1e1e;
+    --surface-1: #252526;
+    --surface-2: #2d2d30;
+    --border-color: #3c3c3c;
+    --text-color: #d4d4d4;
+    --accent-color: #4ec9b0;
+}
 
 * {
     margin: 0;
@@ -6,34 +17,53 @@
     box-sizing: border-box;
 }
 
+html,
 body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
-    background-color: #1e1e1e;
-    color: #d4d4d4;
+    background-color: var(--surface-0);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
 .wiki-container {
-    display: flex;
     min-height: 100vh;
-    /* keep layout but allow overlay sidebar */
+    width: 100%;
+    background-color: var(--surface-0);
 }
 
 /* 侧边栏 */
 .sidebar {
-    width: 260px; /* 略微增加宽度，提升阅读舒适度 */
-    background-color: #252526; /* 保持原色 */
-    padding: 20px 15px; /* 内边距左右稍收紧 */
-    border-right: 1px solid #3c3c3c;
+    width: var(--sidebar-width);
+    background-color: var(--surface-1);
+    padding: 20px 15px;
+    border-right: 1px solid var(--border-color);
     position: fixed;
     left: 0;
     top: 0;
     height: 100vh;
+    z-index: 30;
     overflow-y: auto;
+    transform: translateX(0);
+    transition: transform 0.24s ease;
 
     /* 优化滚动条样式 */
-    scrollbar-width: thin;               /* Firefox */
+    scrollbar-width: thin;                /* Firefox */
     scrollbar-color: #454545 transparent; /* Firefox */
+}
+
+body.sidebar-collapsed .sidebar {
+    transform: translateX(calc(-1 * var(--sidebar-width)));
+    pointer-events: none;
+}
+
+body:not(.sidebar-collapsed) .sidebar {
+    pointer-events: auto;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -53,15 +83,24 @@ body {
 
 /* 侧栏链接交互优化 */
 .sidebar a {
-    color: #d4d4d4 !important;
+    color: var(--text-color) !important;
+    display: block;
+    padding: 6px 8px;
+    border-radius: 6px;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .sidebar a:hover,
 .sidebar a:focus {
-    color: #4ec9b0 !important;  /* 柔和的高亮色 */
-    text-decoration: underline;
+    color: var(--accent-color) !important;
+    background-color: rgba(78, 201, 176, 0.14);
+}
+
+.sidebar a.active {
+    color: var(--accent-color) !important;
+    background-color: rgba(78, 201, 176, 0.22);
+    font-weight: 600;
 }
 
 /* 侧栏标题加粗并灵活间距 */
@@ -69,7 +108,7 @@ body {
     font-weight: 600;
     margin-bottom: 15px;
     font-size: 1.25em;
-    color: #d4d4d4 !important;
+    color: var(--text-color) !important;
 }
 
 /* 侧栏列表项间距优化 */
@@ -82,29 +121,50 @@ body {
     margin-bottom: 12px;
 }
 
-/* 小屏幕时优化侧栏 */
-@media (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
+#sidebar-toggle {
+    position: fixed;
+    left: 12px;
+    top: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(45, 45, 48, 0.95);
+    color: var(--text-color);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 40;
 }
 
-/* 主内容区 - 完全居中 */
+#sidebar-toggle:hover {
+    border-color: #5a5a5a;
+    background-color: #303035;
+}
+
+#sidebar-toggle:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
+}
+
+/* 主内容区 */
 .content {
-    padding: 40px 60px;
-    max-width: 900px;
-    width: 100%;
-    margin: 40px auto; /* center horizontally */
-    /* remove the fixed left offset so content stays centered even when sidebar visible */
-    /* display: flex; flex-direction: column; align-items: center; 都移除 */
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width);
+    padding: 40px clamp(20px, 4vw, 60px);
     position: relative;
-    z-index: 0;
+    z-index: 1;
+    transition: margin-left 0.24s ease, width 0.24s ease;
 }
 
-/* 当侧栏可见并希望不被侧栏遮挡时，可在 .content 加上左侧内边距（可选） */
-body:not(.sidebar-collapsed) .content {
-    /* leave a small gap from the left edge so sidebar doesn't overlap text when wide */
-    padding-left: 80px; /* small safe area; user can tweak if needed */
+body.sidebar-collapsed .content {
+    width: 100%;
+    margin-left: 0;
+}
+
+#markdown-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
 }
 
 /* Markdown 渲染样式 */
@@ -374,13 +434,34 @@ pre code .dsl-comment,
 
 /* 响应式 */
 @media (max-width: 768px) {
-    .sidebar {
-        display: none;
+    :root {
+        --sidebar-width: min(82vw, 300px);
     }
+
+    .sidebar {
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 8px 0 28px rgba(0, 0, 0, 0.45);
+    }
+
     .content {
         margin-left: 0;
-        padding: 20px;
         width: 100%;
         max-width: 100%;
+        padding: 68px 16px 24px;
+    }
+
+    #markdown-content {
+        max-width: 100%;
+    }
+
+    body:not(.sidebar-collapsed)::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.45);
+        z-index: 20;
+    }
+
+    body:not(.sidebar-collapsed) {
+        overflow: hidden;
     }
 }
