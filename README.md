@@ -1,6 +1,6 @@
 # MissFisher
   
-**[安装指南](#安装指南) | [完成认证](#完成认证以获得-missfisher-使用权) | [使用说明](#使用说明) | [预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=yirja0) | [钓鱼王](#用-missfisher-钓特定的鱼类) | [自动海钓](#用-missfisher-出海垂钓) | [宇宙探索](#用-missfisher-完成宇宙探索任务) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求) | [练级？](#用-missfisher-练级)**  
+**[安装指南](#安装指南) | [完成认证](#完成认证以获得-missfisher-使用权) | [使用说明](#使用说明) | [预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=yirja0) | [钓鱼王](#用-missfisher-钓特定的鱼类) | [自动海钓](#用-missfisher-出海垂钓) | [宇宙探索](#用-missfisher-完成宇宙探索任务) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求) | [练级？](#用-missfisher-练级) | [学习表达式](https://blackcleaverloli.github.io/MissFisher/?page=LearnAngleExpression) | [IPC API](#ipc-api)**  
   
 ## 简介
 MissFisher 是一个基于 Dalamud 的 FF14 插件，致力于（半）自动化游戏中的钓鱼相关玩法。  
