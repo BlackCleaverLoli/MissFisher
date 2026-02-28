@@ -4,7 +4,7 @@
  * 使用粗粒度正则匹配整个语法块
  *
  * 颜色/类别规则：
- * - 语义类型：dsl-mode / dsl-trigger / dsl-hook / dsl-bite / dsl-time / dsl-name / dsl-id / dsl-op / dsl-sep / dsl-comment
+ * - 语义类型：dsl-mode / dsl-trigger / dsl-hook / dsl-bite / dsl-time / dsl-name / dsl-id / dsl-literal / dsl-modifier / dsl-op / dsl-sep / dsl-comment
  * - 语法异常不做特殊类型，按 dsl-op 简单渲染
  */
 
@@ -15,6 +15,73 @@ const 提钩模式 = '强力|精准|双提|三提|华丽|双重|三重|pw|pc|dh|
 const 内联拍水模式 = '拍水|拍|ss';
 const 内联专一模式 = '专一|专|ic';
 const 嵌套模式 = '拍水后|专一后|阶段|stg|stage|鱼识|int|pss|pic|拍水|拍|ss|专一|专|ic';
+
+const 特殊常量 = ['any', '任何', '占位', 'ph'];
+
+const 全局修饰词精确匹配 = new Set([
+    '不撒饵', 'nochum',
+    '收藏品', 'coll',
+    '不收集', 'nocoll',
+    '钓组', 'snag',
+    '大尺寸', 'large',
+    '攒鱼计', 'aa',
+    '套娃', 'mooch-loop',
+    '梭哈', 'all-in',
+    '等待专一', 'waitic',
+    '大鱼知识', 'bfg',
+    '引诱', 'lure',
+    '雄心', 'a-lure',
+    '谦逊', 'm-lure',
+    '重随', 're-roll',
+    '鱼影', 'shadow',
+    '多提', 'mhs',
+    '加钩', 'mh',
+    '回收', 'recy',
+    '鱼眼', 'fe',
+    '鱼篓', 'sh',
+    '鱼篓专一', 'sh-ic',
+    '多提回退', 'mhs-back',
+    '允许溢出', 'overflow',
+    '等待华丽', 'wait-sh',
+    '跳阶段', 'skipstg',
+    '强制预备', 'force-prep',
+    '银星', 'silver',
+    '无强心剂', 'nocord',
+    '无恩宠', 'nofavor',
+]);
+
+const 全局修饰词可带上限 = [
+    /^引诱\d+$/,
+    /^雄心\d+$/,
+    /^谦逊\d+$/,
+    /^重随\d+$/,
+    /^鱼影\d+$/,
+    /^lure\d+$/i,
+    /^a-lure\d+$/i,
+    /^m-lure\d+$/i,
+    /^re-roll\d+$/i,
+    /^shadow\d+$/i,
+];
+
+function isSpecialLiteralToken(text) {
+    const trimmed = text.trim();
+    if (!trimmed) {
+        return false;
+    }
+    return 特殊常量.some(t => t.toLowerCase() === trimmed.toLowerCase());
+}
+
+function isModifierToken(text) {
+    const trimmed = text.trim();
+    if (!trimmed) {
+        return false;
+    }
+    const lower = trimmed.toLowerCase();
+    if (全局修饰词精确匹配.has(trimmed) || 全局修饰词精确匹配.has(lower)) {
+        return true;
+    }
+    return 全局修饰词可带上限.some(re => re.test(trimmed));
+}
 
 /**
  * 转义 HTML 特殊字符
@@ -41,6 +108,8 @@ const tokenClassMap = {
     time: 'dsl-time',
     name: 'dsl-name',
     id: 'dsl-id',
+    literal: 'dsl-literal',
+    modifier: 'dsl-modifier',
     op: 'dsl-op',
     sep: 'dsl-sep',
     comment: 'dsl-comment',
@@ -97,12 +166,18 @@ function highlightIdOrNameToken(text) {
 
     const aliasMatch = core.match(/^([\s\S]*?)(\s*\|\s*)(\d+)$/);
     if (aliasMatch && aliasMatch[1].trim().length > 0) {
-        result += token('name', aliasMatch[1]);
+        if (isSpecialLiteralToken(aliasMatch[1])) {
+            result += token('literal', aliasMatch[1]);
+        } else {
+            result += token('name', aliasMatch[1]);
+        }
         result += token('op', aliasMatch[2]);
         result += token('id', aliasMatch[3]);
     } else {
         if (/^\d+$/.test(core.trim())) {
             result += token('id', core);
+        } else if (isSpecialLiteralToken(core)) {
+            result += token('literal', core);
         } else {
             result += token('name', core);
         }
@@ -432,8 +507,24 @@ function highlightDSL(code) {
             matched = true;
             continue;
         }
+
+        // 19. 词法单元（优先识别全局修饰词与特殊常量）
+        const wordMatch = remaining.match(/^([A-Za-z][A-Za-z0-9-]*|[\u4E00-\u9FFF][\u4E00-\u9FFF0-9-]*)/);
+        if (wordMatch) {
+            const word = wordMatch[1];
+            if (isModifierToken(word)) {
+                result += token('modifier', word);
+            } else if (isSpecialLiteralToken(word)) {
+                result += token('literal', word);
+            } else {
+                result += token('name', word);
+            }
+            remaining = remaining.slice(word.length);
+            matched = true;
+            continue;
+        }
         
-        // 19. 其他字符直接输出（已转义）
+        // 20. 其他字符直接输出（已转义）
         if (!matched) {
             if (/\s/.test(remaining[0])) {
                 result += escapeHtml(remaining[0]);
