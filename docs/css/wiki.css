@@ -2,13 +2,20 @@
 
 :root {
     --sidebar-width: 260px;
-    --content-max-width: 900px;
-    --surface-0: #1e1e1e;
-    --surface-1: #252526;
-    --surface-2: #2d2d30;
-    --border-color: #3c3c3c;
-    --text-color: #d4d4d4;
+    --content-max-width: 980px;
+    --surface-0: #0f1318;
+    --surface-1: #151b22;
+    --surface-2: #1c2430;
+    --surface-3: #273241;
+    --border-color: #2e3a47;
+    --text-color: #e6edf3;
+    --muted-text: #9fb0c1;
     --accent-color: #4ec9b0;
+    --accent-color-2: #d7ba7d;
+    --danger-color: #f48771;
+    --success-color: #57a64a;
+    --font-sans: 'Sarasa UI SC', 'HarmonyOS Sans SC', 'Source Han Sans SC', 'Microsoft YaHei UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
 
     /* DSL token categories (mapped from Visual_Studio_Dark.icls) */
     --dsl-keyword-control: #569cd6;   /* DEFAULT_KEYWORD */
@@ -36,24 +43,43 @@ body {
 
 body {
     min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
-    background-color: var(--surface-0);
+    font-family: var(--font-sans);
+    background:
+        radial-gradient(circle at 10% -5%, rgba(78, 201, 176, 0.15), transparent 35%),
+        radial-gradient(circle at 92% 12%, rgba(215, 186, 125, 0.12), transparent 30%),
+        linear-gradient(180deg, #0c1015 0%, #0f1318 100%);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.72;
+    letter-spacing: 0.01em;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.2;
+    z-index: 0;
 }
 
 .wiki-container {
+    position: relative;
     min-height: 100vh;
     width: 100%;
-    background-color: var(--surface-0);
+    background: transparent;
 }
 
 /* 侧边栏 */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: var(--surface-1);
-    padding: 20px 15px;
-    border-right: 1px solid var(--border-color);
+    background:
+        linear-gradient(180deg, rgba(19, 25, 33, 0.94) 0%, rgba(16, 21, 29, 0.9) 100%);
+    padding: 26px 16px 28px;
+    border-right: 1px solid rgba(124, 145, 168, 0.24);
     position: fixed;
     left: 0;
     top: 0;
@@ -62,10 +88,12 @@ body {
     overflow-y: auto;
     transform: translateX(0);
     transition: transform 0.24s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 0 32px rgba(0, 0, 0, 0.38);
 
     /* 优化滚动条样式 */
     scrollbar-width: thin;                /* Firefox */
-    scrollbar-color: #454545 transparent; /* Firefox */
+    scrollbar-color: rgba(160, 176, 194, 0.45) transparent; /* Firefox */
 }
 
 body.sidebar-collapsed .sidebar {
@@ -86,9 +114,9 @@ body:not(.sidebar-collapsed) .sidebar {
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background-color: #454545;  /* 较深的滚动条 */
+    background-color: rgba(160, 176, 194, 0.45);
     border-radius: 8px;
-    border: 2px solid transparent; /* 给与间距感 */
+    border: 2px solid transparent;
     background-clip: content-box;
 }
 
@@ -96,29 +124,36 @@ body:not(.sidebar-collapsed) .sidebar {
 .sidebar a {
     color: var(--text-color) !important;
     display: block;
-    padding: 6px 8px;
-    border-radius: 6px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border-left: 2px solid transparent;
     text-decoration: none;
-    transition: color 0.2s ease, background-color 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .sidebar a:hover,
 .sidebar a:focus {
     color: var(--accent-color) !important;
-    background-color: rgba(78, 201, 176, 0.14);
+    background-color: rgba(78, 201, 176, 0.11);
+    border-left-color: rgba(78, 201, 176, 0.62);
+    transform: translateX(1px);
 }
 
 .sidebar a.active {
     color: var(--accent-color) !important;
-    background-color: rgba(78, 201, 176, 0.22);
+    background:
+        linear-gradient(90deg, rgba(78, 201, 176, 0.22), rgba(78, 201, 176, 0.06));
+    border-left-color: var(--accent-color);
     font-weight: 600;
 }
 
 /* 侧栏标题加粗并灵活间距 */
 .sidebar h2 {
     font-weight: 600;
-    margin-bottom: 15px;
-    font-size: 1.25em;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--text-color) !important;
 }
 
@@ -129,28 +164,32 @@ body:not(.sidebar-collapsed) .sidebar {
 }
 
 .sidebar li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 #sidebar-toggle {
     position: fixed;
     left: 12px;
     top: 12px;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    background-color: rgba(45, 45, 48, 0.95);
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    border: 1px solid rgba(118, 137, 157, 0.4);
+    background:
+        linear-gradient(180deg, rgba(30, 38, 49, 0.96), rgba(19, 24, 32, 0.95));
     color: var(--text-color);
     font-size: 22px;
     line-height: 1;
     cursor: pointer;
     z-index: 40;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #sidebar-toggle:hover {
-    border-color: #5a5a5a;
-    background-color: #303035;
+    border-color: rgba(78, 201, 176, 0.6);
+    transform: translateY(-1px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.38);
 }
 
 #sidebar-toggle:focus-visible {
@@ -162,9 +201,9 @@ body:not(.sidebar-collapsed) .sidebar {
 .content {
     width: calc(100% - var(--sidebar-width));
     margin-left: var(--sidebar-width);
-    padding: 40px clamp(20px, 4vw, 60px);
+    padding: 54px clamp(22px, 4.8vw, 74px);
     position: relative;
-    z-index: 1;
+    z-index: 2;
     transition: margin-left 0.24s ease, width 0.24s ease;
 }
 
@@ -176,102 +215,175 @@ body.sidebar-collapsed .content {
 #markdown-content {
     max-width: var(--content-max-width);
     margin: 0 auto;
+    padding: clamp(20px, 3vw, 36px) clamp(16px, 2.4vw, 34px);
+    border-radius: 18px;
+    border: 1px solid rgba(122, 144, 167, 0.28);
+    background:
+        linear-gradient(180deg, rgba(18, 24, 32, 0.9), rgba(13, 18, 25, 0.9));
+    box-shadow:
+        0 16px 44px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(4px);
+    animation: wiki-fade-in 0.4s ease-out both;
+}
+
+#markdown-content > * {
+    animation: wiki-rise 0.35s ease both;
 }
 
 /* Markdown 渲染样式 */
 #markdown-content h1 {
-    color: #40c7b7 !important;        /* 主标题略微调整为更柔和的青绿色 */
-    font-size: 2.25em;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #3c3c3c;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.4); /* 添加轻微投影 */
+    color: #dff9f2 !important;
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(132, 154, 176, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
     font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.015em;
+    scroll-margin-top: 78px;
 }
 
 #markdown-content h2 {
-    color: #dcdcaa !important;
-    font-size: 1.75em;
-    margin: 32px 0 18px 0;
+    color: #e4cf9a !important;
+    font-size: clamp(1.45rem, 2.5vw, 1.9rem);
+    margin: 38px 0 16px 0;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
+    padding-left: 10px;
+    border-left: 3px solid rgba(215, 186, 125, 0.58);
+    scroll-margin-top: 84px;
 }
 
 #markdown-content h3 {
-    color: #a0cef9 !important;  /* 使蓝色更清晰，提升辨识度 */
-    font-size: 1.35em;
-    margin: 22px 0 12px 0;
+    color: #9fc9ff !important;
+    font-size: clamp(1.18rem, 1.8vw, 1.45rem);
+    margin: 28px 0 12px 0;
     font-weight: 600;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.015em;
+    scroll-margin-top: 84px;
 }
 
 #markdown-content p {
-    margin: 15px 0;
+    margin: 14px 0;
+    color: #d7e0ea;
 }
 
 #markdown-content a {
-    color: #569cd6;
-    text-decoration: none;
+    color: #79c0ff;
+    text-decoration-color: rgba(121, 192, 255, 0.42);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 #markdown-content a:hover {
-    text-decoration: underline;
+    color: #9dd1ff;
+    text-decoration-color: rgba(157, 209, 255, 0.92);
 }
 
 #markdown-content ul, #markdown-content ol {
-    margin: 15px 0 15px 25px;
+    margin: 14px 0 16px 24px;
 }
 
 #markdown-content li {
-    margin: 8px 0;
+    margin: 7px 0;
+    color: #d2dce7;
+}
+
+#markdown-content li::marker {
+    color: rgba(140, 192, 233, 0.85);
 }
 
 #markdown-content blockquote {
-    border-left: 4px solid #569cd6;
-    padding: 1px 12px;         /* 减小上下内边距 */
-    margin: 6px 0;             /* 减小上下外边距 */
-    background-color: #2d2d30;
-    border-radius: 3px 4px 4px 3px; /* 更小的圆角 */
+    border-left: 3px solid var(--accent-color);
+    padding: 10px 14px;
+    margin: 18px 0;
+    background:
+        linear-gradient(90deg, rgba(78, 201, 176, 0.12), rgba(78, 201, 176, 0.04));
+    border-radius: 8px;
+    color: #c6d6e6;
+}
+
+#markdown-content blockquote p {
+    margin: 8px 0;
 }
 
 #markdown-content blockquote code {
-    background-color: #232325;
-    padding: 2px 6px;
-    border-radius: 3px;
-    color: #dcdcdc;
-    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    background-color: rgba(15, 22, 30, 0.75);
+    padding: 1px 6px;
+    border-radius: 5px;
+    color: #e8f0f7;
+    border: 1px solid rgba(120, 139, 158, 0.35);
+    font-family: var(--font-mono);
     font-size: 14px;
     font-variant-ligatures: none;
     font-feature-settings: "liga" 0;
 }
 
+#markdown-content hr {
+    margin: 24px 0;
+    border: 0;
+    border-top: 1px solid rgba(127, 148, 171, 0.32);
+}
+
+#markdown-content strong {
+    color: #f2dfb4;
+}
+
+#markdown-content em {
+    color: #c8d7e8;
+}
+
+#markdown-content img {
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(125, 145, 166, 0.32);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+    margin: 14px 0;
+}
+
 /* 代码块样式 - VS Code Dark+ */
 #markdown-content pre {
-    background-color: #1e1e1e;
-    border: 1px solid #3c3c3c;
-    border-radius: 6px;
-    padding: 16px;
+    background-color: #10161d;
+    border: 1px solid rgba(126, 147, 169, 0.38);
+    border-radius: 12px;
+    padding: 17px 18px;
     overflow-x: auto;
-    margin: 15px 0;
+    margin: 18px 0;
+    font-variant-ligatures: none; /* 禁用连字，防止 <= => 被替换 */
+    font-feature-settings: "liga" 0; /* 兼容性写法 */
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 10px 26px rgba(0, 0, 0, 0.32);
+    line-height: 1.56;
+}
+
+#markdown-content code {
+    font-family: var(--font-mono);
+    font-size: 13.5px;
     font-variant-ligatures: none; /* 禁用连字，防止 <= => 被替换 */
     font-feature-settings: "liga" 0; /* 兼容性写法 */
 }
 
-#markdown-content code {
-    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
-    font-size: 14px;
-    font-variant-ligatures: none; /* 禁用连字，防止 <= => 被替换 */
-    font-feature-settings: "liga" 0; /* 兼容性写法 */
+#markdown-content pre code {
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    color: inherit;
 }
 
 #markdown-content p code,
 #markdown-content li code,
 #markdown-content td code,
 #markdown-content th code {
-    background-color: #2d2d30;
-    padding: 2px 6px;
-    border-radius: 3px;
-    color: #dcdcdc;
+    background-color: rgba(78, 201, 176, 0.13);
+    border: 1px solid rgba(78, 201, 176, 0.25);
+    padding: 1px 6px;
+    border-radius: 6px;
+    color: #cbf4ea;
 }
 
 /* Ensure sidebar text and its children keep normal color regardless of DSL classes */
@@ -281,7 +393,7 @@ body.sidebar-collapsed .content {
 .sidebar li,
 .sidebar a,
 .sidebar p {
-    color: #d4d4d4 !important;
+    color: var(--text-color) !important;
 }
 
 
@@ -367,12 +479,12 @@ pre code .dsl-comment,
 
 /* Diff 代码块样式 */
 .diff-add {
-    background-color: rgba(87, 166, 74, 0.2);  /* 绿色背景 */
+    background-color: rgba(87, 166, 74, 0.18);
     display: block;
 }
 
 .diff-remove {
-    background-color: rgba(214, 37, 37, 0.2);  /* 红色背景 */
+    background-color: rgba(244, 135, 113, 0.16);
     display: block;
 }
 
@@ -382,40 +494,56 @@ pre code .dsl-comment,
 }
 
 .diff-remove .diff-token-change {
-    background-color: rgba(214, 37, 37, 0.35);
+    background-color: rgba(244, 135, 113, 0.28);
     border-radius: 2px;
 }
 
 /* 表格样式 */
 #markdown-content table {
-    border-collapse: collapse;
-    width: auto;
-    margin: 15px 0;
-    font-size: 15px;
-    background: #1e1e1e;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    font-size: 14px;
+    background: rgba(17, 23, 31, 0.86);
+    border: 1px solid rgba(126, 148, 170, 0.32);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
 #markdown-content th, #markdown-content td {
-    border: 1px solid #3c3c3c;
-    padding: 10px;
-    /* 默认左对齐 */
+    border-right: 1px solid rgba(122, 142, 162, 0.3);
+    border-bottom: 1px solid rgba(122, 142, 162, 0.3);
+    padding: 10px 12px;
     text-align: left;
     vertical-align: middle;
+    min-width: 88px;
 }
 
 #markdown-content th {
-    background-color: #2d2d30;      /* 表头背景色，深色调 */
-    color: #4ec9b0;                 /* 表头文字颜色，青绿色 */
-    font-weight: 600;               /* 加粗 */
-    text-align: center;             /* 居中对齐，常见效果 */
-    padding: 12px 15px;             /* 内边距，保持表头内容舒适 */
-    border: 1px solid #3c3c3c;     /* 边框，和表体统一 */
-    user-select: none;              /* 禁止选中，避免误操作（可选） */
-    /* 其他样式，根据需求可以添加 */
+    background:
+        linear-gradient(180deg, rgba(77, 99, 121, 0.3), rgba(36, 48, 62, 0.45));
+    color: #bde9df;
+    font-weight: 700;
+    user-select: none;
 }
 
 #markdown-content tr:nth-child(even) {
-    background-color: #252526;
+    background-color: rgba(56, 70, 86, 0.2);
+}
+
+#markdown-content tr:hover td {
+    background-color: rgba(94, 118, 142, 0.18);
+}
+
+#markdown-content tr > *:last-child {
+    border-right: 0;
+}
+
+#markdown-content tr:last-child > * {
+    border-bottom: 0;
 }
 
 /* 支持 align 属性和常见对齐 class，模拟 GitHub 效果 */
@@ -435,12 +563,6 @@ pre code .dsl-comment,
     text-align: left !important;
 }
 
-/* 兼容 GFM 的 pipe 表格样式 */
-#markdown-content table {
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-}
 #markdown-content th, #markdown-content td {
     word-break: break-word;
 }
@@ -448,12 +570,48 @@ pre code .dsl-comment,
 /* diff 代码块 */
 #markdown-content pre code .diff-add {
     color: #b5cea8;
-    background-color: rgba(155, 185, 85, 0.2);
+    background-color: rgba(155, 185, 85, 0.16);
 }
 
 #markdown-content pre code .diff-remove {
     color: #f48771;
-    background-color: rgba(244, 135, 113, 0.2);
+    background-color: rgba(244, 135, 113, 0.16);
+}
+
+@keyframes wiki-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes wiki-rise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #markdown-content,
+    #markdown-content > * {
+        animation: none !important;
+    }
+
+    .sidebar,
+    .content,
+    #sidebar-toggle,
+    .sidebar a {
+        transition: none !important;
+    }
 }
 
 /* 响应式 */
@@ -463,29 +621,43 @@ pre code .dsl-comment,
     }
 
     .sidebar {
-        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 8px 0 28px rgba(0, 0, 0, 0.45);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 10px 0 30px rgba(0, 0, 0, 0.5);
     }
 
     .content {
         margin-left: 0;
         width: 100%;
         max-width: 100%;
-        padding: 68px 16px 24px;
+        padding: 70px 14px 24px;
     }
 
     #markdown-content {
         max-width: 100%;
+        padding: 18px 14px;
+        border-radius: 14px;
     }
 
     body:not(.sidebar-collapsed)::before {
         content: '';
         position: fixed;
         inset: 0;
-        background-color: rgba(0, 0, 0, 0.45);
+        background-color: rgba(0, 0, 0, 0.56);
         z-index: 20;
     }
 
     body:not(.sidebar-collapsed) {
         overflow: hidden;
+    }
+
+    #markdown-content h1 {
+        font-size: clamp(1.7rem, 8vw, 2.15rem);
+    }
+
+    #markdown-content h2 {
+        font-size: clamp(1.3rem, 6vw, 1.55rem);
+    }
+
+    #markdown-content h3 {
+        font-size: clamp(1.08rem, 5vw, 1.28rem);
     }
 }
