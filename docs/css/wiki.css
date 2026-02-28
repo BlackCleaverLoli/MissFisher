@@ -9,6 +9,17 @@
     --border-color: #3c3c3c;
     --text-color: #d4d4d4;
     --accent-color: #4ec9b0;
+
+    /* DSL token categories (mapped from Visual_Studio_Dark.icls) */
+    --dsl-keyword-control: #569cd6;   /* DEFAULT_KEYWORD */
+    --dsl-keyword-context: #d8a0df;   /* ReSharper.CONTROL_FLOW_KEYWORD */
+    --dsl-symbol-builtin: #dcdca9;    /* DEFAULT_INSTANCE_METHOD */
+    --dsl-literal-domain: #4dc9b0;    /* DEFAULT_CLASS_NAME */
+    --dsl-literal-number: #b5cea8;    /* DEFAULT_NUMBER */
+    --dsl-identifier: #9cdcfe;        /* DEFAULT_LOCAL_VARIABLE */
+    --dsl-operator: #dcdcdc;          /* DEFAULT_IDENTIFIER */
+    --dsl-punctuation: #a3a3a3;       /* DEFAULT_DOC_COMMENT_TAG */
+    --dsl-comment: #57a64a;           /* DEFAULT_LINE_COMMENT */
 }
 
 * {
@@ -281,63 +292,76 @@ body.sidebar-collapsed .content {
 pre code .dsl-mode,
 .language-dsl .dsl-mode,
 .language-angex .dsl-mode {
-    color: #569cd6;
+    color: var(--dsl-keyword-control);
     font-weight: bold;
 }
 
 pre code .dsl-trigger,
 .language-dsl .dsl-trigger,
 .language-angex .dsl-trigger {
-    color: #4fc1ff;
+    color: var(--dsl-keyword-context);
     font-weight: 600;
 }
 
 pre code .dsl-hook,
 .language-dsl .dsl-hook,
 .language-angex .dsl-hook {
-    color: #dcdcaa;
+    color: var(--dsl-symbol-builtin);
 }
 
 pre code .dsl-bite,
 .language-dsl .dsl-bite,
 .language-angex .dsl-bite {
-    color: #ce9178;
+    color: var(--dsl-literal-domain);
 }
 
 pre code .dsl-time,
 .language-dsl .dsl-time,
 .language-angex .dsl-time {
-    color: #b5cea8;
+    color: var(--dsl-literal-number);
 }
 
 pre code .dsl-name,
 .language-dsl .dsl-name,
 .language-angex .dsl-name {
-    color: #9cdcfe;
+    color: var(--dsl-identifier);
 }
 
 pre code .dsl-id,
 .language-dsl .dsl-id,
 .language-angex .dsl-id {
-    color: #4ec9b0;
+    color: var(--dsl-literal-number);
+}
+
+pre code .dsl-literal,
+.language-dsl .dsl-literal,
+.language-angex .dsl-literal {
+    color: var(--dsl-literal-domain);
+}
+
+pre code .dsl-modifier,
+.language-dsl .dsl-modifier,
+.language-angex .dsl-modifier {
+    color: var(--dsl-symbol-builtin);
+    font-weight: 600;
 }
 
 pre code .dsl-op,
 .language-dsl .dsl-op,
 .language-angex .dsl-op {
-    color: #d4d4d4;
+    color: var(--dsl-operator);
 }
 
 pre code .dsl-sep,
 .language-dsl .dsl-sep,
 .language-angex .dsl-sep {
-    color: #c5c5c5;
+    color: var(--dsl-punctuation);
 }
 
 pre code .dsl-comment,
 .language-dsl .dsl-comment,
 .language-angex .dsl-comment {
-    color: #57a64a;
+    color: var(--dsl-comment);
     font-style: italic;
 }
 
