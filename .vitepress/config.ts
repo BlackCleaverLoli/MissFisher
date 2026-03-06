@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress'
 import { highlightDSL, highlightDiff } from './theme/angex-highlighter'
 
 function renderHighlightedLines(highlightedHtml: string) {
@@ -118,7 +118,7 @@ export default defineConfig({
       next: '下一页'
     },
     editLink: {
-      pattern: 'https://github.com/BlackCleaverLoli/MissFisher/edit/main/site/:path',
+      pattern: 'https://github.com/BlackCleaverLoli/MissFisher/edit/main/:path',
       text: '在 GitHub 上编辑此页'
     },
     lastUpdated: {
@@ -133,5 +133,6 @@ export default defineConfig({
     }
   }
 })
+
 
 

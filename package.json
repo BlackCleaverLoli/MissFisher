@@ -3,12 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev site",
-    "docs:build": "vitepress build site",
-    "docs:preview": "vitepress preview site"
+    "docs:dev": "vitepress dev .",
+    "docs:build": "vitepress build . --outDir docs && node scripts/write-nojekyll.mjs",
+    "docs:preview": "vitepress preview . --outDir docs"
   },
   "devDependencies": {
     "vitepress": "^1.6.4",
     "vue": "^3.5.13"
   }
 }
+
