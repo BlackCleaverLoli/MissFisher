@@ -1,6 +1,6 @@
 # MissFisher
   
-**[安装指南](#安装指南) | [完成认证](#完成认证以获得-missfisher-使用权) | [使用说明](#使用说明) | [预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=yirja0) | [钓鱼王](#用-missfisher-钓特定的鱼类) | [自动海钓](#用-missfisher-出海垂钓) | [宇宙探索](#用-missfisher-完成宇宙探索任务) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求) | [练级？](#用-missfisher-练级) | [学习表达式](https://blackcleaverloli.github.io/MissFisher/?page=LearnAngleExpression) | [IPC API](#ipc-api)**  
+**[安装指南](#安装指南) | [完成认证](#完成认证以获得-missfisher-使用权) | [使用说明](#使用说明) | [预设表格](https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=yirja0) | [钓鱼王](#用-missfisher-钓特定的鱼类) | [自动海钓](#用-missfisher-出海垂钓) | [宇宙探索](#用-missfisher-完成宇宙探索任务) | [云冠群岛](#用-missfisher-满足云冠群岛相关需求) | [练级？](#用-missfisher-练级) | [学习表达式](https://blackcleaverloli.github.io/MissFisher/guide/learn-angex) | [IPC API](#ipc-api)**  
   
 ## 简介
 MissFisher 是一个基于 Dalamud 的 FF14 插件，致力于（半）自动化游戏中的钓鱼相关玩法。  
@@ -178,7 +178,7 @@ MissFisher 的预设由特殊的钓法表达式组成，目前仅由作者一人
 
 你也可以在主界面点击预设页签来切换到预设页，使用预设页下的钓法表达式生成器来图形化地编写一条钓法表达式。
   
-修改预设中的参数或钓法（暂缺校订）：[钓法表达式快速修改指南](https://blackcleaverloli.github.io/MissFisher/?page=QuicklyEditingExistingPresets)。  
+修改预设中的参数或钓法（暂缺校订）：[钓法表达式快速修改指南](https://blackcleaverloli.github.io/MissFisher/guide/quick-edit)。  
   
 如果你是经验老到的捕鱼人且发现自动时的钓法与理想钓法不符，欢迎反馈。  
   
