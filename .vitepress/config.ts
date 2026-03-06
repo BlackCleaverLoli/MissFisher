@@ -36,13 +36,13 @@ export default defineConfig({
   title: 'MissFisher Wiki',
   description: 'MissFisher 文档站',
   base: '/MissFisher/',
-  appearance: 'dark',
+  appearance: true,
   cleanUrls: true,
   lastUpdated: true,
   srcExclude: ['**/README.md'],
   head: [
     ['link', { rel: 'icon', href: '/MissFisher/MissFisherIconHq128.jpg' }],
-    ['meta', { name: 'theme-color', content: '#0f1318' }]
+    ['meta', { name: 'theme-color', content: '#ffffff' }]
   ],
   markdown: {
     languageAlias: {
