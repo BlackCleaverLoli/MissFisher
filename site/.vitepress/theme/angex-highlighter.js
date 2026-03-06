@@ -620,6 +620,19 @@ function addClassToSpan(spanHtml, className) {
     );
 }
 
+function isStructuralDiffToken(segment, key) {
+    const className = segment.className || '';
+    if (/\bdsl-(op|sep)\b/.test(className)) {
+        return true;
+    }
+
+    return /^[><=@;()\[\]?|!+\-《》、]+$/.test(key);
+}
+
+function isWhitespaceOnlySegment(segment) {
+    return !segment.text || /^\s+$/.test(segment.text);
+}
+
 function buildComparableTokens(segments) {
     const tokens = [];
     for (let i = 0; i < segments.length; i++) {
@@ -630,9 +643,44 @@ function buildComparableTokens(segments) {
         tokens.push({
             segIndex: i,
             key,
+            structural: isStructuralDiffToken(segments[i], key),
         });
     }
     return tokens;
+}
+
+function matchRemainingStructuralTokens(left, right, leftMatched, rightMatched) {
+    const leftBuckets = new Map();
+    const rightBuckets = new Map();
+
+    for (const token of left) {
+        if (token.structural && !leftMatched.has(token.segIndex)) {
+            const bucket = leftBuckets.get(token.key) || [];
+            bucket.push(token.segIndex);
+            leftBuckets.set(token.key, bucket);
+        }
+    }
+
+    for (const token of right) {
+        if (token.structural && !rightMatched.has(token.segIndex)) {
+            const bucket = rightBuckets.get(token.key) || [];
+            bucket.push(token.segIndex);
+            rightBuckets.set(token.key, bucket);
+        }
+    }
+
+    for (const [key, leftIndexes] of leftBuckets.entries()) {
+        const rightIndexes = rightBuckets.get(key);
+        if (!rightIndexes || rightIndexes.length === 0) {
+            continue;
+        }
+
+        const matchCount = Math.min(leftIndexes.length, rightIndexes.length);
+        for (let i = 0; i < matchCount; i++) {
+            leftMatched.add(leftIndexes[i]);
+            rightMatched.add(rightIndexes[i]);
+        }
+    }
 }
 
 function computeMatchedSegmentIndexes(leftSegments, rightSegments) {
@@ -670,26 +718,59 @@ function computeMatchedSegmentIndexes(leftSegments, rightSegments) {
         }
     }
 
+    matchRemainingStructuralTokens(left, right, leftMatched, rightMatched);
+
     return { leftMatched, rightMatched };
+}
+
+function isChangedComparableSegment(segments, matchedSet, index) {
+    const key = normalizeDiffComparable(segments[index].text);
+    return !!key && !matchedSet.has(index);
+}
+
+function isChangedWhitespaceBridge(segments, matchedSet, index) {
+    if (!isWhitespaceOnlySegment(segments[index])) {
+        return false;
+    }
+
+    let left = index - 1;
+    while (left >= 0 && isWhitespaceOnlySegment(segments[left])) {
+        left--;
+    }
+
+    let right = index + 1;
+    while (right < segments.length && isWhitespaceOnlySegment(segments[right])) {
+        right++;
+    }
+
+    return left >= 0
+        && right < segments.length
+        && isChangedComparableSegment(segments, matchedSet, left)
+        && isChangedComparableSegment(segments, matchedSet, right);
 }
 
 function renderSegmentsWithDiffMarks(segments, matchedSet) {
     let result = '';
 
     for (let i = 0; i < segments.length; i++) {
-        const seg = segments[i];
-        const key = normalizeDiffComparable(seg.text);
-
-        if (!key || matchedSet.has(i)) {
-            result += seg.html;
+        if (!isChangedComparableSegment(segments, matchedSet, i)) {
+            result += segments[i].html;
             continue;
         }
 
-        if (seg.type === 'span') {
-            result += addClassToSpan(seg.html, 'diff-token-change');
-        } else {
-            result += `<span class="diff-token-change">${seg.html}</span>`;
+        let groupHtml = segments[i].html;
+        let j = i + 1;
+        while (j < segments.length) {
+            if (isChangedComparableSegment(segments, matchedSet, j) || isChangedWhitespaceBridge(segments, matchedSet, j)) {
+                groupHtml += segments[j].html;
+                j++;
+                continue;
+            }
+            break;
         }
+
+        result += `<span class="diff-token-change">${groupHtml}</span>`;
+        i = j - 1;
     }
 
     return result;
@@ -773,24 +854,38 @@ function highlightDiff(code) {
  */
 function highlightDSLBlocks() {
     document.querySelectorAll('pre code').forEach(block => {
+        if (block.dataset.angexHighlighted === 'true' || block.querySelector('.dsl-mode, .dsl-trigger, .dsl-hook, .dsl-bite, .dsl-time, .dsl-name, .dsl-id, .dsl-literal, .dsl-modifier, .dsl-op, .dsl-sep, .dsl-comment')) {
+            return;
+        }
+
         const code = block.textContent;
-        const classNames = block.className || '';
+        const container = block.closest('[class*="language-"]');
+        const classNames = [block.className || '', container?.className || ''].join(' ');
         
         if (classNames.includes('language-angex') || 
             classNames.includes('language-mfdsl') ||
             classNames.includes('language-dsl')) {
             block.innerHTML = highlightDSL(code);
+            block.dataset.angexHighlighted = 'true';
         } else if (classNames.includes('language-diff')) {
             block.innerHTML = highlightDiff(code);
+            block.dataset.angexHighlighted = 'true';
         } else if (!classNames.includes('language-')) {
             // 检测是否包含 DSL 语法
             if (/大鱼|耐心|平钓|[》《]|[【】]/.test(code)) {
                 block.innerHTML = highlightDSL(code);
+                block.dataset.angexHighlighted = 'true';
             }
         }
     });
 }
 
-// 导出函数供全局使用
-window.highlightDSL = highlightDSL;
-window.highlightDSLBlocks = highlightDSLBlocks;
+if (typeof window !== 'undefined') {
+    window.highlightDSL = highlightDSL;
+    window.highlightDSLBlocks = highlightDSLBlocks;
+}
+
+export { highlightDSL, highlightDiff, highlightDSLBlocks };
+
+
+

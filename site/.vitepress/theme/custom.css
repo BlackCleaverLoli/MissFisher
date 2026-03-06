@@ -1,0 +1,219 @@
+﻿:root {
+  --vp-c-brand-1: #0099ff;
+  --vp-c-brand-2: #008ae6;
+  --vp-c-brand-3: #007acc;
+  --vp-c-brand-soft: rgba(0, 153, 255, 0.14);
+  --dsl-keyword-control: #569cd6;
+  --dsl-keyword-context: #d8a0df;
+  --dsl-symbol-builtin: #dcdca9;
+  --dsl-literal-domain: #4dc9b0;
+  --dsl-literal-number: #b5cea8;
+  --dsl-identifier: #9cdcfe;
+  --dsl-operator: #dcdcdc;
+  --dsl-punctuation: #a3a3a3;
+  --dsl-comment: #57a64a;
+}
+
+.VPHome {
+  background: radial-gradient(circle at top, rgba(0, 153, 255, 0.08), transparent 34%);
+}
+
+.VPHome .VPFeatures {
+  padding-top: 20px;
+}
+
+.VPHome .VPFeature {
+  display: block;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 153, 255, 0.08));
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.VPHome .VPFeature:hover,
+.VPHome .VPFeature:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(0, 153, 255, 0.42);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 153, 255, 0.12));
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.VPHome .VPFeature .box {
+  height: 100%;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.VPHome .VPFeature .title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.VPHome .VPFeature .details {
+  margin-top: 10px;
+  color: var(--vp-c-text-2);
+  line-height: 1.75;
+}
+
+.VPHome .VPFeature .link-text-value,
+.VPHome .VPFeature .link-text-icon {
+  color: var(--vp-c-brand-1);
+}
+
+pre code .dsl-mode,
+.language-dsl .dsl-mode,
+.language-angex .dsl-mode,
+.language-mfdsl .dsl-mode,
+.vp-code .dsl-mode {
+  color: var(--dsl-keyword-control) !important;
+  font-weight: 700;
+}
+
+pre code .dsl-trigger,
+.language-dsl .dsl-trigger,
+.language-angex .dsl-trigger,
+.language-mfdsl .dsl-trigger,
+.vp-code .dsl-trigger {
+  color: var(--dsl-keyword-context) !important;
+  font-weight: 600;
+}
+
+pre code .dsl-hook,
+.language-dsl .dsl-hook,
+.language-angex .dsl-hook,
+.language-mfdsl .dsl-hook,
+.vp-code .dsl-hook {
+  color: var(--dsl-symbol-builtin) !important;
+}
+
+pre code .dsl-bite,
+.language-dsl .dsl-bite,
+.language-angex .dsl-bite,
+.language-mfdsl .dsl-bite,
+.vp-code .dsl-bite {
+  color: var(--dsl-literal-domain) !important;
+}
+
+pre code .dsl-time,
+.language-dsl .dsl-time,
+.language-angex .dsl-time,
+.language-mfdsl .dsl-time,
+.vp-code .dsl-time {
+  color: var(--dsl-literal-number) !important;
+}
+
+pre code .dsl-name,
+.language-dsl .dsl-name,
+.language-angex .dsl-name,
+.language-mfdsl .dsl-name,
+.vp-code .dsl-name {
+  color: var(--dsl-identifier) !important;
+}
+
+pre code .dsl-id,
+.language-dsl .dsl-id,
+.language-angex .dsl-id,
+.language-mfdsl .dsl-id,
+.vp-code .dsl-id {
+  color: var(--dsl-literal-number) !important;
+}
+
+pre code .dsl-literal,
+.language-dsl .dsl-literal,
+.language-angex .dsl-literal,
+.language-mfdsl .dsl-literal,
+.vp-code .dsl-literal {
+  color: var(--dsl-literal-domain) !important;
+}
+
+pre code .dsl-modifier,
+.language-dsl .dsl-modifier,
+.language-angex .dsl-modifier,
+.language-mfdsl .dsl-modifier,
+.vp-code .dsl-modifier {
+  color: var(--dsl-symbol-builtin) !important;
+  font-weight: 600;
+}
+
+pre code .dsl-op,
+.language-dsl .dsl-op,
+.language-angex .dsl-op,
+.language-mfdsl .dsl-op,
+.vp-code .dsl-op {
+  color: var(--dsl-operator) !important;
+}
+
+pre code .dsl-sep,
+.language-dsl .dsl-sep,
+.language-angex .dsl-sep,
+.language-mfdsl .dsl-sep,
+.vp-code .dsl-sep {
+  color: var(--dsl-punctuation) !important;
+}
+
+pre code .dsl-comment,
+.language-dsl .dsl-comment,
+.language-angex .dsl-comment,
+.language-mfdsl .dsl-comment,
+.vp-code .dsl-comment {
+  color: var(--dsl-comment) !important;
+  font-style: italic;
+}
+
+.vp-doc pre code .diff-add,
+.vp-code .diff-add {
+  display: block;
+  color: #b5cea8 !important;
+  background-color: #113A1B;
+}
+
+.vp-doc pre code .diff-remove,
+.vp-code .diff-remove {
+  display: block;
+  color: #f48771 !important;
+  background-color: #450C0F;
+}
+
+.vp-doc pre code .diff-add .diff-token-change,
+.vp-code .diff-add .diff-token-change {
+  background-color: #22863A;
+  border-radius: 3px;
+}
+
+.vp-doc pre code .diff-remove .diff-token-change,
+.vp-code .diff-remove .diff-token-change {
+  background-color: #B31D28;
+  border-radius: 3px;
+}
+
+
+.language-diff .vp-code,
+.language-angex .vp-code,
+.language-dsl .vp-code,
+.language-mfdsl .vp-code {
+  background-color: #1e1e1e !important;
+}
+
+.vp-doc blockquote {
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc blockquote p,
+.vp-doc blockquote li,
+.vp-doc blockquote strong,
+.vp-doc blockquote em,
+.vp-doc blockquote code {
+  color: inherit;
+}
+
+
+
+
+
+
