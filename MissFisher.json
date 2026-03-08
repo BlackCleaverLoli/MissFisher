@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.14.4",
+        "AssemblyVersion": "1.9.14.5",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.14.4\n- 修复：修复有时补全菜单中不包含预期的预设全称的问题（例如“隆卡的大水蛇？”在输入“隆卡”时）\n- 杂项：改进了补全菜单的搜索表现\n- 杂项：为主页的预设名输入框追加一段悬浮提示\n# v1.9.14.3\n- 修复：修复一个可能出现的下溢问题\n# v1.9.14.2\n- 修复：自动行为在较低采集力时未按预期使用诱饵技能\n- 杂项：自动行为中降低了撒饵在某些场景消耗采集力的优先级\n# v1.9.14.1\n- 新增：自动行为中当运行特定预设时，也会提示以小钓大后尝试的提钩类型（特定预设：使用卡收藏采集界面手法的胸脊鲨和嘎儿鱼）\n# v1.9.14.0\n- 新增：自动行为现在会更智能地根据需求的蓝鱼来调整手法，而非之前那样尝试钓航线内的所有蓝鱼\n- 新增：设置项【高频日志】可控制一些高频消息的显示（例如提钩结果、钓法信息），默认开启\n- 修复：修复自动行为在蓝鱼模式中、当幻海流即将结束时会错误对目标咬饵使用尽可能清空采集力的提钩的问题\n- 杂项：现在耐力蓝鱼目标默认选择未在图鉴中的\n- 杂项：重构了海钓策略定义（航线识别、预设键名），向客户端结构对齐以备未来可能的新增航线\n- 杂项：调整了钓法表达式编辑器格式化的空格规则\n- 杂项：新增 IPC（详见 README）\n",
+        "ChangeLog": "# v1.9.14.5\n- 杂项：添加一个可屏蔽自动选航线时选远洋的设置项，以应付7.45后出现的原生BUG\n# v1.9.14.4\n- 修复：修复有时补全菜单中不包含预期的预设全称的问题（例如“隆卡的大水蛇？”在输入“隆卡”时）\n- 杂项：改进了补全菜单的搜索表现\n- 杂项：为主页的预设名输入框追加一段悬浮提示\n# v1.9.14.3\n- 修复：修复一个可能出现的下溢问题\n# v1.9.14.2\n- 修复：自动行为在较低采集力时未按预期使用诱饵技能\n- 杂项：自动行为中降低了撒饵在某些场景消耗采集力的优先级\n# v1.9.14.1\n- 新增：自动行为中当运行特定预设时，也会提示以小钓大后尝试的提钩类型（特定预设：使用卡收藏采集界面手法的胸脊鲨和嘎儿鱼）\n# v1.9.14.0\n- 新增：自动行为现在会更智能地根据需求的蓝鱼来调整手法，而非之前那样尝试钓航线内的所有蓝鱼\n- 新增：设置项【高频日志】可控制一些高频消息的显示（例如提钩结果、钓法信息），默认开启\n- 修复：修复自动行为在蓝鱼模式中、当幻海流即将结束时会错误对目标咬饵使用尽可能清空采集力的提钩的问题\n- 杂项：现在耐力蓝鱼目标默认选择未在图鉴中的\n- 杂项：重构了海钓策略定义（航线识别、预设键名），向客户端结构对齐以备未来可能的新增航线\n- 杂项：调整了钓法表达式编辑器格式化的空格规则\n- 杂项：新增 IPC（详见 README）\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
