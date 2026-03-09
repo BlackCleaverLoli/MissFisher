@@ -34,15 +34,21 @@ Dalamud 是一个完全免费的 FF14 插件平台。
   
 ## XIVLauncher CN (Soil)
 XIVLauncher 是比官方启动器更便捷的第三方 FF14 启动器。  
-XIVLauncher CN (Soil) 是它的分支。  
-相比主库，它解除了没有必要的限制，并优化了逻辑。  
-  
+
+- Soil 版本是什么？  
+XIVLauncher CN (Soil) 是 XIVLauncher CN（蓝月）的分支版本，社区里通常称它为“橙月”。  
+
+- 为什么更推荐使用橙月？  
+  - 游戏更新后，橙月通常能更快提供对 Dalamud 的适配，让你更早用上插件。  
+  - 中国服社区相当一部分主流插件基于橙月内核开发，因此能获得更好的兼容性与支持。  
+  - 另外，橙月移除了主库存在的部分不必要限制，并优化了整体逻辑。  
+
+
 ### 安装并打开 XIVLauncher CN (Soil)
   
 1. [下载 XIVLauncher CN (Soil).zip](https://github.com/AtmoOmen/FFXIVQuickLauncher/releases/latest/download/XIVLauncherCN-win-Portable.zip)  
-2. 等待下载  
 2. 解压下载好的 XIVLauncherCN-win-Portable.zip 中的文件到合适的位置。  
-5. 打开解压后路径下的 XIVLauncherCN.exe  
+3. 打开解压后路径下的 XIVLauncherCN.exe  
 ### 设置 XIVLauncher CN (Soil) 并用它来启动游戏
 1. 点击 XIVLauncher CN (Soil) 界面右下角齿轮图标  
 2. 设置游戏文件夹路径  
@@ -51,7 +57,7 @@ XIVLauncher CN (Soil) 是它的分支。
 5. 从 XIVLauncher CN (Soil) 登陆并启动游戏，Dalamud 应会自动注入游戏进程  
 ---  
 ## 安装 MissFisher
-> 以下指引是基于 XIVLauncher CN (Soil) 的，如果是 XIVLauncher CN 的主库版本，可能略有不同，请留意
+> 以下指引是基于 XIVLauncher CN (Soil) 的，可能与其他版本略有不同，请留意
 ### 打开 Dalamud 插件安装器
   
 已登陆角色时：  
@@ -333,6 +339,7 @@ MissFisher 的 1 组航线预报由 2 行内容组成：
 |:----:|-----|-----------------|-------------------------------------------------------------------------------|
 | 憧憬湾  | C 类 | 协助调查基地西北侧的水质    | 可以高效获取数据 I、数据 II，<br>也可以刷月面信用点                                                |
 | 憧憬湾  | A 类 | 检验钓场的多样性        | 可以高效获取数据 III、数据 IV，<br>也可以刷宇宙信用点和技巧点                                          |
+| 憧憬湾  | A 类 | 采集魔泉环境的样本       | 【限时】可以高效获取数据 III、数据 IV，<br>也可以刷宇宙信用点和技巧点                                      |
 | 憧憬湾  | A 类 | 【高难】制作改良版月凝胶    | 可以高效获取捕鱼人技巧点，<br>需要你的炼金术师职业有正常的等级、<br>技能和已部分禁忌镶嵌的新装备（对于7.4），<br>且需要使用生产职业用的食品 |
 | 法恩娜  | C 类 | 高效筹备水产食品        | 可以高效获取数据 I、数据 II、数据 III                                                       |
 | 法恩娜  | A 类 | 支援利用水产资源开发精密镜片  | 可以高效获取数据 III、数据 IV、数据 V                                                       |
