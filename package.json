@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev .",
-    "docs:build": "vitepress build . --outDir docs && node scripts/write-nojekyll.mjs",
-    "docs:preview": "vitepress preview . --outDir docs"
+    "docs:dev": "vitepress dev wiki",
+    "docs:build": "vitepress build wiki --outDir ../docs && node scripts/write-nojekyll.mjs",
+    "docs:preview": "vitepress preview wiki --outDir ../docs"
   },
   "devDependencies": {
     "vitepress": "^1.6.4",
