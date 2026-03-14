@@ -118,7 +118,7 @@ export default defineConfig({
       next: '下一页'
     },
     editLink: {
-      pattern: 'https://github.com/BlackCleaverLoli/MissFisher/edit/main/:path',
+      pattern: 'https://github.com/BlackCleaverLoli/MissFisher/edit/main/wiki/:path',
       text: '在 GitHub 上编辑此页'
     },
     lastUpdated: {

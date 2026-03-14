@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev wiki",
-    "docs:build": "vitepress build wiki --outDir ../docs && node scripts/write-nojekyll.mjs",
+    "docs:build": "vitepress build wiki --outDir ../docs && node wiki/scripts/write-nojekyll.mjs",
     "docs:preview": "vitepress preview wiki --outDir ../docs"
   },
   "devDependencies": {
