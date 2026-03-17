@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.15.0",
+        "AssemblyVersion": "1.9.15.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.15.0\n修复：自动行为在预备鱼识完成后在预期外的情况下使用了专一垂钓\n修复：自动行为在钓法包含计数器时的提钩回退策略\n修复：自动行为在钓法参数层面已经完成捕鱼人之识预触时进行新启动、会错误使用其他预备手法\n优化：自动行为停止时不再输出换饵消息\n",
+        "ChangeLog": "# v1.9.15.1\n修复：自动行为在切换钓法后，没有如预期进入鱼眼模式并使用鱼眼\n# v1.9.15.0\n修复：自动行为在预备鱼识完成后在预期外的情况下使用了专一垂钓\n修复：自动行为在钓法包含计数器时的提钩回退策略\n修复：自动行为在钓法参数层面已经完成捕鱼人之识预触时进行新启动、会错误使用其他预备手法\n优化：自动行为停止时不再输出换饵消息\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
