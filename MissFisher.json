@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.16.0",
+        "AssemblyVersion": "1.9.16.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.16.0\n- 新增：临时免验凭证入口，以备认证服务器不稳定时使用\n",
+        "ChangeLog": "# v1.9.16.1\n- 移除：移除了设置项「在主页添加查看按钮」，现在主页的「查看」按钮将在预设有效时总是存在\n- 新增：主页新增「前往」按钮，当输入的预设名有效且存在所在地时，可点击按钮来前往所在地（与原先存在的以下功能效果相同：模式下拉菜单为预设时的 Ctrl + 中键）\n- 优化：当在主页预设名输入框输入的预设名有效时，不再显示模式下拉菜单\n- 优化：搜索宇宙探索相关预设时，候选菜单将总是显示任务名而不是预设名\n- 杂项：调整了部分界面样式和相关文案\n# v1.9.16.0\n- 新增：临时免验凭证入口，以备认证服务器不稳定时使用\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
