@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.17.1",
+        "AssemblyVersion": "1.9.18.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.17.1\n- 修复：修复了一个问题，该问题曾导致自动行为有时会会使用之前地图的天气判断窗口期，而导致流程异常\n- 优化：优化了验证系统的验证流程\n# v1.9.17.0\n- 优化：优化了耐力海钓在任务中最终启动前的避让行为，如果达到5次将不再继续避让而是直接启动\n- 优化：为前往所在地识别排除了某些钓场的鱼类，特别是特殊场景的，以免错误占用启动按钮\n- 优化：现在将尝试从所在地覆写表中找所在地数据\n- 优化：现在未退出钓鱼状态时将不能发起前往所在地\n- 优化：优化了「前往按钮」的交互体验\n- 优化：优化了免验码的判断\n- 杂项：适配了某些不被包括为水产品的任务所需鱼类\n- 杂项：更新了内置的所在地覆写表与预设表\n- 杂项：适配了上游依赖的重构\n",
+        "ChangeLog": "# v1.9.18.0\n- 新增：愚人节特性\n- 优化：优化了一些文案和界面样式\n- 修复了一个问题，该问题曾导致：空岛模式寻路失败\n- 修复了一个问题，该问题曾导致：自动行为在钓法无窗口期限制时未如预期使用有耗时判断的技能\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
