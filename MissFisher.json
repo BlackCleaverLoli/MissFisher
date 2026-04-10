@@ -3,7 +3,7 @@
         "Author": "Fragile, MistyDai, Nyy",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.9.19.5",
+        "AssemblyVersion": "1.9.20.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.9.19.5\n- 优化：现在完全超时前的内部技能动作任务超时也会输出技能信息到日志\n# v1.9.19.4\n- 优化：现在动作超时将附带导致超时的技能信息\n# v1.9.19.3\n- 优化：优化了验证体验\n- 优化：现在验证失败时将正确地输出相关信息到日志\n# v1.9.19.2\n- 修复自动行为在自动海钓时的一些手法问题\n- 修复自动行为在练级模式时未正确检查耐心2是否已经学习而导致动作超时的问题\n# v1.9.19.1\n- 优化：细化了启动钓法时的窗口期状态信息\n- 优化：部分文案的格式\n# v1.9.19.0\n- 修复：极罕见情况下预备手法判断可能异常\n- 新增：钓法修饰词「不预备拍水」「不预备鱼计」\n- 优化：部分文案的语义\n",
+        "ChangeLog": "# v1.9.20.0\n- 修复：修复了自动行为在采集力上限较少且采集力回复技能/道具可用时，因错误认为技能可用而最终导致抛出技能使用超时的问题\n- 优化：优化去钓场功能，现在将能更准确地落到可抛竿点位上了\n- 优化：优化耐力海钓选点，现在将能选到更正确的抛竿点了\n- 优化：预设同步中时主页的预设名输入框将有悬浮提示\n- 优化：现在图标悬浮窗将在战斗时隐藏\n- 优化：优化了部分流程中的面向行为\n- 优化：调整了部分文案格式\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
