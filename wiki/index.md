@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: MissFisher
-  text: FF14 捕鱼人自动化辅助
-  tagline: 钓鱼王、出海垂钓、云冠群岛与宇宙探索的使用文档入口。
+  text: 专注于钓鱼
+  tagline: 准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。
   image:
     src: /MissFisherIconHq128.jpg
     alt: MissFisher
@@ -13,30 +13,32 @@ hero:
       text: 安装说明
       link: /manual/install
     - theme: alt
-      text: 手册总入口
-      link: /manual/
+      text: 开始使用
+      link: /manual/start
 
 features:
-  - title: 安装说明
-    details: 添加 Dalamud 第三方仓库，安装 MissFisher，并确认后续准备步骤。
+  - title: 安装
+    details: Dalamud 第三方仓库、插件安装和基础准备。
     link: /manual/install
-    linkText: 开始安装
-  - title: 认证流程
-    details: 查看识别凭证、Discord 认证、替换凭证和临时免验凭证的使用方式。
+    linkText: 安装说明
+  - title: 认证
+    details: 识别凭证、Discord 认证、凭证替换和临时免验凭证。
     link: /manual/auth
-    linkText: 完成认证
-  - title: 使用说明
-    details: 了解鱼王、出海垂钓、宇宙探索、云冠群岛和练级相关模式。
-    link: /manual/usage
-    linkText: 查看说明
+    linkText: 认证流程
+  - title: 使用
+    details: 开始前提、资料准备、预设同步和日常流程。
+    link: /manual/start
+    linkText: 开始使用
+  - title: 场景
+    details: 鱼王、出海垂钓、宇宙探索、云冠群岛和练级相关模式。
+    link: /manual/scenarios/
+    linkText: 场景总览
   - title: 钓法表达式
-    details: 学习如何查看、修改和编写 MissFisher 使用的钓法表达式。
+    details: 快速修改预设，逐步理解表达式结构。
     link: /guide/quick-edit
     linkText: 修改预设
-  - title: IPC API
-    details: 查看 MissFisher 对外提供的 Dalamud IPC 状态接口。
-    link: /reference/ipc
-    linkText: 打开参考
+  - title: 参考
+    details: Angex 语法、IPC API 和诱饵机制。
+    link: /reference/angex-grammar
+    linkText: 参考文档
 ---
-
-<ReleaseMetaCard />
