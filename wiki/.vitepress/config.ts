@@ -80,31 +80,54 @@ export default defineConfig({
     logo: '/MissFisherIconHq128.jpg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' },
-      { text: '手册', link: '/manual/' },
-      { text: '参考', link: '/reference/' },
+      { text: '安装', link: '/manual/install' },
+      { text: '认证', link: '/manual/auth' },
+      { text: '使用', link: '/manual/start' },
+      { text: '钓法表达式', link: '/guide/quick-edit' },
+      { text: '参考', link: '/reference/angex-grammar' },
       { text: 'GitHub', link: 'https://github.com/BlackCleaverLoli/MissFisher' }
     ],
     sidebar: {
       '/manual/': [
         {
-          text: '手册',
+          text: '安装与认证',
           items: [
-            { text: '手册总览', link: '/manual/' },
             { text: '安装说明', link: '/manual/install' },
-            { text: '认证流程', link: '/manual/auth' },
-            { text: '使用说明', link: '/manual/usage' },
+            { text: '认证流程', link: '/manual/auth' }
+          ]
+        },
+        {
+          text: '开始使用',
+          items: [
+            { text: '开始使用', link: '/manual/start' },
+            { text: '常见问题', link: '/manual/faq' }
+          ]
+        },
+        {
+          text: '场景',
+          items: [
+            { text: '场景总览', link: '/manual/scenarios/' },
+            { text: '钓特定鱼类', link: '/manual/scenarios/fish' },
+            { text: '出海垂钓', link: '/manual/scenarios/ocean' },
+            { text: '宇宙探索', link: '/manual/scenarios/cosmic' },
+            { text: '云冠群岛', link: '/manual/scenarios/island' },
+            { text: '练级', link: '/manual/scenarios/leveling' }
+          ]
+        },
+        {
+          text: '归档',
+          items: [
             { text: 'README 手册归档', link: '/manual/readme-manual' }
           ]
         }
       ],
       '/guide/': [
         {
-          text: '指南',
+          text: '钓法表达式',
           items: [
-            { text: '总览', link: '/guide/' },
             { text: '快速修改指南', link: '/guide/quick-edit' },
-            { text: '学习钓法表达式', link: '/guide/learn-angex' }
+            { text: '学习钓法表达式', link: '/guide/learn-angex' },
+            { text: 'Angex 语法规范', link: '/reference/angex-grammar' }
           ]
         }
       ],
@@ -112,7 +135,6 @@ export default defineConfig({
         {
           text: '参考',
           items: [
-            { text: '总览', link: '/reference/' },
             { text: 'Angex 语法规范', link: '/reference/angex-grammar' },
             { text: 'IPC API', link: '/reference/ipc' },
             { text: '诱饵技能', link: '/reference/lure' }
@@ -147,5 +169,3 @@ export default defineConfig({
     }
   }
 })
-
-
