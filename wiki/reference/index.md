@@ -5,6 +5,7 @@
 ## 你可以在这里查什么
 
 - [Angex 语法规范](/reference/angex-grammar)：用于核对表达式的结构、关键字和解析规则
+- [IPC API](/reference/ipc)：用于查看 MissFisher 对外提供的 Dalamud IPC 状态接口
 - [诱饵技能](/reference/lure)：用于查阅诱饵相关机制、效果和使用上的注意点
 
 ## 适合什么时候看

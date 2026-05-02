@@ -24,7 +24,14 @@ type ReleaseMeta = {
 const meta = ref<ReleaseMeta | null>(null)
 const failed = ref(false)
 
-const pluginVersion = computed(() => meta.value?.plugin?.version || '读取中')
+const pluginVersion = computed(() => {
+  const value = meta.value?.plugin?.version || '读取中'
+  if (value === '读取中' || value.startsWith('v')) {
+    return value
+  }
+
+  return `v${value}`
+})
 const bundleName = computed(() => meta.value?.resource?.bundleName || '读取中')
 const presetStamp = computed(() => meta.value?.resource?.presetStamp || '读取中')
 const summary = computed(() => meta.value?.resource?.summary || '正在读取最新资源说明。')
