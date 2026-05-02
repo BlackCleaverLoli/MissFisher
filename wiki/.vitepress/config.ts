@@ -91,6 +91,9 @@ export default defineConfig({
           text: '手册',
           items: [
             { text: '手册总览', link: '/manual/' },
+            { text: '安装说明', link: '/manual/install' },
+            { text: '认证流程', link: '/manual/auth' },
+            { text: '使用说明', link: '/manual/usage' },
             { text: 'README 手册归档', link: '/manual/readme-manual' }
           ]
         }
@@ -111,6 +114,7 @@ export default defineConfig({
           items: [
             { text: '总览', link: '/reference/' },
             { text: 'Angex 语法规范', link: '/reference/angex-grammar' },
+            { text: 'IPC API', link: '/reference/ipc' },
             { text: '诱饵技能', link: '/reference/lure' }
           ]
         }
@@ -143,6 +147,5 @@ export default defineConfig({
     }
   }
 })
-
 
 

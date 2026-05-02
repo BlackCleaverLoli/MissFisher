@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "plugin": {
+    "name": "MissFisher",
+    "version": "1.10.0.1",
+    "apiLevel": 15,
+    "changelogSummary": [
+      "修复：设置 错误地在播放咬饵音效时按设置中的咬饵音效音量调整了游戏在电脑系统中的音量大小",
+      "修复：底层 错误地拦截了记录是海岸类型的渔获",
+      "优化：界面 优化了界面样式效果"
+    ]
+  },
+  "resource": {
+    "bundleVersion": "260429",
+    "bundleName": "SyncBundle_260429.zip",
+    "presetStamp": "05.02.1231",
+    "summary": "7.5海钓：已补完，但请着重留意新蓝鱼手法，因其可能有误（感谢□整理的古生物钓法）。旧的宇宙探索任务：已全部补完。",
+    "updatedAt": "2026-05-02T12:31:00+08:00"
+  },
+  "links": {
+    "repo": "https://github.com/BlackCleaverLoli/MissFisher",
+    "docs": "https://blackcleaverloli.github.io/MissFisher/",
+    "manual": "https://blackcleaverloli.github.io/MissFisher/manual/",
+    "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
+    "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260429.zip"
+  }
+}

@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev wiki",
-    "docs:build": "vitepress build wiki --outDir ../docs && node wiki/scripts/write-nojekyll.mjs",
-    "docs:preview": "vitepress preview wiki --outDir ../docs"
+    "docs:build": "vitepress build wiki --outDir docs && node wiki/scripts/write-nojekyll.mjs",
+    "docs:preview": "vitepress build wiki --base / --outDir node_modules/.cache/missfisher-docs-preview && vite preview --outDir node_modules/.cache/missfisher-docs-preview"
   },
   "devDependencies": {
     "vitepress": "^1.6.4",
