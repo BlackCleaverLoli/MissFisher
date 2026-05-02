@@ -1,26 +1,38 @@
-﻿---
+---
 layout: home
 
 hero:
   name: MissFisher
-  text: Angle Expression Wiki
-  tagline: 选择要查看的文档。
+  text: FF14 捕鱼人自动化辅助
+  tagline: 钓鱼王、出海垂钓、云冠群岛与宇宙探索的使用文档入口。
+  image:
+    src: /MissFisherIconHq128.jpg
+    alt: MissFisher
+  actions:
+    - theme: brand
+      text: 安装与使用手册
+      link: /manual/
+    - theme: alt
+      text: 预设修改指南
+      link: /guide/quick-edit
 
 features:
-  - title: 快速修改指南
-    details: 查看预设、常见修改方式和直接可用的调整说明。
+  - title: 安装与认证
+    details: 查看 Dalamud 仓库添加方式、认证流程、临时免验凭证和常见使用前准备。
+    link: /manual/
+    linkText: 打开手册
+  - title: 自动钓鱼玩法
+    details: 了解鱼王、出海垂钓、宇宙探索、云冠群岛和练级相关模式的使用边界。
+    link: /manual/readme-manual#使用说明
+    linkText: 查看说明
+  - title: 预设与表达式
+    details: 学习如何查看、修改和编写 MissFisher 使用的钓法表达式。
     link: /guide/quick-edit
-    linkText: 打开文档
-  - title: 学习钓法表达式
-    details: 学习钓法表达式的基本写法、语义和常见组合方式。
-    link: /guide/learn-angex
-    linkText: 打开文档
-  - title: Angex 语法规范
-    details: 查阅 Angex 的正式语法说明，核对关键字和结构细节。
-    link: /reference/angex-grammar
-    linkText: 打开文档
-  - title: 诱饵技能
-    details: 查阅与诱饵相关的机制说明和参考信息。
-    link: /reference/lure
-    linkText: 打开文档
+    linkText: 修改预设
+  - title: 参考文档
+    details: 查阅 Angex 语法、诱饵技能和现有参考资料。
+    link: /reference/
+    linkText: 打开参考
 ---
+
+<ReleaseMetaCard />

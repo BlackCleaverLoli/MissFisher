@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --vp-c-brand-1: #0099ff;
   --vp-c-brand-2: #008ae6;
   --vp-c-brand-3: #007acc;
@@ -212,8 +212,108 @@ pre code .dsl-comment,
   color: inherit;
 }
 
+.mf-release {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  gap: 24px;
+  max-width: 1120px;
+  margin: 12px auto 52px;
+  padding: 24px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 82%, transparent);
+}
 
+.mf-release__eyebrow {
+  margin: 0 0 8px;
+  color: var(--vp-c-brand-1);
+  font-size: 13px;
+  font-weight: 700;
+}
 
+.mf-release h2 {
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: 28px;
+  line-height: 1.25;
+}
 
+.mf-release__summary {
+  margin: 14px 0 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.8;
+}
 
+.mf-release__fallback {
+  margin: 10px 0 0;
+  color: var(--vp-c-warning-1);
+  font-size: 14px;
+}
 
+.mf-release__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.mf-release__stats div {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+}
+
+.mf-release__stats dt {
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mf-release__stats dd {
+  overflow-wrap: anywhere;
+  margin: 6px 0 0;
+  color: var(--vp-c-text-1);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.mf-release__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mf-release__actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mf-release__actions a:hover,
+.mf-release__actions a:focus-visible {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+@media (max-width: 760px) {
+  .mf-release {
+    grid-template-columns: 1fr;
+    margin: 8px 24px 40px;
+    padding: 18px;
+  }
+
+  .mf-release__stats {
+    grid-template-columns: 1fr;
+  }
+}

@@ -81,10 +81,20 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/' },
+      { text: '手册', link: '/manual/' },
       { text: '参考', link: '/reference/' },
       { text: 'GitHub', link: 'https://github.com/BlackCleaverLoli/MissFisher' }
     ],
     sidebar: {
+      '/manual/': [
+        {
+          text: '手册',
+          items: [
+            { text: '手册总览', link: '/manual/' },
+            { text: 'README 手册归档', link: '/manual/readme-manual' }
+          ]
+        }
+      ],
       '/guide/': [
         {
           text: '指南',
