@@ -13,6 +13,9 @@ hero:
       text: 安装说明
       link: /manual/install
     - theme: alt
+      text: 认证
+      link: /manual/auth
+    - theme: alt
       text: 开始使用
       link: /manual/start
 
@@ -25,8 +28,8 @@ features:
     details: 识别凭证、Discord 认证、凭证替换和临时免验凭证。
     link: /manual/auth
     linkText: 认证流程
-  - title: 使用
-    details: 开始前提、资料准备、预设同步和日常流程。
+  - title: 开始使用
+    details: 按目标前往对应场景或表达式文档。
     link: /manual/start
     linkText: 开始使用
   - title: 场景
