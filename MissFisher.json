@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.10.1.1",
+        "AssemblyVersion": "1.10.2.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.10.1.1\n- 修复：自动行为 在蓝鱼模式的普通海域时，没有使用带拍水目标的预设，导致没有按预期在攒够鱼计后拍水\n- 优化：现在耐力海钓模式在交互npc时将总是尝试锁定视角，以提升交互稳定性\n# v1.10.1.0\n- 修复：自动行为 在窗口剩余时间不多时错误开始了游动饵专一连招\n- 修复：自动行为 在游动饵专一连招时错误换上游动饵导致卡死动作流程\n- 修复：播报 触幻播报现在将正确跟随自动时的触发幻海策略，即行为策略上如果不触幻，则不公开播报触幻策略提示消息\n- 优化：功能 现在在设置页复制的自动丢弃预设串将是自动按规则生成的了；规则：取海钓钓场里的所有鱼，但是排除宠物和蓝鱼\n- 优化：界面 主页补全菜单展示的历史预设名数量将跟随搜索时的 8 个\n- 优化：界面 优化了一些界面样式效果\n- 杂项：程序 对专一连招模块进行了小重构以优化可维护性\n",
+        "ChangeLog": "# v1.10.2.0\n- 修复：自动行为中，专一连招相关采集力判断错误，导致大多数情况下未能正常启动专一后等待采集力并抛竿多提的连招。\n- 修复：设置页中自动丢弃项使用「打开」按钮导出的配置组文本有误，导致导入 DR 自动丢弃模块后的配置组信息为空。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
