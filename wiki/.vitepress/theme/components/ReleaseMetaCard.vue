@@ -12,7 +12,6 @@ type ReleaseMeta = {
     bundleName?: string
     presetStamp?: string
     summary?: string
-    updatedAt?: string
   }
   links?: {
     manual?: string
@@ -36,19 +35,6 @@ const presetStamp = computed(() => meta.value?.resource?.presetStamp || '读取�
 const summary = computed(() => meta.value?.resource?.summary || '正在读取最新资源说明。')
 const startLink = computed(() => meta.value?.links?.manual || withBase('/manual/start'))
 const installLink = computed(() => withBase('/manual/install'))
-const updatedAt = computed(() => {
-  const value = meta.value?.resource?.updatedAt
-  if (!value) {
-    return '读取中'
-  }
-
-  const matched = value.match(/^(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/)
-  if (matched) {
-    return `${matched[1]} ${matched[2]}`
-  }
-
-  return value.replace('T', ' ').replace('+08:00', '')
-})
 
 onMounted(async () => {
   try {
@@ -76,10 +62,6 @@ onMounted(async () => {
         <div>
           <dt>钓法数据</dt>
           <dd>{{ presetStamp }}</dd>
-        </div>
-        <div>
-          <dt>更新</dt>
-          <dd>{{ updatedAt }}</dd>
         </div>
       </dl>
       <p class="mf-release__summary">{{ summary }}</p>
