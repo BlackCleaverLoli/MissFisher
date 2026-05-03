@@ -2,20 +2,20 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.10.1.1",
+    "version": "1.10.2.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动行为 在蓝鱼模式的普通海域时，没有使用带拍水目标的预设，导致没有按预期在攒够鱼计后拍水",
-      "优化：现在耐力海钓模式在交互npc时将总是尝试锁定视角，以提升交互稳定性"
+      "修复：自动行为中，专一连招相关采集力判断错误，导致大多数情况下未能正常启动专一后等待采集力并抛竿多提的连招。",
+      "修复：设置页中自动丢弃项使用「打开」按钮导出的配置组文本有误，导致导入 DR 自动丢弃模块后的配置组信息为空。"
     ]
   },
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.03.2106",
+    "presetStamp": "05.04.0509",
     "summary": "7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已全部补完。",
-    "discordSummary": "优化了蓝鱼世界龟的钓法；改变了杜蒂娜鱼的钓法。",
-    "updatedAt": "2026-05-03T23:28:48+08:00"
+    "discordSummary": "恢复了奥雷奥雷奥雷的撒饵；恢复了杜蒂娜鱼的游动饵专一连招；",
+    "updatedAt": "2026-05-04T05:28:38+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
