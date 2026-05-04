@@ -240,14 +240,11 @@ pre code .dsl-comment,
 }
 
 .mf-release__summary {
-  display: -webkit-box;
-  overflow: hidden;
   margin: 12px 0 0;
   color: var(--vp-c-text-2);
   font-size: 14px;
   line-height: 1.65;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  white-space: pre-line;
 }
 
 .mf-release__fallback {
