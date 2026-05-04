@@ -12,6 +12,7 @@ type ReleaseMeta = {
     bundleName?: string
     presetStamp?: string
     summary?: string
+    discordSummary?: string
   }
   links?: {
     manual?: string
@@ -32,7 +33,21 @@ const pluginVersion = computed(() => {
   return `v${value}`
 })
 const presetStamp = computed(() => meta.value?.resource?.presetStamp || '读取中')
-const summary = computed(() => meta.value?.resource?.summary || '正在读取最新资源说明。')
+const summary = computed(() => {
+  const resource = meta.value?.resource
+  const discordSummary = resource?.discordSummary?.trim().replace(/\s+/g, ' ')
+  const releaseSummary = resource?.summary?.trim()
+
+  const lines = []
+  if (discordSummary) {
+    lines.push(discordSummary)
+  }
+  if (releaseSummary) {
+    lines.push(`近期更新：${releaseSummary}`)
+  }
+
+  return lines.join('\n') || '正在读取最新资源说明。'
+})
 const startLink = computed(() => meta.value?.links?.manual || withBase('/manual/start'))
 const installLink = computed(() => withBase('/manual/install'))
 

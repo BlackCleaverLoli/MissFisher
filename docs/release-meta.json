@@ -2,21 +2,20 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.10.1.0",
+    "version": "1.10.2.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动行为 在窗口剩余时间不多时错误开始了游动饵专一连招",
-      "修复：自动行为 在游动饵专一连招时错误换上游动饵导致卡死动作流程",
-      "修复：播报 触幻播报现在将正确跟随自动时的触发幻海策略，即行为策略上如果不触幻，则不公开播报触幻策略提示消息"
+      "修复：蓝鱼模式中如果当前海域没蓝鱼，不会使用普通的触幻预设而是抛出报错，导致自动停止。",
+      "修复：在宇宙探索区域无法正常识别宇宙探索区域的渔获，导致不会对其使用技能。"
     ]
   },
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.03.2106",
+    "presetStamp": "05.04.0509",
     "summary": "7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已全部补完。",
-    "discordSummary": "优化了蓝鱼世界龟的钓法；改变了杜蒂娜鱼的钓法。",
-    "updatedAt": "2026-05-03T21:09:38+08:00"
+    "discordSummary": "恢复了奥雷奥雷奥雷的撒饵；恢复了杜蒂娜鱼的游动饵专一连招；",
+    "updatedAt": "2026-05-04T16:17:28+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
