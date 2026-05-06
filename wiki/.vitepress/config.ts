@@ -111,12 +111,6 @@ export default defineConfig({
             { text: '宇宙探索', link: '/manual/scenarios/cosmic' },
             { text: '云冠群岛', link: '/manual/scenarios/diadem' }
           ]
-        },
-        {
-          text: '归档',
-          items: [
-            { text: 'README 手册归档', link: '/manual/readme-manual' }
-          ]
         }
       ],
       '/guide/': [
