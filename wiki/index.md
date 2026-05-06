@@ -52,10 +52,6 @@ features:
     details: 云冠群岛相关成就和空岛模式说明。
     link: /manual/scenarios/diadem
     linkText: 查看
-  - title: README 手册归档
-    details: 从旧 README 迁移来的历史手册内容。
-    link: /manual/readme-manual
-    linkText: 查看
   - title: 快速修改指南
     details: 快速修改预设，逐步理解表达式结构。
     link: /guide/quick-edit

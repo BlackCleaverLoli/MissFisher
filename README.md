@@ -28,7 +28,7 @@ https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/Mi
 
 添加完成并保存设置后，在插件安装器中搜索 `MissFisher` 并点击安装。
 
-完整安装和使用说明请到 [MissFisher 文档站](https://blackcleaverloli.github.io/MissFisher/)。
+更详细的安装和使用说明见 [MissFisher 文档站](https://blackcleaverloli.github.io/MissFisher/)。
 
 ## MissFisher 文档站
 
