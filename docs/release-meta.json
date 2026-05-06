@@ -12,10 +12,10 @@
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.04.0509",
+    "presetStamp": "05.04.1822",
     "summary": "7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已全部补完。",
-    "discordSummary": "恢复了奥雷奥雷奥雷的撒饵；恢复了杜蒂娜鱼的游动饵专一连招；",
-    "updatedAt": "2026-05-04T16:17:28+08:00"
+    "discordSummary": "优化了世界龟的钓法；修复了宇宙探索任务预设【高难+】调查火山口地带的熔融玻璃类精灵",
+    "updatedAt": "2026-05-04T18:44:54+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
