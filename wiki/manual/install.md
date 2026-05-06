@@ -1,61 +1,71 @@
 ---
 title: 安装说明
-description: 安装 XIVLauncher CN、启用 Dalamud，并添加 MissFisher 第三方仓库。
+description: 如何安装 MissFisher。
 ---
 
 # 安装指南
-  
-## 环境依赖
-## 部署 Dalamud
+
+## 基础依赖
+## Dalamud
+
 Dalamud 是一个完全免费的 FF14 插件平台。  
-你需要从 XIVLauncher 启动游戏，才能使用 Dalamud。  
-  
+你需要从 XIVLauncher 启动游戏才能使用 Dalamud。  
+
 ## XIVLauncher CN (Soil)
-XIVLauncher 是比官方启动器更便捷的第三方 FF14 启动器。  
+XIVLauncher 是一个第三方 FF14 启动器。XIVLauncher CN (Soil) 是 XIVLauncher CN 的分支版本。  
 
-- Soil 版本是什么？  
-XIVLauncher CN (Soil) 是 XIVLauncher CN（蓝月）的分支版本，社区里通常称它为“橙月”。  
+XIVLauncher CN (Soil) 通常被称为橙月，而原版通常被称为蓝月。  
 
-- 为什么更推荐使用橙月？  
-  - 游戏更新后，橙月通常能更快提供对 Dalamud 的适配，让你更早用上插件。  
-  - 中国服社区相当一部分主流插件基于橙月内核开发，因此能获得更好的兼容性与支持。  
-  - 另外，橙月移除了主库存在的部分不必要限制，并优化了整体逻辑。  
+<details>  
+<summary>为什么更建议使用橙月而不是蓝月？</summary>  
 
+橙月相比蓝月，重构并优化了启动器的逻辑、界面和交互，还能更好地支持顺畅的跨大区体验。  
 
-### 安装并打开 XIVLauncher CN (Soil)
-  
-1. [下载 XIVLauncher CN (Soil).zip](https://github.com/AtmoOmen/FFXIVQuickLauncher/releases/latest/download/XIVLauncherCN-win-Portable.zip)  
-2. 解压下载好的 XIVLauncherCN-win-Portable.zip 中的文件到合适的位置。  
-3. 打开解压后路径下的 XIVLauncherCN.exe  
-### 设置 XIVLauncher CN (Soil) 并用它来启动游戏
-1. 点击 XIVLauncher CN (Soil) 界面右下角齿轮图标  
-2. 设置游戏文件夹路径  
-3. 选择 Dalamud 页签 - 确认已勾选 启用 Dalamud  
-4. 点击右下角的 提钩 按钮来保存设置  
-5. 从 XIVLauncher CN (Soil) 登陆并启动游戏，Dalamud 应会自动注入游戏进程  
+并且，由于 Dalamud 在游戏版本迭代后通常需要重新适配。  
+蓝月一般会等待 Dalamud 完全适配完毕并发布正式版内核后，才会拉取新内核。  
+
+而橙月在一两天内就会拉取开发版内核，可以更快提供有限但不稳定的插件使用。  
+当然，您也可以在游戏版本迭代后手动在启动器设置关闭 Dalamud，在观察到 Dalamud 稳定后再启用。  
+
+另外，由于许多中国服社区的主流插件都优先基于橙月的 Dalamud 内核来开发，因此也许也能获得更多兼容性。  
+
+</details>  
+
+### 使用 XIVLauncher CN (Soil) 为游戏注入 Dalamud
+
+1. [下载 XIVLauncher CN (Soil).zip](https://github.com/AtmoOmen/FFXIVQuickLauncher/releases/latest/download/XIVLauncherCN-win-Portable.zip)。  
+2. 解压并打开 XIVLauncher CN (Soil)。  
+3. 设置好游戏目录。  
+4. 点击主界面的齿轮图标按钮来打开设置，选择 Dalamud 页签确认 Dalamud 已经启用。  
+5. 从主界面登陆游戏，Dalamud 应会在游戏启动后自动注入游戏进程。  
+
 ---  
-## 安装 MissFisher
-> 以下指引是基于 XIVLauncher CN (Soil) 的，可能与其他版本略有不同，请留意
-### 打开 Dalamud 插件安装器
-  
-已登陆角色时：  
-  
-1. 在游戏中按下键盘上的 `Esc`  
-2. 点击 `Dalamud插件`  
-  
-在标题画面时：  
-  
-1. 在游戏标题画面左侧找到 Dalamud 图标  
-2. 移动鼠标到图标上 - 点击 插件安装器  
-### 添加第三方仓库链接并安装 MissFisher
-1. 点击插件安装器下方的 `设置`  
-2. 选择 `插件` 页签  
-3. 在 `插件` 页面再次点击 `第三方插件` 页签  
-4. 在空的输入框中填写 MissFisher 的仓库链接：  
+# 在 Dalamud 安装 MissFisher
+> 以下指引是基于 XIVLauncher CN (Soil) 的，可能与其他版本略有不同，请留意  
+## 打开插件安装器
+
+**已登陆角色时：**  
+
+1. 在游戏中按键盘上的 `Esc` 直到出现系统选项菜单。  
+2. 点击 Dalamud 插件。  
+
+**在标题画面时：**  
+
+1. 将鼠标移动到游戏标题画面左侧唤出侧栏。  
+2. 点击 插件安装器。  
+
+## 添加仓库链接并安装 MissFisher
+1. 点击插件安装器下方的设置按钮  
+2. 选择 插件 页签  
+3. 在 插件页 选择 第三方插件 页签  
+4. 在空的输入框中填入 MissFisher 的仓库链接：  
 ```  
 https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/refs/heads/main/MissFisher.json  
 ```  
-5. 点击 `＋` 以添加
-6. 点击保存按钮（软盘图标）  
-7. 返回插件安装器，搜索 `MissFisher`  
-8. 点击安装并等待完成
+5. 点击 `＋` 以添加  
+6. 点击 保存按钮（软盘图标）  
+7. 在插件安装器，搜索 `MissFisher`  
+8. 点击搜索结果中的 `MissFisher` 部分展开描述  
+9. 点击安装按钮并等待完成  
+
+最后，你需要[完成免费认证](./auth)才能使用 MissFisher。  
