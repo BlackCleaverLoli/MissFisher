@@ -106,12 +106,10 @@ export default defineConfig({
         {
           text: '场景',
           items: [
-            { text: '场景总览', link: '/manual/scenarios/' },
             { text: '钓特定鱼类', link: '/manual/scenarios/fish' },
             { text: '出海垂钓', link: '/manual/scenarios/ocean' },
             { text: '宇宙探索', link: '/manual/scenarios/cosmic' },
-            { text: '云冠群岛', link: '/manual/scenarios/island' },
-            { text: '练级', link: '/manual/scenarios/leveling' }
+            { text: '云冠群岛', link: '/manual/scenarios/diadem' }
           ]
         },
         {
