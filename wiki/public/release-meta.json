@@ -12,10 +12,10 @@
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.07.0039",
+    "presetStamp": "05.07.0045",
     "summary": "7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已全部补完。",
-    "discordSummary": "更新黑尖陶乐鲶",
-    "updatedAt": "2026-05-07T00:43:44+08:00"
+    "discordSummary": "更新黑尖陶乐鲶。",
+    "updatedAt": "2026-05-07T00:45:26+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
