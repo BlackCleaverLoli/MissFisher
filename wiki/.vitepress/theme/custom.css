@@ -202,18 +202,6 @@ pre code .dsl-comment,
   background-color: #1e1e1e !important;
 }
 
-.vp-doc blockquote {
-  color: var(--vp-c-text-1);
-}
-
-.vp-doc blockquote p,
-.vp-doc blockquote li,
-.vp-doc blockquote strong,
-.vp-doc blockquote em,
-.vp-doc blockquote code {
-  color: inherit;
-}
-
 .mf-release {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
