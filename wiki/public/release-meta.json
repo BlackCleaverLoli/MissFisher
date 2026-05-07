@@ -2,20 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.10.2.1",
+    "version": "1.10.3.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：蓝鱼模式中如果当前海域没蓝鱼，不会使用普通的触幻预设而是抛出报错，导致自动停止。",
-      "修复：在宇宙探索区域无法正常识别宇宙探索区域的渔获，导致不会对其使用技能。"
+      "移除：设置 手动配置的自动丢弃组名和导出自动丢弃配置",
+      "新增：设置 自动丢弃开关",
+      "新增：工具功能 调用 DR 自动丢弃的命令"
     ]
   },
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.07.0045",
+    "presetStamp": "05.07.1907",
     "summary": "7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已全部补完。",
-    "discordSummary": "更新黑尖陶乐鲶。",
-    "updatedAt": "2026-05-07T00:45:26+08:00"
+    "discordSummary": "修复摩那苏婆帝",
+    "updatedAt": "2026-05-07T19:09:40+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
