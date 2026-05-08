@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.10.3.1",
+    "version": "1.10.3.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：界面 现在预设页选中预设后的详情区将提供更多信息，例如所需钓饵、传承录和获得力要求，以及窗口期信息和预报。（那部分的界面显示效果将在后续版本优化）",
-      "修复：自动功能 渔获网络包的操作码未更新导致自动行为异常",
-      "优化：界面 调整了页签按钮顺序"
+      "修复：在特定区域时图标悬浮窗消失的问题。",
+      "新增：现在主页的查看预设按钮将使界面跳转到预设页并展开对应预设的详情信息，而非在聊天窗口显示预设信息。",
+      "优化：现在在预设页选中预设时也将把被选中的预设加入预设调用历史。"
     ]
   },
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.07.2132",
+    "presetStamp": "05.08.2103",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。",
-    "discordSummary": "修正一批蓝鱼",
-    "updatedAt": "2026-05-07T21:32:35+08:00"
+    "discordSummary": "优化世界龟、涩水凯门鳄",
+    "updatedAt": "2026-05-09T01:07:18+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",

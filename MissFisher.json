@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.10.3.1",
+        "AssemblyVersion": "1.10.3.2",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.10.3.1\n- 新增：界面 现在预设页选中预设后的详情区将提供更多信息，例如所需钓饵、传承录和获得力要求，以及窗口期信息和预报。（那部分的界面显示效果将在后续版本优化）\n- 修复：自动功能 渔获网络包的操作码未更新导致自动行为异常\n- 优化：界面 调整了页签按钮顺序\n# v1.10.3.0\n- 移除：设置 手动配置的自动丢弃组名和导出自动丢弃配置\n- 新增：设置 自动丢弃开关\n- 新增：工具功能 调用 DR 自动丢弃的命令\n- 修复：自动行为 修复拍击水面的优先级比预期低的错误，导致拍击水面未如预期被使用，且采集力充足时也未如预期先使用拍击水面再使用采集力恢复技能\n- 修复：界面 主页的模式下拉菜单展开中海钓模式相关的项未如预期显示海钓相关的标签\n- 优化：自动功能 优化了自动海钓在任务初期的寻路行为\n- 优化：界面 现在主页的模式下拉、启动按钮都会显示空岛模式所需的钓饵信息\n- 优化：界面 优化了预设搜索效果\n- 优化：界面 在非钓鱼相关的副本内时将不再显示图标悬浮窗\n- 优化：界面交互 现在原本需要按住修饰键（例如 Ctrl、Shift）再单击中键的界面手势操作，都额外新增了按住修饰键再单击右键的手势。\n- 优化：工具功能 自动丢弃现在将使用 IPC 而无需再手动配置\n- 优化：工具功能 自动进入空岛的寻路和交互流程\n- 杂项：更新了设置页中的插件依赖信息\n- 杂项：修正了一些文案\n- 杂项：优化了部分界面效果\n- 杂项：优化了部分悬浮窗效果\n",
+        "ChangeLog": "# v1.10.3.2\n- 修复：在特定区域时图标悬浮窗消失的问题。\n- 新增：现在主页的查看预设按钮将使界面跳转到预设页并展开对应预设的详情信息，而非在聊天窗口显示预设信息。\n- 优化：现在在预设页选中预设时也将把被选中的预设加入预设调用历史。\n- 优化：界面 现在预设浏览器单选预设分组时也将按优先级排序，有助于更容易看到游戏最近更新的鱼类\n- 优化：界面 图标悬浮窗将在角色处于gpose或pvp时被隐藏\n- 优化：优化了界面样式。\n- 杂项：界面 主界面显示时不再隐藏图标悬浮窗\n- 杂项：程序性改动 提升了内部时间计算的稳定性\n- 杂项：修正了部分文案语义。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
