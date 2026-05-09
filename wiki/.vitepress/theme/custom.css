@@ -170,16 +170,22 @@ pre code .dsl-comment,
 
 .vp-doc pre code .diff-add,
 .vp-code .diff-add {
-  display: block;
+  display: inline-block;
+  width: 100%;
   color: #b5cea8 !important;
   background-color: #113A1B;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .vp-doc pre code .diff-remove,
 .vp-code .diff-remove {
-  display: block;
+  display: inline-block;
+  width: 100%;
   color: #f48771 !important;
   background-color: #450C0F;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .vp-doc pre code .diff-add .diff-token-change,
