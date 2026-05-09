@@ -22,6 +22,7 @@ const 全局修饰词精确匹配 = new Set([
     '不撒饵', 'nochum',
     '收藏品', 'coll',
     '不收集', 'nocoll',
+    '无渔技', 'nomb',
     '钓组', 'snag',
     '大尺寸', 'large',
     '攒鱼计', 'aa',
@@ -40,11 +41,14 @@ const 全局修饰词精确匹配 = new Set([
     '鱼眼', 'fe',
     '鱼篓', 'sh',
     '鱼篓专一', 'sh-ic',
-    '多提回退', 'mhs-back',
+    '多提回退', 'mhs-fallback', 'mhs-back',
     '允许溢出', 'overflow',
     '等待华丽', 'wait-sh',
+    '等待多提', 'wait-mhs',
     '跳阶段', 'skipstg',
     '强制预备', 'force-prep',
+    '不预备拍水', 'no-pre-ss',
+    '不预备鱼计', 'no-pre-aa',
     '银星', 'silver',
     '无强心剂', 'nocord',
     '无恩宠', 'nofavor',
@@ -259,7 +263,7 @@ function highlightWeatherInner(text) {
 /**
  * 高亮 DSL 代码 - 使用粗粒度正则匹配
  */
-function highlightDSL(code) {
+function highlightDSL(code, options = {}) {
     let result = '';
     let remaining = code;
     const modeWithBaitRegex = new RegExp(
@@ -278,6 +282,7 @@ function highlightDSL(code) {
         `^((?:${全部模式}|[!！]{1,3}(?:\\s*\\+\\s*[!！]{1,3})*))(\\s*(?:${提钩模式})\\d?)?`,
         'i'
     );
+    const hookRegex = new RegExp(`^(${提钩模式})\\d?(?![A-Za-z0-9_\\u4E00-\\u9FFF-])`, 'i');
     const bracketRegex = /^([【\[(（])([^】\]）)]+)([】\]）)])/;
     const equalRegex = /^(=)([^；;@》>《<]*?)([；;]|$)/;
     
@@ -439,7 +444,16 @@ function highlightDSL(code) {
             continue;
         }
 
-        // 13. 通用数字（计数器/ID/普通数字）
+        // 13. 独立提钩类型：用于内联专一/拍水中不跟在咬饵类型后的提钩
+        const hookMatch = remaining.match(hookRegex);
+        if (hookMatch && !(options.inGlobalParams && isModifierToken(hookMatch[0]))) {
+            result += token('hook', hookMatch[0]);
+            remaining = remaining.slice(hookMatch[0].length);
+            matched = true;
+            continue;
+        }
+
+        // 14. 通用数字（计数器/ID/普通数字）
         const numberMatch = remaining.match(/^(\d+(?:\.\d+)?)/);
         if (numberMatch) {
             result += token('time', numberMatch[1]);
@@ -448,7 +462,7 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 14. 括号内容（目标集合/钓饵名/IdOrName）
+        // 15. 括号内容（目标集合/钓饵名/IdOrName）
         const bracketMatch = remaining.match(bracketRegex);
         if (bracketMatch) {
             result += token('op', bracketMatch[1]);
@@ -459,13 +473,13 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 15. 全局参数起始：= ... ;
+        // 16. 全局参数起始：= ... ;
         const equalMatch = remaining.match(equalRegex);
         if (equalMatch) {
             result += token('op', '=');
             const content = equalMatch[2];
             if (content) {
-                result += highlightDSL(content);
+                result += highlightDSL(content, { inGlobalParams: true });
             }
             if (equalMatch[3]) {
                 result += token('sep', equalMatch[3]);
@@ -475,7 +489,7 @@ function highlightDSL(code) {
             continue;
         }
 
-        // 16. 单独的 @（没有匹配到上面的模式）
+        // 17. 单独的 @（没有匹配到上面的模式）
         if (remaining[0] === '@') {
             result += token('op', '@');
             remaining = remaining.slice(1);
@@ -483,7 +497,7 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 17. markdown 反引号 `内容`
+        // 18. markdown 反引号 `内容`
         if (remaining[0] === '`') {
             const closeIdx = remaining.indexOf('`', 1);
             if (closeIdx !== -1) {
@@ -495,8 +509,16 @@ function highlightDSL(code) {
                 continue;
             }
         }
+
+        // 19. 双竖线列表分隔符
+        if (remaining.startsWith('||')) {
+            result += token('sep', '||');
+            remaining = remaining.slice(2);
+            matched = true;
+            continue;
+        }
         
-        // 18. 标点符号
+        // 20. 标点符号
         if ('~-;；()（）|+、，[]{}?？='.includes(remaining[0])) {
             if (remaining[0] === ';' || remaining[0] === '；' || remaining[0] === '、') {
                 result += token('sep', remaining[0]);
@@ -508,7 +530,7 @@ function highlightDSL(code) {
             continue;
         }
 
-        // 19. 词法单元（优先识别全局修饰词与特殊常量）
+        // 21. 词法单元（优先识别全局修饰词与特殊常量）
         const wordMatch = remaining.match(/^([A-Za-z][A-Za-z0-9-]*|[\u4E00-\u9FFF][\u4E00-\u9FFF0-9-]*)/);
         if (wordMatch) {
             const word = wordMatch[1];
@@ -524,7 +546,7 @@ function highlightDSL(code) {
             continue;
         }
         
-        // 20. 其他字符直接输出（已转义）
+        // 22. 其他字符直接输出（已转义）
         if (!matched) {
             if (/\s/.test(remaining[0])) {
                 result += escapeHtml(remaining[0]);
