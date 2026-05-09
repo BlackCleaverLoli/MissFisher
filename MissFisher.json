@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.10.3.2",
+        "AssemblyVersion": "1.10.3.3",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.10.3.2\n- 修复：在特定区域时图标悬浮窗消失的问题。\n- 新增：现在主页的查看预设按钮将使界面跳转到预设页并展开对应预设的详情信息，而非在聊天窗口显示预设信息。\n- 优化：现在在预设页选中预设时也将把被选中的预设加入预设调用历史。\n- 优化：界面 现在预设浏览器单选预设分组时也将按优先级排序，有助于更容易看到游戏最近更新的鱼类\n- 优化：界面 图标悬浮窗将在角色处于gpose或pvp时被隐藏\n- 优化：优化了界面样式。\n- 杂项：界面 主界面显示时不再隐藏图标悬浮窗\n- 杂项：程序性改动 提升了内部时间计算的稳定性\n- 杂项：修正了部分文案语义。\n",
+        "ChangeLog": "# v1.10.3.3\n- 修复：因上游依赖的错误而导致在进行特定游戏交互操作时导致游戏崩溃的问题。\n# v1.10.3.2\n- 新增：现在主页的查看预设按钮将使界面跳转到预设页并展开对应预设的详情信息，而非在聊天窗口显示预设信息。\n- 修复：在特定区域时图标悬浮窗消失的问题。\n- 优化：现在在预设页选中预设时也将把被选中的预设加入预设调用历史。\n- 优化：界面 现在预设浏览器单选预设分组时也将按优先级排序，有助于更容易看到游戏最近更新的鱼类。\n- 优化：界面 图标悬浮窗将在角色处于 gpose 或 pvp 时被隐藏。\n- 优化：优化了界面样式。\n- 杂项：界面 主界面显示时不再隐藏图标悬浮窗\n- 杂项：程序性改动 提升了内部时间计算的稳定性\n- 杂项：修正了部分文案语义。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }

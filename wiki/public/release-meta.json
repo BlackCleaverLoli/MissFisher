@@ -2,21 +2,19 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.10.3.2",
+    "version": "1.10.3.3",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：现在主页的查看预设按钮将使界面跳转到预设页并展开对应预设的详情信息，而非在聊天窗口显示预设信息。",
-      "修复：在特定区域时图标悬浮窗消失的问题。",
-      "优化：现在在预设页选中预设时也将把被选中的预设加入预设调用历史。"
+      "修复：因上游依赖的错误而导致在进行特定游戏交互操作时导致游戏崩溃的问题。"
     ]
   },
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.09.1531",
+    "presetStamp": "05.09.1725",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。",
-    "discordSummary": "修正锹鼻鲶",
-    "updatedAt": "2026-05-09T15:33:24+08:00"
+    "discordSummary": "修正幻光鱼的钓饵",
+    "updatedAt": "2026-05-09T17:28:58+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
