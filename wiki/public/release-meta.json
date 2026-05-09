@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260429",
     "bundleName": "SyncBundle_260429.zip",
-    "presetStamp": "05.09.1530",
+    "presetStamp": "05.09.1531",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。",
-    "discordSummary": "优化世界龟、涩水凯门鳄",
-    "updatedAt": "2026-05-09T15:32:07+08:00"
+    "discordSummary": "修正锹鼻鲶",
+    "updatedAt": "2026-05-09T15:33:24+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
