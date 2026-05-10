@@ -5,7 +5,6 @@ description: 如何安装 MissFisher。
 
 # 安装指南
 
-## 基础依赖
 ## Dalamud
 
 Dalamud 是一个完全免费的 FF14 插件平台。  
@@ -39,8 +38,7 @@ XIVLauncher CN (Soil) 通常被称为橙月，而原版通常被称为蓝月。
 4. 点击主界面的齿轮图标按钮来打开设置，选择 Dalamud 页签确认 Dalamud 已经启用。  
 5. 从主界面登陆游戏，Dalamud 应会在游戏启动后自动注入游戏进程。  
 
----  
-# 在 Dalamud 安装 MissFisher
+## 在 Dalamud 安装 MissFisher
 > 以下指引是基于 XIVLauncher CN (Soil) 的，可能与其他版本略有不同，请留意  
 ## 打开插件安装器
 
