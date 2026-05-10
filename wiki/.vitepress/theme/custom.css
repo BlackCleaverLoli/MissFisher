@@ -209,10 +209,9 @@ pre code .dsl-comment,
 }
 
 .mf-release {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
-  max-width: 1120px;
+  box-sizing: border-box;
+  width: calc(100% - 48px);
+  max-width: 1152px;
   margin: -8px auto 28px;
   padding: 18px 20px;
   border: 1px solid var(--vp-c-divider);
@@ -249,7 +248,7 @@ pre code .dsl-comment,
 
 .mf-release__stats {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, max-content));
+  grid-template-columns: repeat(2, minmax(0, max-content));
   gap: 16px;
   margin: 0;
 }
@@ -276,18 +275,16 @@ pre code .dsl-comment,
 .mf-release__actions {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-  justify-content: flex-end;
   gap: 10px;
+  margin-top: 14px;
 }
 
 .mf-release__action {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 36px;
-  padding: 0 14px;
+  min-height: 34px;
+  padding: 0 13px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
   color: var(--vp-c-text-1);
@@ -295,24 +292,27 @@ pre code .dsl-comment,
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-}
-
-.mf-release__action--primary {
-  border-color: transparent;
-  color: #ffffff;
-  background: var(--vp-c-brand-1);
+  transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
 }
 
 .mf-release__action:hover,
 .mf-release__action:focus-visible {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  outline: none;
 }
 
-.mf-release__action--primary:hover,
-.mf-release__action--primary:focus-visible {
-  color: #ffffff;
-  background: var(--vp-c-brand-2);
+@media (min-width: 768px) {
+  .mf-release {
+    width: calc(100% - 96px);
+  }
+}
+
+@media (min-width: 960px) {
+  .mf-release {
+    width: calc(100% - 128px);
+  }
 }
 
 @media (max-width: 760px) {
@@ -321,21 +321,12 @@ pre code .dsl-comment,
   }
 
   .mf-release {
-    grid-template-columns: 1fr;
-    margin: -2px 24px 24px;
+    margin: -2px auto 24px;
     padding: 16px;
   }
 
   .mf-release__stats {
     grid-template-columns: 1fr;
     gap: 10px;
-  }
-
-  .mf-release__actions {
-    justify-content: flex-start;
-  }
-
-  .mf-release__action {
-    flex: 1 1 120px;
   }
 }

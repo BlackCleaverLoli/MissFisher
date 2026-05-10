@@ -23,6 +23,7 @@ type ReleaseMeta = {
 
 const meta = ref<ReleaseMeta | null>(null)
 const failed = ref(false)
+const onlineSheetLink = 'https://docs.qq.com/sheet/DVlNaQ012amF4SW1G?tab=yirja0'
 
 const pluginVersion = computed(() => {
   const value = meta.value?.plugin?.version || '读取中'
@@ -48,8 +49,6 @@ const summary = computed(() => {
 
   return lines.join('\n') || '正在读取最新资源说明。'
 })
-const startLink = computed(() => meta.value?.links?.manual || withBase('/manual/start'))
-const installLink = computed(() => withBase('/manual/install'))
 
 onMounted(async () => {
   try {
@@ -84,8 +83,7 @@ onMounted(async () => {
     </div>
 
     <div class="mf-release__actions" aria-label="发布相关入口">
-      <a class="mf-release__action mf-release__action--primary" :href="installLink">安装说明</a>
-      <a class="mf-release__action" :href="startLink">开始使用</a>
+      <a class="mf-release__action" :href="onlineSheetLink" target="_blank" rel="noreferrer">在线表格</a>
     </div>
   </section>
 </template>

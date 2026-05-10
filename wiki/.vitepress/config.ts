@@ -83,8 +83,7 @@ export default defineConfig({
       { text: '安装', link: '/manual/install' },
       { text: '认证', link: '/manual/auth' },
       { text: '开始使用', link: '/manual/start' },
-      { text: '钓法表达式', link: '/guide/quick-edit' },
-      { text: '参考', link: '/reference/angex-grammar' },
+      { text: '预设修改指南', link: '/guide/quick-edit' },
       { text: 'GitHub', link: 'https://github.com/BlackCleaverLoli/MissFisher' }
     ],
     sidebar: {
