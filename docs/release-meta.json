@@ -2,12 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.0.0",
+    "version": "1.11.0.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "移除：移除了预设编辑器的格式化下拉选项，现在将总是按语言选择特定的格式化风格",
-      "新增：清单模式，可自动逐一前往并启动清单中的预设",
-      "新增：表达式参数 额外提钩组"
+      "修复：因不同启动器的Dalamud内核版本不同而导致的帧级错误。"
     ]
   },
   "resource": {
@@ -16,7 +14,7 @@
     "presetStamp": "05-11-1907",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。",
     "discordSummary": "修正得卡特、小甚平",
-    "updatedAt": "2026-05-17T14:32:56+08:00"
+    "updatedAt": "2026-05-17T14:59:24+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
