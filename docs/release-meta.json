@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.0.1",
+    "version": "1.11.0.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：因不同启动器的Dalamud内核版本不同而导致的帧级错误。"
+      "修复：编辑器对符号的高亮染色有误。",
+      "优化：优化了清单队列逻辑。",
+      "修复：调用vnavmesh时没有严格检查它的启用状态"
     ]
   },
   "resource": {
     "bundleVersion": "260517",
     "bundleName": "SyncBundle_260517.zip",
-    "presetStamp": "05-11-1907",
+    "presetStamp": "05-18-0817",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。",
-    "discordSummary": "修正得卡特、小甚平",
-    "updatedAt": "2026-05-17T14:59:24+08:00"
+    "discordSummary": "将22条预设的窗口期补充完整",
+    "updatedAt": "2026-05-18T09:10:36+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
