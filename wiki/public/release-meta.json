@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260517",
     "bundleName": "SyncBundle_260517.zip",
-    "presetStamp": "05-19-0133",
+    "presetStamp": "05-19-0755",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。",
-    "discordSummary": "优化 黑尖陶乐鲶 盾齿龙",
-    "updatedAt": "2026-05-19T03:18:05+08:00"
+    "discordSummary": "重新批量生成了普通鱼预设",
+    "updatedAt": "2026-05-19T08:25:11+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
