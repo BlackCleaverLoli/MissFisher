@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.11.1.0",
+        "AssemblyVersion": "1.11.2.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.11.1.0\n- 新增：自动行为时将按需食用增加获得力的食物，优先级比使用采集力食物高；如果没找到合适食物，或者食用后仍不满足要求，才会进行原有的获得力不足报错。\n- 新增：自动行为时将按需食用采集力食物；同时添加了相关设置项。\n- 修复：钓场导航自动下坐骑选项错误地影响了自动清单的行为，导致需要飞行的目标都会被错过。\n- 修复：前往所在地功能的初始选点错误，导致无法落在正确的钓点上。\n",
+        "ChangeLog": "# v1.11.2.0\n- 新增：设置项，可禁止 MF 使用机制横幅来发送非警告提示。\n- 修复：钓法数据同步成功后在消息窗口显示的说明在之前的改动中被意外去除，现在重新补上。\n- 修复：批量生成预设的以小钓大中间咬饵类型。\n- 优化：解决了预设浏览器处在项特别多的分组并展开快捷菜单时的瞬间卡顿，将清单可用性计算移动到了按住 Ctrl 后。\n- 优化：静默了钓点上传的失败。\n- 优化：补全了清单模式下启动相关提醒的静默。\n- 优化：追加了窗口期 TTS 与横幅提示的部分防打扰。\n- 杂项：不再控制 Daily Routines 的取消钓鱼动画模块。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
