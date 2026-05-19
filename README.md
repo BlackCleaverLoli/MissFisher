@@ -9,7 +9,7 @@
 
 <!-- MF_AUTO_START -->
   <img alt="最新版本" src="https://img.shields.io/badge/%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC-v1.11.1.0-0099ff?style=for-the-badge" />
-  <img alt="钓法数据" src="https://img.shields.io/badge/%E9%92%93%E6%B3%95%E6%95%B0%E6%8D%AE-05--20--0026-6366f1?style=for-the-badge" />
+  <img alt="钓法数据" src="https://img.shields.io/badge/%E9%92%93%E6%B3%95%E6%95%B0%E6%8D%AE-05--20--0313-6366f1?style=for-the-badge" />
 <!-- MF_AUTO_END -->
 
 </div>
