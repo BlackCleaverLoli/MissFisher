@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260517",
     "bundleName": "SyncBundle_260517.zip",
-    "presetStamp": "05-19-1226",
-    "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。",
-    "discordSummary": "修复 得卡特；追加了 丰渔绢纱 海鱼小员；重新批量生成了普通鱼预设；",
-    "updatedAt": "2026-05-19T12:27:44+08:00"
+    "presetStamp": "05-20-0026",
+    "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
+    "discordSummary": "修复 得卡特；追加了 丰渔绢纱 海鱼小员；修复了普通鱼的钓组需求；",
+    "updatedAt": "2026-05-20T00:30:54+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
