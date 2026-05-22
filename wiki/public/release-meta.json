@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.2.4",
+    "version": "1.11.3.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：修复没有将无窗口期的预设也包含在推荐清单的问题。",
-      "修复：修复前往钓场功能未正确切换捕鱼人导致最终步骤无法完成并结束的问题。",
-      "优化：现在将在自动行为时暂时关闭 Daily Routines 的自动面向模块和钓鱼状态守卫模块。"
+      "新增：现在手动启动有所在地的预设时将自动前往有效钓点再启动，而不是之前的仅检查能否抛竿。",
+      "修复：修复了未找到有窗口期的预设时会将其作为无窗口期的预设来管理的问题。",
+      "修复：修复了将窗口期数据错误的预设作为无窗口期的预设来管理的问题。"
     ]
   },
   "resource": {
-    "bundleVersion": "260517",
-    "bundleName": "SyncBundle_260517.zip",
-    "presetStamp": "05-22-0137",
+    "bundleVersion": "260522",
+    "bundleName": "SyncBundle_260522.zip",
+    "presetStamp": "05-22-1028",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "修正 黑玛瑙刀背鱼 的窗口期",
-    "updatedAt": "2026-05-22T01:42:49+08:00"
+    "discordSummary": "修正 黑玛瑙刀背鱼 的窗口期；优化 自走鱼偶",
+    "updatedAt": "2026-05-22T11:25:03+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -24,6 +24,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260517.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260522.zip"
   }
 }
