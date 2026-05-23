@@ -2,10 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.3.2",
+    "version": "1.11.4.0",
     "apiLevel": 15,
     "changelogSummary": [
       "新增：现在非耐力的蓝鱼和冲分模式也可在本外启动，将执行一次自动登船选航线流程，且不限制耐力海钓的那些必须条件。",
+      "新增：现在推荐清单在按住 Ctrl 时将总是推荐无窗口期限制的鱼。",
       "修复：修复了清单模式启动时获得力检查的时机问题。"
     ]
   },
@@ -15,7 +16,7 @@
     "presetStamp": "05-23-0946",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "修正批量生成中的 3 条需要诱饵系技能触发效果的预设",
-    "updatedAt": "2026-05-23T09:48:47+08:00"
+    "updatedAt": "2026-05-23T13:10:40+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
