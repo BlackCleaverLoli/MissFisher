@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.11.4.0",
+        "AssemblyVersion": "1.11.5.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.11.4.0\n- 新增：现在非耐力的蓝鱼和冲分模式也可在本外启动，将执行一次自动登船选航线流程，且不限制耐力海钓的那些必须条件。\n- 新增：现在推荐清单在按住 Ctrl 时将总是推荐无窗口期限制的鱼。\n- 修复：修复了清单模式启动时获得力检查的时机问题。\n",
+        "ChangeLog": "# v1.11.5.0\n- 新增：表达式窗口期现在支持使用排除符号 `？`，如 `@（？幻海流）` 表示排除幻海流。\n- 修复：修复了出海垂钓时因副本状态抖动而错误在第 1 个区域将幻海流的初始持续时间赋为 180 秒的问题。\n- 修复：修复了在特殊区域错误地将仅天气限制的窗口期剩余时间当做 0 秒来处理和显示的问题。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
