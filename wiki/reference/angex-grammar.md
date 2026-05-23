@@ -80,7 +80,7 @@ WeatherOpt     ::= WeatherBracket | ε ;
 WindowArrow    ::= "=" WS* Arrow ;
 WeatherBracket ::= ("(" | "（") WeatherInner (")" | "）") ;
 WeatherInner   ::= WeatherList (WS* WindowArrow WS* WeatherList)? ;
-WeatherList    ::= IdOrName (WS* ListSep WS* IdOrName)* ;
+WeatherList    ::= ExclusionPrefix? WS* IdOrName (WS* ListSep WS* IdOrName)* ;
 
 Phase1         ::= ExtraBiteOpt WS* BiteTimeOpt WS* BiteTypes WS* HooksetOpt
                    WS* InlineSpecialsOpt WS* SwimbaitOpt WS* TargetsOpt
@@ -170,6 +170,8 @@ NAME            ::= <不包含列表分隔符的非空文本> ;
    - 天气集合。
      否则报错“窗口期为空”。
    - 双段天气必须写在同一组括号内，例如 `(晴朗=>阴云)` 或 `（晴朗=》阴云）`。
+   - 天气集合支持列表级排除前缀，且每侧仅允许写在第一个天气前。例如 `（？晴朗）` 表示当前天气不是晴朗，`（？碧空=》晴朗）` 表示前一段天气不是碧空且当前天气是晴朗，`（碧空=》？晴朗）` 表示前一段天气是碧空且当前天气不是晴朗，`（？碧空=》？晴朗）` 表示两侧分别排除对应天气。
+   - `（晴朗、？阴云）` 和 `（？晴朗、？阴云）` 非法；多天气排除应写作 `（？晴朗、阴云）`。
 
 2) ET 时间为 4 位数字（0000-2359），`2400` 被视为 `0000`。
 
@@ -229,7 +231,8 @@ NAME            ::= <不包含列表分隔符的非空文本> ;
 - `？` / `?` 前缀表示排除模式。
 
 13) 天气项：
-- 仅支持 `IdOrName`，不支持排除或占位等特殊项。
+- 天气列表项仅支持 `IdOrName`；列表级 `？` / `?` 前缀表示排除模式。
+- 天气列表不支持 `any`、`任何`、`占位` / `ph` 或逐项混合排除。
 
 14) 游动饵占位：
 - 单独出现的游动饵操作符（如 `《》` 中的 `《`）会被视为“鱼篓标志”，等价于游动饵目标包含 `《`。
