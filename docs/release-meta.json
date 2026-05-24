@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260523",
     "bundleName": "SyncBundle_260523.zip",
-    "presetStamp": "05-24-0851",
+    "presetStamp": "05-24-1822",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "优化 部分出海垂钓的普通钓场稀有鱼",
-    "updatedAt": "2026-05-24T08:52:13+08:00"
+    "discordSummary": "修正 冥境睡鱼",
+    "updatedAt": "2026-05-24T18:22:51+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
