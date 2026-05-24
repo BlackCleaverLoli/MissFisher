@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.5.0",
+    "version": "1.11.5.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：表达式窗口期现在支持使用排除符号 `？`，如 `@（？幻海流）` 表示排除幻海流。",
-      "修复：修复了出海垂钓时因副本状态抖动而错误在第 1 个区域将幻海流的初始持续时间赋为 180 秒的问题。",
-      "修复：修复了在特殊区域错误地将仅天气限制的窗口期剩余时间当做 0 秒来处理和显示的问题。"
+      "新增：命令 `/mf fishdiscard`，效果是尝试调用 dr的auto discard模块来丢弃一般钓场的普通鱼类（不会丢稀有鱼、宠物和收藏品）。",
+      "杂项：不再在自动时临时关闭 dr的AutoGuardFishingState模块。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "05-24-1822",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "修正 冥境睡鱼",
-    "updatedAt": "2026-05-24T18:22:51+08:00"
+    "updatedAt": "2026-05-24T22:13:30+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
