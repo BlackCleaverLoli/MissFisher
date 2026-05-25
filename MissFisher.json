@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.11.5.1",
+        "AssemblyVersion": "1.11.6.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.11.5.1\n- 新增：命令 `/mf fishdiscard`，效果是尝试调用 dr的auto discard模块来丢弃一般钓场的普通鱼类（不会丢稀有鱼、宠物和收藏品）。\n- 杂项：不再在自动时临时关闭 dr的AutoGuardFishingState模块。\n# v1.11.5.0\n- 新增：表达式窗口期现在支持使用排除符号 `？`，如 `@（？幻海流）` 表示排除幻海流。\n- 修复：修复了出海垂钓时因副本状态抖动而错误在第 1 个区域将幻海流的初始持续时间赋为 180 秒的问题。\n- 修复：修复了在特殊区域错误地将仅天气限制的窗口期剩余时间当做 0 秒来处理和显示的问题。\n",
+        "ChangeLog": "# v1.11.6.0\n- 新增：主页在海钓相关模式时将显示航线信息小区。\n- 修复：修复了一处自动海钓在蓝鱼模式下的手法问题，曾导致没有按预期使用熟练渔技。\n- 优化：优化了自动前往所在地相关的选点、落点和面向调整行为。\n- 优化：优化了一些界面样式。\n- 杂项：不再依赖 dr 的自动丢弃。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
