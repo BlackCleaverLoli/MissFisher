@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.11.6.0",
+        "AssemblyVersion": "1.11.6.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.11.6.0\n- 新增：主页在海钓相关模式时将显示航线信息小区。\n- 修复：修复了一处自动海钓在蓝鱼模式下的手法问题，曾导致没有按预期使用熟练渔技。\n- 优化：优化了自动前往所在地相关的选点、落点和面向调整行为。\n- 优化：优化了一些界面样式。\n- 杂项：不再依赖 dr 的自动丢弃。\n",
+        "ChangeLog": "# v1.11.6.1\n- 优化：继续优先使用dr的自动丢弃。\n- 优化：优化了一些界面样式。\n# v1.11.6.0\n- 新增：主页在海钓相关模式时将显示航线信息小区。\n- 修复：修复了一处自动海钓在蓝鱼模式下的手法问题，曾导致没有按预期使用熟练渔技。\n- 优化：优化了自动前往所在地相关的选点、落点和面向调整行为。\n- 优化：优化了一些界面样式。\n- 杂项：不再依赖 dr 的自动丢弃。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
