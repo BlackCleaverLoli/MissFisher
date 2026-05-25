@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.6.0",
+    "version": "1.11.6.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：主页在海钓相关模式时将显示航线信息小区。",
-      "修复：修复了一处自动海钓在蓝鱼模式下的手法问题，曾导致没有按预期使用熟练渔技。",
-      "优化：优化了自动前往所在地相关的选点、落点和面向调整行为。"
+      "优化：继续优先使用dr的自动丢弃。",
+      "优化：优化了一些界面样式。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "05-24-1822",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "修正 冥境睡鱼",
-    "updatedAt": "2026-05-25T22:59:20+08:00"
+    "updatedAt": "2026-05-26T01:06:50+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
