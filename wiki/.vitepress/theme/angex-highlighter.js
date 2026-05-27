@@ -12,7 +12,6 @@
 const 钓法模式 = '大鱼|耐心|平钓|bf|pt|nm';
 const 全部模式 = '全部|all(?![A-Za-z-])';
 const 提钩模式 = '强力|精准|双提|三提|华丽|双重|三重|pw|pc|dh|th|sh';
-const 内联额外模式 = '额外|ex';
 const 内联拍水模式 = '拍水|拍|ss';
 const 内联专一模式 = '专一|专|ic';
 const 嵌套模式 = '拍水后|专一后|阶段|stg|stage|鱼识|int|pss|pic|拍水|拍|ss|专一|专|ic';
@@ -274,7 +273,6 @@ function highlightDSL(code, options = {}) {
     const modeOnlyRegex = new RegExp(`^(${钓法模式})(?![A-Za-z0-9_\\u4E00-\\u9FFF])`, 'i');
     const windowRegex = /^@(\s*)(?:(\d{4}\s*[~-]\s*\d{4})(\s*))?(?:([（(])([^）)]+)([）)]))?/;
     const nestedStartRegex = new RegExp(`^@(\\s*)(${嵌套模式})(\\s*=\\s*)([>》])`, 'i');
-    const extraRegex = new RegExp(`^@(\\s*)(${内联额外模式})(?!\\s*=)`, 'i');
     const surfaceRegex = new RegExp(`^@(\\s*)(${内联拍水模式})(?!\\s*=)`, 'i');
     const focusRegex = new RegExp(`^@(\\s*)(${内联专一模式})(?!\\s*=)`, 'i');
     const extraBiteRegex = /^([（(]\s*(?:全部|all|[!！]{1,3})\s*[)）])/i;
@@ -356,18 +354,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 6. @额外（内联）
-        const extraMatch = remaining.match(extraRegex);
-        if (extraMatch) {
-            result += token('op', '@');
-            result += escapeHtml(extraMatch[1]);
-            result += token('trigger', extraMatch[2]);
-            remaining = remaining.slice(extraMatch[0].length);
-            matched = true;
-            continue;
-        }
-
-        // 7. @拍水（内联）
+        // 6. @拍水（内联）
         const surfaceMatch = remaining.match(surfaceRegex);
         if (surfaceMatch) {
             result += token('op', '@');
@@ -378,7 +365,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 8. @专一（内联）
+        // 7. @专一（内联）
         const focusMatch = remaining.match(focusRegex);
         if (focusMatch) {
             result += token('op', '@');
@@ -389,7 +376,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 9. 》阶段分隔符
+        // 8. 》阶段分隔符
         if (remaining[0] === '》' || remaining[0] === '>') {
             result += token('op', remaining[0]);
             remaining = remaining.slice(1);
@@ -397,7 +384,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 10. 《 / <（游动饵标记或阶段闭合）
+        // 9. 《 / <（游动饵标记或阶段闭合）
         if (remaining[0] === '《' || remaining[0] === '<') {
             result += token('op', remaining[0]);
             remaining = remaining.slice(1);
@@ -405,7 +392,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 11. 额外咬饵类型：(全部/all/!/!!/!!!)
+        // 10. 额外咬饵类型：(全部/all/!/!!/!!!)
         const extraBiteMatch = remaining.match(extraBiteRegex);
         if (extraBiteMatch) {
             const parts = extraBiteMatch[1].match(/^([（(]\s*)([\s\S]*?)(\s*[)）])$/);
@@ -421,7 +408,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 12. 咬饵时间范围：~6 / 6~ / 6+10~17+32 / 10~32 ...
+        // 11. 咬饵时间范围：~6 / 6~ / 6+10~17+32 / 10~32 ...
         const biteTimeRangeMatch = remaining.match(biteTimeRangeRegex);
         if (biteTimeRangeMatch && biteTimeRangeMatch[1].length > 0) {
             result += highlightNumericOperators(biteTimeRangeMatch[1]);
@@ -430,7 +417,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 13. 咬饵类型 + 提钩类型（严格匹配）
+        // 12. 咬饵类型 + 提钩类型（严格匹配）
         const biteHookMatch = remaining.match(biteHookRegex);
         if (biteHookMatch && biteHookMatch[1]) {
             const biteParts = biteHookMatch[1].split(/(\s*\+\s*)/);
@@ -457,7 +444,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
 
-        // 14. 独立提钩类型：用于内联专一/拍水中不跟在咬饵类型后的提钩
+        // 13. 独立提钩类型：用于内联专一/拍水中不跟在咬饵类型后的提钩
         const hookMatch = remaining.match(hookRegex);
         if (hookMatch && !(options.inGlobalParams && isModifierToken(hookMatch[0]))) {
             result += token('hook', hookMatch[0]);
@@ -466,7 +453,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
 
-        // 15. 通用数字（计数器/ID/普通数字）
+        // 14. 通用数字（计数器/ID/普通数字）
         const numberMatch = remaining.match(/^(\d+(?:\.\d+)?)/);
         if (numberMatch) {
             result += token('time', numberMatch[1]);
@@ -475,7 +462,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 16. 括号内容（目标集合/钓饵名/IdOrName）
+        // 15. 括号内容（目标集合/钓饵名/IdOrName）
         const bracketMatch = remaining.match(bracketRegex);
         if (bracketMatch) {
             result += token('op', bracketMatch[1]);
@@ -486,7 +473,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 17. 全局参数起始：= ... ;
+        // 16. 全局参数起始：= ... ;
         const equalMatch = remaining.match(equalRegex);
         if (equalMatch) {
             result += token('op', '=');
@@ -502,7 +489,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
 
-        // 18. 单独的 @（没有匹配到上面的模式）
+        // 17. 单独的 @（没有匹配到上面的模式）
         if (remaining[0] === '@') {
             result += token('op', '@');
             remaining = remaining.slice(1);
@@ -510,7 +497,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 19. markdown 反引号 `内容`
+        // 18. markdown 反引号 `内容`
         if (remaining[0] === '`') {
             const closeIdx = remaining.indexOf('`', 1);
             if (closeIdx !== -1) {
@@ -523,7 +510,7 @@ function highlightDSL(code, options = {}) {
             }
         }
 
-        // 20. 双竖线列表分隔符
+        // 19. 双竖线列表分隔符 / 阶段顶层额外组前缀
         if (remaining.startsWith('||')) {
             result += token('sep', '||');
             remaining = remaining.slice(2);
@@ -531,7 +518,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 21. 标点符号
+        // 20. 标点符号
         if ('~-;；()（）|+、，[]{}?？='.includes(remaining[0])) {
             if (remaining[0] === ';' || remaining[0] === '；' || remaining[0] === '、') {
                 result += token('sep', remaining[0]);
@@ -543,7 +530,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
 
-        // 22. 词法单元（优先识别全局修饰词与特殊常量）
+        // 21. 词法单元（优先识别全局修饰词与特殊常量）
         const wordMatch = remaining.match(/^([A-Za-z][A-Za-z0-9-]*|[\u4E00-\u9FFF][\u4E00-\u9FFF0-9-]*)/);
         if (wordMatch) {
             const word = wordMatch[1];
@@ -559,7 +546,7 @@ function highlightDSL(code, options = {}) {
             continue;
         }
         
-        // 23. 其他字符直接输出（已转义）
+        // 22. 其他字符直接输出（已转义）
         if (!matched) {
             if (/\s/.test(remaining[0])) {
                 result += escapeHtml(remaining[0]);
