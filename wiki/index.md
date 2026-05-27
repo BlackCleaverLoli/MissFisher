@@ -44,6 +44,10 @@ features:
     details: 系统理解钓法表达式结构和进阶写法。
     link: /guide/learn-angex
     linkText: 查看
+  - title: Angex Token 语义参考
+    details: 按 token 查阅每个符号的精确语义和运行时行为。
+    link: /reference/angex-tokens
+    linkText: 查看
   - title: IPC API
     details: MissFisher 对外 IPC 接口说明。
     link: /reference/ipc
