@@ -2,21 +2,17 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.7.0",
+    "version": "1.11.7.1",
     "apiLevel": 15,
-    "changelogSummary": [
-      "移除：移除了主页处在航线模式时在下方显示的航线信息小块。",
-      "更改：现在表达式的额外组参数前缀将使用 `||` 而非 `++`",
-      "修复：部分界面的悬停提示没有和实际悬停的项对应上。"
-    ]
+    "changelogSummary": []
   },
   "resource": {
     "bundleVersion": "260526",
     "bundleName": "SyncBundle_260526.zip",
-    "presetStamp": "05-26-1813",
+    "presetStamp": "05-27-2254",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "优化 捕鲨人 航线 的区域 1 的幻海流预设",
-    "updatedAt": "2026-05-26T19:57:02+08:00"
+    "discordSummary": "优化世界龟；修改部分排序；",
+    "updatedAt": "2026-05-27T22:59:55+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
