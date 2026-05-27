@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.11.7.0",
+        "AssemblyVersion": "1.11.7.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.11.7.0\n- 移除：移除了主页处在航线模式时在下方显示的航线信息小块。\n- 更改：现在表达式的额外组参数前缀将使用 `||` 而非 `++`\n- 修复：部分界面的悬停提示没有和实际悬停的项对应上。\n- 优化：优化了编辑器的格式化。\n- 优化：优化了编辑器的输入光标相关交互体验。\n",
+        "ChangeLog": "# v1.11.7.1\n修复：表达式的「等待专一」修饰词无效的问题。\n修复：前往所在地功能未能正常排除附近有人的钓点。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
