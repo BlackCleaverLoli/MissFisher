@@ -118,7 +118,8 @@ export default defineConfig({
           items: [
             { text: '快速修改指南', link: '/guide/quick-edit' },
             { text: '学习钓法表达式', link: '/guide/learn-angex' },
-            { text: 'Angex 语法规范', link: '/reference/angex-grammar' }
+            { text: 'Angex 语法规范', link: '/reference/angex-grammar' },
+            { text: 'Token 语义参考', link: '/reference/angex-tokens' }
           ]
         }
       ],
@@ -127,6 +128,7 @@ export default defineConfig({
           text: '参考',
           items: [
             { text: 'Angex 语法规范', link: '/reference/angex-grammar' },
+            { text: 'Angex Token 语义参考', link: '/reference/angex-tokens' },
             { text: 'IPC API', link: '/reference/ipc' },
             { text: '诱饵技能', link: '/reference/lure' }
           ]
