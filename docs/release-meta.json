@@ -2,9 +2,13 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.11.7.2",
+    "version": "1.11.8.0",
     "apiLevel": 15,
-    "changelogSummary": []
+    "changelogSummary": [
+      "新增：现在将可在主页清单列表的右键菜单中移出已完成的目标。",
+      "修复：修复了部分界面样式错误。",
+      "优化：现在清单目标的完成态将持久化。"
+    ]
   },
   "resource": {
     "bundleVersion": "260526",
@@ -12,7 +16,7 @@
     "presetStamp": "05-28-2022",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "优化世界龟；",
-    "updatedAt": "2026-05-28T20:56:09+08:00"
+    "updatedAt": "2026-05-28T23:30:22+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
