@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.11.7.2",
+        "AssemblyVersion": "1.11.8.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.11.7.2\n修复：蓝鱼模式下耐心2会和熟练渔技错误地同时使用的问题。\n修复：前往所在地未正常处理是否已经在正确钓点的情况。\n修复：前往所在地功能有时不会下坐骑。\n修复：特殊情况下鱼识进度保存和恢复有误。\n优化：现在自动海钓的启动前阶段，如果已经可抛竿了，会跳过最后的短持续直走。\n优化：现在将把钓场进度也持久化和恢复。\n# v1.11.7.1\n修复：表达式的「等待专一」修饰词无效的问题。\n修复：前往所在地功能未能正常排除附近有人的钓点。\n",
+        "ChangeLog": "# v1.11.8.0\n- 新增：现在将可在主页清单列表的右键菜单中移出已完成的目标。\n- 修复：修复了部分界面样式错误。\n- 优化：现在清单目标的完成态将持久化。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
