@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.12.0.0",
+    "version": "1.12.0.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：内嵌表达式类型「游动饵」。",
-      "新增：支持在预设加载时自动生成鱼眼预设。",
-      "优化：优化了一些自动海钓时的手法。"
+      "修复：修复了在预设初始化时刷屏报错或游戏崩溃的问题。",
+      "优化：一些界面文案。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "05-29-2114",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "删除了手动维护的鱼眼预设，现在将自动生成鱼眼预设。",
-    "updatedAt": "2026-05-29T23:01:19+08:00"
+    "updatedAt": "2026-05-30T13:11:05+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
