@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260603",
     "bundleName": "SyncBundle_260603.zip",
-    "presetStamp": "05-29-2114",
+    "presetStamp": "06-04-0647",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "删除了手动维护的鱼眼预设，现在将自动生成鱼眼预设。",
-    "updatedAt": "2026-06-04T06:10:14+08:00"
+    "discordSummary": "更新了批量生成预设。",
+    "updatedAt": "2026-06-04T06:48:25+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
