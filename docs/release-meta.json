@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.12.2.0",
+    "version": "1.13.0.0",
     "apiLevel": 15,
     "changelogSummary": [
       "修复：修复了一个游动饵预备的问题。",
-      "优化：优化了前往所在地功能的选点和重试行为。",
-      "优化：现在即使缺少对应钓饵，也将允许前往预设目标的所在地而非直接拦下（仍会提醒）。"
+      "优化：现在清单如果源自推荐的，将在每轮结束后自动刷新。",
+      "优化：优化了前往所在地功能的选点和重试行为。"
     ]
   },
   "resource": {
     "bundleVersion": "260603",
     "bundleName": "SyncBundle_260603.zip",
-    "presetStamp": "06-04-0647",
+    "presetStamp": "06-04-0738",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "更新了批量生成预设。",
-    "updatedAt": "2026-06-04T06:48:25+08:00"
+    "updatedAt": "2026-06-04T07:46:22+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
