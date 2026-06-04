@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.13.0.0",
+        "AssemblyVersion": "1.13.0.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.13.0.0\n- 修复：修复了一个游动饵预备的问题。\n- 优化：现在清单如果源自推荐的，将在每轮结束后自动刷新。\n- 优化：优化了前往所在地功能的选点和重试行为。\n- 优化：现在即使缺少对应钓饵，也将允许前往预设目标的所在地而非直接拦下（仍会提醒）。\n- 优化：优化了批量生成的鱼类钓法。\n- 优化：现在对应预设目标钓法和前往所在地将更好的对应了（减少了在钓场a使用钓场b的钓法的情况）\n- 杂项：现在功能将不再直接依赖网络包捕获。\n- 杂项：识别了 7.51 新增的不同id的华丽提钩技能\n",
+        "ChangeLog": "# v1.13.0.1\n- 修复：修复了一个游动饵不使用问题。\n# v1.13.0.0\n- 修复：修复了一个游动饵预备的问题。\n- 优化：现在清单如果源自推荐的，将在每轮结束后自动刷新。\n- 优化：优化了前往所在地功能的选点和重试行为。\n- 优化：现在即使缺少对应钓饵，也将允许前往预设目标的所在地而非直接拦下（仍会提醒）。\n- 优化：优化了批量生成的鱼类钓法。\n- 优化：现在对应预设目标钓法和前往所在地将更好的对应了（减少了在钓场a使用钓场b的钓法的情况）\n- 杂项：现在功能将不再直接依赖网络包捕获。\n- 杂项：识别了 7.51 新增的不同id的华丽提钩技能\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
