@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.13.0.1",
+    "version": "1.14.0.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：修复了一个游动饵不使用问题。"
+      "新增：钓法修饰词「熟练目标」以标记熟练任务目标并处理。",
+      "新增：现在可指定前往所在地等导航功能时使用的坐骑。",
+      "修复：有时为拍击水面预留的采集力过多。"
     ]
   },
   "resource": {
-    "bundleVersion": "260603",
-    "bundleName": "SyncBundle_260603.zip",
-    "presetStamp": "06-04-0738",
+    "bundleVersion": "260605",
+    "bundleName": "SyncBundle_260605.zip",
+    "presetStamp": "06-05-2344",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "更新了批量生成预设。",
-    "updatedAt": "2026-06-04T21:35:31+08:00"
+    "discordSummary": "更新了一些宇宙探索预设，包括新阶段的宇宙探索工具需求",
+    "updatedAt": "2026-06-06T00:33:34+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -22,6 +24,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260603.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260605.zip"
   }
 }
