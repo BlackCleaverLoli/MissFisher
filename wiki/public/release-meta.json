@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.14.0.0",
+    "version": "1.14.0.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：钓法修饰词「熟练目标」以标记熟练任务目标并处理。",
-      "新增：现在可指定前往所在地等导航功能时使用的坐骑。",
-      "修复：有时为拍击水面预留的采集力过多。"
+      "修复：尝试修复加钩可能未按预期使用的问题。",
+      "杂项：调整了一些文案。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "06-05-2344",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "更新了一些宇宙探索预设，包括新阶段的宇宙探索工具需求",
-    "updatedAt": "2026-06-06T00:33:34+08:00"
+    "updatedAt": "2026-06-06T02:13:15+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
