@@ -2,11 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.14.0.1",
+    "version": "1.14.0.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：尝试修复加钩可能未按预期使用的问题。",
-      "杂项：调整了一些文案。"
+      "优化：加速了 ICE 协作模式时预设的启动。"
     ]
   },
   "resource": {
@@ -15,7 +14,7 @@
     "presetStamp": "06-05-2344",
     "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "更新了一些宇宙探索预设，包括新阶段的宇宙探索工具需求",
-    "updatedAt": "2026-06-06T02:13:15+08:00"
+    "updatedAt": "2026-06-06T05:45:18+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
