@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.14.0.3",
+        "AssemblyVersion": "1.14.0.4",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.14.0.3\n- 修复：海钓蓝鱼名单意外包含了奥克索的蓝色稀有度鱼。\n# v1.14.0.2\n- 优化：加速了 ICE 协作模式时预设的启动。\n# v1.14.0.1\n- 修复：尝试修复加钩可能未按预期使用的问题。\n- 杂项：调整了一些文案。\n# v1.14.0.0\n- 新增：钓法修饰词「熟练目标」以标记熟练任务目标并处理。\n- 新增：现在可指定前往所在地等导航功能时使用的坐骑。\n- 修复：有时为拍击水面预留的采集力过多。\n- 修复：宇宙探索任务完成时有时未能正常完成自动提交。\n- 修复：未正确识别并处理宇宙探索时钓饵用完的情况。\n- 优化：明确了宇宙探索相关设置的行为，并优化相关文案。\n- 优化：处在 ICE 协作模式时，将扩展系统音静音范围以更好地防打扰。\n- 优化：现在将用更底层的方法来静音系统音，避免了影响游戏设置。\n- 优化：优化了一些文案。\n",
+        "ChangeLog": "# v1.14.0.4\n- 修复：当前钓法存在梭哈修饰词时，未正确释放保留的采集力中基本模式技能的部分。\n# v1.14.0.3\n- 修复：海钓蓝鱼名单意外包含了奥克索的蓝色稀有度鱼。\n# v1.14.0.2\n- 优化：加速了 ICE 协作模式时预设的启动。\n# v1.14.0.1\n- 修复：尝试修复加钩可能未按预期使用的问题。\n- 杂项：调整了一些文案。\n# v1.14.0.0\n- 新增：钓法修饰词「熟练目标」以标记熟练任务目标并处理。\n- 新增：现在可指定前往所在地等导航功能时使用的坐骑。\n- 修复：有时为拍击水面预留的采集力过多。\n- 修复：宇宙探索任务完成时有时未能正常完成自动提交。\n- 修复：未正确识别并处理宇宙探索时钓饵用完的情况。\n- 优化：明确了宇宙探索相关设置的行为，并优化相关文案。\n- 优化：处在 ICE 协作模式时，将扩展系统音静音范围以更好地防打扰。\n- 优化：现在将用更底层的方法来静音系统音，避免了影响游戏设置。\n- 优化：优化了一些文案。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
