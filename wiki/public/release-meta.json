@@ -11,10 +11,10 @@
   "resource": {
     "bundleVersion": "260605",
     "bundleName": "SyncBundle_260605.zip",
-    "presetStamp": "06-05-2344",
-    "summary": "7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "更新了一些宇宙探索预设，包括新阶段的宇宙探索工具需求",
-    "updatedAt": "2026-06-06T05:45:18+08:00"
+    "presetStamp": "06-06-2043",
+    "summary": "奥克索：已有覆盖主要需求的预设；7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
+    "discordSummary": "修正 【超难】调查植物鱼的多样性；",
+    "updatedAt": "2026-06-06T20:47:41+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
