@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.14.0.4",
+    "version": "1.14.0.5",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：当前钓法存在梭哈修饰词时，未正确释放保留的采集力中基本模式技能的部分。"
+      "修复："
     ]
   },
   "resource": {
     "bundleVersion": "260605",
     "bundleName": "SyncBundle_260605.zip",
-    "presetStamp": "06-07-0223",
-    "summary": "奥克索：已有覆盖主要需求的预设；7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "优化 【超难】调查植物鱼的多样性；",
-    "updatedAt": "2026-06-07T02:27:38+08:00"
+    "presetStamp": "06-07-1106",
+    "summary": "奥克索：已补完非限时或已有阶段任务；7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
+    "discordSummary": "补完奥克索非限时或已有阶段任务；",
+    "updatedAt": "2026-06-07T11:06:58+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
