@@ -2,10 +2,12 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.14.0.5",
+    "version": "1.14.1.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复："
+      "修复：修复了对应额外提钩参数的提钩时会使用华丽提钩的问题（实际从未影响过已发布的正常功能）。",
+      "优化：减少了手动接取任务时的宇宙探索任务启动延迟。",
+      "优化：优化了部分技能施放时的延迟。"
     ]
   },
   "resource": {
@@ -14,7 +16,7 @@
     "presetStamp": "06-07-1106",
     "summary": "奥克索：已补完非限时或已有阶段任务；7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
     "discordSummary": "补完奥克索非限时或已有阶段任务；",
-    "updatedAt": "2026-06-07T11:06:58+08:00"
+    "updatedAt": "2026-06-07T12:15:21+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
