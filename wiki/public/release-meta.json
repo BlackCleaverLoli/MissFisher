@@ -12,10 +12,10 @@
   "resource": {
     "bundleVersion": "260605",
     "bundleName": "SyncBundle_260605.zip",
-    "presetStamp": "06-09-0014",
+    "presetStamp": "06-09-0354",
     "summary": "奥克索：已补完非限时或已有阶段任务；7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "优化 调查大型水中设施的分布",
-    "updatedAt": "2026-06-09T00:14:54+08:00"
+    "discordSummary": "优化 深坑徨灵",
+    "updatedAt": "2026-06-09T03:56:42+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
