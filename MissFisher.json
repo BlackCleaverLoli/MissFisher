@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.14.1.0",
+        "AssemblyVersion": "1.14.1.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.14.1.0\n- 修复：修复了对应额外提钩参数的提钩时会使用华丽提钩的问题（实际从未影响过已发布的正常功能）。\n- 优化：减少了手动接取任务时的宇宙探索任务启动延迟。\n- 优化：优化了部分技能施放时的延迟。\n- 优化：大幅提升了依赖监听技能已施放相关功能的稳定性。\n- 优化：优化了界面样式。\n",
+        "ChangeLog": "# v1.14.1.1\n- 优化：优化了交互行为。\n- 优化：提升稳定性。\n# v1.14.1.0\n- 修复：修复了对应额外提钩参数的提钩时会使用华丽提钩的问题（实际从未影响过已发布的正常功能）。\n- 优化：减少了手动接取任务时的宇宙探索任务启动延迟。\n- 优化：优化了部分技能施放时的延迟。\n- 优化：大幅提升了依赖监听技能已施放相关功能的稳定性。\n- 优化：优化了界面样式。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
