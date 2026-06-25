@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.14.2.0",
+        "AssemblyVersion": "1.14.3.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.14.2.0\n- 优化了清单调度，现在将更贪婪地允许先后不同目标的窗口期重叠且按优先级竞争，有助于表现出更积极尝试更多窗口期的行为。\n- 优化了清单刷新和锁定当期目标的行为。\n- 修复了当提供最大咬饵时间时，有时第3次引诱系技能会因为采集力缺少而更晚使用，导致对预期外的咬饵使用提钩的问题。\n- 修复了罕见情况下本地时间变化导致功能异常的问题。\n",
+        "ChangeLog": "# v1.14.3.0\n- 优化了蓝鱼筛选设置，现在手动启动蓝鱼将使用全部可用蓝鱼作为潜在目标，而不再受原有的蓝鱼筛选设置影响。\n- 修复了有时可能重复显示进入鱼眼模式消息的问题。\n- 修复了初始化错误的问题。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
