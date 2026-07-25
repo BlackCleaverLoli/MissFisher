@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260605",
     "bundleName": "SyncBundle_260605.zip",
-    "presetStamp": "07-20-1939",
+    "presetStamp": "07-26-0715",
     "summary": "奥克索：已补完所有任务；7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "修复3条批量生成预设的窗口期问题；移动并维护了中庸工艺馆相关鱼类的预设。",
-    "updatedAt": "2026-07-20T19:41:02+08:00"
+    "discordSummary": "调整2条7.0鱼王的钓法。",
+    "updatedAt": "2026-07-26T07:16:18+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
