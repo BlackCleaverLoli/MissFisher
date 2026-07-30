@@ -2,21 +2,20 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.14.3.2",
+    "version": "1.15.0.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：手动刷新推荐清单时，某些低优先鱼类未能被加入清单。",
-      "修复：低优先鱼类在推荐清单队列中被错误置于末尾。",
-      "修复：推荐清单调度器在时间充足时仍会硬等待高优先鱼类，而不先处理低优先鱼类。"
+      "钓法表达式：现在支持窗口条件切换钓法，在嵌套表达式（阶段钓法）的嵌套头部写窗口期表达式来表示在特定的窗口期时切换到内层钓法。",
+      "杂项：更新了鱼类的所在地优选。"
     ]
   },
   "resource": {
-    "bundleVersion": "260605",
-    "bundleName": "SyncBundle_260605.zip",
-    "presetStamp": "07-26-0715",
-    "summary": "奥克索：已补完所有任务；7.5鱼王：已补完（不确保条件/钓法完全正确）。7.5海钓：已补完（感谢□整理的古生物钓法）。旧的宇宙探索任务：已补完。重新批量生成了普通鱼预设；",
-    "discordSummary": "调整2条7.0鱼王的钓法。",
-    "updatedAt": "2026-07-26T07:16:18+08:00"
+    "bundleVersion": "260731",
+    "bundleName": "SyncBundle_260731.zip",
+    "presetStamp": "07-31-0434",
+    "summary": "已补完：奥克索、7.5鱼王、7.5海钓、旧的宇宙探索任务。",
+    "discordSummary": "新增4条鱼皇预设；调整1条7.0鱼王的钓法。",
+    "updatedAt": "2026-07-31T04:49:40+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -24,6 +23,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260605.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260731.zip"
   }
 }
