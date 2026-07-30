@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.14.3.2",
+        "AssemblyVersion": "1.15.0.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,35 +23,8 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.14.3.2\n- 修复：手动刷新推荐清单时，某些低优先鱼类未能被加入清单。\n- 修复：低优先鱼类在推荐清单队列中被错误置于末尾。\n- 修复：推荐清单调度器在时间充足时仍会硬等待高优先鱼类，而不先处理低优先鱼类。\n# v1.14.3.1\n- 修复了一个 BUG，该 BUG 曾导致：在宇宙探索任务中切换钓法时，钓法会错误地完全重新开始，无法正常切换到内层钓法。\n- 优化了宇宙探索任务的防重放处理。\n# v1.14.3.0\n- 修复了一个 BUG，该 BUG 曾导致：进入鱼眼模式时，有时可能重复显示进入消息。\n- 修复了一个 BUG，该 BUG 曾导致：插件初始化失败。\n- 优化了蓝鱼筛选设置：手动触发蓝鱼模式时，将以当前全部可用蓝鱼作为潜在目标，不再受蓝鱼筛选设置的限制。\n",
+        "ChangeLog": "# v1.15.0.0\n- 新增：支持窗口条件切换钓法，在嵌套表达式（阶段钓法）的嵌套头部写窗口期表达式来表示在特定的窗口期时切换到内层钓法。\n- 新增：支持处在住宅区内的钓场前往。\n- 修复：钓点上传的数据为空。\n- 修复：钓场进度保存的数据为空。\n- 杂项：更新了鱼类的所在地优选。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
-    },
-    {
-        "Author": "Fragile, MistyDai",
-        "Name": "MissFisher (API 13)",
-        "InternalName": "MissFisher",
-        "AssemblyVersion": "1.6.5.11",
-        "Description": "专注于钓鱼。【不包含 24 小时全自动】\nFocus on fishing. [Excludes 24h auto]",
-        "ApplicableVersion": "any",
-        "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
-        "Tags": [
-            "Auto",
-            "Fishing",
-            "FSH",
-            "OceanFishing",
-            "Cosmic"
-        ],
-        "DalamudApiLevel": 13,
-        "LoadRequiredState": 0,
-        "LoadSync": false,
-        "CanUnloadAsync": false,
-        "LoadPriority": 0,
-        "IconUrl": "https://missfisher-1331276814.cos.ap-guangzhou.myqcloud.com/MissFisherIcon128.png",
-        "Punchline": "专注于钓鱼。/ Focus on fishing.",
-        "AcceptsFeedback": true,
-        "ChangeLog": "- v1.6.5.11\n修复 GatherBuddy Reborn 已安装却被误判为未安装的问题\n修复 GatherBuddy Reborn 启用命令使用错误内部名的问题\n- v1.6.5.10\n修复机器码授权验证类型错误\n验证服务改用 HTTPS，并增加备用服务与连接超时\n- v1.6.5.9\n修复一些问题\n- v1.6.5.8\n修复一个海钓播报问题\n- v1.6.5.7\n修复一些问题\n- v1.6.5.6\n修复海钓成就计数仅返回当前海域的数量的问题\n修复一些问题\n- v1.6.5.5\n修复一些问题\n- v1.6.5.4\n修复一些问题\n- v1.6.5.3\n修复一些问题\n- v1.6.5.2\n修复一些问题\n- v1.6.5.1\n修复一些问题\n- v1.6.5.0\n添加钓法表达式修饰词 `跳阶段` `等待专一`\n修复一些问题\n优化用户体验",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/compat/api13/latest.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/compat/api13/latest.zip"
     }
 ]
