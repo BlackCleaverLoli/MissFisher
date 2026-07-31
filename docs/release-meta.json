@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260731",
     "bundleName": "SyncBundle_260731.zip",
-    "presetStamp": "08-01-0605",
+    "presetStamp": "08-01-0617",
     "summary": "已补完：奥克索、7.5鱼王、7.5海钓、旧的宇宙探索任务。",
-    "discordSummary": "新增1条鱼皇预设；调整2条7.0鱼皇的钓法。",
-    "updatedAt": "2026-08-01T06:06:10+08:00"
+    "discordSummary": "调整1条7.0鱼皇的钓法。",
+    "updatedAt": "2026-08-01T06:19:23+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
