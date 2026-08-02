@@ -2,21 +2,20 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.16.0.0",
+    "version": "1.17.0.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：钓法表达式，新增修饰词「收藏品预备」，实现俗称「卡收藏品」的手法；存在鱼识钓法和修饰词「收藏品」，处在窗口期前的预备鱼识、收藏品收集确认对话框出现时，当临界数量达成前，会点「否」，而在临界数量将被这次提钩达成时，则将保留到进入窗口期时才点「否」。",
-      "优化：手法，现在游动饵预备在同时需要保留最高阶段的鱼类作为游动饵时，将在已保留2个时就判断完成，以防无法在第一次以小钓大后无法将最高阶段的游动饵目标作为游动饵保留。",
-      "优化：手法，现在钓法意图为保留游动饵时，将会主动使用更低阶段的游动饵来尝试保留更多更高阶段的游动饵。"
+      "新增：新增钓法修饰词，新增钓法修饰词「保留拍水」；写法「保留拍水【名|123】」；当鱼识钓法包含它，将在退出鱼识钓法时保留指定的鱼类的拍击水面效果。",
+      "优化：新增钓法修饰词，现在钓法修饰词「收藏品预备」不再要求同时写「收藏品」。"
     ]
   },
   "resource": {
-    "bundleVersion": "260801",
-    "bundleName": "SyncBundle_260801.zip",
-    "presetStamp": "08-01-2227",
+    "bundleVersion": "260802",
+    "bundleName": "SyncBundle_260802.zip",
+    "presetStamp": "08-02-1910",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "更新三刃海虎的钓法；优化了闪电球的预备手法。",
-    "updatedAt": "2026-08-01T22:31:41+08:00"
+    "discordSummary": "优化了闪电球的钓法。",
+    "updatedAt": "2026-08-02T19:42:46+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -24,6 +23,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260801.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260802.zip"
   }
 }
