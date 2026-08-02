@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.16.0.0",
+        "AssemblyVersion": "1.17.0.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.16.0.0\n- 新增：钓法表达式，新增修饰词「收藏品预备」，实现俗称「卡收藏品」的手法；存在鱼识钓法和修饰词「收藏品」，处在窗口期前的预备鱼识、收藏品收集确认对话框出现时，当临界数量达成前，会点「否」，而在临界数量将被这次提钩达成时，则将保留到进入窗口期时才点「否」。\n- 优化：手法，现在游动饵预备在同时需要保留最高阶段的鱼类作为游动饵时，将在已保留2个时就判断完成，以防无法在第一次以小钓大后无法将最高阶段的游动饵目标作为游动饵保留。\n- 优化：手法，现在钓法意图为保留游动饵时，将会主动使用更低阶段的游动饵来尝试保留更多更高阶段的游动饵。\n- 优化：前往所在地，优化了前往所在地时选择钓点的行为，现在选择距离其他玩家更远的点位。\n- 修复：引诱，在窗口期前的预备鱼识时，没有使用引诱系技能。\n- 杂项：7.0鱼皇，补充了7.0鱼皇的相关数据，比如获得力需求「4570」。\n",
+        "ChangeLog": "# v1.17.0.0\n- 新增：新增钓法修饰词，新增钓法修饰词「保留拍水」；写法「保留拍水【名|123】」；当鱼识钓法包含它，将在退出鱼识钓法时保留指定的鱼类的拍击水面效果。\n- 优化：新增钓法修饰词，现在钓法修饰词「收藏品预备」不再要求同时写「收藏品」。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
