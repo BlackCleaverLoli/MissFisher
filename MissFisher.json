@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.17.0.0",
+        "AssemblyVersion": "1.17.0.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.17.0.0\n- 新增：新增钓法修饰词，新增钓法修饰词「保留拍水」；写法「保留拍水【名|123】」；当鱼识钓法包含它，将在退出鱼识钓法时保留指定的鱼类的拍击水面效果。\n- 优化：新增钓法修饰词，现在钓法修饰词「收藏品预备」不再要求同时写「收藏品」。\n",
+        "ChangeLog": "# v1.17.0.1\n- 修复：游动饵预备，当存在「鱼篓」修饰词与比最终阶段更低的游动饵目标时，错误地在储存2个游动饵后就停下，而不是直到多钓1条以小钓大I有效的鱼类才停下。\n- 修复：游动饵预备，当存在「鱼篓」修饰词与比最终阶段更低的游动饵目标时，错误地在窗口期中将更低阶段的游动饵目标保留为游动饵，而不是像不存在「鱼篓」修饰词那样忽视比最终阶段更低的游动饵目标。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
