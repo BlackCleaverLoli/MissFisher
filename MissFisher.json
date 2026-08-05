@@ -3,7 +3,7 @@
         "Author": "MistyDai, Nyy, Fragile, risona",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "1.17.1.0",
+        "AssemblyVersion": "1.17.1.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v1.17.1.0\n- 新增：游动饵 当钓法中包含「鱼篓」修饰词、处于窗口期时，即使已经保留的游动饵数量为3（最大数量），也将允许存入更高阶段的游动饵。\n- 修复：游动饵 当钓法中包含「鱼篓」修饰词、并处于窗口期前的游动饵预备时，不再于已经保留2个游动饵且「以小钓大」可用时提前停下游动饵预备（会像之前那样在3游动饵+1以小钓大可用时才停下预备）。\n",
+        "ChangeLog": "# v1.17.1.1\n- 修复：计数器 在窗口期内且存在「鱼识钓法」时，计数器没有使用「自上次鱼识以来」的口径来显示。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
