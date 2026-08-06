@@ -11,10 +11,10 @@
   "resource": {
     "bundleVersion": "260802",
     "bundleName": "SyncBundle_260802.zip",
-    "presetStamp": "08-06-1351",
+    "presetStamp": "08-06-2334",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "优化 犎牛多鳍鱼、得卡特 的钓法（改用 嘭嘭拟饵）。",
-    "updatedAt": "2026-08-06T13:52:24+08:00"
+    "discordSummary": "修正 三刃海虎（修正预备开始时机） 和 琥珀鮟鱇（删除三提） 的钓法。",
+    "updatedAt": "2026-08-06T23:34:57+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
