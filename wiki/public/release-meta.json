@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "1.17.1.1",
+    "version": "1.17.1.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：计数器 在窗口期内且存在「鱼识钓法」时，计数器没有使用「自上次鱼识以来」的口径来显示。"
+      "修复：窗口期预备 存在计数器、窗口期和深度为1的内层阶段钓法与鱼识钓法的外层钓法，在窗口期外时没有进入鱼识的预备手法。"
     ]
   },
   "resource": {
     "bundleVersion": "260802",
     "bundleName": "SyncBundle_260802.zip",
-    "presetStamp": "08-06-2334",
+    "presetStamp": "08-07-1157",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "修正 三刃海虎（修正预备开始时机） 和 琥珀鮟鱇（删除三提） 的钓法。",
-    "updatedAt": "2026-08-06T23:34:57+08:00"
+    "discordSummary": "修正 三刃海虎（修正窗口期内钓法） 的钓法。",
+    "updatedAt": "2026-08-07T12:23:58+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
