@@ -11,10 +11,10 @@
   "resource": {
     "bundleVersion": "260802",
     "bundleName": "SyncBundle_260802.zip",
-    "presetStamp": "08-07-1157",
+    "presetStamp": "08-08-0020",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "修正 三刃海虎（修正窗口期内钓法） 的钓法。",
-    "updatedAt": "2026-08-07T12:23:58+08:00"
+    "discordSummary": "优化 胸脊鲨（全自动化） 的钓法。",
+    "updatedAt": "2026-08-08T00:30:39+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
