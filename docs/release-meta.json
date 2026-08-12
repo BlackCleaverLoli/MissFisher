@@ -11,10 +11,10 @@
   "resource": {
     "bundleVersion": "260802",
     "bundleName": "SyncBundle_260802.zip",
-    "presetStamp": "08-09-0156",
+    "presetStamp": "08-13-0302",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "优化 三刃海虎（鱼识内不撒饵）、碧空之心（指定更宽的拍水目标咬饵区间）、不完美的碟子（同左）的钓法；修正 书记官杀手（指定使用谦逊来重随）的钓法。",
-    "updatedAt": "2026-08-09T01:58:22+08:00"
+    "discordSummary": "优化 隆卡的大水蛇？（不再撒饵）的钓法；修正 胸脊鲨（窗口期准备）的钓法。",
+    "updatedAt": "2026-08-13T03:03:13+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
