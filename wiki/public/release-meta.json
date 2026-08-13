@@ -11,10 +11,10 @@
   "resource": {
     "bundleVersion": "260802",
     "bundleName": "SyncBundle_260802.zip",
-    "presetStamp": "08-13-0302",
+    "presetStamp": "08-13-1829",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "优化 隆卡的大水蛇？（不再撒饵）的钓法；修正 胸脊鲨（窗口期准备）的钓法。",
-    "updatedAt": "2026-08-13T03:03:13+08:00"
+    "discordSummary": "修正 胸脊鲨（窗口期判断）的钓法。",
+    "updatedAt": "2026-08-13T18:30:34+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
