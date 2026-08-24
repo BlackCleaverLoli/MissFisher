@@ -2,21 +2,19 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.0.0.0",
+    "version": "2.0.0.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：界面，主窗口全新改版，首页列出图鉴收集、宇宙探索、海钓、空岛等入口并支持搜索预设，进入后可查看目标与启动前计划并启动；预设、合集、路线、任务、钓点、策略资料均有专门页面；运行状态集中显示在运行卡片上。",
-      "优化：主题，默认主题改为拉海洛。",
-      "优化：预设，预设管理改版。"
+      "修复：文案，修复了一些文案和本地化问题。"
     ]
   },
   "resource": {
     "bundleVersion": "260824",
     "bundleName": "SyncBundle_260824.zip",
-    "presetStamp": "08-24-1729",
+    "presetStamp": "08-25-0508",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正一些备注。",
-    "updatedAt": "2026-08-24T18:12:54+08:00"
+    "updatedAt": "2026-08-25T05:27:33+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
