@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.0.1.0",
+        "AssemblyVersion": "2.1.0.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.0.1.0\n- 优化：海钓，船舷导航重构为“选点-面向-可抛竿”，并接入朝向与占用分级。\n- 新增：海钓，耐力无目标时回退冲分。\n- 优化：海钓，全部蓝鱼收集后蓝鱼模式将自动切换为全部蓝鱼目标。\n- 修复：海钓，结算阶段稳定出本后自复位，不再卡在等待结算。\n- 修复：海钓，副本内投影与门禁现在按当前航线计算。\n- 修复：海钓，船舷导航面向与可抛竿短路。\n- 新增：海钓，主页与海钓预设页显示海钓种类成就已完成角标。\n- 新增：海钓，蓝鱼图标与预设详情增加已记录角标。\n- 修复：海钓，蓝鱼角标样式与预设行保持一致。\n- 修复：空岛，到点改用精确导航结果，避免未到点位提前启动。\n- 修复：空岛，入口 NPC 交互加入镜头锁定，并修正交互距离。\n- 新增：导航，播放计划只读预设行点击将直接进详情。\n- 新增：获取途径，最近商店将按玩家当前位置距离来判断。\n- 新增：获取途径，标题栏新增复制物品名图标按钮。\n- 修复：预设，单预设启动的导航时自动问题（在界面显示方面）。\n- 新增：命令，恢复 cosmic 命令。\n- 修复：界面，图标字体现在跟随界面缩放而非全局缩放。\n- 修复：界面，图标字体悬垂指针导致的崩溃。\n- 修复：界面，一些界面视觉问题。\n- 修复：界面，主窗口尺寸现在允许调整得更小。\n- 修复：界面，标题栏悬浮补全输入框透明主题下的显示问题。\n",
+        "ChangeLog": "# v2.1.0.0\n- 修复：海钓 修复海钓小队类额外奖励模式（种类）的显示文案在副本内有误的问题。\n- 修复：自动 修复在尝试移除拍击水面状态效果时发生错误并导致自动终止的问题。\n- 优化：导航 优化自动导航在主城内的表现。\n- 杂项：界面 不再显示标题栏的汉堡按钮。\n- 修复：自动 修复宇宙探索模式在启动过一次预设后，即使后续没处在预设自动中，自动系统也不允许重启预设的问题。\n- 优化：自动 现在将在钓法启动时禁用  gatherBuddy的自动采集\n- 新增：界面 新增精简模式界面，占用更小的界面空间\n- 修复：界面 修复道具来源界面在候选为空时会崩溃的问题\n- 新增：界面 为主页的模式列表新增了右键快捷菜单\n- 优化：界面 优化一些界面布局\n- 修复：界面 修正了一些预设备注的文案错误\n- 修复：界面 窗口内对话框弹出时没有显示主窗口\n- 优化：界面 现在对话框弹出时也将在消息窗口显示内容\n- 新增：自动 优化了空闲时的等待位置，也支持在设置选择不同的等待位置\n- 移除：自动 移除了「完成后命令」功能。\n- 优化：自动 优化并统一单预设和清单族（钓鱼笔记、合集、分组）的窗口前等待行为\n- 修复：自动 修复罕见情况下清单族功能在完成一个目标后的中断可能失败并导致自动终止的问题\n- 修复：界面 修复主窗口的尺寸和位置未记忆的问题\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
