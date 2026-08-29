@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.2.0.0",
+    "version": "2.2.1.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：工具 用户预设无法正常保存",
-      "杂项：工具 不再迁移旧版清单",
-      "修复：界面 从精简界面启动时如果需要二次确认没有显示主界面和二次确认对话框"
+      "优化：自动，现在调度身份「其他目标」的预设也允许被清单调度了。",
+      "优化：自动，现在单预设的预备允许时刻将是完整的窗口期前的约23.3分钟。",
+      "优化：自动，优化了清单调度，现在更注重质量。"
     ]
   },
   "resource": {
@@ -16,7 +16,7 @@
     "presetStamp": "08-27-1523",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正一些备注。",
-    "updatedAt": "2026-08-29T03:40:11+08:00"
+    "updatedAt": "2026-08-29T18:37:55+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
