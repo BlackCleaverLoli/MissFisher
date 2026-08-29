@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.2.0.0",
+        "AssemblyVersion": "2.2.1.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.2.0.0\n- 修复：工具 用户预设无法正常保存\n- 杂项：工具 不再迁移旧版清单\n- 修复：界面 从精简界面启动时如果需要二次确认没有显示主界面和二次确认对话框\n- 优化：界面 优化了一些界面布局\n- 优化：界面 优化了一些文案\n- 修复：自动 鱼识预备时不再意外存入游动饵\n- 修复：界面 竿时悬浮窗采用的屏幕坐标有误\n- 修复：界面 精简界面在运行时，图标会被一块背景色覆盖\n- 优化：工具 优化了版本分组的聚合准入口径，不再收集后缀变体版本的只读预设\n- 优化：工具 现在合集允许添加不可调度的预设\n- 修复：界面 预设详情图标没有显示兜底图标\n- 优化：界面 平铺了预设行的查看选项（不再藏到二级菜单中）\n- 优化：界面 清单相关详情界面，即使对应预设是无法调度的，也会在行末尾显示窗口期信息\n- 优化：界面 清单相关详情界面，即使对应预设是无法调度的，也会正常参与窗口期排序了\n- 优化：界面 带后缀的变体预设的显示名现在将总是使用减号分隔\n- 优化：界面 现在自动派生的鱼眼预设也被清单详情的完成态筛选影响\n- 优化：界面 现在自动派生的鱼眼预设的图标也将显示表示是否已经记录的角标\n- 修复：界面 无法调度行的左键不会跳转到对应预设的详情页\n- 优化：界面 现在无法调度行的描边将显示更详细的无法调度原因\n- 优化：自动 优化了清单的调度\n- 优化：自动 大幅提升了前往所在地的成功率\n- 优化：自动 优化了自动海钓自动前往船舷的导航和防重叠\n- 修复：界面 在查看道具来源时窗口冻结\n- 新增：自动 恢复了 mf preset 命令\n- 修复：工具 部分钓场的鱼类识别出的游戏版本有误\n- 修复：工具 导航到道具来源商店后没有正常完成导航任务\n- 新增：自动 新增清单下的设置「丢弃普通鱼」，启用后允许清单运行时也自动丢弃作为目标的普通鱼\n- 修复：界面 当2个 MissFisher 窗口重叠时，会悬停出混杂的悬停提示\n",
+        "ChangeLog": "# v2.2.1.0\n- 优化：自动，现在调度身份「其他目标」的预设也允许被清单调度了。\n- 优化：自动，现在单预设的预备允许时刻将是完整的窗口期前的约23.3分钟。\n- 优化：自动，优化了清单调度，现在更注重质量。\n- 优化：自动，优化了清单调度的准备开始时间。\n- 优化：自动，优化了自动海钓的船舷点位质量。\n- 优化：自动，提升了飞行前往钓点的选到正确点的概率。\n- 修复：自动，有些情况下会意外地释放保留的基本采集力。\n- 修复：自动，海钓启动时有时会静默失败。\n- 修复：自动，单次自动海钓时没有检查背包空位。\n- 修复：自动，海钓船内启动时没有正确在可抛竿时直接启动。\n- 修复：自动，自动海钓背包满时没有尝试丢弃。\n- 修复：界面，一些界面排版和文案错误。\n- 修复：界面，处在「库-分组」时，补全菜单不会跳转到列表分页。\n- 修复：界面，竿时悬浮窗在多屏环境下显示的位置有误。\n- 修复：界面，在精简窗口定位来源时没有显示主界面。\n- 修复：工具，前往码头没有保持和自动一致。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
