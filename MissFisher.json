@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.2.1.0",
+        "AssemblyVersion": "2.2.1.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.2.1.0\n- 优化：自动，现在调度身份「其他目标」的预设也允许被清单调度了。\n- 优化：自动，现在单预设的预备允许时刻将是完整的窗口期前的约23.3分钟。\n- 优化：自动，优化了清单调度，现在更注重质量。\n- 优化：自动，优化了清单调度的准备开始时间。\n- 优化：自动，优化了自动海钓的船舷点位质量。\n- 优化：自动，提升了飞行前往钓点的选到正确点的概率。\n- 修复：自动，有些情况下会意外地释放保留的基本采集力。\n- 修复：自动，海钓启动时有时会静默失败。\n- 修复：自动，单次自动海钓时没有检查背包空位。\n- 修复：自动，海钓船内启动时没有正确在可抛竿时直接启动。\n- 修复：自动，自动海钓背包满时没有尝试丢弃。\n- 修复：界面，一些界面排版和文案错误。\n- 修复：界面，处在「库-分组」时，补全菜单不会跳转到列表分页。\n- 修复：界面，竿时悬浮窗在多屏环境下显示的位置有误。\n- 修复：界面，在精简窗口定位来源时没有显示主界面。\n- 修复：工具，前往码头没有保持和自动一致。\n",
+        "ChangeLog": "# v2.2.1.1\n- 修复：自动，鱼识预备时会错误换上游动饵。\n- 修复：自动，鱼识预备时显式指定了游动饵目标也没有使用熟练妙招。\n- 优化：自动，鱼识预备时将按需等待最后一个专一垂钓采集力再继续抛竿。\n\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
