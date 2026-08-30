@@ -82,7 +82,6 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '安装', link: '/manual/install' },
       { text: '认证', link: '/manual/auth' },
-      { text: '开始使用', link: '/manual/start' },
       { text: '预设修改指南', link: '/guide/quick-edit' },
       { text: 'GitHub', link: 'https://github.com/BlackCleaverLoli/MissFisher' }
     ],
@@ -93,22 +92,6 @@ export default defineConfig({
           items: [
             { text: '安装说明', link: '/manual/install' },
             { text: '认证流程', link: '/manual/auth' }
-          ]
-        },
-        {
-          text: '开始使用',
-          items: [
-            { text: '开始使用', link: '/manual/start' },
-            { text: '常见问题', link: '/manual/faq' }
-          ]
-        },
-        {
-          text: '场景',
-          items: [
-            { text: '钓特定鱼类', link: '/manual/scenarios/fish' },
-            { text: '出海垂钓', link: '/manual/scenarios/ocean' },
-            { text: '宇宙探索', link: '/manual/scenarios/cosmic' },
-            { text: '云冠群岛', link: '/manual/scenarios/diadem' }
           ]
         }
       ],
