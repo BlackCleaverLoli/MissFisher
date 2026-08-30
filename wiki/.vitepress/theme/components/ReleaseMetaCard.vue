@@ -15,7 +15,6 @@ type ReleaseMeta = {
     discordSummary?: string
   }
   links?: {
-    manual?: string
     installManifest?: string
     resourceBundle?: string
   }

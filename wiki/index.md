@@ -10,31 +10,23 @@ hero:
     alt: MissFisher
   actions:
     - theme: brand
-      text: 开始使用
-      link: /manual/start
-    - theme: alt
       text: 安装说明
       link: /manual/install
     - theme: alt
       text: 认证流程
       link: /manual/auth
+    - theme: alt
+      text: 钓法表达式
+      link: /guide/learn-angex
 
 features:
-  - title: 钓特定鱼类
-    details: 通过主页预设启动特定鱼类。
-    link: /manual/scenarios/fish
+  - title: 安装
+    details: 通过 Dalamud 第三方仓库安装 MissFisher。
+    link: /manual/install
     linkText: 查看
-  - title: 出海垂钓
-    details: 海钓冲分、蓝鱼、种类数量奖励和耐力模式说明。
-    link: /manual/scenarios/ocean
-    linkText: 查看
-  - title: 宇宙探索
-    details: 宇宙探索任务中的自动预设调用和边界说明。
-    link: /manual/scenarios/cosmic
-    linkText: 查看
-  - title: 云冠群岛
-    details: 云冠群岛相关成就和空岛模式说明。
-    link: /manual/scenarios/diadem
+  - title: 认证
+    details: 获取免费认证，绑定设备或账号识别凭证。
+    link: /manual/auth
     linkText: 查看
   - title: 预设修改指南
     details: 快速修改预设，逐步理解表达式结构。
@@ -44,6 +36,10 @@ features:
     details: 系统理解钓法表达式结构和进阶写法。
     link: /guide/learn-angex
     linkText: 查看
+  - title: Angex 语法规范
+    details: 钓法表达式的完整语法与语义约束。
+    link: /reference/angex-grammar
+    linkText: 查看
   - title: Angex Token 语义参考
     details: 按 token 查阅每个符号的精确语义和运行时行为。
     link: /reference/angex-tokens
@@ -51,5 +47,9 @@ features:
   - title: IPC API
     details: MissFisher 对外 IPC 接口说明。
     link: /reference/ipc
+    linkText: 查看
+  - title: 诱饵技能特性
+    details: 诱饵技能的权重、锁定与副作用机制。
+    link: /reference/lure
     linkText: 查看
 ---
