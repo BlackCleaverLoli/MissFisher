@@ -2,20 +2,20 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.2.1.4",
+    "version": "2.2.1.5",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：界面，自动同步预设或加载预设数据时，界面或游戏可能崩溃。",
+      "修复：自动，目标钓场处于城内时，没有使用城内以太传送网来加速。",
       "优化：界面，优化了一些界面文案"
     ]
   },
   "resource": {
     "bundleVersion": "260824",
     "bundleName": "SyncBundle_260824.zip",
-    "presetStamp": "08-27-1523",
+    "presetStamp": "08-31-1708",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "修正一些备注。",
-    "updatedAt": "2026-08-31T15:22:40+08:00"
+    "discordSummary": "修正 星鲸长流程最终（预备手法）。",
+    "updatedAt": "2026-08-31T17:35:34+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
