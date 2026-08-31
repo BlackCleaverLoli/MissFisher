@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.2.1.3",
+    "version": "2.2.1.4",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：界面，读取共鸣水晶失败时导致插件界面或游戏崩溃。",
-      "优化：界面，优化了一些界面排版"
+      "修复：界面，自动同步预设或加载预设数据时，界面或游戏可能崩溃。",
+      "优化：界面，优化了一些界面文案"
     ]
   },
   "resource": {
@@ -15,7 +15,7 @@
     "presetStamp": "08-27-1523",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正一些备注。",
-    "updatedAt": "2026-08-31T11:36:16+08:00"
+    "updatedAt": "2026-08-31T15:22:40+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
