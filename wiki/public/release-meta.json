@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.2.2.1",
+    "version": "2.2.2.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，修复了空岛绿鱼攒鱼计时相关的一些行为。",
-      "优化：界面，优化了一些空岛相关的界面文案。"
+      "优化：自动，清单自动时的丢弃将不包括收藏品。",
+      "优化：自动，清单自动时的丢弃将覆盖刚才完成的钓场。"
     ]
   },
   "resource": {
@@ -15,7 +15,7 @@
     "presetStamp": "09-01-1914",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "隔离一批老主顾相关鱼类到支线分组。",
-    "updatedAt": "2026-09-02T17:39:55+08:00"
+    "updatedAt": "2026-09-02T21:02:31+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
