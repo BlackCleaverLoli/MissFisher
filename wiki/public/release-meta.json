@@ -2,11 +2,12 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.2.2.2",
+    "version": "2.2.3.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：自动，清单自动时的丢弃将不包括收藏品。",
-      "优化：自动，清单自动时的丢弃将覆盖刚才完成的钓场。"
+      "新增：界面，现在可选界面字体权重为粗体或普通。",
+      "优化：界面，提升了字体构建速度。",
+      "优化：界面，现在界面同一时间只使用一种字体权重。"
     ]
   },
   "resource": {
@@ -15,7 +16,7 @@
     "presetStamp": "09-01-1914",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "隔离一批老主顾相关鱼类到支线分组。",
-    "updatedAt": "2026-09-02T21:02:31+08:00"
+    "updatedAt": "2026-09-02T23:27:10+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
