@@ -13,10 +13,10 @@
   "resource": {
     "bundleVersion": "260824",
     "bundleName": "SyncBundle_260824.zip",
-    "presetStamp": "09-01-1914",
+    "presetStamp": "09-02-2352",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "隔离一批老主顾相关鱼类到支线分组。",
-    "updatedAt": "2026-09-02T23:27:10+08:00"
+    "discordSummary": "修正 事件穹界的回归者、额外维度实体-9318 相关预设的咬饵时间。",
+    "updatedAt": "2026-09-02T23:59:42+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
