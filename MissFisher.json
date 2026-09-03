@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.2.3.1",
+        "AssemblyVersion": "2.2.4.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.2.3.1\n- 修复：自动，现在变体预设将不再会出现在钓鱼笔记模式和聚合分组中。\n- 修复：自动，窗口期前且使用鱼篓修饰词时，不会使用大鱼猎手。\n- 修复：界面，当预设的下一个窗口期距离现在特别久时，窗口期的显示文本不正确。\n- 优化：界面，优化了部分页面的内存占用。\n- 优化：界面，大幅优化了首次打开主界面时的加载速度。\n",
+        "ChangeLog": "# v2.2.4.0\n- 优化：自动，在等待窗口时将适时使用大鱼猎手。\n- 优化：自动，重新梳理了海钓船舷导航行为。\n- 优化：界面，修改了部分文案。\n- 优化：界面，优化了「道具来源」「已完成钓饵」「相关预设」窗口打开时显示的位置。\n- 优化：界面，统一图鉴相关文案到「鱼类图鉴」，而非「钓鱼笔记」。\n- 优化：界面，重构了「鱼类图鉴」模式、清单族（合集、分组）的聚合以及显示门槛，现在将显示更多原本不会被显示的预设行。\n- 优化：界面，调整了不可调度预设显示时在列表中的位置。\n- 修复：界面，在「库」页面的补全输入框补全预设时，调用历史中的对应预设没有被移动到顶部。\n- 新增：工具，「已完成钓饵」窗口，可查看已经完成的钓饵；另外，也可在其中打开「相关预设」窗口来查看钓饵相关的预设。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
