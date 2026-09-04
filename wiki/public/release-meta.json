@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.2.4.0",
+    "version": "2.2.4.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：自动，在等待窗口时将适时使用大鱼猎手。",
-      "优化：自动，重新梳理了海钓船舷导航行为。",
-      "优化：界面，修改了部分文案。"
+      "修复：自动，修复食物补充不成功的问题。",
+      "修复：自动，只读清单族可调度非图鉴预设的问题。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "09-02-2352",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正 事件穹界的回归者、额外维度实体-9318 相关预设的咬饵时间。",
-    "updatedAt": "2026-09-04T03:14:38+08:00"
+    "updatedAt": "2026-09-04T17:06:38+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
