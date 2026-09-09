@@ -2,20 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.2.4.1",
+    "version": "2.3.0.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，修复食物补充不成功的问题。",
-      "修复：自动，只读清单族可调度非图鉴预设的问题。"
+      "新增：自动，现在在钓点警惕时，如果有可用数据，将尝试处理，没有才会抛出告警或者交接给相关DR模块。",
+      "新增：自动，钓法表达式支持新的条件切换钓法的条件头部「@N【目标】」。",
+      "新增：自动，钓法表达式支持同层并列多个条件切换钓法。"
     ]
   },
   "resource": {
-    "bundleVersion": "260824",
-    "bundleName": "SyncBundle_260824.zip",
-    "presetStamp": "09-02-2352",
+    "bundleVersion": "260909",
+    "bundleName": "SyncBundle_260909.zip",
+    "presetStamp": "09-09-2012",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "修正 事件穹界的回归者、额外维度实体-9318 相关预设的咬饵时间。",
-    "updatedAt": "2026-09-04T17:06:38+08:00"
+    "discordSummary": "优化了 七彩天主 相关预设的手法和备注；修复了 魔毯 的窗口期时间；恢复了 事件穹界的回归者、额外维度实体-9318 相关预设的咬饵时间。",
+    "updatedAt": "2026-09-09T22:23:08+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,6 +24,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260824.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260909.zip"
   }
 }
