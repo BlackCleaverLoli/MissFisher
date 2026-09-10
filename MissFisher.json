@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.3.0.0",
+        "AssemblyVersion": "2.3.0.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.3.0.0\n- 新增：自动，现在在钓点警惕时，如果有可用数据，将尝试处理，没有才会抛出告警或者交接给相关DR模块。\n- 新增：自动，钓法表达式支持新的条件切换钓法的条件头部「@N【目标】」。\n- 新增：自动，钓法表达式支持同层并列多个条件切换钓法。\n- 移除：自动，移除了残余的自动后置命令功能。\n- 新增：自动，现在自动海钓也会使用采集力食物（也新增了设置项）。\n- 修复：界面，修复了某些界面元素的点击交互问题。\n- 修复：自动，钓法表达式存在「跳阶段」修饰词时的计数口径有误。\n- 新增：自动，新增「目标流程」模式，可自动切换预设直到钓到特定目标；现支持「七彩天主」，之后会支持其他钓法同样复杂的鱼类。\n- 修复：自动，修复了因某些插件而导致抛竿动画被跳过时，记录的咬饵时间有误的问题。\n- 优化：自动，本次会话已抛竿成功时，后续抛竿如果收到服务器的钓点错误相关消息，将不再直接停止自动，而是忽视它们。\n- 修复：界面，修复了未验证时精简窗口暴露的信息过多的问题。\n- 优化：杂项，将某些日志的等级降低以减少打扰。\n- 修复：自动，修复了自动海钓时船舷导航时可能原地打转或失败的问题。\n- 优化：自动，现在将允许一些自动功能在钓鱼状态时直接启动。\n- 优化：界面，优化了标题栏导航按钮的文案。\n- 修复：工具，修复了鱼识必咬提示音有时监听不到的问题。\n- 修复：自动，修复了在鱼识必咬预兆未出现时未按预期歇竿的问题。\n- 优化：界面，现在精简窗口在仅导航任务时不再替换展开面板。\n- 修复：自动，修复了前往钓点导航有时会下坐骑失败的问题。\n- 修复：自动，修复了前往钓点导航有时会选择错误的小水晶的问题。\n- 修复：自动，修复了前往道具来源商店NPC导航有时会选择错误的小水晶的问题。\n- 优化：自动，优化了清单族的目标选择，现在在特定情况下会正确选中同钓场/同地图的目标来减少不必要的时间浪费。\n- 新增：自动，现在在进行跨图传送时，将自动使用恩宠来清空鱼计。\n- 优化：界面，优化了部分界面元素的显示效果。\n- 新增：工具，在钓饵物品的原生右键菜单新增了命令「查看相关预设」，可查看该钓饵的相关预设。\n- 优化：界面，在相关预设窗口中会显示未记录的目标数量。\n- 优化：界面，为预设编辑页中的编辑器补全了主界面编辑器也有的功能。\n- 优化：界面，现在因精简窗口的调用而需要显示模态而显示主窗口时，也将展开主窗口并置顶。\n- 优化：界面，现在在精简窗口已经显示时，如继续点击主窗口的最小化按钮，将发出提示，如果主窗口此时在收起状态，也将提供额外提示。\n- 优化：界面，现在主界面在特定操作时将自动展开。\n",
+        "ChangeLog": "# v2.3.0.1\n- 优化：界面，优化了部分文案。\n- 修复：自动，修复了部分情况下自动模式启动时的行为问题。\n- 修复：自动，修复了特定情况下警惕处理会永久失败的问题。\n- 修复：自动，修复了警惕处理没有真正换点的问题。\n- 修复：自动，修复了目标流程模式完成目标时没有按预期进行额外播报的问题。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
