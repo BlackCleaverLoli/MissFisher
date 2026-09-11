@@ -2,21 +2,20 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.3.1.0",
+    "version": "2.3.1.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：自动，现在目标流程模式支持「星鲸」。",
-      "优化：自动，修改了目标流程模式的图标。",
-      "优化：自动，现在符合条件时，即使处在钓鱼状态也可直接启动特定模式。"
+      "修复：自动，修复了自动海钓的船舷导航时启动前的面向调整有误，而导致最终启动后的面向在服务器端与预期不符的问题。",
+      "修复：自动，修复了符合条件时，即使已经处在钓鱼状态也没如预期直接启动特定模式的问题。"
     ]
   },
   "resource": {
     "bundleVersion": "260909",
     "bundleName": "SyncBundle_260909.zip",
-    "presetStamp": "09-11-0256",
+    "presetStamp": "09-12-0608",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "重构了 星鲸 的预设，现在将允许参与调度；同时新增数个用于目标流程模式的 星鲸 预设。",
-    "updatedAt": "2026-09-11T03:24:59+08:00"
+    "discordSummary": "修正 希望鲤鱼 的预备有时手法错误的问题;更新了海钓的批量生成。",
+    "updatedAt": "2026-09-12T06:56:14+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
