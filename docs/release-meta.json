@@ -2,20 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.3.1.1",
+    "version": "2.4.0.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，修复了自动海钓的船舷导航时启动前的面向调整有误，而导致最终启动后的面向在服务器端与预期不符的问题。",
-      "修复：自动，修复了符合条件时，即使已经处在钓鱼状态也没如预期直接启动特定模式的问题。"
+      "修复：自动，清单族下个目标是同目标时停留在原地等待。",
+      "修复：自动，警惕换点时更换的钓点距离原来的位置太近。",
+      "优化：自动，降低了海钓启动时要求的背包空位数量。"
     ]
   },
   "resource": {
-    "bundleVersion": "260909",
-    "bundleName": "SyncBundle_260909.zip",
-    "presetStamp": "09-12-0608",
+    "bundleVersion": "260913",
+    "bundleName": "SyncBundle_260913.zip",
+    "presetStamp": "09-13-0738",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "修正 希望鲤鱼 的预备有时手法错误的问题;更新了海钓的批量生成。",
-    "updatedAt": "2026-09-12T06:56:14+08:00"
+    "discordSummary": "优化 巨蛇头鳢 的触发手法。",
+    "updatedAt": "2026-09-13T08:02:46+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,6 +24,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260909.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_260913.zip"
   }
 }
