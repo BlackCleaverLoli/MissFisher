@@ -2,12 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.0.0",
+    "version": "2.4.0.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，清单族下个目标是同目标时停留在原地等待。",
-      "修复：自动，警惕换点时更换的钓点距离原来的位置太近。",
-      "优化：自动，降低了海钓启动时要求的背包空位数量。"
+      "修复：界面，修复了部分文案的错误。"
     ]
   },
   "resource": {
@@ -16,7 +14,7 @@
     "presetStamp": "09-13-0738",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "优化 巨蛇头鳢 的触发手法。",
-    "updatedAt": "2026-09-13T08:02:46+08:00"
+    "updatedAt": "2026-09-13T23:16:01+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
