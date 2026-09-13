@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.0.1",
+    "version": "2.4.1.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：界面，修复了部分文案的错误。"
+      "修复：界面，界面弹出对话框时停靠在其他窗口内导致主界面持续崩溃。",
+      "优化：界面，现在不再允许将主界面停靠在其他 ImGui 窗口内部。",
+      "修复：自动，自动流程包含鱼眼预设时，ET 调度判断错误。"
     ]
   },
   "resource": {
     "bundleVersion": "260913",
     "bundleName": "SyncBundle_260913.zip",
-    "presetStamp": "09-13-0738",
+    "presetStamp": "09-14-0212",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "优化 巨蛇头鳢 的触发手法。",
-    "updatedAt": "2026-09-13T23:16:01+08:00"
+    "discordSummary": "将 嘎儿鱼 加入目标流程；优化了 潜龙 的钓法；优化部分鱼识触发时机。",
+    "updatedAt": "2026-09-14T02:31:01+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
