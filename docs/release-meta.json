@@ -2,21 +2,20 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.1.2",
+    "version": "2.4.2.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，在空岛警惕时换点失败。",
-      "修复：自动，目标流程表达式使用的语法非预期。",
-      "修复：自动，警惕换点有时找不到另一个点。"
+      "修复：界面，游戏背包的上下文菜单冲突问题。",
+      "优化：自动，现在清单族的自动调度额外允许部分预设，前提是它们来自鱼类图鉴模式和聚合分组。"
     ]
   },
   "resource": {
     "bundleVersion": "260914",
     "bundleName": "SyncBundle_260914.zip",
-    "presetStamp": "09-15-2349",
+    "presetStamp": "09-17-0354",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "修正了 嘎儿鱼 的预备手法。",
-    "updatedAt": "2026-09-16T02:15:27+08:00"
+    "discordSummary": "更新一批老主顾鱼。",
+    "updatedAt": "2026-09-17T04:17:45+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
