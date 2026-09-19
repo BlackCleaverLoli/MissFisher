@@ -9,8 +9,8 @@
     "docs:preview": "npm run docs:normalize-md && vitepress build wiki --base / --outDir node_modules/.cache/missfisher-docs-preview && vite preview --outDir node_modules/.cache/missfisher-docs-preview"
   },
   "devDependencies": {
-    "vitepress": "^1.6.4",
-    "vue": "^3.5.13"
+    "vitepress": "1.6.4",
+    "vue": "3.5.13"
   }
 }
 
