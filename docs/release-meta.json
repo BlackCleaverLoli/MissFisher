@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.2.2",
+    "version": "2.4.2.3",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：工具，收敛查看相关预设的注册差异。"
+      "修复：自动，有时在以小钓大的鱼准备好之后，会意外使用撒饵，导致需要重新开始准备。"
     ]
   },
   "resource": {
@@ -14,7 +14,7 @@
     "presetStamp": "09-17-0354",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "更新一批老主顾鱼。",
-    "updatedAt": "2026-09-18T19:22:42+08:00"
+    "updatedAt": "2026-09-19T13:56:39+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
