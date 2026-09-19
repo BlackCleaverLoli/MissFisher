@@ -11,10 +11,10 @@
   "resource": {
     "bundleVersion": "260914",
     "bundleName": "SyncBundle_260914.zip",
-    "presetStamp": "09-19-2018",
+    "presetStamp": "09-19-2228",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正部分鱼类的窗口期",
-    "updatedAt": "2026-09-19T20:24:36+08:00"
+    "updatedAt": "2026-09-19T22:33:25+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
