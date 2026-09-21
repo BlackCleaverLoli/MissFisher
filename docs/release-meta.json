@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.3.0",
+    "version": "2.4.3.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：界面，调整了悬浮提示的显示位置和显示速度。",
-      "新增：自动，恢复了空岛相关模式的命令，详见命令帮助。",
-      "修复：自动，从非界面或罕见情况下启动自动模式，硬需求未满足时没有提示或者打开主界面。"
+      "修复：自动，有时专一垂钓的采集力管理有误。",
+      "优化：自动，现在宇宙探索模式通过命令的重放将不通知错误。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "09-19-2228",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正部分鱼类的窗口期",
-    "updatedAt": "2026-09-21T14:14:36+08:00"
+    "updatedAt": "2026-09-21T23:06:54+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
