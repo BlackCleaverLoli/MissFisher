@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.3.3",
+    "version": "2.4.3.4",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：工具，加载预设时交互 MissFisher 界面会导致游戏崩溃。",
-      "优化：工具，优化了水晶数据的加载速度。",
-      "修复：自动，鱼类图鉴-出海垂钓模式运行时，调用的某些钓法表达式语法有误。"
+      "修复：自动，在某些钓场警惕时未如预期进行换点或交给 daily routines 处理。",
+      "优化：自动，现在清单族的调度将避免选取窗口期剩余时间不多的目标（少于 5 分钟且小于完整窗口期的一半）。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "09-19-2228",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正部分鱼类的窗口期",
-    "updatedAt": "2026-09-22T23:57:00+08:00"
+    "updatedAt": "2026-09-23T14:04:08+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",

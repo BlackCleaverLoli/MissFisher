@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.3.3",
+        "AssemblyVersion": "2.4.3.4",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.3.3\n- 修复：工具，加载预设时交互 MissFisher 界面会导致游戏崩溃。\n- 优化：工具，优化了水晶数据的加载速度。\n- 修复：自动，鱼类图鉴-出海垂钓模式运行时，调用的某些钓法表达式语法有误。\n",
+        "ChangeLog": "# v2.4.3.4\n- 修复：自动，在某些钓场警惕时未如预期进行换点或交给 daily routines 处理。\n- 优化：自动，现在清单族的调度将避免选取窗口期剩余时间不多的目标（少于 5 分钟且小于完整窗口期的一半）。\n",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
     }
