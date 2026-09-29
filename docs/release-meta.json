@@ -2,12 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.5.1",
+    "version": "2.4.5.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，在出海垂钓中有可能会重放耐心2和熟练渔技。",
-      "优化：自动，现在出海垂钓在保留采集力的策略时，将不再使用冲分预设。",
-      "优化：界面，主页的视图现在有开关可以切换。"
+      "修复：自动，部分预设会错误算出极短的窗口期。"
     ]
   },
   "resource": {
@@ -16,7 +14,7 @@
     "presetStamp": "09-28-0039",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正部分预设的修饰词。",
-    "updatedAt": "2026-09-29T17:20:05+08:00"
+    "updatedAt": "2026-09-29T18:47:07+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
