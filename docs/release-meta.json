@@ -2,12 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.6.1",
+    "version": "2.4.6.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，自动海钓的不触幻行为与策略不一致。",
-      "优化：自动，调整了目标流程的钓饵需求数量。",
-      "修复：界面，部分预设的备注有误。"
+      "优化：界面，在单个预设的详情页的顶部分体按钮的选项里追加了前往所在地和标记钓场。"
     ]
   },
   "resource": {
@@ -16,7 +14,7 @@
     "presetStamp": "10-01-2055",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修改一个鱼皇流程的预设键。",
-    "updatedAt": "2026-10-01T21:20:43+08:00"
+    "updatedAt": "2026-10-02T01:06:55+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
