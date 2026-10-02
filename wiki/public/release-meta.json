@@ -2,11 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.7.1",
+    "version": "2.4.7.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：自动，即使拥有对应钓饵，也会被门禁拦截而无法启动。",
-      "修复：自动，单预设估计的钓饵需求量会在极长窗口期的情况下变得巨大。"
+      "修复：杂项，在部分网络下难以连接验证。"
     ]
   },
   "resource": {
@@ -15,7 +14,7 @@
     "presetStamp": "10-01-2055",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修改一个鱼皇流程的预设键。",
-    "updatedAt": "2026-10-02T19:16:15+08:00"
+    "updatedAt": "2026-10-03T00:04:07+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
