@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.7.0",
+    "version": "2.4.7.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：自动，现在将按坐标屏蔽部分地图的钓点，以解决部分垂钓点难以导航的问题。",
-      "修复：界面，部分弹出菜单没有被钳制到可视的画面范围内。"
+      "修复：自动，即使拥有对应钓饵，也会被门禁拦截而无法启动。",
+      "修复：自动，单预设估计的钓饵需求量会在极长窗口期的情况下变得巨大。"
     ]
   },
   "resource": {
@@ -15,7 +15,7 @@
     "presetStamp": "10-01-2055",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修改一个鱼皇流程的预设键。",
-    "updatedAt": "2026-10-02T04:04:13+08:00"
+    "updatedAt": "2026-10-02T19:16:15+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
