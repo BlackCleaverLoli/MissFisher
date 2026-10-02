@@ -24,7 +24,7 @@
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
         "ChangeLog": "# v2.4.7.0\n- 新增：自动，现在将按坐标屏蔽部分地图的钓点，以解决部分垂钓点难以导航的问题。\n- 修复：界面，部分弹出菜单没有被钳制到可视的画面范围内。\n",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip"
+        "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
+        "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
 ]

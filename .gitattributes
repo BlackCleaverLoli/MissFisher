@@ -8,3 +8,4 @@
 *.webp binary
 
 *.zip binary
+*.tar.xz binary

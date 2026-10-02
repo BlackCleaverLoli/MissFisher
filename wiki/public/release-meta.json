@@ -22,7 +22,7 @@
     "docs": "https://blackcleaverloli.github.io/MissFisher/",
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
-    "download": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/latest.zip",
+    "download": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
     "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_261002.zip"
   }
 }
