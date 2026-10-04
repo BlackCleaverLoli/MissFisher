@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.7.3",
+    "version": "2.4.8.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：自动，优化了自动海钓登记阶段的等待行为。",
-      "优化：界面，优化了高缩放比例下竿时悬浮窗的样式表现。",
-      "移除：工具，移除了进入自动海钓后的启动提示。"
+      "优化：自动，优化了自动海钓登记阶段的等待、连续循环时结束一次海钓后的行为。",
+      "修复：自动，未处在自动时，卸载时会停止 vnavmesh。",
+      "优化：界面，优化了设置中显示的字体名称。"
     ]
   },
   "resource": {
@@ -16,7 +16,7 @@
     "presetStamp": "10-01-2055",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修改一个鱼皇流程的预设键。",
-    "updatedAt": "2026-10-03T18:42:43+08:00"
+    "updatedAt": "2026-10-04T23:14:13+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",

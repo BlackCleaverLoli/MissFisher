@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.7.3",
+        "AssemblyVersion": "2.4.8.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.7.3\n- 优化：自动，优化了自动海钓登记阶段的等待行为。\n- 优化：界面，优化了高缩放比例下竿时悬浮窗的样式表现。\n- 移除：工具，移除了进入自动海钓后的启动提示。\n",
+        "ChangeLog": "# v2.4.8.0\n- 优化：自动，优化了自动海钓登记阶段的等待、连续循环时结束一次海钓后的行为。\n- 修复：自动，未处在自动时，卸载时会停止 vnavmesh。\n- 优化：界面，优化了设置中显示的字体名称。\n- 优化：界面，优化了字体相关的内部实现，减少字体重建的耗时。\n- 修复：其他，MissFisher 占用的内存与显存比预期的多（比预期多占用了 50%/数百 MB）。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
