@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.9.1",
+    "version": "2.4.9.2",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：界面，切换到非默认字体，对应的字体字形没有被应用。"
+      "修复：自动，在英语客户端没有自动确认收集收藏品。"
     ]
   },
   "resource": {
@@ -14,7 +14,7 @@
     "presetStamp": "10-06-0621",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正第四期重建用的特供雕塑家；",
-    "updatedAt": "2026-10-06T18:57:59+08:00"
+    "updatedAt": "2026-10-06T21:26:12+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
