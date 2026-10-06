@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.8.0",
+    "version": "2.4.9.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：自动，优化了自动海钓登记阶段的等待、连续循环时结束一次海钓后的行为。",
-      "修复：自动，未处在自动时，卸载时会停止 vnavmesh。",
-      "优化：界面，优化了设置中显示的字体名称。"
+      "修复：自动，空岛模式的导航可能前往错误的钓场/钓点。",
+      "修复：自动，上传的钓点信息中的空岛钓场id可能错误。",
+      "优化：界面，空岛模式，优化了相关界面功能，现在可单独前往钓场。"
     ]
   },
   "resource": {
-    "bundleVersion": "261002",
-    "bundleName": "SyncBundle_261002.zip",
+    "bundleVersion": "261006",
+    "bundleName": "SyncBundle_261006.zip",
     "presetStamp": "10-06-0621",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正第四期重建用的特供雕塑家；",
-    "updatedAt": "2026-10-06T06:23:04+08:00"
+    "updatedAt": "2026-10-06T08:31:47+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -24,6 +24,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_261002.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_261006.zip"
   }
 }

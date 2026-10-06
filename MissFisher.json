@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.8.0",
+        "AssemblyVersion": "2.4.9.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.8.0\n- 优化：自动，优化了自动海钓登记阶段的等待、连续循环时结束一次海钓后的行为。\n- 修复：自动，未处在自动时，卸载时会停止 vnavmesh。\n- 优化：界面，优化了设置中显示的字体名称。\n- 优化：界面，优化了字体相关的内部实现，减少字体重建的耗时。\n- 修复：其他，MissFisher 占用的内存与显存比预期的多（比预期多占用了 50%/数百 MB）。\n",
+        "ChangeLog": "# v2.4.9.0\n- 修复：自动，空岛模式的导航可能前往错误的钓场/钓点。\n- 修复：自动，上传的钓点信息中的空岛钓场id可能错误。\n- 优化：界面，空岛模式，优化了相关界面功能，现在可单独前往钓场。\n- 修复：界面，定位空岛钓场时没有打开对应的地图，而错误使用了当前所在的地图。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
