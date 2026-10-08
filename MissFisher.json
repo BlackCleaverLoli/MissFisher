@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.10.2",
+        "AssemblyVersion": "2.4.10.3",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.10.2\n- 优化：界面，已完成钓饵，钓饵列表的顺序改为按物品ID降序。\n- 修复：界面，精简窗口的一些操作未按预期打开完整窗口。\n- 修复：自动，停止自动时未清除检查点标记。\n# v2.4.10.1\n- 修复：界面，修复了一些文案错误。\n# v2.4.10.0\n- 优化：自动，传送，在部分传送发起前将短暂等待。\n- 优化：界面，文案，优化了几处提示性文本。\n- 优化：界面，主题，优化了主题「几何」的文本颜色表现。\n- 优化：自动，清单，优化了清单的调度表现，提升了解决普通鱼目标的效率。\n- 修复：自动，同图导航时没有先尝试传送到更近的大水晶。\n- 修复：自动，清单模式调度时普通鱼在窗口期开始时才会出发。\n- 修复：界面，鱼类图鉴非副本模式的右键菜单的档位的门禁有误，其中一个档位无候选时，会导致另一个档位也无法在子菜单中启动。\n- 修复：自动，清单模式没有优先选择同钓场/同地图的目标。\n",
+        "ChangeLog": "# v2.4.10.3\n- 修复：自动，部分鱼类被错误聚合到错误的版本分组中。\n- 优化：界面，文案，整理了一些格式。\n- 修复：界面，鱼眼预设的详情中没有需求侧栏入口。\n- 修复：自动，鱼眼模式在非窗口期启动导致等待后，没有在符合天气时继续自动。\n# v2.4.10.2\n- 优化：界面，已完成钓饵，钓饵列表的顺序改为按物品ID降序。\n- 修复：界面，精简窗口的一些操作未按预期打开完整窗口。\n- 修复：自动，停止自动时未清除检查点标记。\n# v2.4.10.1\n- 修复：界面，修复了一些文案错误。\n# v2.4.10.0\n- 优化：自动，传送，在部分传送发起前将短暂等待。\n- 优化：界面，文案，优化了几处提示性文本。\n- 优化：界面，主题，优化了主题「几何」的文本颜色表现。\n- 优化：自动，清单，优化了清单的调度表现，提升了解决普通鱼目标的效率。\n- 修复：自动，同图导航时没有先尝试传送到更近的大水晶。\n- 修复：自动，清单模式调度时普通鱼在窗口期开始时才会出发。\n- 修复：界面，鱼类图鉴非副本模式的右键菜单的档位的门禁有误，其中一个档位无候选时，会导致另一个档位也无法在子菜单中启动。\n- 修复：自动，清单模式没有优先选择同钓场/同地图的目标。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }

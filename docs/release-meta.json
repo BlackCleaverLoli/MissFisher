@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.10.2",
+    "version": "2.4.10.3",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：界面，已完成钓饵，钓饵列表的顺序改为按物品ID降序。",
-      "修复：界面，精简窗口的一些操作未按预期打开完整窗口。",
-      "修复：自动，停止自动时未清除检查点标记。"
+      "修复：自动，部分鱼类被错误聚合到错误的版本分组中。",
+      "优化：界面，文案，整理了一些格式。",
+      "修复：界面，鱼眼预设的详情中没有需求侧栏入口。"
     ]
   },
   "resource": {
@@ -16,7 +16,7 @@
     "presetStamp": "10-06-0621",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正第四期重建用的特供雕塑家；",
-    "updatedAt": "2026-10-08T11:11:04+08:00"
+    "updatedAt": "2026-10-09T00:21:24+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
