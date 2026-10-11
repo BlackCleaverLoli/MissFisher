@@ -49,15 +49,19 @@
 补充：阶段顶层 `||` 可用于各阶段；`@拍水` / `@专一` 仍仅用于阶段 1。  
 
 ### 嵌套关键字
-`阶段 | stg | stage | 鱼识 | int | 拍水后 | pss | 专一后 | pic | 拍水 | 拍 | ss | 专一 | 专 | ic`  
+`阶段 | stg | stage | 游动饵正整数 | swim正整数 | 鱼识 | int | 拍水后 | pss | 专一后 | pic | 拍水 | 拍 | ss | 专一 | 专 | ic`  
 
 ### 修饰词（全局参数）
-`不撒饵/nochum, 收藏品/coll, 不收集/nocoll, 无渔技/nomb, 钓组/snag, 大尺寸/large, 攒鱼计/aa,  
+`不撒饵/nochum, 收藏品/coll, 收藏品预备/coll-prep, 不收集/nocoll, 无渔技/nomb, 钓组/snag, 大尺寸/large, 攒鱼计/aa,  
 套娃/mooch-loop, 梭哈/all-in, 等待专一/waitic, 大鱼知识/bfg, 引诱/lure, 雄心/a-lure, 谦逊/m-lure,  
 重随/re-roll, 多提/mhs, 鱼影/shadow, 加钩/mh, 回收/recy, 鱼眼/fe, 鱼篓/sh, 鱼篓专一/sh-ic,  
-多提回退/mhs-fallback, 允许溢出/overflow, 等待华丽/wait-sh, 等待多提/wait-mhs, 跳阶段/skipstg, 强制预备/force-prep, 不预备拍水/no-pre-ss, 不预备鱼计/no-pre-aa, 银星/silver, 无强心剂/nocord, 无恩宠/nofavor`  
+多提回退/mhs-fallback, 允许溢出/overflow, 等待华丽/wait-sh, 等待多提/wait-mhs, 跳阶段/skipstg, 强制预备/force-prep, 不预备拍水/no-pre-ss, 保留拍水/keep-ss, 不预备鱼计/no-pre-aa, 熟练目标/master-target, 无强心剂/nocord, 无恩宠/nofavor`  
 
 补充：`引诱/雄心/谦逊/鱼影/重随` 可在末尾追加正整数以限制引诱叠层上限（按当前身上引诱 buff 层数判断），例如 `引诱2`、`a-lure3`。当存在 `鱼影` 或 `重随` 修饰词时，该限制不生效。  
+
+补充：`熟练目标/master-target` 必须在末尾追加目标码，例如 `熟练目标430`、`master-target430`。目标码按熟练探索目标达成日志的 `param1` 与 `param2` 字符串直接拼接匹配。  
+
+补充：`保留拍水/keep-ss` 必须附带目标集合，例如 `保留拍水【鱼名|123】`。退出 `@鱼识/int` 钓法时，若当前拍水对应的鱼命中该集合，则保留拍水状态。  
 
 ## 语法（EBNF）
 
@@ -140,17 +144,26 @@ GlobalSeg       ::= CounterOrTerm | ModifierList ;
 CounterOrTerm   ::= UINT? WS* TargetSet ;  
 ModifierList    ::= ModifierToken (WS* ModifierSep WS* ModifierToken)* ;  
 ModifierSep     ::= "、" | "||" ;  
-ModifierToken   ::= <见上文修饰词列表> ;  
+ModifierToken   ::= KeepSurfaceSlapModifier | <见上文修饰词列表> ;  
+KeepSurfaceSlapModifier ::= ("保留拍水" | "keep-ss"), TargetSet ;  
 
 NestedExprsOpt  ::= (WS* NestedExpr)* | ε ;  
-NestedExpr      ::= "@" WS* NestedKind WS* "=" WS* Arrow WS* Expression StageCloseOpt ;  
-NestedKind      ::= "阶段" | "stg" | "stage"  
-                  | "鱼识" | "int"  
-                  | "拍水后" | "pss"  
-                  | "专一后" | "pic"  
-                  | "拍水" | "ss"  
-                  | "专一" | "ic" ;  
-StageCloseOpt   ::= (WS* ("<" | "《") WS* "=") | ε ;  
+NestedExpr      ::= ConditionSwitchExpr | StatusSwitchExpr | InlineSpecialExpr ;  
+ConditionSwitchExpr ::= "@" WS* ConditionSwitchKind WS* "=" WS* Arrow WS* Expression ConditionSwitchClose ;  
+StatusSwitchExpr    ::= "@" WS* StatusSwitchKind WS* "=" WS* Arrow WS* Expression ;  
+InlineSpecialExpr   ::= "@" WS* InlineSpecialKind WS* "=" WS* Arrow WS* Expression ;  
+ConditionSwitchKind ::= "阶段" | "stg" | "stage" | SwimbaitCountSwitch | WindowCondition  
+                      | CatchCountSwitch ;  
+StatusSwitchKind    ::= "鱼识" | "int"  
+                      | "拍水后" | "pss"  
+                      | "专一后" | "pic" ;  
+InlineSpecialKind   ::= "拍水" | "ss"  
+                      | "专一" | "ic" ;  
+SwimbaitCountSwitch ::= "游动饵" UINT | "swim" UINT ;  
+WindowCondition     ::= EtRange WS* WeatherBracket? | WeatherBracket ;  
+CatchCountSwitch    ::= UINT SquareBracketTargetSet ;  
+SquareBracketTargetSet ::= ("[" | "【") TargetList ("]" | "】") ;  
+ConditionSwitchClose ::= WS* ("<" | "《") WS* "=" ;  
 
 RemarkOpt       ::= "//" RemarkText | ε ;  
 RemarkText      ::= <任意字符直到结尾> ;  
@@ -168,7 +181,7 @@ NAME            ::= <不包含列表分隔符的非空文本> ;
 1) 窗口期 (`@`) 至少包含以下之一：  
    - ET 时间段，或  
    - 天气集合。  
-   否则报错“窗口期为空”。  
+     否则报错“窗口期为空”。  
    - 双段天气必须写在同一组括号内，例如 `(晴朗=>阴云)` 或 `（晴朗=》阴云）`。  
    - 天气集合支持列表级排除前缀，且每侧仅允许写在第一个天气前。例如 `（？晴朗）` 表示当前天气不是晴朗，`（？碧空=》晴朗）` 表示前一段天气不是碧空且当前天气是晴朗，`（碧空=》？晴朗）` 表示前一段天气是碧空且当前天气不是晴朗，`（？碧空=》？晴朗）` 表示两侧分别排除对应天气。  
    - `（晴朗、？阴云）` 和 `（？晴朗、？阴云）` 非法；多天气排除应写作 `（？晴朗、阴云）`。  
@@ -208,36 +221,47 @@ NAME            ::= <不包含列表分隔符的非空文本> ;
 
 9) 嵌套表达式：  
    - 只能出现在全局参数之后。  
-   - `@阶段=》...` 必须闭合 `< =` 或 `《 =`。  
+   - 条件切换表达式（`@阶段=》...` / `@游动饵N=》...` / `@0000-0100（晴朗）=》...` / `@N【目标】=》...`）必须闭合 `< =` 或 `《 =`。  
+   - 条件切换表达式同一层级允许并列书写多条，按书写顺序判定：先满足条件的先生效，进入后整体接管当前钓法且不回退，因此一次运行最多执行其中一条——书写顺序即优先级；不同层级互不影响。  
+   - `@游动饵N` / `@swimN` 中 `N` 必须为正整数，在当前持有游动饵数量 `CurrentSwimbaitCount >= N` 时切换。  
+   - `@N【目标】` 为钓获计数切换：`N` 必须为正整数，目标集必须使用方括号 `[...]` 或 `【...】`（与窗口条件的圆括号天气区分）；目标语法与阶段目标一致（支持 `、`/`||` 分隔、`?` 排除）。  
+   - 钓获计数切换在启动时和每次起竿后判定：指定目标的累计钓获数量达到 `N` 时一次性切入子钓法。计数口径与钓法计数器一致——带 `跳阶段` 且声明或继承 `@鱼识` 时按鱼识进度（鱼识触发即重置，离开当前钓场时也会重置）累计，仅带 `跳阶段` 时按当前钓场累计，否则按本钓法开始以来累计。  
+   - 窗口条件切换完整复用表达式头部的窗口期语法，可只写 ET 时间段、只写天气，或同时写两者；同时存在时按 AND 判断。  
+   - 窗口条件在启动时或运行中满足即一次性切换到子表达式，不自动退回外层钓法。  
    - `@鱼识=》...` 会尽可能吞掉其后的内容，直到备注开始（`//`）。  
    - 其他嵌套关键字会消费到下一个嵌套表达式起始或备注起始（允许连续书写多个嵌套表达式）。  
    - 若存在全局参数，嵌套表达式前必须以分号结束全局参数段。  
 
 10) 鱼识 / 拍水后 / 专一后（同级互斥）：  
-   - 同一层级最多出现一个（`@鱼识` / `@拍水后` / `@专一后`），否则报错。  
-   - 不同层级互不影响（例如外层 `@鱼识`，内层 `@专一后` 允许）。  
+- 同一层级最多出现一个（`@鱼识` / `@拍水后` / `@专一后`），否则报错。  
+- 不同层级互不影响（例如外层 `@鱼识`，内层 `@专一后` 允许）。  
+- 内部模型统一保存为状态效果切换钓法组，运行时按类型使用预定义进入/退出条件。  
+- `@鱼识` 在捕鱼人之识状态存在时进入，状态消失且可安全回到主钓法时退出。  
+- `@拍水后` / `@专一后` 分别在拍水 / 专一状态存在时进入，状态消失且可安全回到主钓法时退出。  
 
 11) 全局参数：  
-   - `=` 开始全局参数。  
-   - 以 `;` 或 `；` 分隔多个段。  
-   - 全局参数最后一段必须以 `;` 或 `；` 结束（即使后面是嵌套表达式或备注）。  
-   - 没有数量的目标段若位于第一个位置，则视为“终止目标”。  
-   - 计数器必须有数量。  
-   - 修饰词使用 `、` 或 `||` 连接，解析器允许仅修饰词而无目标段。  
-   - 引诱相关修饰词尾随数字表示“引诱最多叠到 X 层”，但在 `鱼影` 或 `重随` 手法下会被忽略。  
+- `=` 开始全局参数。  
+- 以 `;` 或 `；` 分隔多个段。  
+- 全局参数最后一段必须以 `;` 或 `；` 结束（即使后面是嵌套表达式或备注）。  
+- 没有数量的目标段若位于第一个位置，则视为“终止目标”。  
+- 计数器必须有数量。  
+- 修饰词使用 `、` 或 `||` 连接，解析器允许仅修饰词而无目标段。  
+- 引诱相关修饰词尾随数字表示“引诱最多叠到 X 层”，但在 `鱼影` 或 `重随` 手法下会被忽略。  
+- `收藏品预备/coll-prep` 不能和 `不收集/nocoll` 一起使用。  
+- `收藏品预备/coll-prep` 仅在当前钓法存在 `@鱼识/int` 状态切换和计数器时产生运行时行为；窗口期前会启用收藏品采集，窗口期内会停用收藏品采集；否则仅作为已解析的修饰词保留。  
 
 12) 目标项：  
-   - `any` / `任何` 表示“匹配任何”。  
-   - `占位` / `ph` 表示“不匹配任何”。  
-   - `《` 作为目标项表示鱼篓标记。  
-   - `？` / `?` 前缀表示排除模式。  
+- `any` / `任何` 表示“匹配任何”。  
+- `占位` / `ph` 表示“不匹配任何”。  
+- `《` 作为目标项表示鱼篓标记。  
+- `？` / `?` 前缀表示排除模式。  
 
 13) 天气项：  
-   - 天气列表项仅支持 `IdOrName`；列表级 `？` / `?` 前缀表示排除模式。  
-   - 天气列表不支持 `any`、`任何`、`占位` / `ph` 或逐项混合排除。  
+- 天气列表项仅支持 `IdOrName`；列表级 `？` / `?` 前缀表示排除模式。  
+- 天气列表不支持 `any`、`任何`、`占位` / `ph` 或逐项混合排除。  
 
 14) 游动饵占位：  
-   - 单独出现的游动饵操作符（如 `《》` 中的 `《`）会被视为“鱼篓标志”，等价于游动饵目标包含 `《`。  
+- 单独出现的游动饵操作符（如 `《》` 中的 `《`）会被视为“鱼篓标志”，等价于游动饵目标包含 `《`。  
 
 ## 最小示例
 
