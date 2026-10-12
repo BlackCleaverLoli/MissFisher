@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.11.0",
+        "AssemblyVersion": "2.4.12.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.11.0\n- 新增：界面，道具详情，悬停在界面中带物品的图标和行时，将显示游戏原生物品详情；也新增了开关设置项。\n- 优化：工具，已完成钓饵，为行的右键快捷菜单追加了「获取途径」和「在消息窗口查看」操作。\n- 优化：工具，相关预设，在操作行新增「查看获取途径」按钮。\n- 优化：工具，文案，调整了一些日志文案。\n- 优化：界面，新建预设与合集，调整了它们的默认名称。\n- 修复：自动，清单没有将无最终目标的预设当做兜底目标来执行。\n- 修复：界面，修复了几处样式问题。\n",
+        "ChangeLog": "# v2.4.12.0\n- 新增：界面，精简运行栏，在展开的面板中支持了更多视图，可以浏览未完成的鱼类或海钓航班的简要预报。\n- 优化：杂项，代码结构，完成了一次巨型重构。\n- 优化：界面，精简运行栏，将按钮的悬浮提示恢复为默认在上方。\n- 修复：工具，从设置页加载其他插件时可能导致界面或画面短暂冻结。\n- 修复：界面，咬饵 HUD 在搁浅主题下时，显示的咬饵时间文本会在 11 秒左右时发生水平方向的位置抖动。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
