@@ -2,21 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.12.0",
+    "version": "2.4.13.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "新增：界面，精简运行栏，在展开的面板中支持了更多视图，可以浏览未完成的鱼类或海钓航班的简要预报。",
-      "优化：杂项，代码结构，完成了一次巨型重构。",
-      "优化：界面，精简运行栏，将按钮的悬浮提示恢复为默认在上方。"
+      "新增：工具，已完成钓饵命令，新增命令 `/mf bait` 来打开已完成钓饵窗口。",
+      "新增：界面，计数器悬浮窗开关，在设置页新增了计数器悬浮窗开关设置。",
+      "优化：杂项，文案，重新排列了命令帮助的顺序。"
     ]
   },
   "resource": {
     "bundleVersion": "261006",
     "bundleName": "SyncBundle_261006.zip",
-    "presetStamp": "10-13-1109",
+    "presetStamp": "10-16-1422",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "修正落雷鳗；",
-    "updatedAt": "2026-10-13T11:25:55+08:00"
+    "discordSummary": "添加一处钓点屏蔽块；",
+    "updatedAt": "2026-10-16T15:12:09+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
