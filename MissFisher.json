@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.13.0",
+        "AssemblyVersion": "2.4.13.1",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.13.0\n- 新增：工具，已完成钓饵命令，新增命令 `/mf bait` 来打开已完成钓饵窗口。\n- 新增：界面，计数器悬浮窗开关，在设置页新增了计数器悬浮窗开关设置。\n- 优化：杂项，文案，重新排列了命令帮助的顺序。\n- 优化：界面，计数器悬浮窗，现在它的宽度会按内部的文本动态适应。\n- 优化：界面，咬饵时间悬浮窗、幻海流时间悬浮窗和计时器悬浮窗，大幅降低了大字体比例下内存和显存的占用（最多减少了约 3MiB/47%）。\n- 优化：界面，咬饵时间悬浮窗、幻海流时间悬浮窗和计时器悬浮窗，优化了元素设计表现，包括字体、字重。\n- 优化：界面，咬饵时间悬浮窗、幻海流时间悬浮窗和计时器悬浮窗，优化了搁浅样式下非文本元素的设计表现。\n- 修复：界面，计数悬浮窗在搁浅样式下的坐标有非预期的微小偏移。\n- 修复：界面，工具悬浮窗在搁浅样式下的采集力条和幻海流时间条尾部带字母的标签外框的样式表现非预期。\n",
+        "ChangeLog": "# v2.4.13.1\n- 新增：杂项，验证请求，新增直连开关设置项，默认关闭，打开时将使验证请求绕过系统代理。\n- 优化：界面，设置页，调整了一些设置项的排列顺序和位置。\n- 优化：杂项，验证请求，现在验证请求将默认走系统代理。\n- 修复：界面，部分模式运行时，精简窗口的列表里缺少处于行尾部的窗口期信息。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
