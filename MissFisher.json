@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.13.1",
+        "AssemblyVersion": "2.4.13.2",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.13.1\n- 新增：杂项，验证请求，新增直连开关设置项，默认关闭，打开时将使验证请求绕过系统代理。\n- 优化：界面，设置页，调整了一些设置项的排列顺序和位置。\n- 优化：杂项，验证请求，现在验证请求将默认走系统代理。\n- 修复：界面，部分模式运行时，精简窗口的列表里缺少处于行尾部的窗口期信息。\n",
+        "ChangeLog": "# v2.4.13.2\n- 优化：自动，前往所在地，到达时内部将直接认为已经处在对应钓场，而无需抛竿，有助于解决一些奇怪的行为问题。\n- 修复：自动，展示用的警惕时间是 50 分钟，而不是正确的 16 艾欧泽亚小时。\n- 优化：自动，商店导航，提升了商店导航成功到达的概率。\n- 修复：自动，导航失败时没有正常按失败结束任务。\n- 修复：自动，在鱼眼模式下触发硬警惕的自动换点时，因鱼眼状态失去而重新进入鱼眼状态，导致导航任务失败而永久卡住。\n- 修复：自动，鱼眼模式的预计等待时间有误。\n- 修复：自动，导航时没有先尝试退出钓鱼状态。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
