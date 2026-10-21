@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.4.13.2",
+        "AssemblyVersion": "2.4.13.3",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.4.13.2\n- 优化：自动，前往所在地，到达时内部将直接认为已经处在对应钓场，而无需抛竿，有助于解决一些奇怪的行为问题。\n- 修复：自动，展示用的警惕时间是 50 分钟，而不是正确的 16 艾欧泽亚小时。\n- 优化：自动，商店导航，提升了商店导航成功到达的概率。\n- 修复：自动，导航失败时没有正常按失败结束任务。\n- 修复：自动，在鱼眼模式下触发硬警惕的自动换点时，因鱼眼状态失去而重新进入鱼眼状态，导致导航任务失败而永久卡住。\n- 修复：自动，鱼眼模式的预计等待时间有误。\n- 修复：自动，导航时没有先尝试退出钓鱼状态。\n",
+        "ChangeLog": "# v2.4.13.3\n- 优化：界面，渲染耗时，降低了多处界面的渲染耗时（降低了20%~80%）。\n- 修复：界面，部分钓饵的货币类型错误（随上游修复）。\n- 修复：界面，部分鱼类导航或标记钓场时打开的地图信息有误。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
