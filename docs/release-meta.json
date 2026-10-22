@@ -2,12 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.13.3",
+    "version": "2.4.13.4",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：界面，渲染耗时，降低了多处界面的渲染耗时（降低了20%~80%）。",
-      "修复：界面，部分钓饵的货币类型错误（随上游修复）。",
-      "修复：界面，部分鱼类导航或标记钓场时打开的地图信息有误。"
+      "修复：杂项，验证连接失败。",
+      "修复：杂项，认证未激活时也会同步预设数据。"
     ]
   },
   "resource": {
@@ -16,7 +15,7 @@
     "presetStamp": "10-19-1459",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "增加大王镜贝的结束数量。",
-    "updatedAt": "2026-10-21T19:48:26+08:00"
+    "updatedAt": "2026-10-22T20:48:38+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
