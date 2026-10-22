@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.13.4",
+    "version": "2.4.13.5",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：杂项，验证连接失败。",
-      "修复：杂项，认证未激活时也会同步预设数据。"
+      "优化：界面，验证连接，在身份页也可以控制是否直连验证了。",
+      "优化：界面，验证连接，刷新认证冷却时将在悬停提示上显示冷却时间。"
     ]
   },
   "resource": {
@@ -15,7 +15,7 @@
     "presetStamp": "10-19-1459",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "增加大王镜贝的结束数量。",
-    "updatedAt": "2026-10-22T20:48:38+08:00"
+    "updatedAt": "2026-10-22T21:31:33+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
