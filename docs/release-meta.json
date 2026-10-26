@@ -2,19 +2,21 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.4.13.6",
+    "version": "2.5.0.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "杂项：杂项，验证连接，连接失败时打印记录主机与地址。"
+      "新增：钓法编辑器，表单模式，新增一种用表单填写钓法的编辑方式，不用记表达式语法也能完成入门级编辑。",
+      "新增：钓法编辑器，参数预览窗口，新增一个跟随表单刷新的小窗，实时显示已填写的参数，点一下就能跳到对应项。",
+      "新增：自动，前置任务需求，为那些需要先完成对应前置任务才能钓到的鱼类新增需求服务，将可在需求相关界面看到前置任务的完成情况；同时，在完成任务后它们也会变得可被自动调度。"
     ]
   },
   "resource": {
-    "bundleVersion": "261006",
-    "bundleName": "SyncBundle_261006.zip",
-    "presetStamp": "10-19-1459",
+    "bundleVersion": "261024",
+    "bundleName": "SyncBundle_261024.zip",
+    "presetStamp": "10-27-0241",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
-    "discordSummary": "增加大王镜贝的结束数量。",
-    "updatedAt": "2026-10-24T19:47:07+08:00"
+    "discordSummary": "修正预设「大鱼」。",
+    "updatedAt": "2026-10-27T06:40:45+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -22,6 +24,6 @@
     "manual": "https://blackcleaverloli.github.io/MissFisher/manual/start",
     "installManifest": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisher.json",
     "download": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
-    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_261006.zip"
+    "resourceBundle": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/Preset/SyncBundle_261024.zip"
   }
 }
