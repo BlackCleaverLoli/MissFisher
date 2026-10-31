@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.5.0.0",
+        "AssemblyVersion": "2.5.1.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.5.0.0\n- 新增：钓法编辑器，表单模式，新增一种用表单填写钓法的编辑方式，不用记表达式语法也能完成入门级编辑。\n- 新增：钓法编辑器，参数预览窗口，新增一个跟随表单刷新的小窗，实时显示已填写的参数，点一下就能跳到对应项。\n- 新增：自动，前置任务需求，为那些需要先完成对应前置任务才能钓到的鱼类新增需求服务，将可在需求相关界面看到前置任务的完成情况；同时，在完成任务后它们也会变得可被自动调度。\n- 新增：界面，外部网站搜索，在预设菜单中新增「在外部网站上搜索」，可搜索对应预设的物品。\n- 修复：界面，部分界面控件的外观在某些情况下与预期不符。\n- 修复：界面，当指针位于弹出面板上时，窗口边缘把手仍会响应。\n- 修复：杂项，部分文案在非中文语言的本地化有误。\n",
+        "ChangeLog": "# v2.5.1.0\n- 优化：导航，坐骑选择，现在将按距离和可达性智能选择是否上坐骑/是否飞到目的地，有助于在近距离时减少无效的行为表现。\n- 优化：导航，发起，现在将在确定目的地后立刻投送导航请求，而不是等到上坐骑后再投送，借此减少了在需要飞行或坐骑移动时的出发耗时。\n- 优化：文案，专有名词，修正了几个专有名词在不同语言中的用词。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
