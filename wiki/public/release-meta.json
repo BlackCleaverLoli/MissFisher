@@ -2,12 +2,10 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.5.1.0",
+    "version": "2.5.1.1",
     "apiLevel": 15,
     "changelogSummary": [
-      "优化：导航，坐骑选择，现在将按距离和可达性智能选择是否上坐骑/是否飞到目的地，有助于在近距离时减少无效的行为表现。",
-      "优化：导航，发起，现在将在确定目的地后立刻投送导航请求，而不是等到上坐骑后再投送，借此减少了在需要飞行或坐骑移动时的出发耗时。",
-      "优化：文案，专有名词，修正了几个专有名词在不同语言中的用词。"
+      "修复：回退OmenTools以回避与其他使用新版OmenTools的插件的冲突。"
     ]
   },
   "resource": {
@@ -16,7 +14,7 @@
     "presetStamp": "11-01-0556",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "优化潜龙。",
-    "updatedAt": "2026-11-01T06:37:57+08:00"
+    "updatedAt": "2026-11-01T08:25:13+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
