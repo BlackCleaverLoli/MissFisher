@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.5.1.1",
+        "AssemblyVersion": "2.5.2.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.5.1.1\n- 修复：回退OmenTools以回避与其他使用新版OmenTools的插件的冲突。\n",
+        "ChangeLog": "# v2.5.2.0\n- 新增：自动，非副本的鱼类图鉴模式，新增「仅普通鱼」档位。\n- 修复：界面，鼠标指针在会显示不同工具提示的连续区域移动时，工具提示的位置会发生闪烁。\n- 新增：前往钓场，排除以太之光，排除了「碧玉水」，并且，距离它比较近时也会传送到同地图的另一个以太之光。\n- 优化：前往钓场，可达性检查，当使用 vnavmesh 前往目标所在地时，如果发现路径终点距离预期位置过远，将立刻重新选取点位。\n- 修复：前往钓场，修复有时可能错误认为远处的钓点都不可降落导致导航失败的问题。\n- 优化：杂项，本体依赖，更新了相关依赖。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }

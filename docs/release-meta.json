@@ -2,10 +2,12 @@
   "schemaVersion": 1,
   "plugin": {
     "name": "MissFisher",
-    "version": "2.5.1.1",
+    "version": "2.5.2.0",
     "apiLevel": 15,
     "changelogSummary": [
-      "修复：回退OmenTools以回避与其他使用新版OmenTools的插件的冲突。"
+      "新增：自动，非副本的鱼类图鉴模式，新增「仅普通鱼」档位。",
+      "修复：界面，鼠标指针在会显示不同工具提示的连续区域移动时，工具提示的位置会发生闪烁。",
+      "新增：前往钓场，排除以太之光，排除了「碧玉水」，并且，距离它比较近时也会传送到同地图的另一个以太之光。"
     ]
   },
   "resource": {
@@ -14,7 +16,7 @@
     "presetStamp": "11-09-0355",
     "summary": "已补完：7.5鱼皇（不确保钓法完全正确）、7.5鱼王、7.5海钓、所有宇宙探索任务。",
     "discordSummary": "修正潜龙。",
-    "updatedAt": "2026-11-09T03:58:09+08:00"
+    "updatedAt": "2026-11-10T22:12:56+08:00"
   },
   "links": {
     "repo": "https://github.com/BlackCleaverLoli/MissFisher",
