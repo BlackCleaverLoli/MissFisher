@@ -3,7 +3,7 @@
         "Author": "MistyDai",
         "Name": "MissFisher",
         "InternalName": "MissFisher",
-        "AssemblyVersion": "2.5.2.0",
+        "AssemblyVersion": "2.5.3.0",
         "Description": "准备好启动：能帮你钓鱼王，还能自动出海垂钓、做空岛成就、完成一些宇宙探索任务。\nReady to go: Supports Big Fish, Ocean Fishing, Diadem farming, and automates certain Stellar Missions in Cosmic Exploration.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/BlackCleaverLoli/MissFisher",
@@ -23,7 +23,7 @@
         "IconUrl": "https://raw.githubusercontent.com/BlackCleaverLoli/MissFisher/main/MissFisherIconHq128.jpg",
         "Punchline": "专注于钓鱼。【不包含 24 小时全自动】/ Focus on fishing. [Excludes 24h auto]",
         "AcceptsFeedback": true,
-        "ChangeLog": "# v2.5.2.0\n- 新增：自动，非副本的鱼类图鉴模式，新增「仅普通鱼」档位。\n- 修复：界面，鼠标指针在会显示不同工具提示的连续区域移动时，工具提示的位置会发生闪烁。\n- 新增：前往钓场，排除以太之光，排除了「碧玉水」，并且，距离它比较近时也会传送到同地图的另一个以太之光。\n- 优化：前往钓场，可达性检查，当使用 vnavmesh 前往目标所在地时，如果发现路径终点距离预期位置过远，将立刻重新选取点位。\n- 修复：前往钓场，修复有时可能错误认为远处的钓点都不可降落导致导航失败的问题。\n- 优化：杂项，本体依赖，更新了相关依赖。\n",
+        "ChangeLog": "# v2.5.3.0\n- 新增：自动，钓法表达式，天气窗口期参数位支持未来段的参数，如 `@（过去 => 现在 >> 未来）`。\n- 优化：自动，前往钓点，提高了功能在出发位置不理想时的行为表现，导航终点在符合预期时才会投递移动。\n- 修复：自动，当处于目标流程模式中，且下一刻是挂起阶段，会错误地提前终止当前正在运行的预设。\n- 修复：自动，前往商店功能有时会选择错误的小水晶。\n- 修复：自动，前往商店功能部分情况下会卡死流程。\n- 修复：界面，部分字符未正常显示为预期字形。\n",
         "DownloadLinkInstall": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip",
         "DownloadLinkUpdate": "https://github.com/BlackCleaverLoli/MissFisher/releases/latest/download/latest.zip"
     }
